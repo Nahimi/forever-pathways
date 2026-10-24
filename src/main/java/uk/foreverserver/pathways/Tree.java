@@ -78,7 +78,7 @@ public final class Tree {
         }
     }
 
-    private void index() {
+    void index() {
         byId = new LinkedHashMap<>();
         seals = new ArrayList<>();
         for (Node node : nodes) {

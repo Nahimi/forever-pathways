@@ -1,7 +1,10 @@
 package uk.foreverserver.pathways;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.function.Predicate;
 
@@ -69,10 +72,113 @@ public final class Availability {
                 say("Pathways dropped " + labours + " node labours and " + bounties + " bounties that "
                         + "name nothing this install has. The tree is still completable.");
             }
+            dropEmptyNodes(tree);
         } catch (RuntimeException exception) {
             say("Pathways could not check which labours this install can finish, so all of them are "
                     + "kept: " + exception);
         }
+    }
+
+    /**
+     * Removes every node that was written to hold items and now holds none because the mods that
+     * provide them are missing. Whatever was built on such a node is joined to the node it hung from,
+     * so the rest of the tree stays connected, and a seal asks for the same share of the nodes beneath
+     * it as before. A node with no items by design (a perk, a slot, an enchanting cap, a seal) stays.
+     */
+    private static void dropEmptyNodes(Tree tree) {
+        LockResolver.Result held = LockResolver.resolve(tree, StageWriter.allItems());
+        Map<String, String> gone = new LinkedHashMap<>();
+        for (Tree.Node node : tree.nodes) {
+            if (emptyNode(node, held)) {
+                gone.put(node.id, node.requires);
+            }
+        }
+        if (gone.isEmpty()) {
+            return;
+        }
+        Map<String, Integer> below = new HashMap<>();
+        for (Tree.Node seal : tree.seals()) {
+            below.put(seal.id, countBelow(tree, seal.seal.opensRing));
+        }
+        for (Tree.Node node : tree.nodes) {
+            if (node.requires != null && gone.containsKey(node.requires)) {
+                node.requires = survivor(gone, node.requires);
+            }
+            if (node.also != null && gone.containsKey(node.also)) {
+                node.also = null;
+            }
+        }
+        for (Tree.Bounty bounty : tree.bounties) {
+            if (bounty.requires != null && gone.containsKey(bounty.requires)) {
+                bounty.requires = survivor(gone, bounty.requires);
+            }
+        }
+        tree.nodes.removeIf(node -> gone.containsKey(node.id));
+
+        // A seal with no nodes left in its rings guards nothing.
+        Map<String, String> bare = new LinkedHashMap<>();
+        for (Tree.Node seal : tree.seals()) {
+            boolean any = false;
+            for (Tree.Node node : tree.nodes) {
+                if (!node.isSeal() && node.ring >= seal.seal.opensRing && node.ring <= seal.seal.throughRing) {
+                    any = true;
+                    break;
+                }
+            }
+            if (!any) {
+                bare.put(seal.id, seal.requires);
+            }
+        }
+        for (Tree.Node node : tree.nodes) {
+            if (node.requires != null && bare.containsKey(node.requires)) {
+                node.requires = survivor(bare, node.requires);
+            }
+        }
+        tree.nodes.removeIf(node -> bare.containsKey(node.id));
+        tree.index();
+
+        for (Tree.Node seal : tree.seals()) {
+            int before = below.getOrDefault(seal.id, 0);
+            if (before > 0) {
+                int now = countBelow(tree, seal.seal.opensRing);
+                seal.seal.level = (int) Math.min(now, Math.round(seal.seal.level * (now / (double) before)));
+            }
+        }
+        say("Pathways removed " + gone.size() + " nodes that hold nothing in this install and " + bare.size()
+                + " seals with nothing behind them: " + String.join(", ", gone.keySet()));
+    }
+
+    /** A node that had items written for it, and now has none, and gives nothing else either. */
+    private static boolean emptyNode(Tree.Node node, LockResolver.Result held) {
+        if (node.isSeal() || node.requires == null || node.locks == null || node.locks.isEmpty()) {
+            return false;
+        }
+        boolean other = node.perks != null && !node.perks.isEmpty()
+                || node.slot != null && !node.slot.isBlank()
+                || node.slotBonus != null && !node.slotBonus.isEmpty()
+                || node.enchantPower > 0
+                || node.uses != null && !node.uses.isEmpty();
+        return !other && held.items(node.id).isEmpty();
+    }
+
+    /** Follows a chain of removed nodes up to the first one that is still there (or null). */
+    private static String survivor(Map<String, String> gone, String id) {
+        String next = id;
+        int guard = 0;
+        while (next != null && gone.containsKey(next) && guard++ < 1000) {
+            next = gone.get(next);
+        }
+        return next;
+    }
+
+    private static int countBelow(Tree tree, int ring) {
+        int count = 0;
+        for (Tree.Node node : tree.nodes) {
+            if (node.counts() && node.ring < ring) {
+                count++;
+            }
+        }
+        return count;
     }
 
     /** The logger is not there in a bare test harness, so saying nothing is better than failing. */
