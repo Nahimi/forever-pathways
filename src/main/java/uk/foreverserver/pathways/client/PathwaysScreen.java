@@ -1042,6 +1042,12 @@ public class PathwaysScreen extends Screen {
             g.flush();
             g.blitSprite(over ? SPRITE_BUTTON_HOVER : SPRITE_BUTTON, buttonX0, buttonY0, buttonX1 - buttonX0,
                     buttonY1 - buttonY0);
+            // Colour says the node can be bought now: green for a node, gold for a seal.
+            int tint = chosen.isSeal() ? 0xC9A227 : 0x3FA34D;
+            Pix.rect(g, buttonX0 + 2, buttonY0 + 2, buttonX1 - 2, buttonY1 - 2,
+                    ((over || holding != null ? 0xB0 : 0x88) << 24) | tint);
+            Pix.rect(g, buttonX0 + 2, buttonY0 + 2, buttonX1 - 2, buttonY0 + 4,
+                    ((over ? 0x70 : 0x50) << 24) | 0xFFFFFF);
             if (holding != null && holdFromButton) {
                 float t = Math.min(1f, (System.nanoTime() - holdStart) / (float) HOLD_NANOS);
                 Pix.rect(g, buttonX0 + 2, buttonY0 + 2, buttonX0 + 2 + (int) ((buttonX1 - buttonX0 - 4) * t), buttonY1 - 2,
@@ -1543,9 +1549,6 @@ public class PathwaysScreen extends Screen {
             pressX = mouseX;
             pressY = mouseY;
             pressNode = hovered;
-            if (hovered != null && button == 0) {
-                startHold(hovered, false);
-            }
             return true;
         }
         return super.mouseClicked(mouseX, mouseY, button);
