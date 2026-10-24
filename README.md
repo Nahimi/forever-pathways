@@ -223,4 +223,4 @@ For ideas, such as a mod you would like added, use **Suggestion**.
 
 ## Credits and licence
 
-Forever Pathways is made by Nahimi and released under the [MIT licence](LICENSE).
+Forever Pathways is made by Nahimi and released under the [Creative Commons Attribution-NonCommercial 4.0 licence (CC BY-NC 4.0)](LICENSE). You may share and adapt it for non-commercial use with credit to Nahimi; commercial use is not permitted.

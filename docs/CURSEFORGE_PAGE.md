@@ -87,7 +87,7 @@ Please report bugs and ideas on GitHub: YOUR-GITHUB-LINK/issues
 | --- | --- |
 | Main category | Miscellaneous or Adventure and RPG |
 | Extra categories | Utility & QoL, Map and Information |
-| License | MIT |
+| License | CC BY-NC 4.0 |
 | Source link | your GitHub repository |
 | Issues link | your GitHub repository + `/issues` |
 | Avatar | `docs/curseforge_icon.png` (512 x 512) |
