@@ -1,0 +1,7 @@
+{
+  "name": "Builder",
+  "description": "The Builder road, from ring 1 outwards.",
+  "icon": "minecraft:bricks",
+  "sortnum": 14,
+  "parent": "foreverpathways:paths"
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Ender Relics",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:hither_thither_wand",
+  "sortnum": 1200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:hither_thither_wand",
+      "title": "Ender Relics",
+      "text": "$(bold)The teleportation amulet, the hither-thither wand and the greater elixirs.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)74 Focal Shards$(n).$(br)After Ender Robes."
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

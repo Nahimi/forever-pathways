@@ -1,0 +1,26 @@
+{
+  "name": "Canvas Works",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "farmersdelight:canvas",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "farmersdelight:canvas",
+      "title": "Canvas Works",
+      "text": "$(bold)Canvas, canvas signs and rugs, tatami mats and the moon banner.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)6 Focal Shards$(n).$(br)After Kitchen."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "farmersdelight:canvas",
+      "text": "$(bold)Canvas",
+      "flag": "mod:farmersdelight"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)moon banner pattern."
+    }
+  ],
+  "flag": "mod:farmersdelight"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Tack",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "icys-better-horses:upgraded_saddle",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "icys-better-horses:upgraded_saddle",
+      "title": "Tack",
+      "text": "$(bold)The upgraded saddle, the canister and the stabiliser: a horse that keeps its footing. Needs Gold as well.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)16 Focal Shards$(n).$(br)After Cartwright and Gold."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "icys-better-horses:upgraded_saddle",
+      "text": "$(bold)Upgraded saddle",
+      "flag": "mod:icys_better_horses"
+    }
+  ],
+  "flag": "mod:icys_better_horses"
+}

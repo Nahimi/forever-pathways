@@ -1,0 +1,21 @@
+{
+  "name": "Upgrade Orbs",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:upgrade_orb",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:upgrade_orb",
+      "title": "Upgrade Orbs",
+      "text": "$(bold)Upgrade orbs, and the mana, cooldown and protection orbs and runes.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)64 Focal Shards$(n).$(br)After Runecraft."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:upgrade_orb",
+      "text": "$(bold)Upgrade orb",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

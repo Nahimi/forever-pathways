@@ -1,0 +1,24 @@
+{
+  "name": "Weathered",
+  "category": "foreverpathways:paths/constitution",
+  "icon": "minecraft:leather_boots",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:leather_boots",
+      "title": "Weathered",
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)44 Focal Shards$(n).$(br)After Hardened."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Sprint 30,000 blocks$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% maximum health$(n)"
+    }
+  ]
+}

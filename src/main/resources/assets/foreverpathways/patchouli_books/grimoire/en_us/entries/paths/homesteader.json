@@ -1,0 +1,24 @@
+{
+  "name": "Homesteader",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "minecraft:composter",
+  "sortnum": 100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:composter",
+      "title": "Homesteader",
+      "text": "$(bold)The composter, wool, carpets and beds, the fishing rod, the season calendar, Farmer's Delight's flint knife and straw, and the wild crops.$(br2)$(thing)Stone Age$(n), ring 1.$(br)$(thing)3 Focal Shards$(n).$(br)After Core."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:composter",
+      "text": "$(bold)Composter"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)composter, fishing rod, everything of its kind, seasonal calendar."
+    }
+  ]
+}

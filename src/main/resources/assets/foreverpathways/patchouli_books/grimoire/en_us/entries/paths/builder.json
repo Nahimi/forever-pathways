@@ -1,0 +1,24 @@
+{
+  "name": "Builder",
+  "category": "foreverpathways:paths/builder",
+  "icon": "minecraft:stone_bricks",
+  "sortnum": 100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:stone_bricks",
+      "title": "Builder",
+      "text": "$(bold)Stone bricks, smooth stone, cobble and stone stairs, slabs and walls, glass, natural terracotta, dyes, banners and the loom, frames, paintings, the armour stand, the mannequin and scaffolding.$(br2)$(thing)Stone Age$(n), ring 1.$(br)$(thing)5 Focal Shards$(n).$(br)After Core."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "supplementaries:soap/dirty_glass",
+      "text": "$(bold)Glass"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)smooth stone, armor stand, scaffolding, glass, glass pane, loom, item frame, glow item frame, painting, mannequin."
+    }
+  ]
+}

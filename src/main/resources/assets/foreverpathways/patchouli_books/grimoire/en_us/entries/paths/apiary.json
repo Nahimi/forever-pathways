@@ -1,0 +1,19 @@
+{
+  "name": "Apiary",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "minecraft:beehive",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:beehive",
+      "title": "Apiary",
+      "text": "$(bold)Beehives, honey blocks and honeycomb blocks.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)5 Focal Shards$(n).$(br)After Homesteader."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)beehive, honey block, honeycomb block."
+    }
+  ]
+}

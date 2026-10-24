@@ -1,0 +1,21 @@
+{
+  "name": "Trick Shots",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "supplementaries:quiver",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "supplementaries:quiver",
+      "title": "Trick Shots",
+      "text": "$(bold)The quiver, the slingshot and rope arrows.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)10 Focal Shards$(n).$(br)After Fletcher."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "supplementaries:slingshot",
+      "text": "$(bold)Slingshot",
+      "flag": "mod:supplementaries"
+    }
+  ],
+  "flag": "mod:supplementaries"
+}

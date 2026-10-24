@@ -1,0 +1,15 @@
+{
+  "name": "Taxidermy",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "butchery:bat_head_mount",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "butchery:bat_head_mount",
+      "title": "Taxidermy",
+      "text": "$(bold)Mounted heads, skeletons, furs and hides, with the enderman and spider heads.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)11 Focal Shards$(n).$(br)After Abattoir."
+    }
+  ],
+  "flag": "mod:butchery"
+}

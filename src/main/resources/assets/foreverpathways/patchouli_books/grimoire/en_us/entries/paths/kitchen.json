@@ -1,0 +1,26 @@
+{
+  "name": "Kitchen",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "farmersdelight:cooking_pot",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "farmersdelight:cooking_pot",
+      "title": "Kitchen",
+      "text": "$(bold)The cutting board, cooking pot, skillet, stove, knives, cabinets, baskets and the smoker.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)5 Focal Shards$(n).$(br)After Gardener."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "farmersdelight:cooking_pot",
+      "text": "$(bold)Cooking pot",
+      "flag": "mod:farmersdelight"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind, smoker."
+    }
+  ],
+  "flag": "mod:farmersdelight"
+}

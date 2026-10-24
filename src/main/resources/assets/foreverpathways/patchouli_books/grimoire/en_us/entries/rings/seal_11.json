@@ -1,0 +1,18 @@
+{
+  "name": "Seal of Current",
+  "category": "foreverpathways:rings",
+  "icon": "minecraft:gold_block",
+  "sortnum": 16,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Seal of Current",
+      "text": "$(bold)Bars rings 11 to 12: Relics and Flight.$(br2)$(li)$(thing)97 nodes$(n) owned$(br)$(li)$(thing)93 Focal Shards$(n)$(br)$(li)its task, below$(br2)35 nodes wait behind it."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Craft 256 copper cord$(n)$(br2)Counts only once everything else about the seal is ready."
+    }
+  ]
+}

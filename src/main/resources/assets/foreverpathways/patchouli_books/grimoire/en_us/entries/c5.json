@@ -1,0 +1,13 @@
+{
+  "name": "V. Your Past",
+  "category": "foreverpathways:start",
+  "icon": "minecraft:ender_pearl",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)You woke with no memory and a book whose letters glow. I knew you once.$(br2)What you knew is held in the ring. Take it back a piece at a time.$(br2)The Monoliths were here before either of us. Some of their stones still remember your name.",
+      "title": "V. Your Past"
+    }
+  ]
+}

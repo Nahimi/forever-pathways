@@ -1,0 +1,21 @@
+{
+  "name": "Amulets and Charms",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:concentration_amulet",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:concentration_amulet",
+      "title": "Amulets and Charms",
+      "text": "$(bold)Amulets, the heavy chain, charms, talismans, the betrayer's signet and the gold crown.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)64 Focal Shards$(n).$(br)After Jeweller."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:concentration_amulet",
+      "text": "$(bold)Concentration amulet",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

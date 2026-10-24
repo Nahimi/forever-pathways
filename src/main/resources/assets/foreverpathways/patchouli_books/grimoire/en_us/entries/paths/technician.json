@@ -1,0 +1,21 @@
+{
+  "name": "Technician",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:cogwheel",
+  "sortnum": 200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:cogwheel",
+      "title": "Technician",
+      "text": "$(bold)Andesite alloy, shafts, cogs, the hand crank, the wrench and goggles. The alloy needs iron nuggets, so the workshop really starts in the Iron Age.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)6 Focal Shards$(n).$(br)After Builder."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/kinetics/cogwheel",
+      "text": "$(bold)Cogwheel",
+      "flag": "mod:create"
+    }
+  ],
+  "flag": "mod:create"
+}

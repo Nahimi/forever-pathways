@@ -1,0 +1,31 @@
+{
+  "name": "Nerakyss",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "block_factorys_bosses:kraken_trident",
+  "sortnum": 800,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "block_factorys_bosses:kraken_trident",
+      "title": "Nerakyss",
+      "text": "$(bold)The kraken trident, its cannon, the undying tentacle and the trident. Needs Sirok as well.$(br2)$(thing)The Nether$(n), ring 8.$(br)$(thing)34 Focal Shards$(n).$(br)After Skor and Sirok."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill Nerakyss$(n)$(br2)Pays 8 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "block_factorys_bosses:kraken_trident",
+      "text": "$(bold)Kraken trident",
+      "flag": "mod:block_factorys_bosses"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)trident."
+    }
+  ],
+  "flag": "mod:block_factorys_bosses"
+}

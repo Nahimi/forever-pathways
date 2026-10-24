@@ -1,0 +1,24 @@
+{
+  "name": "The End",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:ender_pearl",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:ender_pearl",
+      "title": "The End",
+      "text": "$(bold)End stone, purpur, chorus, ender pearls and eyes, shulker boxes and the elytra.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)56 Focal Shards$(n).$(br)After Infernal."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 120 endermen$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)end stone, end rod, chorus fruit, chorus flower, chorus plant, popped chorus fruit, ender pearl, ender eye, ender chest, shulker shell, shulker box, elytra, dragon egg, dragon head, dragon breath, end crystal, purpur block, purpur pillar, purpur stairs, purpur slab, chorus fruit juice, endstone slab, chorus fruit de."
+    }
+  ]
+}

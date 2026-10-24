@@ -1,0 +1,24 @@
+{
+  "name": "Tireless",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:diamond_pickaxe",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:diamond_pickaxe",
+      "title": "Tireless",
+      "text": "$(bold)You no longer feel the pick. +5% breaking speed.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)40 Focal Shards$(n).$(br)After Diamond Tools."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 2,500 deepslate$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% breaking speed$(n)"
+    }
+  ]
+}

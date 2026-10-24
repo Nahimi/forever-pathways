@@ -1,0 +1,34 @@
+{
+  "name": "Skirmisher",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:stone_sword",
+  "sortnum": 200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:stone_sword",
+      "title": "Skirmisher",
+      "text": "$(bold)The stone sword, the cactem spear and the entity net. Your first real weapon. +5% attack damage.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)8 Focal Shards$(n).$(br)After Ranger."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 30 zombies$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% attack damage$(n)"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:stone_sword",
+      "text": "$(bold)Stone sword"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)stone sword, cactem spear, entity net."
+    }
+  ]
+}

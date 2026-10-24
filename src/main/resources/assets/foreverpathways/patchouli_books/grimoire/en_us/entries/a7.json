@@ -1,0 +1,30 @@
+{
+  "name": "A7. Getting About",
+  "category": "foreverpathways:beyond",
+  "icon": "waystones:waystone",
+  "sortnum": 7,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)$(li)$(thing)Horses$(n) take shoes, a cart and an upgraded saddle: $(l:paths/rider)Rider$(n), $(l:paths/cartwright)Cartwright$(n), $(l:paths/tack)Tack$(n).$(br)$(li)$(thing)Trains$(n): ring 10. $(thing)Airships$(n): $(l:paths/aeronautics)Aeronautics$(n), ring 12.$(br2)Your legs start at 85% and reach 110% only at ring 14. A horse is worth having early.",
+      "title": "A7. Getting About"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Monoliths",
+      "text": "$(bold)Great stones stand across the world, each holding a $(thing)waystone$(n).$(br2)$(li)Right-click one to wake it.$(br)$(li)From any woken waystone, travel to the others you have woken.$(br2)They answer you from $(l:paths/explorer)Explorer$(n), ring 5."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Your Own Waystones",
+      "text": "$(bold)$(li)$(l:paths/explorer)Explorer$(n), ring 5: use the Monoliths' waystones. You cannot move or break them.$(br)$(li)$(l:paths/attunement)Attunement$(n), ring 11: craft and place your own, with warp stones and scrolls.$(br)$(li)$(l:paths/warp_network)Warp Network$(n), ring 13: sharestones, portstones and warp plates."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "waystones:waystone",
+      "recipe2": "waystones:warp_stone",
+      "title": "Waystone and Warp Stone"
+    }
+  ],
+  "flag": "mod:waystones"
+}

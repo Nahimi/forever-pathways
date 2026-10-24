@@ -1,0 +1,24 @@
+{
+  "name": "Fleet Foot",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:iron_boots",
+  "sortnum": 800,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:iron_boots",
+      "title": "Fleet Foot",
+      "text": "$(bold)Light on your feet. +2% movement speed.$(br2)$(thing)The Nether$(n), ring 8.$(br)$(thing)34 Focal Shards$(n).$(br)After Pathfinder."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Travel 25,000 blocks$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+2% movement speed$(n)"
+    }
+  ]
+}

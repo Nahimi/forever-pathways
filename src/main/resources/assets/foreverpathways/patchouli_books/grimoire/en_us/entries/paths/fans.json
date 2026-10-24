@@ -1,0 +1,21 @@
+{
+  "name": "Fans and Depots",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:encased_fan",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:encased_fan",
+      "title": "Fans and Depots",
+      "text": "$(bold)The encased fan and the depot.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)28 Focal Shards$(n).$(br)After Andesite Casing."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/kinetics/encased_fan",
+      "text": "$(bold)Encased fan",
+      "flag": "mod:create"
+    }
+  ],
+  "flag": "mod:create"
+}

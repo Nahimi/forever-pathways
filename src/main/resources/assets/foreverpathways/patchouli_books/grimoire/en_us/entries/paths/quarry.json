@@ -1,0 +1,24 @@
+{
+  "name": "Quarry",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:stone_pickaxe",
+  "sortnum": 100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:stone_pickaxe",
+      "title": "Quarry",
+      "text": "$(bold)The stone pickaxe, cobblestone from rocks, the natural stones, the furnace, coal and torches (lit, unlit, burnt and smouldering), the fire starter, and copper ore to smelt into ingots. Needs Woodcutter as well, for the crafting table.$(br2)$(thing)Stone Age$(n), ring 1.$(br)$(thing)5 Focal Shards$(n).$(br)After Core and Woodcutter."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:stone_pickaxe",
+      "text": "$(bold)Stone pickaxe"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)stone pickaxe, stone, cobblestone, mossy cobblestone, deepslate, cobbled deepslate, andesite, diorite, granite, tuff, calcite, sandstone, red sandstone, smooth basalt, dripstone block, pointed dripstone, furnace, torch, coal ore, deepslate coal ore, coal, charcoal, coal block, jack o lantern, copper ore, deepslate copper ore, raw copper, raw copper block, copper ingot, asurine, crimsite, limestone, ochrum, scorchia, scoria, veridium, reefstone, algal reefstone, blasted sandstone."
+    }
+  ]
+}

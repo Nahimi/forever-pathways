@@ -1,0 +1,20 @@
+{
+  "name": "Outfitter",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "legendarysurvivaloverhaul:snow_chestplate",
+  "sortnum": 200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "legendarysurvivaloverhaul:snow_chestplate",
+      "title": "Outfitter",
+      "text": "$(bold)Snow and desert clothing, the sewing table, warm and cold string and the thermometer. +2% movement speed.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)5 Focal Shards$(n).$(br)After Ranger."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+2% movement speed$(n)"
+    }
+  ],
+  "flag": "mod:legendarysurvivaloverhaul"
+}

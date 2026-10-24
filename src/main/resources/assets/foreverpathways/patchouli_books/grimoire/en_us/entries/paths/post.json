@@ -1,0 +1,26 @@
+{
+  "name": "Post",
+  "category": "foreverpathways:paths/technician",
+  "icon": "envelope:mailbox",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "envelope:mailbox",
+      "title": "Post",
+      "text": "$(bold)Letters and the quill, address tags, the mailbox, pigeonholes and paper boxes. Pigeons carry the mail by day for seeds; bats by night for a spider eye.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)16 Focal Shards$(n).$(br)After Technician."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Craft 24 paper$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "envelope:mailbox",
+      "text": "$(bold)Mailbox",
+      "flag": "mod:envelope"
+    }
+  ],
+  "flag": "mod:envelope"
+}

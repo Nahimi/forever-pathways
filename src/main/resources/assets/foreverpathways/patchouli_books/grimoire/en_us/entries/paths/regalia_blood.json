@@ -1,0 +1,21 @@
+{
+  "name": "Blood Robes",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:cultist_helmet",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:cultist_helmet",
+      "title": "Blood Robes",
+      "text": "$(bold)The cultist robes: helmet, chestplate, leggings and boots.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)64 Focal Shards$(n).$(br)After Blood."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:cultist_helmet_crafting",
+      "text": "$(bold)Cultist helmet",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

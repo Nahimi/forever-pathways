@@ -1,0 +1,6 @@
+{
+  "name": "Nodes",
+  "description": "Every node: cost, task, what must come first, and what it unlocks.",
+  "icon": "minecraft:crafting_table",
+  "sortnum": 3
+}

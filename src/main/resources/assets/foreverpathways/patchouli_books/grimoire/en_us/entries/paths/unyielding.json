@@ -1,0 +1,24 @@
+{
+  "name": "Unyielding",
+  "category": "foreverpathways:paths/constitution",
+  "icon": "minecraft:shulker_shell",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:shulker_shell",
+      "title": "Unyielding",
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)88 Focal Shards$(n).$(br)After Steadfast."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Catch 500 fish$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% maximum health$(n)"
+    }
+  ]
+}

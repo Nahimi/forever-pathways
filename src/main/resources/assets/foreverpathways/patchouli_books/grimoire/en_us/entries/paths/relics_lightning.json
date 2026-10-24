@@ -1,0 +1,21 @@
+{
+  "name": "Lightning Relics",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:lightning_bottle",
+  "sortnum": 1200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:lightning_bottle",
+      "title": "Lightning Relics",
+      "text": "$(bold)The lightning rod staff, bottled lightning and the energised core.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)74 Focal Shards$(n).$(br)After Lightning Robes."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:energized_core",
+      "text": "$(bold)Energized core",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

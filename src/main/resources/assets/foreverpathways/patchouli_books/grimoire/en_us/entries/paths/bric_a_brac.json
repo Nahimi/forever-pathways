@@ -1,0 +1,31 @@
+{
+  "name": "Bric-a-brac",
+  "category": "foreverpathways:paths/builder",
+  "icon": "supplementaries:blackboard",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "supplementaries:blackboard",
+      "title": "Bric-a-brac",
+      "text": "$(bold)Whatever Supplementaries has left: blackboards, barnacles, music discs, banner patterns and anything a later update adds.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)16 Focal Shards$(n).$(br)After Trimmings."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)Craft-locked only.$(n) Anyone can place, use and break these; the node buys the recipe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "supplementaries:blackboard",
+      "text": "$(bold)Blackboard",
+      "flag": "mod:supplementaries"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind."
+    }
+  ],
+  "flag": "mod:supplementaries"
+}

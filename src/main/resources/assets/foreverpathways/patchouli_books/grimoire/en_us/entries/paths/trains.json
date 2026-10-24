@@ -1,0 +1,26 @@
+{
+  "name": "Trains",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:track_station",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:track_station",
+      "title": "Trains",
+      "text": "$(bold)Tracks, stations, signals, schedules and train parts.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)79 Focal Shards$(n).$(br)After Brass."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Travel 30,000 blocks$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/kinetics/track_station",
+      "text": "$(bold)Track station",
+      "flag": "mod:create"
+    }
+  ],
+  "flag": "mod:create"
+}

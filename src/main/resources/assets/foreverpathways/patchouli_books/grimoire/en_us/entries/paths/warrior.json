@@ -1,0 +1,24 @@
+{
+  "name": "Warrior",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:diamond_sword",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:diamond_sword",
+      "title": "Warrior",
+      "text": "$(bold)Every blow lands where you mean it. +15% attack damage.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)28 Focal Shards$(n).$(br)After Veteran."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 300 monsters$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+15% attack damage$(n)"
+    }
+  ]
+}

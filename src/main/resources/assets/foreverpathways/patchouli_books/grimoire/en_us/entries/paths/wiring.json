@@ -1,0 +1,26 @@
+{
+  "name": "Wiring",
+  "category": "foreverpathways:paths/technician",
+  "icon": "powergrid:copper_cord",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "powergrid:copper_cord",
+      "title": "Wiring",
+      "text": "$(bold)The first electricity: cord, wire of every metal, junctions, connectors, pins, the wire cutter and the potato battery. Needs Copper Tools as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)16 Focal Shards$(n).$(br)After Technician and Copper Tools."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Smelt 48 copper ingots$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "powergrid:crafting/copper_cord",
+      "text": "$(bold)Copper cord",
+      "flag": "mod:powergrid"
+    }
+  ],
+  "flag": "mod:powergrid"
+}

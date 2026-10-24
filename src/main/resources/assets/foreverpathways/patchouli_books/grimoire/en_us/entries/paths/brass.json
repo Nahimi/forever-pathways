@@ -1,0 +1,31 @@
+{
+  "name": "Brass",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:brass_ingot",
+  "sortnum": 800,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:brass_ingot",
+      "title": "Brass",
+      "text": "$(bold)Zinc, brass, rose quartz, precision mechanisms and the rest of Create. Needs Infernal as well, for the blaze burner that heats the mixer.$(br2)$(thing)The Nether$(n), ring 8.$(br)$(thing)56 Focal Shards$(n).$(br)After Pressing and Mixing and Infernal."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 160 zinc ore$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/materials/brass_ingot_from_compacting",
+      "text": "$(bold)Brass ingot",
+      "flag": "mod:create"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind."
+    }
+  ],
+  "flag": "mod:create"
+}

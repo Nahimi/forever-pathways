@@ -1,0 +1,18 @@
+{
+  "name": "Seal of Ash",
+  "category": "foreverpathways:rings",
+  "icon": "minecraft:blackstone",
+  "sortnum": 15,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Seal of Ash",
+      "text": "$(bold)Bars ring 10: Industry.$(br2)$(li)$(thing)87 nodes$(n) owned$(br)$(li)$(thing)83 Focal Shards$(n)$(br)$(li)its task, below$(br2)23 nodes wait behind it."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Breed 250 animals$(n)$(br2)Counts only once everything else about the seal is ready."
+    }
+  ]
+}

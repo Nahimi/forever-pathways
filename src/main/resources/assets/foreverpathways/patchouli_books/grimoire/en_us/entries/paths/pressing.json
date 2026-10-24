@@ -1,0 +1,26 @@
+{
+  "name": "Pressing and Mixing",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:mechanical_press",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:mechanical_press",
+      "title": "Pressing and Mixing",
+      "text": "$(bold)The press, the mixer, the basin, the whisk and the metal sheets, plus zinc ore to mine for brass.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)28 Focal Shards$(n).$(br)After Andesite Casing."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/kinetics/mechanical_press",
+      "text": "$(bold)Mechanical press",
+      "flag": "mod:create"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)zinc ore, deepslate zinc ore, raw zinc, raw zinc block."
+    }
+  ],
+  "flag": "mod:create"
+}

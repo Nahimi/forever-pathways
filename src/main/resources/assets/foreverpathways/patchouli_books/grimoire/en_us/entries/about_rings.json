@@ -1,0 +1,27 @@
+{
+  "name": "Rings",
+  "category": "foreverpathways:rings",
+  "icon": "minecraft:target",
+  "sortnum": 0,
+  "pages": [
+    {
+      "type": "patchouli:image",
+      "title": "The Ring",
+      "images": [
+        "foreverpathways:textures/gui/book/rings.png"
+      ],
+      "border": false,
+      "text": "$(bold)The Core at the centre. Each dot is a node, coloured by its road. Red rings are still sealed; each padlock is a seal."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Rings",
+      "text": "$(bold)$(thing)15 rings$(n) out from the Core, each with a name: Stone Age, Copper Age, Iron Age, out to Eye Ring.$(br2)A node needs the node before it, whatever else it needs, and its ring unsealed."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)Cost climbs with the ring: a few shards on ring 2, about a hundred on ring 14.$(br2)Seals count how many nodes you own, not which. Breadth gets you out, not one long road."
+    }
+  ],
+  "priority": true
+}

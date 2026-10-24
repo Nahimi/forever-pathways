@@ -1,0 +1,21 @@
+{
+  "name": "Fire Relics",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:blaze_spell_book",
+  "sortnum": 1200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:blaze_spell_book",
+      "title": "Fire Relics",
+      "text": "$(bold)The blaze spellbook, pyrium, the fire blades, the fireward ring and the infernal sorcerer's chestplate.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)74 Focal Shards$(n).$(br)After Fire Robes."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:cinderous_soulcaller",
+      "text": "$(bold)Cinderous soulcaller",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

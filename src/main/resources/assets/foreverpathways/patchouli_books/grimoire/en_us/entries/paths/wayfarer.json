@@ -1,0 +1,24 @@
+{
+  "name": "Wayfarer",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:netherite_boots",
+  "sortnum": 1200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:netherite_boots",
+      "title": "Wayfarer",
+      "text": "$(bold)The road is shorter than it was. +2% movement speed.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)65 Focal Shards$(n).$(br)After Windrunner."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Sprint 40,000 blocks$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+2% movement speed$(n)"
+    }
+  ]
+}

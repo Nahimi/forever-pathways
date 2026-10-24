@@ -1,0 +1,35 @@
+{
+  "name": "Rider",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:saddle",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:saddle",
+      "title": "Rider",
+      "text": "$(bold)Saddles, leather horse armour, the carrot on a stick, and shoes for a horse's hooves. +10% horse speed.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)14 Focal Shards$(n).$(br)After Scout."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Ride 4,000 blocks on horseback$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+10% horse$(n)"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "icys-better-horses:horse_hooves_gear",
+      "text": "$(bold)Horse hooves gear",
+      "flag": "mod:icys_better_horses"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)horse hooves gear, saddle, carrot on a stick, leather horse armor."
+    }
+  ]
+}

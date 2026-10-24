@@ -1,0 +1,15 @@
+{
+  "name": "Chromatics",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:refined_radiance",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:refined_radiance",
+      "title": "Chromatics",
+      "text": "$(bold)Chromatic compound, refined radiance, shadow steel and their casings.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)66 Focal Shards$(n).$(br)After Steam."
+    }
+  ],
+  "flag": "mod:create"
+}

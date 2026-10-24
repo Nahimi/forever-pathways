@@ -1,0 +1,24 @@
+{
+  "name": "Explosives",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:tnt",
+  "sortnum": 800,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:tnt",
+      "title": "Explosives",
+      "text": "$(bold)TNT, the TNT minecart and fireworks.$(br2)$(thing)The Nether$(n), ring 8.$(br)$(thing)34 Focal Shards$(n).$(br)After Mechanisms."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 80 creepers$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)tnt, tnt minecart, firework rocket, firework star."
+    }
+  ]
+}

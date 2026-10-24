@@ -1,0 +1,21 @@
+{
+  "name": "Animal Feed",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "farmersdelight:dog_food",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "farmersdelight:dog_food",
+      "title": "Animal Feed",
+      "text": "$(bold)Dog food, horse feed and fodder.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)5 Focal Shards$(n).$(br)After Husbandry."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "farmersdelight:horse_feed",
+      "text": "$(bold)Horse feed",
+      "flag": "mod:farmersdelight"
+    }
+  ],
+  "flag": "mod:farmersdelight"
+}

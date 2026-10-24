@@ -1,0 +1,21 @@
+{
+  "name": "Evocation Relics",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:artificer_cane",
+  "sortnum": 1200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:artificer_cane",
+      "title": "Evocation Relics",
+      "text": "$(bold)The evoker spellbook, the artificer cane and the graybeard staff.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)74 Focal Shards$(n).$(br)After Evocation Robes."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:artificer_cane",
+      "text": "$(bold)Artificer cane",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

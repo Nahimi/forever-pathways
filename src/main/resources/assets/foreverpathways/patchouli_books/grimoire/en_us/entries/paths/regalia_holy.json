@@ -1,0 +1,21 @@
+{
+  "name": "Holy Robes",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:priest_helmet",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:priest_helmet",
+      "title": "Holy Robes",
+      "text": "$(bold)The priest robes: helmet, chestplate, leggings and boots.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)64 Focal Shards$(n).$(br)After Holy."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:priest_helmet_crafting",
+      "text": "$(bold)Priest helmet",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

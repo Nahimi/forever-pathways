@@ -1,0 +1,21 @@
+{
+  "name": "Greater Ink",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:epic_ink",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:epic_ink",
+      "title": "Greater Ink",
+      "text": "$(bold)Epic ink, the diamond spellbook and mithril.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)64 Focal Shards$(n).$(br)After Scribe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:diamond_spell_book",
+      "text": "$(bold)Diamond spell book",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Golden Harvest",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "minecraft:golden_carrot",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:golden_carrot",
+      "title": "Golden Harvest",
+      "text": "$(bold)Golden apples, golden carrots and glistering melon. Needs Gold as well.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)19 Focal Shards$(n).$(br)After Larder and Gold."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Harvest 1,500 crops$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:golden_apple",
+      "text": "$(bold)Golden apple"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)golden apple, golden carrot, glistering melon slice, glistering melon slice de, golden apple de, golden carrot de."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Netherite",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:netherite_ingot",
+  "sortnum": 1200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:netherite_ingot",
+      "title": "Netherite",
+      "text": "$(bold)Netherite scrap, ingots, blocks, the upgrade template and the lodestone.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)65 Focal Shards$(n).$(br)After Infernal."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 16 ancient debris$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:lodestone",
+      "text": "$(bold)Lodestone"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)netherite module, netherite scrap, netherite ingot, netherite block, netherite upgrade smithing template, lodestone."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Study",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:inscription_table",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:inscription_table",
+      "title": "Study",
+      "text": "$(bold)The inscription table, copper and iron spellbooks, uncommon ink and the pedestal.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)33 Focal Shards$(n).$(br)After Magician."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:inscription_table",
+      "text": "$(bold)Inscription table",
+      "flag": "mod:irons_spellbooks"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)magic cloth."
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

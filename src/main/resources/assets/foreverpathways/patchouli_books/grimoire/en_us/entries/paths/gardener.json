@@ -1,0 +1,24 @@
+{
+  "name": "Gardener",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "minecraft:stone_hoe",
+  "sortnum": 200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:stone_hoe",
+      "title": "Gardener",
+      "text": "$(bold)The stone hoe, at last, and the crops to plant with it: cabbage, tomato, onion, rice, flax, torchflowers and pitchers, with crates, bales and mushroom colonies.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)4 Focal Shards$(n).$(br)After Homesteader."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:stone_hoe",
+      "text": "$(bold)Stone hoe"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)stone hoe, torchflower, torchflower seeds, pitcher plant, pitcher pod."
+    }
+  ]
+}

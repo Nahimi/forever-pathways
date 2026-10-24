@@ -1,0 +1,24 @@
+{
+  "name": "Deep Lungs",
+  "category": "foreverpathways:paths/constitution",
+  "icon": "minecraft:turtle_helmet",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:turtle_helmet",
+      "title": "Deep Lungs",
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)64 Focal Shards$(n).$(br)After Indomitable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Spend 45 minutes underwater$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% maximum health$(n)"
+    }
+  ]
+}

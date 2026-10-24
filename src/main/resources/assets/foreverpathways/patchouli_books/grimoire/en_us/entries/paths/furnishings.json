@@ -1,0 +1,26 @@
+{
+  "name": "Furnishings",
+  "category": "foreverpathways:paths/builder",
+  "icon": "handcrafted:oak_couch",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "handcrafted:oak_couch",
+      "title": "Furnishings",
+      "text": "$(bold)Couches, desks, shelves, nightstands, counters, cupboards, drawers, cushions and hammocks.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)10 Focal Shards$(n).$(br)After Seating."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)Craft-locked only.$(n) Anyone can place, use and break these; the node buys the recipe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "handcrafted:oak_couch",
+      "text": "$(bold)Oak couch",
+      "flag": "mod:handcrafted"
+    }
+  ],
+  "flag": "mod:handcrafted"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Grove",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "dynamictrees:staff",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "dynamictrees:staff",
+      "title": "Grove",
+      "text": "$(bold)The dendro staff and potions, the dirt bucket and the giant tree seeds.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)9 Focal Shards$(n).$(br)After Forager."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Plant 80 tree seeds$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "dynamictrees:dirt_bucket",
+      "text": "$(bold)Dirt bucket",
+      "flag": "mod:dynamictrees"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)staff, dendro potion, dirt bucket."
+    }
+  ],
+  "flag": "mod:dynamictrees"
+}

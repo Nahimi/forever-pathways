@@ -1,0 +1,15 @@
+{
+  "name": "Cold Eye",
+  "category": "foreverpathways:eyes",
+  "icon": "endrem:cold_eye",
+  "sortnum": 21,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "endrem:cold_eye",
+      "title": "Cold Eye",
+      "text": "$(bold)Only Skor drops this eye. This node lets you use it in the ancient portal.$(br2)$(thing)28 Focal Shards$(n).$(br2)Climb 5,000 blocks."
+    }
+  ],
+  "flag": "mod:endrem"
+}

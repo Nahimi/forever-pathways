@@ -1,0 +1,24 @@
+{
+  "name": "Second Wind",
+  "category": "foreverpathways:paths/constitution",
+  "icon": "minecraft:golden_apple",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:golden_apple",
+      "title": "Second Wind",
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)23 Focal Shards$(n).$(br)After Thick Skinned."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Survive 10 days without dying$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% maximum health$(n)"
+    }
+  ]
+}

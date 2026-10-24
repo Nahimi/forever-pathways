@@ -1,0 +1,30 @@
+{
+  "name": "Infernal",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:blaze_rod",
+  "sortnum": 800,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:blaze_rod",
+      "title": "Infernal",
+      "text": "$(bold)The Nether's fire: blaze rods and powder, the blaze burner, fire charges, wither skeleton skulls, gilded blackstone, the respawn anchor and ancient debris.$(br2)$(thing)The Nether$(n), ring 8.$(br)$(thing)34 Focal Shards$(n).$(br)After Nether."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 40 blazes$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/kinetics/empty_blaze_burner",
+      "text": "$(bold)Empty blaze burner",
+      "flag": "mod:create"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)blaze rod, blaze powder, fire charge, wither skeleton skull, gilded blackstone, respawn anchor, ancient debris, empty blaze burner, blaze burner."
+    }
+  ]
+}

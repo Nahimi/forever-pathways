@@ -1,0 +1,24 @@
+{
+  "name": "Roadwise",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:map",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:map",
+      "title": "Roadwise",
+      "text": "$(bold)You know the ground before you reach it. +2% movement speed.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)40 Focal Shards$(n).$(br)After Fleet Foot."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Walk 40,000 blocks$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+2% movement speed$(n)"
+    }
+  ]
+}

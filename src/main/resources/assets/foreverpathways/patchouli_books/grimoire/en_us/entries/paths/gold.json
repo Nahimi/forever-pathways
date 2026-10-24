@@ -1,0 +1,30 @@
+{
+  "name": "Gold",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:gold_ingot",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:gold_ingot",
+      "title": "Gold",
+      "text": "$(bold)Gold ingots, nuggets, blocks and the clock.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)18 Focal Shards$(n).$(br)After Deep Prospector."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 64 gold ore$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "supplementaries:gold_bars",
+      "text": "$(bold)Gold bars",
+      "flag": "mod:supplementaries"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)gold ingot, gold nugget, gold block, light weighted pressure plate."
+    }
+  ]
+}

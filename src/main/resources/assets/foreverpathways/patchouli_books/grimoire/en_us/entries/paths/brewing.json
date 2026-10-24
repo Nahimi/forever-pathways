@@ -1,0 +1,29 @@
+{
+  "name": "Brewing",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:brewing_stand",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:brewing_stand",
+      "title": "Brewing",
+      "text": "$(bold)The brewing stand and its ingredients. Needs Alchemy as well.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)40 Focal Shards$(n).$(br)After Nether and Alchemy."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Harvest 128 nether wart$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:brewing_stand",
+      "text": "$(bold)Brewing stand"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)brewing stand, fermented spider eye, ghast tear, magma cream, potion, splash potion, lingering potion, rabbit foot, potion de."
+    }
+  ]
+}

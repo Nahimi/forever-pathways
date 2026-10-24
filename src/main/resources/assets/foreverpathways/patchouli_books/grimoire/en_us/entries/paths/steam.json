@@ -1,0 +1,21 @@
+{
+  "name": "Steam",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:steam_engine",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:steam_engine",
+      "title": "Steam",
+      "text": "$(bold)Steam engines, whistles, backtanks and diving gear, and the potato cannon.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)48 Focal Shards$(n).$(br)After Brass."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/kinetics/steam_engine",
+      "text": "$(bold)Steam engine",
+      "flag": "mod:create"
+    }
+  ],
+  "flag": "mod:create"
+}

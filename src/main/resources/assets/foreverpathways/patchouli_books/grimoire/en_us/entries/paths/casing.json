@@ -1,0 +1,20 @@
+{
+  "name": "Andesite Casing",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:andesite_casing",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:andesite_casing",
+      "title": "Andesite Casing",
+      "text": "$(bold)Andesite casing and the encased shafts and cogs. The workshop starts here.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)29 Focal Shards$(n).$(br)After Waterworks."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 384 andesite$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:create"
+}

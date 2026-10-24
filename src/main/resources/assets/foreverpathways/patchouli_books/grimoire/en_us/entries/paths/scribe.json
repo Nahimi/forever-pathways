@@ -1,0 +1,21 @@
+{
+  "name": "Scribe",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:scroll_forge",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:scroll_forge",
+      "title": "Scribe",
+      "text": "$(bold)The scroll forge, the arcane anvil, rare ink and the gold spellbook.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)54 Focal Shards$(n).$(br)After Arcane Essence."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:scroll_forge",
+      "text": "$(bold)Scroll forge",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

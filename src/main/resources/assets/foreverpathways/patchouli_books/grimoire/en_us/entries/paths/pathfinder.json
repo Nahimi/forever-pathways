@@ -1,0 +1,24 @@
+{
+  "name": "Pathfinder",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:chainmail_boots",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:chainmail_boots",
+      "title": "Pathfinder",
+      "text": "$(bold)You find the quick ways. +2% movement speed.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)23 Focal Shards$(n).$(br)After Long Stride."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Sprint 4,000 blocks$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+2% movement speed$(n)"
+    }
+  ]
+}

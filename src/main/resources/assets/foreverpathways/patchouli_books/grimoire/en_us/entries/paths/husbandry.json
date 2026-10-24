@@ -1,0 +1,15 @@
+{
+  "name": "Husbandry",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "butchery:bone_cleaver",
+  "sortnum": 200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "butchery:bone_cleaver",
+      "title": "Husbandry",
+      "text": "$(bold)Bone and copper cleavers, hacksaws, hammers and skinning knives, the hook, the butcher's table and animal fat for the oil can.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)4 Focal Shards$(n).$(br)After Homesteader."
+    }
+  ],
+  "flag": "mod:butchery"
+}

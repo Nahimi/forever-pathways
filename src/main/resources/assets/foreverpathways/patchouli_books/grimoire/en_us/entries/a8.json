@@ -1,0 +1,19 @@
+{
+  "name": "A8. Smoke",
+  "category": "foreverpathways:beyond",
+  "icon": "adchimneys:small_brick_chimney",
+  "sortnum": 8,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)$(li)A $(thing)chimney$(n) vents smoke off the roof.$(br)$(li)$(thing)Pipes$(n) and $(thing)ducts$(n) carry it.$(br)$(li)$(thing)Vents$(n) release it where you want.$(br)$(li)$(thing)Pumps$(n) push it, and take a redstone signal.",
+      "title": "A8. Smoke"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Where They Unlock",
+      "text": "$(bold)$(li)$(l:paths/chimneys)Chimneys$(n), ring 4: stone, cobble, brick.$(br)$(li)$(l:paths/flues)Flues$(n), ring 5: glass and metal, pipes, ducts, vents.$(br)$(li)$(l:paths/draught)Draught$(n), ring 7: the pumps."
+    }
+  ],
+  "flag": "mod:adchimneys"
+}

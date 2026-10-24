@@ -1,0 +1,18 @@
+{
+  "key.categories.foreverpathways": "Forever Pathways",
+  "key.foreverpathways.open": "Open Pathways",
+  "tooltip.foreverpathways.tab": "Pathways",
+  "attribute.name.foreverpathways.boat_speed": "Boat Speed",
+  "tooltip.foreverpathways.grimoire": "The Forever Grimoire",
+  "key.foreverpathways.grimoire": "Open the Grimoire",
+  "attribute.name.foreverpathways.horse_speed": "Horse Speed",
+  "foreverpathways.configuration.title": "Forever Pathways",
+  "foreverpathways.configuration.notices": "Notices",
+  "foreverpathways.configuration.notices.tooltip": "What Pathways shows on your screen while you play. Only affects you.",
+  "config.foreverpathways.notices.progress": "Progress popups",
+  "config.foreverpathways.notices.progress.tooltip": "A small popup at the side of the screen when a task or bounty moves forward.",
+  "config.foreverpathways.notices.banner": "Completion banner",
+  "config.foreverpathways.notices.banner.tooltip": "A short banner at the top of the screen when a task or bounty is complete. When off, a line in chat says so instead.",
+  "config.foreverpathways.notices.sound": "Completion sound",
+  "config.foreverpathways.notices.sound.tooltip": "A sound when a task or bounty is complete."
+}

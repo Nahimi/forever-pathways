@@ -1,0 +1,490 @@
+# This is an example neoforge.mods.toml file. It contains the data relating to the loading mods.
+# There are several mandatory fields (#mandatory), and many more that are optional (#optional).
+# The overall format is standard TOML format, v0.5.0.
+# Note that there are a couple of TOML lists in this file.
+# Find more information on toml format here:  https://github.com/toml-lang/toml
+
+# The name of the mod loader type to load - for regular FML @Mod mods it should be javafml
+modLoader="javafml" #mandatory
+
+# A version range to match for said mod loader - for regular FML @Mod it will be the FML version. This is currently 2.
+loaderVersion="${loader_version_range}" #mandatory
+
+# The license for you mod. This is mandatory metadata and allows for easier comprehension of your redistributive properties.
+# Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
+license="${mod_license}"
+
+# A URL to refer people to when problems occur with this mod
+issueTrackerURL="${mod_repo_url}/issues"
+
+# A list of mods - how many allowed here is determined by the individual mod loader
+[[mods]] #mandatory
+
+# The modid of the mod
+modId="${mod_id}" #mandatory
+
+# The version number of the mod
+version="${mod_version}" #mandatory
+
+# A display name for the mod
+displayName="${mod_name}" #mandatory
+
+# A URL to query for updates for this mod. See the JSON update specification https://docs.neoforged.net/docs/misc/updatechecker/
+#updateJSONURL="https://change.me.example.invalid/updates.json" #optional
+
+# A URL for the "homepage" for this mod, displayed in the mod UI
+displayURL="${mod_repo_url}"
+
+# A file name (in the root of the mod JAR) containing a logo for display
+logoFile="foreverpathways_logo.png"
+
+# A text field displayed in the mod UI
+#credits="" #optional
+
+# The authors of the mod, displayed in the mod UI (optional)
+authors="${mod_authors}"
+
+# The description text for the mod (multi line!) (#mandatory)
+description='''
+A ring-shaped skill tree built on ProgressiveStages. Earn Focal Shards from tasks and daily bounties, unlock
+nodes ring by ring, break the Seals between the ages, and gather the sixteen eyes. Comes with the Forever
+Grimoire guide when Patchouli is installed.
+'''
+
+# The [[mixins]] block allows you to declare your mixin config to FML so that it gets loaded.
+[[mixins]]
+config="${mod_id}.mixins.json"
+
+# The [[accessTransformers]] block allows you to declare where your AT file is.
+# If this block is omitted, a fallback attempt will be made to load an AT from META-INF/accesstransformer.cfg
+#[[accessTransformers]]
+#file="META-INF/accesstransformer.cfg"
+
+# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
+[[dependencies.${mod_id}]] #optional
+    # the modid of the dependency
+    modId="neoforge" #mandatory
+    # The type of the dependency. Can be one of "required", "optional", "incompatible" or "discouraged" (case insensitive).
+    # 'required' requires the mod to exist, 'optional' does not
+    # 'incompatible' will prevent the game from loading when the mod exists, and 'discouraged' will show a warning
+    type="required" #mandatory
+    # Optional field describing why the dependency is required or why it is incompatible
+    # reason="..."
+    # The version range of the dependency
+    versionRange="[${neo_version},)" #mandatory
+    # An ordering relationship for the dependency.
+    # BEFORE - This mod is loaded BEFORE the dependency
+    # AFTER - This mod is loaded AFTER the dependency
+    ordering="NONE"
+    # Side this dependency is applied on - BOTH, CLIENT, or SERVER
+    side="BOTH"
+
+# Here's another dependency
+[[dependencies.${mod_id}]]
+    modId="progressivestages"
+    type="required"
+    versionRange="[3,)"
+    ordering="AFTER"
+    side="BOTH"
+
+
+[[dependencies.${mod_id}]]
+    modId="patchouli"
+    type="optional"
+    reason="Holds the Forever Grimoire, the in-game guide to the tree. Without it the guide tab and button are simply hidden."
+    versionRange="[1.21.1-93,)"
+    ordering="AFTER"
+    side="CLIENT"
+
+[[dependencies.${mod_id}]]
+    modId="legendarytabs"
+    type="optional"
+    versionRange="[1,)"
+    ordering="NONE"
+    side="BOTH"
+
+# The rest of the Forever Server pack. Every one of these is OPTIONAL: Forever Pathways is built so
+# that the whole tree can be finished on vanilla plus ProgressiveStages alone. What these mods do is
+# fill the nodes that are already there. Any labour naming something an install does not have is
+# dropped at load (see Availability.java), so no node ever becomes impossible. They are listed here so
+# that they show in the mod list, and so that Pathways loads after them and sees their items.
+
+[[dependencies.${mod_id}]]
+    modId="create"
+    type="optional"
+    reason="Create: cogs, belts, brass, trains and the contraptions"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="powergrid"
+    type="optional"
+    reason="PowerGrid: wiring, lighting, generators and high voltage"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="irons_spellbooks"
+    type="optional"
+    reason="Iron's Spells 'n Spellbooks: the eight schools, robes and relics"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="irons_lib"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="supplementaries"
+    type="optional"
+    reason="Supplementaries: the decoration spread across rings 2 to 6"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="handcrafted"
+    type="optional"
+    reason="Handcrafted: the furniture nodes"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="farmersdelight"
+    type="optional"
+    reason="Farmer's Delight: the kitchen"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="butchery"
+    type="optional"
+    reason="Butchery: cleavers, the abattoir and the butcher's shop"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="baking_process"
+    type="optional"
+    reason="The Baking Process: flour, dough and bread"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="legendarysurvivaloverhaul"
+    type="optional"
+    reason="Legendary Survival Overhaul: thirst, temperature and climate gear"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="ists_harder_early"
+    type="optional"
+    reason="It's Harder Early: raw ore nuggets and the early grind"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="block_factorys_bosses"
+    type="optional"
+    reason="Bosses' Rise: the six bosses that carry the eyes"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="endrem"
+    type="optional"
+    reason="End Remastered: the sixteen eyes"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="cnb"
+    type="optional"
+    reason="Creatures and Beasts"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="spawn"
+    type="optional"
+    reason="Spawn: its animals, buckets and nets"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="mutantmonsters"
+    type="optional"
+    reason="Mutant Monsters"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="guardvillagers"
+    type="optional"
+    reason="Guard Villagers"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="dynamictrees"
+    type="optional"
+    reason="Dynamic Trees: the grove and its seeds"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="dynamictreesplus"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="waystones"
+    type="optional"
+    reason="Waystones: the warp network"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="monobank"
+    type="optional"
+    reason="Monobank"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="backpacked"
+    type="optional"
+    reason="Backpacked"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="exposure"
+    type="optional"
+    reason="Exposure: the darkroom"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="simpleradio"
+    type="optional"
+    reason="Simple Radio: the spuddie talkie, the walkie-talkie and the radio"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="settlements"
+    type="optional"
+    reason="Settlements: the settler"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="simulated"
+    type="optional"
+    reason="Simulated: the physics machines"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="aeronautics"
+    type="optional"
+    reason="Create Aeronautics: airships and propellers"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="offroad"
+    type="optional"
+    reason="Create Offroad: wheels, tyres and boreheads"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="icys_better_horses"
+    type="optional"
+    reason="Icy's Better Horses: the Rider, Cartwright, Tack and Veterinary nodes"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="hardcore_torches"
+    type="optional"
+    reason="Hardcore Torches: unlit torches and the fire starter at Quarry, lanterns and the oil can at Ironworks"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="adchimneys"
+    type="optional"
+    reason="Advanced Chimneys: the Chimneys, Flues and Draught nodes"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="sleep_tight"
+    type="optional"
+    reason="Sleep Tight: hammocks with the furniture, the night bag and dreamer's essence at Dreaming"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="modonomicon"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="sereneseasons"
+    type="optional"
+    reason="Serene Seasons"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="immersive_weathering"
+    type="optional"
+    reason="Immersive Weathering"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="moonlight"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="curios"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="terrain_slabs"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="projectvibrantjourneys"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="teallib"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="gravestone"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="betterbeginnings"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="voicechat"
+    type="optional"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    # This version range declares a minimum of the current minecraft version up to but not including the next major version
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+# Features are specific properties of the game environment, that you may want to declare you require. This example declares
+# that your mod requires GL version 3.2 or higher. Other features will be added. They are side aware so declaring this won't
+# stop your mod loading on the server for example.
+#[features.${mod_id}]
+#openGLVersion="[3.2,)"
+
+[[dependencies.${mod_id}]]
+    modId="envelope"
+    type="optional"
+    reason="Envelope: letters, mailboxes and pigeonholes at Post, packages and seal stamps at Parcels"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="chalk"
+    type="optional"
+    reason="Chalk: chalk and the chalk box at the Chalk node"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="thief"
+    type="optional"
+    reason="Thief: no items; described in the Grimoire"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="scholar"
+    type="optional"
+    reason="Scholar: no items; book editing is untouched"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+

@@ -1,0 +1,34 @@
+{
+  "name": "Scout",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:compass",
+  "sortnum": 200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:compass",
+      "title": "Scout",
+      "text": "$(bold)Maps and the cartography table. Taking Scout closes Hunter. +2% movement speed.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)8 Focal Shards$(n).$(br)After Ranger."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Walk 6,000 blocks$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+2% movement speed$(n)$(br2)You may own $(thing)1$(n) of these in all. Choose carefully."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:cartography_table",
+      "text": "$(bold)Cartography table"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)map, cartography table."
+    }
+  ]
+}

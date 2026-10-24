@@ -1,0 +1,16 @@
+name: Suggestion
+description: An idea for a node, task, bounty, mod integration or change to balance.
+labels: ["suggestion"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: Your idea
+      description: What should change, and why it would make the game better.
+    validations:
+      required: true
+  - type: input
+    id: mod
+    attributes:
+      label: Mod involved (if any)
+      description: For integration requests, the mod's name and a CurseForge or Modrinth link.

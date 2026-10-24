@@ -1,0 +1,21 @@
+{
+  "name": "Eldritch",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:eldritch_manuscript",
+  "sortnum": 1300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:eldritch_manuscript",
+      "title": "Eldritch",
+      "text": "$(bold)The eldritch school: manuscripts, scrolls and the forbidden ring.$(br2)$(thing)The Arcane$(n), ring 13.$(br)$(thing)86 Focal Shards$(n).$(br)After Archmage."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:eldritch_manuscript",
+      "text": "$(bold)Eldritch manuscript",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

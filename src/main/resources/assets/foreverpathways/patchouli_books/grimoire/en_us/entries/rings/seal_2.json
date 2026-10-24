@@ -1,0 +1,18 @@
+{
+  "name": "Seal of Copper",
+  "category": "foreverpathways:rings",
+  "icon": "minecraft:copper_block",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Seal of Copper",
+      "text": "$(bold)Bars ring 2: Copper Age.$(br2)$(li)$(thing)4 nodes$(n) owned$(br)$(li)$(thing)10 Focal Shards$(n)$(br)$(li)its task, below$(br2)16 nodes wait behind it."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 200 stone$(n)$(br2)Counts only once everything else about the seal is ready."
+    }
+  ]
+}

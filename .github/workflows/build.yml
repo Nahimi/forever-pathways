@@ -1,0 +1,63 @@
+name: Build
+
+on:
+  push:
+    branches: ['**']
+  pull_request:
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: Setup JDK 21
+        uses: actions/setup-java@v4
+        with:
+          java-version: '21'
+          distribution: 'temurin'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v4
+
+      - name: Make gradlew executable
+        run: chmod +x gradlew
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Upload the jar
+        uses: actions/upload-artifact@v4
+        with:
+          name: forever-pathways
+          path: build/libs/*.jar
+          if-no-files-found: error
+
+  release:
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Download the jar
+        uses: actions/download-artifact@v4
+        with:
+          name: forever-pathways
+          path: dist
+
+      - name: Publish the latest build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          jar=$(find dist -name '*.jar' ! -name '*-sources.jar' ! -name '*-slim.jar' | head -n 1)
+          cp "$jar" dist/foreverpathways.jar
+          gh release delete latest --cleanup-tag --yes --repo "$GITHUB_REPOSITORY" || true
+          gh release create latest "$jar" dist/foreverpathways.jar --repo "$GITHUB_REPOSITORY" \
+            --target "$GITHUB_SHA" --latest --title "Latest build" \
+            --notes "Automatic build of commit ${GITHUB_SHA::7}. Always the newest jar from main."

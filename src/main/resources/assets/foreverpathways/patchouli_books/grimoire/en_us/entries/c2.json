@@ -1,0 +1,43 @@
+{
+  "name": "II. The Ring",
+  "category": "foreverpathways:start",
+  "icon": "minecraft:target",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)Most things are locked until you unlock them. Open the ring with $(k:key.foreverpathways.open) or the tab above your inventory.",
+      "title": "II. The Ring"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocking",
+      "text": "$(bold)$(li)1. Click a node.$(br)$(li)2. Finish its task.$(br)$(li)3. Pay its Focal Shards.$(br)$(li)4. Hold the unlock button.$(br2)You start with 2 shards and four roads: $(l:paths/quarry)Quarry$(n), $(l:paths/woodcutter)Woodcutter$(n), $(l:paths/ranger)Ranger$(n), $(l:paths/homesteader)Homesteader$(n)."
+    },
+    {
+      "type": "patchouli:image",
+      "title": "The Ring",
+      "images": [
+        "foreverpathways:textures/gui/book/rings.png"
+      ],
+      "border": false,
+      "text": "$(bold)Each dot is a node, coloured by road. Red rings are sealed."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Rings and Seals",
+      "text": "$(bold)$(li)15 rings out from the Core; cost climbs with the ring.$(br)$(li)A node needs the node before it, and its ring unsealed.$(br)$(li)A seal needs a count of nodes owned, shards, and its own task.$(br)$(li)Any node counts towards a seal, whatever road it is on."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Locks",
+      "text": "$(bold)$(li)A locked item cannot be used, placed, eaten, swung or worn.$(br)$(li)You can still carry it.$(br)$(li)Ordinary blocks break and place freely.$(br)$(li)Locked $(thing)machines$(n) will not open, place or break.$(br)$(li)Doors, gates, buttons and levers always work."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Death",
+      "text": "$(bold)$(#8A3B2F)1 Focal Shard, and a quarter of all progress on running tasks and bounties.$(n)$(br2)Nothing counts until the next dawn. Unlocked nodes and finished tasks are safe."
+    }
+  ],
+  "priority": true
+}

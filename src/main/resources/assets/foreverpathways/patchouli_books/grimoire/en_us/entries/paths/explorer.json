@@ -1,0 +1,20 @@
+{
+  "name": "Explorer",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "waystones:waystone",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "waystones:waystone",
+      "title": "Explorer",
+      "text": "$(bold)The waystones on the Monoliths answer you: wake them and travel between those you have woken. Making, placing and breaking waystones wait for Attunement. Needs Apothecary as well.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)18 Focal Shards$(n).$(br)After Cartographer and Apothecary."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Travel 15,000 blocks$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:waystones"
+}

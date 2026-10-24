@@ -1,0 +1,15 @@
+{
+  "name": "Old Eye",
+  "category": "foreverpathways:eyes",
+  "icon": "endrem:old_eye",
+  "sortnum": 31,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "endrem:old_eye",
+      "title": "Old Eye",
+      "text": "$(bold)Only Sirok drops this eye. This node lets you use it in the ancient portal.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill 200 husks."
+    }
+  ],
+  "flag": "mod:endrem"
+}

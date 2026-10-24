@@ -1,0 +1,26 @@
+{
+  "name": "Monobank",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "monobank:monobank",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "monobank:monobank",
+      "title": "Monobank",
+      "text": "$(bold)The monobank, a personal vault with a combination lock, and the locks to replace in it.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)10 Focal Shards$(n).$(br)After Iron."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "monobank:monobank",
+      "text": "$(bold)Monobank",
+      "flag": "mod:monobank"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything of its kind."
+    }
+  ],
+  "flag": "mod:monobank"
+}

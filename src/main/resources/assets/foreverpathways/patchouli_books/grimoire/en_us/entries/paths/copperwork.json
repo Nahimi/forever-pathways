@@ -1,0 +1,25 @@
+{
+  "name": "Copperwork",
+  "category": "foreverpathways:paths/builder",
+  "icon": "minecraft:cut_copper",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:cut_copper",
+      "title": "Copperwork",
+      "text": "$(bold)Cut, chiseled and weathered copper, grates, bulbs, copper doors and Create shingles and tiles. Needs Copper Tools as well.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)21 Focal Shards$(n).$(br)After Stone Palettes and Copper Tools."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:copper_shingle_slab",
+      "text": "$(bold)Copper shingle slab",
+      "flag": "mod:create"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)waxed copper block."
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Woodcutter",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "ists_harder_early:flint_axe",
+  "sortnum": 100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "ists_harder_early:flint_axe",
+      "title": "Woodcutter",
+      "text": "$(bold)The flint axe, and with it the trees: every log, branch, plank and wooden block, the crafting table, chests, barrels, ladders and the campfire.$(br2)$(thing)Stone Age$(n), ring 1.$(br)$(thing)3 Focal Shards$(n).$(br)After Core."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "ists_harder_early:flint_axe",
+      "text": "$(bold)Flint axe",
+      "flag": "mod:ists_harder_early"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)flint axe, mangrove roots, muddy mangrove roots, mangrove propagule, crafting table, chest, barrel, ladder, bowl, campfire, cracked rotten planks, rotten log anthill, date seed, bowl de."
+    }
+  ],
+  "flag": "mod:ists_harder_early"
+}

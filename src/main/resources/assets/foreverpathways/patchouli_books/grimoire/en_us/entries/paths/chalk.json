@@ -1,0 +1,26 @@
+{
+  "name": "Chalk",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "chalk:chalk",
+  "sortnum": 200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "chalk:chalk",
+      "title": "Chalk",
+      "text": "$(bold)Chalk from calcite, every colour, and the chalk box. Mark a cave wall so you can find your way back. Dye chalk to colour it; a glow ink sac in the box makes the marks glow.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)5 Focal Shards$(n).$(br)After Quarry."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "chalk:chalk",
+      "text": "$(bold)Chalk",
+      "flag": "mod:chalk"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything of its kind."
+    }
+  ],
+  "flag": "mod:chalk"
+}

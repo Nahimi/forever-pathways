@@ -1,0 +1,30 @@
+{
+  "name": "Diamond",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:diamond",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:diamond",
+      "title": "Diamond",
+      "text": "$(bold)Diamonds and diamond blocks. The bottleneck of the deep.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)23 Focal Shards$(n).$(br)After Deep Prospector."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 32 diamond ore$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "farmersdelight:diamond_knife",
+      "text": "$(bold)Diamond knife",
+      "flag": "mod:farmersdelight"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)diamond, diamond block."
+    }
+  ]
+}

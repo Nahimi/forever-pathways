@@ -1,0 +1,20 @@
+{
+  "name": "The Ashlord",
+  "category": "foreverpathways:eyes",
+  "icon": "endrem:nether_eye",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:entity",
+      "entity": "block_factorys_bosses:infernal_dragon",
+      "name": "The Ashlord",
+      "text": "$(bold)Carries the nether eye."
+    },
+    {
+      "type": "patchouli:spotlight",
+      "item": "endrem:nether_eye",
+      "text": "$(bold)Carry it until its piece of the ring is yours. An eye cannot spoil."
+    }
+  ],
+  "flag": "mod:endrem"
+}

@@ -1,0 +1,19 @@
+{
+  "name": "A1. Beds & Sleep",
+  "category": "foreverpathways:beyond",
+  "icon": "sleep_tight:hammock_red",
+  "sortnum": 1,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)$(li)Sleeping in the same bed makes it a $(thing)home bed$(n), which gives more back each night.$(br)$(li)Hammocks for a camp: $(l:paths/furnishings)Furnishings$(n), ring 3.$(br)$(li)Night bag for the road: $(l:paths/dreaming)Dreaming$(n), ring 9.",
+      "title": "A1. Beds & Sleep"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Infested Beds",
+      "text": "$(bold)$(#8A3B2F)Mansion beds are often infested.$(n) Sleep in one and bedbugs wake you.$(br2)$(li)Break it and make another; you lose what that bed had become.$(br)$(li)Or throw a $(thing)splash potion of Harming$(n) at it. Needs $(l:paths/brewing)Brewing$(n), ring 9."
+    }
+  ],
+  "flag": "mod:sleep_tight"
+}

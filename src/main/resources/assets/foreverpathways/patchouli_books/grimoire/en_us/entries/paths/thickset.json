@@ -1,0 +1,24 @@
+{
+  "name": "Thickset",
+  "category": "foreverpathways:paths/constitution",
+  "icon": "minecraft:cooked_porkchop",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:cooked_porkchop",
+      "title": "Thickset",
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)28 Focal Shards$(n).$(br)After Second Wind."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Eat 300 cooked meals$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% maximum health$(n)"
+    }
+  ]
+}

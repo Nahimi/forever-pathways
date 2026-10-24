@@ -1,0 +1,26 @@
+{
+  "name": "Ashlord",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "block_factorys_bosses:dragon_shank",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "block_factorys_bosses:dragon_shank",
+      "title": "Ashlord",
+      "text": "$(bold)Dragon bone armour, the guard shield and the largest blades.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)48 Focal Shards$(n).$(br)After Nerakyss."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill the Ashlord$(n)$(br2)Pays 10 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "block_factorys_bosses:dragon_bones_boots",
+      "text": "$(bold)Dragon bones boots",
+      "flag": "mod:block_factorys_bosses"
+    }
+  ],
+  "flag": "mod:block_factorys_bosses"
+}

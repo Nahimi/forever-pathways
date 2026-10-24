@@ -1,0 +1,36 @@
+{
+  "name": "A9. Post & Pigeons",
+  "category": "foreverpathways:beyond",
+  "icon": "envelope:mailbox",
+  "sortnum": 9,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)$(li)Write with a $(thing)letter and quill$(n). Pack items in a $(thing)paper box$(n).$(br)$(li)Put mail in a $(thing)mailbox$(n) with food for the courier.$(br)$(li)A $(thing)pigeon$(n) flies by day for seeds. A $(thing)bat$(n) flies by night for a spider eye.$(br)$(li)Name your mailbox to get an address.",
+      "title": "A9. Post & Pigeons"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "envelope:letter_and_quill",
+      "recipe2": "envelope:mailbox",
+      "title": "Letters and the Mailbox"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "envelope:oak_pigeonhole",
+      "recipe2": "envelope:paper_box",
+      "title": "Pigeonhole and Paper Box"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Services",
+      "text": "$(bold)Some addresses are not people.$(br2)$(li)The $(thing)Mail Service$(n) trades by post: a diamond buys a parcel of lost mail.$(br)$(li)The $(thing)Automated Supply Service$(n) crafts what you send it the ingredients for.$(br2)Anything it sends back still obeys the ring: a locked item stays locked."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Where They Unlock",
+      "text": "$(bold)$(li)$(l:paths/post)Post$(n), ring 3: letters, mailbox, pigeonholes, paper boxes.$(br)$(li)$(l:paths/parcels)Parcels$(n), ring 4: packages, seal stamps, payback tags.$(br)$(li)Create's $(l:paths/packaging)Packaging$(n), ring 9, builds on Parcels."
+    }
+  ],
+  "flag": "mod:envelope"
+}

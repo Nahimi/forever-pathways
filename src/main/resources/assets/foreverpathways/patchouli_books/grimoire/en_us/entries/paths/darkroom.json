@@ -1,0 +1,26 @@
+{
+  "name": "Darkroom",
+  "category": "foreverpathways:paths/builder",
+  "icon": "exposure:camera",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "exposure:camera",
+      "title": "Darkroom",
+      "text": "$(bold)Cameras, film, the lightroom, photographs, frames, albums and the projector.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)16 Focal Shards$(n).$(br)After Glassworks."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "exposure:camera",
+      "text": "$(bold)Camera",
+      "flag": "mod:exposure"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything of its kind."
+    }
+  ],
+  "flag": "mod:exposure"
+}

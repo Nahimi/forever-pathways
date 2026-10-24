@@ -1,0 +1,21 @@
+{
+  "name": "Mechanical Crafting",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:mechanical_crafter",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:mechanical_crafter",
+      "title": "Mechanical Crafting",
+      "text": "$(bold)The mechanical crafter, the mechanical arm, sequenced gearshifts and the speed controller.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)48 Focal Shards$(n).$(br)After Brass."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/kinetics/mechanical_crafter",
+      "text": "$(bold)Mechanical crafter",
+      "flag": "mod:create"
+    }
+  ],
+  "flag": "mod:create"
+}

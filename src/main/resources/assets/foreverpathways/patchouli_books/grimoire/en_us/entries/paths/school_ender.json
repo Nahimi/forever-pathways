@@ -1,0 +1,26 @@
+{
+  "name": "Ender",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:ender_rune",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:ender_rune",
+      "title": "Ender",
+      "text": "$(bold)The ender rune, upgrade orb, affinity ring and scroll. You may master three schools until Archmage.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)54 Focal Shards$(n).$(br)After Arcane Essence."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)You may own $(thing)3$(n) of these in all. Choose carefully."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:ender_rune",
+      "text": "$(bold)Ender rune",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

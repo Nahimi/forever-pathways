@@ -1,0 +1,24 @@
+{
+  "name": "Boatwright",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:oak_boat",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:oak_boat",
+      "title": "Boatwright",
+      "text": "$(bold)Boats, chest boats, rafts and the jar boat. +5% boat speed.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)8 Focal Shards$(n).$(br)After Scout."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% boat speed$(n)"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:oak_boat",
+      "text": "$(bold)Oak boat"
+    }
+  ]
+}

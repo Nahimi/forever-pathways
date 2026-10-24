@@ -1,0 +1,24 @@
+{
+  "name": "Brawler",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:stone_sword",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:stone_sword",
+      "title": "Brawler",
+      "text": "$(bold)You learn where to hit. +5% attack damage.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)10 Focal Shards$(n).$(br)After Skirmisher."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 60 monsters$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% attack damage$(n)"
+    }
+  ]
+}

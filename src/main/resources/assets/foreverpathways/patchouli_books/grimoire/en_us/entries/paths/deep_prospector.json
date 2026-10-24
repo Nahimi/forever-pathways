@@ -1,0 +1,24 @@
+{
+  "name": "Deep Prospector",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:deepslate_gold_ore",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:deepslate_gold_ore",
+      "title": "Deep Prospector",
+      "text": "$(bold)Gold, redstone, lapis and diamond ore, and the sculk of the deep dark. You can mine them now; what they give opens further out.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)14 Focal Shards$(n).$(br)After Iron."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 600 deepslate$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)gold ore, deepslate gold ore, raw gold, raw gold block, redstone ore, deepslate redstone ore, lapis ore, deepslate lapis ore, diamond ore, deepslate diamond ore, sculk, sculk vein, sculk catalyst, sculk shrieker."
+    }
+  ]
+}

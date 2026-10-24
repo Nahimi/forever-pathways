@@ -1,0 +1,25 @@
+{
+  "name": "Aeronautics",
+  "category": "foreverpathways:paths/technician",
+  "icon": "aeronautics:propeller_bearing",
+  "sortnum": 1200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "aeronautics:propeller_bearing",
+      "title": "Aeronautics",
+      "text": "$(bold)Propellers, envelopes, levitite and airships. Needs Steam as well.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)109 Focal Shards$(n).$(br)After Simulated and Steam."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Climb 2,000 blocks$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything of its kind."
+    }
+  ],
+  "flag": "mod:aeronautics"
+}

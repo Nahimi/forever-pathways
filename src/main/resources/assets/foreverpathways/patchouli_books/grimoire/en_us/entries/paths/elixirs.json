@@ -1,0 +1,15 @@
+{
+  "name": "Elixirs",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:invisibility_elixir",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:invisibility_elixir",
+      "title": "Elixirs",
+      "text": "$(bold)Invisibility and evasion elixirs, the tinctures and timeless slurry.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)46 Focal Shards$(n).$(br)After Alchemy."
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

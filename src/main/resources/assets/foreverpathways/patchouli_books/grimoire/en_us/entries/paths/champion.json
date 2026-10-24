@@ -1,0 +1,24 @@
+{
+  "name": "Champion",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:netherite_sword",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:netherite_sword",
+      "title": "Champion",
+      "text": "$(bold)The Nether's fighters fall to you. +15% attack damage.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)40 Focal Shards$(n).$(br)After Warrior."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 60 blazes, wither skeletons, brutes or hoglins$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+15% attack damage$(n)"
+    }
+  ]
+}

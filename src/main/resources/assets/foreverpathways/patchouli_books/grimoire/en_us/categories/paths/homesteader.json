@@ -1,0 +1,7 @@
+{
+  "name": "Homesteader",
+  "description": "The Homesteader road, from ring 1 outwards.",
+  "icon": "minecraft:wheat",
+  "sortnum": 15,
+  "parent": "foreverpathways:paths"
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Stormstride",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:elytra",
+  "sortnum": 1400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:elytra",
+      "title": "Stormstride",
+      "text": "$(bold)As quick on your feet as anyone ever was. +2% movement speed.$(br2)$(thing)High Voltage$(n), ring 14.$(br)$(thing)86 Focal Shards$(n).$(br)After Wayfarer."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Travel 150,000 blocks$(n)$(br2)Pays 5 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+2% movement speed$(n)"
+    }
+  ]
+}

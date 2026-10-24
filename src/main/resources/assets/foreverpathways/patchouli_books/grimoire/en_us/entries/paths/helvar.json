@@ -1,0 +1,31 @@
+{
+  "name": "Helvar",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "block_factorys_bosses:knight_sword",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "block_factorys_bosses:knight_sword",
+      "title": "Helvar",
+      "text": "$(bold)Helvar's sword, the enhanced shield and the knight armour. +5% attack damage.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)23 Focal Shards$(n).$(br)After Pirates."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill Helvar$(n)$(br2)Pays 5 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% attack damage$(n)"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "block_factorys_bosses:underworld_tall_candles",
+      "text": "$(bold)Underworld tall candles",
+      "flag": "mod:block_factorys_bosses"
+    }
+  ],
+  "flag": "mod:block_factorys_bosses"
+}

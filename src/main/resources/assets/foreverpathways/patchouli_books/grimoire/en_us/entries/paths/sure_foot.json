@@ -1,0 +1,24 @@
+{
+  "name": "Sure Foot",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:golden_boots",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:golden_boots",
+      "title": "Sure Foot",
+      "text": "$(bold)You stumble less than you did. +2% movement speed.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)18 Focal Shards$(n).$(br)After Long Stride."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Crouch 3,000 blocks$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+2% movement speed$(n)"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Blood Relics",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:blood_staff",
+  "sortnum": 1200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:blood_staff",
+      "title": "Blood Relics",
+      "text": "$(bold)The blood staff and vials, the books of the dead and the bone relics.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)74 Focal Shards$(n).$(br)After Blood Robes."
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Kinetic Tools",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:mechanical_drill",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:mechanical_drill",
+      "title": "Kinetic Tools",
+      "text": "$(bold)Saws, drills, harvesters, ploughs, rollers and the deployer.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)34 Focal Shards$(n).$(br)After Pressing and Mixing."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/kinetics/mechanical_drill",
+      "text": "$(bold)Mechanical drill",
+      "flag": "mod:create"
+    }
+  ],
+  "flag": "mod:create"
+}

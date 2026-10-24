@@ -1,0 +1,19 @@
+{
+  "name": "A2. Thirst & Cold",
+  "category": "foreverpathways:beyond",
+  "icon": "legendarysurvivaloverhaul:canteen",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)$(li)You get thirsty. Drink from a $(thing)canteen$(n); water plants refill it.$(br)$(li)Juices quench more than water.$(br)$(li)Wounds want $(thing)bandages$(n), then $(thing)plasters$(n).$(br)$(li)Heat and cold both kill. Seasons turn.",
+      "title": "A2. Thirst & Cold"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Climate Gear",
+      "text": "$(bold)$(li)$(l:paths/climate_1)Climate Gear I$(n), ring 4: coats, heater, cooler.$(br)$(li)$(l:paths/climate_2)Climate Gear II$(n), ring 6: better coats, resistance rings.$(br)$(li)$(l:paths/climate_3)Climate Gear III$(n): the last grade."
+    }
+  ],
+  "flag": "mod:legendarysurvivaloverhaul"
+}

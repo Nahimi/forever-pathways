@@ -1,0 +1,24 @@
+{
+  "name": "Diamond Tools",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:diamond_pickaxe",
+  "sortnum": 800,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:diamond_pickaxe",
+      "title": "Diamond Tools",
+      "text": "$(bold)Diamond tools. +15% breaking speed.$(br2)$(thing)The Nether$(n), ring 8.$(br)$(thing)24 Focal Shards$(n).$(br)After Diamond."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+15% breaking speed$(n)"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:diamond_pickaxe",
+      "text": "$(bold)Diamond pickaxe"
+    }
+  ]
+}

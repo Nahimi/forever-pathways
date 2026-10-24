@@ -1,0 +1,24 @@
+{
+  "name": "Mechanisms",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:piston",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:piston",
+      "title": "Mechanisms",
+      "text": "$(bold)Pistons, observers, hoppers, droppers, dispensers, the crafter, sculk sensors and slime blocks.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)20 Focal Shards$(n).$(br)After Redstone."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "supplementaries:soap/piston",
+      "text": "$(bold)Piston"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)piston, sticky piston, observer, hopper, dropper, dispenser, crafter, hopper minecart, sculk sensor, calibrated sculk sensor, trapped chest, slime block, target."
+    }
+  ]
+}

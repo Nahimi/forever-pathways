@@ -1,0 +1,25 @@
+{
+  "id": "grimoire",
+  "enabled": true,
+  "icon": {
+    "type": "item",
+    "item": "patchouli:guide_book"
+  },
+  "screen_open_action": {
+    "type": "open_screen",
+    "screen_class": "uk.foreverserver.pathways.client.GrimoireLauncher",
+    "constructor_args": []
+  },
+  "tooltip": "tooltip.foreverpathways.grimoire",
+  "required_mods": [
+    "foreverpathways",
+    "patchouli"
+  ],
+  "enabled_conditions": [
+    {
+      "type": "item_in_inventory",
+      "item": "patchouli:guide_book"
+    }
+  ],
+  "show_tabs_on_screen": false
+}

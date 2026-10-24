@@ -1,0 +1,34 @@
+{
+  "id": "pathways",
+  "enabled": true,
+  "icon": {
+    "type": "texture",
+    "texture": "foreverpathways:textures/gui/pathways_tab.png",
+    "u": 0,
+    "v": 0
+  },
+  "screen_open_action": {
+    "type": "open_screen",
+    "screen_class": "uk.foreverserver.pathways.client.PathwaysScreen",
+    "constructor_args": []
+  },
+  "tooltip": "tooltip.foreverpathways.tab",
+  "required_mods": [
+    "foreverpathways"
+  ],
+  "target_screen_class": "uk.foreverserver.pathways.client.PathwaysScreen",
+  "show_tabs_on_screen": true,
+  "screen_sizes": {
+    "uk.foreverserver.pathways.client.PathwaysScreen": {
+      "width": 480,
+      "height": 300,
+      "priority": 60,
+      "variables": {
+        "sw": { "source": "builtin", "id": "screen_width" },
+        "sh": { "source": "builtin", "id": "screen_height" }
+      },
+      "width_formula": "max(220, min(sw - 24, 480))",
+      "height_formula": "max(160, min(sh - 52, 300))"
+    }
+  }
+}

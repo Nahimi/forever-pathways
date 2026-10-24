@@ -1,0 +1,24 @@
+{
+  "name": "Library",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:bookshelf",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:bookshelf",
+      "title": "Library",
+      "text": "$(bold)Your table will now offer up to level 15, which is where the middle enchantments live.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)40 Focal Shards$(n).$(br)After Enchanting."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Enchant 24 items$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)Enchanting table up to $(thing)level 15$(n)."
+    }
+  ]
+}

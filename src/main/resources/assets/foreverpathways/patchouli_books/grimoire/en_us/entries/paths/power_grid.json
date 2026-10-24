@@ -1,0 +1,31 @@
+{
+  "name": "Power Grid",
+  "category": "foreverpathways:paths/technician",
+  "icon": "powergrid:electric_motor",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "powergrid:electric_motor",
+      "title": "Power Grid",
+      "text": "$(bold)Generators, motors, pumps, fans, heaters and the rest of low-voltage electricity. Needs the Lighting Rig as well.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)79 Focal Shards$(n).$(br)After Brass and Lighting Rig."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Place 512 redstone dust$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "powergrid:crafting/alarm_bell",
+      "text": "$(bold)Alarm bell",
+      "flag": "mod:powergrid"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind."
+    }
+  ],
+  "flag": "mod:powergrid"
+}

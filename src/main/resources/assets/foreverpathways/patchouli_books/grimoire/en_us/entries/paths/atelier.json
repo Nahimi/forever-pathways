@@ -1,0 +1,36 @@
+{
+  "name": "Atelier",
+  "category": "foreverpathways:paths/builder",
+  "icon": "handcrafted:oak_fancy_bed",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "handcrafted:oak_fancy_bed",
+      "title": "Atelier",
+      "text": "$(bold)Fancy beds, trophies, pots, crockery, the oven, the kitchen hood and every remaining Handcrafted piece.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)19 Focal Shards$(n).$(br)After Furnishings."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Place 1,000 planks$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)Craft-locked only.$(n) Anyone can place, use and break these; the node buys the recipe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "handcrafted:oak_fancy_bed",
+      "text": "$(bold)Oak fancy bed",
+      "flag": "mod:handcrafted"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind."
+    }
+  ],
+  "flag": "mod:handcrafted"
+}

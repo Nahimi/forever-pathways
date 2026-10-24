@@ -1,0 +1,26 @@
+{
+  "name": "High Voltage",
+  "category": "foreverpathways:paths/technician",
+  "icon": "powergrid:transformer_core",
+  "sortnum": 1400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "powergrid:transformer_core",
+      "title": "High Voltage",
+      "text": "$(bold)Transformers, breakers, circuits, valves, solar panels, plotters and the electric tools.$(br2)$(thing)High Voltage$(n), ring 14.$(br)$(thing)103 Focal Shards$(n).$(br)After Power Grid."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "powergrid:crafting/barretter_tube",
+      "text": "$(bold)Barretter tube",
+      "flag": "mod:powergrid"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind."
+    }
+  ],
+  "flag": "mod:powergrid"
+}

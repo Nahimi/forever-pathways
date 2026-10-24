@@ -1,0 +1,24 @@
+{
+  "name": "Calloused Hands",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:stripped_oak_log",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:stripped_oak_log",
+      "title": "Calloused Hands",
+      "text": "$(bold)Hard work makes hard hands. +5% breaking speed.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)9 Focal Shards$(n).$(br)After Woodcutter."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Fell 100 trees$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% breaking speed$(n)"
+    }
+  ]
+}

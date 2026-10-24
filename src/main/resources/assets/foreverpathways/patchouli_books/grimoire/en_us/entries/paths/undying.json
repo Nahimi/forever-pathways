@@ -1,0 +1,19 @@
+{
+  "name": "Undying",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:totem_of_undying",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:totem_of_undying",
+      "title": "Undying",
+      "text": "$(bold)Totems of undying and enchanted golden apples.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)40 Focal Shards$(n).$(br)After Vitality."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)totem of undying, enchanted golden apple, enchanted golden apple de, totem of undying de."
+    }
+  ]
+}

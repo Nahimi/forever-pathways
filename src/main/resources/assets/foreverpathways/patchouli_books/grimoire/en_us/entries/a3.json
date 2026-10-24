@@ -1,0 +1,24 @@
+{
+  "name": "A3. Butchery",
+  "category": "foreverpathways:beyond",
+  "icon": "butchery:copper_cleaver",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)Meat is not one item. An animal gives a $(thing)carcass$(n), a carcass gives cuts, cuts cook into food. You need tools and a butcher's table.",
+      "title": "A3. Butchery"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Tools",
+      "text": "$(bold)$(li)$(thing)Cleaver$(n): carcasses and cuts.$(br)$(li)$(thing)Hacksaw$(n): bone.$(br)$(li)$(thing)Skinning knife$(n): hide and fur.$(br)$(li)$(thing)Hammer$(n): the rest.$(br2)Bone and copper: $(l:paths/husbandry)Husbandry$(n), ring 2. Iron and gold: $(l:paths/butcher_tools)Butcher's Steel$(n), ring 5."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Further Out",
+      "text": "$(bold)$(li)$(l:paths/abattoir)Abattoir$(n), ring 5: cuts, blood work, the grinder.$(br)$(li)$(l:paths/charcuterie)Charcuterie$(n), ring 6: sausage, ham, salami.$(br)$(li)$(l:paths/taxidermy)Taxidermy$(n), ring 6: heads, skeletons, furs.$(br)$(li)$(l:paths/butchers_shop)Butcher's Shop$(n), ring 6: displays and counters."
+    }
+  ],
+  "flag": "mod:butchery"
+}

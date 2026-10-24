@@ -1,0 +1,24 @@
+{
+  "name": "Hardened",
+  "category": "foreverpathways:paths/constitution",
+  "icon": "minecraft:chainmail_chestplate",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:chainmail_chestplate",
+      "title": "Hardened",
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)36 Focal Shards$(n).$(br)After Thickset."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Breed 150 animals$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% maximum health$(n)"
+    }
+  ]
+}

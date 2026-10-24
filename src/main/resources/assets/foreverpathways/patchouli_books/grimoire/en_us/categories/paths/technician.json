@@ -1,0 +1,7 @@
+{
+  "name": "Technician",
+  "description": "The Technician road, from ring 2 outwards.",
+  "icon": "minecraft:redstone",
+  "sortnum": 13,
+  "parent": "foreverpathways:paths"
+}

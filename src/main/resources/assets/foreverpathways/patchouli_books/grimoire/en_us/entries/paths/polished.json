@@ -1,0 +1,24 @@
+{
+  "name": "Polished Stone",
+  "category": "foreverpathways:paths/builder",
+  "icon": "minecraft:polished_andesite",
+  "sortnum": 200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:polished_andesite",
+      "title": "Polished Stone",
+      "text": "$(bold)Polished andesite, diorite and granite with their stairs, slabs and walls, the stonecutter and stone switches.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)6 Focal Shards$(n).$(br)After Builder."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:stonecutter",
+      "text": "$(bold)Stonecutter"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)stonecutter, stone button, stone pressure plate."
+    }
+  ]
+}

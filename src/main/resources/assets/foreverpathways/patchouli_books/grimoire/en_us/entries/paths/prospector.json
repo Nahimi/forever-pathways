@@ -1,0 +1,31 @@
+{
+  "name": "Prospector",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "ists_harder_early:raw_iron_nugets",
+  "sortnum": 200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "ists_harder_early:raw_iron_nugets",
+      "title": "Prospector",
+      "text": "$(bold)Iron ore and raw iron. It's Harder Early breaks ore into raw nuggets; nine make one raw iron.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)8 Focal Shards$(n).$(br)After Quarry."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 96 copper ore$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "ists_harder_early:rawiron",
+      "text": "$(bold)Raw iron nugets",
+      "flag": "mod:ists_harder_early"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)raw iron nugets, iron ore, deepslate iron ore, raw iron, raw iron block."
+    }
+  ],
+  "flag": "mod:ists_harder_early"
+}

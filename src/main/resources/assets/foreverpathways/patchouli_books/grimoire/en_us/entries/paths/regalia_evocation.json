@@ -1,0 +1,21 @@
+{
+  "name": "Evocation Robes",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:archevoker_helmet",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:archevoker_helmet",
+      "title": "Evocation Robes",
+      "text": "$(bold)The archevoker robes: helmet, chestplate, leggings and boots.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)64 Focal Shards$(n).$(br)After Evocation."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:archevoker_helmet_crafting",
+      "text": "$(bold)Archevoker helmet",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

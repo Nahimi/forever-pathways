@@ -1,0 +1,21 @@
+{
+  "name": "Stone Palettes",
+  "category": "foreverpathways:paths/builder",
+  "icon": "create:cut_granite_bricks",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:cut_granite_bricks",
+      "title": "Stone Palettes",
+      "text": "$(bold)Create's cut and layered stones, Spawn's heliostone and shell tiles, and the Supplementaries tiles, ash bricks and checker blocks.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)16 Focal Shards$(n).$(br)After Deepslate Work."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:cut_granite_brick_slab_recycling",
+      "text": "$(bold)Cut granite bricks",
+      "flag": "mod:create"
+    }
+  ],
+  "flag": "mod:create"
+}

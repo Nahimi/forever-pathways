@@ -1,0 +1,24 @@
+{
+  "name": "Curiosities",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:name_tag",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:name_tag",
+      "title": "Curiosities",
+      "text": "$(bold)Every vanilla item not claimed elsewhere, plus anything from a mod the tree does not know about yet.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)29 Focal Shards$(n).$(br)After Nether."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/appliances/name_tag",
+      "text": "$(bold)Name tag"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind."
+    }
+  ]
+}

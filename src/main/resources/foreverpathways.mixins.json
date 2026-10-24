@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "uk.foreverserver.pathways.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "MovementCheckMixin",
+    "BoatSpeedMixin",
+    "EnchantPowerMixin",
+    "ResultSlotMixin",
+    "HorseSpeedMixin"
+  ],
+  "client": [
+    "RecipeCollectionMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Cartographer",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "supplementaries:globe",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "supplementaries:globe",
+      "title": "Cartographer",
+      "text": "$(bold)Globes, the altimeter, the cartographer's quill, slice maps and the recovery compass.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)10 Focal Shards$(n).$(br)After Scout."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "supplementaries:soap/globe_sepia",
+      "text": "$(bold)Globe",
+      "flag": "mod:supplementaries"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)recovery compass."
+    }
+  ],
+  "flag": "mod:supplementaries"
+}

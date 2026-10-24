@@ -1,0 +1,29 @@
+{
+  "name": "Iron",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:iron_ingot",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:iron_ingot",
+      "title": "Iron",
+      "text": "$(bold)Iron ingots, nuggets, blocks and the blast furnace. The Iron Age begins. Needs Copper Tools as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)10 Focal Shards$(n).$(br)After Prospector and Copper Tools."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 160 iron ore$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:blast_furnace",
+      "text": "$(bold)Blast furnace"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)tripwire hook, iron ingot, iron nugget, iron block, blast furnace."
+    }
+  ]
+}

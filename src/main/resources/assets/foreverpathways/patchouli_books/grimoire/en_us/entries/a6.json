@@ -1,0 +1,19 @@
+{
+  "name": "A6. Magic",
+  "category": "foreverpathways:beyond",
+  "icon": "irons_spellbooks:wimpy_spell_book",
+  "sortnum": 6,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)Late, and dearer: every magic node costs half again a machine on the same ring.$(br2)$(li)$(l:paths/magician)Magician$(n), ring 6: books, scrolls, ink.$(br)$(li)$(l:paths/study)Study$(n), $(l:paths/alchemy)Alchemy$(n), ring 7.$(br)$(li)Eight schools, ring 10. $(thing)You may learn three.$(br)$(li)Robes 11, relics 12, Eldritch 13, Grand Magus 14.",
+      "title": "A6. Magic"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Enchanting",
+      "text": "$(bold)Capped by your nodes.$(br2)$(li)$(l:paths/enchant)Enchanting$(n), ring 7: level 5.$(br)$(li)$(l:paths/library)Library$(n), ring 9: level 15.$(br)$(li)$(l:paths/grand_library)Grand Library$(n), ring 10: level 30."
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

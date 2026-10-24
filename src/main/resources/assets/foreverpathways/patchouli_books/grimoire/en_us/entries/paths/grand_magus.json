@@ -1,0 +1,21 @@
+{
+  "name": "Grand Magus",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:netherite_mage_chestplate",
+  "sortnum": 1400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:netherite_mage_chestplate",
+      "title": "Grand Magus",
+      "text": "$(bold)Netherite mage armour and the dragonskin spellbook.$(br2)$(thing)High Voltage$(n), ring 14.$(br)$(thing)98 Focal Shards$(n).$(br)After Eldritch."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:dragonskin_spell_book",
+      "text": "$(bold)Dragonskin spell book",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

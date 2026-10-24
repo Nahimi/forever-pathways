@@ -1,0 +1,19 @@
+{
+  "name": "Golden Gear",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:golden_helmet",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:golden_helmet",
+      "title": "Golden Gear",
+      "text": "$(bold)Golden tools and armour.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)16 Focal Shards$(n).$(br)After Gold."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:golden_axe",
+      "text": "$(bold)Golden axe"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Ordnance",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "supplementaries:cannon",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "supplementaries:cannon",
+      "title": "Ordnance",
+      "text": "$(bold)Cannons, cannonballs, cannon boats and every kind of bomb.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)29 Focal Shards$(n).$(br)After Explosives."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "supplementaries:cannon_2",
+      "text": "$(bold)Cannon",
+      "flag": "mod:supplementaries"
+    }
+  ],
+  "flag": "mod:supplementaries"
+}

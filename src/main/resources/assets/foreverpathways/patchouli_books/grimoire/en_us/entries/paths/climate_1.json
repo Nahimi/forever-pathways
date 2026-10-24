@@ -1,0 +1,15 @@
+{
+  "name": "Climate Gear I",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "legendarysurvivaloverhaul:heating_coat_1",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "legendarysurvivaloverhaul:heating_coat_1",
+      "title": "Climate Gear I",
+      "text": "$(bold)First-grade thermal coats, the heater and the cooler.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)10 Focal Shards$(n).$(br)After Outfitter."
+    }
+  ],
+  "flag": "mod:legendarysurvivaloverhaul"
+}

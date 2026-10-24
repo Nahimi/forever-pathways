@@ -1,0 +1,25 @@
+{
+  "name": "Abattoir",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "butchery:meat_grinder",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "butchery:meat_grinder",
+      "title": "Abattoir",
+      "text": "$(bold)Carcasses, cuts, blood work, the grinder and everything else from Butchery.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)11 Focal Shards$(n).$(br)After Husbandry."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 120 farm animals$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind."
+    }
+  ],
+  "flag": "mod:butchery"
+}

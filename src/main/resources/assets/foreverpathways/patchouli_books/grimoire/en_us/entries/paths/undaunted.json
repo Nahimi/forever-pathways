@@ -1,0 +1,24 @@
+{
+  "name": "Undaunted",
+  "category": "foreverpathways:paths/constitution",
+  "icon": "minecraft:dragon_head",
+  "sortnum": 1400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:dragon_head",
+      "title": "Undaunted",
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)High Voltage$(n), ring 14.$(br)$(thing)135 Focal Shards$(n).$(br)After Adamant."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Survive 60 days without dying$(n)$(br2)Pays 5 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% maximum health$(n)"
+    }
+  ]
+}

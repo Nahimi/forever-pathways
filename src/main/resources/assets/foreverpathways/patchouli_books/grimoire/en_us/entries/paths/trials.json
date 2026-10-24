@@ -1,0 +1,24 @@
+{
+  "name": "Trial Chambers",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:mace",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:mace",
+      "title": "Trial Chambers",
+      "text": "$(bold)The mace and its heavy core, breeze rods, wind charges, trial keys and ominous bottles.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)40 Focal Shards$(n).$(br)After Mechanisms."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 40 breezes or bogged$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)mace, heavy core, breeze rod, wind charge, trial key, ominous trial key, ominous bottle, echo shard."
+    }
+  ]
+}

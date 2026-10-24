@@ -1,0 +1,26 @@
+{
+  "name": "Lightning",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:lightning_rune",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:lightning_rune",
+      "title": "Lightning",
+      "text": "$(bold)The lightning rune, upgrade orb, affinity ring and scroll. You may master three schools until Archmage.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)54 Focal Shards$(n).$(br)After Arcane Essence."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)You may own $(thing)3$(n) of these in all. Choose carefully."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:lightning_rune",
+      "text": "$(bold)Lightning rune",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

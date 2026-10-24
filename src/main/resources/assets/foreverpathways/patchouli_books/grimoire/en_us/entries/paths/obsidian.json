@@ -1,0 +1,24 @@
+{
+  "name": "Obsidian",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:obsidian",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:obsidian",
+      "title": "Obsidian",
+      "text": "$(bold)Obsidian and crying obsidian. Ruined portals wait in the world; this lets you place the blocks to mend one, or build your own. Mining obsidian still needs a diamond pickaxe.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)23 Focal Shards$(n).$(br)After Deep Prospector."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 1,500 deepslate$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)obsidian, crying obsidian."
+    }
+  ]
+}

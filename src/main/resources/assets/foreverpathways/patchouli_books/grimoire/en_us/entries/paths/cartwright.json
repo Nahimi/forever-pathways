@@ -1,0 +1,31 @@
+{
+  "name": "Cartwright",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "icys-better-horses:horse_cart_gear",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "icys-better-horses:horse_cart_gear",
+      "title": "Cartwright",
+      "text": "$(bold)Wheels and the horse cart, for carrying more than a horse can wear. +10% horse speed.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)18 Focal Shards$(n).$(br)After Rider."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Ride 12,000 blocks on horseback$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+10% horse$(n)"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "icys-better-horses:horse_cart_gear",
+      "text": "$(bold)Horse cart gear",
+      "flag": "mod:icys_better_horses"
+    }
+  ],
+  "flag": "mod:icys_better_horses"
+}

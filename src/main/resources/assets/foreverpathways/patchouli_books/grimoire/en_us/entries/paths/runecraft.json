@@ -1,0 +1,21 @@
+{
+  "name": "Runecraft",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:arcane_rune",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:arcane_rune",
+      "title": "Runecraft",
+      "text": "$(bold)Blank and arcane runes.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)54 Focal Shards$(n).$(br)After Arcane Essence."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:arcane_rune",
+      "text": "$(bold)Arcane rune",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

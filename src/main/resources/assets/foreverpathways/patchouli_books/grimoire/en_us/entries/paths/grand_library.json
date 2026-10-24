@@ -1,0 +1,24 @@
+{
+  "name": "Grand Library",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:chiseled_bookshelf",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:chiseled_bookshelf",
+      "title": "Grand Library",
+      "text": "$(bold)The full table: offers up to level 30, and every enchantment the game can roll.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)48 Focal Shards$(n).$(br)After Library."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Enchant 80 items$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)Enchanting table up to $(thing)level 30$(n)."
+    }
+  ]
+}

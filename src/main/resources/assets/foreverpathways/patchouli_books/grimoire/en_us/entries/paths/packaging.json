@@ -1,0 +1,21 @@
+{
+  "name": "Packaging",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:packager",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:packager",
+      "title": "Packaging",
+      "text": "$(bold)Packagers, stock links and tickers, frogports, postboxes, chain conveyors and the cardboard range. Needs Parcels as well.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)48 Focal Shards$(n).$(br)After Logistics and Parcels."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/logistics/packager_from_conversion",
+      "text": "$(bold)Packager",
+      "flag": "mod:create"
+    }
+  ],
+  "flag": "mod:create"
+}

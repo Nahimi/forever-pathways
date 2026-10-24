@@ -1,0 +1,57 @@
+name: Bug report
+description: Something is broken, crashes, or does not do what the Grimoire says.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to report this. The more of these you fill in, the faster it gets fixed.
+  - type: input
+    id: version
+    attributes:
+      label: Forever Pathways version
+      description: Shown in the mod list, or in the jar's file name.
+      placeholder: "0.23.0"
+    validations:
+      required: true
+  - type: input
+    id: neoforge
+    attributes:
+      label: NeoForge version
+      placeholder: "21.1.256"
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where does it happen?
+      options:
+        - Single player
+        - Multiplayer server
+        - Both
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What you did, what you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Unlock the Quarry node
+        2. Mine stone
+        3. ...
+  - type: textarea
+    id: mods
+    attributes:
+      label: Mod list
+      description: Paste your mods folder listing, or the modpack name and version.
+  - type: textarea
+    id: log
+    attributes:
+      label: Log
+      description: Upload latest.log (and the crash report if it crashed) to https://mclo.gs and paste the link here.

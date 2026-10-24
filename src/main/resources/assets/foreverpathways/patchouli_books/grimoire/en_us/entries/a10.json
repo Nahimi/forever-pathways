@@ -1,0 +1,20 @@
+{
+  "name": "A10. Chalk",
+  "category": "foreverpathways:beyond",
+  "icon": "chalk:chalk",
+  "sortnum": 10,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)$(li)Use $(thing)chalk$(n) on a block to draw a mark. Mark the way out of a cave.$(br)$(li)Dye it for colour. Special symbols are learnt as you go.$(br)$(li)A $(thing)chalk box$(n) holds several. Add a glow ink sac and the marks glow.$(br2)All at $(l:paths/chalk)Chalk$(n), ring 2, from calcite.",
+      "title": "A10. Chalk"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "chalk:chalk",
+      "recipe2": "chalk:chalk_box",
+      "title": "Chalk and the Box"
+    }
+  ],
+  "flag": "mod:chalk"
+}

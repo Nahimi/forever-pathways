@@ -1,0 +1,24 @@
+{
+  "name": "Hardy",
+  "category": "foreverpathways:paths/constitution",
+  "icon": "minecraft:cooked_beef",
+  "sortnum": 200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:cooked_beef",
+      "title": "Hardy",
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)11 Focal Shards$(n).$(br)After Core."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Survive 5 days without dying$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% maximum health$(n)"
+    }
+  ]
+}

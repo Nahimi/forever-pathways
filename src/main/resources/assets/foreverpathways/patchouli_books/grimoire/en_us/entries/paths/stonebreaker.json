@@ -1,0 +1,24 @@
+{
+  "name": "Stonebreaker",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:netherite_pickaxe",
+  "sortnum": 1300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:netherite_pickaxe",
+      "title": "Stonebreaker",
+      "text": "$(bold)Stone parts for you now. +5% breaking speed.$(br2)$(thing)The Arcane$(n), ring 13.$(br)$(thing)75 Focal Shards$(n).$(br)After Tireless."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 8,000 stone$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% breaking speed$(n)"
+    }
+  ]
+}

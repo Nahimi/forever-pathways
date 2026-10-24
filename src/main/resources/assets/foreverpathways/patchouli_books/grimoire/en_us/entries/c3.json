@@ -1,0 +1,33 @@
+{
+  "name": "III. Gaining Shards",
+  "category": "foreverpathways:start",
+  "icon": "minecraft:amethyst_shard",
+  "sortnum": 2,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)Three sources, and no others. Shards cannot be mined, crafted or traded for.",
+      "title": "III. Gaining Shards"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Tasks",
+      "text": "$(bold)One per node. Pays once, for good.$(br2)A task counts only once its node is reachable: the node before it owned, its ring unsealed. Earlier work does not count."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Bounties",
+      "text": "$(bold)Two offered each dawn, lasting a few days.$(br2)$(li)Small, endless, and most of your early income.$(br)$(li)The pool grows as you unlock nodes.$(br)$(li)A finished slot stays empty until the next dawn, so at most two pay a day."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Achievements",
+      "text": "$(bold)A few vanilla advancements pay once: first iron smelted, first iron pick, and others.$(br2)First come, first paid."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Keeping Track",
+      "text": "$(bold)$(li)A small popup at the right edge as a task or bounty moves on.$(br)$(li)A banner and a chime when one is complete.$(br2)Turn any of these off at the bottom of the Tasks tab on the ring."
+    }
+  ]
+}

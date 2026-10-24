@@ -1,0 +1,21 @@
+{
+  "name": "Fluids",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:fluid_pipe",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:fluid_pipe",
+      "title": "Fluids",
+      "text": "$(bold)Pipes, pumps, tanks, valves, the spout, the item drain and the hose pulley.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)34 Focal Shards$(n).$(br)After Pressing and Mixing."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/kinetics/fluid_pipe_vertical",
+      "text": "$(bold)Fluid pipe",
+      "flag": "mod:create"
+    }
+  ],
+  "flag": "mod:create"
+}

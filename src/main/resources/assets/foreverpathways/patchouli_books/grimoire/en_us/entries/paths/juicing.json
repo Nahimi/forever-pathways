@@ -1,0 +1,15 @@
+{
+  "name": "Juicing",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "legendarysurvivaloverhaul:apple_juice",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "legendarysurvivaloverhaul:apple_juice",
+      "title": "Juicing",
+      "text": "$(bold)Apple, beetroot, cactus, carrot, glow berry, melon, pumpkin and sweet berry juice.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)5 Focal Shards$(n).$(br)After Gardener."
+    }
+  ],
+  "flag": "mod:legendarysurvivaloverhaul"
+}

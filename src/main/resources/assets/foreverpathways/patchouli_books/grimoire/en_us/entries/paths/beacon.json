@@ -1,0 +1,29 @@
+{
+  "name": "Beacon",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:beacon",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:beacon",
+      "title": "Beacon",
+      "text": "$(bold)The beacon, the conduit and the nether star.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)48 Focal Shards$(n).$(br)After Infernal."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill the Wither$(n)$(br2)Pays 8 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:beacon",
+      "text": "$(bold)Beacon"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)beacon, nether star, conduit, heart of the sea."
+    }
+  ]
+}

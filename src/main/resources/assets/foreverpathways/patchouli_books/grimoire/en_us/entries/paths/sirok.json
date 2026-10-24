@@ -1,0 +1,20 @@
+{
+  "name": "Sirok",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "block_factorys_bosses:sandworm_gauntlet",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "block_factorys_bosses:sandworm_gauntlet",
+      "title": "Sirok",
+      "text": "$(bold)Sirok's sandworm gauntlet.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)28 Focal Shards$(n).$(br)After Helvar."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill Sirok$(n)$(br2)Pays 6 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:block_factorys_bosses"
+}

@@ -1,0 +1,26 @@
+{
+  "name": "Bakery",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "baking_process:baguette",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "baking_process:baguette",
+      "title": "Bakery",
+      "text": "$(bold)The baking process: flour, dough, moulds and breads, plus Create's sweets and flour and the Supplementaries pancake, candy and sugar cube.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)6 Focal Shards$(n).$(br)After Kitchen."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "baking_process:baguette_embryo",
+      "text": "$(bold)Baguette embryo",
+      "flag": "mod:baking_process"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything of its kind."
+    }
+  ],
+  "flag": "mod:baking_process"
+}

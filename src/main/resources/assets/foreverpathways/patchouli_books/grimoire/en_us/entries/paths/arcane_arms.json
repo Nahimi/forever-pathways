@@ -1,0 +1,21 @@
+{
+  "name": "Arcane Arms",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:keeper_flamberge",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:keeper_flamberge",
+      "title": "Arcane Arms",
+      "text": "$(bold)The flamberges, the dreadsword, the twilight gale, the autoloader crossbow, the staff of the nines and the weapon parts.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)64 Focal Shards$(n).$(br)After Spellblades."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:twilight_gale",
+      "text": "$(bold)Twilight gale",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

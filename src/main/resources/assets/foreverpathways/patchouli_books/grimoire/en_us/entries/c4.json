@@ -1,0 +1,23 @@
+{
+  "name": "IV. The Sixteen Eyes",
+  "category": "foreverpathways:start",
+  "icon": "minecraft:ender_eye",
+  "sortnum": 3,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)The End portal needs sixteen $(thing)different$(n) eyes. None can be crafted or mined.$(br2)Each is a node on the last ring, behind the final seal.",
+      "title": "IV. The Sixteen Eyes"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Where They Come From",
+      "text": "$(bold)$(li)Six from the bosses of Bosses' Rise.$(br)$(li)The rest from the Wither, the End, brewing, trading, the trial chambers and other work you are doing anyway.$(br2)Every eye and its source is listed under $(l:eyes/about)The Sixteen Eyes$(n)."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "You Cannot Waste a Boss",
+      "text": "$(bold)A boss takes no damage from you until the node that asks for it is reachable.$(br2)An eye you have not unlocked still goes in your pack; it just will not go in the portal frame."
+    }
+  ]
+}

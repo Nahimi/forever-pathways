@@ -1,0 +1,21 @@
+{
+  "name": "Waterworks",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:water_wheel",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:water_wheel",
+      "title": "Waterworks",
+      "text": "$(bold)Water wheels, the turntable and the speed and stress gauges.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)16 Focal Shards$(n).$(br)After Gearing."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/kinetics/water_wheel",
+      "text": "$(bold)Water wheel",
+      "flag": "mod:create"
+    }
+  ],
+  "flag": "mod:create"
+}

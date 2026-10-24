@@ -1,0 +1,15 @@
+{
+  "name": "Forager",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "dynamictrees:oak_seed",
+  "sortnum": 200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "dynamictrees:oak_seed",
+      "title": "Forager",
+      "text": "$(bold)Tree seeds for planting: every Dynamic Trees, Terralith and cactus seed except the giant ones.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)4 Focal Shards$(n).$(br)After Homesteader."
+    }
+  ],
+  "flag": "mod:dynamictrees"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Pirates",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "block_factorys_bosses:pirate_saber",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "block_factorys_bosses:pirate_saber",
+      "title": "Pirates",
+      "text": "$(bold)The pirate saber, the dagger, nets and the wreckage from boss arenas.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)18 Focal Shards$(n).$(br)After Ranger."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 3 pirate captains$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "block_factorys_bosses:big_chain",
+      "text": "$(bold)Big chain",
+      "flag": "mod:block_factorys_bosses"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything of its kind."
+    }
+  ],
+  "flag": "mod:block_factorys_bosses"
+}

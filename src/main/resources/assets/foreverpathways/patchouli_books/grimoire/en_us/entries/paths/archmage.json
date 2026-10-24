@@ -1,0 +1,31 @@
+{
+  "name": "Archmage",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:legendary_spell_book",
+  "sortnum": 1200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:legendary_spell_book",
+      "title": "Archmage",
+      "text": "$(bold)Legendary ink, the netherite, legendary and cursed doll spellbooks and the spell slot upgrade. Lets you master two more schools.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)74 Focal Shards$(n).$(br)After Greater Ink."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 15 evokers$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:cursed_doll_spell_book",
+      "text": "$(bold)Cursed doll spell book",
+      "flag": "mod:irons_spellbooks"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind, everything of its kind."
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

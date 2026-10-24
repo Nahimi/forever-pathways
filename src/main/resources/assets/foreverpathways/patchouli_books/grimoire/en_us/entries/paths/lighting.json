@@ -1,0 +1,26 @@
+{
+  "name": "Lighting",
+  "category": "foreverpathways:paths/builder",
+  "icon": "supplementaries:sconce",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "supplementaries:sconce",
+      "title": "Lighting",
+      "text": "$(bold)Candles of every colour, sconces, candle holders, the stone lamps, the fire pit and lumisene.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)14 Focal Shards$(n).$(br)After Trimmings."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)Craft-locked only.$(n) Anyone can place, use and break these; the node buys the recipe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "supplementaries:sconce",
+      "text": "$(bold)Sconce",
+      "flag": "mod:supplementaries"
+    }
+  ],
+  "flag": "mod:supplementaries"
+}

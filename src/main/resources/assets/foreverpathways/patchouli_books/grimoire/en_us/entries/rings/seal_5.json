@@ -1,0 +1,18 @@
+{
+  "name": "Seal of Gold",
+  "category": "foreverpathways:rings",
+  "icon": "minecraft:gold_block",
+  "sortnum": 12,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Seal of Gold",
+      "text": "$(bold)Bars rings 5 to 6: Gilded Age and Diamond Age.$(br2)$(li)$(thing)35 nodes$(n) owned$(br)$(li)$(thing)35 Focal Shards$(n)$(br)$(li)its task, below$(br2)47 nodes wait behind it."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Travel 40,000 blocks$(n)$(br2)Counts only once everything else about the seal is ready."
+    }
+  ]
+}

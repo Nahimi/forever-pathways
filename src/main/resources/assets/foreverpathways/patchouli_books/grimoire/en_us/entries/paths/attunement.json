@@ -1,0 +1,31 @@
+{
+  "name": "Attunement",
+  "category": "foreverpathways:paths/magician",
+  "icon": "waystones:warp_stone",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "waystones:warp_stone",
+      "title": "Attunement",
+      "text": "$(bold)Craft, place and break waystones of every stone. Warp stones, warp dust and shards, and the warp, return and bound scrolls.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)64 Focal Shards$(n).$(br)After Jeweller."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Travel 30,000 blocks$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "waystones:warp_stone",
+      "text": "$(bold)Warp stone",
+      "flag": "mod:waystones"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything of its kind."
+    }
+  ],
+  "flag": "mod:waystones"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Magician",
+  "description": "The Magician road, from ring 6 outwards.",
+  "icon": "minecraft:enchanted_book",
+  "sortnum": 12,
+  "parent": "foreverpathways:paths"
+}

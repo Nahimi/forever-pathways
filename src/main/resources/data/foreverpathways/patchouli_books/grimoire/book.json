@@ -1,0 +1,24 @@
+{
+  "name": "The Forever Grimoire",
+  "landing_text": "You do not know me. I knew you, once.$(br2)Read, and I will tell you what this world has taken and how to take it back.",
+  "use_resource_pack": true,
+  "i18n": false,
+  "version": "1",
+  "subtitle": "Forever Pathways",
+  "model": "patchouli:book_brown",
+  "index_icon": "minecraft:amethyst_shard",
+  "text_color": "241C14",
+  "header_color": "6B4A1F",
+  "nameplate_color": "C4A574",
+  "link_color": "8A5E22",
+  "link_hover_color": "B07A2E",
+  "progress_bar_color": "C4A574",
+  "progress_bar_background": "3A3128",
+  "show_progress": true,
+  "pause_game": false,
+  "macros": {
+    "$(n)": "$(reset)$(bold)",
+    "$(thing)": "$(bold)$(#6B4A1F)",
+    "$(seal)": "$(bold)$(#8A3B2F)"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "Windrunner",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:diamond_boots",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:diamond_boots",
+      "title": "Windrunner",
+      "text": "$(bold)Nothing on foot keeps up with you. +2% movement speed.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)48 Focal Shards$(n).$(br)After Fleet Foot."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Sprint 15,000 blocks$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+2% movement speed$(n)"
+    }
+  ]
+}

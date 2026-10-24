@@ -1,0 +1,21 @@
+{
+  "name": "Contraptions",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:mechanical_bearing",
+  "sortnum": 800,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:mechanical_bearing",
+      "title": "Contraptions",
+      "text": "$(bold)Bearings, mechanical pistons, rope pulleys, chassis, glue, stickers and sails.$(br2)$(thing)The Nether$(n), ring 8.$(br)$(thing)40 Focal Shards$(n).$(br)After Andesite Casing."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/kinetics/mechanical_bearing",
+      "text": "$(bold)Mechanical bearing",
+      "flag": "mod:create"
+    }
+  ],
+  "flag": "mod:create"
+}

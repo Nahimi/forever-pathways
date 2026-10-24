@@ -1,0 +1,24 @@
+{
+  "name": "Thick Skinned",
+  "category": "foreverpathways:paths/constitution",
+  "icon": "minecraft:leather_chestplate",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:leather_chestplate",
+      "title": "Thick Skinned",
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)16 Focal Shards$(n).$(br)After Hardy."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 120 monsters$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% maximum health$(n)"
+    }
+  ]
+}

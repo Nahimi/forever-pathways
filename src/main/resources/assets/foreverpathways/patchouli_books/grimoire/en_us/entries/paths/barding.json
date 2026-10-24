@@ -1,0 +1,19 @@
+{
+  "name": "Barding",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:diamond_horse_armor",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:diamond_horse_armor",
+      "title": "Barding",
+      "text": "$(bold)Iron, golden and diamond horse armour.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)16 Focal Shards$(n).$(br)After Rider."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)iron horse armor, golden horse armor, diamond horse armor."
+    }
+  ]
+}

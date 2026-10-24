@@ -1,0 +1,29 @@
+{
+  "name": "Iron Tools",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:iron_pickaxe",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:iron_pickaxe",
+      "title": "Iron Tools",
+      "text": "$(bold)Iron tools, shears, the shield and flint and steel. +15% breaking speed.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)10 Focal Shards$(n).$(br)After Iron."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+15% breaking speed$(n)"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:iron_pickaxe",
+      "text": "$(bold)Iron pickaxe"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)shears, shield, flint and steel."
+    }
+  ]
+}

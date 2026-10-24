@@ -1,0 +1,19 @@
+{
+  "name": "A11. Villages",
+  "category": "foreverpathways:beyond",
+  "icon": "minecraft:emerald",
+  "sortnum": 11,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)Villagers watch you.$(br2)$(li)Take from their chests, break their things or sleep in their beds and you are $(thing)seen$(n).$(br)$(li)Crimes lower your $(thing)reputation$(n). Low enough and they refuse to trade; lower and the guards attack.",
+      "title": "A11. Villages"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Staying Welcome",
+      "text": "$(bold)$(li)Gifts win them back.$(br)$(li)Small crimes fade with time; heavy ones linger.$(br2)Trading is a task at $(l:paths/trader)Trader$(n), so stay welcome."
+    }
+  ],
+  "flag": "mod:thief"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "A5. Electricity",
+  "category": "foreverpathways:beyond",
+  "icon": "powergrid:copper_cord",
+  "sortnum": 5,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)Separate from Create, and it starts earlier.$(br2)$(li)$(l:paths/wiring)Wiring$(n), ring 3: cord, wire, potato battery.$(br)$(li)$(l:paths/lighting_rig)Lighting Rig$(n), ring 4: bulbs, meters.$(br)$(li)$(l:paths/power_grid)Power Grid$(n), ring 10: generators, motors.$(br)$(li)$(l:paths/high_voltage)High Voltage$(n), ring 14: the end of it.",
+      "title": "A5. Electricity"
+    }
+  ],
+  "flag": "mod:powergrid"
+}

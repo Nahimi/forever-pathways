@@ -1,0 +1,20 @@
+{
+  "name": "Offroad",
+  "category": "foreverpathways:paths/technician",
+  "icon": "offroad:tire",
+  "sortnum": 1200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "offroad:tire",
+      "title": "Offroad",
+      "text": "$(bold)Wheels, tyres and boreheads.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)78 Focal Shards$(n).$(br)After Simulated."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything of its kind."
+    }
+  ],
+  "flag": "mod:offroad"
+}

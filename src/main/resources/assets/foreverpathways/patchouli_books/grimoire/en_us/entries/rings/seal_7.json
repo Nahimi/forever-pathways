@@ -1,0 +1,18 @@
+{
+  "name": "Seal of the Deep",
+  "category": "foreverpathways:rings",
+  "icon": "minecraft:deepslate_bricks",
+  "sortnum": 13,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Seal of the Deep",
+      "text": "$(bold)Bars rings 7 to 8: The Deep and The Nether.$(br2)$(li)$(thing)59 nodes$(n) owned$(br)$(li)$(thing)50 Focal Shards$(n)$(br)$(li)its task, below$(br2)31 nodes wait behind it."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 3,000 deepslate$(n)$(br2)Counts only once everything else about the seal is ready."
+    }
+  ]
+}

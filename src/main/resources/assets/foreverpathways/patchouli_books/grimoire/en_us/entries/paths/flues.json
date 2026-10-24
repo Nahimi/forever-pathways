@@ -1,0 +1,21 @@
+{
+  "name": "Flues",
+  "category": "foreverpathways:paths/builder",
+  "icon": "adchimneys:metal_chimney",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "adchimneys:metal_chimney",
+      "title": "Flues",
+      "text": "$(bold)Glass and metal chimneys, pipes, ducts and vents, for carrying smoke where you want it. Needs Ironworks as well.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)16 Focal Shards$(n).$(br)After Chimneys and Ironworks."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "adchimneys:metal_chimney",
+      "text": "$(bold)Metal chimney",
+      "flag": "mod:adchimneys"
+    }
+  ],
+  "flag": "mod:adchimneys"
+}

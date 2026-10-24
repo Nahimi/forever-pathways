@@ -1,0 +1,34 @@
+{
+  "name": "Enchanting",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:enchanting_table",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:enchanting_table",
+      "title": "Enchanting",
+      "text": "$(bold)The enchanting table, bookshelves, lapis, anvils, the grindstone and the lectern. The table will only offer up to level 5, so the enchantments it gives are the weak ones. Needs Study as well.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)28 Focal Shards$(n).$(br)After Redstone and Study."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 96 lapis ore$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)Enchanting table up to $(thing)level 5$(n)."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:enchanting_table",
+      "text": "$(bold)Enchanting table"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)enchanting table, bookshelf, chiseled bookshelf, lapis lazuli, lapis block, anvil, chipped anvil, damaged anvil, grindstone, lectern, experience bottle, enchanted book."
+    }
+  ]
+}

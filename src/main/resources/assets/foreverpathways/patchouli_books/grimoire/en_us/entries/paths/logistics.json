@@ -1,0 +1,21 @@
+{
+  "name": "Logistics",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:item_vault",
+  "sortnum": 800,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:item_vault",
+      "title": "Logistics",
+      "text": "$(bold)Smart chutes, vaults, ejectors, filters, links, displays, latches and toolboxes.$(br2)$(thing)The Nether$(n), ring 8.$(br)$(thing)40 Focal Shards$(n).$(br)After Belts."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/kinetics/item_vault",
+      "text": "$(bold)Item vault",
+      "flag": "mod:create"
+    }
+  ],
+  "flag": "mod:create"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "Constitution",
+  "description": "The Constitution road, from ring 2 outwards.",
+  "icon": "minecraft:golden_apple",
+  "sortnum": 16,
+  "parent": "foreverpathways:paths"
+}

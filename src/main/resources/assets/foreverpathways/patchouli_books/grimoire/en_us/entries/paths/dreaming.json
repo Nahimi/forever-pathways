@@ -1,0 +1,31 @@
+{
+  "name": "Dreaming",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "sleep_tight:night_bag",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "sleep_tight:night_bag",
+      "title": "Dreaming",
+      "text": "$(bold)The night bag, dreamer's essence, and the bedbug eggs. An infested bed is cleaned with a splash potion of Harming, so this waits for Brewing.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)26 Focal Shards$(n).$(br)After Infirmary and Brewing."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Sleep 20 nights$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "sleep_tight:sleeping_bag",
+      "text": "$(bold)Night bag",
+      "flag": "mod:sleep_tight"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind."
+    }
+  ],
+  "flag": "mod:sleep_tight"
+}

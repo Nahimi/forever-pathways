@@ -1,0 +1,19 @@
+{
+  "name": "Brickwork",
+  "category": "foreverpathways:paths/builder",
+  "icon": "minecraft:bricks",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:bricks",
+      "title": "Brickwork",
+      "text": "$(bold)Bricks, flower pots, the bellows, and cut, smooth and chiseled sandstone of every kind.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)10 Focal Shards$(n).$(br)After Polished Stone."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:flower_pot",
+      "text": "$(bold)Flower pot"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "Nether Eye",
+  "category": "foreverpathways:eyes",
+  "icon": "endrem:nether_eye",
+  "sortnum": 30,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "endrem:nether_eye",
+      "title": "Nether Eye",
+      "text": "$(bold)Only the Ashlord drop this eye. This node lets you use it in the ancient portal.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill 120 ghasts or blazes."
+    }
+  ],
+  "flag": "mod:endrem"
+}

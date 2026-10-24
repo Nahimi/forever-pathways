@@ -1,0 +1,24 @@
+{
+  "name": "Strong Back",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:iron_pickaxe",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:iron_pickaxe",
+      "title": "Strong Back",
+      "text": "$(bold)Years at the rock face. +5% breaking speed.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)28 Focal Shards$(n).$(br)After Iron Tools."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 1,500 stone$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% breaking speed$(n)"
+    }
+  ]
+}

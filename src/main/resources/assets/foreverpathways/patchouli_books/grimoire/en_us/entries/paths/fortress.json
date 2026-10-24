@@ -1,0 +1,14 @@
+{
+  "name": "Fortress Stone",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:nether_bricks",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:nether_bricks",
+      "title": "Fortress Stone",
+      "text": "$(bold)Nether bricks, red nether bricks and quartz blocks, with their stairs, slabs, walls and fences.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)29 Focal Shards$(n).$(br)After Nether."
+    }
+  ]
+}

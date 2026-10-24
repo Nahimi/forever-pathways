@@ -1,0 +1,15 @@
+{
+  "name": "Cursed Eye",
+  "category": "foreverpathways:eyes",
+  "icon": "endrem:cursed_eye",
+  "sortnum": 24,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "endrem:cursed_eye",
+      "title": "Cursed Eye",
+      "text": "$(bold)Only Helvar drops this eye. This node lets you use it in the ancient portal.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill 100 piglin brutes or wither skeletons."
+    }
+  ],
+  "flag": "mod:endrem"
+}

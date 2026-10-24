@@ -1,0 +1,19 @@
+{
+  "name": "Second Path",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:filled_map",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:filled_map",
+      "title": "Second Path",
+      "text": "$(bold)Reopens the fork, so you can take the side you gave up.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)60 Focal Shards$(n).$(br)After Ranger."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Travel 60,000 blocks$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
+    }
+  ]
+}

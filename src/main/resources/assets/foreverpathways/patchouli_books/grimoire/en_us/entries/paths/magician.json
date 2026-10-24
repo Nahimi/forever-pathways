@@ -1,0 +1,21 @@
+{
+  "name": "Magician",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:wimpy_spell_book",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:wimpy_spell_book",
+      "title": "Magician",
+      "text": "$(bold)A wimpy spellbook, common ink, scrolls and the wisewood shelves. No real spells yet.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)26 Focal Shards$(n).$(br)After Apothecary."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:book_stack",
+      "text": "$(bold)Book stack",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

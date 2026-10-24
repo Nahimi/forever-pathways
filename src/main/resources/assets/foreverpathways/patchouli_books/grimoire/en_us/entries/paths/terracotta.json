@@ -1,0 +1,14 @@
+{
+  "name": "Glazed Terracotta and Concrete",
+  "category": "foreverpathways:paths/builder",
+  "icon": "minecraft:white_glazed_terracotta",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:white_glazed_terracotta",
+      "title": "Glazed Terracotta and Concrete",
+      "text": "$(bold)Glazed terracotta, concrete and concrete powder.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)16 Focal Shards$(n).$(br)After Deepslate Work."
+    }
+  ]
+}

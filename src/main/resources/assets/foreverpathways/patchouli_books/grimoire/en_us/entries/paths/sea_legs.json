@@ -1,0 +1,24 @@
+{
+  "name": "Sea Legs",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:spruce_boat",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:spruce_boat",
+      "title": "Sea Legs",
+      "text": "$(bold)The water carries you. +5% boat speed.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)23 Focal Shards$(n).$(br)After Oarsman."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Row 10,000 blocks$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% boat speed$(n)"
+    }
+  ]
+}

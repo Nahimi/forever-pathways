@@ -1,0 +1,15 @@
+{
+  "name": "Climate Gear III",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "legendarysurvivaloverhaul:heating_coat_3",
+  "sortnum": 800,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "legendarysurvivaloverhaul:heating_coat_3",
+      "title": "Climate Gear III",
+      "text": "$(bold)Third-grade thermal coats and the thermal resistance ring.$(br2)$(thing)The Nether$(n), ring 8.$(br)$(thing)24 Focal Shards$(n).$(br)After Climate Gear II."
+    }
+  ],
+  "flag": "mod:legendarysurvivaloverhaul"
+}

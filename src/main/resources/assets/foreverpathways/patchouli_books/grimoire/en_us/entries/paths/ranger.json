@@ -1,0 +1,24 @@
+{
+  "name": "Ranger",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:spyglass",
+  "sortnum": 100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:spyglass",
+      "title": "Ranger",
+      "text": "$(bold)Leather armour, the lead, the spyglass and amethyst. The fork comes next.$(br2)$(thing)Stone Age$(n), ring 1.$(br)$(thing)4 Focal Shards$(n).$(br)After Core."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:spyglass",
+      "text": "$(bold)Spyglass"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)lead, spyglass, amethyst shard, amethyst block, amethyst cluster, budding amethyst, small amethyst bud, medium amethyst bud, large amethyst bud."
+    }
+  ]
+}

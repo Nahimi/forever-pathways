@@ -1,0 +1,15 @@
+{
+  "name": "Cryptic Eye",
+  "category": "foreverpathways:eyes",
+  "icon": "endrem:cryptic_eye",
+  "sortnum": 23,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "endrem:cryptic_eye",
+      "title": "Cryptic Eye",
+      "text": "$(bold)Found through End Remastered's own loot, mobs and crafting. This node lets you use it in the ancient portal.$(br2)$(thing)28 Focal Shards$(n).$(br2)Sleep 60 nights."
+    }
+  ],
+  "flag": "mod:endrem"
+}

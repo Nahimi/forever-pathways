@@ -1,0 +1,15 @@
+{
+  "name": "Dragonscale",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "butchery:dragon_scale_armor_chestplate",
+  "sortnum": 1200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "butchery:dragon_scale_armor_chestplate",
+      "title": "Dragonscale",
+      "text": "$(bold)Dragon scales, dragonscale ingots and armour, and the smithing templates. Needs The End as well.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)31 Focal Shards$(n).$(br)After Abattoir and The End."
+    }
+  ],
+  "flag": "mod:butchery"
+}

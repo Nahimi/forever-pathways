@@ -1,0 +1,26 @@
+{
+  "name": "Trimmings",
+  "category": "foreverpathways:paths/builder",
+  "icon": "supplementaries:awning",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "supplementaries:awning",
+      "title": "Trimmings",
+      "text": "$(bold)Awnings, flags, bunting, item shelves, doormats, flower boxes, planters and way signs, with presents, flutes, confetti poppers and lunch baskets.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)10 Focal Shards$(n).$(br)After Fittings."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)Craft-locked only.$(n) Anyone can place, use and break these; the node buys the recipe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "supplementaries:awnings/awning",
+      "text": "$(bold)Awning",
+      "flag": "mod:supplementaries"
+    }
+  ],
+  "flag": "mod:supplementaries"
+}

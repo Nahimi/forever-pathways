@@ -1,0 +1,21 @@
+{
+  "name": "Belts",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:belt_connector",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:belt_connector",
+      "title": "Belts",
+      "text": "$(bold)Belts, andesite funnels and tunnels, and the chute.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)34 Focal Shards$(n).$(br)After Fans and Depots."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/kinetics/belt_connector",
+      "text": "$(bold)Belt connector",
+      "flag": "mod:create"
+    }
+  ],
+  "flag": "mod:create"
+}

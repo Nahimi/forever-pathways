@@ -1,0 +1,29 @@
+{
+  "name": "Redstone",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:redstone",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:redstone",
+      "title": "Redstone",
+      "text": "$(bold)Dust, torches, repeaters, comparators, levers, lamps, targets and powered rails.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)18 Focal Shards$(n).$(br)After Deep Prospector."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 96 redstone ore$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:clock",
+      "text": "$(bold)Clock"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)clock, compass, redstone, redstone block, redstone torch, repeater, comparator, lever, daylight detector, note block, jukebox, redstone lamp, powered rail, detector rail, activator rail."
+    }
+  ]
+}

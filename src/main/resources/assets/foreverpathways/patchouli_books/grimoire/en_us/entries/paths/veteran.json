@@ -1,0 +1,24 @@
+{
+  "name": "Veteran",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:iron_sword",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:iron_sword",
+      "title": "Veteran",
+      "text": "$(bold)Scarred, and better for it. +10% attack damage.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)18 Focal Shards$(n).$(br)After Brawler."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 150 monsters$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+10% attack damage$(n)"
+    }
+  ]
+}

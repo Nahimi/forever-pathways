@@ -1,0 +1,15 @@
+{
+  "name": "Magical Eye",
+  "category": "foreverpathways:eyes",
+  "icon": "endrem:magical_eye",
+  "sortnum": 29,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "endrem:magical_eye",
+      "title": "Magical Eye",
+      "text": "$(bold)Found through End Remastered's own loot, mobs and crafting. This node lets you use it in the ancient portal.$(br2)$(thing)28 Focal Shards$(n).$(br2)Enchant 100 items."
+    }
+  ],
+  "flag": "mod:endrem"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Holy Relics",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:divine_pearl",
+  "sortnum": 1200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:divine_pearl",
+      "title": "Holy Relics",
+      "text": "$(bold)Divine pearls and soulshards, the villager spellbook, greater healing and the paladin chestplate.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)74 Focal Shards$(n).$(br)After Holy Robes."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:divine_pearl",
+      "text": "$(bold)Divine pearl",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

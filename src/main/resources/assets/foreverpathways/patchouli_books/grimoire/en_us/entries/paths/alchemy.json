@@ -1,0 +1,26 @@
+{
+  "name": "Alchemy",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:alchemist_cauldron",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:alchemist_cauldron",
+      "title": "Alchemy",
+      "text": "$(bold)The alchemist cauldron, oakskin elixir, fire ale and caster's tea.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)33 Focal Shards$(n).$(br)After Magician."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 12 witches$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:alchemist_cauldron",
+      "text": "$(bold)Alchemist cauldron",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

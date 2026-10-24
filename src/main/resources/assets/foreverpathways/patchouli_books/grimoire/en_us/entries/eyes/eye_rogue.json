@@ -1,0 +1,15 @@
+{
+  "name": "Rogue Eye",
+  "category": "foreverpathways:eyes",
+  "icon": "endrem:rogue_eye",
+  "sortnum": 32,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "endrem:rogue_eye",
+      "title": "Rogue Eye",
+      "text": "$(bold)Only the pirate captains drop this eye. This node lets you use it in the ancient portal.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill 120 pillagers or vindicators."
+    }
+  ],
+  "flag": "mod:endrem"
+}

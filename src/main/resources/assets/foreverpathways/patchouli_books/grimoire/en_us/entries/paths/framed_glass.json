@@ -1,0 +1,21 @@
+{
+  "name": "Framed Glass",
+  "category": "foreverpathways:paths/builder",
+  "icon": "create:framed_glass",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:framed_glass",
+      "title": "Framed Glass",
+      "text": "$(bold)Create's windows, framed and tiled glass.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)16 Focal Shards$(n).$(br)After Glassworks."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:acacia_window",
+      "text": "$(bold)Acacia window",
+      "flag": "mod:create"
+    }
+  ],
+  "flag": "mod:create"
+}

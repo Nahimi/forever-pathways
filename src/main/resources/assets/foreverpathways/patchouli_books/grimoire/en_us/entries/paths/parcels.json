@@ -1,0 +1,26 @@
+{
+  "name": "Parcels",
+  "category": "foreverpathways:paths/technician",
+  "icon": "envelope:sealed_package",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "envelope:sealed_package",
+      "title": "Parcels",
+      "text": "$(bold)Packages, seal stamps in every colour, payback boxes and tags, and lost mail. The soulbound stamp wants an echo shard. Needs Iron as well, for the stamp.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)16 Focal Shards$(n).$(br)After Post and Iron."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "envelope:seal_stamp",
+      "text": "$(bold)Seal stamp",
+      "flag": "mod:envelope"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind."
+    }
+  ],
+  "flag": "mod:envelope"
+}

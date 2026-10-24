@@ -1,0 +1,15 @@
+{
+  "name": "Butcher's Shop",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "butchery:oak_butcher_display",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "butchery:oak_butcher_display",
+      "title": "Butcher's Shop",
+      "text": "$(bold)Butcher displays, counters, canopies, the cash register and coins.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)11 Focal Shards$(n).$(br)After Abattoir."
+    }
+  ],
+  "flag": "mod:butchery"
+}

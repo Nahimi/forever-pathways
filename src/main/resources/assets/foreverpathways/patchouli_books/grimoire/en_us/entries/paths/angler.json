@@ -1,0 +1,29 @@
+{
+  "name": "Angler",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "minecraft:cod_bucket",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:cod_bucket",
+      "title": "Angler",
+      "text": "$(bold)Fish buckets of every kind, and turtle and nautilus finds. +5% boat speed.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)11 Focal Shards$(n).$(br)After Larder."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Catch 200 fish$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% boat speed$(n)"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)cod bucket, salmon bucket, tropical fish bucket, pufferfish bucket, axolotl bucket, tadpole bucket, turtle egg, turtle scute, turtle helmet, nautilus shell."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "name": "Glassworks",
+  "category": "foreverpathways:paths/builder",
+  "icon": "minecraft:tinted_glass",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:tinted_glass",
+      "title": "Glassworks",
+      "text": "$(bold)Stained and tinted glass and panes.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)14 Focal Shards$(n).$(br)After Brickwork."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)tinted glass."
+    }
+  ]
+}

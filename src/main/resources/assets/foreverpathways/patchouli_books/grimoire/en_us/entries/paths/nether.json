@@ -1,0 +1,24 @@
+{
+  "name": "Nether",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:netherrack",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:netherrack",
+      "title": "Nether",
+      "text": "$(bold)The Nether's ground: netherrack, nylium, basalt, blackstone, soul sand and soil, magma, quartz, glowstone, nether gold, nether wart and nether bricks. Needs Obsidian as well.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)16 Focal Shards$(n).$(br)After Gold and Obsidian."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:soul_torch",
+      "text": "$(bold)Soul torch"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)netherrack, crimson nylium, warped nylium, basalt, polished basalt, blackstone, magma block, soul sand, soul soil, soul torch, soul lantern, soul campfire, nether quartz ore, quartz, glowstone, glowstone dust, nether gold ore, nether wart, nether brick."
+    }
+  ]
+}

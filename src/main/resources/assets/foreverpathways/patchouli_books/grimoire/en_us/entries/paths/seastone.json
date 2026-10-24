@@ -1,0 +1,24 @@
+{
+  "name": "Seastone",
+  "category": "foreverpathways:paths/builder",
+  "icon": "minecraft:prismarine_bricks",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:prismarine_bricks",
+      "title": "Seastone",
+      "text": "$(bold)Prismarine, dark prismarine, sea lanterns and Spawn's worked reefstone.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)36 Focal Shards$(n).$(br)After Glazed Terracotta and Concrete."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 25 guardians$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)sea lantern, terrain prismarine slab."
+    }
+  ]
+}

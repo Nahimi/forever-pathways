@@ -1,0 +1,15 @@
+{
+  "name": "Apothecary",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "legendarysurvivaloverhaul:plaster",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "legendarysurvivaloverhaul:plaster",
+      "title": "Apothecary",
+      "text": "$(bold)Plasters and first aid supplies, for wounds the herbs will not close.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)6 Focal Shards$(n).$(br)After Herbalist."
+    }
+  ],
+  "flag": "mod:legendarysurvivaloverhaul"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Wizard Robes",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:wizard_hat",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:wizard_hat",
+      "title": "Wizard Robes",
+      "text": "$(bold)The wizard's hat and robes.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)54 Focal Shards$(n).$(br)After Apprentice Robes."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:wizard_helmet_hat",
+      "text": "$(bold)Wizard hat",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

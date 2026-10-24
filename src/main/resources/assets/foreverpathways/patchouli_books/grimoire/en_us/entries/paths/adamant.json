@@ -1,0 +1,24 @@
+{
+  "name": "Adamant",
+  "category": "foreverpathways:paths/constitution",
+  "icon": "minecraft:netherite_block",
+  "sortnum": 1300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:netherite_block",
+      "title": "Adamant",
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)The Arcane$(n), ring 13.$(br)$(thing)119 Focal Shards$(n).$(br)After Enduring."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 8,000 deepslate$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% maximum health$(n)"
+    }
+  ]
+}

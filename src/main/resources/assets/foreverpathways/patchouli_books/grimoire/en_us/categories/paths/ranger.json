@@ -1,0 +1,7 @@
+{
+  "name": "Ranger",
+  "description": "The Ranger road, from ring 1 outwards.",
+  "icon": "minecraft:bow",
+  "sortnum": 11,
+  "parent": "foreverpathways:paths"
+}

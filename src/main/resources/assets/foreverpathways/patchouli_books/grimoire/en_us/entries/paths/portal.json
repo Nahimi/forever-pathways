@@ -1,0 +1,15 @@
+{
+  "name": "Ancient Portal",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "endrem:ancient_portal_frame",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "endrem:ancient_portal_frame",
+      "title": "Ancient Portal",
+      "text": "$(bold)The ancient portal frames. The sixteen eyes are earned on the paths.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)34 Focal Shards$(n).$(br)After Infernal."
+    }
+  ],
+  "flag": "mod:endrem"
+}

@@ -1,0 +1,21 @@
+{
+  "name": "Ender Robes",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:shadowwalker_helmet",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:shadowwalker_helmet",
+      "title": "Ender Robes",
+      "text": "$(bold)The shadowwalker robes: helmet, chestplate, leggings and boots.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)64 Focal Shards$(n).$(br)After Ender."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:shadowwalker_helmet_crafting",
+      "text": "$(bold)Shadowwalker helmet",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

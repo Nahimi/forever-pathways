@@ -1,0 +1,14 @@
+{
+  "name": "A4. Machines",
+  "category": "foreverpathways:beyond",
+  "icon": "create:cogwheel",
+  "sortnum": 4,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "text": "$(bold)Create turns rotation into work; shafts and cogs carry it.$(br2)$(li)$(l:paths/gearing)Gearing$(n), ring 3: cogs, gearboxes.$(br)$(li)$(l:paths/waterworks)Waterworks$(n), ring 4: water wheels.$(br)$(li)$(l:paths/mechanisms)Mechanisms$(n), ring 7, then belts, crushing, fluids.$(br)$(li)$(l:paths/brass)Brass$(n), ring 8: the second half of the mod.",
+      "title": "A4. Machines"
+    }
+  ],
+  "flag": "mod:create"
+}

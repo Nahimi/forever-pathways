@@ -1,0 +1,21 @@
+{
+  "name": "Lighting Rig",
+  "category": "foreverpathways:paths/technician",
+  "icon": "powergrid:light_bulb",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "powergrid:light_bulb",
+      "title": "Lighting Rig",
+      "text": "$(bold)Bulbs, fixtures, factory lights, buttons and the meters that read a circuit. Switches wait for Power Grid.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)16 Focal Shards$(n).$(br)After Wiring."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "powergrid:crafting/light_bulb",
+      "text": "$(bold)Light bulb",
+      "flag": "mod:powergrid"
+    }
+  ],
+  "flag": "mod:powergrid"
+}

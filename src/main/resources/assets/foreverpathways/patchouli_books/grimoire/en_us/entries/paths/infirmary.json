@@ -1,0 +1,20 @@
+{
+  "name": "Infirmary",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "legendarysurvivaloverhaul:medkit",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "legendarysurvivaloverhaul:medkit",
+      "title": "Infirmary",
+      "text": "$(bold)Medkits and morphine, the last word in field medicine.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)15 Focal Shards$(n).$(br)After Apothecary."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Breed 120 animals$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:legendarysurvivaloverhaul"
+}

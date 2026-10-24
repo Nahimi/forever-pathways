@@ -1,0 +1,21 @@
+{
+  "name": "Warp Network",
+  "category": "foreverpathways:paths/magician",
+  "icon": "waystones:black_sharestone",
+  "sortnum": 1300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "waystones:black_sharestone",
+      "title": "Warp Network",
+      "text": "$(bold)The advanced waystones: sharestones that a whole server shares, portstones, warp plates, the portal scroll, the twinbound feather and the epitaph.$(br2)$(thing)The Arcane$(n), ring 13.$(br)$(thing)86 Focal Shards$(n).$(br)After Attunement."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "waystones:black_sharestone",
+      "text": "$(bold)Black sharestone",
+      "flag": "mod:waystones"
+    }
+  ],
+  "flag": "mod:waystones"
+}

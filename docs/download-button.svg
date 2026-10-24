@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="72" viewBox="0 0 480 72" role="img" aria-label="Download Forever Pathways">
+  <rect width="480" height="72" fill="#000"/>
+  <rect x="3" y="3" width="474" height="66" fill="#6d6d6d"/>
+  <rect x="3" y="3" width="474" height="6" fill="#a8a8a8"/>
+  <rect x="3" y="3" width="6" height="66" fill="#a8a8a8"/>
+  <rect x="3" y="63" width="474" height="6" fill="#3b3b3b"/>
+  <rect x="471" y="3" width="6" height="66" fill="#3b3b3b"/>
+  <g font-family="'Courier New', Consolas, monospace" font-weight="bold" font-size="28" text-anchor="middle">
+    <text x="242" y="46" fill="#3e3e3e">Download Forever Pathways</text>
+    <text x="240" y="44" fill="#ffffff">Download Forever Pathways</text>
+  </g>
+</svg>

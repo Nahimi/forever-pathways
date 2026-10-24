@@ -1,0 +1,15 @@
+{
+  "name": "Vitality",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "legendarysurvivaloverhaul:heart_container",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "legendarysurvivaloverhaul:heart_container",
+      "title": "Vitality",
+      "text": "$(bold)Heart containers and fragments, shield containers and the nether chalice.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)20 Focal Shards$(n).$(br)After Helvar."
+    }
+  ],
+  "flag": "mod:legendarysurvivaloverhaul"
+}

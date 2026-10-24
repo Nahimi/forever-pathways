@@ -1,0 +1,21 @@
+{
+  "name": "Gearing",
+  "category": "foreverpathways:paths/technician",
+  "icon": "create:gearbox",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "create:gearbox",
+      "title": "Gearing",
+      "text": "$(bold)Gearboxes, clutches, gearshifts, chain drives and the Supplementaries wrench.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)13 Focal Shards$(n).$(br)After Technician."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/kinetics/gearbox",
+      "text": "$(bold)Gearbox",
+      "flag": "mod:create"
+    }
+  ],
+  "flag": "mod:create"
+}

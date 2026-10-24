@@ -1,0 +1,24 @@
+{
+  "name": "Enduring",
+  "category": "foreverpathways:paths/constitution",
+  "icon": "minecraft:elytra",
+  "sortnum": 1200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:elytra",
+      "title": "Enduring",
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)101 Focal Shards$(n).$(br)After Hale."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Travel 100,000 blocks$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% maximum health$(n)"
+    }
+  ]
+}

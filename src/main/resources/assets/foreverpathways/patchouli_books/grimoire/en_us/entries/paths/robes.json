@@ -1,0 +1,26 @@
+{
+  "name": "Apprentice Robes",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:wandering_magician_helmet",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:wandering_magician_helmet",
+      "title": "Apprentice Robes",
+      "text": "$(bold)Wandering magician robes, the pumpkin set and the tarnished helmet.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)46 Focal Shards$(n).$(br)After Study."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:wandering_magician_helmet",
+      "text": "$(bold)Wandering magician helmet",
+      "flag": "mod:irons_spellbooks"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)hogskin, speed boots."
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

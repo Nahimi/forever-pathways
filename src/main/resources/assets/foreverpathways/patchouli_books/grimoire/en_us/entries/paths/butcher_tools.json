@@ -1,0 +1,15 @@
+{
+  "name": "Butcher's Steel",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "butchery:iron_cleaver",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "butchery:iron_cleaver",
+      "title": "Butcher's Steel",
+      "text": "$(bold)Iron and golden cleavers, hacksaws, hammers and skinning knives.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)9 Focal Shards$(n).$(br)After Husbandry."
+    }
+  ],
+  "flag": "mod:butchery"
+}

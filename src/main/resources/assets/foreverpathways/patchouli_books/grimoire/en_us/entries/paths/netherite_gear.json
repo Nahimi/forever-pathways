@@ -1,0 +1,19 @@
+{
+  "name": "Netherite Gear",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:netherite_chestplate",
+  "sortnum": 1300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:netherite_chestplate",
+      "title": "Netherite Gear",
+      "text": "$(bold)Netherite tools and armour. +10% breaking speed.$(br2)$(thing)The Arcane$(n), ring 13.$(br)$(thing)54 Focal Shards$(n).$(br)After Netherite."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+10% breaking speed$(n)"
+    }
+  ]
+}

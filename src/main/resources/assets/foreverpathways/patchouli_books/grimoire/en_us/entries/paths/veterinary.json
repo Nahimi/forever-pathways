@@ -1,0 +1,31 @@
+{
+  "name": "Veterinary",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "icys-better-horses:horse_medkit_gear",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "icys-better-horses:horse_medkit_gear",
+      "title": "Veterinary",
+      "text": "$(bold)The horse medkit, and whatever else the stables learn to make. Needs Brewing as well.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)40 Focal Shards$(n).$(br)After Tack and Brewing."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Ride 40,000 blocks on horseback$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "icys-better-horses:horse_medkit_gear",
+      "text": "$(bold)Horse medkit gear",
+      "flag": "mod:icys_better_horses"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind."
+    }
+  ],
+  "flag": "mod:icys_better_horses"
+}

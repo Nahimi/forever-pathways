@@ -1,0 +1,26 @@
+{
+  "name": "Fittings",
+  "category": "foreverpathways:paths/builder",
+  "icon": "supplementaries:rope",
+  "sortnum": 200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "supplementaries:rope",
+      "title": "Fittings",
+      "text": "$(bold)Rope, sacks, timber frames and daub, with soap, ash, cranks, statues and hat stands.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)6 Focal Shards$(n).$(br)After Builder."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)Craft-locked only.$(n) Anyone can place, use and break these; the node buys the recipe."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "supplementaries:rope_2",
+      "text": "$(bold)Rope",
+      "flag": "mod:supplementaries"
+    }
+  ],
+  "flag": "mod:supplementaries"
+}

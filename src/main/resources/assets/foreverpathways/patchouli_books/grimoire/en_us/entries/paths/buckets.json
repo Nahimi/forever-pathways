@@ -1,0 +1,24 @@
+{
+  "name": "Buckets",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:bucket",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:bucket",
+      "title": "Buckets",
+      "text": "$(bold)Buckets of every kind except fish.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)10 Focal Shards$(n).$(br)After Iron."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:bucket",
+      "text": "$(bold)Bucket"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)bucket, water bucket, lava bucket, milk bucket, powder snow bucket, milk bucket de."
+    }
+  ]
+}

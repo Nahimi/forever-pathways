@@ -1,0 +1,1014 @@
+<title>Forever Pathways</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+  /* Layout: one working screen. The ring map fills the left, the node panel sits right
+     (stacked below on phones), exactly like the in-game screen it previews. */
+  :root {
+    --backdrop: #0b0907;
+    --ink: #14110e;
+    --panel: #17130f;
+    --line: #3a3128;
+    --track: #2a241e;
+    --cream: #f0e6d6;
+    --muted: #9a8b78;
+    --dim: #6b5f52;
+    --gold: #c4a574;
+    --seal: #e8d3a0;
+    --eye: #5fb3a1;
+    --good: #86a86f;
+    --bad: #c0614f;
+    --display: "Fraunces", Georgia, "Times New Roman", serif;
+    --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Menlo, Consolas, monospace;
+    color-scheme: dark;
+  }
+  html, body { height: 100%; }
+  body {
+    background: var(--backdrop);
+    color: var(--cream);
+    font: 13px/1.5 var(--mono);
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 14px;
+    box-sizing: border-box;
+  }
+  .app { height: 100%; display: grid; grid-template-rows: auto 1fr; gap: 12px; min-height: 560px; }
+  header.bar { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 10px 20px; }
+  .brand h1 { font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 1.05; margin: 0; letter-spacing: 0.01em; text-wrap: balance; }
+  .brand p { margin: 2px 0 0; color: var(--muted); font-size: 12px; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .controls label { color: var(--dim); font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; }
+  select, button, input {
+    font: inherit; color: var(--cream); background: var(--track); border: 1px solid var(--line);
+    padding: 5px 10px; border-radius: 2px;
+  }
+  button { cursor: pointer; }
+  button:hover, select:hover { border-color: var(--gold); }
+  :focus-visible { outline: 2px solid var(--seal); outline-offset: 1px; }
+  button.warn { border-color: #5a2f28; }
+  button.warn:hover { border-color: var(--bad); }
+
+  main { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 10px; min-height: 0; }
+  .map { position: relative; background: var(--ink); border: 1px solid var(--line); min-height: 0; overflow: hidden; touch-action: none; }
+  .map svg { width: 100%; height: 100%; display: block; cursor: grab; user-select: none; }
+  .map svg.panning { cursor: grabbing; }
+  .map .caption { position: absolute; left: 10px; top: 8px; font-size: 12px; color: var(--gold); letter-spacing: 0.12em; pointer-events: none; }
+  .map .hint { position: absolute; left: 10px; bottom: 8px; font-size: 11px; color: var(--dim); pointer-events: none; }
+  .map .zoom { position: absolute; right: 8px; bottom: 8px; display: flex; gap: 4px; }
+  .map .zoom button { width: 30px; padding: 3px 0; }
+  .toast {
+    position: absolute; left: 50%; bottom: 34px; transform: translateX(-50%);
+    background: rgba(20, 17, 14, 0.94); border: 1px solid var(--gold); padding: 6px 12px; font-size: 12px;
+    color: var(--seal); max-width: calc(100% - 40px); text-align: center; pointer-events: none;
+  }
+  .tip {
+    position: absolute; pointer-events: none; background: #1d1712; border: 1px solid #4a3c66; padding: 6px 8px;
+    font-size: 12px; line-height: 1.4; max-width: 240px; z-index: 3;
+  }
+  .tip b { display: block; color: var(--cream); font-weight: 600; }
+  .tip span { display: block; }
+
+  aside.panel { background: var(--panel); border: 1px solid var(--line); display: flex; flex-direction: column; min-height: 0; min-width: 0; }
+  .stats { padding: 12px 12px 8px; display: grid; gap: 4px; border-bottom: 1px solid var(--line); }
+  .row { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+  .title { font-family: var(--display); font-weight: 500; font-size: 18px; }
+  .shards { font-variant-numeric: tabular-nums; color: var(--cream); display: flex; align-items: center; gap: 6px; }
+  .shard { width: 11px; height: 11px; display: inline-block; background: url(focal_shard.png) center/contain no-repeat; image-rendering: pixelated; }
+  .level { color: var(--gold); }
+  .muted { color: var(--muted); }
+  .dim { color: var(--dim); }
+  .bad { color: var(--bad); }
+  .good { color: var(--good); }
+  .meter { height: 4px; background: var(--track); position: relative; }
+  .meter i { position: absolute; inset: 0 auto 0 0; background: var(--gold); }
+  .meter.frozen i { background: var(--bad); }
+  .meter.done i { background: var(--good); }
+  .statbars { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+  .statbars .meter { height: 3px; }
+  .statbars span { display: block; font-size: 11px; color: var(--muted); margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .perk { color: var(--gold); margin: 2px 0 2px 12px; }
+  #search { width: 100%; box-sizing: border-box; margin-top: 6px; }
+  .tabs { display: flex; gap: 14px; padding: 8px 12px 0; border-bottom: 1px solid var(--line); }
+  .tabs button { background: none; border: 0; padding: 4px 0 6px; color: var(--muted); border-bottom: 2px solid transparent; border-radius: 0; }
+  .tabs button[aria-selected="true"] { color: var(--cream); border-bottom-color: var(--gold); }
+  .body { padding: 12px; overflow-y: auto; flex: 1; min-height: 0; display: grid; align-content: start; gap: 10px; }
+  .body h3 { margin: 0; font-size: 11px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.1em; color: var(--dim); }
+  .head { display: flex; gap: 10px; align-items: center; }
+  .glyph { width: 30px; height: 30px; flex: none; display: grid; place-items: center; font-weight: 600; font-size: 12px; border: 1px solid; }
+  .head .name { font-family: var(--display); font-size: 19px; font-weight: 700; line-height: 1.15; text-wrap: balance; }
+  .needs { display: grid; gap: 3px; }
+  .needs div { display: flex; gap: 8px; align-items: baseline; }
+  .needs i { width: 7px; height: 7px; flex: none; display: inline-block; transform: translateY(-1px); }
+  .chips { display: flex; flex-wrap: wrap; gap: 4px; }
+  .chips span { font-size: 11px; padding: 1px 6px; background: var(--track); color: var(--muted); }
+  .chips span[title] { cursor: help; }
+  .link { background: none; border: 0; padding: 0; color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+  .list { display: grid; gap: 2px; }
+  .item { display: grid; grid-template-columns: 26px minmax(0, 1fr) auto; gap: 4px 8px; align-items: center; padding: 5px 4px; background: none; border: 0; text-align: left; width: 100%; }
+  .item:hover { background: #221c16; }
+  .item .glyph { width: 22px; height: 22px; font-size: 10px; grid-row: span 2; }
+  .item .t { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .item .s { color: var(--muted); font-size: 11px; grid-column: 2; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .item .n { font-variant-numeric: tabular-nums; color: var(--muted); font-size: 11px; grid-row: 1 / span 2; grid-column: 3; }
+  .item .meter { grid-column: 2 / span 2; }
+  .hold { margin: 0 12px 12px; position: relative; overflow: hidden; padding: 8px; border-color: var(--gold); }
+  .hold i { position: absolute; inset: 0 auto 0 0; width: 0; background: rgba(240, 230, 214, 0.25); }
+  .hold span { position: relative; }
+  .legend { display: grid; gap: 4px; }
+  .legend div { display: flex; gap: 8px; align-items: center; color: var(--muted); }
+  .legend b { width: 12px; height: 12px; border: 1px solid; display: inline-block; }
+  p { margin: 0; }
+
+  svg text { font-family: var(--mono); }
+  .node { cursor: pointer; }
+  .node:hover .plate { stroke: var(--cream); }
+  .label { fill: var(--muted); font-size: 7px; text-anchor: middle; pointer-events: none; }
+  svg.far .label { display: none; }
+
+  @media (max-width: 820px) {
+    html, body { height: auto; }
+    .app { height: auto; }
+    main { grid-template-columns: 1fr; }
+    .map { height: 62vh; min-height: 380px; }
+    .map .hint { display: none; }
+    aside.panel { max-height: none; }
+    .body { overflow: visible; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pulse { animation: none !important; }
+    .plate { transition: none; }
+  }
+  @keyframes pulse { 0%, 100% { stroke-opacity: 0.45; } 50% { stroke-opacity: 1; } }
+  .pulse { animation: pulse 1.6s ease-in-out infinite; }
+  .plate { transition: stroke 120ms ease, fill 160ms ease; }
+  .shadow { pointer-events: none; }
+  .holdring, .edgefill, .fx { pointer-events: none; }
+</style>
+
+<div class="app">
+  <header class="bar">
+    <div class="brand">
+      <h1>Forever Pathways</h1>
+      <p>A working copy of the in-game screen, built from the real tree.json</p>
+    </div>
+    <div class="controls">
+      <label for="scenario">Example player</label>
+      <select id="scenario">
+        <option value="fresh">Fresh start</option>
+        <option value="week" selected>A week in</option>
+        <option value="nether">Into the Nether</option>
+        <option value="late">Late game</option>
+      </select>
+      <button id="day" type="button">Pass a day</button>
+      <button id="die" type="button" class="warn">Die</button>
+      <button id="give" type="button">+10 Focal Shards</button>
+    </div>
+  </header>
+  <main>
+    <div class="map" id="mapbox">
+      <svg id="map" aria-label="Pathways ring map"><g id="world"></g></svg>
+      <div class="caption">PATHWAYS</div>
+      <div class="zoom"><button id="zin" type="button" aria-label="Zoom in">+</button><button id="zout" type="button" aria-label="Zoom out">-</button><button id="zreset" type="button" aria-label="Recentre">R</button></div>
+      <div class="tip" id="tip" hidden></div>
+      <div class="toast" id="toast" hidden></div>
+    </div>
+    <aside class="panel">
+      <div class="stats">
+        <div class="row"><span class="title">Pathways</span><span class="shards"><i class="shard"></i><span id="shards">0</span></span></div>
+        <div class="row"><span class="level" id="level">Level 0</span><span class="muted" id="dayline">Day 1 of this life</span></div>
+        <div class="statbars" id="statbars"></div>
+        <div class="row"><span class="dim" id="nextshard"></span><span class="bad" id="frozen"></span></div>
+        <input id="search" type="search" placeholder="Search nodes and items" autocomplete="off">
+      </div>
+      <div class="tabs" role="tablist">
+        <button type="button" role="tab" id="tab-node" aria-selected="true">Node</button>
+        <button type="button" role="tab" id="tab-tasks" aria-selected="false">Tasks</button>
+        <button type="button" role="tab" id="tab-finds" aria-selected="false">Finds</button>
+      </div>
+      <div class="body" id="body"></div>
+      <button type="button" class="hold" id="hold" hidden><i></i><span id="holdlabel">Hold to unlock</span></button>
+    </aside>
+  </main>
+</div>
+
+<script src="data.js"></script>
+<script src="layout.js"></script>
+<script>
+(() => {
+  const TREE = window.PATHWAY_TREE;
+  const ITEMS = window.PATHWAY_ITEMS;
+  const NODES = TREE.nodes;
+  const BY = Object.fromEntries(NODES.map((n) => [n.id, n]));
+  const L = RingLayout.layout(TREE);
+  const R = L.radii;
+  const OUTER = R.length - 1;
+  const SEALS = NODES.filter((n) => n.seal).sort((a, b) => a.seal.opensRing - b.seal.opensRing);
+  const CORE = BY[L.core];
+  const PATHS = Object.fromEntries(TREE.paths.map((p) => [p.id, p]));
+  const HOLD_MS = 1900;
+  const C = { ink: "#14110e", line: "#3a3128", track: "#2a241e", cream: "#f0e6d6", muted: "#9a8b78", seal: "#e8d3a0", eye: "#5fb3a1", red: "#c0614f" };
+  const NUMERALS = ["", "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII", "XIII", "XIV"];
+
+  // ---------------------------------------------------------------- rules (mirror Gates.java)
+  let S;
+  const owns = (id) => !!id && S.owned.has(id);
+  const counts = (n) => !n.seal && !!n.requires;
+  const level = () => NODES.filter((n) => counts(n) && owns(n.id)).length;
+  const sealFor = (ring) => { let best = null; SEALS.forEach((s) => { if (s.seal.opensRing <= ring) best = s; }); return best; };
+  const slotLimit = (slot) => (TREE.slots[slot] ?? 1e9) + NODES.filter((n) => n.slotBonus && owns(n.id)).reduce((a, n) => a + (n.slotBonus[slot] || 0), 0);
+  const slotUsed = (slot) => NODES.filter((n) => n.slot === slot && owns(n.id)).length;
+  function structural(n) {
+    if (owns(n.id)) return "HELD";
+    if (n.requires && !owns(n.requires)) return "LOCKED";
+    if (n.also && !owns(n.also)) return "LOCKED";
+    if (n.seal) { if (level() < n.seal.level) return "LEVEL"; }
+    else { const s = sealFor(n.ring); if (s && !owns(s.id)) return "SEALED"; }
+    if (n.slot && slotUsed(n.slot) >= slotLimit(n.slot)) return "CLOSED";
+    return null;
+  }
+  function gate(n) {
+    const g = structural(n);
+    if (g) return g;
+    if (n.task && taskState(n) !== 4) return "TASK";
+    if (S.shards < n.cost) return "SHORT";
+    return "READY";
+  }
+  const taskState = (n) => (S.tasks[n.id] ? S.tasks[n.id].state : 0);
+  // Task states mirror TaskBook: 1 running, 4 done for good. Bounty slots: b (index or -1), cur, end (world day), out (5 done, 6 expired), prev.
+  const BOUNTIES = TREE.bounties || [];
+  const SLOTS = TREE.rules.bountySlots || 2;
+  const TIER = (t) => (TREE.bountyTiers || [])[t - 1] || String(t);
+  const STAT_COLOURS = ["#86a86f", "#c4a574", "#c0614f", "#6f9db8", "#b5423a"];
+  function statValue(key) {
+    const def = TREE.stats[key];
+    let v = def.base;
+    NODES.forEach((n) => { if (n.perks && n.perks[key] && owns(n.id)) v += n.perks[key]; });
+    return Math.min(def.max, v);
+  }
+  function activate() {
+    NODES.forEach((n) => {
+      if (!n.task || (S.tasks[n.id] && S.tasks[n.id].state === 4)) return;
+      if (owns(n.id)) S.tasks[n.id] = { state: 4, cur: n.task.amount };
+      else if (!S.tasks[n.id] && structural(n) === null) S.tasks[n.id] = { state: 1, cur: 0 };
+    });
+  }
+  const bountyPool = () => BOUNTIES.map((b, i) => [b, i]).filter(([b]) => owns(b.requires));
+  // Dawn: every empty slot gets a bounty from the pool, weighted a little toward higher tiers, never what it last held.
+  function deal() {
+    const offered = [];
+    S.slots.forEach((slot, i) => {
+      if (slot.b >= 0) return;
+      const busy = S.slots.map((o) => o.b);
+      const pool = bountyPool().filter(([, j]) => !busy.includes(j) && j !== slot.prev);
+      if (!pool.length) return;
+      const total = pool.reduce((a, [b]) => a + 2 + b.tier, 0);
+      let roll = hash("deal" + S.worldDay + ":" + i + ":" + S.deals++) * total;
+      let pick = pool[pool.length - 1];
+      for (const entry of pool) { roll -= 2 + entry[0].tier; if (roll < 0) { pick = entry; break; } }
+      Object.assign(slot, { b: pick[1], prev: pick[1], cur: 0, end: S.worldDay + pick[0].days, out: 0 });
+      offered.push(pick[0].title);
+    });
+    return offered;
+  }
+  function completeTask(id) {
+    const t = S.tasks[id], job = BY[id].task;
+    t.state = 4; t.cur = job.amount; S.shards += job.reward;
+    return job;
+  }
+  function completeSlot(i) {
+    const slot = S.slots[i], b = BOUNTIES[slot.b];
+    S.shards += b.reward; slot.out = 5; slot.b = -1; slot.cur = 0;
+    return b;
+  }
+  function bandName(s) {
+    const a = s.seal.opensRing, b = s.seal.throughRing || a;
+    const names = [];
+    for (let r = a; r <= b; r++) names.push(TREE.tiers[r]);
+    return `${a === b ? "ring " + a : "rings " + a + " to " + b}: ${names.join(" and ")}`;
+  }
+  function status(n, g) {
+    switch (g) {
+      case "HELD": return [n.seal ? "Broken" : "Unlocked", "good"];
+      case "READY": return [n.seal ? "Hold to break" : "Hold to unlock", ""];
+      case "SHORT": return [`Needs ${n.cost - S.shards} more Focal Shards`, "level"];
+      case "TASK": return ["Task first", "level"];
+      case "LEVEL": return [`Level ${n.seal.level} needed (you are ${level()})`, "level"];
+      case "SEALED": return [`Behind ${sealFor(n.ring).title}`, "level"];
+      case "CLOSED": return [n.slot === "school" ? "School limit reached" : "Other fork taken", "bad"];
+      default: {
+        const miss = [n.requires, n.also].filter((id) => id && !owns(id)).map((id) => BY[id].title);
+        return [`Needs ${miss.join(" and ")}`, "bad"];
+      }
+    }
+  }
+
+  // ---------------------------------------------------------------- example players
+  function hash(s) { let h = 2166136261; for (const c of s) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return ((h >>> 0) % 1000) / 1000; }
+  function grow(maxRing, skip = []) {
+    let changed = true;
+    while (changed) {
+      changed = false;
+      for (const n of NODES) {
+        if (owns(n.id) || skip.includes(n.id)) continue;
+        const ring = n.seal ? n.seal.opensRing : n.ring;
+        if (ring > maxRing) continue;
+        if (structural(n) === null) { S.owned.add(n.id); changed = true; }
+      }
+    }
+  }
+  function scenario(name) {
+    S = { owned: new Set([CORE.id]), shards: TREE.rules.startingShards || 0, days: 0, dayFrac: 0.15, freeze: 0, tasks: {}, found: new Set() };
+    const found = (k) => TREE.discoveries.slice(0, k).forEach((_, i) => S.found.add(i));
+    if (name === "week") {
+      ["forever:woodcutter", "forever:quarry", "forever:ranger", "forever:homesteader", "forever:builder",
+        "forever:technician", "forever:magician", "forever:seal_2", "forever:copper_tools", "forever:prospector",
+        "forever:hunter", "forever:skirmisher", "forever:gardener", "forever:earthworks", "forever:study"]
+        .forEach((id) => S.owned.add(id));
+      Object.assign(S, { shards: 5, days: 3, dayFrac: 0.6 });
+      found(2);
+    } else if (name === "nether") {
+      grow(8, ["forever:school_lightning", "forever:school_holy", "forever:school_ender", "forever:school_evocation", "forever:school_blood"]);
+      S.owned.add("forever:seal_9");
+      Object.assign(S, { shards: 23, days: 6, dayFrac: 0.3 });
+      found(12);
+    } else if (name === "late") {
+      grow(11, ["forever:school_lightning", "forever:school_holy", "forever:school_ender", "forever:school_evocation", "forever:school_blood"]);
+      Object.assign(S, { shards: 64, days: 11, dayFrac: 0.8 });
+      found(26);
+    }
+    // finished tasks behind owned nodes, partial progress on open ones, and today's bounties
+    activate();
+    S.worldDay = S.days + 4;
+    S.deals = name.length;
+    S.slots = Array.from({ length: SLOTS }, () => ({ b: -1, prev: -1, cur: 0, end: 0, out: 0 }));
+    deal();
+    if (name !== "fresh") {
+      Object.entries(S.tasks).forEach(([id, t]) => { if (t.state === 1) t.cur = Math.floor(BY[id].task.amount * (0.15 + 0.7 * hash(id))); });
+      S.slots.forEach((slot, i) => { if (slot.b >= 0) slot.cur = Math.floor(BOUNTIES[slot.b].amount * (0.1 + 0.6 * hash(name + i))); });
+      if (name === "nether") completeSlot(1), S.shards -= BOUNTIES[S.slots[1].prev].reward;
+    }
+    selected = name === "fresh" ? "forever:woodcutter" : name === "week" ? "forever:seal_3" : name === "nether" ? "forever:nether" : "forever:seal_12";
+  }
+
+  // ---------------------------------------------------------------- actions
+  let toastTimer = 0;
+  function toast(text) {
+    const el = document.getElementById("toast");
+    el.textContent = text; el.hidden = false;
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => (el.hidden = true), 3200);
+  }
+  function passDay() {
+    S.days += 1;
+    const msg = [];
+    if (S.freeze > 0) { S.freeze = 0; msg.push("Tasks and bounties are running again"); }
+
+    // dawn
+    S.worldDay += 1;
+    S.slots.forEach((slot) => { if (slot.b >= 0 && S.worldDay >= slot.end) { msg.push("Expired: " + BOUNTIES[slot.b].title); slot.out = 6; slot.b = -1; slot.cur = 0; } });
+    const offered = deal();
+    if (offered.length) msg.push("New: " + offered.join("; "));
+    activate();
+    toast("Dawn. " + msg.join(". ")); draw();
+  }
+  function die() {
+    const lost = Math.min(S.shards, TREE.rules.deathShardLoss);
+    S.shards -= lost; S.days = 0; S.dayFrac = 0; S.freeze = 1;
+    const keep = 1 - TREE.rules.deathTaskLoss;
+    Object.values(S.tasks).forEach((t) => { if (t.state === 1) t.cur = Math.floor(t.cur * keep); });
+    S.slots.forEach((slot) => { if (slot.b >= 0) slot.cur = Math.floor(slot.cur * keep); });
+    toast(`You died. -${lost} Focal Shard, -25% progress, frozen for a day.`);
+    draw();
+  }
+  function unlock(id) {
+    const n = BY[id];
+    if (gate(n) !== "READY") return;
+    S.owned.add(id); S.shards -= n.cost;
+    activate();
+    toast(`Unlocked ${n.title}`);
+    draw();
+    burst(id);
+    if (n.requires) sweeps.set(id, performance.now());
+  }
+  function finishTask(id) {
+    if (S.freeze) return;
+    if (id.startsWith("slot:")) {
+      const i = +id.slice(5);
+      if (S.slots[i].b < 0) return;
+      const b = completeSlot(i);
+      toast(`Bounty done: ${b.title}  +${b.reward} Focal Shards`);
+    } else {
+      const t = S.tasks[id];
+      if (!t || t.state !== 1) return;
+      const job = completeTask(id);
+      toast(`Task done: ${job.title}  +${job.reward} Focal Shards`);
+    }
+    activate();
+    draw();
+  }
+
+  // ---------------------------------------------------------------- map
+  const svg = document.getElementById("map");
+  const world = document.getElementById("world");
+  const box = document.getElementById("mapbox");
+  let view = { x: 0, y: 0, k: 1 };
+  let selected = null;
+  let query = "";
+  let tab = "node";
+  const pos = (id) => L.pos[id];
+
+  // ------------------------------------------------------------- motion
+  // Every plate floats on its own phase, scales on a spring, and throws a ripple when it opens.
+  // One rAF loop touches attributes on nodes already in the DOM; the markup is only rebuilt on state change.
+  const CALM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const SPRING_K = 190, SPRING_D = 17;
+  const nodeEls = new Map();
+  const edgeEls = new Map();
+  const spring = new Map();
+  const bursts = [];
+  let hovered = null, fxLayer = null, lastFrame = 0;
+  function phase(id) {
+    let h = 0;
+    for (let i = 0; i < id.length; i++) h = (h * 31 + id.charCodeAt(i)) % 6283;
+    return h / 1000;
+  }
+  function collect() {
+    nodeEls.clear(); edgeEls.clear();
+    for (const el of world.querySelectorAll(".node")) {
+      nodeEls.set(el.dataset.id, {
+        g: el,
+        x: +el.dataset.x, y: +el.dataset.y, ph: +el.dataset.ph,
+        shadow: el.querySelector(".shadow"),
+        ring: el.querySelector(".holdring"),
+        glow: el.querySelector(".holdglow"),
+        motes: el.querySelector(".motes"),
+        plate: el.querySelector(".plate"),
+      });
+    }
+    for (const el of world.querySelectorAll(".edgefill")) edgeEls.set(el.dataset.edge, el);
+    fxLayer = document.getElementById("fx");
+    for (const st of spring.values()) st.held = false;
+  }
+  function springOf(id) {
+    let st = spring.get(id);
+    if (!st) { st = { v: 1, dv: 0, parked: false }; spring.set(id, st); }
+    return st;
+  }
+  function burst(id) {
+    const n = nodeEls.get(id);
+    if (!n || CALM) return;
+    const st = springOf(id); st.dv = 14; st.parked = false;
+    bursts.push({ x: n.x, y: n.y, t0: performance.now(), colour: BY[id] && BY[id].seal ? C.seal : (BY[id] ? BY[id].colour : C.cream), el: null });
+  }
+  function frame(now) {
+    requestAnimationFrame(frame);
+    const dt = Math.min(0.05, (now - lastFrame) / 1000 || 0.016);
+    lastFrame = now;
+    const t = now / 1000;
+    const wave = bursts.filter((b) => (now - b.t0) / 1000 <= 1.1);
+    for (const [id, n] of nodeEls) {
+      let fx = 0, fy = 0;
+      for (const b of wave) {
+        const age = (now - b.t0) / 1000;
+        if (age > 1.1) continue;
+        const dx = n.x - b.x, dy = n.y - b.y, d = Math.hypot(dx, dy);
+        if (d < 1 || d > 170) continue;
+        const reach = Math.min(1, age / 1.1);
+        const front = Math.exp(-Math.pow((d - reach * 170) / 46, 2));
+        const push = Math.sin(Math.PI * reach) * 21 * (1 - d / 170) * (0.35 + 0.65 * front);
+        fx += dx / d * push; fy += dy / d * push;
+      }
+      const st = springOf(id);
+      let target = 1;
+      if (hold && hold.id === id) target = 1.3;
+      else if (hovered === id) target = 1.2;
+      else if (selected === id) target = 1.1;
+      let jitter = 0;
+      if (hold && hold.id === id) {
+        const k = Math.min(1, (now - hold.start) / HOLD_MS);
+        jitter = Math.sin(t * 46) * k * 0.9;
+      }
+      const resting = target === 1 && Math.abs(st.v - 1) < 0.002 && Math.abs(st.dv) < 0.01;
+      if (resting && !fx && !fy && !jitter) {
+        if (!st.parked) { st.v = 1; st.dv = 0; st.parked = true; n.g.setAttribute("transform", `translate(${n.x} ${n.y})`); if (n.shadow) n.shadow.setAttribute("transform", "translate(0 3)"); }
+        continue;
+      }
+      st.parked = false;
+      if (!CALM) {
+        st.dv += (target - st.v) * SPRING_K * dt - st.dv * SPRING_D * dt;
+        st.v += st.dv * dt;
+      } else st.v = target;
+      n.g.setAttribute("transform", `translate(${(n.x + fx + jitter).toFixed(2)} ${(n.y + fy).toFixed(2)}) scale(${st.v.toFixed(3)})`);
+      if (n.shadow) n.shadow.setAttribute("transform", `translate(${(-fx * 0.55).toFixed(2)} ${(3 - fy * 0.55).toFixed(2)})`);
+    }
+    // the hold: a ring closing round the plate and light running down the parent's line
+    for (const [id, n] of nodeEls) {
+      if (!n.ring) continue;
+      const on = hold && hold.id === id;
+      if (!on && n.ring.getAttribute("stroke-opacity") === "0") continue;
+      const k = on ? Math.min(1, (now - hold.start) / HOLD_MS) : 0;
+      n.ring.setAttribute("stroke-dasharray", `${k.toFixed(3)} 1`);
+      n.ring.setAttribute("stroke-opacity", on ? 0.95 : 0);
+      if (n.glow) {
+        n.glow.setAttribute("r", (17 - 3 * k).toFixed(2));
+        n.glow.setAttribute("stroke-opacity", on ? (0.08 + 0.3 * k).toFixed(3) : 0);
+        n.glow.setAttribute("stroke-width", (4 + 4 * k).toFixed(2));
+      }
+      if (n.motes) {
+        n.motes.setAttribute("opacity", on ? 1 : 0);
+        if (on) {
+          const m = n.motes.children;
+          for (let j = 0; j < m.length; j++) {
+            const spin = t * 2.6 + j / m.length * Math.PI * 2;
+            const rad = 30 - 20 * k + Math.sin(t * 6 + j) * 1.5;
+            m[j].setAttribute("cx", (Math.cos(spin) * rad).toFixed(2));
+            m[j].setAttribute("cy", (Math.sin(spin) * rad).toFixed(2));
+            m[j].setAttribute("opacity", (0.35 + 0.65 * k).toFixed(2));
+          }
+        }
+      }
+    }
+    for (const [id, el] of edgeEls) {
+      const on = hold && hold.id === id;
+      const sweep = sweeps.get(id);
+      if (on) {
+        const k = Math.min(1, (now - hold.start) / HOLD_MS);
+        el.setAttribute("stroke-dasharray", `${k.toFixed(3)} 1`);
+        el.setAttribute("stroke-opacity", 0.9);
+      } else if (sweep) {
+        const k = (now - sweep) / 650;
+        if (k >= 1) { sweeps.delete(id); el.setAttribute("stroke-opacity", 0); continue; }
+        const head = k * 1.25;
+        el.setAttribute("stroke-dasharray", `0 ${Math.max(0, head - 0.3).toFixed(3)} 0.3 1`);
+        el.setAttribute("stroke-opacity", (1 - k).toFixed(3));
+      } else if (el.getAttribute("stroke-opacity") !== "0") {
+        el.setAttribute("stroke-opacity", 0);
+      }
+    }
+    // ripples
+    if (fxLayer) {
+      for (let i = bursts.length - 1; i >= 0; i--) {
+        const b = bursts[i];
+        const age = (now - b.t0) / 1000;
+        if (age > 1.7) { if (b.el) b.el.remove(); bursts.splice(i, 1); continue; }
+        if (!b.el) {
+          b.el = document.createElementNS("http://www.w3.org/2000/svg", "g");
+          let sparks = "";
+          for (let j = 0; j < 10; j++) sparks += `<line stroke="${C.cream}" stroke-width="1.8" stroke-linecap="round"/>`;
+          b.el.innerHTML = `<circle class="flash" fill="${C.cream}"/>`
+            + `<path class="wob" fill="none" stroke="${b.colour}" stroke-width="2"/>`
+            + `<circle class="ring" fill="none" stroke="${C.cream}" stroke-width="1.4"/>`
+            + `<circle class="ring" fill="none" stroke="${b.colour}" stroke-width="1"/>`
+            + `<g class="sp">${sparks}</g>`;
+          b.el.setAttribute("transform", `translate(${b.x} ${b.y})`);
+          fxLayer.appendChild(b.el);
+        }
+        if (!b.el.isConnected) fxLayer.appendChild(b.el);
+        const flash = b.el.querySelector(".flash");
+        const fa = age / 0.24;
+        flash.setAttribute("r", (9 + Math.min(1, fa) * 15).toFixed(2));
+        flash.setAttribute("fill-opacity", fa >= 1 ? 0 : (0.3 * (1 - fa)).toFixed(3));
+        // first ring is a liquid wobble, the rest are clean circles trailing it
+        const wa = age / 1.45;
+        const wob = b.el.querySelector(".wob");
+        if (wa < 1) {
+          const ease = 1 - Math.pow(1 - wa, 3);
+          const rr = 9 + ease * 112;
+          let d = "";
+          for (let j = 0; j <= 28; j++) {
+            const th = j / 28 * Math.PI * 2;
+            const rad = rr * (1 + Math.sin(th * 3 + age * 9) * 0.06 * (1 - wa));
+            d += (j ? "L" : "M") + (Math.cos(th) * rad).toFixed(2) + " " + (Math.sin(th) * rad).toFixed(2);
+          }
+          wob.setAttribute("d", d + "Z");
+          wob.setAttribute("stroke-opacity", ((1 - wa) * 0.9).toFixed(3));
+          wob.setAttribute("stroke-width", (2.6 * (1 - wa) + 0.3).toFixed(2));
+        } else wob.setAttribute("stroke-opacity", 0);
+        const rings = b.el.querySelectorAll(".ring");
+        for (let j = 0; j < rings.length; j++) {
+          const a = Math.max(0, age - (j + 1) * 0.18) / 1.45;
+          if (a <= 0 || a >= 1) { rings[j].setAttribute("stroke-opacity", 0); continue; }
+          const ease = 1 - Math.pow(1 - a, 3);
+          rings[j].setAttribute("r", (9 + ease * 112).toFixed(2));
+          rings[j].setAttribute("stroke-opacity", ((1 - a) * 0.8).toFixed(3));
+          rings[j].setAttribute("stroke-width", (2.2 * (1 - a) + 0.3).toFixed(2));
+        }
+        const sp = b.el.querySelector(".sp").children;
+        const sa = age / 0.8;
+        for (let j = 0; j < sp.length; j++) {
+          if (sa >= 1) { sp[j].setAttribute("stroke-opacity", 0); continue; }
+          const th = j / sp.length * Math.PI * 2 + 0.3;
+          const ease = 1 - Math.pow(1 - sa, 3);
+          const r0 = 11 + ease * 58, r1 = r0 + 14 * (1 - sa);
+          sp[j].setAttribute("x1", (Math.cos(th) * r0).toFixed(2)); sp[j].setAttribute("y1", (Math.sin(th) * r0).toFixed(2));
+          sp[j].setAttribute("x2", (Math.cos(th) * r1).toFixed(2)); sp[j].setAttribute("y2", (Math.sin(th) * r1).toFixed(2));
+          sp[j].setAttribute("stroke-opacity", (1 - sa).toFixed(3));
+        }
+      }
+    }
+  }
+  const sweeps = new Map();
+  requestAnimationFrame(frame);
+
+  const col = (n) => (n.seal ? C.seal : n.colour);
+  function mix(a, b, t) {
+    const p = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+    const A = p(a), B = p(b);
+    return "#" + A.map((v, i) => Math.round(v + (B[i] - v) * t).toString(16).padStart(2, "0")).join("");
+  }
+  function elbow(parent, child) {
+    const pa = L.pos[parent.id].angle, ca = L.pos[child.id].angle;
+    const pr = R[parent.ring], cr = R[Math.min(child.ring, OUTER)];
+    let mid = parent.ring === 0 ? R[1] * 0.55 : pr + (R[parent.ring + 1] - pr) * 0.5;
+    if (child.ring >= OUTER && !child.seal) mid = (R[OUTER - 1] + R[OUTER]) / 2;
+    mid = Math.min(mid, cr);
+    const P = (a, r) => `${(Math.cos(a) * r).toFixed(2)} ${(Math.sin(a) * r).toFixed(2)}`;
+    if (parent.ring === 0) return `M0 0 L${P(ca, mid)} L${P(ca, cr)}`;
+    let sweep = ca - pa;
+    while (sweep > Math.PI) sweep -= Math.PI * 2;
+    while (sweep < -Math.PI) sweep += Math.PI * 2;
+    const arc = Math.abs(sweep) < 1e-4 ? "" : ` A${mid.toFixed(2)} ${mid.toFixed(2)} 0 0 ${sweep > 0 ? 1 : 0} ${P(ca, mid)}`;
+    return `M${P(pa, pr)} L${P(pa, mid)}${arc} L${P(ca, cr)}`;
+  }
+  function matches(n) {
+    if (!query) return true;
+    const q = query.toLowerCase();
+    return n.title.toLowerCase().includes(q) || (hits[n.id] || 0) > 0;
+  }
+  let hits = {};
+  function computeHits() {
+    hits = {};
+    if (!query) return;
+    const q = query.toLowerCase();
+    for (const [id, list] of Object.entries(ITEMS)) {
+      const c = list.filter((i) => i.includes(q) || pretty(i).toLowerCase().includes(q)).length;
+      if (c) hits[id] = c;
+    }
+  }
+  function drawMap() {
+    const parts = [];
+    for (let r = 1; r <= OUTER; r++) {
+      const stroke = r === OUTER ? C.eye : C.line;
+      parts.push(`<circle r="${R[r]}" fill="none" stroke="${stroke}" stroke-opacity="0.1" stroke-width="${r === OUTER ? 1.5 : 1}"/>`);
+    }
+    for (const n of NODES) {
+      if (n.seal || !n.requires) continue;
+      const p = BY[n.requires];
+      const pl = owns(p.id), cl = owns(n.id);
+      const hot = n.id === selected || p.id === selected;
+      let stroke = pl ? n.colour : C.line;
+      if (hot) stroke = mix(stroke, C.cream, 0.5);
+      const d = elbow(p, n);
+      parts.push(`<path d="${d}" fill="none" stroke="${stroke}" stroke-opacity="${pl && !cl ? 0.7 : 1}" stroke-width="${cl ? 2 : hot ? 1.6 : 1}"/>`);
+      parts.push(`<path class="edgefill" data-edge="${n.id}" d="${d}" pathLength="1" fill="none" stroke="${C.cream}" stroke-width="2.6" stroke-linecap="round" stroke-dasharray="0 1" stroke-opacity="0"/>`);
+    }
+    for (const n of NODES) {
+      if (!n.also) continue;
+      const o = BY[n.also], a = pos(o.id), b = pos(n.id);
+      // only for the node being read or hovered: these lines are noise everywhere else
+      const focus = hovered || selected;
+      if (n.id !== focus && o.id !== focus) continue;
+      parts.push(`<line x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}" stroke="${C.cream}" stroke-opacity="0.9" stroke-dasharray="3 3"/>`);
+    }
+    for (const n of NODES) {
+      if (n.seal) continue;
+      const p = pos(n.id), g = gate(n), c = col(n);
+      let fill, border;
+      switch (g) {
+        case "HELD": fill = mix(C.ink, c, 0.5); border = c; break;
+        case "READY": fill = mix(C.ink, c, 0.2); border = mix(c, C.cream, 0.5); break;
+        case "SHORT": case "TASK": case "LEVEL": fill = C.track; border = mix(C.line, c, 0.65); break;
+        case "CLOSED": fill = "#1a1412"; border = "#6a3a34"; break;
+        default: fill = "#110e0b"; border = C.line;
+      }
+      const dim = (g === "LOCKED" || g === "CLOSED") ? 0.45 : g === "SEALED" ? 0.75 : 1;
+      const faded = matches(n) ? 1 : 0.18;
+      const sel = n.id === selected;
+      const glyph = n.title.replace(/^(The|Seal of( the)?) /, "").slice(0, 2);
+      const text = `<text y="2.6" text-anchor="middle" font-size="7" font-weight="600" fill="${g === "HELD" ? C.cream : C.muted}" fill-opacity="${dim}">${esc(glyph)}</text>`;
+      const pulse = g === "READY" ? ' class="plate pulse"' : ' class="plate"';
+      const shape = `<rect class="shadow" x="-8" y="-7" width="18" height="18" rx="3" fill="#000" opacity="0.38"/>`
+        + (sel ? `<rect x="-12" y="-12" width="24" height="24" rx="4" fill="none" stroke="${C.cream}"/>` : "")
+        + `<rect${pulse} x="-9" y="-9" width="18" height="18" rx="2.5" fill="${fill}" stroke="${border}" stroke-width="1.2"/>`;
+      let bar = "";
+      const t = S.tasks[n.id];
+      if (n.task && t && t.state === 1 && g !== "HELD") {
+        const f = Math.min(1, t.cur / n.task.amount);
+        bar = `<rect x="-9" y="11" width="18" height="2" fill="${C.track}"/><rect x="-9" y="11" width="${(18 * f).toFixed(1)}" height="2" fill="${S.freeze ? C.red : "#c4a574"}"/>`;
+      }
+      const label = `<text class="label" y="21">${esc(n.title)}</text>`;
+      parts.push(`<g class="node" data-id="${n.id}" data-x="${p.x.toFixed(2)}" data-y="${p.y.toFixed(2)}" data-ph="${phase(n.id).toFixed(3)}" transform="translate(${p.x.toFixed(2)} ${p.y.toFixed(2)})" opacity="${faded}">${shape}${text}${bar}${label}<circle class="holdglow" r="16" fill="none" stroke="${n.colour}" stroke-width="5" stroke-opacity="0"/><circle class="holdring" r="13.5" fill="none" stroke="${C.cream}" stroke-width="2.2" stroke-linecap="round" pathLength="1" stroke-dasharray="0 1" transform="rotate(-90)"/><g class="motes" opacity="0"><circle r="1.5" fill="${C.cream}"/><circle r="1.5" fill="${C.cream}"/><circle r="1.5" fill="${C.cream}"/><circle r="1.5" fill="${C.cream}"/><circle r="1.5" fill="${C.cream}"/><circle r="1.5" fill="${C.cream}"/></g></g>`);
+    }
+    // seals: a clear band over the rings each one still locks, padlock at twelve o'clock
+    for (const s of SEALS) {
+      const [r0, r1] = RingLayout.band(s);
+      if (owns(s.id)) continue;
+      const g = gate(s), hot = s.id === selected;
+      {
+        const ready = g === "READY", reach = ready || g === "TASK" || g === "SHORT";
+        parts.push(`<path d="M${r1} 0 A${r1} ${r1} 0 1 0 ${-r1} 0 A${r1} ${r1} 0 1 0 ${r1} 0 Z M${r0} 0 A${r0} ${r0} 0 1 1 ${-r0} 0 A${r0} ${r0} 0 1 1 ${r0} 0 Z" fill-rule="evenodd" fill="${mix("#15110d", C.seal, hot ? 0.16 : 0.08)}" fill-opacity="${hot ? 0.5 : 0.62}" pointer-events="none"/>`);
+        const edge = hot ? C.cream : C.seal;
+        const cls = ready || (reach && !hot) ? ' class="pulse"' : "";
+        [r0, r1].forEach((r) => parts.push(`<circle r="${r}" fill="none" stroke="${edge}" stroke-opacity="${hot ? 1 : reach ? 0.8 : 0.45}" stroke-width="${hot ? 1.6 : 1.2}" stroke-dasharray="5 4"${cls} pointer-events="none"/>`));
+      }
+    }
+    for (let r = 2; r <= OUTER; r++) {
+      const label = r === OUTER ? "EYES" : NUMERALS[r];
+      const s = sealFor(r), open = !s || owns(s.id);
+      const w = label.length * 5.4 + 6;
+      parts.push(`<rect x="${-w / 2}" y="${-R[r] - 6}" width="${w}" height="12" fill="${C.ink}"/>`);
+      parts.push(`<text x="0" y="${-R[r] + 3}" text-anchor="middle" font-size="9" fill="${open ? C.muted : C.seal}" fill-opacity="${open ? 1 : 0.6}">${label}</text>`);
+    }
+    for (const s of SEALS) {
+      const [r0] = RingLayout.band(s);
+      if (owns(s.id)) continue;
+      const g = gate(s), hot = s.id === selected;
+      parts.push(`<g class="node seal" data-id="${s.id}" data-x="0" data-y="${-r0}" data-ph="${phase(s.id).toFixed(3)}" transform="translate(0 ${-r0})">
+        <rect class="shadow" x="-8" y="-7" width="18" height="18" rx="3" fill="#000" opacity="0.38"/>
+        <rect x="-9" y="-9" width="18" height="18" rx="2.5" fill="#2a2218" stroke="${hot || g === "READY" ? C.cream : C.seal}"${g === "READY" ? ' class="plate pulse"' : ' class="plate"'}/>
+        <path d="M-3 -1 V-5 a3 3 0 0 1 6 0 V-1" fill="none" stroke="${C.seal}" stroke-width="1.4"/>
+        <rect x="-4.6" y="-1.5" width="9.2" height="7" fill="${C.seal}"/>
+        <circle class="holdglow" r="16" fill="none" stroke="${C.seal}" stroke-width="5" stroke-opacity="0"/>
+        <circle class="holdring" r="13.5" fill="none" stroke="${C.cream}" stroke-width="2.2" stroke-linecap="round" pathLength="1" stroke-dasharray="0 1" transform="rotate(-90)"/>
+        <g class="motes" opacity="0"><circle r="1.5" fill="${C.cream}"/><circle r="1.5" fill="${C.cream}"/><circle r="1.5" fill="${C.cream}"/><circle r="1.5" fill="${C.cream}"/><circle r="1.5" fill="${C.cream}"/><circle r="1.5" fill="${C.cream}"/></g></g>`);
+    }
+    parts.push('<g id="fx" class="fx"></g>');
+    world.innerHTML = parts.join("");
+    collect();
+    applyView();
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]); }
+  function size() { const r = box.getBoundingClientRect(); return { w: r.width, h: r.height }; }
+  function fitScale() { const { w, h } = size(); return (Math.min(w, h) / 2 - 12) / (R[OUTER] + 16); }
+  function applyView() {
+    const { w, h } = size();
+    world.setAttribute("transform", `translate(${w / 2 + view.x} ${h / 2 + view.y}) scale(${view.k})`);
+    svg.classList.toggle("far", view.k < 1.35);
+  }
+  function resetView() {
+    const { w, h } = size();
+    view = { x: 0, y: 0, k: Math.max(fitScale(), Math.min(1.25, (Math.min(w, h) / 2 - 12) / (R[3] + 18))) };
+    applyView();
+  }
+  function zoomAt(mx, my, factor) {
+    const { w, h } = size();
+    const k = Math.max(fitScale(), Math.min(3, view.k * factor));
+    const wx = (mx - w / 2 - view.x) / view.k, wy = (my - h / 2 - view.y) / view.k;
+    view.x = mx - w / 2 - wx * k; view.y = my - h / 2 - wy * k; view.k = k;
+    applyView();
+  }
+  function centreOn(id) {
+    const p = id ? pos(id) : null;
+    if (!p) return;
+    view.x = -p.x * view.k; view.y = -p.y * view.k; applyView();
+  }
+
+  // pointer: pan, select, hold
+  const pointers = new Map();
+  let press = null, hold = null, pinch = null;
+  svg.addEventListener("pointerdown", (e) => {
+    svg.setPointerCapture(e.pointerId);
+    pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pointers.size === 2) {
+      const [a, b] = [...pointers.values()];
+      pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), k: view.k };
+      cancelHold(); press = null; return;
+    }
+    const g = e.target.closest(".node");
+    const band = g ? null : sealAtPointer(e);
+    press = { x: e.clientX, y: e.clientY, vx: view.x, vy: view.y, id: g ? g.dataset.id : band, moved: false };
+    if (g) startHold(g.dataset.id, g);
+  });
+  svg.addEventListener("pointermove", (e) => {
+    if (pointers.has(e.pointerId)) pointers.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (pinch && pointers.size === 2) {
+      const [a, b] = [...pointers.values()];
+      const r = svg.getBoundingClientRect();
+      const d = Math.hypot(a.x - b.x, a.y - b.y);
+      zoomAt((a.x + b.x) / 2 - r.left, (a.y + b.y) / 2 - r.top, (pinch.k * d / pinch.d) / view.k);
+      return;
+    }
+    if (press) {
+      const dx = e.clientX - press.x, dy = e.clientY - press.y;
+      if (!press.moved && Math.hypot(dx, dy) > 4) { press.moved = true; cancelHold(); svg.classList.add("panning"); hideTip(); }
+      if (press.moved) { view.x = press.vx + dx; view.y = press.vy + dy; applyView(); }
+      return;
+    }
+    const g = e.target.closest(".node");
+    const band = g ? null : sealAtPointer(e);
+    hovered = g ? g.dataset.id : band;
+    if (g) showTip(BY[g.dataset.id], e); else if (band) showTip(BY[band], e); else hideTip();
+  });
+  function sealAtPointer(e) {
+    const r = svg.getBoundingClientRect(), { w, h } = size();
+    const wx = (e.clientX - r.left - w / 2 - view.x) / view.k, wy = (e.clientY - r.top - h / 2 - view.y) / view.k;
+    const d = Math.hypot(wx, wy);
+    const s = SEALS.find((s) => { const [a, b] = RingLayout.band(s); return !owns(s.id) && d >= a && d < b; });
+    return s ? s.id : null;
+  }
+  function endPointer(e) {
+    pointers.delete(e.pointerId);
+    if (pointers.size < 2) pinch = null;
+    if (press && !press.moved && press.id) { selected = press.id; tab = "node"; draw(); }
+    press = null; cancelHold(); svg.classList.remove("panning");
+  }
+  svg.addEventListener("pointerup", endPointer);
+  svg.addEventListener("pointercancel", endPointer);
+  svg.addEventListener("pointerleave", () => { hovered = null; hideTip(); });
+  svg.addEventListener("dblclick", (e) => { const g = e.target.closest(".node"); if (g) centreOn(g.dataset.id); });
+  svg.addEventListener("wheel", (e) => {
+    e.preventDefault();
+    const r = svg.getBoundingClientRect();
+    zoomAt(e.clientX - r.left, e.clientY - r.top, e.deltaY < 0 ? 1.15 : 1 / 1.15);
+  }, { passive: false });
+  document.getElementById("zin").onclick = () => { const { w, h } = size(); zoomAt(w / 2, h / 2, 1.25); };
+  document.getElementById("zout").onclick = () => { const { w, h } = size(); zoomAt(w / 2, h / 2, 0.8); };
+  document.getElementById("zreset").onclick = resetView;
+  window.addEventListener("resize", applyView);
+
+  function startHold(id, el) {
+    if (gate(BY[id]) !== "READY") return;
+    hold = { id, start: performance.now(), el };
+    requestAnimationFrame(tickHold);
+  }
+  function tickHold(now) {
+    if (!hold) return;
+    const t = Math.min(1, (now - hold.start) / HOLD_MS);
+    if (hold.el && hold.el.classList.contains("hold")) hold.el.querySelector("i").style.width = (t * 100) + "%";
+    if (t >= 1) { const id = hold.id; hold = null; press = null; unlock(id); return; }
+    requestAnimationFrame(tickHold);
+  }
+  function cancelHold() {
+    if (hold && hold.el && hold.el.classList.contains("hold")) hold.el.querySelector("i").style.width = "0";
+    hold = null;
+  }
+  const holdBtn = document.getElementById("hold");
+  holdBtn.addEventListener("pointerdown", () => { if (selected) startHold(selected, holdBtn); });
+  ["pointerup", "pointerleave", "pointercancel"].forEach((ev) => holdBtn.addEventListener(ev, cancelHold));
+  holdBtn.addEventListener("keydown", (e) => { if ((e.key === "Enter" || e.key === " ") && !e.repeat) { e.preventDefault(); startHold(selected, holdBtn); } });
+  holdBtn.addEventListener("keyup", cancelHold);
+
+  const tip = document.getElementById("tip");
+  function showTip(n, e) {
+    const g = gate(n), [st, cls] = status(n, g);
+    const t = S.tasks[n.id];
+    let task = "";
+    if (n.task && g !== "HELD") task = `<span class="level">${esc(n.task.title)}${!t ? " (waiting)" : t.state === 4 ? " (done)" : ` ${t.cur.toLocaleString("en-GB")} / ${n.task.amount.toLocaleString("en-GB")}`}</span>`;
+    tip.innerHTML = `<b>${esc(n.title)}</b>${n.seal ? `<span style="color:${C.seal}">Locks ${esc(bandName(n))}</span>` : ""}<span class="${cls}">${esc(st)}</span>${g !== "HELD" && n.cost ? `<span class="muted">Cost ${n.cost} Focal Shards</span>` : ""}${task}`;
+    const r = box.getBoundingClientRect();
+    let x = e.clientX - r.left + 14, y = e.clientY - r.top + 14;
+    tip.hidden = false;
+    if (x + tip.offsetWidth > r.width - 8) x = e.clientX - r.left - tip.offsetWidth - 10;
+    if (y + tip.offsetHeight > r.height - 8) y = e.clientY - r.top - tip.offsetHeight - 10;
+    tip.style.left = x + "px"; tip.style.top = y + "px";
+  }
+  function hideTip() { tip.hidden = true; }
+
+  // ---------------------------------------------------------------- panel
+  const body = document.getElementById("body");
+  function pretty(id) {
+    const [ns, path] = id.split(":");
+    return path.replace(/_/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
+  }
+  function glyph(n, size = "") {
+    const c = n.seal ? C.seal : n.colour;
+    const held = owns(n.id);
+    const g = n.seal ? "\u26BF" : n.title.replace(/^(The|Seal of( the)?) /, "").slice(0, 2);
+    return `<span class="glyph" style="border-color:${c};background:${held ? mix(C.ink, c, 0.5) : C.track};color:${held ? C.cream : C.muted}${size}">${esc(g)}</span>`;
+  }
+  const tierName = (r) => TREE.tiers[r] || `Ring ${r}`;
+  let showAll = false;
+  function drawNode() {
+    const n = BY[selected];
+    holdBtn.hidden = true;
+    if (!n) {
+      body.innerHTML = `<div class="legend">
+          <div><b style="border-color:#c4a574;background:${mix(C.ink, "#c4a574", 0.5)}"></b>Unlocked</div>
+          <div><b style="border-color:${C.cream};background:${mix(C.ink, "#c4a574", 0.2)}"></b>Ready</div>
+          <div><b style="border-color:${mix(C.line, "#c4a574", 0.65)};background:${C.track}"></b>Task or Focal Shards needed</div>
+          <div><b style="border-color:${C.line};background:#110e0b"></b>Locked</div>
+        </div>`;
+      return;
+    }
+    const g = gate(n), [st, cls] = status(n, g);
+    const path = PATHS[n.path];
+    const where = `${n.seal ? "Seal" : n === CORE ? "Core" : path.title} | ${n.seal ? "locks " + bandName(n) : tierName(n.ring)}`;
+    const needs = [];
+    [n.requires, n.also].forEach((id) => { if (id && BY[id]) needs.push([BY[id].title, owns(id)]); });
+    if (n.seal) needs.push([`Pathway Level ${n.seal.level} (you are ${level()})`, level() >= n.seal.level]);
+    else { const s = sealFor(n.ring); if (s && s.id !== n.requires) needs.push([s.title, owns(s.id)]); }
+    if (n.slot) {
+      const used = slotUsed(n.slot), lim = slotLimit(n.slot);
+      needs.push([n.slot === "school" ? `Schools mastered ${used} of ${lim}` : `One side of the fork (${used} of ${lim} taken)`, owns(n.id) || used < lim]);
+    }
+    let html = `<div class="head">${glyph(n)}<div><div class="name">${esc(n.title)}</div><div style="color:${n.seal ? C.seal : n.colour}">${esc(where)}</div></div></div>
+      <p class="${cls}">${esc(st)}</p>`;
+    if (g !== "HELD" && n.cost) html += `<div class="row"><span class="dim">Cost</span><span class="${S.shards >= n.cost ? "" : "bad"}"><i class="shard"></i> ${n.cost} Focal Shards (you have ${S.shards})</span></div>`;
+    if (n.perks) html += `<h3>Grants</h3>${Object.entries(n.perks).map(([k, v]) => `<p class="perk">+${Math.round(v * 100)}% ${esc(TREE.stats[k].title.toLowerCase())}</p>`).join("")}`;
+    if (needs.length && g !== "HELD") html += `<h3>Needs</h3><div class="needs">${needs.map(([t, ok]) => `<div><i style="background:${ok ? "#86a86f" : C.red}"></i><span class="${ok ? "" : "muted"}">${esc(t)}</span></div>`).join("")}</div>`;
+    if (n.task) {
+      const t = S.tasks[n.id];
+      const stc = t ? t.state : 0, cur = t ? t.cur : 0;
+      const amount = `${cur.toLocaleString("en-GB")} / ${n.task.amount.toLocaleString("en-GB")}${S.freeze ? " | frozen" : ""}`;
+      const line = stc === 1 ? amount : stc === 4 ? "Done" : "Not open yet";
+      html += `<div class="row"><h3>Task</h3><span class="level">+${n.task.reward} Focal Shards</span></div><p>${esc(n.task.title)}</p>
+        <div class="meter ${stc === 4 ? "done" : S.freeze ? "frozen" : ""}"><i style="width:${(Math.min(1, cur / n.task.amount) * 100).toFixed(1)}%"></i></div>
+        <div class="row"><span class="${stc === 4 ? "good" : "muted"}">${line}</span>${stc === 1 && !S.freeze ? `<button class="link" type="button" data-finish="${n.id}">Finish it (sandbox)</button>` : ""}</div>`;
+    }
+    const items = ITEMS[n.id] || [];
+    if (items.length) {
+      const shown = showAll ? items : items.slice(0, 40);
+      html += `<h3>Unlocks ${items.length} ${items.length === 1 ? "item" : "items"}</h3><div class="chips">${shown.map((i) => `<span title="${esc(i)}">${esc(pretty(i))}</span>`).join("")}</div>`;
+      if (items.length > shown.length) html += `<button class="link" type="button" data-all="1">Show all ${items.length}</button>`;
+    }
+    const leads = NODES.filter((o) => o.requires === n.id || o.also === n.id);
+    if (leads.length) html += `<h3>Leads to</h3><p class="muted">${leads.map((o) => `<button class="link" type="button" data-go="${o.id}">${esc(o.title)}</button>`).join(", ")}</p>`;
+    body.innerHTML = html;
+    holdBtn.hidden = g !== "READY";
+    document.getElementById("holdlabel").textContent = `${n.seal ? "Hold to break" : "Hold to unlock"}  |  ${n.cost} Focal Shards`;
+  }
+  function drawTasks() {
+    holdBtn.hidden = true;
+    const bar = (frac, cls) => `<span class="meter ${cls}"><i style="width:${(Math.min(1, frac) * 100).toFixed(1)}%"></i></span>`;
+    const fmt = (v) => v.toLocaleString("en-GB");
+    const bglyph = (b) => `<span class="glyph tier" style="border-color:${C.muted};background:${C.track};color:${C.cream || "#f0e6d6"}">${esc(TIER(b.tier))}</span>`;
+    const left = (end) => { const d = end - S.worldDay; return d <= 1 ? "ends at dawn" : `${d} dawns left`; };
+    let html = S.freeze ? `<p class="bad">Frozen</p>` : "";
+    html += `<div class="row"><h3>Bounties</h3><span class="dim">${bountyPool().length} in your pool</span></div><div class="list">`;
+    S.slots.forEach((slot, i) => {
+      if (slot.b >= 0) {
+        const b = BOUNTIES[slot.b];
+        html += `<div class="item">${bglyph(b)}<span class="t">${esc(b.title)}</span><span class="n level">+${b.reward}${S.freeze ? "" : `<br><button class="link" type="button" data-finish="slot:${i}" title="Sandbox only">finish</button>`}</span><span class="s">Tier ${esc(TIER(b.tier))} | ${left(slot.end)}  ${fmt(slot.cur)}/${fmt(b.amount)}</span>${bar(slot.cur / b.amount, S.freeze ? "frozen" : "")}</div>`;
+      } else {
+        const b = slot.prev >= 0 && slot.out ? BOUNTIES[slot.prev] : null;
+        const title = b ? (slot.out === 5 ? "Done: " : "Expired: ") + b.title : "No bounty";
+        html += `<div class="item off">${b ? bglyph(b) : `<span class="glyph" style="border-color:${C.muted};background:${C.track};color:${C.muted}">-</span>`}<span class="t muted">${esc(title)}</span><span class="n dim">${b && slot.out === 5 ? "+" + b.reward : ""}</span><span class="s"></span>${bar(slot.out === 5 ? 1 : 0, slot.out === 5 ? "done" : "")}</div>`;
+      }
+    });
+    html += `</div>`;
+    const live = NODES.filter((n) => n.task && S.tasks[n.id] && S.tasks[n.id].state === 1)
+      .sort((a, b) => S.tasks[b.id].cur / b.task.amount - S.tasks[a.id].cur / a.task.amount);
+    const waiting = NODES.filter((n) => n.task && !S.tasks[n.id] && !owns(n.id)).length;
+    html += `<h3>Tasks</h3>`;
+    if (!live.length) html += `<p class="muted">No task is counting right now.</p>`;
+    html += `<div class="list">${live.map((n) => { const t = S.tasks[n.id]; return `<button class="item" type="button" data-go="${n.id}">${glyph(n)}<span class="t">${esc(n.task.title)}</span><span class="n level">+${n.task.reward}</span><span class="s">${esc(n.title)} | unlocks it  ${fmt(t.cur)}/${fmt(n.task.amount)}</span>${bar(t.cur / n.task.amount, S.freeze ? "frozen" : "")}</button>`; }).join("")}</div>`;
+    html += `<p class="dim">${waiting} more not open yet</p>`;
+    body.innerHTML = html;
+  }
+  function drawFinds() {
+    holdBtn.hidden = true;
+    body.innerHTML = `<div class="needs">${TREE.discoveries.map((d, i) => `<div><i style="background:${S.found.has(i) ? "#86a86f" : C.track}"></i><span class="${S.found.has(i) ? "" : "muted"}" style="flex:1">${esc(d.title)}</span><span class="${S.found.has(i) ? "dim" : "level"}">+${d.reward}</span></div>`).join("")}</div>`;
+  }
+  function drawSearch() {
+    holdBtn.hidden = true;
+    const q = query.toLowerCase();
+    const found = NODES.filter((n) => matches(n))
+      .sort((a, b) => ((b.title.toLowerCase().includes(q) ? 1e4 : 0) + (hits[b.id] || 0)) - ((a.title.toLowerCase().includes(q) ? 1e4 : 0) + (hits[a.id] || 0)));
+    if (!found.length) { body.innerHTML = `<p class="muted">Nothing matches "${esc(query)}"</p>`; return; }
+    body.innerHTML = `<div class="list">${found.map((n) => {
+      const c = hits[n.id] || 0;
+      const sub = (owns(n.id) ? "Unlocked" : status(n, gate(n))[0]) + (c ? `  |  ${c} ${c === 1 ? "item" : "items"}` : "");
+      return `<button class="item" type="button" data-go="${n.id}">${glyph(n)}<span class="t">${esc(n.title)}</span><span class="n"></span><span class="s">${esc(sub)}</span></button>`;
+    }).join("")}</div>`;
+  }
+  body.addEventListener("click", (e) => {
+    const go = e.target.closest("[data-go]");
+    if (go) { selected = go.dataset.go; tab = "node"; showAll = false; if (query) { query = ""; document.getElementById("search").value = ""; computeHits(); } draw(); centreOn(selected); return; }
+    const fin = e.target.closest("[data-finish]");
+    if (fin) { finishTask(fin.dataset.finish); return; }
+    if (e.target.closest("[data-all]")) { showAll = true; drawNode(); }
+  });
+  const tabs = { node: "tab-node", tasks: "tab-tasks", finds: "tab-finds" };
+  Object.entries(tabs).forEach(([k, id]) => (document.getElementById(id).onclick = () => { tab = k; if (query) { query = ""; document.getElementById("search").value = ""; computeHits(); } draw(); }));
+  document.getElementById("search").addEventListener("input", (e) => { query = e.target.value.trim(); computeHits(); draw(); });
+
+  function drawStats() {
+    document.getElementById("shards").textContent = S.shards;
+    document.getElementById("level").textContent = `Level ${level()}`;
+    document.getElementById("dayline").textContent = `Day ${S.days + 1} of this life`;
+    document.getElementById("statbars").innerHTML = Object.entries(TREE.stats).map(([k, d], i) => {
+      const v = statValue(k);
+      return `<div title="${esc(d.title)} ${Math.round(v * 100)}% (max ${Math.round(d.max * 100)}%)"><div class="meter"><i style="width:${((v - d.base) / (d.max - d.base) * 100).toFixed(1)}%;background:${STAT_COLOURS[i % STAT_COLOURS.length]}"></i></div><span>${esc(d.short || d.title)} ${Math.round(v * 100)}%</span></div>`;
+    }).join("");
+    document.getElementById("frozen").textContent = S.freeze ? "Frozen" : "";
+    const running = Object.values(S.tasks).filter((t) => t.state === 1).length + S.slots.filter((x) => x.b >= 0).length;
+    document.getElementById("tab-tasks").textContent = `Tasks ${running}`;
+    document.getElementById("tab-finds").textContent = `Finds ${S.found.size}/${TREE.discoveries.length}`;
+    Object.entries(tabs).forEach(([k, id]) => document.getElementById(id).setAttribute("aria-selected", String(!query && tab === k)));
+  }
+  function draw() {
+    drawStats(); drawMap();
+    if (query) drawSearch(); else if (tab === "tasks") drawTasks(); else if (tab === "finds") drawFinds(); else drawNode();
+  }
+
+  document.getElementById("scenario").onchange = (e) => { scenario(e.target.value); draw(); centreOn(selected); };
+  document.getElementById("day").onclick = passDay;
+  document.getElementById("die").onclick = die;
+  document.getElementById("give").onclick = () => { S.shards += 10; draw(); };
+
+  scenario("week");
+  draw();
+  resetView();
+})();
+</script>

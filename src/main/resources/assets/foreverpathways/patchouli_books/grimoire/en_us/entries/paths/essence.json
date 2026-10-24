@@ -1,0 +1,26 @@
+{
+  "name": "Arcane Essence",
+  "category": "foreverpathways:paths/magician",
+  "icon": "irons_spellbooks:arcane_essence",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "irons_spellbooks:arcane_essence",
+      "title": "Arcane Essence",
+      "text": "$(bold)Arcane essence, debris, salvage and ingots, silver rings and the shriving stone. The bottleneck before the schools.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)46 Focal Shards$(n).$(br)After Study."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 40 witches$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "irons_spellbooks:arcane_ingot",
+      "text": "$(bold)Arcane ingot",
+      "flag": "mod:irons_spellbooks"
+    }
+  ],
+  "flag": "mod:irons_spellbooks"
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Deepslate Work",
+  "category": "foreverpathways:paths/builder",
+  "icon": "minecraft:deepslate_tiles",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:deepslate_tiles",
+      "title": "Deepslate Work",
+      "text": "$(bold)Polished, chiseled, brick and tile deepslate and tuff.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)14 Focal Shards$(n).$(br)After Brickwork."
+    }
+  ]
+}

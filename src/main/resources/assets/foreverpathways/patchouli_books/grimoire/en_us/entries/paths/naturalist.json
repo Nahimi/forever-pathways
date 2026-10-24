@@ -1,0 +1,25 @@
+{
+  "name": "Naturalist",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "spawn:captured_octopus",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "spawn:captured_octopus",
+      "title": "Naturalist",
+      "text": "$(bold)The creatures of Spawn and Creatures and Beasts: buckets, eggs, nets, the ant farm, hamster wheels, flower crowns, the strange stones and everything else they add.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)10 Focal Shards$(n).$(br)After Ranger."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Breed 20 animals$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind."
+    }
+  ],
+  "flag": "mod:spawn"
+}

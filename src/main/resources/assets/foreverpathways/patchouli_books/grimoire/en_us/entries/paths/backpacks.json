@@ -1,0 +1,31 @@
+{
+  "name": "Backpacks",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "backpacked:backpack",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "backpacked:backpack",
+      "title": "Backpacks",
+      "text": "$(bold)The backpack, backpack shelves and the dock.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)10 Focal Shards$(n).$(br)After Outfitter."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Walk 10,000 blocks$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "backpacked:backpack",
+      "text": "$(bold)Backpack",
+      "flag": "mod:backpacked"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything of its kind."
+    }
+  ],
+  "flag": "mod:backpacked"
+}

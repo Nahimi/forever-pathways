@@ -1,0 +1,24 @@
+{
+  "name": "Rockbiter",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:diamond_shovel",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:diamond_shovel",
+      "title": "Rockbiter",
+      "text": "$(bold)The rock gives first. +5% breaking speed.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)56 Focal Shards$(n).$(br)After Tireless."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 4,000 deepslate$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Notes",
+      "text": "$(bold)$(thing)+5% breaking speed$(n)"
+    }
+  ]
+}

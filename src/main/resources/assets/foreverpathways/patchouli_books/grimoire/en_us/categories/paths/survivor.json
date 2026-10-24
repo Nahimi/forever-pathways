@@ -1,0 +1,7 @@
+{
+  "name": "Survivor",
+  "description": "The Survivor road, from ring 1 outwards.",
+  "icon": "minecraft:iron_pickaxe",
+  "sortnum": 10,
+  "parent": "foreverpathways:paths"
+}

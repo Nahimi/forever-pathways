@@ -1,0 +1,26 @@
+{
+  "name": "Draught",
+  "category": "foreverpathways:paths/builder",
+  "icon": "adchimneys:metal_pump",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "adchimneys:metal_pump",
+      "title": "Draught",
+      "text": "$(bold)Pumps, and whatever else the chimney-wrights add. Needs Mechanisms as well.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)26 Focal Shards$(n).$(br)After Flues and Mechanisms."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "adchimneys:metal_pump",
+      "text": "$(bold)Metal pump",
+      "flag": "mod:adchimneys"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind."
+    }
+  ],
+  "flag": "mod:adchimneys"
+}

@@ -1,0 +1,31 @@
+{
+  "name": "Larder",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "farmersdelight:stove",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "farmersdelight:stove",
+      "title": "Larder",
+      "text": "$(bold)Every Farmer's Delight meal, Spawn's rolls, chowders and boils, rich soil, organic compost and the stove. The bottleneck of the kitchen.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)9 Focal Shards$(n).$(br)After Kitchen."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Breed 50 animals$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "hardcore_torches:hardcore_stove",
+      "text": "$(bold)Stove",
+      "flag": "mod:hardcore_torches"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind, bluefish roll, herring roll, tuna roll, tuna sandwich, clam chowder, crab boil, crab boil block, escargot, canned herring, steamed clams, date cookie."
+    }
+  ],
+  "flag": "mod:farmersdelight"
+}

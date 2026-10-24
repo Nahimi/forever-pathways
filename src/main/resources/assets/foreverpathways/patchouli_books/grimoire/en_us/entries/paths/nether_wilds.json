@@ -1,0 +1,25 @@
+{
+  "name": "Crimson and Warped",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "minecraft:crimson_stem",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:crimson_stem",
+      "title": "Crimson and Warped",
+      "text": "$(bold)The crimson and warped woods and their trees, worked blackstone, shroomlight, vines and the fungus on a stick.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)29 Focal Shards$(n).$(br)After Nether."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "farmersdelight:crimson_cabinet",
+      "text": "$(bold)Crimson cabinet",
+      "flag": "mod:farmersdelight"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)shroomlight, weeping vines, twisting vines, nether sprouts, nether wart block, warped wart block, warped fungus on a stick."
+    }
+  ]
+}

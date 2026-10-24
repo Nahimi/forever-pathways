@@ -1,0 +1,19 @@
+{
+  "name": "Alchemical Arrows",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:tipped_arrow",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:tipped_arrow",
+      "title": "Alchemical Arrows",
+      "text": "$(bold)Tipped and spectral arrows. Needs Brewing as well.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)34 Focal Shards$(n).$(br)After Fletcher and Brewing."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)tipped arrow, spectral arrow."
+    }
+  ]
+}

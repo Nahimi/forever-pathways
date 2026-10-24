@@ -1,0 +1,15 @@
+{
+  "name": "Witch Eye",
+  "category": "foreverpathways:eyes",
+  "icon": "endrem:witch_eye",
+  "sortnum": 34,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "endrem:witch_eye",
+      "title": "Witch Eye",
+      "text": "$(bold)Found through End Remastered's own loot, mobs and crafting. This node lets you use it in the ancient portal.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill 100 witches."
+    }
+  ],
+  "flag": "mod:endrem"
+}

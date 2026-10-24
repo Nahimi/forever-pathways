@@ -1,0 +1,26 @@
+{
+  "name": "Gadgets",
+  "category": "foreverpathways:paths/builder",
+  "icon": "supplementaries:relayer",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "supplementaries:relayer",
+      "title": "Gadgets",
+      "text": "$(bold)The Supplementaries machinery: relayers, clock and cog blocks, turntables, the safe and its key, crystal displays, spring launchers, illuminators and spikes. Needs Redstone as well.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)24 Focal Shards$(n).$(br)After Lighting and Redstone."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Place 128 redstone dust$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "supplementaries:relayer",
+      "text": "$(bold)Relayer",
+      "flag": "mod:supplementaries"
+    }
+  ],
+  "flag": "mod:supplementaries"
+}
