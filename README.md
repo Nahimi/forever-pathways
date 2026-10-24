@@ -2,7 +2,7 @@
 
 **Forever Pathways adds a progression system to Minecraft. The entire tree contains nodes which the players unlock with 'Focal Shards'; almost every item in the game is locked behind some sort of node, which prevents players from speed-running the game.**
 
-The mod began as a passion project for my SMP server with friends. Our servers would always die after a few weeks because of a lack of progression and rewards and someone would always try to speed-run and ruin the experience for everyone else. Well... NO MORE! After spending so much time and effort on it, I figured other people might wish to use it as well :)
+The mod began as a passion project for my SMP server with friends. Our servers would always die after a few weeks because of a lack of progression and rewards and someone would always try to speed-run and ruin the experience for everyone else. Well… NO MORE! After spending so much time and effort on it, I figured other people might wish to use it as well :)
 
 > [!IMPORTANT]
 > **This mod was NEVER intended for vanilla Minecraft on its own.** While developing it I had countless mods installed, and the tree is built around them. Create, Iron's Spellbooks, Supplementaries, Waystones, Farmer's Delight and plenty more each have nodes of their own. It CAN be finished with nothing but vanilla and the ProgressiveStages mod (a dependency), but it will be a much smaller game. See [Supported mods](#supported-mods).
@@ -203,13 +203,10 @@ Yes, it can be completed that way but it was not designed for that, and a lot of
 NeoForge 1.21.1 only.
 
 **Does it work in single player?** 
-Yes, but it will be tough.
+Yes, but it will be tough...
 
 **Can I change the tree?** 
-The whole tree is one JSON file, `tree.json`. So yes. You can adjust it if you know a bit of coding.
-
-**Can I put it in a modpack?** 
-Yes.
+The whole tree is one JSON file, `tree.json`. So yes. You can adjust it if you know a bit of coding. Do not republish the modified tree mod.
 
 ---
 
