@@ -10,7 +10,7 @@ The mod began as a passion project for my SMP server with friends. Our servers w
 ---
 
 <p align="center">
-  <a href="../../releases/latest/download/foreverpathways.jar">
+  <a href="../../releases/latest">
     <img src="docs/download-button.svg" alt="Download Forever Pathways" width="420">
   </a>
   <br>

@@ -56,8 +56,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           jar=$(find dist -name '*.jar' ! -name '*-sources.jar' ! -name '*-slim.jar' | head -n 1)
-          cp "$jar" dist/foreverpathways.jar
           gh release delete latest --cleanup-tag --yes --repo "$GITHUB_REPOSITORY" || true
-          gh release create latest "$jar" dist/foreverpathways.jar --repo "$GITHUB_REPOSITORY" \
+          gh release create latest "$jar" --repo "$GITHUB_REPOSITORY" \
             --target "$GITHUB_SHA" --latest --title "Latest build" \
             --notes "Automatic build of commit ${GITHUB_SHA::7}. Always the newest jar from main."
