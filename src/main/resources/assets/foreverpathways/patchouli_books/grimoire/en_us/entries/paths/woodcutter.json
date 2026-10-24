@@ -1,26 +1,30 @@
 {
   "name": "Woodcutter",
   "category": "foreverpathways:paths/survivor",
-  "icon": "ists_harder_early:flint_axe",
+  "icon": "minecraft:oak_log",
   "sortnum": 100,
   "pages": [
     {
       "type": "patchouli:spotlight",
-      "item": "ists_harder_early:flint_axe",
+      "item": "minecraft:oak_log",
       "title": "Woodcutter",
-      "text": "$(bold)The flint axe, and with it the trees: every log, branch, plank and wooden block, the crafting table, chests, barrels, ladders and the campfire.$(br2)$(thing)Stone Age$(n), ring 1.$(br)$(thing)3 Focal Shards$(n).$(br)After Core."
+      "text": "$(bold)The trees: every log, branch, plank and wooden block, the crafting table, chests, barrels, ladders and the campfire. With Tough Beginnings, also the flint axe that fells them, and the blocks of wood you carve with a knife and toughen in fire for wooden tools.$(br2)$(thing)Stone Age$(n), ring 1.$(br)$(thing)3 Focal Shards$(n).$(br)After Core."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "ists_harder_early:flint_axe",
+      "recipe": "minecraft:crafting_table",
+      "text": "$(bold)Crafting table"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "tough_beginnings:flint_axe_recipe",
       "text": "$(bold)Flint axe",
-      "flag": "mod:ists_harder_early"
+      "flag": "mod:tough_beginnings"
     },
     {
       "type": "patchouli:text",
       "title": "Unlocks",
-      "text": "$(bold)flint axe, mangrove roots, muddy mangrove roots, mangrove propagule, crafting table, chest, barrel, ladder, bowl, campfire, cracked rotten planks, rotten log anthill, date seed, bowl de."
+      "text": "$(bold)flint axe, block of wood, tough block of wood, mangrove roots, muddy mangrove roots, mangrove propagule, crafting table, chest, barrel, ladder, bowl, campfire, cracked rotten planks, rotten log anthill, date seed, bowl de."
     }
-  ],
-  "flag": "mod:ists_harder_early"
+  ]
 }

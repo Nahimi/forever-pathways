@@ -189,9 +189,17 @@ config="${mod_id}.mixins.json"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
-    modId="ists_harder_early"
+    modId="tough_beginnings"
     type="optional"
-    reason="It's Harder Early: raw ore nuggets and the early grind"
+    reason="Tough Beginnings: flint, fibre and fire before the first wooden tool"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="nether_remastered"
+    type="optional"
+    reason="Nether Remastered: the Seal of the Underworld guards the Nether"
     versionRange="[0,)"
     ordering="AFTER"
     side="BOTH"

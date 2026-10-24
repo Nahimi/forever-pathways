@@ -41,6 +41,9 @@ def survives(task, installed):
     """True when this labour can still be finished, by the same rule Availability.java uses."""
     if not task or not task.get("target"):
         return True
+    if task["kind"] == "advancement":
+        # A mod's advancement is only possible with that mod installed.
+        return namespaces_of(task["target"]) <= installed | {"minecraft"}
     if task["kind"] not in ITEM_KINDS and task["kind"] not in ENTITY_KINDS:
         return True
     return bool(namespaces_of(task["target"]) & installed)

@@ -1,14 +1,14 @@
 {
   "name": "Copper Tools",
   "category": "foreverpathways:paths/survivor",
-  "icon": "ists_harder_early:copper_pickaxe",
+  "icon": "minecraft:copper_block",
   "sortnum": 200,
   "pages": [
     {
       "type": "patchouli:spotlight",
-      "item": "ists_harder_early:copper_pickaxe",
+      "item": "minecraft:copper_block",
       "title": "Copper Tools",
-      "text": "$(bold)The copper pickaxe and axe, the stone axe, copper blocks and the lightning rod, and the beaten metal that makes a canteen and a water purifier. Glass bottles too. The Copper Age proper. +10% breaking speed.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)8 Focal Shards$(n).$(br)After Quarry."
+      "text": "$(bold)The stone axe, copper blocks and the lightning rod, and the beaten metal that makes a canteen and a water purifier. Glass bottles too. The Copper Age proper. +10% breaking speed.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)8 Focal Shards$(n).$(br)After Quarry."
     },
     {
       "type": "patchouli:text",
@@ -28,8 +28,7 @@
     {
       "type": "patchouli:text",
       "title": "Unlocks",
-      "text": "$(bold)copper pickaxe, copper axe, stone axe, copper block, lightning rod, glass bottle, glass bottle de."
+      "text": "$(bold)stone axe, copper block, lightning rod, glass bottle, glass bottle de."
     }
-  ],
-  "flag": "mod:ists_harder_early"
+  ]
 }

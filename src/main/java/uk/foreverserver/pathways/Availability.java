@@ -11,6 +11,7 @@ import java.util.function.Predicate;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.neoforged.fml.ModList;
 
 /**
  * Makes the tree fit whatever is installed.
@@ -200,6 +201,12 @@ public final class Availability {
         }
         if (ENTITY_KINDS.contains(task.kind)) {
             return any(BuiltInRegistries.ENTITY_TYPE, task.target);
+        }
+        if ("advancement".equals(task.kind)) {
+            // A mod's advancement can only be earned with that mod installed.
+            ResourceLocation key = ResourceLocation.tryParse(task.target.trim());
+            return key == null || "minecraft".equals(key.getNamespace())
+                    || ModList.get().isLoaded(key.getNamespace());
         }
         // Everything else counts something the game always has: days, distance, sleep, an anvil.
         return true;

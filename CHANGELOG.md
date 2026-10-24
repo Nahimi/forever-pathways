@@ -1,5 +1,18 @@
 # Changelog
 
+## Unreleased
+
+- Tough Beginnings replaces It's Harder Early. Core holds its flint, fibre and fire; Woodcutter its
+  flint axe and blocks of wood. The Grimoire's Early Game chapter teaches it when it is installed,
+  and the plain start when it is not.
+- Nether Remastered support: Obsidian unlocks the seal and its parts, and the Nether node asks that
+  you have used a Seal of the Underworld. New Grimoire appendix, A12.
+- Nodes whose items all come from missing mods are left out of the tree; seals ask for the same share
+  of what remains.
+- Tier I bounties are lighter: walk, crouch, climb, jump, sprint and dig ask for less.
+- Nodes are bought only with the panel button, which is now coloured when the node can be bought.
+- The Grimoire tab opens with the book anywhere in your inventory. The panel scrollbar is fixed.
+
 ## 0.24.0
 
 - New pixel-art interface: gold frames with diagonal corners, patterned backgrounds, cut-gem node plates,

@@ -1,14 +1,14 @@
 {
   "name": "Prospector",
   "category": "foreverpathways:paths/survivor",
-  "icon": "ists_harder_early:raw_iron_nugets",
+  "icon": "minecraft:raw_iron",
   "sortnum": 200,
   "pages": [
     {
       "type": "patchouli:spotlight",
-      "item": "ists_harder_early:raw_iron_nugets",
+      "item": "minecraft:raw_iron",
       "title": "Prospector",
-      "text": "$(bold)Iron ore and raw iron. It's Harder Early breaks ore into raw nuggets; nine make one raw iron.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)8 Focal Shards$(n).$(br)After Quarry."
+      "text": "$(bold)Iron ore and raw iron.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)8 Focal Shards$(n).$(br)After Quarry."
     },
     {
       "type": "patchouli:text",
@@ -17,15 +17,13 @@
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "ists_harder_early:rawiron",
-      "text": "$(bold)Raw iron nugets",
-      "flag": "mod:ists_harder_early"
+      "recipe": "minecraft:raw_iron",
+      "text": "$(bold)Raw iron"
     },
     {
       "type": "patchouli:text",
       "title": "Unlocks",
-      "text": "$(bold)raw iron nugets, iron ore, deepslate iron ore, raw iron, raw iron block."
+      "text": "$(bold)iron ore, deepslate iron ore, raw iron, raw iron block."
     }
-  ],
-  "flag": "mod:ists_harder_early"
+  ]
 }

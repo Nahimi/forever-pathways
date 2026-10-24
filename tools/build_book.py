@@ -33,33 +33,51 @@ def ital(text):
 
 # --------------------------------------------------------------------------- hand-written chapters
 CHAPTERS = [
-    ("c1", "I. Early Game", "ists_harder_early:flint_axe", 0, [
-        "No wooden tools. Bare hands will not fell a tree.$(br2)"
-        "$(li)1. Break grass and dig gravel: $(thing)stick$(), $(thing)flint$().$(br)"
-        "$(li)2. Make a $(thing)flint knife$().$(br)"
-        "$(li)3. Cut grass or ferns $(thing)with the knife$(): grass string.$(br)"
-        "$(li)4. Three grass string: $(thing)plant string$().$(br)"
-        "$(li)5. Dig mud. Stick + two mud balls: $(thing)reinforced stick$().$(br)"
-        "$(li)6. Flint + reinforced stick + plant string: $(thing)flint axe$().",
-        {"type": "patchouli:crafting", "recipe": "ists_harder_early:flint_knife",
-         "title": "Flint Knife", "text": "Swing at grass, tall grass or ferns."},
-        {"type": "patchouli:crafting", "recipe": "ists_harder_early:plant_string_r",
-         "title": "Plant String", "text": "Three grass string."},
-        {"type": "patchouli:crafting", "recipe": "ists_harder_early:reinforced_stick",
-         "title": "Reinforced Stick", "text": "Mud balls come from digging mud."},
-        {"type": "patchouli:crafting", "recipe": "ists_harder_early:flint_axe",
-         "title": "Flint Axe", "text": "Now you can cut wood."},
-        {"type": "patchouli:text", "title": "Stone and Iron",
-         "text": "$(li)Stone drops $(thing)pebbles$(); four make a cobblestone.$(br)"
-                 "$(li)Stone tools take $(thing)reinforced sticks$().$(br)"
-                 "$(li)Iron ore drops $(thing)4 to 7 nuggets$(); nine make a raw iron.$(br)"
-                 "$(li)Gravel gives flint about one time in ten."},
-        {"type": "patchouli:crafting", "recipe": "ists_harder_early:cobblestone",
-         "title": "Cobblestone", "text": "Four pebbles."},
-        {"type": "patchouli:crafting", "recipe": "minecraft:stone_pickaxe",
-         "title": "Stone Pickaxe", "text": "Cobblestone and two reinforced sticks."},
-        {"type": "patchouli:crafting", "recipe": "ists_harder_early:raw_iron",
-         "title": "Raw Iron", "text": "Nine nuggets."},
+    ("c1", "I. Early Game", "minecraft:flint", 0, [
+        # Shown only without Tough Beginnings: the plain start.
+        {"type": "patchouli:text", "title": "I. Early Game", "flag": "!mod:tough_beginnings",
+         "text": "Trees are locked at first.$(br2)"
+                 "$(li)1. Live off the soft ground, wild plants and raw food.$(br)"
+                 "$(li)2. Buy $(l:paths/woodcutter)Woodcutter$() first: logs, planks and the crafting "
+                 "table.$(br)"
+                 "$(li)3. Then $(l:paths/quarry)Quarry$() for stone and the first tools."},
+        # Tough Beginnings: flint, fibre and fire before any wooden tool.
+        {"type": "patchouli:text", "title": "I. Early Game", "flag": "mod:tough_beginnings",
+         "text": "Bare hands will not break logs, planks or stone.$(br2)"
+                 "$(li)1. Dig gravel: sometimes $(thing)raw flint$().$(br)"
+                 "$(li)2. Right-click raw flint on stone to knap it: $(thing)flint$(), or "
+                 "$(thing)flint shards$() if it breaks.$(br)"
+                 "$(li)3. Flint + stick: $(thing)flint knife$().$(br)"
+                 "$(li)4. Use the knife on grass: $(thing)plant fibre$().$(br)"
+                 "$(li)5. Two fibre: $(thing)fibre rope$().$(br)"
+                 "$(li)6. Flint + rope + stick: $(thing)flint axe$()."},
+        {"type": "patchouli:crafting", "recipe": "tough_beginnings:flint_knife_recipe",
+         "title": "Flint Knife", "flag": "mod:tough_beginnings",
+         "text": "Use it on grass for fibre."},
+        {"type": "patchouli:crafting", "recipe": "tough_beginnings:fiber_to_string_recipe",
+         "title": "Fibre Rope", "flag": "mod:tough_beginnings",
+         "text": "Two plant fibre."},
+        {"type": "patchouli:crafting", "recipe": "tough_beginnings:flint_axe_recipe",
+         "title": "Flint Axe", "flag": "mod:tough_beginnings",
+         "text": "Now you can cut wood, once you own $(l:paths/woodcutter)Woodcutter$()."},
+        {"type": "patchouli:text", "title": "Wooden Tools", "flag": "mod:tough_beginnings",
+         "text": "Wooden tools need $(thing)tough blocks of wood$(), not planks.$(br2)"
+                 "$(li)Knife in your main hand, a log or plank in your off-hand, right-click: "
+                 "$(thing)block of wood$().$(br)"
+                 "$(li)Place a $(thing)pile of fibre$() and right-click it with a stick to light it.$(br)"
+                 "$(li)Right-click blocks of wood on the fire, or cook them, to toughen them."},
+        {"type": "patchouli:crafting", "recipe": "tough_beginnings:pile_of_fiber_recipe",
+         "title": "Pile of Fibre", "flag": "mod:tough_beginnings",
+         "text": "Seven fibre. Light it with a stick."},
+        {"type": "patchouli:smelting", "recipe": "tough_beginnings:woodblock",
+         "title": "Tough Block of Wood", "flag": "mod:tough_beginnings",
+         "text": "Or right-click a block of wood on a lit pile of fibre."},
+        {"type": "patchouli:crafting", "recipe": "minecraft:wooden_pickaxe",
+         "title": "Wooden Pickaxe", "flag": "mod:tough_beginnings",
+         "text": "Tough blocks of wood and sticks. Every wooden tool works the same way."},
+        {"type": "patchouli:crafting", "recipe": "tough_beginnings:gravel_recipe",
+         "title": "Gravel", "flag": "mod:tough_beginnings",
+         "text": "Failed flint is not wasted: shards make gravel to dig again."},
         {"type": "patchouli:text", "title": "Light Burns Out",
          "flag": "mod:hardcore_torches",
          "text": "Torches are crafted $(thing)unlit$(), burn down while lit, and go out.$(br2)"
@@ -286,6 +304,33 @@ BEYOND = [
          "text": "$(li)Gifts win them back.$(br)"
                  "$(li)Small crimes fade with time; heavy ones linger.$(br2)"
                  "Trading is a task at $(l:paths/trader)Trader$(), so stay welcome."},
+    ]),
+    ("a12", "A12. The Underworld Seal", "nether_remastered:seal_of_the_underworld_item", 12,
+     "mod:nether_remastered", [
+        "The Nether is shut. Its portals will not take you until you have used a "
+        "$(thing)Seal of the Underworld$().$(br2)"
+        "$(li)Four $(thing)Mysterious Shards$(), four $(thing)Bottled Nether Essence$() and a "
+        "$(thing)Nether Crystal$() make one.$(br)"
+        "$(li)Right-click it to use it. It is used up.",
+        {"type": "patchouli:crafting", "recipe": "nether_remastered:sotu_recipe",
+         "title": "Seal of the Underworld", "text": "One shard in each corner, the crystal at its heart."},
+        {"type": "patchouli:text", "title": "The Shards",
+         "text": "Each corner is found somewhere else, about one time in ten.$(br2)"
+                 "$(li)Top left: abandoned mineshaft chests.$(br)"
+                 "$(li)Top right: witches.$(br)"
+                 "$(li)Bottom left: evokers.$(br)"
+                 "$(li)Bottom right: pillager outpost chests."},
+        {"type": "patchouli:text", "title": "Crystal and Essence",
+         "text": "$(li)The $(thing)Nether Crystal$() is brushed from desert pyramids and trail ruins.$(br)"
+                 "$(li)Kill the undead with an $(thing)obsidian-infused bottle$() in your off-hand to "
+                 "bottle their $(thing)essence$().$(br)"
+                 "$(li)Now and then a whole seal turns up in ruins or a desert well."},
+        {"type": "patchouli:crafting", "recipe": "nether_remastered:obsidian_infused_bottle",
+         "title": "Obsidian-Infused Bottle", "text": "Crying obsidian and glass. Makes three."},
+        {"type": "patchouli:text", "title": "On the Ring",
+         "text": "The shards, crystal, bottles and the seal are unlocked at "
+                 "$(l:paths/obsidian)Obsidian$(), ring 6.$(br2)"
+                 "$(l:paths/nether)Nether$(), ring 6, cannot be bought until you have used a seal."},
     ]),
 ]
 MODIDS = {"icys-better-horses": "icys_better_horses"}
@@ -604,11 +649,15 @@ def main():
                   "title": node["title"],
                   "text": node["opens"] + "$(br2)" + "$(br)".join(lines)}]
         if node.get("task"):
-            pages.append({"type": "patchouli:text", "title": "Task",
-                          "text": f"$(thing){kind_text(node['task'])}$()$(br2)"
-                                  f"Pays {node['task']['reward']} Focal Shard"
-                                  f"{'s' if node['task']['reward'] != 1 else ''} once. Counts only "
-                                  "once this node is reachable."})
+            task_page = {"type": "patchouli:text", "title": "Task",
+                         "text": f"$(thing){kind_text(node['task'])}$()$(br2)"
+                                 f"Pays {node['task']['reward']} Focal Shard"
+                                 f"{'s' if node['task']['reward'] != 1 else ''} once. Counts only "
+                                 "once this node is reachable."}
+            # A mod's advancement is only a task with that mod installed (Availability.java drops it).
+            if node["task"]["kind"] == "advancement" and mod_flag(node["task"]["target"]):
+                task_page["flag"] = mod_flag(node["task"]["target"])
+            pages.append(task_page)
         extra = []
         if node.get("craftOnly"):
             extra.append("$(thing)Craft-locked only.$() Anyone can place, use and break these; the "

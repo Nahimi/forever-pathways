@@ -8,7 +8,13 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:netherrack",
       "title": "Nether",
-      "text": "$(bold)The Nether's ground: netherrack, nylium, basalt, blackstone, soul sand and soil, magma, quartz, glowstone, nether gold, nether wart and nether bricks. Needs Obsidian as well.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)16 Focal Shards$(n).$(br)After Gold and Obsidian."
+      "text": "$(bold)The Nether's ground: netherrack, nylium, basalt, blackstone, soul sand and soil, magma, quartz, glowstone, nether gold, nether wart and nether bricks. Needs Obsidian as well. With Nether Remastered, you must also have used a Seal of the Underworld.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)16 Focal Shards$(n).$(br)After Gold and Obsidian."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Use a Seal of the Underworld$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable.",
+      "flag": "mod:nether_remastered"
     },
     {
       "type": "patchouli:crafting",

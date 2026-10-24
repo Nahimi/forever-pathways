@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:obsidian",
       "title": "Obsidian",
-      "text": "$(bold)Obsidian and crying obsidian. Ruined portals wait in the world; this lets you place the blocks to mend one, or build your own. Mining obsidian still needs a diamond pickaxe.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)23 Focal Shards$(n).$(br)After Deep Prospector."
+      "text": "$(bold)Obsidian and crying obsidian. Ruined portals wait in the world; this lets you place the blocks to mend one, or build your own. Mining obsidian still needs a diamond pickaxe. With Nether Remastered, also the seal shards, the Nether Crystal, nether essence, the obsidian-infused bottle and the Seal of the Underworld.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)23 Focal Shards$(n).$(br)After Deep Prospector."
     },
     {
       "type": "patchouli:text",
@@ -18,7 +18,7 @@
     {
       "type": "patchouli:text",
       "title": "Unlocks",
-      "text": "$(bold)obsidian, crying obsidian."
+      "text": "$(bold)obsidian, crying obsidian, everything of its kind."
     }
   ]
 }

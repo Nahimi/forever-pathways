@@ -50,9 +50,9 @@ can switch them off.
 ### Works with your pack
 
 The tree can be finished on vanilla plus ProgressiveStages alone. Every supported mod adds to it:
-Create, Power Grid, Iron's Spellbooks, Supplementaries, Handcrafted, Farmer's Delight, Butchery, It's
-Harder Early, Waystones, Envelope, Chalk, Sleep Tight, Icy's Better Horses, Hardcore Torches, Advanced
-Chimneys and more. Missing mods simply leave their nodes as shards-only steps.
+Create, Power Grid, Iron's Spellbooks, Supplementaries, Handcrafted, Farmer's Delight, Butchery, Tough
+Beginnings, Nether Remastered, Waystones, Envelope, Chalk, Sleep Tight, Icy's Better Horses, Hardcore Torches, Advanced
+Chimneys and more. Nodes for mods you do not have are left out of the tree.
 
 ### Requirements
 

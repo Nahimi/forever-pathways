@@ -42,15 +42,15 @@ back to your inventory or any other tab.
 
 ## The early game
 
-The first three tiers follow It's Harder Early:
+The first three tiers work on vanilla and follow Tough Beginnings when it is installed:
 
 | Where | Node | What it opens |
 | --- | --- | --- |
-| Core | | Flint knife, plant fibre and string, reinforced sticks, mud balls, pebbles, Vibrant Journeys rocks and twigs, leaves, flint, the soft ground, wild plants, coral, raw food, healing herbs and purified water. No trees. |
-| Stone Age (ring 1) | Woodcutter | The flint axe and every tree: logs, Dynamic Trees branches (Terralith and Spawn trees included), planks and wooden blocks, the crafting table, chests, barrels, ladders, the campfire. |
+| Core | | Raw flint, flint shards, the flint knife, plant fibre, fibre rope and the pile of fibre (Tough Beginnings), Vibrant Journeys rocks and twigs, leaves, flint, the soft ground, wild plants, coral, raw food, healing herbs and purified water. No trees. |
+| Stone Age (ring 1) | Woodcutter | The flint axe, blocks of wood and tough blocks of wood (Tough Beginnings) and every tree: logs, Dynamic Trees branches (Terralith and Spawn trees included), planks and wooden blocks, the crafting table, chests, barrels, ladders, the campfire. |
 | Stone Age (ring 1) | Quarry | The stone pickaxe, cobblestone (four rocks make one), the natural stones, the furnace, coal, torches, and copper ore to smelt into ingots. Needs Woodcutter too. |
-| Copper Age (ring 2) | Copper Tools | It's Harder Early's copper pickaxe and axe, the stone axe, copper blocks, the lightning rod. Task: smelt 48 copper ingots. |
-| Copper Age (ring 2) | Prospector | Iron ore and raw iron nuggets. Task: mine 96 copper ore. |
+| Copper Age (ring 2) | Copper Tools | The stone axe, copper blocks, the lightning rod. Task: smelt 48 copper ingots. |
+| Copper Age (ring 2) | Prospector | Iron ore and raw iron. Task: mine 96 copper ore. |
 | Copper Age (ring 2) | Gardener, Earthworks, Skirmisher | The other first tools: the stone hoe, the stone shovel and the stone sword. |
 | Iron Age (ring 3) | Iron | Iron ingots, nuggets, blocks and the blast furnace. Task: mine 160 iron ore. Needs Copper Tools too. |
 

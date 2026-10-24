@@ -1,60 +1,75 @@
 {
   "name": "I. Early Game",
   "category": "foreverpathways:start",
-  "icon": "ists_harder_early:flint_axe",
+  "icon": "minecraft:flint",
   "sortnum": 0,
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(bold)No wooden tools. Bare hands will not fell a tree.$(br2)$(li)1. Break grass and dig gravel: $(thing)stick$(n), $(thing)flint$(n).$(br)$(li)2. Make a $(thing)flint knife$(n).$(br)$(li)3. Cut grass or ferns $(thing)with the knife$(n): grass string.$(br)$(li)4. Three grass string: $(thing)plant string$(n).$(br)$(li)5. Dig mud. Stick + two mud balls: $(thing)reinforced stick$(n).$(br)$(li)6. Flint + reinforced stick + plant string: $(thing)flint axe$(n).",
-      "title": "I. Early Game"
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "ists_harder_early:flint_knife",
-      "title": "Flint Knife",
-      "text": "$(bold)Swing at grass, tall grass or ferns."
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "ists_harder_early:plant_string_r",
-      "title": "Plant String",
-      "text": "$(bold)Three grass string."
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "ists_harder_early:reinforced_stick",
-      "title": "Reinforced Stick",
-      "text": "$(bold)Mud balls come from digging mud."
-    },
-    {
-      "type": "patchouli:crafting",
-      "recipe": "ists_harder_early:flint_axe",
-      "title": "Flint Axe",
-      "text": "$(bold)Now you can cut wood."
+      "title": "I. Early Game",
+      "flag": "!mod:tough_beginnings",
+      "text": "$(bold)Trees are locked at first.$(br2)$(li)1. Live off the soft ground, wild plants and raw food.$(br)$(li)2. Buy $(l:paths/woodcutter)Woodcutter$(n) first: logs, planks and the crafting table.$(br)$(li)3. Then $(l:paths/quarry)Quarry$(n) for stone and the first tools."
     },
     {
       "type": "patchouli:text",
-      "title": "Stone and Iron",
-      "text": "$(bold)$(li)Stone drops $(thing)pebbles$(n); four make a cobblestone.$(br)$(li)Stone tools take $(thing)reinforced sticks$(n).$(br)$(li)Iron ore drops $(thing)4 to 7 nuggets$(n); nine make a raw iron.$(br)$(li)Gravel gives flint about one time in ten."
+      "title": "I. Early Game",
+      "flag": "mod:tough_beginnings",
+      "text": "$(bold)Bare hands will not break logs, planks or stone.$(br2)$(li)1. Dig gravel: sometimes $(thing)raw flint$(n).$(br)$(li)2. Right-click raw flint on stone to knap it: $(thing)flint$(n), or $(thing)flint shards$(n) if it breaks.$(br)$(li)3. Flint + stick: $(thing)flint knife$(n).$(br)$(li)4. Use the knife on grass: $(thing)plant fibre$(n).$(br)$(li)5. Two fibre: $(thing)fibre rope$(n).$(br)$(li)6. Flint + rope + stick: $(thing)flint axe$(n)."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "ists_harder_early:cobblestone",
-      "title": "Cobblestone",
-      "text": "$(bold)Four pebbles."
+      "recipe": "tough_beginnings:flint_knife_recipe",
+      "title": "Flint Knife",
+      "flag": "mod:tough_beginnings",
+      "text": "$(bold)Use it on grass for fibre."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "minecraft:stone_pickaxe",
-      "title": "Stone Pickaxe",
-      "text": "$(bold)Cobblestone and two reinforced sticks."
+      "recipe": "tough_beginnings:fiber_to_string_recipe",
+      "title": "Fibre Rope",
+      "flag": "mod:tough_beginnings",
+      "text": "$(bold)Two plant fibre."
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "ists_harder_early:raw_iron",
-      "title": "Raw Iron",
-      "text": "$(bold)Nine nuggets."
+      "recipe": "tough_beginnings:flint_axe_recipe",
+      "title": "Flint Axe",
+      "flag": "mod:tough_beginnings",
+      "text": "$(bold)Now you can cut wood, once you own $(l:paths/woodcutter)Woodcutter$(n)."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Wooden Tools",
+      "flag": "mod:tough_beginnings",
+      "text": "$(bold)Wooden tools need $(thing)tough blocks of wood$(n), not planks.$(br2)$(li)Knife in your main hand, a log or plank in your off-hand, right-click: $(thing)block of wood$(n).$(br)$(li)Place a $(thing)pile of fibre$(n) and right-click it with a stick to light it.$(br)$(li)Right-click blocks of wood on the fire, or cook them, to toughen them."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "tough_beginnings:pile_of_fiber_recipe",
+      "title": "Pile of Fibre",
+      "flag": "mod:tough_beginnings",
+      "text": "$(bold)Seven fibre. Light it with a stick."
+    },
+    {
+      "type": "patchouli:smelting",
+      "recipe": "tough_beginnings:woodblock",
+      "title": "Tough Block of Wood",
+      "flag": "mod:tough_beginnings",
+      "text": "$(bold)Or right-click a block of wood on a lit pile of fibre."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:wooden_pickaxe",
+      "title": "Wooden Pickaxe",
+      "flag": "mod:tough_beginnings",
+      "text": "$(bold)Tough blocks of wood and sticks. Every wooden tool works the same way."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "tough_beginnings:gravel_recipe",
+      "title": "Gravel",
+      "flag": "mod:tough_beginnings",
+      "text": "$(bold)Failed flint is not wasted: shards make gravel to dig again."
     },
     {
       "type": "patchouli:text",

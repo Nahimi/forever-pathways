@@ -1,0 +1,41 @@
+{
+  "name": "A12. The Underworld Seal",
+  "category": "foreverpathways:beyond",
+  "icon": "nether_remastered:seal_of_the_underworld_item",
+  "sortnum": 12,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "A12. The Underworld Seal",
+      "text": "$(bold)The Nether is shut. Its portals will not take you until you have used a $(thing)Seal of the Underworld$(n).$(br2)$(li)Four $(thing)Mysterious Shards$(n), four $(thing)Bottled Nether Essence$(n) and a $(thing)Nether Crystal$(n) make one.$(br)$(li)Right-click it to use it. It is used up."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "nether_remastered:sotu_recipe",
+      "title": "Seal of the Underworld",
+      "text": "$(bold)One shard in each corner, the crystal at its heart."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "The Shards",
+      "text": "$(bold)Each corner is found somewhere else, about one time in ten.$(br2)$(li)Top left: abandoned mineshaft chests.$(br)$(li)Top right: witches.$(br)$(li)Bottom left: evokers.$(br)$(li)Bottom right: pillager outpost chests."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Crystal and Essence",
+      "text": "$(bold)$(li)The $(thing)Nether Crystal$(n) is brushed from desert pyramids and trail ruins.$(br)$(li)Kill the undead with an $(thing)obsidian-infused bottle$(n) in your off-hand to bottle their $(thing)essence$(n).$(br)$(li)Now and then a whole seal turns up in ruins or a desert well."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "nether_remastered:obsidian_infused_bottle",
+      "title": "Obsidian-Infused Bottle",
+      "text": "$(bold)Crying obsidian and glass. Makes three."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "On the Ring",
+      "text": "$(bold)The shards, crystal, bottles and the seal are unlocked at $(l:paths/obsidian)Obsidian$(n), ring 6.$(br2)$(l:paths/nether)Nether$(n), ring 6, cannot be bought until you have used a seal."
+    }
+  ],
+  "flag": "mod:nether_remastered"
+}

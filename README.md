@@ -139,7 +139,7 @@ Every node also has a page, with the real crafting recipes for what it unlocks.
 
 ## Supported mods
 
-Every supported mod is optional. Where its items exist, they are placed in the tree. Where a mod is missing, the nodes that would have held its items remain, and cost only shards.
+Every supported mod is optional. Where its items exist, they are placed in the tree. Where a mod is missing, the nodes that would have held its items are left out of the tree, and the seals ask for fewer nodes to match.
 
 | Area | Mods |
 | --- | --- |
@@ -147,7 +147,7 @@ Every supported mod is optional. Where its items exist, they are placed in the t
 | Magic | • Iron's Spellbooks<br>• Waystones |
 | Building and decoration | • Supplementaries<br>• Handcrafted<br>• Advanced Chimneys<br>• Terrain Slabs<br>• Dynamic Trees |
 | Food and animals | • Farmer's Delight<br>• Butchery |
-| Survival | • It's Harder Early<br>• Legendary Survival Overhaul<br>• Hardcore Torches<br>• Sleep Tight<br>• Icy's Better Horses |
+| Survival | • Tough Beginnings<br>• Nether Remastered<br>• Legendary Survival Overhaul<br>• Hardcore Torches<br>• Sleep Tight<br>• Icy's Better Horses |
 | Post, exploration and storage | • Envelope<br>• Chalk<br>• Backpacked |
 | Villages | • Thief |
 | Bosses | • Bosses' Rise<br>• End Remastered<br>• Mutant Monsters |
