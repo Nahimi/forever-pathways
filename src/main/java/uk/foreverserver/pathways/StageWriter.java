@@ -166,12 +166,13 @@ public final class StageWriter {
     /**
      * Hardcore Torches burns a torch out in 40 minutes and a lantern in two hours, and its fire
      * starter cannot light a lantern at all. The Forever Server runs longer than that, so Pathways
-     * nudges four of its settings once:
+     * nudges a few of its settings once:
      *
      * <ul>
      *   <li>torch and soul torch fuel 48,000 to 72,000 ticks, 40 minutes to an hour</li>
      *   <li>lantern and soul lantern fuel 144,000 to 288,000 ticks, two hours to four</li>
-     *   <li>the fire starter may light lanterns</li>
+     *   <li>the fire starter may no longer light lanterns</li>
+     *   <li>torches are crafted unlit and must be lit before they burn</li>
      * </ul>
      *
      * Only values still at the mod's own defaults are touched, so anything you have tuned yourself
@@ -183,6 +184,7 @@ public final class StageWriter {
             {"defaultLanternFuel", "144000", "288000"},
             {"defaultSoulLanternFuel", "144000", "288000"},
             {"canLightLanterns", "true", "false"},
+            {"craftUnlit", "false", "true"},
     };
 
     private static void patchTorchConfig() {

@@ -79,28 +79,33 @@ CHAPTERS = [
         {"type": "patchouli:crafting", "recipe": "tough_beginnings:gravel_recipe",
          "title": "Gravel", "flag": "mod:tough_beginnings",
          "text": "Failed flint is not wasted: shards make gravel to dig again."},
-        {"type": "patchouli:text", "title": "Light Burns Out",
+        {"type": "patchouli:text",
+         "title": "Light Burns Out",
          "flag": "mod:hardcore_torches",
-         "text": "Torches are crafted $(thing)unlit$(), burn down while lit, and go out.$(br2)"
-                 "$(li)Light one from a lit torch, a campfire, flint and steel, or a fire "
-                 "starter.$(br)"
-                 "$(li)A burning torch dims to $(thing)smouldering$(), then $(thing)burnt$(). A "
-                 "burnt one can be relit.$(br)"
-                 "$(li)A torch lasts about an hour, a lantern about four.$(br)"
-                 "$(li)Water puts them out. Carry spares."},
-        {"type": "patchouli:crafting", "recipe": "hardcore_torches:unlit_torch",
-         "title": "Unlit Torch", "flag": "mod:hardcore_torches",
-         "text": "Coal and a stick, same as ever; it just does not light itself."},
-        {"type": "patchouli:crafting", "recipe": "hardcore_torches:fire_starter",
-         "title": "Fire Starter", "flag": "mod:hardcore_torches",
-         "text": "String and three sticks. Lights torches and campfires with no flint needed. It cannot light lanterns."},
-        {"type": "patchouli:text", "title": "Lanterns and Oil",
+         "text": "Torches and lanterns burn down while lit, and then go out.$(br2)$(li)A burning torch dims to $(thing)smouldering$(), then $(thing)burnt$(). A burnt one can be relit.$(br)$(li)A torch lasts about an hour, a lantern about four.$(br)$(li)Rain makes them smoulder, three times slower. Water and swimming put them out; so does breaking one.$(br)$(li)Carry spares."},
+        {"type": "patchouli:crafting",
+         "recipe": "hardcore_torches:unlit_torch",
+         "recipe2": "hardcore_torches:lit_torch",
+         "title": "Torch",
          "flag": "mod:hardcore_torches",
-         "text": "Lanterns burn fuel too, and are refilled with an $(thing)oil can$(): coal or "
-                 "animal fat. A fire starter will not light them; use a torch, campfire or flint and steel.$(br2)"
-                 "$(li)Lanterns and the oil can: $(l:paths/ironworks)Ironworks$(), ring 4.$(br)"
-                 "$(li)Animal fat: $(l:paths/husbandry)Husbandry$(), ring 2.$(br)"
-                 "$(li)The bandolier carries torches: Ironworks, ring 4."},
+         "text": "Coal and a stick. Torches may only be crafted lit or unlit, depending on your server's settings. An unlit one is lit from a lit torch, a campfire, flint and steel or a fire starter."},
+        {"type": "patchouli:crafting",
+         "recipe": "hardcore_torches:fire_starter",
+         "title": "Fire Starter",
+         "flag": "mod:hardcore_torches",
+         "text": "String and three sticks. Lights torches and campfires with no flint needed, but only one try in three works. It cannot light lanterns."},
+        {"type": "patchouli:text",
+         "title": "Soul Torches",
+         "flag": "mod:hardcore_torches",
+         "text": "Soul torches and soul lanterns burn down too, as long as their plain cousins.$(br2)$(li)They are not refilled with fuel but with $(thing)experience$(): right-click with an empty hand.$(br)$(li)Each click spends 1 experience point and adds about four minutes.$(br)$(li)An experience bottle is worth about seven points."},
+        {"type": "patchouli:text",
+         "title": "Lanterns and Oil",
+         "flag": "mod:hardcore_torches",
+         "text": "Lanterns burn fuel too, and are refilled with an $(thing)oil can$(): coal or animal fat. A fire starter will not light them; use a torch, campfire or flint and steel.$(br2)$(li)Lanterns and the oil can: $(l:paths/ironworks)Ironworks$(), ring 4.$(br)$(li)Animal fat: $(l:paths/husbandry)Husbandry$(), ring 2.$(br)$(li)The bandolier carries torches: Ironworks, ring 4."},
+        {"type": "patchouli:text",
+         "title": "Campfires and Stoves",
+         "flag": "mod:hardcore_torches",
+         "text": "A campfire is crafted $(thing)unlit$(), and has to be fed fuel to burn: it holds about twenty minutes.$(br2)$(li)Light it with a fire starter, flint and steel or a lit torch.$(br)$(li)With Farmer's Delight, the stove needs fuel in the same way."},
     ]),
     ("c2", "II. The Ring", "minecraft:target", 1, [
         "Most things are locked until you unlock them. Open the ring with "

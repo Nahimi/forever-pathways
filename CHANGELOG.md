@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.25.3
+
+- Hardcore Torches: torches are now crafted unlit (Pathways switches `craftUnlit` on, once, if it is still
+  at the default). The Grimoire explains torches, soul torches (refuelled with experience), campfires
+  and stoves, and shows the torch recipe whichever way the server crafts it.
+
 ## 0.25.2
 
 - Fixed: no stages loaded at all, so Core was never owned and nothing could be bought. Pathways wrote
