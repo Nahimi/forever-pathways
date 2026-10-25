@@ -12,6 +12,10 @@
 - Tier I bounties are lighter: walk, crouch, climb, jump, sprint and dig ask for less.
 - Nodes are bought only with the panel button, which is now coloured when the node can be bought.
 - The Grimoire tab opens with the book anywhere in your inventory. The panel scrollbar is fixed.
+- Finished bounties show as completed, on a green row, with no counter.
+- The death freeze lasts 10 minutes instead of a full in-game day (20 minutes).
+- The Grimoire is in the creative menu, under Tools & Utilities.
+- With Tough Beginnings and Supplementaries together, sticks place again and a Pile of Fiber can be lit.
 
 ## 0.24.0
 

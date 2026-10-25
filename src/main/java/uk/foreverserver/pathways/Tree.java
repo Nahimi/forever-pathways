@@ -189,7 +189,7 @@ public final class Tree {
         public int bountySlots = 2;
         public int deathShardLoss = 1;
         public double deathTaskLoss = 0.25;
-        public int freezeTicks = 24000;
+        public int freezeTicks = 12000;
     }
 
     public static final class Seal {

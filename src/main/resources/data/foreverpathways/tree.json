@@ -65,7 +65,7 @@
     "shardsPerDay": 0,
     "deathShardLoss": 1,
     "deathTaskLoss": 0.25,
-    "freezeTicks": 24000,
+    "freezeTicks": 12000,
     "bountySlots": 2
   },
   "stats": {

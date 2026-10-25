@@ -36,7 +36,7 @@
     {
       "type": "patchouli:text",
       "title": "Death",
-      "text": "$(bold)$(#8A3B2F)1 Focal Shard, and a quarter of all progress on running tasks and bounties.$(n)$(br2)Nothing counts until the next dawn. Unlocked nodes and finished tasks are safe."
+      "text": "$(bold)$(#8A3B2F)1 Focal Shard, and a quarter of all progress on running tasks and bounties.$(n)$(br2)Nothing counts for the next 10 minutes. Unlocked nodes and finished tasks are safe."
     }
   ],
   "priority": true

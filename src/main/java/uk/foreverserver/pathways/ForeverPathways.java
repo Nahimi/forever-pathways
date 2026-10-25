@@ -39,6 +39,7 @@ public class ForeverPathways {
     public ForeverPathways(IEventBus modBus) {
         modBus.addListener(ForeverPathways::registerPayloads);
         modBus.addListener(ForeverPathways::setup);
+        modBus.addListener(Grimoires::onCreativeTab);
         NeoForge.EVENT_BUS.addListener(PathwayService::onPlayerTick);
         BlockGuard.register();
         ToughBeginningsCompat.register();

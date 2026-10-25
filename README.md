@@ -106,7 +106,7 @@ While you play, a small popup shows each step of progress on a task or bounty, a
 
 This mod makes death quite punishing. And in the future, I will provide extensive config for it. 
 
-When you die, you lose 1 Focal Shard, every running task and bounty loses a quarter of its progress, and they freeze for one in-game day (meaning you cannot complete them). Unlocked nodes are NEVER taken away though.
+When you die, you lose 1 Focal Shard, every running task and bounty loses a quarter of its progress, and they freeze for 10 minutes (meaning you cannot complete them). Unlocked nodes are NEVER taken away though.
 
 Players also begin with slower stats. These are improved via unlocking nodes.
 

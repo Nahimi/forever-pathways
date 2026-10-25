@@ -35,7 +35,7 @@ back to your inventory or any other tab.
 - **Stats.** Everyone starts slow and weak: 70% movement speed, 40% breaking speed, 80% boat speed
   and 50% attack damage. Perks on nodes raise them to 120%, 100%, 100% and 110%.
 - **Death.** You lose 1 Focal Shard, every running task and bounty loses 25% of its progress, and they
-  are all frozen for one in-game day. A bounty's deadline keeps running while frozen. Unlocked
+  are all frozen for 10 minutes. A bounty's deadline keeps running while frozen. Unlocked
   nodes are never taken away.
 - **Forks.** Hunter and Scout exclude each other until you buy Second Path. You may master
   three magic schools, five after Archmage.

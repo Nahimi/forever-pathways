@@ -4,8 +4,10 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 
 /**
  * The Grimoire in a player's hands. Everyone is handed one the first time they join, and the guide
@@ -77,6 +79,24 @@ public final class Grimoires {
             }
         } catch (LinkageError | RuntimeException error) {
             present = false;
+        }
+    }
+
+    /**
+     * Puts the Grimoire in the Tools &amp; Utilities tab of the creative menu: the same book players are
+     * handed on joining, so the inventory checks and the Legendary Tabs tab treat it as the real thing.
+     */
+    public static void onCreativeTab(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey() != CreativeModeTabs.TOOLS_AND_UTILITIES || !available()) {
+            return;
+        }
+        try {
+            ItemStack book = GrimoireStack.make(BOOK);
+            if (!book.isEmpty()) {
+                event.accept(book);
+            }
+        } catch (LinkageError | RuntimeException error) {
+            // Patchouli missing its book, or the tab already holds it: nothing to add.
         }
     }
 

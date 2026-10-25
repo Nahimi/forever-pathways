@@ -45,7 +45,7 @@ import net.minecraft.world.level.block.Block;
  * out simply leaves. A slot emptied by a finished bounty stays empty until the next dawn, so at most two pay a day.
  *
  * <p><b>Dying</b> costs shards, keeps 75% of the progress on every running task and bounty, and freezes them all
- * for one in-game day: while frozen the baseline is dragged along with the stat, so nothing done in that time
+ * for ten minutes (rules.freezeTicks): while frozen the baseline is dragged along with the stat, so nothing done in that time
  * counts. A bounty's deadline keeps running while frozen.
  *
  * <p>Everything is stored in ProgressiveStages counters on the player.
@@ -584,7 +584,8 @@ public final class TaskBook {
         ProgressiveStagesAPI.setCounter(player, FREEZE, until);
         int percent = (int) Math.round(tree.rules.deathTaskLoss * 100);
         player.sendSystemMessage(Component.literal("You died. -" + lost + " " + shards(lost) + ", -" + percent
-                + "% progress, frozen for a day").withStyle(ChatFormatting.RED));
+                + "% progress, frozen for " + Math.max(1, Math.round(tree.rules.freezeTicks / 1200.0)) + " minutes")
+                .withStyle(ChatFormatting.RED));
     }
 
     public static long frozenTicks(ServerPlayer player) {

@@ -31,7 +31,7 @@ machines. You pay for nodes with **Focal Shards**, and shards are earned, never 
 ### How it holds you back
 
 - **Seals** stand between the ages. Each needs a Pathway Level and one large task.
-- **Death** costs a shard, a quarter of every running task, and a day's freeze.
+- **Death** costs a shard, a quarter of every running task, and a 10-minute freeze.
 - **Your body grows with you.** Movement, breaking, attack and health start low and rise with perk nodes.
 
 ### Locks that make sense

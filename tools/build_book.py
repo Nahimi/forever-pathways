@@ -129,7 +129,7 @@ CHAPTERS = [
         {"type": "patchouli:text", "title": "Death",
          "text": "$(#8A3B2F)1 Focal Shard, and a quarter of all progress on running tasks and "
                  "bounties.$()$(br2)"
-                 "Nothing counts until the next dawn. Unlocked nodes and finished tasks are safe."},
+                 "Nothing counts for the next 10 minutes. Unlocked nodes and finished tasks are safe."},
     ]),
     ("c3", "III. Gaining Shards", "minecraft:amethyst_shard", 2, [
         "Three sources, and no others. Shards cannot be mined, crafted or traded for.",

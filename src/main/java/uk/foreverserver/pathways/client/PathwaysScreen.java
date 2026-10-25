@@ -1246,7 +1246,7 @@ public class PathwaysScreen extends Screen {
 
     /** One row in the Tasks tab: a node's task or a bounty slot. */
     private record Job(String title, String subtitle, String icon, String reward, String count, float frac,
-                       boolean dim, Tree.Node node) {}
+                       boolean dim, Tree.Node node, boolean done) {}
 
     private int drawTasks(GuiGraphics g, int x, int y, int right, int mouseX, int mouseY, int top, int bottom) {
         int width = right - x;
@@ -1270,14 +1270,18 @@ public class PathwaysScreen extends Screen {
             if (t[0] == 1 && bounty != null) {
                 String sub = "Tier " + tree.bountyTierName(bounty.tier) + "  |  " + clock(t[4]) + " left";
                 bounties.add(new Job(bounty.title, sub, bounty.item, "+" + bounty.reward,
-                        String.format(Locale.ROOT, "%,d/%,d", t[1], t[2]), t[2] <= 0 ? 0 : t[1] / (float) t[2], false, null));
+                        String.format(Locale.ROOT, "%,d/%,d", t[1], t[2]), t[2] <= 0 ? 0 : t[1] / (float) t[2], false, null, false));
                 continue;
             }
             dawn = t[4];
-            String title = bounty == null ? "No bounty"
-                    : (t[0] == 5 ? "Done: " : "Expired: ") + bounty.title;
-            bounties.add(new Job(title, "", bounty == null ? "minecraft:clock" : bounty.item,
-                    bounty != null && t[0] == 5 ? "+" + bounty.reward : "", clock(t[4]), t[0] == 5 ? 1 : 0, true, null));
+            if (t[0] == 5 && bounty != null) {
+                // Finished: no counter, just the reward it paid. The next one comes at dawn (shown in the header).
+                bounties.add(new Job(bounty.title, "Completed", bounty.item, "+" + bounty.reward, "", 1, true, null, true));
+                continue;
+            }
+            String title = bounty == null ? "No bounty" : "Expired: " + bounty.title;
+            bounties.add(new Job(title, "", bounty == null ? "minecraft:clock" : bounty.item, "", clock(t[4]), 0, true,
+                    null, false));
         }
         g.drawString(this.font, "Bounties", x, y, DIM, false);
         if (dawn >= 0) {
@@ -1304,7 +1308,7 @@ public class PathwaysScreen extends Screen {
             }
             String subtitle = owns(node.id) ? node.title : node.title + "  |  unlocks it";
             live.add(new Job(node.task.title, subtitle, node.item, "+" + node.task.reward,
-                    String.format(Locale.ROOT, "%,d/%,d", t[1], t[2]), t[2] <= 0 ? 0 : t[1] / (float) t[2], false, node));
+                    String.format(Locale.ROOT, "%,d/%,d", t[1], t[2]), t[2] <= 0 ? 0 : t[1] / (float) t[2], false, node, false));
         }
         live.sort(Comparator.comparingDouble(job -> -job.frac));
         g.drawString(this.font, "Tasks", x, y, DIM, false);
@@ -1354,11 +1358,18 @@ public class PathwaysScreen extends Screen {
         if (over && job.node != null) {
             Pix.rect(g, x - 2, rowTop - 1, right + 2, rowTop + 25, 0x30F0E6D6);
         }
+        if (job.done) {
+            // A finished bounty sits on a green wash with a green edge, so it reads as done at a glance.
+            Pix.rect(g, x - 2, rowTop - 1, right + 2, rowTop + 25, 0x2886A86F);
+            Pix.rect(g, x - 2, rowTop - 1, x - 1, rowTop + 25, GREEN);
+        }
         drawIcon(g, ClientIndex.get().icon(job.icon), x, y + 1, 14);
-        g.drawString(this.font, this.font.plainSubstrByWidth(job.title, width - 30), x + 18, y, job.dim ? MUTED : CREAM, false);
-        g.drawString(this.font, job.reward, right - this.font.width(job.reward), y, job.dim ? DIM : GOLD, false);
+        g.drawString(this.font, this.font.plainSubstrByWidth(job.title, width - 30), x + 18, y,
+                job.done ? CREAM : job.dim ? MUTED : CREAM, false);
+        g.drawString(this.font, job.reward, right - this.font.width(job.reward), y,
+                job.done ? GREEN : job.dim ? DIM : GOLD, false);
         g.drawString(this.font, this.font.plainSubstrByWidth(job.subtitle, width - 26 - this.font.width(job.count)),
-                x + 18, y + 10, DIM, false);
+                x + 18, y + 10, job.done ? GREEN : DIM, false);
         g.drawString(this.font, job.count, right - this.font.width(job.count), y + 10, MUTED, false);
         bar(g, x + 18, y + 20, width - 18, 2, job.frac,
                 job.dim ? (job.frac >= 1 ? GREEN : TRACK) : state.freeze() > 0 ? RED : GOLD);
