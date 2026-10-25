@@ -41,6 +41,7 @@ public class ForeverPathways {
         modBus.addListener(ForeverPathways::setup);
         NeoForge.EVENT_BUS.addListener(PathwayService::onPlayerTick);
         BlockGuard.register();
+        ToughBeginningsCompat.register();
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, false, LivingDeathEvent.class, ForeverPathways::onDeath);
         NeoForge.EVENT_BUS.addListener(ForeverPathways::registerCommands);
         BossEyes.register(modBus);
