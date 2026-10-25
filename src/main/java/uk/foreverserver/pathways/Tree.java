@@ -72,6 +72,11 @@ public final class Tree {
         return instance;
     }
 
+    /** True once the tree has been fitted to the installed mods. */
+    public static synchronized boolean isFitted() {
+        return fitted;
+    }
+
     /** Called at common setup, when the registries are complete, on both client and server. */
     public static void registriesReady() {
         registriesReady = true;

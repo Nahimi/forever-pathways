@@ -93,6 +93,9 @@ public final class TaskBook {
         if (!ensureInit(player, tree)) {
             return;
         }
+        // Every time, not only on the first: if ProgressiveStages had no stages loaded then, the grant
+        // failed and would otherwise never be tried again.
+        PathwayService.ensureCore(player);
         payStreak(player, tree);
         Set<String> owned = owned(player, tree);
         boolean frozen = frozenTicks(player) > 0;

@@ -55,7 +55,7 @@ public final class PathwayService {
 
     public static void ensureCore(ServerPlayer player) {
         Tree.Node core = Tree.get().core();
-        if (!ProgressiveStagesAPI.hasStage(player, core.id)) {
+        if (ProgressiveStagesAPI.stageExists(core.id) && !ProgressiveStagesAPI.hasStage(player, core.id)) {
             ProgressiveStagesAPI.grantStageBypass(player, StageId.parse(core.id), StageCause.COMMAND);
         }
     }

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.25.2
+
+- Fixed: no stages loaded at all, so Core was never owned and nothing could be bought. Pathways wrote
+  its stage files into folders named after nodes (warrior, ranger, scout...), overwriting
+  ProgressiveStages' example stages of the same names; the broken examples made ProgressiveStages
+  reject every stage. Pathways stages now live in `forever_*` folders and the examples are removed.
+  Restart once after updating.
+- Core is granted whenever it is missing, not only on a player's first join.
+- New `/pathways debug [node]`: what Pathways and ProgressiveStages see for you, in chat.
+
 ## 0.25.1
 
 - Wooden tools are unlocked by Woodcutter (ring 1). They had fallen to Curiosities on ring 9, so with

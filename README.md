@@ -179,7 +179,7 @@ The full list is in [`neoforge.mods.toml`](src/main/templates/META-INF/neoforge.
 
 ## Commands and config
 
-All commands need permission level 2.
+All commands except `debug` need permission level 2.
 
 | Command | Does |
 | --- | --- |
@@ -189,6 +189,7 @@ All commands need permission level 2.
 | `/pathways reset <players>` | Wipe a player's ring, tasks and bounties |
 | `/pathways bounties <players>` | Deal fresh bounties |
 | `/pathways rebuild` | Rewrite the ProgressiveStages files from the tree |
+| `/pathways debug [node]` | Show in chat what Pathways and ProgressiveStages see for you (and one node). Anyone may use it |
 
 Each player's on-screen notices (progress popups, completion banner, sound) are saved in `config/foreverpathways-client.toml`. The whole tree is `src/main/resources/data/foreverpathways/tree.json`.
 

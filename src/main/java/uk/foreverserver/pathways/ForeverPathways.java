@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 
 import com.enviouse.progressivestages.common.api.ProgressiveStagesAPI;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
+import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.logging.LogUtils;
@@ -96,30 +97,38 @@ public class ForeverPathways {
                 context.enqueueWork(() -> PathwayClientHooks.notify.accept(payload)));
     }
 
+    private static boolean admin(CommandSourceStack source) {
+        return source.hasPermission(2);
+    }
+
     private static void registerCommands(RegisterCommandsEvent event) {
         event.getDispatcher().register(Commands.literal("pathways")
-                .requires(source -> source.hasPermission(2))
-                .then(Commands.literal("rebuild").executes(ForeverPathways::rebuild))
-                .then(Commands.literal("bounties")
+                .then(Commands.literal("debug")
+                        .executes(context -> Debug.run(context.getSource(), context.getSource().getPlayerOrException(), null))
+                        .then(Commands.argument("node", StringArgumentType.word())
+                                .executes(context -> Debug.run(context.getSource(), context.getSource().getPlayerOrException(),
+                                        StringArgumentType.getString(context, "node")))))
+                .then(Commands.literal("rebuild").requires(ForeverPathways::admin).executes(ForeverPathways::rebuild))
+                .then(Commands.literal("bounties").requires(ForeverPathways::admin)
                         .then(Commands.argument("targets", EntityArgument.players())
                                 .executes(ForeverPathways::rerollBounties)))
-                .then(Commands.literal("shards")
+                .then(Commands.literal("shards").requires(ForeverPathways::admin)
                         .then(Commands.argument("targets", EntityArgument.players())
                                 .then(Commands.argument("amount", IntegerArgumentType.integer())
                                         .executes(ForeverPathways::giveShards))))
-                .then(Commands.literal("give")
+                .then(Commands.literal("give").requires(ForeverPathways::admin)
                         .then(Commands.argument("targets", EntityArgument.players())
                                 .then(Commands.argument("amount", IntegerArgumentType.integer(0))
                                         .executes(ForeverPathways::giveShards))))
-                .then(Commands.literal("take")
+                .then(Commands.literal("take").requires(ForeverPathways::admin)
                         .then(Commands.argument("targets", EntityArgument.players())
                                 .then(Commands.argument("amount", IntegerArgumentType.integer(0))
                                         .executes(ForeverPathways::takeShards))))
-                .then(Commands.literal("set")
+                .then(Commands.literal("set").requires(ForeverPathways::admin)
                         .then(Commands.argument("targets", EntityArgument.players())
                                 .then(Commands.argument("amount", IntegerArgumentType.integer(0))
                                         .executes(ForeverPathways::setShards))))
-                .then(Commands.literal("reset")
+                .then(Commands.literal("reset").requires(ForeverPathways::admin)
                         .then(Commands.argument("targets", EntityArgument.players())
                                 .executes(ForeverPathways::resetPlayers))));
     }

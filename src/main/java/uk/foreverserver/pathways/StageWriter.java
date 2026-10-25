@@ -30,6 +30,12 @@ import net.neoforged.fml.loading.FMLPaths;
  */
 public final class StageWriter {
     private static final String TAG = "forever";
+    /**
+     * Every Pathways stage lives in a folder of its own name with this in front. Folders named after
+     * the bare node (warrior, ranger, scout) collided with ProgressiveStages' own example stages and
+     * overwrote them, which left the examples pointing at stages that no longer existed.
+     */
+    public static final String FOLDER_PREFIX = "forever_";
 
     private StageWriter() {}
 
@@ -54,9 +60,10 @@ public final class StageWriter {
         }
         Path stagesRoot = FMLPaths.CONFIGDIR.get().resolve("progressivestages").resolve("stages");
         Path ownRoot = FMLPaths.CONFIGDIR.get().resolve(ForeverPathways.MOD_ID);
+        int showcase = removeShowcase(stagesRoot);
         Map<Path, String> files = new LinkedHashMap<>();
         for (Tree.Node node : tree.nodes) {
-            Path folder = stagesRoot.resolve(node.key());
+            Path folder = stagesRoot.resolve(FOLDER_PREFIX + node.key());
             files.put(folder.resolve("stage.toml"), stageToml(tree, node));
             List<String> owned = locks.items(node.id);
             if (node != tree.core() && !node.craftOnly && !owned.isEmpty()) {
@@ -69,7 +76,7 @@ public final class StageWriter {
             String previous = Files.exists(hashFile) ? Files.readString(hashFile).trim() : "";
             Files.createDirectories(ownRoot);
             Files.writeString(ownRoot.resolve("items.json"), json(items));
-            if (!force && previous.equals(hash)) {
+            if (!force && previous.equals(hash) && showcase == 0) {
                 return null;
             }
             Set<Path> folders = new HashSet<>();
@@ -79,7 +86,7 @@ public final class StageWriter {
                 folders.add(file.getKey().getParent());
             }
             for (Tree.Node node : tree.nodes) {
-                Path rules = stagesRoot.resolve(node.key()).resolve("rules.toml");
+                Path rules = stagesRoot.resolve(FOLDER_PREFIX + node.key()).resolve("rules.toml");
                 if (!files.containsKey(rules)) {
                     Files.deleteIfExists(rules);
                 }
@@ -215,6 +222,40 @@ public final class StageWriter {
                 }
             }
         }
+    }
+
+    /**
+     * Removes ProgressiveStages' generated example stages (the "showcase:" ones). They lock items of
+     * their own, at odds with the tree, and one broken example is enough for ProgressiveStages to load
+     * no stages at all.
+     */
+    private static int removeShowcase(Path root) {
+        if (!Files.isDirectory(root)) {
+            return 0;
+        }
+        int removed = 0;
+        try (Stream<Path> children = Files.list(root)) {
+            for (Path folder : children.toList()) {
+                Path stage = folder.resolve("stage.toml");
+                if (!Files.isRegularFile(stage) || !Files.readString(stage).contains("id = \"showcase:")) {
+                    continue;
+                }
+                try (Stream<Path> walk = Files.walk(folder)) {
+                    for (Path path : walk.sorted(Comparator.reverseOrder()).toList()) {
+                        Files.deleteIfExists(path);
+                    }
+                }
+                removed++;
+            }
+        } catch (IOException exception) {
+            ForeverPathways.LOGGER.warn("Pathways could not check for ProgressiveStages' example stages: {}",
+                    exception.getMessage());
+        }
+        if (removed > 0) {
+            ForeverPathways.LOGGER.info("Pathways removed {} of ProgressiveStages' example (showcase) stages; they "
+                    + "conflict with the tree. Takes effect on the next launch.", removed);
+        }
+        return removed;
     }
 
     private static int removeStale(Path root, Set<Path> keep) throws IOException {
