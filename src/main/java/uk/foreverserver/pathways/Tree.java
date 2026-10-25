@@ -53,12 +53,28 @@ public final class Tree {
     private transient List<Node> seals;
 
     private static Tree instance;
+    private static boolean fitted;
+    /** Set once every mod has registered its items; until then the tree cannot know what is installed. */
+    private static volatile boolean registriesReady;
 
-    public static Tree get() {
+    /**
+     * The tree, fitted to this install. Fitting waits for {@link #registriesReady}: asked any earlier,
+     * every modded item would look missing and half the tree would be cut away for good.
+     */
+    public static synchronized Tree get() {
         if (instance == null) {
             instance = load(Tree.class.getResourceAsStream("/data/foreverpathways/tree.json"));
         }
+        if (!fitted && registriesReady) {
+            fitted = true;
+            Availability.prune(instance);
+        }
         return instance;
+    }
+
+    /** Called at common setup, when the registries are complete, on both client and server. */
+    public static void registriesReady() {
+        registriesReady = true;
     }
 
     public static Tree load(InputStream stream) {
@@ -71,7 +87,6 @@ public final class Tree {
                 throw new IllegalStateException("tree.json has no nodes");
             }
             tree.index();
-            Availability.prune(tree);
             return tree;
         } catch (java.io.IOException exception) {
             throw new IllegalStateException("Could not read tree.json", exception);

@@ -72,10 +72,12 @@ public class ForeverPathways {
                 BossGuard::onIncomingDamage);
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, false, VillagerTradesEvent.class, BossEyes::onVillagerTrades);
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, false, WandererTradesEvent.class, BossEyes::onWandererTrades);
-        LOGGER.info("Forever Pathways loaded with {} nodes", Tree.get().nodes.size());
     }
 
     private static void setup(FMLCommonSetupEvent event) {
+        // Not before this point: during construction only vanilla's items are registered.
+        Tree.registriesReady();
+        LOGGER.info("Forever Pathways loaded with {} nodes", Tree.get().nodes.size());
         event.enqueueWork(() -> StageWriter.write(false));
     }
 
