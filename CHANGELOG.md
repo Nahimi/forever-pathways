@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 0.25.0
 
 - Tough Beginnings replaces It's Harder Early. Core holds its flint, fibre and fire; Woodcutter its
   flint axe and blocks of wood. The Grimoire's Early Game chapter teaches it when it is installed,
@@ -16,6 +16,8 @@
 - The death freeze lasts 10 minutes instead of a full in-game day (20 minutes).
 - The Grimoire is in the creative menu, under Tools & Utilities.
 - With Tough Beginnings and Supplementaries together, sticks place again and a Pile of Fiber can be lit.
+- Fixed: modded nodes (Create, magic and the rest) were cut from the tree in full packs, and modded
+  tasks dropped, because the tree was fitted before other mods had registered their items.
 
 ## 0.24.0
 
