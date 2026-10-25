@@ -4,7 +4,21 @@ Copyright (c) 2026 Nahimi. All Rights Reserved.
 No part of this software, its source code, assets, data or documentation may be
 copied, modified, merged, published, distributed, sublicensed, sold or otherwise
 used, in whole or in part, without the prior written permission of the copyright
-holder, except as expressly allowed in writing by the copyright holder.
+holder, except as allowed below or expressly allowed in writing by the copyright
+holder.
+
+You may, without asking:
+
+  1. Download the compiled mod from an official source and play with it, alone
+     or with others, including on a server you run.
+  2. Change the tree (data/foreverpathways/tree.json) or the mod's config for
+     your own game or server.
+
+You may not, without written permission:
+
+  - republish, re-upload or redistribute the mod or any part of it, changed or
+    unchanged, including a modified tree;
+  - sell it, or include it in anything you sell.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
