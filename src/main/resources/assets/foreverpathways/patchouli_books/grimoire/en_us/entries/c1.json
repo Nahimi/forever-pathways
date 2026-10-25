@@ -8,7 +8,7 @@
       "type": "patchouli:text",
       "title": "I. Early Game",
       "flag": "!mod:tough_beginnings",
-      "text": "$(bold)Trees are locked at first.$(br2)$(li)1. Live off the soft ground, wild plants and raw food.$(br)$(li)2. Buy $(l:paths/woodcutter)Woodcutter$(n) first: logs, planks and the crafting table.$(br)$(li)3. Then $(l:paths/quarry)Quarry$(n) for stone and the first tools."
+      "text": "$(bold)Trees are locked at first.$(br2)$(li)1. Live off the soft ground, wild plants and raw food.$(br)$(li)2. Buy $(l:paths/woodcutter)Woodcutter$(n) first: logs, planks, wooden tools and the crafting table.$(br)$(li)3. Then $(l:paths/quarry)Quarry$(n) for stone and the first tools."
     },
     {
       "type": "patchouli:text",
@@ -62,7 +62,7 @@
       "recipe": "minecraft:wooden_pickaxe",
       "title": "Wooden Pickaxe",
       "flag": "mod:tough_beginnings",
-      "text": "$(bold)Tough blocks of wood and sticks. Every wooden tool works the same way."
+      "text": "$(bold)Tough blocks of wood and sticks. Every wooden tool works the same way, once you own $(l:paths/woodcutter)Woodcutter$(n)."
     },
     {
       "type": "patchouli:crafting",

@@ -38,7 +38,7 @@ CHAPTERS = [
         {"type": "patchouli:text", "title": "I. Early Game", "flag": "!mod:tough_beginnings",
          "text": "Trees are locked at first.$(br2)"
                  "$(li)1. Live off the soft ground, wild plants and raw food.$(br)"
-                 "$(li)2. Buy $(l:paths/woodcutter)Woodcutter$() first: logs, planks and the crafting "
+                 "$(li)2. Buy $(l:paths/woodcutter)Woodcutter$() first: logs, planks, wooden tools and the crafting "
                  "table.$(br)"
                  "$(li)3. Then $(l:paths/quarry)Quarry$() for stone and the first tools."},
         # Tough Beginnings: flint, fibre and fire before any wooden tool.
@@ -74,7 +74,8 @@ CHAPTERS = [
          "text": "Or right-click a block of wood on a lit pile of fibre."},
         {"type": "patchouli:crafting", "recipe": "minecraft:wooden_pickaxe",
          "title": "Wooden Pickaxe", "flag": "mod:tough_beginnings",
-         "text": "Tough blocks of wood and sticks. Every wooden tool works the same way."},
+         "text": "Tough blocks of wood and sticks. Every wooden tool works the same way, once you own "
+                 "$(l:paths/woodcutter)Woodcutter$()."},
         {"type": "patchouli:crafting", "recipe": "tough_beginnings:gravel_recipe",
          "title": "Gravel", "flag": "mod:tough_beginnings",
          "text": "Failed flint is not wasted: shards make gravel to dig again."},

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.25.1
+
+- Wooden tools are unlocked by Woodcutter (ring 1). They had fallen to Curiosities on ring 9, so with
+  Tough Beginnings there was no way to mine stone until the mid-game.
+
 ## 0.25.0
 
 - Tough Beginnings replaces It's Harder Early. Core holds its flint, fibre and fire; Woodcutter its

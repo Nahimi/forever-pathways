@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:oak_log",
       "title": "Woodcutter",
-      "text": "$(bold)The trees: every log, branch, plank and wooden block, the crafting table, chests, barrels, ladders and the campfire. With Tough Beginnings, also the flint axe that fells them, and the blocks of wood you carve with a knife and toughen in fire for wooden tools.$(br2)$(thing)Stone Age$(n), ring 1.$(br)$(thing)3 Focal Shards$(n).$(br)After Core."
+      "text": "$(bold)The trees: every log, branch, plank and wooden block, the wooden tools, the crafting table, chests, barrels, ladders and the campfire. With Tough Beginnings, also the flint axe that fells them, and the blocks of wood you carve with a knife and toughen in fire for wooden tools.$(br2)$(thing)Stone Age$(n), ring 1.$(br)$(thing)3 Focal Shards$(n).$(br)After Core."
     },
     {
       "type": "patchouli:crafting",
