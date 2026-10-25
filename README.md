@@ -1,6 +1,4 @@
-# Forever Pathways
-
-**Forever Pathways adds a progression system to Minecraft. The entire tree contains nodes which the players unlock with 'Focal Shards'; almost every item in the game is locked behind some sort of node, which prevents players from speed-running the game.**
+**Forever Pathways adds a progression system to Minecraft. The entire tree contains nodes which the players unlock with 'Focal Shards'; which can be earned by completing daily bounties (small tasks) or larger tasks. Almost every item in the game is locked behind some sort of node, which prevents players from speed-running the game.**
 
 The mod began as part of a passion project: A large Minecraft server for my friends. Our previous servers would always die after a few weeks because of a lack of progression and rewards! Or someone would always try to speed-run and ruin the experience for everyone else. Well… NO MORE! After spending so much time and effort on the mod, I figured other people might wish to use it as well :)
 
