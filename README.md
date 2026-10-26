@@ -6,4 +6,4 @@ This mod was **NEVER** intended for vanilla Minecraft on its own. While developi
 
 ***
 
-Copyright (c) 2026 Nahimi. All Rights Reserved.
+© 2024 Nahimi. All rights reserved.
