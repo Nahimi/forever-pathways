@@ -19,6 +19,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.config.ModConfigEvent;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
@@ -31,6 +32,7 @@ import net.neoforged.neoforge.event.village.WandererTradesEvent;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.network.registration.PayloadRegistrar;
 import uk.foreverserver.pathways.net.ActionPayload;
+import uk.foreverserver.pathways.net.DifficultyPayload;
 import uk.foreverserver.pathways.net.NotifyPayload;
 import uk.foreverserver.pathways.net.StatePayload;
 
@@ -42,6 +44,12 @@ public class ForeverPathways {
     public ForeverPathways(IEventBus modBus, ModContainer container) {
         container.registerConfig(ModConfig.Type.SERVER, Difficulty.SPEC);
         NeoForge.EVENT_BUS.addListener(Difficulty::onServerStarted);
+        NeoForge.EVENT_BUS.addListener(Difficulty::onServerStopped);
+        modBus.addListener(ModConfigEvent.Reloading.class, event -> {
+            if (event.getConfig().getSpec() == Difficulty.SPEC) {
+                Difficulty.refresh();
+            }
+        });
         modBus.addListener(ForeverPathways::registerPayloads);
         modBus.addListener(ForeverPathways::setup);
         modBus.addListener(Grimoires::onCreativeTab);
@@ -55,6 +63,7 @@ public class ForeverPathways {
         NeoForge.EVENT_BUS.addListener(PlayerEvent.PlayerLoggedInEvent.class, event -> {
             if (event.getEntity() instanceof ServerPlayer player) {
                 PathwayService.push(player);
+                Difficulty.sendTo(player);
                 Grimoires.onFirstJoin(player);
             }
         });
@@ -93,12 +102,14 @@ public class ForeverPathways {
     }
 
     private static void registerPayloads(RegisterPayloadHandlersEvent event) {
-        PayloadRegistrar registrar = event.registrar("2");
+        PayloadRegistrar registrar = event.registrar("3");
         registrar.playToServer(ActionPayload.TYPE, ActionPayload.STREAM_CODEC, ActionPayload::handle);
         registrar.playToClient(StatePayload.TYPE, StatePayload.STREAM_CODEC, (payload, context) ->
                 context.enqueueWork(() -> PathwayClientHooks.accept.accept(payload)));
         registrar.playToClient(NotifyPayload.TYPE, NotifyPayload.STREAM_CODEC, (payload, context) ->
                 context.enqueueWork(() -> PathwayClientHooks.notify.accept(payload)));
+        registrar.playToClient(DifficultyPayload.TYPE, DifficultyPayload.STREAM_CODEC, (payload, context) ->
+                context.enqueueWork(() -> Difficulty.received(payload.preset())));
     }
 
     private static boolean admin(CommandSourceStack source) {
@@ -112,6 +123,11 @@ public class ForeverPathways {
                         .then(Commands.argument("node", StringArgumentType.word())
                                 .executes(context -> Debug.run(context.getSource(), context.getSource().getPlayerOrException(),
                                         StringArgumentType.getString(context, "node")))))
+                .then(Commands.literal("difficulty").requires(ForeverPathways::admin)
+                        .executes(ForeverPathways::showDifficulty)
+                        .then(Commands.literal("easy").executes(context -> setDifficulty(context, Difficulty.Preset.EASY)))
+                        .then(Commands.literal("normal").executes(context -> setDifficulty(context, Difficulty.Preset.NORMAL)))
+                        .then(Commands.literal("hard").executes(context -> setDifficulty(context, Difficulty.Preset.HARD))))
                 .then(Commands.literal("rebuild").requires(ForeverPathways::admin).executes(ForeverPathways::rebuild))
                 .then(Commands.literal("bounties").requires(ForeverPathways::admin)
                         .then(Commands.argument("targets", EntityArgument.players())
@@ -135,6 +151,26 @@ public class ForeverPathways {
                 .then(Commands.literal("reset").requires(ForeverPathways::admin)
                         .then(Commands.argument("targets", EntityArgument.players())
                                 .executes(ForeverPathways::resetPlayers))));
+    }
+
+    private static int showDifficulty(CommandContext<CommandSourceStack> context) {
+        Difficulty.Preset forced = Difficulty.forced();
+        Difficulty.Preset world = Difficulty.worldPreset();
+        String text = "Pathways difficulty: " + Difficulty.current()
+                + (forced != null ? " (forced by the server config; this world's own is " + world + ")"
+                : " (this world's own)");
+        context.getSource().sendSuccess(() -> Component.literal(text), false);
+        return 1;
+    }
+
+    private static int setDifficulty(CommandContext<CommandSourceStack> context, Difficulty.Preset preset) {
+        Difficulty.setWorldPreset(preset);
+        Difficulty.Preset forced = Difficulty.forced();
+        String text = "This world's Pathways difficulty is now " + preset
+                + (forced != null ? ", but the server config forces " + forced + " while force_preset is set" : "")
+                + ". Starting shards only change for players joining for the first time.";
+        context.getSource().sendSuccess(() -> Component.literal(text), true);
+        return 1;
     }
 
     private static int rebuild(CommandContext<CommandSourceStack> context) {

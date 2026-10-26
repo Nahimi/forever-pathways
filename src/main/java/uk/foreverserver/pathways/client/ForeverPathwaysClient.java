@@ -70,6 +70,7 @@ public class ForeverPathwaysClient {
         NeoForge.EVENT_BUS.addListener(Tooltips::onTooltip);
         NeoForge.EVENT_BUS.addListener(ClientPlayerNetworkEvent.LoggingOut.class, event -> {
             ClientState.reset();
+            uk.foreverserver.pathways.Difficulty.received(null);
             Hud.reset();
         });
     }
