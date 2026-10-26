@@ -17,6 +17,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.network.PacketDistributor;
+import uk.foreverserver.pathways.Difficulty;
 import uk.foreverserver.pathways.ForeverPathways;
 import uk.foreverserver.pathways.Gates;
 import uk.foreverserver.pathways.Gates.Gate;
@@ -845,8 +846,8 @@ public class PathwaysScreen extends Screen {
         }
         Gate gate = gate(node);
         lines.add(Component.literal(status(node, gate)).withColor(statusColour(gate) & 0xFFFFFF));
-        if (gate != Gate.HELD && node.cost > 0) {
-            lines.add(Component.literal("Cost " + node.cost + " Focal Shards").withColor(MUTED & 0xFFFFFF));
+        if (gate != Gate.HELD && Difficulty.cost(node) > 0) {
+            lines.add(Component.literal("Cost " + Difficulty.cost(node) + " Focal Shards").withColor(MUTED & 0xFFFFFF));
         }
         if (node.hasTask() && gate != Gate.HELD) {
             long[] t = task(node);
@@ -876,7 +877,7 @@ public class PathwaysScreen extends Screen {
         return switch (gate) {
             case HELD -> node.isSeal() ? "Broken" : "Unlocked";
             case READY -> creative() ? "Hold to toggle" : node.isSeal() ? "Hold to break" : "Hold to unlock";
-            case SHORT -> "Needs " + (node.cost - state.points()) + " more Focal Shards";
+            case SHORT -> "Needs " + (Difficulty.cost(node) - state.points()) + " more Focal Shards";
             case TASK -> "Task first";
             case LEVEL -> "Level " + node.seal.level + " needed (you are " + state.level() + ")";
             case SEALED -> {
@@ -1054,7 +1055,7 @@ public class PathwaysScreen extends Screen {
                         0x66F0E6D6);
             }
             String label = creative() ? (owns(chosen.id) ? "Hold to lock" : "Hold to unlock (creative)")
-                    : (chosen.isSeal() ? "Hold to break  " : "Hold to unlock  ") + chosen.cost;
+                    : (chosen.isSeal() ? "Hold to break  " : "Hold to unlock  ") + Difficulty.cost(chosen);
             int lw = this.font.width(label) + (creative() ? 0 : 10);
             int lx = (buttonX0 + buttonX1 - lw) / 2;
             g.drawString(this.font, label, lx, buttonY0 + 4, CREAM, true);
@@ -1127,10 +1128,10 @@ public class PathwaysScreen extends Screen {
         y += 3;
         y += 4;
 
-        if (gate != Gate.HELD && node.cost > 0) {
+        if (gate != Gate.HELD && Difficulty.cost(node) > 0) {
             g.drawString(this.font, "Cost", x, y, DIM, false);
             drawShard(g, x + 26, y, 8);
-            g.drawString(this.font, node.cost + " Focal Shards", x + 37, y, state.points() >= node.cost ? CREAM : RED, false);
+            g.drawString(this.font, Difficulty.cost(node) + " Focal Shards", x + 37, y, state.points() >= Difficulty.cost(node) ? CREAM : RED, false);
             y += 10;
             g.drawString(this.font, "You have " + state.points(), x + 37, y, MUTED, false);
             y += 13;

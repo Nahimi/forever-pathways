@@ -102,7 +102,7 @@ public final class Gates {
         if (node.hasTask() && !taskDone) {
             return Gate.TASK;
         }
-        if (shards < node.cost) {
+        if (shards < Difficulty.cost(node)) {
             return Gate.SHORT;
         }
         return Gate.READY;

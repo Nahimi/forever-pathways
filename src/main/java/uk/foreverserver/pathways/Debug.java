@@ -37,6 +37,11 @@ public final class Debug {
         line(out, "Tree", tree.nodes.size() + " nodes, " + (Tree.isFitted() ? "fitted to this install"
                 : "NOT fitted yet (registries not ready)"), Tree.isFitted());
 
+        Difficulty.Preset preset = Difficulty.current();
+        line(out, "Difficulty", preset + ": " + preset.startingShards + " starting shards, "
+                + (preset.loseProgress ? "progress lost on death" : "no progress lost on death") + ", "
+                + preset.freezeTicks / 1200 + " minute freeze, costs x" + preset.costFactor, true);
+
         // ProgressiveStages' view of the stages.
         Set<StageId> all = ProgressiveStagesAPI.getAllStageIds();
         List<String> missing = new ArrayList<>();
@@ -77,7 +82,7 @@ public final class Debug {
             } else {
                 boolean taskDone = !node.hasTask() || TaskBook.claimed(player, node);
                 Gates.Gate gate = Gates.gate(tree, node, owned::contains, shards, taskDone);
-                line(out, node.title, node.id + ": " + gate + ", ring " + node.ring + ", cost " + node.cost
+                line(out, node.title, node.id + ": " + gate + ", ring " + node.ring + ", cost " + Difficulty.cost(node) + " (" + Difficulty.current() + ")"
                         + (node.hasTask() ? ", task " + (taskDone ? "done" : "not done") + " (" + node.task.title + ")" : ""),
                         gate == Gates.Gate.READY || gate == Gates.Gate.HELD);
                 if (ProgressiveStagesAPI.stageExists(node.id)) {

@@ -16,7 +16,9 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.RegisterCommandsEvent;
@@ -37,7 +39,9 @@ public class ForeverPathways {
     public static final String MOD_ID = "foreverpathways";
     public static final Logger LOGGER = LogUtils.getLogger();
 
-    public ForeverPathways(IEventBus modBus) {
+    public ForeverPathways(IEventBus modBus, ModContainer container) {
+        container.registerConfig(ModConfig.Type.SERVER, Difficulty.SPEC);
+        NeoForge.EVENT_BUS.addListener(Difficulty::onServerStarted);
         modBus.addListener(ForeverPathways::registerPayloads);
         modBus.addListener(ForeverPathways::setup);
         modBus.addListener(Grimoires::onCreativeTab);

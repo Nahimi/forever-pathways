@@ -45,7 +45,7 @@ import net.minecraft.world.level.block.Block;
  * out simply leaves. A slot emptied by a finished bounty stays empty until the next dawn, so at most two pay a day.
  *
  * <p><b>Dying</b> costs shards, keeps 75% of the progress on every running task and bounty, and freezes them all
- * for ten minutes (rules.freezeTicks): while frozen the baseline is dragged along with the stat, so nothing done in that time
+ * for a time set by the difficulty preset (Difficulty): while frozen the baseline is dragged along with the stat, so nothing done in that time
  * counts. A bounty's deadline keeps running while frozen.
  *
  * <p>Everything is stored in ProgressiveStages counters on the player.
@@ -110,8 +110,9 @@ public final class TaskBook {
         }
         ProgressiveStagesAPI.setCounter(player, PAID, daysAlive(player, tree));
         ProgressiveStagesAPI.setCounter(player, FREEZE, 0L);
-        if (tree.rules.startingShards > 0) {
-            ProgressiveStagesAPI.addCounter(player, POINTS, tree.rules.startingShards);
+        int starting = Difficulty.current().startingShards;
+        if (starting > 0) {
+            ProgressiveStagesAPI.addCounter(player, POINTS, starting);
         }
         ProgressiveStagesAPI.setCounter(player, INIT, 1L);
         PathwayService.ensureCore(player);
@@ -559,7 +560,9 @@ public final class TaskBook {
             ProgressiveStagesAPI.addCounter(player, POINTS, -lost);
         }
         ProgressiveStagesAPI.setCounter(player, PAID, 0L);
-        double keep = 1.0 - Math.max(0, Math.min(1, tree.rules.deathTaskLoss));
+        Difficulty.Preset preset = Difficulty.current();
+        double loss = preset.loseProgress ? Math.max(0, Math.min(1, tree.rules.deathTaskLoss)) : 0;
+        double keep = 1.0 - loss;
         for (Tree.Node node : tree.nodes) {
             String key = node.key();
             if (!node.hasTask() || claimed(player, node) || !baselined(node.task)
@@ -583,11 +586,12 @@ public final class TaskBook {
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "base"), now - kept);
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "held"), kept);
         }
-        long until = player.server.overworld().getGameTime() + Math.max(0, tree.rules.freezeTicks);
+        long until = player.server.overworld().getGameTime() + Math.max(0, preset.freezeTicks);
         ProgressiveStagesAPI.setCounter(player, FREEZE, until);
-        int percent = (int) Math.round(tree.rules.deathTaskLoss * 100);
-        player.sendSystemMessage(Component.literal("You died. -" + lost + " " + shards(lost) + ", -" + percent
-                + "% progress, frozen for " + Math.max(1, Math.round(tree.rules.freezeTicks / 1200.0)) + " minutes")
+        int percent = (int) Math.round(loss * 100);
+        player.sendSystemMessage(Component.literal("You died. -" + lost + " " + shards(lost)
+                + (percent > 0 ? ", -" + percent + "% progress" : "")
+                + ", frozen for " + Math.max(1, Math.round(preset.freezeTicks / 1200.0)) + " minutes")
                 .withStyle(ChatFormatting.RED));
     }
 

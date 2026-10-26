@@ -79,8 +79,9 @@ public final class PathwayService {
                     + ". Has the server been restarted since /pathways rebuild?").withStyle(ChatFormatting.RED), false);
             return;
         }
-        if (node.cost > 0) {
-            ProgressiveStagesAPI.addCounter(player, POINTS, -node.cost);
+        int cost = Difficulty.cost(node);
+        if (cost > 0) {
+            ProgressiveStagesAPI.addCounter(player, POINTS, -cost);
         }
         TaskBook.update(player);
         Perks.apply(player, tree, TaskBook.owned(player, tree));
