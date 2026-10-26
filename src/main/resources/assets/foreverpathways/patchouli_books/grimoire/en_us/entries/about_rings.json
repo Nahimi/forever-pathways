@@ -20,7 +20,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(bold)Cost climbs with the ring: a few shards on ring 2, about a hundred on ring 14.$(br2)Seals count how many nodes you own, not which. Breadth gets you out, not one long road."
+      "text": "$(bold)Cost climbs with the ring: a few shards on ring 2, about a hundred on ring 14.$(br2)Seals count how many nodes you own, not which. Breadth gets you out, not one long road.$(br2)Costs in this book are Hard costs. On Normal nodes cost 5% less, on Easy a quarter less."
     }
   ],
   "priority": true

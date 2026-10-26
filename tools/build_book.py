@@ -115,7 +115,7 @@ CHAPTERS = [
                  "$(li)2. Finish its task.$(br)"
                  "$(li)3. Pay its Focal Shards.$(br)"
                  "$(li)4. Hold the unlock button.$(br2)"
-                 "You start with 2 shards and four roads: $(l:paths/quarry)Quarry$(), "
+                 "You start with 2 to 5 shards, by difficulty, and four roads: $(l:paths/quarry)Quarry$(), "
                  "$(l:paths/woodcutter)Woodcutter$(), $(l:paths/ranger)Ranger$(), "
                  "$(l:paths/homesteader)Homesteader$()."},
         {"type": "patchouli:image", "title": "The Ring",
@@ -133,9 +133,10 @@ CHAPTERS = [
                  "$(li)Locked $(thing)machines$() will not open, place or break.$(br)"
                  "$(li)Doors, gates, buttons and levers always work."},
         {"type": "patchouli:text", "title": "Death",
-         "text": "$(#8A3B2F)1 Focal Shard, and a quarter of all progress on running tasks and "
-                 "bounties.$()$(br2)"
-                 "Nothing counts for the next 10 minutes. Unlocked nodes and finished tasks are safe."},
+         "text": "$(#8A3B2F)1 Focal Shard, and on Normal and Hard a quarter of all progress on running "
+                 "tasks and bounties.$()$(br2)"
+                 "Nothing counts for a while: 3 minutes on Easy, 5 on Normal, 10 on Hard. Unlocked "
+                 "nodes and finished tasks are safe."},
     ]),
     ("c3", "III. Gaining Shards", "minecraft:amethyst_shard", 2, [
         "Three sources, and no others. Shards cannot be mined, crafted or traded for.",
@@ -575,7 +576,8 @@ def main():
          "text": "Cost climbs with the ring: a few shards on ring 2, about a hundred on ring "
                  "14.$(br2)"
                  "Seals count how many nodes you own, not which. Breadth gets you out, not one long "
-                 "road."},
+                 "road.$(br2)Costs in this book are Hard costs. On Normal nodes cost 5% less, on Easy a "
+                 "quarter less."},
     ], sortnum=0, priority=True)
     for i, seal in enumerate(seals):
         band = seal["seal"]

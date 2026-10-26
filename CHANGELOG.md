@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.26.0
+
+- Difficulty presets, Easy, Normal and Hard, kept per world in `serverconfig/foreverpathways-server.toml`
+  and shared by every player on a server. They set starting shards (5 / 3 / 2), whether death costs a quarter
+  of task progress (no / yes / yes), the death freeze (3 / 5 / 10 minutes) and node costs (25% off / 5% off /
+  full). A new world picks its preset from the world difficulty the first time it starts: Peaceful and Easy
+  pick Easy, Hardcore picks Hard.
+- `/pathways debug` shows the difficulty.
+
 ## 0.25.3
 
 - Hardcore Torches: torches are now crafted unlit (Pathways switches `craftUnlit` on, once, if it is still

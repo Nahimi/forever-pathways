@@ -14,5 +14,7 @@
   "config.foreverpathways.notices.banner": "Completion banner",
   "config.foreverpathways.notices.banner.tooltip": "A short banner at the top of the screen when a task or bounty is complete. When off, a line in chat says so instead.",
   "config.foreverpathways.notices.sound": "Completion sound",
-  "config.foreverpathways.notices.sound.tooltip": "A sound when a task or bounty is complete."
+  "config.foreverpathways.notices.sound.tooltip": "A sound when a task or bounty is complete.",
+  "config.foreverpathways.difficulty.preset": "Difficulty",
+  "config.foreverpathways.difficulty.preset.tooltip": "Easy, Normal or Hard: starting shards, death penalties and node costs. Decided by the server."
 }

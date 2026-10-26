@@ -12,7 +12,7 @@
     {
       "type": "patchouli:text",
       "title": "Unlocking",
-      "text": "$(bold)$(li)1. Click a node.$(br)$(li)2. Finish its task.$(br)$(li)3. Pay its Focal Shards.$(br)$(li)4. Hold the unlock button.$(br2)You start with 2 shards and four roads: $(l:paths/quarry)Quarry$(n), $(l:paths/woodcutter)Woodcutter$(n), $(l:paths/ranger)Ranger$(n), $(l:paths/homesteader)Homesteader$(n)."
+      "text": "$(bold)$(li)1. Click a node.$(br)$(li)2. Finish its task.$(br)$(li)3. Pay its Focal Shards.$(br)$(li)4. Hold the unlock button.$(br2)You start with 2 to 5 shards, by difficulty, and four roads: $(l:paths/quarry)Quarry$(n), $(l:paths/woodcutter)Woodcutter$(n), $(l:paths/ranger)Ranger$(n), $(l:paths/homesteader)Homesteader$(n)."
     },
     {
       "type": "patchouli:image",
@@ -36,7 +36,7 @@
     {
       "type": "patchouli:text",
       "title": "Death",
-      "text": "$(bold)$(#8A3B2F)1 Focal Shard, and a quarter of all progress on running tasks and bounties.$(n)$(br2)Nothing counts for the next 10 minutes. Unlocked nodes and finished tasks are safe."
+      "text": "$(bold)$(#8A3B2F)1 Focal Shard, and on Normal and Hard a quarter of all progress on running tasks and bounties.$(n)$(br2)Nothing counts for a while: 3 minutes on Easy, 5 on Normal, 10 on Hard. Unlocked nodes and finished tasks are safe."
     }
   ],
   "priority": true
