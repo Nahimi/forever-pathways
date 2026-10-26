@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.27.1
+
+- Fixed: every new world used the difficulty of the first world you made. NeoForge keeps server
+  configs in the shared config folder, so the first pick was written there for all worlds. Each world
+  now keeps its own preset in its save, picked from its difficulty when it is first started.
+- `force_preset` in `config/foreverpathways-server.toml` pins one preset for every world (leave it on
+  `AUTO` to let each world choose). The old `preset` setting is no longer read.
+- New `/pathways difficulty [easy|normal|hard]` (operators) shows or changes this world's preset.
+
 ## 0.27.0
 
 - Nodes that give nothing in your install are gone: one written for a mod's items (or for using them) is
