@@ -45,6 +45,7 @@ public class PathwaysScreen extends Screen {
     static final int GOLD = 0xFFC4A574;
     static final int GREEN = 0xFF86A86F;
     static final int RED = 0xFFC0614F;
+    static final int USE_BLUE = 0xFF6F9DB8;
     static final int SEAL = 0xFFE8D3A0;
     static final int EYE = 0xFF5FB3A1;
     private static final long HOLD_NANOS = 1_900_000_000L;
@@ -1132,8 +1133,6 @@ public class PathwaysScreen extends Screen {
             g.drawString(this.font, "Cost", x, y, DIM, false);
             drawShard(g, x + 26, y, 8);
             g.drawString(this.font, Difficulty.cost(node) + " Focal Shards", x + 37, y, state.points() >= Difficulty.cost(node) ? CREAM : RED, false);
-            y += 10;
-            g.drawString(this.font, "You have " + state.points(), x + 37, y, MUTED, false);
             y += 13;
         }
 
@@ -1209,26 +1208,51 @@ public class PathwaysScreen extends Screen {
         }
 
         List<ItemStack> items = ClientIndex.get().items(node.id);
-        if (!items.isEmpty()) {
-            g.drawString(this.font, "Unlocks " + items.size() + (items.size() == 1 ? " item" : " items"), x, y, DIM, false);
+        List<ItemStack> uses = ClientIndex.get().uses(node.id);
+        if (!items.isEmpty() || !uses.isEmpty()) {
+            String label = items.isEmpty() ? "" : "Unlocks " + items.size() + (items.size() == 1 ? " item" : " items");
+            if (!uses.isEmpty()) {
+                label += (label.isEmpty() ? "Lets you use " : ", use of ") + uses.size();
+            }
+            g.drawString(this.font, label, x, y, DIM, false);
             y += 11;
             int cell = 18;
             int columns = Math.max(1, width / cell);
-            for (int i = 0; i < items.size(); i++) {
+            int total = items.size() + uses.size();
+            for (int i = 0; i < total; i++) {
+                boolean useOnly = i >= items.size();
+                ItemStack stack = useOnly ? uses.get(i - items.size()) : items.get(i);
                 int ix = x + (i % columns) * cell;
                 int iy = y + (i / columns) * cell;
                 if (iy + cell < top || iy > bottom) {
                     continue;
                 }
-                Pix.chamfer(g, ix, iy, 17, 17, 1, 0xFF0A0806);
+                Pix.chamfer(g, ix, iy, 17, 17, 1, useOnly ? 0xFF2B4A5C : 0xFF0A0806);
                 Pix.chamfer(g, ix + 1, iy + 1, 15, 15, 1, TRACK);
-                g.renderItem(items.get(i), ix, iy);
+                g.renderItem(stack, ix, iy);
+                if (useOnly) {
+                    // A small blue tab in the corner: use only, the recipe is somewhere else.
+                    g.pose().pushPose();
+                    g.pose().translate(0, 0, 200);
+                    Pix.rect(g, ix + 11, iy + 1, ix + 16, iy + 6, 0xFF0A0806);
+                    Pix.rect(g, ix + 12, iy + 2, ix + 15, iy + 5, USE_BLUE);
+                    g.pose().popPose();
+                }
                 if (mouseX >= ix && mouseX < ix + 17 && mouseY >= iy && mouseY < iy + 17
                         && mouseY >= top && mouseY < bottom) {
-                    tooltipStack = items.get(i);
+                    if (useOnly) {
+                        String ownerId = ClientIndex.get().useOwner.get(stack.getItem());
+                        Tree.Node owner = ownerId == null ? null : tree.find(ownerId);
+                        tooltipLines = List.of(stack.getHoverName(),
+                                Component.literal("Use only").withColor(USE_BLUE & 0xFFFFFF),
+                                Component.literal(owner == null ? "Crafting it is unlocked elsewhere."
+                                        : "Crafting it is unlocked at " + owner.title + ".").withColor(MUTED & 0xFFFFFF));
+                    } else {
+                        tooltipStack = stack;
+                    }
                 }
             }
-            y += ((items.size() + columns - 1) / columns) * cell + 6;
+            y += ((total + columns - 1) / columns) * cell + 6;
         }
 
         List<String> leads = new ArrayList<>();

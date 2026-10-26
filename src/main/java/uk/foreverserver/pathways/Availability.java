@@ -87,10 +87,27 @@ public final class Availability {
      * it as before. A node with no items by design (a perk, a slot, an enchanting cap, a seal) stays.
      */
     private static void dropEmptyNodes(Tree tree) {
-        LockResolver.Result held = LockResolver.resolve(tree, StageWriter.allItems());
+        List<String> items = StageWriter.allItems();
+        LockResolver.Result held = LockResolver.resolve(tree, items);
         Map<String, String> gone = new LinkedHashMap<>();
         for (Tree.Node node : tree.nodes) {
-            if (emptyNode(node, held)) {
+            if (emptyNode(node, held, items)) {
+                gone.put(node.id, node.requires);
+            }
+        }
+        // A slot bonus means something only while a node that takes that slot is still in the tree.
+        for (Tree.Node node : tree.nodes) {
+            if (gone.containsKey(node.id) || !onlySlotBonus(node)) {
+                continue;
+            }
+            boolean used = false;
+            for (Tree.Node other : tree.nodes) {
+                if (!gone.containsKey(other.id) && other.slot != null && node.slotBonus.containsKey(other.slot)) {
+                    used = true;
+                    break;
+                }
+            }
+            if (!used) {
                 gone.put(node.id, node.requires);
             }
         }
@@ -149,17 +166,49 @@ public final class Availability {
                 + " seals with nothing behind them: " + String.join(", ", gone.keySet()));
     }
 
-    /** A node that had items written for it, and now has none, and gives nothing else either. */
-    private static boolean emptyNode(Tree.Node node, LockResolver.Result held) {
-        if (node.isSeal() || node.requires == null || node.locks == null || node.locks.isEmpty()) {
+    /**
+     * A node that gives nothing in this install. A node written to hold items, or to let you use
+     * them, goes when none of them exist: any perk, slot or enchanting cap on it belonged to that
+     * mod's content. A node written with no items at all stays while it still gives something, a
+     * stat perk or an enchanting cap.
+     */
+    private static boolean emptyNode(Tree.Node node, LockResolver.Result held, List<String> items) {
+        if (node.isSeal() || node.requires == null) {
             return false;
         }
-        boolean other = node.perks != null && !node.perks.isEmpty()
-                || node.slot != null && !node.slot.isBlank()
-                || node.slotBonus != null && !node.slotBonus.isEmpty()
-                || node.enchantPower > 0
-                || node.uses != null && !node.uses.isEmpty();
-        return !other && held.items(node.id).isEmpty();
+        if (!held.items(node.id).isEmpty() || usable(node, items)) {
+            return false;
+        }
+        boolean written = node.locks != null && !node.locks.isEmpty() || node.uses != null && !node.uses.isEmpty();
+        if (written) {
+            return true;
+        }
+        return !(has(node.perks) || node.enchantPower > 0 || has(node.slotBonus));
+    }
+
+    private static boolean onlySlotBonus(Tree.Node node) {
+        return has(node.slotBonus) && (node.locks == null || node.locks.isEmpty()) && !has(node.perks)
+                && node.enchantPower <= 0;
+    }
+
+    private static boolean has(Map<String, ?> map) {
+        return map != null && !map.isEmpty();
+    }
+
+    /** True when something this node lets you use exists in this install. */
+    private static boolean usable(Tree.Node node, List<String> items) {
+        if (node.uses == null) {
+            return false;
+        }
+        for (String spec : node.uses) {
+            Predicate<String> rule = LockResolver.matcher(spec);
+            for (String id : items) {
+                if (rule.test(id)) {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     /** Follows a chain of removed nodes up to the first one that is still there (or null). */

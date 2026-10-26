@@ -58,10 +58,42 @@ final class ClientIndex {
             }
             stacks.put(entry.getKey(), list);
         }
+        // Items a node lets you use though another node owns them (and their crafting).
+        List<String> all = StageWriter.allItems();
+        for (Tree.Node node : tree.nodes) {
+            if (node.uses == null || node.uses.isEmpty()) {
+                continue;
+            }
+            List<ItemStack> list = new ArrayList<>();
+            for (String spec : node.uses) {
+                java.util.function.Predicate<String> rule = LockResolver.matcher(spec);
+                for (String id : all) {
+                    if (rule.test(id)) {
+                        ItemStack stack = stack(id);
+                        if (!stack.isEmpty() && stack.getItem() != Items.BARRIER) {
+                            list.add(stack);
+                            useOwner.put(stack.getItem(), owner.get(id));
+                        }
+                    }
+                }
+            }
+            if (!list.isEmpty()) {
+                useStacks.put(node.id, list);
+            }
+        }
     }
+
+    final Map<String, List<ItemStack>> useStacks = new HashMap<>();
+    /** For a use-only item: the node that owns it, where its crafting is unlocked. */
+    final Map<Item, String> useOwner = new HashMap<>();
 
     List<ItemStack> items(String nodeId) {
         return stacks.getOrDefault(nodeId, List.of());
+    }
+
+    /** Items this node lets you use, though their crafting is unlocked elsewhere. */
+    List<ItemStack> uses(String nodeId) {
+        return useStacks.getOrDefault(nodeId, List.of());
     }
 
     /** Node id to the number of its items whose name or id contains the query. */

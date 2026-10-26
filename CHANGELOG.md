@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.27.0
+
+- Nodes that give nothing in your install are gone: one written for a mod's items (or for using them) is
+  removed when none of them exist, even if it also carried a perk or a slot. On vanilla that clears the
+  magic schools, Archmage, Spellblades, Outfitter, Cartwright, Helvar and Explorer. Stat nodes (the
+  Constitution road and the like) and the enchanting Libraries stay: they still give something.
+- A node's Unlocks list now also shows items it only lets you use, marked with a blue corner tab;
+  hovering says where their crafting is unlocked.
+- Unlocking a node or breaking a seal is announced in chat to every player.
+- The node panel no longer repeats how many shards you have under the cost.
+
 ## 0.26.0
 
 - Difficulty presets, Easy, Normal and Hard, kept per world in `serverconfig/foreverpathways-server.toml`

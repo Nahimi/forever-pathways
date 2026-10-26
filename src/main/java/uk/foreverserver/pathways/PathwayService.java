@@ -85,6 +85,12 @@ public final class PathwayService {
         }
         TaskBook.update(player);
         Perks.apply(player, tree, TaskBook.owned(player, tree));
+        // Everyone on the server hears about it.
+        Component news = Component.literal(player.getGameProfile().getName())
+                .append(node.isSeal() ? " broke the " : " unlocked ")
+                .append(Component.literal(node.title).withStyle(ChatFormatting.BOLD))
+                .withStyle(ChatFormatting.GOLD);
+        player.server.getPlayerList().broadcastSystemMessage(news, false);
     }
 
     public static void debugToggle(ServerPlayer player, String stageId) {
