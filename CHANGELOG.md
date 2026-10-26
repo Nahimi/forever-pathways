@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.27.2
+
+- New bounties are announced one short line each: "New Bounty Available: Hunt 4 pigs".
+
 ## 0.27.1
 
 - Fixed: every new world used the difficulty of the first world you made. NeoForge keeps server

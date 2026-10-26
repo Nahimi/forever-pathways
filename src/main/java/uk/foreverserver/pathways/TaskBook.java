@@ -358,12 +358,11 @@ public final class TaskBook {
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "base"), stat(player, pick.task(), tree));
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "held"), 0L);
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "out"), 0L);
-            offered.add(pick.title + " (+" + pick.reward + ", " + pick.days + (pick.days == 1 ? " day" : " days") + ")");
+            offered.add(pick.title);
         }
         ProgressiveStagesAPI.setCounter(player, BOUNTY_DAY, day + 1);
-        if (!offered.isEmpty()) {
-            player.sendSystemMessage(Component.literal((offered.size() == 1 ? "New bounty: " : "New bounties: ")
-                    + String.join("; ", offered)).withStyle(ChatFormatting.GOLD));
+        for (String title : offered) {
+            player.sendSystemMessage(Component.literal("New Bounty Available: " + title).withStyle(ChatFormatting.GOLD));
         }
     }
 
