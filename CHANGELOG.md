@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.28.1
+
+- `tree.json` is now loaded as datapack data, so a datapack or KubeJS can replace it
+  (`data/foreverpathways/tree.json`) and `/reload` picks up a change. The server sends the tree it uses to
+  every player. `/pathways debug` shows where the tree came from. (Issue #1)
+- Removed an unused scrollbar sprite whose metadata logged an error on every texture reload. (Issue #3)
+
 ## 0.28.0
 
 - Support for six more mods, 14 new nodes:
