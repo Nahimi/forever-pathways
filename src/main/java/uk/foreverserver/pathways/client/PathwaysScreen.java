@@ -66,7 +66,6 @@ public class PathwaysScreen extends Screen {
     static final ResourceLocation SPRITE_TAB_SELECTED = sprite("tab_selected");
     static final ResourceLocation SPRITE_BUTTON = sprite("button");
     static final ResourceLocation SPRITE_BUTTON_HOVER = sprite("button_hover");
-    static final ResourceLocation SPRITE_SCROLL = sprite("scroll");
     static final ResourceLocation SPRITE_PADLOCK = sprite("padlock");
     static final ResourceLocation MAP_TILE = texture("map_tile");
     static final ResourceLocation PANEL_TILE = texture("panel_tile");

@@ -35,6 +35,7 @@ import uk.foreverserver.pathways.net.ActionPayload;
 import uk.foreverserver.pathways.net.DifficultyPayload;
 import uk.foreverserver.pathways.net.NotifyPayload;
 import uk.foreverserver.pathways.net.StatePayload;
+import uk.foreverserver.pathways.net.TreePayload;
 
 @Mod(ForeverPathways.MOD_ID)
 public class ForeverPathways {
@@ -55,6 +56,12 @@ public class ForeverPathways {
         modBus.addListener(Grimoires::onCreativeTab);
         NeoForge.EVENT_BUS.addListener(PathwayService::onPlayerTick);
         BlockGuard.register();
+        // tree.json comes from the datapacks; whatever cached the old tree forgets it when it changes.
+        NeoForge.EVENT_BUS.addListener(TreeData::onAddReloadListeners);
+        NeoForge.EVENT_BUS.addListener(TreeData::onDatapackSync);
+        Tree.onReplaced(Locks::reset);
+        Tree.onReplaced(BossGuard::reset);
+        Tree.onReplaced(BossEyes::reset);
         ToughBeginningsCompat.register();
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, false, LivingDeathEvent.class, ForeverPathways::onDeath);
         NeoForge.EVENT_BUS.addListener(ForeverPathways::registerCommands);
@@ -92,7 +99,7 @@ public class ForeverPathways {
         // Not before this point: during construction only vanilla's items are registered.
         Tree.registriesReady();
         LOGGER.info("Forever Pathways loaded with {} nodes", Tree.get().nodes.size());
-        event.enqueueWork(() -> StageWriter.write(false));
+        // The stage files are written when the datapacks load (TreeData), from the tree in use.
     }
 
     private static void onDeath(LivingDeathEvent event) {
@@ -102,7 +109,7 @@ public class ForeverPathways {
     }
 
     private static void registerPayloads(RegisterPayloadHandlersEvent event) {
-        PayloadRegistrar registrar = event.registrar("3");
+        PayloadRegistrar registrar = event.registrar("4");
         registrar.playToServer(ActionPayload.TYPE, ActionPayload.STREAM_CODEC, ActionPayload::handle);
         registrar.playToClient(StatePayload.TYPE, StatePayload.STREAM_CODEC, (payload, context) ->
                 context.enqueueWork(() -> PathwayClientHooks.accept.accept(payload)));
@@ -110,6 +117,8 @@ public class ForeverPathways {
                 context.enqueueWork(() -> PathwayClientHooks.notify.accept(payload)));
         registrar.playToClient(DifficultyPayload.TYPE, DifficultyPayload.STREAM_CODEC, (payload, context) ->
                 context.enqueueWork(() -> Difficulty.received(payload.preset())));
+        registrar.playToClient(TreePayload.TYPE, TreePayload.STREAM_CODEC, (payload, context) ->
+                context.enqueueWork(() -> TreeData.received(payload)));
     }
 
     private static boolean admin(CommandSourceStack source) {

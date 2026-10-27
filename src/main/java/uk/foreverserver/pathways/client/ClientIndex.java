@@ -29,6 +29,10 @@ final class ClientIndex {
     private final List<String> names = new ArrayList<>();
     private final Map<String, ItemStack> icons = new HashMap<>();
 
+    static void reset() {
+        instance = null;
+    }
+
     static ClientIndex get() {
         if (instance == null) {
             instance = new ClientIndex();

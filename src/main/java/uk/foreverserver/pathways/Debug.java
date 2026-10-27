@@ -34,7 +34,7 @@ public final class Debug {
         out.add(Component.literal("Forever Pathways " + version + " debug").withStyle(ChatFormatting.GOLD));
 
         // The tree.
-        line(out, "Tree", tree.nodes.size() + " nodes, " + (Tree.isFitted() ? "fitted to this install"
+        line(out, "Tree", tree.nodes.size() + " nodes from " + Tree.source() + ", " + (Tree.isFitted() ? "fitted to this install"
                 : "NOT fitted yet (registries not ready)"), Tree.isFitted());
 
         Difficulty.Preset preset = Difficulty.current();

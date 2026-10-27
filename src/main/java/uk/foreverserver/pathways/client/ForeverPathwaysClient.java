@@ -26,6 +26,7 @@ import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
 import uk.foreverserver.pathways.BlockGuard;
 import uk.foreverserver.pathways.ForeverPathways;
 import uk.foreverserver.pathways.PathwayClientHooks;
+import uk.foreverserver.pathways.Tree;
 import uk.foreverserver.pathways.net.ActionPayload;
 
 @Mod(value = ForeverPathways.MOD_ID, dist = Dist.CLIENT)
@@ -58,6 +59,7 @@ public class ForeverPathwaysClient {
         container.registerConfig(ModConfig.Type.CLIENT, Notices.SPEC);
         container.registerExtensionPoint(IConfigScreenFactory.class, ConfigurationScreen::new);
         modBus.addListener(Hud::register);
+        Tree.onReplaced(ClientIndex::reset);
         PathwayClientHooks.accept = payload -> {
             ClientState.apply(payload);
             PathwaysScreen.apply(payload);
@@ -71,6 +73,7 @@ public class ForeverPathwaysClient {
         NeoForge.EVENT_BUS.addListener(ClientPlayerNetworkEvent.LoggingOut.class, event -> {
             ClientState.reset();
             uk.foreverserver.pathways.Difficulty.received(null);
+            uk.foreverserver.pathways.TreeData.leftServer();
             Hud.reset();
         });
     }

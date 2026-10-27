@@ -5,7 +5,7 @@ Usage:
 
 Writes:
   assets/foreverpathways/textures/gui/sprites/pathways/*.png (+ .mcmeta)
-      Nine-slice frames on the GUI sprite atlas: window, inset, panel, banner, tabs, buttons, scrollbar,
+      Nine-slice frames on the GUI sprite atlas: window, inset, panel, banner, tabs, buttons,
       and the padlock. Every frame has chamfered (diagonal) corners.
   assets/foreverpathways/textures/gui/pathways/*.png
       Repeating textures drawn with one blit each: the map and panel backgrounds and the meander
@@ -145,7 +145,6 @@ def build_frames():
     save_sprite("button_disabled", frame(20, 16, 2, [(OUT, OUT), (S3, S2), (S2, S0)], S1), border=4)
 
     # Scrollbar thumb.
-    save_sprite("scroll", frame(4, 8, 1, [(G2, G1)], G1), border=2)
 
     # The padlock, drawn at its own size (11 by 13).
     lock = Image.new("RGBA", (11, 13), CLEAR)

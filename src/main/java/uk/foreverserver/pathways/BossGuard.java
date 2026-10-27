@@ -32,6 +32,10 @@ public final class BossGuard {
 
     private BossGuard() {}
 
+    public static void reset() {
+        asked = null;
+    }
+
     private static Map<String, Tree.Node> asked() {
         if (asked == null) {
             Map<String, Tree.Node> map = new HashMap<>();

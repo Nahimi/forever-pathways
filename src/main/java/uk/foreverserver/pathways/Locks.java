@@ -28,6 +28,19 @@ public final class Locks {
 
     private Locks() {}
 
+    /** Forgets everything worked out from the tree; it is worked out again from the new one. */
+    public static synchronized void reset() {
+        owners = null;
+        usable = null;
+        guard = null;
+        users = null;
+        CACHE.clear();
+        USABLE_CACHE.clear();
+        CRAFT_CACHE.clear();
+        GUARD_CACHE.clear();
+        USERS_CACHE.clear();
+    }
+
     private static synchronized Map<String, String> owners() {
         if (owners == null) {
             owners = new HashMap<>(LockResolver.resolve(Tree.get(), StageWriter.allItems()).owner);

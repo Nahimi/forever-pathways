@@ -24,7 +24,8 @@ import net.neoforged.fml.loading.FMLPaths;
  * knows every item, so the locks are always complete.
  *
  * Files only change when the tree or the mod list changes. ProgressiveStages reads
- * them at startup, so changes take effect on the next launch. On a normal running server the files
+ * them as a world starts, and the files are written as the datapacks load, just before that. After a
+ * /reload that changes the tree, a restart lets ProgressiveStages read them again. On a normal server the files
  * do not change, and the write() call is a no-op (the hash matches); no restart is needed. A restart
  * is only involved on the very first install, and after you add or remove other mods.
  */
@@ -97,7 +98,7 @@ public final class StageWriter {
             boolean fresh = previous.isEmpty();
             String summary = "Pathways " + (fresh ? "set up " : "updated ") + tree.nodes.size() + " stages, locking "
                     + locked + " items" + (removed > 0 ? " (" + removed + " stages removed)" : "")
-                    + ". ProgressiveStages loads these at startup, so they take effect on the next launch.";
+                    + ". If ProgressiveStages had already read its stage files (after /reload, say), restart for the locks to follow.";
             ForeverPathways.LOGGER.info(summary);
             return summary;
         } catch (IOException exception) {

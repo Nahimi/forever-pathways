@@ -49,6 +49,10 @@ public final class BossEyes {
 
     private BossEyes() {}
 
+    public static void reset() {
+        stripped = null;
+    }
+
     public static void register(IEventBus modBus) {
         MODIFIERS.register(modBus);
     }

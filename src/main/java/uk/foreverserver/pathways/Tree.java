@@ -77,6 +77,46 @@ public final class Tree {
         return fitted;
     }
 
+    /** Where the tree in use came from: "built-in", a datapack's name, or "the server". */
+    private static String source = "built-in";
+    /** Things that cache what they worked out from the tree, and must forget it when the tree changes. */
+    private static final List<Runnable> RESETS = new java.util.concurrent.CopyOnWriteArrayList<>();
+
+    public static synchronized String source() {
+        return source;
+    }
+
+    public static void onReplaced(Runnable reset) {
+        RESETS.add(reset);
+    }
+
+    /**
+     * Puts a tree in use in place of the built-in one: the server's datapack tree, or the tree a server
+     * sent this client. It is fitted to the installed mods the next time it is asked for.
+     */
+    public static void replace(Tree tree, String from) {
+        synchronized (Tree.class) {
+            instance = tree;
+            fitted = false;
+            source = from;
+        }
+        RESETS.forEach(Runnable::run);
+    }
+
+    /** Back to the tree inside the jar, as on leaving a server. */
+    public static void useBuiltIn() {
+        synchronized (Tree.class) {
+            instance = null;
+            fitted = false;
+            source = "built-in";
+        }
+        RESETS.forEach(Runnable::run);
+    }
+
+    public static Tree parse(String json) {
+        return load(new java.io.ByteArrayInputStream(json.getBytes(StandardCharsets.UTF_8)));
+    }
+
     /** Called at common setup, when the registries are complete, on both client and server. */
     public static void registriesReady() {
         registriesReady = true;
