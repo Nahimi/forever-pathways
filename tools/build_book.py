@@ -312,6 +312,39 @@ BEYOND = [
                  "$(li)Small crimes fade with time; heavy ones linger.$(br2)"
                  "Trading is a task at $(l:paths/trader)Trader$(), so stay welcome."},
     ]),
+    ("a13", "A13. Foes and Feasts", "minecraft:skeleton_skull", 13,
+     "|mod:hearthandharvest,mod:remains,mod:bestiary,mod:legionary,mod:cataclysm,mod:hazennstuff", [
+        {"type": "patchouli:text", "title": "Hearth and Harvest", "flag": "mod:hearthandharvest",
+         "text": "Three nodes on the Homesteader road:$(br2)"
+                 "$(li)$(l:paths/hh_orchard)Orchard and Trellis$(), ring 3: crops, trellises and farm tools.$(br)"
+                 "$(li)$(l:paths/hh_hearth)Hearth$(), ring 4: pies, cakes, sweets, cheese and its kitchen furniture.$(br)"
+                 "$(li)$(l:paths/hh_cellar)Cellar$(), ring 5: casks, kegs, jams, pickles, juices and wine."},
+        {"type": "patchouli:text", "title": "Vaskar's Remains", "flag": "mod:remains",
+         "text": "The dead you find in the world can always be searched.$(br2)"
+                 "What they carry, their old weapons, staves, crowns and keepsakes, is yours to use once you "
+                 "own $(l:paths/relics)Relics of the Fallen$(), ring 4 on the Ranger road."},
+        {"type": "patchouli:text", "title": "Vaskar's Bestiary", "flag": "mod:bestiary",
+         "text": "$(li)$(l:paths/beast_lore)Beast Lore$(), ring 4: the hides, glands, scales and lair blocks "
+                 "of its creatures. Kill three trolls first.$(br)"
+                 "$(li)$(l:paths/titans)Titans$(), ring 8: the trophies of the Deep Mother, Ember Heart, Ice "
+                 "Colossus, Sand Maw and Trap Crown. Kill any one of them."},
+        {"type": "patchouli:text", "title": "Legionary", "flag": "mod:legionary",
+         "text": "Kill the Unbreakable to open $(l:paths/unbreakable)The Unbreakable$(), ring 6 on the Ranger "
+                 "road, for its cudgel, gold shards and the golden chains and lanterns."},
+        {"type": "patchouli:text", "title": "L_Ender's Cataclysm", "flag": "mod:cataclysm",
+         "text": "Four boss nodes on the Ranger road, each asking for one kill:$(br2)"
+                 "$(li)$(l:paths/cata_desert)Ancient Remnant$(), ring 9.$(br)"
+                 "$(li)$(l:paths/cata_deep)The Leviathan$(), ring 10.$(br)"
+                 "$(li)$(l:paths/cata_fire)Ignis$(), ring 11.$(br)"
+                 "$(li)$(l:paths/cata_void)The Harbinger$(), ring 12.$(br2)"
+                 "The other Cataclysm bosses' spoils share their node."},
+        {"type": "patchouli:text", "title": "Hazen N Stuff", "flag": "mod:hazennstuff",
+         "text": "Three nodes on the Magician road:$(br2)"
+                 "$(li)$(l:paths/hazen_metals)Hazen's Metals$(), ring 9: ores, ingots and its woods.$(br)"
+                 "$(li)$(l:paths/hazen_runes)Runes and Orbs$(), ring 10.$(br)"
+                 "$(li)$(l:paths/hazen_arsenal)Flamebearer's Arsenal$(), ring 11: every weapon and armour set. "
+                 "Kill one of the Flamebearer's officers first."},
+    ]),
     ("a12", "A12. The Underworld Seal", "nether_remastered:seal_of_the_underworld_item", 12,
      "mod:nether_remastered", [
         "The Nether is shut. Its portals will not take you until you have used a "

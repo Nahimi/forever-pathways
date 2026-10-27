@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.28.0
+
+- Support for six more mods, 14 new nodes:
+  - Hearth and Harvest: Orchard and Trellis (ring 3), Hearth (ring 4) and Cellar (ring 5), Homesteader road.
+  - Vaskar's Remains: Relics of the Fallen (ring 4, Ranger). Bodies and graves can always be searched.
+  - Vaskar's Bestiary: Beast Lore (ring 4, kill 3 trolls) and Titans (ring 8, kill one titan), Ranger.
+  - Legionary: The Unbreakable (ring 6, Ranger, kill it).
+  - L_Ender's Cataclysm: Ancient Remnant, The Leviathan, Ignis and The Harbinger (rings 9 to 12, Ranger),
+    each a boss kill.
+  - Hazen N Stuff: Hazen's Metals (ring 9), Runes and Orbs (ring 10) and Flamebearer's Arsenal (ring 11),
+    Magician.
+- Iron's Simple Blood is listed as supported; it adds no items, so no nodes.
+- Grimoire: a page for every new node and a new appendix, A13. Foes and Feasts.
+
 ## 0.27.2
 
 - New bounties are announced one short line each: "New Bounty Available: Hunt 4 pigs".

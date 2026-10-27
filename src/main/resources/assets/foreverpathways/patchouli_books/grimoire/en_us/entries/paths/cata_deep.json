@@ -1,0 +1,20 @@
+{
+  "name": "The Leviathan",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "cataclysm:tidal_claws",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "cataclysm:tidal_claws",
+      "title": "The Leviathan",
+      "text": "$(bold)Cataclysm's seas: the Leviathan's tidal claws and abyssal sacrifice, Scylla's storm spears and gauntlet, coral arms, black steel and the azure seastone of the sunken halls.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)48 Focal Shards$(n).$(br)After Ancient Remnant."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill the Leviathan$(n)$(br2)Pays 9 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:cataclysm"
+}

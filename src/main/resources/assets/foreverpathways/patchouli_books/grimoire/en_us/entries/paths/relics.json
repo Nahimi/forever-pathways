@@ -1,0 +1,15 @@
+{
+  "name": "Relics of the Fallen",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "remains:kings_axe",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "remains:kings_axe",
+      "title": "Relics of the Fallen",
+      "text": "$(bold)The arms and keepsakes Vaskar's Remains leaves on the dead you find in the world: elven, orcish, knightly and royal weapons, mage rods and staves, crowns and trinkets. The bodies and graves themselves can always be searched.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)10 Focal Shards$(n).$(br)After Scout."
+    }
+  ],
+  "flag": "mod:remains"
+}

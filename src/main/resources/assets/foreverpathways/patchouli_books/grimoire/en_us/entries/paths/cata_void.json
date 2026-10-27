@@ -1,0 +1,20 @@
+{
+  "name": "The Harbinger",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "cataclysm:witherite_ingot",
+  "sortnum": 1200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "cataclysm:witherite_ingot",
+      "title": "The Harbinger",
+      "text": "$(bold)Cataclysm's end: the Harbinger's witherite and wither cannon, the Ender Guardian's void arms and enderite, Maledictus's cursium, soul render and annihilator, and the frozen draugr halls.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)70 Focal Shards$(n).$(br)After Ignis."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill the Harbinger$(n)$(br2)Pays 12 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:cataclysm"
+}

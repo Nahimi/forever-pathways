@@ -1,0 +1,15 @@
+{
+  "name": "Orchard and Trellis",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "hearthandharvest:red_grapes",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hearthandharvest:red_grapes",
+      "title": "Orchard and Trellis",
+      "text": "$(bold)Hearth and Harvest's crops and farm tools: grapes on trellises, raspberries, blueberries, cherries, peanuts, corn, cotton and hops, the watering can, sprinkler, scarecrow, seed pouch, fertiliser and manure.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)5 Focal Shards$(n).$(br)After Gardener."
+    }
+  ],
+  "flag": "mod:hearthandharvest"
+}

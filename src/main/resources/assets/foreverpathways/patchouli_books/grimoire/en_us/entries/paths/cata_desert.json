@@ -1,0 +1,20 @@
+{
+  "name": "Ancient Remnant",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "cataclysm:wrath_of_the_desert",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "cataclysm:wrath_of_the_desert",
+      "title": "Ancient Remnant",
+      "text": "$(bold)Cataclysm's desert: the Ancient Remnant's wrath of the desert, its sandstorm and necklace, ancient metal, the khopesh and koboleton bones, and the dungeon stone of every Cataclysm ruin.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)40 Focal Shards$(n).$(br)After Warrior."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill the Ancient Remnant$(n)$(br2)Pays 8 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:cataclysm"
+}

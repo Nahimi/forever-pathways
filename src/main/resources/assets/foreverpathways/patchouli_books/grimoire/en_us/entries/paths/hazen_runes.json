@@ -1,0 +1,15 @@
+{
+  "name": "Runes and Orbs",
+  "category": "foreverpathways:paths/magician",
+  "icon": "hazennstuff:radiance_upgrade_orb",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hazennstuff:radiance_upgrade_orb",
+      "title": "Runes and Orbs",
+      "text": "$(bold)Hazen N Stuff's upgrade orbs, concentrated orbs and runes, the catalyst, and the essences, fragments, cores and monster parts its forging asks for.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)54 Focal Shards$(n).$(br)After Arcane Essence."
+    }
+  ],
+  "flag": "mod:hazennstuff"
+}

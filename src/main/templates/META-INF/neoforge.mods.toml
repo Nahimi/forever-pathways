@@ -451,6 +451,62 @@ config="${mod_id}.mixins.json"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
+    modId="hearthandharvest"
+    type="optional"
+    reason="Hearth and Harvest: orchard crops, the hearth and the cellar"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="remains"
+    type="optional"
+    reason="Vaskar's Remains: the relics found on the dead"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="bestiary"
+    type="optional"
+    reason="Vaskar's Bestiary: beast lore and the titans"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="legionary"
+    type="optional"
+    reason="Legionary: the Unbreakable"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="cataclysm"
+    type="optional"
+    reason="L_Ender's Cataclysm: the Ancient Remnant, the Leviathan, Ignis and the Harbinger"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="hazennstuff"
+    type="optional"
+    reason="Hazen N Stuff: its metals, runes and the Flamebearer's arsenal"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="simpleblood"
+    type="optional"
+    reason="Iron's Simple Blood: no items"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
     modId="minecraft"
     type="required"
     # This version range declares a minimum of the current minecraft version up to but not including the next major version

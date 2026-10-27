@@ -1613,6 +1613,7 @@
     }
   ],
   "ignore": [
+    "re:remains:(corpse|grave|blood|blood_trail)",
     "re:.*_spawn_egg",
     "re:minecraft:(air|farmland|infested_.*|.*command_block|command_block.*|structure_block|structure_void|jigsaw|barrier|light|debug_stick|knowledge_book|bedrock|spawner|trial_spawner|vault|end_portal_frame|reinforced_deepslate|petrified_oak_slab|.*command_block_minecart|filled_map|written_book|player_head|zombie_head|skeleton_skull|creeper_head|piglin_head)",
     "re:create:(creative_.*|handheld_worldshaper)",
@@ -8846,6 +8847,369 @@
       "craftOnly": false,
       "locks": [
         "endrem:cryptic_eye"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:hh_orchard",
+      "title": "Orchard and Trellis",
+      "path": "homesteader",
+      "ring": 3,
+      "requires": "forever:gardener",
+      "also": null,
+      "cost": 5,
+      "item": "hearthandharvest:red_grapes",
+      "colour": "#7C9A3A",
+      "opens": "Hearth and Harvest's crops and farm tools: grapes on trellises, raspberries, blueberries, cherries, peanuts, corn, cotton and hops, the watering can, sprinkler, scarecrow, seed pouch, fertiliser and manure.",
+      "task": null,
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "re:hearthandharvest:(.*grapes.*|raspberr.*|blueberr.*|cherry|.*_pips|peanuts?|corn|corn_kernels|corn_husk.*|corn_stalk|cotton.*|hops|hops_bag|.*trellis|watering_can|sprinkler|scarecrow|seed_pouch|fertilizer_bag|manure.*|polished_manure.*|mulch|pitchfork|farmers_hat|.*_crate|wild_.*|.*_mum|nest|crow_feather|horseshoe|animal_feed|trough|hay_rug|straw_rug|stick_brush|.*_bag)"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:hh_hearth",
+      "title": "Hearth",
+      "path": "homesteader",
+      "ring": 4,
+      "requires": "forever:kitchen",
+      "also": null,
+      "cost": 7,
+      "item": "hearthandharvest:cherry_pie",
+      "colour": "#7C9A3A",
+      "opens": "The rest of Hearth and Harvest: pies, cakes and pizzas, sweets and snacks, cheese and butter, and its counters, drawers, cabinets and sink.",
+      "task": null,
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "rest:hearthandharvest"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:hh_cellar",
+      "title": "Cellar",
+      "path": "homesteader",
+      "ring": 5,
+      "requires": "forever:larder",
+      "also": null,
+      "cost": 11,
+      "item": "hearthandharvest:red_grape_wine",
+      "colour": "#7C9A3A",
+      "opens": "Brewing and preserving: the cask, keg, stomping basin and jug, jars, jams, pickles and brine, juices, cider, beer, mead and wine, moonshine, the tree tapper with sap and syrup, and salt.",
+      "task": null,
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "re:hearthandharvest:(cask|keg|stomping_basin|basin|jug|jars?|.*_jam|pickled_.*|brine_.*|.*_juice|.*_wine|beer|mead|hard_cider|root_beer|moonshine|tree_tapper|sap_.*|syrup_bottle|maple.*|salt.*|polished_salt.*|.*licked_salt_block|salt_lamp|salt_drip|.*_bottle_rack|raisins)"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:relics",
+      "title": "Relics of the Fallen",
+      "path": "ranger",
+      "ring": 4,
+      "requires": "forever:scout",
+      "also": null,
+      "cost": 10,
+      "item": "remains:kings_axe",
+      "colour": "#6B8F71",
+      "opens": "The arms and keepsakes Vaskar's Remains leaves on the dead you find in the world: elven, orcish, knightly and royal weapons, mage rods and staves, crowns and trinkets. The bodies and graves themselves can always be searched.",
+      "task": null,
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "re:remains:(?!corpse$|grave$|blood$|blood_trail$).*"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:beast_lore",
+      "title": "Beast Lore",
+      "path": "ranger",
+      "ring": 4,
+      "requires": "forever:hunter",
+      "also": null,
+      "cost": 10,
+      "item": "bestiary:troll_hide",
+      "colour": "#6B8F71",
+      "opens": "What Vaskar's Bestiary's creatures leave behind: troll hide and gall, venom glands and snake skin, chitin, scales, tusks and antlers, the antidote, and the strange plants and stones of their lairs.",
+      "task": {
+        "kind": "kill",
+        "target": "bestiary:mountain_troll,bestiary:bridge_troll,bestiary:forest_troll",
+        "amount": 3,
+        "title": "Kill 3 trolls",
+        "reward": 2
+      },
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "rest:bestiary"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:titans",
+      "title": "Titans",
+      "path": "ranger",
+      "ring": 8,
+      "requires": "forever:beast_lore",
+      "also": null,
+      "cost": 34,
+      "item": "bestiary:deep_trident",
+      "colour": "#8B4513",
+      "opens": "The trophies of the Bestiary's titans: the Deep Mother's trident and pearl, the Ember Heart's hammer, the Ice Colossus's fist and heart, the Sand Maw's ripper and cloak, the Trap Crown's whip, the stormreaper and the storm crown.",
+      "task": {
+        "kind": "kill",
+        "target": "bestiary:deep_mother,bestiary:ember_heart,bestiary:ice_colossus,bestiary:sand_maw,bestiary:trap_crown",
+        "amount": 1,
+        "title": "Kill a titan of the Bestiary",
+        "reward": 6
+      },
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "re:bestiary:(deep_trident|deep_mother_.*|deep_pearl|ember_hammer|ember_heart_.*|molten_effigy|frost_mail|glacier_fist|colossus_heart|ice_colossus_.*|sand_ripper|sand_maw_.*|maw_cloak|vine_whip|trap_crown_.*|crown_seed|storm_crown|stormreaper|storm_chain|lightning_antler|troll_club|cracked_ward|music_disc_.*)"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:unbreakable",
+      "title": "The Unbreakable",
+      "path": "ranger",
+      "ring": 6,
+      "requires": "forever:veteran",
+      "also": null,
+      "cost": 23,
+      "item": "legionary:cudgel",
+      "colour": "#8B4513",
+      "opens": "The spoils of Legionary's Unbreakable: its cudgel, forgotten bone, gold shards and the thermal stone, with golden chains and lanterns.",
+      "task": {
+        "kind": "kill",
+        "target": "legionary:unbreakable",
+        "amount": 1,
+        "title": "Kill The Unbreakable",
+        "reward": 5
+      },
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "mod:legionary"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:cata_desert",
+      "title": "Ancient Remnant",
+      "path": "ranger",
+      "ring": 9,
+      "requires": "forever:warrior",
+      "also": null,
+      "cost": 40,
+      "item": "cataclysm:wrath_of_the_desert",
+      "colour": "#8B4513",
+      "opens": "Cataclysm's desert: the Ancient Remnant's wrath of the desert, its sandstorm and necklace, ancient metal, the khopesh and koboleton bones, and the dungeon stone of every Cataclysm ruin.",
+      "task": {
+        "kind": "kill",
+        "target": "cataclysm:ancient_remnant",
+        "amount": 1,
+        "title": "Kill the Ancient Remnant",
+        "reward": 8
+      },
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "re:cataclysm:(ancient_metal.*|wrath_of_the_desert|sandstorm_in_a_bottle|necklace_of_the_desert|remnant_skull|desert_eye|khopesh|chitin_claw|koboleton_bone|kobolediator_skull|ancient_spear|sticky_gloves|strange_key|bloom_stone_pauldrons|modern_remnant_bucket|amethyst_crab.*|blessed_amethyst_crab_meat|altar_of_amethyst|music_disc_ancient_remnant)",
+        "rest:cataclysm"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:cata_deep",
+      "title": "The Leviathan",
+      "path": "ranger",
+      "ring": 10,
+      "requires": "forever:cata_desert",
+      "also": null,
+      "cost": 48,
+      "item": "cataclysm:tidal_claws",
+      "colour": "#8B4513",
+      "opens": "Cataclysm's seas: the Leviathan's tidal claws and abyssal sacrifice, Scylla's storm spears and gauntlet, coral arms, black steel and the azure seastone of the sunken halls.",
+      "task": {
+        "kind": "kill",
+        "target": "cataclysm:the_leviathan",
+        "amount": 1,
+        "title": "Kill the Leviathan",
+        "reward": 9
+      },
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "re:cataclysm:(tidal_claws|abyssal_sacrifice|abyssal_egg|abyss_eye|coral_.*|crystallized_coral.*|lionfish.*|azure_sea_shield|.*azure_seastone.*|the_baby_leviathan_bucket|altar_of_abyss|athame|astrape|ceraunus|gauntlet_of_maelstrom|essence_of_the_storm|storm_eye|lacrima|music_disc_the_leviathan|music_disc_scylla)"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:cata_fire",
+      "title": "Ignis",
+      "path": "ranger",
+      "ring": 11,
+      "requires": "forever:cata_deep",
+      "also": null,
+      "cost": 56,
+      "item": "cataclysm:ignitium_ingot",
+      "colour": "#8B4513",
+      "opens": "Cataclysm's fires: Ignis's ignitium and its armour, the bulwark of the flame and the incinerator, and the Netherite Monstrosity's helm, horn, effigy and forge.",
+      "task": {
+        "kind": "kill",
+        "target": "cataclysm:ignis",
+        "amount": 1,
+        "title": "Kill Ignis",
+        "reward": 10
+      },
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "re:cataclysm:(ignitium.*|bulwark_of_the_flame|the_incinerator|the_immolator|blazing_grips|burning_ashes|dying_ember|flame_eye|monstrous_.*|lava_power_cell|netherite_effigy|infernal_forge|gauntlet_of_bulwark|altar_of_fire|netherite_ministrosity_bucket|music_disc_ignis|music_disc_netherite_monstrosity)"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:cata_void",
+      "title": "The Harbinger",
+      "path": "ranger",
+      "ring": 12,
+      "requires": "forever:cata_fire",
+      "also": null,
+      "cost": 70,
+      "item": "cataclysm:witherite_ingot",
+      "colour": "#8B4513",
+      "opens": "Cataclysm's end: the Harbinger's witherite and wither cannon, the Ender Guardian's void arms and enderite, Maledictus's cursium, soul render and annihilator, and the frozen draugr halls.",
+      "task": {
+        "kind": "kill",
+        "target": "cataclysm:the_harbinger",
+        "amount": 1,
+        "title": "Kill the Harbinger",
+        "reward": 12
+      },
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "re:cataclysm:(void_.*|gauntlet_of_guard|zweiender|enderite.*|witherite.*|wither_assault_shoulder_weapon|laser_gatling|mech_eye|meat_shredder|emp|mechanical_fusion_anvil|cursium.*|soul_render|the_annihilator|cursed_bow|cursed_eye|final_fractal|brontes|chain_of_soul_binding|phantom_arrow|black_steel_.*|frosted_stone.*|draugr_head|aptrgangr_head|altar_of_void|music_disc_(ender_guardian|the_harbinger|maledictus|the_cataclysmfarer))"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:hazen_metals",
+      "title": "Hazen's Metals",
+      "path": "magician",
+      "ring": 9,
+      "requires": "forever:study",
+      "also": null,
+      "cost": 46,
+      "item": "hazennstuff:zenalite_ingot",
+      "colour": "#7B5EA7",
+      "opens": "Hazen N Stuff's metals and stone: zenalite, dreadsteel, chlorophyte, pyrium, steel, rose gold and the rest, their ores and blocks, and its new woods and bricks.",
+      "task": {
+        "kind": "mine",
+        "target": "re:hazennstuff:.*zenalite_ore",
+        "amount": 24,
+        "title": "Mine 24 zenalite ore",
+        "reward": 3
+      },
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "re:hazennstuff:(.*_(ingot|nugget|ore)|raw_.*|.*_block|chlorophyte_chunk|dreadstone|shadestone|starkissed_zenalite|crude_metal|silver_scraps|rose_quartz|stardust|abysslate|voidstone|cobbled_voidstone|aquastone|phantasmium|runestone_slag|fireblossom|zenalite_brick.*|mossy_mud_brick.*|(stripped_)?wisewood.*|(stripped_)?frostbite_birch.*)"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:hazen_runes",
+      "title": "Runes and Orbs",
+      "path": "magician",
+      "ring": 10,
+      "requires": "forever:essence",
+      "also": null,
+      "cost": 54,
+      "item": "hazennstuff:radiance_upgrade_orb",
+      "colour": "#7B5EA7",
+      "opens": "Hazen N Stuff's upgrade orbs, concentrated orbs and runes, the catalyst, and the essences, fragments, cores and monster parts its forging asks for.",
+      "task": null,
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "re:hazennstuff:(.*upgrade_orb.*|.*_rune|catalyst|runestone_fragments|.*_essence|.*_fragment|.*_core|.*_shard|.*_spine|.*_bones?|.*_scale|.*_fang|storm_weave|nightmare_fuel|cloth_of_the_flamebearer|.*_template|divine_mold|arcane_sea_shell|glowing_mushroom)"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:hazen_arsenal",
+      "title": "Flamebearer's Arsenal",
+      "path": "magician",
+      "ring": 11,
+      "requires": "forever:hazen_runes",
+      "also": null,
+      "cost": 64,
+      "item": "hazennstuff:blade_of_the_legate",
+      "colour": "#7B5EA7",
+      "opens": "Everything else Hazen N Stuff makes: its blades, staves and spell weapons, its armour sets, rings and charms. The Flamebearer's officers guard the way.",
+      "task": {
+        "kind": "kill",
+        "target": "hazennstuff:aptos,hazennstuff:aegis,hazennstuff:pyromus",
+        "amount": 1,
+        "title": "Kill an officer of the Flamebearer",
+        "reward": 8
+      },
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "rest:hazennstuff"
       ],
       "uses": []
     }

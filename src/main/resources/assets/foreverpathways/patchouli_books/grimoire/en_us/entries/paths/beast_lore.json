@@ -1,0 +1,20 @@
+{
+  "name": "Beast Lore",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "bestiary:troll_hide",
+  "sortnum": 400,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "bestiary:troll_hide",
+      "title": "Beast Lore",
+      "text": "$(bold)What Vaskar's Bestiary's creatures leave behind: troll hide and gall, venom glands and snake skin, chitin, scales, tusks and antlers, the antidote, and the strange plants and stones of their lairs.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)10 Focal Shards$(n).$(br)After Hunter."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 3 trolls$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:bestiary"
+}

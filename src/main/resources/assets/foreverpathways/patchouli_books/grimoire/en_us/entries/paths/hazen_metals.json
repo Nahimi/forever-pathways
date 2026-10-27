@@ -1,0 +1,20 @@
+{
+  "name": "Hazen's Metals",
+  "category": "foreverpathways:paths/magician",
+  "icon": "hazennstuff:zenalite_ingot",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hazennstuff:zenalite_ingot",
+      "title": "Hazen's Metals",
+      "text": "$(bold)Hazen N Stuff's metals and stone: zenalite, dreadsteel, chlorophyte, pyrium, steel, rose gold and the rest, their ores and blocks, and its new woods and bricks.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)46 Focal Shards$(n).$(br)After Study."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Mine 24 zenalite ore$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:hazennstuff"
+}

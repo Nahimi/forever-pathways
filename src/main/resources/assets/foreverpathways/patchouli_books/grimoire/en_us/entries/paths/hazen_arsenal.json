@@ -1,0 +1,20 @@
+{
+  "name": "Flamebearer's Arsenal",
+  "category": "foreverpathways:paths/magician",
+  "icon": "hazennstuff:blade_of_the_legate",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hazennstuff:blade_of_the_legate",
+      "title": "Flamebearer's Arsenal",
+      "text": "$(bold)Everything else Hazen N Stuff makes: its blades, staves and spell weapons, its armour sets, rings and charms. The Flamebearer's officers guard the way.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)64 Focal Shards$(n).$(br)After Runes and Orbs."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill an officer of the Flamebearer$(n)$(br2)Pays 8 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:hazennstuff"
+}

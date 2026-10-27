@@ -1,0 +1,20 @@
+{
+  "name": "The Unbreakable",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "legionary:cudgel",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "legionary:cudgel",
+      "title": "The Unbreakable",
+      "text": "$(bold)The spoils of Legionary's Unbreakable: its cudgel, forgotten bone, gold shards and the thermal stone, with golden chains and lanterns.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)23 Focal Shards$(n).$(br)After Veteran."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill The Unbreakable$(n)$(br2)Pays 5 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:legionary"
+}

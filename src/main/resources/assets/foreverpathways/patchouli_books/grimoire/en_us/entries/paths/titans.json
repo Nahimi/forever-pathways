@@ -1,0 +1,20 @@
+{
+  "name": "Titans",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "bestiary:deep_trident",
+  "sortnum": 800,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "bestiary:deep_trident",
+      "title": "Titans",
+      "text": "$(bold)The trophies of the Bestiary's titans: the Deep Mother's trident and pearl, the Ember Heart's hammer, the Ice Colossus's fist and heart, the Sand Maw's ripper and cloak, the Trap Crown's whip, the stormreaper and the storm crown.$(br2)$(thing)The Nether$(n), ring 8.$(br)$(thing)34 Focal Shards$(n).$(br)After Beast Lore."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill a titan of the Bestiary$(n)$(br2)Pays 6 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:bestiary"
+}

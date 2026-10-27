@@ -1,0 +1,20 @@
+{
+  "name": "Ignis",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "cataclysm:ignitium_ingot",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "cataclysm:ignitium_ingot",
+      "title": "Ignis",
+      "text": "$(bold)Cataclysm's fires: Ignis's ignitium and its armour, the bulwark of the flame and the incinerator, and the Netherite Monstrosity's helm, horn, effigy and forge.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)56 Focal Shards$(n).$(br)After The Leviathan."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill Ignis$(n)$(br2)Pays 10 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:cataclysm"
+}

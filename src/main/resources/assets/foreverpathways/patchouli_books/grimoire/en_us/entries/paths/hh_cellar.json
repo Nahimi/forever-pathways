@@ -1,0 +1,15 @@
+{
+  "name": "Cellar",
+  "category": "foreverpathways:paths/homesteader",
+  "icon": "hearthandharvest:red_grape_wine",
+  "sortnum": 500,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "hearthandharvest:red_grape_wine",
+      "title": "Cellar",
+      "text": "$(bold)Brewing and preserving: the cask, keg, stomping basin and jug, jars, jams, pickles and brine, juices, cider, beer, mead and wine, moonshine, the tree tapper with sap and syrup, and salt.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)11 Focal Shards$(n).$(br)After Larder."
+    }
+  ],
+  "flag": "mod:hearthandharvest"
+}
