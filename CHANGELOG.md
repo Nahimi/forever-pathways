@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.32.1
+
+- A node's Unlocks list marks recipe-only items (decoration and everyday things anyone may already use) with a gold
+  frame and corner tab; hovering says the node only lets you craft them.
+
 ## 0.32.0
 
 - Everyday things lock only their recipe: anyone can place, use, pick up and break beds, doors, trapdoors, gates,

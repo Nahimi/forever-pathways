@@ -1263,15 +1263,17 @@ public class PathwaysScreen extends Screen {
                 if (iy + cell < top || iy > bottom) {
                     continue;
                 }
-                Pix.chamfer(g, ix, iy, 17, 17, 1, useOnly ? 0xFF2B4A5C : 0xFF0A0806);
+                boolean recipeOnly = !useOnly && uk.foreverserver.pathways.Locks.craftOnly(stack.getItem());
+                Pix.chamfer(g, ix, iy, 17, 17, 1, useOnly ? 0xFF2B4A5C : recipeOnly ? 0xFF5C4A22 : 0xFF0A0806);
                 Pix.chamfer(g, ix + 1, iy + 1, 15, 15, 1, TRACK);
                 g.renderItem(stack, ix, iy);
-                if (useOnly) {
-                    // A small blue tab in the corner: use only, the recipe is somewhere else.
+                if (useOnly || recipeOnly) {
+                    // A small tab in the corner: blue, use only (the recipe is somewhere else); gold, recipe only
+                    // (anyone may already use it).
                     g.pose().pushPose();
                     g.pose().translate(0, 0, 200);
                     Pix.rect(g, ix + 11, iy + 1, ix + 16, iy + 6, 0xFF0A0806);
-                    Pix.rect(g, ix + 12, iy + 2, ix + 15, iy + 5, USE_BLUE);
+                    Pix.rect(g, ix + 12, iy + 2, ix + 15, iy + 5, useOnly ? USE_BLUE : GOLD);
                     g.pose().popPose();
                 }
                 if (mouseX >= ix && mouseX < ix + 17 && mouseY >= iy && mouseY < iy + 17
@@ -1283,6 +1285,11 @@ public class PathwaysScreen extends Screen {
                                 Component.literal("Use only").withColor(USE_BLUE & 0xFFFFFF),
                                 Component.literal(owner == null ? "Crafting it is unlocked elsewhere."
                                         : "Crafting it is unlocked at " + owner.title + ".").withColor(MUTED & 0xFFFFFF));
+                    } else if (recipeOnly) {
+                        tooltipLines = List.of(stack.getHoverName(),
+                                Component.literal("Recipe only").withColor(GOLD & 0xFFFFFF),
+                                Component.literal("Anyone can place, use and break it;").withColor(MUTED & 0xFFFFFF),
+                                Component.literal("this node lets you craft it.").withColor(MUTED & 0xFFFFFF));
                     } else {
                         tooltipStack = stack;
                     }
