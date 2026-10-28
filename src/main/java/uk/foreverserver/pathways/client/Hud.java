@@ -78,7 +78,7 @@ final class Hud {
                 BANNERS.addLast(payload);
             } else if (Minecraft.getInstance().player != null) {
                 Minecraft.getInstance().player.displayClientMessage(Component.literal(
-                        (payload.bounty() ? "Bounty done: " : "Task done: ") + payload.title()
+                        (payload.bounty() ? "Bounty done: " : "Task done: ") + text(payload.title())
                                 + (payload.reward() > 0 ? "  +" + payload.reward() + " " + shards(payload.reward()) : ""))
                         .withStyle(ChatFormatting.GOLD), false);
             }
@@ -149,7 +149,7 @@ final class Hud {
             g.renderItem(icon(p.item()), x + 7, y + 9);
         }
         String count = String.format(Locale.ROOT, "%,d/%,d", Math.min(p.progress(), p.goal()), p.goal());
-        g.drawString(font, font.plainSubstrByWidth(p.title(), width - 36), x + 29, y + 5, argb(alpha, CREAM), false);
+        g.drawString(font, font.plainSubstrByWidth(text(p.title()), width - 36), x + 29, y + 5, argb(alpha, CREAM), false);
         g.drawString(font, font.plainSubstrByWidth(p.subtitle(), width - 40 - font.width(count)), x + 29, y + 15,
                 argb(alpha, MUTED), false);
         g.drawString(font, count, x + width - 7 - font.width(count), y + 15, argb(alpha, CREAM), false);
@@ -183,7 +183,7 @@ final class Hud {
         String label = p.bounty() ? "BOUNTY COMPLETE" : "TASK COMPLETE";
         String reward = p.reward() > 0 ? "+" + p.reward() : "";
         String sub = p.subtitle();
-        int width = Math.max(190, Math.max(font.width(p.title()), font.width(sub) + font.width(reward) + 24) + 56);
+        int width = Math.max(190, Math.max(font.width(text(p.title())), font.width(sub) + font.width(reward) + 24) + 56);
         width = Math.min(width, g.guiWidth() - 20);
         int height = 52;
         int x = (g.guiWidth() - width) / 2;
@@ -201,7 +201,7 @@ final class Hud {
         // a rule under the label, drawn out from its left edge as the banner arrives
         int rule = Math.round((inner) * ease(Math.min(1F, age / 500F)));
         Pix.rect(g, tx, y + 19, tx + rule, y + 20, argb(alpha * 0.8F, accent));
-        g.drawString(font, font.plainSubstrByWidth(p.title(), inner), tx, y + 23, argb(alpha, CREAM), true);
+        g.drawString(font, font.plainSubstrByWidth(text(p.title()), inner), tx, y + 23, argb(alpha, CREAM), true);
         g.drawString(font, font.plainSubstrByWidth(sub, inner - font.width(reward) - 22), tx, y + 34, argb(alpha, MUTED), false);
         if (!reward.isEmpty()) {
             int rx = x + width - 12 - font.width(reward) - 10;
@@ -231,6 +231,17 @@ final class Hud {
     private static ItemStack icon(String id) {
         String key = id == null || id.isEmpty() ? "minecraft:book" : id;
         return ICONS.computeIfAbsent(key, ClientIndex::stack);
+    }
+
+    /** A title may name an item as {item:id}; it is shown in the player's own language. */
+    static String text(String title) {
+        int at = title.indexOf("{item:");
+        int end = at < 0 ? -1 : title.indexOf('}', at);
+        if (end < 0) {
+            return title;
+        }
+        String name = icon(title.substring(at + 6, end)).getHoverName().getString();
+        return title.substring(0, at) + name + text(title.substring(end + 1));
     }
 
     private static String shards(int count) {

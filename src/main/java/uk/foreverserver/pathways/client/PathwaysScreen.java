@@ -124,6 +124,38 @@ public class PathwaysScreen extends Screen {
     private final List<Row> rows = new ArrayList<>();
     /** Rows that answer a right-click. */
     private final List<Row> rightRows = new ArrayList<>();
+    /** The bounty slot being held to give up, or -1. */
+    private int giveUpSlot = -1;
+    private long giveUpStart;
+    private static final long GIVE_UP_NANOS = 1_000_000_000L;
+
+    /** A delivery as the snapshot describes it. */
+    private record Drop(String item, int amount, int tier, int reward) {}
+
+    private static Drop drop(Map<String, long[]> map, int slot) {
+        String prefix = "dlv:" + slot + ":";
+        for (Map.Entry<String, long[]> entry : map.entrySet()) {
+            if (entry.getKey().startsWith(prefix)) {
+                long[] v = entry.getValue();
+                return new Drop(entry.getKey().substring(prefix.length()), (int) v[0], (int) v[1], (int) v[2]);
+            }
+        }
+        return null;
+    }
+
+    /** Plain ones the player carries, counted the way the server counts them. */
+    private static int carried(String id) {
+        var player = Minecraft.getInstance().player;
+        ItemStack stack = ClientIndex.stack(id);
+        return player == null || stack.isEmpty() ? 0 : uk.foreverserver.pathways.Deliveries.carried(player, stack.getItem());
+    }
+
+    private void tickGiveUp() {
+        if (giveUpSlot >= 0 && System.nanoTime() - giveUpStart >= GIVE_UP_NANOS) {
+            PacketDistributor.sendToServer(ActionPayload.giveUp(giveUpSlot));
+            giveUpSlot = -1;
+        }
+    }
     private List<Component> tooltipLines;
     private ItemStack tooltipStack;
     private int buttonX0;
@@ -282,6 +314,7 @@ public class PathwaysScreen extends Screen {
         rightRows.clear();
         super.render(g, mouseX, mouseY, partialTick);
         tickHold();
+        tickGiveUp();
         if (tooltipStack != null) {
             g.renderTooltip(this.font, tooltipStack, mouseX, mouseY);
         } else if (tooltipLines != null) {
@@ -1288,6 +1321,7 @@ public class PathwaysScreen extends Screen {
         // Bounties: one row per slot.
         List<Job> bounties = new ArrayList<>();
         List<Integer> running = new ArrayList<>();
+        Map<Integer, Drop> drops = new HashMap<>();
         for (int slot = 0; slot < 6; slot++) {
             long[] t = map.get("slot:" + slot);
             if (t == null) {
@@ -1295,6 +1329,30 @@ public class PathwaysScreen extends Screen {
             }
             int index = (int) t[3];
             Tree.Bounty bounty = index >= 0 && index < tree.bounties.size() ? tree.bounties.get(index) : null;
+            Drop drop = index == -2 ? drop(map, slot) : null;
+            if (drop != null) {
+                String title = "Deliver " + drop.amount + " " + ClientIndex.stack(drop.item).getHoverName().getString();
+                if (t[0] == 1) {
+                    int have = carried(drop.item);
+                    String sub = "Tier " + tree.bountyTierName(drop.tier) + "  |  " + clock(t[4]) + " left";
+                    // Room on the right for the Deliver button, which is drawn over the row.
+                    String room = " ".repeat((this.font.width("Deliver") + 12) / Math.max(1, this.font.width(" ")));
+                    bounties.add(new Job(title, sub + "  |  " + Math.min(have, drop.amount) + "/" + drop.amount, drop.item,
+                            "+" + drop.reward, room, Math.min(1f, have / (float) Math.max(1, drop.amount)), false, null, false));
+                    running.add(slot);
+                    drops.put(slot, drop);
+                    continue;
+                }
+                running.add(-1);
+                String next = "Next in " + clock(t[4]);
+                if (t[0] == 5) {
+                    bounties.add(new Job(title, "Delivered  |  " + next, drop.item, "+" + drop.reward, "", 1, true, null, true));
+                } else {
+                    bounties.add(new Job((t[0] == 7 ? "Given up: " : "Expired: ") + title, next, drop.item, "", "", 0, true,
+                            null, false));
+                }
+                continue;
+            }
             if (t[0] == 1 && bounty != null) {
                 String sub = "Tier " + tree.bountyTierName(bounty.tier) + "  |  " + clock(t[4]) + " left";
                 bounties.add(new Job(bounty.title, sub, bounty.item, "+" + bounty.reward,
@@ -1332,13 +1390,46 @@ public class PathwaysScreen extends Screen {
             }
             int y0 = Math.max(top, rowTop);
             int y1 = Math.min(bottom, rowTop + 26);
-            if (mouseX >= x && mouseX < right && mouseY >= y0 && mouseY < y1) {
+            if (giveUpSlot == slot) {
+                // Held: a red wash fills the row from the left until it is given up.
+                float t = Math.min(1f, (System.nanoTime() - giveUpStart) / (float) GIVE_UP_NANOS);
+                Pix.rect(g, x - 2, rowTop - 1, x - 2 + Math.round((right - x + 4) * t), rowTop + 25, 0x50B04A3A);
+            }
+            boolean overButton = false;
+            Drop drop = drops.get(slot);
+            if (drop != null) {
+                boolean enough = carried(drop.item) >= drop.amount;
+                String label = "Deliver";
+                int bw = this.font.width(label) + 8;
+                int bx0 = right - bw;
+                int by0 = rowTop + 8;
+                overButton = mouseX >= bx0 && mouseX < right && mouseY >= by0 && mouseY < by0 + 11
+                        && mouseY >= top && mouseY < bottom;
+                Pix.chamfer(g, bx0, by0, bw, 11, 1, 0xFF0A0806);
+                Pix.rect(g, bx0 + 1, by0 + 1, right - 1, by0 + 10,
+                        enough ? (overButton ? 0xFF8A6E42 : 0xFF6B5638) : 0xFF2A231C);
+                g.drawString(this.font, label, bx0 + 4, by0 + 2, enough ? CREAM : DIM, false);
+                if (overButton) {
+                    tooltipLines = List.of(enough
+                            ? Component.literal("Hand in " + drop.amount + " now").withStyle(ChatFormatting.GRAY)
+                            : Component.literal("You carry " + carried(drop.item) + " of " + drop.amount
+                                    + ". Plain items only: not damaged, named or enchanted.").withStyle(ChatFormatting.GRAY));
+                }
+                if (enough && by0 >= top && by0 + 11 <= bottom) {
+                    rows.add(new Row(bx0, by0, right, by0 + 11,
+                            () -> PacketDistributor.sendToServer(ActionPayload.deliver(slot))));
+                }
+            }
+            if (!overButton && mouseX >= x && mouseX < right && mouseY >= y0 && mouseY < y1) {
                 tooltipLines = List.of(mayGiveUp
-                        ? Component.literal("Right-click to give up").withStyle(ChatFormatting.GRAY)
+                        ? Component.literal("Hold right-click to give up").withStyle(ChatFormatting.GRAY)
                         : Component.literal("You have already given up a bounty today").withStyle(ChatFormatting.DARK_GRAY));
             }
             if (mayGiveUp) {
-                rightRows.add(new Row(x, y0, right, y1, () -> PacketDistributor.sendToServer(ActionPayload.giveUp(slot))));
+                rightRows.add(new Row(x, y0, right, y1, () -> {
+                    giveUpSlot = slot;
+                    giveUpStart = System.nanoTime();
+                }));
             }
         }
         y += 4;
@@ -1644,6 +1735,9 @@ public class PathwaysScreen extends Screen {
         pressed = false;
         if (holding != null) {
             cancelHold();
+        }
+        if (button == 1) {
+            giveUpSlot = -1;
         }
         if (wasPressed && !dragging) {
             if (pressNode != null) {

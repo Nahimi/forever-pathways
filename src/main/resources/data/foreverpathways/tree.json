@@ -122,6 +122,92 @@
     "V",
     "VI"
   ],
+  "delivery": {
+    "chance": 0.25,
+    "days": 2,
+    "rings": [
+      2,
+      4,
+      6,
+      8,
+      12
+    ],
+    "budgets": [
+      32,
+      32,
+      32,
+      48,
+      64,
+      128
+    ],
+    "rewards": [
+      1,
+      2,
+      2,
+      3,
+      4,
+      5
+    ],
+    "unstackable": [
+      3,
+      3,
+      2,
+      1,
+      1,
+      1
+    ],
+    "values": {
+      "minecraft:diamond": 8,
+      "minecraft:emerald": 5,
+      "minecraft:ancient_debris": 16,
+      "minecraft:leather": 3,
+      "minecraft:rabbit_hide": 1,
+      "minecraft:ender_pearl": 4,
+      "minecraft:blaze_rod": 4,
+      "minecraft:breeze_rod": 6,
+      "minecraft:ghast_tear": 8,
+      "minecraft:shulker_shell": 8,
+      "minecraft:nautilus_shell": 6,
+      "minecraft:echo_shard": 10,
+      "minecraft:phantom_membrane": 3,
+      "minecraft:slime_ball": 2,
+      "minecraft:gunpowder": 2,
+      "minecraft:obsidian": 2,
+      "minecraft:crying_obsidian": 3,
+      "minecraft:prismarine_shard": 2,
+      "minecraft:prismarine_crystals": 2,
+      "minecraft:chorus_fruit": 2,
+      "minecraft:dragon_breath": 8,
+      "minecraft:honeycomb": 2,
+      "minecraft:turtle_scute": 6,
+      "minecraft:armadillo_scute": 3,
+      "minecraft:wither_skeleton_skull": 16,
+      "minecraft:disc_fragment_5": 4,
+      "minecraft:netherite_upgrade_smithing_template": 16
+    },
+    "precious": [
+      "minecraft:nether_star",
+      "minecraft:heart_of_the_sea",
+      "minecraft:dragon_egg",
+      "minecraft:dragon_head",
+      "minecraft:elytra",
+      "minecraft:totem_of_undying",
+      "minecraft:enchanted_golden_apple",
+      "minecraft:trident",
+      "minecraft:heavy_core",
+      "minecraft:trial_key",
+      "minecraft:ominous_trial_key",
+      "minecraft:sniffer_egg"
+    ],
+    "ignore": [
+      "re:.*:incomplete_.*",
+      "mod:foreverpathways",
+      "re:.*_spawn_egg",
+      "minecraft:knowledge_book",
+      "minecraft:written_book",
+      "re:patchouli:.*"
+    ]
+  },
   "bounties": [
     {
       "id": "spiders_8",

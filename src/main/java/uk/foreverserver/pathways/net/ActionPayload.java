@@ -35,6 +35,10 @@ public record ActionPayload(String action, String stageId) implements CustomPack
         return new ActionPayload("giveup", Integer.toString(slot));
     }
 
+    public static ActionPayload deliver(int slot) {
+        return new ActionPayload("deliver", Integer.toString(slot));
+    }
+
     public static void handle(ActionPayload payload, IPayloadContext context) {
         context.enqueueWork(() -> {
             if (!(context.player() instanceof ServerPlayer player)) {
@@ -44,9 +48,14 @@ public record ActionPayload(String action, String stageId) implements CustomPack
                 case "commit" -> PathwayService.commit(player, payload.stageId);
                 case "debug" -> PathwayService.debugToggle(player, payload.stageId);
                 case "sync" -> TaskBook.update(player);
-                case "giveup" -> {
+                case "giveup", "deliver" -> {
                     try {
-                        TaskBook.giveUp(player, Integer.parseInt(payload.stageId));
+                        int slot = Integer.parseInt(payload.stageId);
+                        if ("giveup".equals(payload.action)) {
+                            TaskBook.giveUp(player, slot);
+                        } else {
+                            TaskBook.deliver(player, slot);
+                        }
                     } catch (NumberFormatException ignored) {
                     }
                 }

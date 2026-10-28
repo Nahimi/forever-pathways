@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.31.0
+
+- New bounty type, Delivery: hand in a number of one item you can craft (32 Iron Ingots, 2 Bookshelves). About one
+  bounty in four is a delivery, at most one a day. Carry all of it and press Deliver on the bounty; only plain items
+  count. Once delivered, its slot waits for dawn.
+- What a delivery asks for follows what the item costs to make, worked out from every recipe in the pack, with rare
+  materials (diamonds, ender pearls, ancient debris and others) worth more. Higher tiers ask for rarer things and pay
+  1 to 5 shards. Values, budgets and items never asked for are set in tree.json under "delivery".
+- A finished bounty is now replaced after 3 minutes instead of 2.
+- Giving up a bounty now takes holding right-click for a second, and a new one is dealt straight away.
+
 ## 0.30.0
 
 - A finished bounty is replaced 2 minutes later, or at dawn if that is sooner. One dealt late in the day gets an

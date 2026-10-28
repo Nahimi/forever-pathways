@@ -42,8 +42,11 @@ import net.minecraft.world.level.block.Block;
  * <p><b>Bounties</b> are timed jobs outside the tree. Each player has {@code rules.bountySlots} slots (two). At
  * every dawn each empty slot is filled with a bounty drawn at random from the player's pool: every bounty whose
  * node they own, so the pool grows with the tree. A bounty must be finished within its {@code days}; one that runs
- * out simply leaves. A slot emptied by a finished bounty, or one the player gave up (once a day), is filled again
- * after {@code rules.bountyRefillTicks} (two minutes), or at dawn if that comes first.
+ * out simply leaves. A slot emptied by a finished bounty is filled again after {@code rules.bountyRefillTicks}
+ * (three minutes), or at dawn if that comes first; one the player gave up (once a day) is filled at once.
+ *
+ * <p>A <b>delivery</b> is a bounty that asks for crafted items instead of a deed (Deliveries). A player is dealt
+ * at most one a day, and the slot of a finished delivery waits for dawn.
  *
  * <p><b>Dying</b> costs shards, keeps 75% of the progress on every running task and bounty, and freezes them all
  * for a time set by the difficulty preset (Difficulty): while frozen the baseline is dragged along with the stat, so nothing done in that time
@@ -60,6 +63,8 @@ public final class TaskBook {
     private static final String BOUNTY_DAY = "fpq_day";
     /** The day (plus one) the player last gave up a bounty. */
     private static final String GAVE_UP = "fpq_gaveup";
+    /** The day (plus one) the player was last dealt a delivery: one a day. */
+    private static final String DELIVERY_DAY = "fpq_dlvday";
 
     /** Task states in the snapshot. */
     public static final int WAITING = 0;
@@ -293,6 +298,7 @@ public final class TaskBook {
         ProgressiveStagesAPI.setCounter(player, INIT, 0L);
         ProgressiveStagesAPI.setCounter(player, BOUNTY_DAY, 0L);
         ProgressiveStagesAPI.setCounter(player, GAVE_UP, 0L);
+        ProgressiveStagesAPI.setCounter(player, DELIVERY_DAY, 0L);
         ProgressiveStagesAPI.setCounter(player, PAID, 0L);
         ProgressiveStagesAPI.setCounter(player, FREEZE, 0L);
         forgetSeen(player);
@@ -307,6 +313,15 @@ public final class TaskBook {
     private static void updateBounties(ServerPlayer player, Tree tree, Set<String> owned, boolean frozen) {
         long day = today(player, tree);
         for (int slot = 0; slot < slots(tree); slot++) {
+            Delivery delivery = slotDelivery(player, slot);
+            if (delivery != null) {
+                if (day >= ProgressiveStagesAPI.getCounter(player, slotKey(slot, "end"))) {
+                    clearSlot(player, slot, SLOT_EXPIRED);
+                    player.sendSystemMessage(Component.literal("Bounty expired: ").append(delivery.title())
+                            .withStyle(ChatFormatting.GRAY));
+                }
+                continue;
+            }
             Tree.Bounty bounty = slotBounty(player, tree, slot);
             if (bounty == null) {
                 continue;
@@ -332,7 +347,7 @@ public final class TaskBook {
                 continue;
             }
             clearSlot(player, slot, SLOT_DONE);
-            scheduleRefill(player, tree, slot);
+            scheduleRefill(player, slot, tree.rules.bountyRefillTicks);
             ProgressiveStagesAPI.addCounter(player, POINTS, bounty.reward);
             ProgressiveStagesAPI.addCounter(player, "fpn_q_" + bounty.id, 1);
             finished(player, NotifyPayload.BOUNTY_DONE, bounty.id, bounty.title, tier, bounty.item, task.amount,
@@ -347,9 +362,9 @@ public final class TaskBook {
         }
         boolean dawn = dealt != day;
         long now = player.server.overworld().getGameTime();
-        List<String> offered = new ArrayList<>();
+        List<Component> offered = new ArrayList<>();
         for (int slot = 0; slot < slots(tree); slot++) {
-            if (slotBounty(player, tree, slot) != null) {
+            if (occupied(player, tree, slot)) {
                 continue;
             }
             long refill = ProgressiveStagesAPI.getCounter(player, slotKey(slot, "next"));
@@ -357,6 +372,27 @@ public final class TaskBook {
                 continue;
             }
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "next"), 0L);
+            // Dealt in the second half of the day: an extra day, so it is not gone at the next dawn.
+            boolean late = !dawn && Math.max(0, player.server.overworld().getDayTime())
+                    % Math.max(1, tree.rules.dayTicks) > tree.rules.dayTicks / 2;
+            Deliveries.Offer offer = mayDeliver(player, tree, day) ? Deliveries.offer(player, tree, owned, player.getRandom())
+                    : null;
+            if (offer != null) {
+                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "id"), 0L);
+                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "bid"), 0L);
+                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "dlv"), Deliveries.stamp(offer.item()));
+                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "amt"), offer.amount());
+                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "dtier"), offer.tier());
+                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "rew"), offer.reward());
+                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "pdlv"), 1L);
+                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "dlvon"), 1L);
+                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "end"),
+                        day + Math.max(1, Math.min(3, tree.delivery.days)) + (late ? 1 : 0));
+                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "out"), 0L);
+                ProgressiveStagesAPI.setCounter(player, DELIVERY_DAY, day + 1);
+                offered.add(new Delivery(offer.item(), offer.amount(), offer.tier(), offer.reward()).title());
+                continue;
+            }
             Tree.Bounty pick = draw(player, tree, owned, slot);
             if (pick == null) {
                 continue;
@@ -364,29 +400,39 @@ public final class TaskBook {
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "id"), tree.bounties.indexOf(pick) + 1L);
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "bid"), stamp(pick));
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "prev"), tree.bounties.indexOf(pick) + 1L);
-            long end = day + Math.max(1, Math.min(3, pick.days));
-            if (!dawn && Math.max(0, player.server.overworld().getDayTime()) % Math.max(1, tree.rules.dayTicks)
-                    > tree.rules.dayTicks / 2) {
-                // Dealt in the second half of the day: an extra day, so it is not gone at the next dawn.
-                end++;
-            }
-            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "end"), end);
+            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "pdlv"), 0L);
+            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "end"),
+                    day + Math.max(1, Math.min(3, pick.days)) + (late ? 1 : 0));
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "base"), stat(player, pick.task(), tree));
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "held"), 0L);
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "out"), 0L);
-            offered.add(pick.title);
+            offered.add(Component.literal(pick.title));
         }
         if (dawn) {
             ProgressiveStagesAPI.setCounter(player, BOUNTY_DAY, day + 1);
         }
-        for (String title : offered) {
-            player.sendSystemMessage(Component.literal("New Bounty Available: " + title).withStyle(ChatFormatting.GOLD));
+        for (Component title : offered) {
+            player.sendSystemMessage(Component.literal("New Bounty Available: ").append(title).withStyle(ChatFormatting.GOLD));
         }
     }
 
-    private static void scheduleRefill(ServerPlayer player, Tree tree, int slot) {
-        long at = player.server.overworld().getGameTime() + Math.max(1, tree.rules.bountyRefillTicks);
-        ProgressiveStagesAPI.setCounter(player, slotKey(slot, "next"), at);
+    /** A delivery may be dealt if the player has had none today, holds none, and the dice say so. */
+    private static boolean mayDeliver(ServerPlayer player, Tree tree, long day) {
+        if (ProgressiveStagesAPI.getCounter(player, DELIVERY_DAY) == day + 1) {
+            return false;
+        }
+        for (int slot = 0; slot < slots(tree); slot++) {
+            if (slotDelivery(player, slot) != null) {
+                return false;
+            }
+        }
+        return player.getRandom().nextDouble() < Math.max(0, Math.min(1, tree.delivery.chance));
+    }
+
+    /** The slot is dealt again this many ticks from now (0 for the next tick), or at dawn if that comes first. */
+    private static void scheduleRefill(ServerPlayer player, int slot, int ticks) {
+        long at = player.server.overworld().getGameTime() + Math.max(0, ticks);
+        ProgressiveStagesAPI.setCounter(player, slotKey(slot, "next"), Math.max(1, at));
     }
 
     /** True if the player has not given up a bounty yet today. */
@@ -394,14 +440,15 @@ public final class TaskBook {
         return ProgressiveStagesAPI.getCounter(player, GAVE_UP) != today(player, tree) + 1;
     }
 
-    /** Drops a running bounty at the player's wish, once a day; its slot refills like a finished one. */
+    /** Drops a running bounty at the player's wish, once a day; a new one is dealt straight away. */
     public static void giveUp(ServerPlayer player, int slot) {
         Tree tree = Tree.get();
         if (slot < 0 || slot >= slots(tree)) {
             return;
         }
-        Tree.Bounty bounty = slotBounty(player, tree, slot);
-        if (bounty == null) {
+        Delivery delivery = slotDelivery(player, slot);
+        Tree.Bounty bounty = delivery == null ? slotBounty(player, tree, slot) : null;
+        if (delivery == null && bounty == null) {
             return;
         }
         if (!canGiveUp(player, tree)) {
@@ -410,10 +457,13 @@ public final class TaskBook {
             return;
         }
         clearSlot(player, slot, SLOT_GAVE_UP);
-        scheduleRefill(player, tree, slot);
+        scheduleRefill(player, slot, 0);
         ProgressiveStagesAPI.setCounter(player, GAVE_UP, today(player, tree) + 1);
         forgetSeen(player);
-        player.sendSystemMessage(Component.literal("Bounty given up: " + bounty.title).withStyle(ChatFormatting.GRAY));
+        player.sendSystemMessage(Component.literal("Bounty given up: ")
+                .append(delivery != null ? delivery.title() : Component.literal(bounty.title))
+                .withStyle(ChatFormatting.GRAY));
+        update(player);
     }
 
     /**
@@ -465,6 +515,7 @@ public final class TaskBook {
         }
         ProgressiveStagesAPI.setCounter(player, BOUNTY_DAY, 0L);
         ProgressiveStagesAPI.setCounter(player, GAVE_UP, 0L);
+        ProgressiveStagesAPI.setCounter(player, DELIVERY_DAY, 0L);
         update(player);
     }
 
@@ -485,6 +536,77 @@ public final class TaskBook {
         ProgressiveStagesAPI.setCounter(player, slotKey(slot, "bid"), 0L);
         ProgressiveStagesAPI.setCounter(player, slotKey(slot, "out"), outcome);
         ProgressiveStagesAPI.setCounter(player, slotKey(slot, "next"), 0L);
+        // What the delivery asked for stays, so the slot can still say what it was.
+        ProgressiveStagesAPI.setCounter(player, slotKey(slot, "dlvon"), 0L);
+    }
+
+    /** The delivery running in this slot, or null. */
+    private static Delivery slotDelivery(ServerPlayer player, int slot) {
+        if (ProgressiveStagesAPI.getCounter(player, slotKey(slot, "dlvon")) == 0) {
+            return null;
+        }
+        Delivery delivery = lastDelivery(player, slot);
+        if (delivery == null) {
+            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "dlvon"), 0L);
+        }
+        return delivery;
+    }
+
+    /** What the last delivery in this slot asked for, running or not; null if its last deal was not one. */
+    private static Delivery lastDelivery(ServerPlayer player, int slot) {
+        if (ProgressiveStagesAPI.getCounter(player, slotKey(slot, "pdlv")) == 0) {
+            return null;
+        }
+        Item item = Deliveries.byStamp(ProgressiveStagesAPI.getCounter(player, slotKey(slot, "dlv")));
+        if (item == null) {
+            return null;
+        }
+        return new Delivery(item, (int) ProgressiveStagesAPI.getCounter(player, slotKey(slot, "amt")),
+                (int) ProgressiveStagesAPI.getCounter(player, slotKey(slot, "dtier")),
+                (int) ProgressiveStagesAPI.getCounter(player, slotKey(slot, "rew")));
+    }
+
+    private record Delivery(Item item, int amount, int tier, int reward) {
+        String id() {
+            return BuiltInRegistries.ITEM.getKey(item).toString();
+        }
+
+        Component title() {
+            return Component.literal("Deliver " + amount + " ").append(new ItemStack(item).getHoverName());
+        }
+    }
+
+    private static boolean occupied(ServerPlayer player, Tree tree, int slot) {
+        return slotBounty(player, tree, slot) != null || slotDelivery(player, slot) != null;
+    }
+
+    /** Hands in a running delivery: all of it or nothing. Its slot then waits for dawn. */
+    public static void deliver(ServerPlayer player, int slot) {
+        Tree tree = Tree.get();
+        if (slot < 0 || slot >= slots(tree)) {
+            return;
+        }
+        Delivery delivery = slotDelivery(player, slot);
+        if (delivery == null) {
+            return;
+        }
+        if (frozenTicks(player) > 0) {
+            player.sendSystemMessage(Component.literal("Your bounties are frozen.").withStyle(ChatFormatting.GRAY));
+            return;
+        }
+        if (!Deliveries.take(player, delivery.item, delivery.amount)) {
+            player.sendSystemMessage(Component.literal("You need " + delivery.amount + " ")
+                    .append(new ItemStack(delivery.item).getHoverName())
+                    .append(", and carry " + Deliveries.carried(player, delivery.item) + ".")
+                    .withStyle(ChatFormatting.GRAY));
+            return;
+        }
+        clearSlot(player, slot, SLOT_DONE);
+        ProgressiveStagesAPI.addCounter(player, POINTS, delivery.reward);
+        finished(player, NotifyPayload.BOUNTY_DONE, "dlv_" + delivery.id(),
+                "Deliver " + delivery.amount + " {item:" + delivery.id() + "}",
+                "Tier " + tree.bountyTierName(delivery.tier) + " delivery", delivery.id(), delivery.amount,
+                delivery.reward);
     }
 
     private static long bountyProgress(ServerPlayer player, Tree tree, int slot, Tree.Bounty bounty) {
@@ -708,6 +830,9 @@ public final class TaskBook {
      * index (the one running, or the one that last finished, expired or was given up; -1 for none), ticks left (to
      * the deadline while running, otherwise until the slot is filled again).
      *
+     * <p>A slot that holds or last held a delivery has bounty index -2, and a line of its own:
+     * "dlv:N:item id", amount, tier, reward, 0, 0. Its progress is what the player carries.
+     *
      * <p>Then "dawn" with the ticks to the next dawn last, and "giveup" with 2 first if a bounty may be given up
      * today, 0 if not.
      */
@@ -737,6 +862,17 @@ public final class TaskBook {
         long toDawn = dayTicks - dayTime % dayTicks;
         long now = player.server.overworld().getGameTime();
         for (int slot = 0; slot < slots(tree); slot++) {
+            Delivery last = lastDelivery(player, slot);
+            if (last != null) {
+                line(text, "dlv:" + slot + ":" + last.id(), last.amount, last.tier, last.reward, 0, 0);
+            }
+            if (slotDelivery(player, slot) != null) {
+                long end = ProgressiveStagesAPI.getCounter(player, slotKey(slot, "end"));
+                long left = Math.max(0, end * dayTicks - dayTime);
+                long cur = Math.min(last.amount, Deliveries.carried(player, last.item));
+                line(text, "slot:" + slot, SLOT_RUNNING, cur, last.amount, -2, left);
+                continue;
+            }
             Tree.Bounty bounty = slotBounty(player, tree, slot);
             if (bounty != null) {
                 long end = ProgressiveStagesAPI.getCounter(player, slotKey(slot, "end"));
@@ -749,7 +885,7 @@ public final class TaskBook {
                 int state = out == SLOT_DONE || out == SLOT_EXPIRED || out == SLOT_GAVE_UP ? out : SLOT_EMPTY;
                 long refill = ProgressiveStagesAPI.getCounter(player, slotKey(slot, "next"));
                 long wait = refill > 0 ? Math.min(toDawn, Math.max(0, refill - now)) : toDawn;
-                line(text, "slot:" + slot, state, 0, 0, state == SLOT_EMPTY ? -1 : prev, wait);
+                line(text, "slot:" + slot, state, 0, 0, state == SLOT_EMPTY ? -1 : last != null ? -2 : prev, wait);
             }
         }
         line(text, "dawn", 0, 0, 0, 0, toDawn);

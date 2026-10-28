@@ -40,6 +40,8 @@ public final class Tree {
     public List<Bounty> bounties = new ArrayList<>();
     /** Display names for bounty tiers, from tier 1. */
     public List<String> bountyTiers = new ArrayList<>();
+    /** Delivery bounties: hand in crafted items for shards. */
+    public Delivery delivery = new Delivery();
 
     public String bountyTierName(int tier) {
         if (bountyTiers != null && tier >= 1 && tier <= bountyTiers.size()) {
@@ -247,11 +249,50 @@ public final class Tree {
         public int shardsPerDay = 0;
         /** How many bounties a player holds at once. */
         public int bountySlots = 2;
-        /** Ticks before a finished or abandoned bounty is replaced; dawn replaces it sooner if it comes first. */
-        public int bountyRefillTicks = 2400;
+        /** Ticks before a finished bounty is replaced; dawn replaces it sooner if it comes first. */
+        public int bountyRefillTicks = 3600;
         public int deathShardLoss = 1;
         public double deathTaskLoss = 0.25;
         public int freezeTicks = 12000;
+    }
+
+    /**
+     * A delivery asks for a number of one item the player can craft. Its tier comes from the ring of the node that
+     * unlocks the item; the number is the tier's budget divided by what one item costs in raw materials, worked
+     * out from every recipe in the pack.
+     */
+    public static final class Delivery {
+        /** Chance that a bounty dealt is a delivery, while the player has not had one today. */
+        public double chance = 0.25;
+        /** Dawns until it expires, as for other bounties. */
+        public int days = 2;
+        /** The last ring of tiers I to V; anything past the last is tier VI. */
+        public List<Integer> rings = new ArrayList<>(List.of(2, 4, 6, 8, 12));
+        /** Raw materials asked for per tier, from tier I. */
+        public List<Integer> budgets = new ArrayList<>(List.of(32, 32, 32, 48, 64, 128));
+        /** Shards paid per tier, from tier I. */
+        public List<Integer> rewards = new ArrayList<>(List.of(1, 2, 2, 3, 4, 5));
+        /** The most of an unstackable item asked for, per tier. */
+        public List<Integer> unstackable = new ArrayList<>(List.of(3, 3, 2, 1, 1, 1));
+        /** What one of a raw material is worth; every other raw material is worth 1. */
+        public Map<String, Double> values = new HashMap<>();
+        /** Never asked for, and neither is anything made from them. Boss drops are added to these. */
+        public List<String> precious = new ArrayList<>();
+        /** Never asked for themselves. Same spec syntax as locks. */
+        public List<String> ignore = new ArrayList<>();
+
+        public int tierOf(int ring) {
+            for (int i = 0; i < rings.size(); i++) {
+                if (ring <= rings.get(i)) {
+                    return i + 1;
+                }
+            }
+            return rings.size() + 1;
+        }
+
+        public static int pick(List<Integer> list, int tier, int fallback) {
+            return list != null && tier >= 1 && tier <= list.size() ? list.get(tier - 1) : fallback;
+        }
     }
 
     public static final class Seal {

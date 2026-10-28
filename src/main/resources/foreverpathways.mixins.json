@@ -8,7 +8,8 @@
     "BoatSpeedMixin",
     "EnchantPowerMixin",
     "ResultSlotMixin",
-    "HorseSpeedMixin"
+    "HorseSpeedMixin",
+    "SmithingTransformRecipeAccessor"
   ],
   "client": [
     "RecipeCollectionMixin",
