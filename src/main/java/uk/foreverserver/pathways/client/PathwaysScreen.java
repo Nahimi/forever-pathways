@@ -12,6 +12,7 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.EditBox;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FormattedCharSequence;
@@ -121,6 +122,8 @@ public class PathwaysScreen extends Screen {
     private long lastClickTime;
 
     private final List<Row> rows = new ArrayList<>();
+    /** Rows that answer a right-click. */
+    private final List<Row> rightRows = new ArrayList<>();
     private List<Component> tooltipLines;
     private ItemStack tooltipStack;
     private int buttonX0;
@@ -276,6 +279,7 @@ public class PathwaysScreen extends Screen {
         tooltipLines = null;
         tooltipStack = null;
         rows.clear();
+        rightRows.clear();
         super.render(g, mouseX, mouseY, partialTick);
         tickHold();
         if (tooltipStack != null) {
@@ -1283,7 +1287,7 @@ public class PathwaysScreen extends Screen {
 
         // Bounties: one row per slot.
         List<Job> bounties = new ArrayList<>();
-        long dawn = -1;
+        List<Integer> running = new ArrayList<>();
         for (int slot = 0; slot < 6; slot++) {
             long[] t = map.get("slot:" + slot);
             if (t == null) {
@@ -1295,26 +1299,47 @@ public class PathwaysScreen extends Screen {
                 String sub = "Tier " + tree.bountyTierName(bounty.tier) + "  |  " + clock(t[4]) + " left";
                 bounties.add(new Job(bounty.title, sub, bounty.item, "+" + bounty.reward,
                         String.format(Locale.ROOT, "%,d/%,d", t[1], t[2]), t[2] <= 0 ? 0 : t[1] / (float) t[2], false, null, false));
+                running.add(slot);
                 continue;
             }
-            dawn = t[4];
+            running.add(-1);
+            String next = "Next in " + clock(t[4]);
             if (t[0] == 5 && bounty != null) {
-                // Finished: no counter, just the reward it paid. The next one comes at dawn (shown in the header).
-                bounties.add(new Job(bounty.title, "Completed", bounty.item, "+" + bounty.reward, "", 1, true, null, true));
+                // Finished: no counter, just the reward it paid and when the next one comes.
+                bounties.add(new Job(bounty.title, "Completed  |  " + next, bounty.item, "+" + bounty.reward, "", 1, true,
+                        null, true));
                 continue;
             }
-            String title = bounty == null ? "No bounty" : "Expired: " + bounty.title;
-            bounties.add(new Job(title, "", bounty == null ? "minecraft:clock" : bounty.item, "", clock(t[4]), 0, true,
+            String title = bounty == null ? "No bounty" : (t[0] == 7 ? "Given up: " : "Expired: ") + bounty.title;
+            bounties.add(new Job(title, next, bounty == null ? "minecraft:clock" : bounty.item, "", "", 0, true,
                     null, false));
         }
+        long[] dawn = map.get("dawn");
+        long[] giveUp = map.get("giveup");
+        boolean mayGiveUp = giveUp != null && giveUp[0] == 2;
         g.drawString(this.font, "Bounties", x, y, DIM, false);
-        if (dawn >= 0) {
-            String next = "dawn in " + clock(dawn);
+        if (dawn != null) {
+            String next = "dawn in " + clock(dawn[4]);
             g.drawString(this.font, next, right - this.font.width(next), y, DIM, false);
         }
         y += 12;
-        for (Job job : bounties) {
-            y = taskRow(g, job, x, y, right, mouseX, mouseY, top, bottom);
+        for (int i = 0; i < bounties.size(); i++) {
+            int rowTop = y;
+            y = taskRow(g, bounties.get(i), x, y, right, mouseX, mouseY, top, bottom);
+            int slot = running.get(i);
+            if (slot < 0) {
+                continue;
+            }
+            int y0 = Math.max(top, rowTop);
+            int y1 = Math.min(bottom, rowTop + 26);
+            if (mouseX >= x && mouseX < right && mouseY >= y0 && mouseY < y1) {
+                tooltipLines = List.of(mayGiveUp
+                        ? Component.literal("Right-click to give up").withStyle(ChatFormatting.GRAY)
+                        : Component.literal("You have already given up a bounty today").withStyle(ChatFormatting.DARK_GRAY));
+            }
+            if (mayGiveUp) {
+                rightRows.add(new Row(x, y0, right, y1, () -> PacketDistributor.sendToServer(ActionPayload.giveUp(slot))));
+            }
         }
         y += 4;
 
@@ -1569,6 +1594,14 @@ public class PathwaysScreen extends Screen {
                     && mouseY < buttonY1) {
                 startHold(selected, true);
                 return true;
+            }
+            if (button == 1) {
+                for (Row row : rightRows) {
+                    if (mouseX >= row.x0 && mouseX < row.x1 && mouseY >= row.y0 && mouseY < row.y1) {
+                        row.action.run();
+                        return true;
+                    }
+                }
             }
             for (Row row : rows) {
                 if (mouseX >= row.x0 && mouseX < row.x1 && mouseY >= row.y0 && mouseY < row.y1) {

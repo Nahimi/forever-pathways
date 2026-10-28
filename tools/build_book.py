@@ -139,16 +139,19 @@ CHAPTERS = [
                  "nodes and finished tasks are safe."},
     ]),
     ("c3", "III. Gaining Shards", "minecraft:amethyst_shard", 2, [
-        "Three sources, and no others. Shards cannot be mined, crafted or traded for.",
+        "Four sources, and no others. Shards cannot be mined, crafted or traded for.",
         {"type": "patchouli:text", "title": "Tasks",
          "text": "One per node. Pays once, for good.$(br2)"
                  "A task counts only once its node is reachable: the node before it owned, its ring "
                  "unsealed. Earlier work does not count."},
         {"type": "patchouli:text", "title": "Bounties",
-         "text": "Two offered each dawn, lasting a few days.$(br2)"
-                 "$(li)Small, endless, and most of your early income.$(br)"
-                 "$(li)The pool grows as you unlock nodes.$(br)"
-                 "$(li)A finished slot stays empty until the next dawn, so at most two pay a day."},
+         "text": "Two at a time, lasting a few days.$(br2)"
+                 "$(li)Finish one and the next comes 2 minutes later, or at dawn if that is sooner.$(br)"
+                 "$(li)Right-click one on the Tasks tab to give it up, once a day.$(br)"
+                 "$(li)They grow harder as you unlock nodes, and pay up to 4 shards; rare ones pay 5."},
+        {"type": "patchouli:text", "title": "Staying Alive",
+         "text": "Every full day you live without dying pays 1 Focal Shard.$(br2)"
+                 "Dying starts the count again."},
         {"type": "patchouli:text", "title": "Achievements",
          "text": "A few vanilla advancements pay once: first iron smelted, first iron pick, and "
                  "others.$(br2)"

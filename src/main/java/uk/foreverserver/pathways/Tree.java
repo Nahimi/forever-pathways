@@ -245,8 +245,10 @@ public final class Tree {
         public int startingShards = 0;
         public int dayTicks = 24000;
         public int shardsPerDay = 0;
-        /** How many bounties a player is offered each dawn. A finished bounty's slot stays empty until the next dawn. */
+        /** How many bounties a player holds at once. */
         public int bountySlots = 2;
+        /** Ticks before a finished or abandoned bounty is replaced; dawn replaces it sooner if it comes first. */
+        public int bountyRefillTicks = 2400;
         public int deathShardLoss = 1;
         public double deathTaskLoss = 0.25;
         public int freezeTicks = 12000;

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.30.0
+
+- A finished bounty is replaced 2 minutes later, or at dawn if that is sooner. One dealt late in the day gets an
+  extra day before it expires.
+- Right-click a running bounty on the Tasks tab to give it up, once per in-game day; its slot refills the same way.
+- Every full day lived without dying pays 1 Focal Shard.
+- Bounties lean toward the highest tiers you have reached, so they grow harder with the tree. Rewards are capped
+  by tier at 2, 2, 3, 4, 4 and 5 shards; only the rare tier VI bounties pay 5.
+
 ## 0.29.4
 
 - Fixed: the game crashed when opening the recipe book with recipes hidden by locks.

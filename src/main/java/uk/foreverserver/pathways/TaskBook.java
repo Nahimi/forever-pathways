@@ -42,7 +42,8 @@ import net.minecraft.world.level.block.Block;
  * <p><b>Bounties</b> are timed jobs outside the tree. Each player has {@code rules.bountySlots} slots (two). At
  * every dawn each empty slot is filled with a bounty drawn at random from the player's pool: every bounty whose
  * node they own, so the pool grows with the tree. A bounty must be finished within its {@code days}; one that runs
- * out simply leaves. A slot emptied by a finished bounty stays empty until the next dawn, so at most two pay a day.
+ * out simply leaves. A slot emptied by a finished bounty, or one the player gave up (once a day), is filled again
+ * after {@code rules.bountyRefillTicks} (two minutes), or at dawn if that comes first.
  *
  * <p><b>Dying</b> costs shards, keeps 75% of the progress on every running task and bounty, and freezes them all
  * for a time set by the difficulty preset (Difficulty): while frozen the baseline is dragged along with the stat, so nothing done in that time
@@ -57,6 +58,8 @@ public final class TaskBook {
     private static final String FREEZE = "fp2_freeze";
     /** The day (plus one) whose dawn last refilled the bounty slots. */
     private static final String BOUNTY_DAY = "fpq_day";
+    /** The day (plus one) the player last gave up a bounty. */
+    private static final String GAVE_UP = "fpq_gaveup";
 
     /** Task states in the snapshot. */
     public static final int WAITING = 0;
@@ -67,6 +70,7 @@ public final class TaskBook {
     public static final int SLOT_RUNNING = 1;
     public static final int SLOT_DONE = 5;
     public static final int SLOT_EXPIRED = 6;
+    public static final int SLOT_GAVE_UP = 7;
 
     private static final Map<String, List<Block>> BLOCKS = new HashMap<>();
     private static final Map<String, List<EntityType<?>>> ENTITIES = new HashMap<>();
@@ -288,6 +292,7 @@ public final class TaskBook {
         ProgressiveStagesAPI.setCounter(player, POINTS, 0L);
         ProgressiveStagesAPI.setCounter(player, INIT, 0L);
         ProgressiveStagesAPI.setCounter(player, BOUNTY_DAY, 0L);
+        ProgressiveStagesAPI.setCounter(player, GAVE_UP, 0L);
         ProgressiveStagesAPI.setCounter(player, PAID, 0L);
         ProgressiveStagesAPI.setCounter(player, FREEZE, 0L);
         forgetSeen(player);
@@ -327,6 +332,7 @@ public final class TaskBook {
                 continue;
             }
             clearSlot(player, slot, SLOT_DONE);
+            scheduleRefill(player, tree, slot);
             ProgressiveStagesAPI.addCounter(player, POINTS, bounty.reward);
             ProgressiveStagesAPI.addCounter(player, "fpn_q_" + bounty.id, 1);
             finished(player, NotifyPayload.BOUNTY_DONE, bounty.id, bounty.title, tier, bounty.item, task.amount,
@@ -337,16 +343,20 @@ public final class TaskBook {
         if (dealt > day) {
             // The clock went backwards (/time set): treat today as already dealt.
             ProgressiveStagesAPI.setCounter(player, BOUNTY_DAY, day + 1);
-            return;
+            dealt = day;
         }
-        if (dealt == day) {
-            return;
-        }
+        boolean dawn = dealt != day;
+        long now = player.server.overworld().getGameTime();
         List<String> offered = new ArrayList<>();
         for (int slot = 0; slot < slots(tree); slot++) {
             if (slotBounty(player, tree, slot) != null) {
                 continue;
             }
+            long refill = ProgressiveStagesAPI.getCounter(player, slotKey(slot, "next"));
+            if (!dawn && (refill == 0 || now < refill)) {
+                continue;
+            }
+            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "next"), 0L);
             Tree.Bounty pick = draw(player, tree, owned, slot);
             if (pick == null) {
                 continue;
@@ -354,21 +364,61 @@ public final class TaskBook {
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "id"), tree.bounties.indexOf(pick) + 1L);
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "bid"), stamp(pick));
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "prev"), tree.bounties.indexOf(pick) + 1L);
-            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "end"), day + Math.max(1, Math.min(3, pick.days)));
+            long end = day + Math.max(1, Math.min(3, pick.days));
+            if (!dawn && Math.max(0, player.server.overworld().getDayTime()) % Math.max(1, tree.rules.dayTicks)
+                    > tree.rules.dayTicks / 2) {
+                // Dealt in the second half of the day: an extra day, so it is not gone at the next dawn.
+                end++;
+            }
+            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "end"), end);
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "base"), stat(player, pick.task(), tree));
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "held"), 0L);
             ProgressiveStagesAPI.setCounter(player, slotKey(slot, "out"), 0L);
             offered.add(pick.title);
         }
-        ProgressiveStagesAPI.setCounter(player, BOUNTY_DAY, day + 1);
+        if (dawn) {
+            ProgressiveStagesAPI.setCounter(player, BOUNTY_DAY, day + 1);
+        }
         for (String title : offered) {
             player.sendSystemMessage(Component.literal("New Bounty Available: " + title).withStyle(ChatFormatting.GOLD));
         }
     }
 
+    private static void scheduleRefill(ServerPlayer player, Tree tree, int slot) {
+        long at = player.server.overworld().getGameTime() + Math.max(1, tree.rules.bountyRefillTicks);
+        ProgressiveStagesAPI.setCounter(player, slotKey(slot, "next"), at);
+    }
+
+    /** True if the player has not given up a bounty yet today. */
+    public static boolean canGiveUp(ServerPlayer player, Tree tree) {
+        return ProgressiveStagesAPI.getCounter(player, GAVE_UP) != today(player, tree) + 1;
+    }
+
+    /** Drops a running bounty at the player's wish, once a day; its slot refills like a finished one. */
+    public static void giveUp(ServerPlayer player, int slot) {
+        Tree tree = Tree.get();
+        if (slot < 0 || slot >= slots(tree)) {
+            return;
+        }
+        Tree.Bounty bounty = slotBounty(player, tree, slot);
+        if (bounty == null) {
+            return;
+        }
+        if (!canGiveUp(player, tree)) {
+            player.sendSystemMessage(Component.literal("You have already given up a bounty today.")
+                    .withStyle(ChatFormatting.GRAY));
+            return;
+        }
+        clearSlot(player, slot, SLOT_GAVE_UP);
+        scheduleRefill(player, tree, slot);
+        ProgressiveStagesAPI.setCounter(player, GAVE_UP, today(player, tree) + 1);
+        forgetSeen(player);
+        player.sendSystemMessage(Component.literal("Bounty given up: " + bounty.title).withStyle(ChatFormatting.GRAY));
+    }
+
     /**
      * A random bounty from the pool: owned node, not already in another slot, not what this slot last held.
-     * Higher tiers weigh a little more, so a well-grown tree sees more of its harder bounties.
+     * The draw leans on the highest tiers the player has reached, so bounties grow harder with the tree.
      */
     private static Tree.Bounty draw(ServerPlayer player, Tree tree, Set<String> owned, int slot) {
         Set<Integer> busy = new HashSet<>();
@@ -377,7 +427,7 @@ public final class TaskBook {
         }
         int previous = (int) ProgressiveStagesAPI.getCounter(player, slotKey(slot, "prev")) - 1;
         List<Tree.Bounty> pool = new ArrayList<>();
-        int total = 0;
+        int top = 1;
         for (int i = 0; i < tree.bounties.size(); i++) {
             Tree.Bounty bounty = tree.bounties.get(i);
             if (bounty.kind == null || busy.contains(i) || i == previous) {
@@ -388,14 +438,18 @@ public final class TaskBook {
                 continue;
             }
             pool.add(bounty);
-            total += weight(bounty);
+            top = Math.max(top, bounty.tier);
         }
         if (pool.isEmpty()) {
             return null;
         }
+        int total = 0;
+        for (Tree.Bounty bounty : pool) {
+            total += weight(bounty, top);
+        }
         int roll = player.getRandom().nextInt(total);
         for (Tree.Bounty bounty : pool) {
-            roll -= weight(bounty);
+            roll -= weight(bounty, top);
             if (roll < 0) {
                 return bounty;
             }
@@ -410,17 +464,27 @@ public final class TaskBook {
             clearSlot(player, slot, SLOT_EMPTY);
         }
         ProgressiveStagesAPI.setCounter(player, BOUNTY_DAY, 0L);
+        ProgressiveStagesAPI.setCounter(player, GAVE_UP, 0L);
         update(player);
     }
 
-    private static int weight(Tree.Bounty bounty) {
-        return 2 + Math.max(1, bounty.tier);
+    /**
+     * The player's two highest tiers come up most, the one below now and then, older ones seldom. Tier VI, the
+     * five-shard bounties, stays rare however far the player has come.
+     */
+    private static int weight(Tree.Bounty bounty, int top) {
+        if (bounty.tier >= 6) {
+            return 1;
+        }
+        int behind = top - bounty.tier;
+        return behind <= 1 ? 6 : behind == 2 ? 3 : 1;
     }
 
     private static void clearSlot(ServerPlayer player, int slot, int outcome) {
         ProgressiveStagesAPI.setCounter(player, slotKey(slot, "id"), 0L);
         ProgressiveStagesAPI.setCounter(player, slotKey(slot, "bid"), 0L);
         ProgressiveStagesAPI.setCounter(player, slotKey(slot, "out"), outcome);
+        ProgressiveStagesAPI.setCounter(player, slotKey(slot, "next"), 0L);
     }
 
     private static long bountyProgress(ServerPlayer player, Tree tree, int slot, Tree.Bounty bounty) {
@@ -640,9 +704,12 @@ public final class TaskBook {
      *
      * <p>Task lines: node id, state (0 waiting, 1 running, 4 done), progress, goal, 0, 0.
      *
-     * <p>Slot lines: "slot:N", state (0 empty, 1 running, 5 done today, 6 expired), progress, goal, bounty index
-     * (the one running, or the one that last finished or expired; -1 for none), ticks left (to the deadline while
-     * running, otherwise to the next dawn).
+     * <p>Slot lines: "slot:N", state (0 empty, 1 running, 5 done, 6 expired, 7 given up), progress, goal, bounty
+     * index (the one running, or the one that last finished, expired or was given up; -1 for none), ticks left (to
+     * the deadline while running, otherwise until the slot is filled again).
+     *
+     * <p>Then "dawn" with the ticks to the next dawn last, and "giveup" with 2 first if a bounty may be given up
+     * today, 0 if not.
      */
     public static String snapshot(ServerPlayer player) {
         Tree tree = Tree.get();
@@ -668,6 +735,7 @@ public final class TaskBook {
         long dayTime = Math.max(0, player.server.overworld().getDayTime());
         long dayTicks = Math.max(1, tree.rules.dayTicks);
         long toDawn = dayTicks - dayTime % dayTicks;
+        long now = player.server.overworld().getGameTime();
         for (int slot = 0; slot < slots(tree); slot++) {
             Tree.Bounty bounty = slotBounty(player, tree, slot);
             if (bounty != null) {
@@ -678,10 +746,14 @@ public final class TaskBook {
             } else {
                 int out = (int) ProgressiveStagesAPI.getCounter(player, slotKey(slot, "out"));
                 int prev = (int) ProgressiveStagesAPI.getCounter(player, slotKey(slot, "prev")) - 1;
-                int state = out == SLOT_DONE ? SLOT_DONE : out == SLOT_EXPIRED ? SLOT_EXPIRED : SLOT_EMPTY;
-                line(text, "slot:" + slot, state, 0, 0, state == SLOT_EMPTY ? -1 : prev, toDawn);
+                int state = out == SLOT_DONE || out == SLOT_EXPIRED || out == SLOT_GAVE_UP ? out : SLOT_EMPTY;
+                long refill = ProgressiveStagesAPI.getCounter(player, slotKey(slot, "next"));
+                long wait = refill > 0 ? Math.min(toDawn, Math.max(0, refill - now)) : toDawn;
+                line(text, "slot:" + slot, state, 0, 0, state == SLOT_EMPTY ? -1 : prev, wait);
             }
         }
+        line(text, "dawn", 0, 0, 0, 0, toDawn);
+        line(text, "giveup", canGiveUp(player, tree) ? 2 : 0, 0, 0, 0, 0);
         return text.toString();
     }
 
