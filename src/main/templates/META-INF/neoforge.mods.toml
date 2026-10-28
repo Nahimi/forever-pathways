@@ -507,6 +507,30 @@ config="${mod_id}.mixins.json"
     side="BOTH"
 
 [[dependencies.${mod_id}]]
+    modId="biomesoplenty"
+    type="optional"
+    reason="Biomes O' Plenty: its woods at Woodcutter, stone at Builder"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="biomeswevegone"
+    type="optional"
+    reason="Oh The Biomes We've Gone: its woods at Woodcutter, stone at Builder"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="toms_storage"
+    type="optional"
+    reason="Tom's Simple Storage: Storage Network and Crafting Terminals"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
     modId="minecraft"
     type="required"
     # This version range declares a minimum of the current minecraft version up to but not including the next major version

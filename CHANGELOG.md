@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.29.0
+
+- Biomes O' Plenty and Oh The Biomes We've Gone: their woods unlock with Woodcutter, boats with Boatwright,
+  bookshelves with Enchanting, sandstone with Brickwork and stone blocks with Builder; plants, leaves and
+  natural blocks are free from the start.
+- Tom's Simple Storage: new Storage Network (ring 6) and Crafting Terminals (ring 8) nodes on the Survivor road.
+
 ## 0.28.1
 
 - `tree.json` is now loaded as datapack data, so a datapack or KubeJS can replace it

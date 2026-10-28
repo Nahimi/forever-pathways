@@ -1,0 +1,15 @@
+{
+  "name": "Storage Network",
+  "category": "foreverpathways:paths/survivor",
+  "icon": "toms_storage:storage_terminal",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "toms_storage:storage_terminal",
+      "title": "Storage Network",
+      "text": "$(bold)Tom's Simple Storage: the inventory connector and storage terminal that join your chests into one, cables and proxies, the basic inventory hopper, item filters, the open crate, filing cabinet, trim and paint kit.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)23 Focal Shards$(n).$(br)After Redstone."
+    }
+  ],
+  "flag": "mod:toms_storage"
+}

@@ -1694,6 +1694,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
+        "rest:biomesoplenty",
+        "rest:biomeswevegone",
         "tough_beginnings:raw_flint",
         "tough_beginnings:flint_shard",
         "tough_beginnings:flintknife",
@@ -2237,6 +2239,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
+        "re:(biomesoplenty|biomeswevegone):(stripped_)?(imbued_)?(aspen|baobab|blue_enchanted|cika|cypress|dead|ebony|empyreal|fir|florus|green_enchanted|hellbark|holly|ironwood|jacaranda|magic|mahogany|maple|origin_oak|palm|palo_verde|pine|rainbow_eucalyptus|redwood|sakura|skyris|spirit|umbran|white_mangrove|willow|witch_hazel|zelkova)_(log|wood|planks|stairs|slab|fence|fence_gate|door|trapdoor|sign|hanging_sign|button|pressure_plate|crafting_table|shelf)",
+        "re:(biomesoplenty|biomeswevegone):.*_sapling",
         "tough_beginnings:flint_axe",
         "tough_beginnings:block_of_wood",
         "tough_beginnings:tough_block_of_wood",
@@ -2762,6 +2766,7 @@
       "enchantPower": 5,
       "craftOnly": false,
       "locks": [
+        "re:(biomesoplenty|biomeswevegone):.*_bookshelf",
         "minecraft:enchanting_table",
         "minecraft:bookshelf",
         "minecraft:chiseled_bookshelf",
@@ -3556,6 +3561,7 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
+        "re:(biomesoplenty|biomeswevegone):.*_(boat|chest_boat)",
         "re:(minecraft|spawn):.*_(boat|raft)",
         "re:supplementaries:jar_boat"
       ],
@@ -5961,6 +5967,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
+        "re:(biomesoplenty|biomeswevegone):.*(_bricks?|_brick_(stairs|slab|wall)|_bricks_(stairs|slab|wall)|_tiles?|_tile_(stairs|slab|wall)|_pillar|_stairs|_slab|_wall)",
+        "re:(biomesoplenty|biomeswevegone):(polished|chiseled|cut|cracked)_.*",
         "re:minecraft:(mossy_|cracked_|chiseled_)?stone_brick(s|_stairs|_slab|_wall)",
         "re:minecraft:(cobblestone|mossy_cobblestone|stone|smooth_stone)(_stairs|_slab|_wall)",
         "re:minecraft:((white|orange|magenta|light_blue|yellow|lime|pink|gray|light_gray|cyan|purple|blue|brown|green|red|black)_)?terracotta",
@@ -6092,6 +6100,7 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
+        "re:(biomesoplenty|biomeswevegone):.*sandstone.*",
         "re:supplementaries:bellows",
         "re:minecraft:(bricks|brick_stairs|brick_slab|brick_wall|brick|flower_pot)",
         "re:minecraft:(smooth_|cut_|chiseled_)?(red_)?sandstone(_stairs|_slab|_wall)?",
@@ -9210,6 +9219,50 @@
       "craftOnly": false,
       "locks": [
         "rest:hazennstuff"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:storage_network",
+      "title": "Storage Network",
+      "path": "survivor",
+      "ring": 6,
+      "requires": "forever:redstone",
+      "also": null,
+      "cost": 23,
+      "item": "toms_storage:storage_terminal",
+      "colour": "#C4A574",
+      "opens": "Tom's Simple Storage: the inventory connector and storage terminal that join your chests into one, cables and proxies, the basic inventory hopper, item filters, the open crate, filing cabinet, trim and paint kit.",
+      "task": null,
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "re:toms_storage:(?!crafting_terminal$|level_emitter$|wireless_terminal$|adv_wireless_terminal$).*"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:crafting_terminals",
+      "title": "Crafting Terminals",
+      "path": "survivor",
+      "ring": 8,
+      "requires": "forever:storage_network",
+      "also": null,
+      "cost": 34,
+      "item": "toms_storage:crafting_terminal",
+      "colour": "#C4A574",
+      "opens": "The crafting terminal, which crafts straight from the network, the level emitter, and the wireless and advanced wireless terminals.",
+      "task": null,
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "re:toms_storage:(crafting_terminal|level_emitter|wireless_terminal|adv_wireless_terminal)"
       ],
       "uses": []
     }
