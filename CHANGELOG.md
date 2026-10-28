@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.33.1
+
+- A tree.json from a datapack or KubeJS now applies in single player as soon as the world opens. Opening a world
+  used to put the built-in tree back right after the datapacks loaded, so the change only showed after /reload.
+
 ## 0.33.0
 
 - L_Ender's Cataclysm now has a node for each of its eight bosses, each asking for its kill, on two roads from

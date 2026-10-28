@@ -26,6 +26,8 @@ public final class TreeData {
     private static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(ForeverPathways.MOD_ID, "tree.json");
     /** The text of the tree the server is using, sent to players as they join or after /reload. */
     private static volatile String json;
+    /** The source name of a tree a remote server sent. */
+    private static final String SENT = "the server";
 
     private TreeData() {}
 
@@ -85,15 +87,19 @@ public final class TreeData {
             return;
         }
         try {
-            Tree.replace(Tree.parse(payload.json()), "the server");
+            Tree.replace(Tree.parse(payload.json()), SENT);
         } catch (RuntimeException exception) {
             ForeverPathways.LOGGER.error("Pathways could not read the tree the server sent; using the built-in one", exception);
         }
     }
 
-    /** On a client leaving a server: back to the built-in tree. */
+    /**
+     * On a client leaving a server: back to the built-in tree, but only if a remote server sent the one in use.
+     * Opening a single-player world fires a logout too, after its datapacks have loaded and before its server
+     * starts; resetting then threw away the world's datapack tree until /reload.
+     */
     public static void leftServer() {
-        if (ServerLifecycleHooks.getCurrentServer() == null) {
+        if (SENT.equals(Tree.source())) {
             Tree.useBuiltIn();
         }
     }
