@@ -11,7 +11,8 @@
     "HorseSpeedMixin"
   ],
   "client": [
-    "RecipeCollectionMixin"
+    "RecipeCollectionMixin",
+    "RecipeButtonMixin"
   ],
   "injectors": {
     "defaultRequire": 1

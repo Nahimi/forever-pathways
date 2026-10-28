@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.29.4
+
+- Fixed: the game crashed when opening the recipe book with recipes hidden by locks.
+- Fixed: the Grimoire showed nothing.
+
 ## 0.29.1
 
 - Dynamic Trees addons such as Dynamic Trees BWG: their branches and roots unlock with Woodcutter, seeds with

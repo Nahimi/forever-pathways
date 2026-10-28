@@ -2,8 +2,10 @@ package uk.foreverserver.pathways.mixin;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -19,7 +21,13 @@ import net.minecraft.world.item.crafting.RecipeHolder;
 
 @Mixin(RecipeCollection.class)
 public class RecipeCollectionMixin {
-    @Inject(method = "getDisplayRecipes", at = @At("RETURN"), cancellable = true)
+    @Shadow(remap = false)
+    private Set<RecipeHolder<?>> craftable;
+
+    @Shadow(remap = false)
+    private Set<RecipeHolder<?>> fitsDimensions;
+
+    @Inject(method = "getDisplayRecipes", at = @At("RETURN"), cancellable = true, remap = false)
     private void foreverpathways$hideLocked(boolean craftableOnly, CallbackInfoReturnable<List<RecipeHolder<?>>> call) {
         var level = Minecraft.getInstance().level;
         if (level == null) {
@@ -27,12 +35,45 @@ public class RecipeCollectionMixin {
         }
         List<RecipeHolder<?>> visible = new ArrayList<>();
         for (RecipeHolder<?> holder : call.getReturnValue()) {
-            ItemStack result = holder.value().getResultItem(level.registryAccess());
-            if (result.isEmpty() || unlocked(result)) {
+            if (shown(holder)) {
                 visible.add(holder);
             }
         }
         call.setReturnValue(visible);
+    }
+
+    // A collection whose recipes are all hidden must not count as fitting or craftable, or the book
+    // keeps a button for it with nothing to show.
+    @Inject(method = "hasFitting", at = @At("RETURN"), cancellable = true, remap = false)
+    private void foreverpathways$hideEmptyFitting(CallbackInfoReturnable<Boolean> call) {
+        if (Boolean.TRUE.equals(call.getReturnValue()) && !anyShown(fitsDimensions)) {
+            call.setReturnValue(false);
+        }
+    }
+
+    @Inject(method = "hasCraftable", at = @At("RETURN"), cancellable = true, remap = false)
+    private void foreverpathways$hideEmptyCraftable(CallbackInfoReturnable<Boolean> call) {
+        if (Boolean.TRUE.equals(call.getReturnValue()) && !anyShown(craftable)) {
+            call.setReturnValue(false);
+        }
+    }
+
+    private boolean anyShown(Set<RecipeHolder<?>> recipes) {
+        for (RecipeHolder<?> holder : recipes) {
+            if (shown(holder)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean shown(RecipeHolder<?> holder) {
+        var level = Minecraft.getInstance().level;
+        if (level == null) {
+            return true;
+        }
+        ItemStack result = holder.value().getResultItem(level.registryAccess());
+        return result.isEmpty() || unlocked(result);
     }
 
     private static boolean unlocked(ItemStack stack) {
