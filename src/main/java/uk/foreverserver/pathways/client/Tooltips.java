@@ -36,10 +36,11 @@ final class Tooltips {
             return;
         }
         // Decoration says what it really costs you: the recipe, not the block.
-        String label = node.craftOnly ? "Cannot craft yet: " : "Locked: ";
+        boolean craftOnly = node.craftOnly || uk.foreverserver.pathways.Locks.everyday(id.toString());
+        String label = craftOnly ? "Cannot craft yet: " : "Locked: ";
         event.getToolTip().add(Component.literal(label + where)
                 .withStyle(Boolean.FALSE.equals(owns) ? ChatFormatting.RED : ChatFormatting.GRAY));
-        if (node.craftOnly) {
+        if (craftOnly) {
             event.getToolTip().add(Component.literal("Free to place, use and break")
                     .withStyle(ChatFormatting.DARK_GRAY));
             return;

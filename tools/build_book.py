@@ -131,7 +131,7 @@ CHAPTERS = [
                  "$(li)You can still carry it.$(br)"
                  "$(li)Ordinary blocks break and place freely.$(br)"
                  "$(li)Locked $(thing)machines$() will not open, place or break.$(br)"
-                 "$(li)Doors, gates, buttons and levers always work."},
+                 "$(li)Everyday things (beds, doors, chests, stoves, torches) lock only their recipe."},
         {"type": "patchouli:text", "title": "Death",
          "text": "$(#8A3B2F)1 Focal Shard, and on Normal and Hard a quarter of all progress on running "
                  "tasks and bounties.$()$(br2)"

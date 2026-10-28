@@ -66,8 +66,10 @@ public final class StageWriter {
         for (Tree.Node node : tree.nodes) {
             Path folder = stagesRoot.resolve(FOLDER_PREFIX + node.key());
             files.put(folder.resolve("stage.toml"), stageToml(tree, node));
-            List<String> owned = locks.items(node.id);
-            if (node != tree.core() && !node.craftOnly && !owned.isEmpty()) {
+            // Everyday items lock only their recipe, so ProgressiveStages is not told about them at all.
+            List<String> owned = node.craftOnly ? List.of()
+                    : locks.items(node.id).stream().filter(id -> !Locks.everyday(id)).toList();
+            if (node != tree.core() && !owned.isEmpty()) {
                 files.put(folder.resolve("rules.toml"), rulesToml(node, owned));
             }
         }

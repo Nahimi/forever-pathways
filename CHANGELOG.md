@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.32.0
+
+- Everyday things lock only their recipe: anyone can place, use, pick up and break beds, doors, trapdoors, gates,
+  buttons, pressure plates, levers, bells, ladders, signs, stoves, the furnace and smoker, campfires, the crafting
+  table, chests and barrels, torches and lanterns, flower pots, item frames, paintings, armour stands, composters
+  and cauldrons, from every mod. The node that unlocks them now only buys the recipe. The list is
+  `craftOnlyItems` in tree.json. Restart the server once after updating so ProgressiveStages reads the new locks.
+
 ## 0.31.0
 
 - New bounty type, Delivery: hand in a number of one item you can craft (32 Iron Ingots, 2 Bookshelves). About one

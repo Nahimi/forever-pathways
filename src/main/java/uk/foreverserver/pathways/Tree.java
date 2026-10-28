@@ -31,6 +31,11 @@ public final class Tree {
     /** Blocks anyone may right-click even while they are locked: doors, gates, buttons. Same spec syntax as locks. */
     public List<String> alwaysUsable = new ArrayList<>();
     /**
+     * Everyday things anyone may carry, place, use and break whatever they own (beds, doors, stoves, chests): only
+     * the recipe waits for the node that unlocks them, as on a craft-only node. Same spec syntax as locks.
+     */
+    public List<String> craftOnlyItems = new ArrayList<>();
+    /**
      * Blocks a lock should guard even though they keep no block entity: the vanilla workstations.
      * Everything with a block entity is guarded already, and every other block is free to place and
      * break whatever you own. Same spec syntax as locks.
@@ -169,6 +174,9 @@ public final class Tree {
         }
         if (alwaysUsable == null) {
             alwaysUsable = new ArrayList<>();
+        }
+        if (craftOnlyItems == null) {
+            craftOnlyItems = new ArrayList<>();
         }
         if (guardedBlocks == null) {
             guardedBlocks = new ArrayList<>();

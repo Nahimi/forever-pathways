@@ -25,6 +25,7 @@ public final class Locks {
     private static final Map<Item, Boolean> CRAFT_CACHE = new HashMap<>();
     private static final Map<Block, Boolean> GUARD_CACHE = new HashMap<>();
     private static List<Predicate<String>> guard;
+    private static List<Predicate<String>> everyday;
 
     private Locks() {}
 
@@ -33,6 +34,7 @@ public final class Locks {
         owners = null;
         usable = null;
         guard = null;
+        everyday = null;
         users = null;
         CACHE.clear();
         USABLE_CACHE.clear();
@@ -122,8 +124,9 @@ public final class Locks {
     }
 
     /**
-     * Decoration and furniture: anyone may carry it, place it, use it and break it while it is locked.
-     * Only the recipe waits for the node, which {@link CraftGuard} enforces.
+     * Decoration, furniture and everyday things: anyone may carry it, place it, use it and break it while it is
+     * locked. Only the recipe waits for the node, which {@link CraftGuard} enforces. That is every item on a
+     * craft-only node, and every item in the tree's "craftOnlyItems" whatever node it is on.
      */
     public static synchronized boolean craftOnly(Item item) {
         if (item == null) {
@@ -135,9 +138,30 @@ public final class Locks {
         }
         String owner = ownerOf(item);
         Tree.Node node = owner == null ? null : Tree.get().find(owner);
-        boolean hit = node != null && node.craftOnly;
+        ResourceLocation key = BuiltInRegistries.ITEM.getKey(item);
+        boolean hit = node != null && (node.craftOnly || (key != null && everyday(key.toString())));
         CRAFT_CACHE.put(item, hit);
         return hit;
+    }
+
+    /** True when the tree's "craftOnlyItems" names this item id. */
+    public static synchronized boolean everyday(String id) {
+        if (everyday == null) {
+            everyday = new ArrayList<>();
+            for (String spec : Tree.get().craftOnlyItems) {
+                try {
+                    everyday.add(LockResolver.matcher(spec));
+                } catch (RuntimeException exception) {
+                    ForeverPathways.LOGGER.warn("Pathways: bad craftOnlyItems spec {}", spec);
+                }
+            }
+        }
+        for (Predicate<String> rule : everyday) {
+            if (rule.test(id)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static final Map<Item, List<String>> USERS_CACHE = new HashMap<>();
