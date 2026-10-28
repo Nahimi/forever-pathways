@@ -160,7 +160,7 @@ NATURAL = [
     r"minecraft:(coal_ore|deepslate_coal_ore|copper_ore|deepslate_copper_ore)",
     r"minecraft:(oak|spruce|birch|jungle|acacia|dark_oak|mangrove|cherry)_log", r"minecraft:(mangrove_roots|muddy_mangrove_roots|bamboo)",
     r"minecraft:(white|orange|yellow|brown|red|light_gray)?_?terracotta",
-    r"(dynamictrees|dynamictreescompat|dtterralith|dynamictreesplus):.*_branch(?<!crimson_branch)(?<!warped_branch)",
+    r"(dynamictrees|dynamictreescompat|dt[a-z0-9_]+|dynamictreesplus):.*_branch(?<!crimson_branch)(?<!warped_branch)",
     r"terrain_slabs:(?!(basalt|crimson_nylium|warped_nylium|netherrack|soul_sand|soul_soil|terrain_blackstone|endstone|terrain_prismarine)_slab).*",
     r"projectvibrantjourneys:(?!(cindercane|crimson_nettle|warped_nettle|charred_bones|nettle_soup)$).*",
     r"spawn:(algal_sand|blasted_sand|broad_grass|short_windswept_grass|tall_windswept_grass|fallen_leaves|date_leaves|dangling_date_leaves|red_algae|red_algae_block|hazy_algae_block|barnacle|barnacle_cluster|big_sea_pickle|sea_star|sea_urchin|tropical_wildflowers|ant_mound|anthill|reefstone|algal_reefstone|blasted_sandstone|date_log|rotten_log)",

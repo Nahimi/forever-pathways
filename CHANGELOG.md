@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.29.1
+
+- Dynamic Trees addons such as Dynamic Trees BWG: their branches and roots unlock with Woodcutter, seeds with
+  Forager and mega seeds with Grove, and they count for the chop and plant bounties.
+
 ## 0.29.0
 
 - Biomes O' Plenty and Oh The Biomes We've Gone: their woods unlock with Woodcutter, boats with Boatwright,

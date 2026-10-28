@@ -529,7 +529,7 @@
       "days": 1,
       "requires": "forever:woodcutter",
       "item": "minecraft:oak_log",
-      "target": "re:(dynamictrees|dynamictreescompat|dtterralith):.*_branch,re:minecraft:.*_log"
+      "target": "re:(dynamictrees|dynamictreescompat|dt[a-z0-9_]+):.*_branch,re:minecraft:.*_log"
     },
     {
       "id": "saplings",
@@ -541,7 +541,7 @@
       "days": 1,
       "requires": "forever:forager",
       "item": "dynamictrees:oak_seed",
-      "target": "re:(dynamictrees|dtterralith|dynamictreescompat):.*_seed"
+      "target": "re:(dynamictrees|dt[a-z0-9_]+|dynamictreescompat):.*_seed"
     },
     {
       "id": "stone_128",
@@ -2257,8 +2257,9 @@
         "minecraft:ladder",
         "minecraft:bowl",
         "minecraft:campfire",
-        "re:(dynamictrees|dynamictreescompat|dtterralith):.*_branch",
+        "re:(dynamictrees|dynamictreescompat|dt[a-z0-9_]+):.*_branch",
         "dynamictrees:mangrove_roots",
+        "re:dt[a-z0-9_]+:.*_roots",
         "re:projectvibrantjourneys:.*_hollow_log",
         "re:spawn:(stripped_)?(date|rotten)_(log|wood)",
         "re:spawn:(date|rotten)_(planks|stairs|slab|fence|fence_gate|door|trapdoor|sign|hanging_sign|button|pressure_plate)",
@@ -6639,7 +6640,7 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:(dynamictrees|dynamictreescompat|dtterralith|dynamictreesplus):(?!mega_).*_seed"
+        "re:(dynamictrees|dynamictreescompat|dt[a-z0-9_]+|dynamictreesplus):(?!mega_).*_seed"
       ],
       "uses": []
     },
@@ -6954,7 +6955,7 @@
       "opens": "The dendro staff and potions, the dirt bucket and the giant tree seeds.",
       "task": {
         "kind": "use",
-        "target": "re:(dynamictrees|dynamictreescompat|dtterralith):.*_seed",
+        "target": "re:(dynamictrees|dynamictreescompat|dt[a-z0-9_]+):.*_seed",
         "amount": 80,
         "title": "Plant 80 tree seeds",
         "reward": 1
@@ -6965,7 +6966,7 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:(dynamictrees|dtterralith):mega_.*_seed",
+        "re:(dynamictrees|dt[a-z0-9_]+):mega_.*_seed",
         "dynamictrees:staff",
         "dynamictrees:dendro_potion",
         "dynamictrees:dirt_bucket"
@@ -7227,7 +7228,7 @@
       "opens": "Hard work makes hard hands. +5% breaking speed.",
       "task": {
         "kind": "mine",
-        "target": "re:(dynamictrees|dynamictreescompat|dtterralith):.*_branch,re:minecraft:.*_log",
+        "target": "re:(dynamictrees|dynamictreescompat|dt[a-z0-9_]+):.*_branch,re:minecraft:.*_log",
         "amount": 100,
         "title": "Fell 100 trees",
         "reward": 1
