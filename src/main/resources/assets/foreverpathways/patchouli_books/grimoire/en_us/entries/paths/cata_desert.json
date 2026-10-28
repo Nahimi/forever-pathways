@@ -1,14 +1,14 @@
 {
   "name": "Ancient Remnant",
   "category": "foreverpathways:paths/ranger",
-  "icon": "cataclysm:wrath_of_the_desert",
+  "icon": "cataclysm:sandstorm_in_a_bottle",
   "sortnum": 900,
   "pages": [
     {
       "type": "patchouli:spotlight",
-      "item": "cataclysm:wrath_of_the_desert",
+      "item": "cataclysm:sandstorm_in_a_bottle",
       "title": "Ancient Remnant",
-      "text": "$(bold)Cataclysm's desert: the Ancient Remnant's wrath of the desert, its sandstorm and necklace, ancient metal, the khopesh and koboleton bones, and the dungeon stone of every Cataclysm ruin.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)40 Focal Shards$(n).$(br)After Warrior."
+      "text": "$(bold)Cataclysm's Cursed Pyramid: the Ancient Remnant's sandstorm in a bottle and skull, the necklace of the desert, ancient metal, the khopesh, the Kobolediator's bones and armour, the amethyst crab, and the dungeon stone of every Cataclysm ruin.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)40 Focal Shards$(n).$(br)After Warrior."
     },
     {
       "type": "patchouli:text",

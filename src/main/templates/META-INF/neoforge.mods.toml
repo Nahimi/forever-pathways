@@ -485,7 +485,7 @@ config="${mod_id}.mixins.json"
 [[dependencies.${mod_id}]]
     modId="cataclysm"
     type="optional"
-    reason="L_Ender's Cataclysm: the Ancient Remnant, the Leviathan, Ignis and the Harbinger"
+    reason="L_Ender's Cataclysm: a node for each of its eight bosses"
     versionRange="[0,)"
     ordering="AFTER"
     side="BOTH"
@@ -576,3 +576,35 @@ config="${mod_id}.mixins.json"
     ordering="AFTER"
     side="BOTH"
 
+
+[[dependencies.${mod_id}]]
+    modId="born_in_chaos_v1"
+    type="optional"
+    reason="Born in Chaos: its creatures and its lords"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="immersive_aircraft"
+    type="optional"
+    reason="Immersive Aircraft: Aviator and Air Fleet"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="map_atlases"
+    type="optional"
+    reason="Map Atlases: at the Cartographer"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="quality_equipment"
+    type="optional"
+    reason="Quality Equipment: the reforging station and emerald trinkets"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"

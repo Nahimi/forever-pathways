@@ -1,0 +1,20 @@
+{
+  "name": "The Ender Guardian",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "cataclysm:gauntlet_of_guard",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "cataclysm:gauntlet_of_guard",
+      "title": "The Ender Guardian",
+      "text": "$(bold)Cataclysm's Ruined Citadel: the Ender Guardian's gauntlet of guard and the maelstrom gauntlet, the zweiender and final fractal, enderite, and the void cores, jaws and crystals of its golems and endermapteras.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)40 Focal Shards$(n).$(br)After Warrior."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill the Ender Guardian$(n)$(br2)Pays 8 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:cataclysm"
+}

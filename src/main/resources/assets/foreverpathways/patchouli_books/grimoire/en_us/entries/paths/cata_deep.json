@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "cataclysm:tidal_claws",
       "title": "The Leviathan",
-      "text": "$(bold)Cataclysm's seas: the Leviathan's tidal claws and abyssal sacrifice, Scylla's storm spears and gauntlet, coral arms, black steel and the azure seastone of the sunken halls.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)48 Focal Shards$(n).$(br)After Ancient Remnant."
+      "text": "$(bold)Cataclysm's Sunken City: the Leviathan's tidal claws, abyssal egg and sacrifice, the coral spear and bardiche, crystallised coral, the deeplings' athame and the lionfish.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)48 Focal Shards$(n).$(br)After Ancient Remnant."
     },
     {
       "type": "patchouli:text",

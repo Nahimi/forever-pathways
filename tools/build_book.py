@@ -272,6 +272,8 @@ BEYOND = [
                  "warp plates."},
         {"type": "patchouli:crafting", "recipe": "waystones:waystone", "recipe2": "waystones:warp_stone",
          "title": "Waystone and Warp Stone"},
+        {"type": "patchouli:text", "title": "Immersive Aircraft", "flag": "mod:immersive_aircraft",
+         "text": "Two nodes on the Ranger road, after Boatwright:$(br2)$(li)$(l:paths/aviator)Aviator$(), ring 6: the airship, gyrodyne, biplane and quadrocopter, and their parts.$(br)$(li)$(l:paths/air_fleet)Air Fleet$(), ring 9: the cargo airship, the warship, better engines and the weapons."},
     ]),
     ("a8", "A8. Smoke", "adchimneys:small_brick_chimney", 8, "mod:adchimneys", [
         "$(li)A $(thing)chimney$() vents smoke off the roof.$(br)"
@@ -321,7 +323,7 @@ BEYOND = [
                  "Trading is a task at $(l:paths/trader)Trader$(), so stay welcome."},
     ]),
     ("a13", "A13. Foes and Feasts", "minecraft:skeleton_skull", 13,
-     "|mod:hearthandharvest,mod:remains,mod:bestiary,mod:legionary,mod:cataclysm,mod:hazennstuff", [
+     "|mod:hearthandharvest,mod:remains,mod:bestiary,mod:legionary,mod:cataclysm,mod:hazennstuff,mod:born_in_chaos_v1", [
         {"type": "patchouli:text", "title": "Hearth and Harvest", "flag": "mod:hearthandharvest",
          "text": "Three nodes on the Homesteader road:$(br2)"
                  "$(li)$(l:paths/hh_orchard)Orchard and Trellis$(), ring 3: crops, trellises and farm tools.$(br)"
@@ -340,12 +342,11 @@ BEYOND = [
          "text": "Kill the Unbreakable to open $(l:paths/unbreakable)The Unbreakable$(), ring 6 on the Ranger "
                  "road, for its cudgel, gold shards and the golden chains and lanterns."},
         {"type": "patchouli:text", "title": "L_Ender's Cataclysm", "flag": "mod:cataclysm",
-         "text": "Four boss nodes on the Ranger road, each asking for one kill:$(br2)"
-                 "$(li)$(l:paths/cata_desert)Ancient Remnant$(), ring 9.$(br)"
-                 "$(li)$(l:paths/cata_deep)The Leviathan$(), ring 10.$(br)"
-                 "$(li)$(l:paths/cata_fire)Ignis$(), ring 11.$(br)"
-                 "$(li)$(l:paths/cata_void)The Harbinger$(), ring 12.$(br2)"
-                 "The other Cataclysm bosses' spoils share their node."},
+         "text": "Eight boss nodes on the Ranger road, one for each boss, each asking for its kill. The first road:$(br2)$(li)$(l:paths/cata_end)The Ender Guardian$(), ring 9.$(br)$(li)$(l:paths/cata_forge)The Netherite Monstrosity$(), ring 10.$(br)$(li)$(l:paths/cata_fire)Ignis$(), ring 11.$(br)$(li)$(l:paths/cata_void)The Harbinger$(), ring 12."},
+        {"type": "patchouli:text", "title": "Cataclysm, Continued", "flag": "mod:cataclysm",
+         "text": "The second road:$(br2)$(li)$(l:paths/cata_desert)Ancient Remnant$(), ring 9.$(br)$(li)$(l:paths/cata_deep)The Leviathan$(), ring 10.$(br)$(li)$(l:paths/cata_cursed)Maledictus$(), ring 11.$(br)$(li)$(l:paths/cata_storm)Scylla$(), ring 12.$(br2)Each boss's lesser kin, such as the Kobolediator or the draugr, share their master's node."},
+        {"type": "patchouli:text", "title": "Born in Chaos", "flag": "mod:born_in_chaos_v1",
+         "text": "Two nodes on the Ranger road:$(br2)$(li)$(l:paths/chaos)Born in Chaos$(), ring 5: dark metal, charms, elixirs and the blocks of its haunts. Kill 20 of its creatures first.$(br)$(li)$(l:paths/chaos_lords)Lords of Chaos$(), ring 8: the bosses' trophies. Kill any one of them."},
         {"type": "patchouli:text", "title": "Hazen N Stuff", "flag": "mod:hazennstuff",
          "text": "Three nodes on the Magician road:$(br2)"
                  "$(li)$(l:paths/hazen_metals)Hazen's Metals$(), ring 9: ores, ingots and its woods.$(br)"

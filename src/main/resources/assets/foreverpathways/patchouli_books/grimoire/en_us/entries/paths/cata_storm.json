@@ -1,0 +1,20 @@
+{
+  "name": "Scylla",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "cataclysm:ceraunus",
+  "sortnum": 1200,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "cataclysm:ceraunus",
+      "title": "Scylla",
+      "text": "$(bold)Cataclysm's Acropolis: Scylla's storm spears, astrape and ceraunus, brontes, the essence of the storm, lacrima and the azure sea shield, the Clawdian's claw, and the azure seastone of the drowned halls.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)70 Focal Shards$(n).$(br)After Maledictus."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill Scylla$(n)$(br2)Pays 12 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:cataclysm"
+}

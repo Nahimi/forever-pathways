@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "cataclysm:ignitium_ingot",
       "title": "Ignis",
-      "text": "$(bold)Cataclysm's fires: Ignis's ignitium and its armour, the bulwark of the flame and the incinerator, and the Netherite Monstrosity's helm, horn, effigy and forge.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)56 Focal Shards$(n).$(br)After The Leviathan."
+      "text": "$(bold)Cataclysm's Burning Arena: Ignis's ignitium and its armour, the bulwark of the flame and its gauntlet, the incinerator and the immolator, and the embers and ashes of its berserkers and revenants.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)56 Focal Shards$(n).$(br)After The Netherite Monstrosity."
     },
     {
       "type": "patchouli:text",

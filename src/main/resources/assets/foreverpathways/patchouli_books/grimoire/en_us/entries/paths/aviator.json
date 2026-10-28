@@ -1,0 +1,15 @@
+{
+  "name": "Aviator",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "immersive_aircraft:airship",
+  "sortnum": 600,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "immersive_aircraft:airship",
+      "title": "Aviator",
+      "text": "$(bold)Immersive Aircraft's first flights: the airship, the gyrodyne, the biplane and the quadrocopter, with the hulls, sails, propellers, boilers and engines they are built from.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)21 Focal Shards$(n).$(br)After Boatwright."
+    }
+  ],
+  "flag": "mod:immersive_aircraft"
+}

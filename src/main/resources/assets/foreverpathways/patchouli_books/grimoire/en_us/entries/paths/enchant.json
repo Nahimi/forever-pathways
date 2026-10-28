@@ -28,7 +28,7 @@
     {
       "type": "patchouli:text",
       "title": "Unlocks",
-      "text": "$(bold)enchanting table, bookshelf, chiseled bookshelf, lapis lazuli, lapis block, anvil, chipped anvil, damaged anvil, grindstone, lectern, experience bottle, enchanted book."
+      "text": "$(bold)enchanting table, bookshelf, chiseled bookshelf, lapis lazuli, lapis block, anvil, chipped anvil, damaged anvil, grindstone, lectern, experience bottle, enchanted book, reforging station."
     }
   ]
 }

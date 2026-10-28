@@ -24,6 +24,12 @@
       "recipe": "waystones:waystone",
       "recipe2": "waystones:warp_stone",
       "title": "Waystone and Warp Stone"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Immersive Aircraft",
+      "flag": "mod:immersive_aircraft",
+      "text": "$(bold)Two nodes on the Ranger road, after Boatwright:$(br2)$(li)$(l:paths/aviator)Aviator$(n), ring 6: the airship, gyrodyne, biplane and quadrocopter, and their parts.$(br)$(li)$(l:paths/air_fleet)Air Fleet$(n), ring 9: the cargo airship, the warship, better engines and the weapons."
     }
   ],
   "flag": "mod:waystones"

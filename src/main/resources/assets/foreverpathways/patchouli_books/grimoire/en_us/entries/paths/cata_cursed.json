@@ -1,0 +1,20 @@
+{
+  "name": "Maledictus",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "cataclysm:soul_render",
+  "sortnum": 1100,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "cataclysm:soul_render",
+      "title": "Maledictus",
+      "text": "$(bold)Cataclysm's Frosted Prison: Maledictus's cursium and its armour, the soul render, the annihilator, the cursed bow and the wrath of the desert, the draugr's black steel, and the frosted halls.$(br2)$(thing)Relics$(n), ring 11.$(br)$(thing)56 Focal Shards$(n).$(br)After The Leviathan."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill Maledictus$(n)$(br2)Pays 10 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:cataclysm"
+}

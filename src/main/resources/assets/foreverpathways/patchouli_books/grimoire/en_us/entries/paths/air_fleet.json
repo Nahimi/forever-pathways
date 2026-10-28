@@ -1,0 +1,15 @@
+{
+  "name": "Air Fleet",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "immersive_aircraft:warship",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "immersive_aircraft:warship",
+      "title": "Air Fleet",
+      "text": "$(bold)Immersive Aircraft's heavy craft and upgrades: the cargo airship and the warship, the eco and nether engines, the steel boiler, reinforced hulls, landing gear and flight instruments, and the bomb bay, heavy crossbow and rotary cannon.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)39 Focal Shards$(n).$(br)After Aviator."
+    }
+  ],
+  "flag": "mod:immersive_aircraft"
+}

@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "cataclysm:witherite_ingot",
       "title": "The Harbinger",
-      "text": "$(bold)Cataclysm's end: the Harbinger's witherite and wither cannon, the Ender Guardian's void arms and enderite, Maledictus's cursium, soul render and annihilator, and the frozen draugr halls.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)70 Focal Shards$(n).$(br)After Ignis."
+      "text": "$(bold)Cataclysm's Ancient Factory: the Harbinger's witherite, the wither and void cannons, the laser gatling, the meat shredder, the EMP and the mechanical fusion anvil.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)70 Focal Shards$(n).$(br)After Ignis."
     },
     {
       "type": "patchouli:text",

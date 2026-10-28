@@ -1,0 +1,20 @@
+{
+  "name": "The Netherite Monstrosity",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "cataclysm:monstrous_helm",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "cataclysm:monstrous_helm",
+      "title": "The Netherite Monstrosity",
+      "text": "$(bold)Cataclysm's Soul Black Smith: the Netherite Monstrosity's horn and helm, its infernal forge and the void forge, the lava power cell, the netherite effigy and the little ministrosity.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)48 Focal Shards$(n).$(br)After The Ender Guardian."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill the Netherite Monstrosity$(n)$(br2)Pays 9 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:cataclysm"
+}

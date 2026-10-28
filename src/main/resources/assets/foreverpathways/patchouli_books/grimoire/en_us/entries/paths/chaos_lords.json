@@ -1,0 +1,20 @@
+{
+  "name": "Lords of Chaos",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "born_in_chaos_v1:nightmare_scythe",
+  "sortnum": 800,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "born_in_chaos_v1:nightmare_scythe",
+      "title": "Lords of Chaos",
+      "text": "$(bold)The trophies of Born in Chaos's bosses: Lord Pumpkinhead's hat, lamp, soulbane and handgun, the hound leader's fang and traps, the Fallen Chaos Knight's dark metal armour, Krampus's horn and bag, the Lifestealer's bone and skull, the Nightmare Stalker's claw, scythe and mantle, and the death totem.$(br2)$(thing)The Nether$(n), ring 8.$(br)$(thing)34 Focal Shards$(n).$(br)After Born in Chaos."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill a lord of Born in Chaos$(n)$(br2)Pays 6 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:born_in_chaos_v1"
+}

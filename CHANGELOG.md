@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.33.0
+
+- L_Ender's Cataclysm now has a node for each of its eight bosses, each asking for its kill, on two roads from
+  Warrior: the Ender Guardian (ring 9), the Netherite Monstrosity (10), Ignis (11) and the Harbinger (12); and the
+  Ancient Remnant (9), the Leviathan (10), Maledictus (11) and Scylla (12). Each holds its own boss's drops and what
+  is made from them; lesser bosses (the Kobolediator, the draugr, the Clawdian) share their master's node. Players
+  who owned Ignis, the Leviathan or the Harbinger before need the new nodes for the Monstrosity, Scylla, the Ender
+  Guardian and Maledictus.
+- Born in Chaos: Born in Chaos (ring 5, after Hunter) for its creatures' drops and blocks, and Lords of Chaos (ring 8)
+  for its bosses' trophies.
+- Immersive Aircraft: Aviator (ring 6, after Boatwright) for the airship, gyrodyne, biplane and quadrocopter, and
+  Air Fleet (ring 9) for the cargo airship, the warship and the upgrades.
+- Map Atlases are unlocked at Cartographer; Quality Equipment's reforging station at Enchanting and its emerald
+  ring and amulet at Trader.
+
 ## 0.32.1
 
 - A node's Unlocks list marks recipe-only items (decoration and everyday things anyone may already use) with a gold
