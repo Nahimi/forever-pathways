@@ -36,7 +36,7 @@
     {
       "type": "patchouli:text",
       "title": "Death",
-      "text": "$(bold)$(#8A3B2F)1 Focal Shard, and on Normal and Hard a quarter of all progress on running tasks and bounties.$(n)$(br2)Nothing counts for a while: 3 minutes on Easy, 5 on Normal, 10 on Hard. Unlocked nodes and finished tasks are safe."
+      "text": "$(bold)$(#8A3B2F)1 Focal Shard, and on Normal and Hard a quarter of all progress on running tasks and bounties.$(n)$(br2)Everything keeps counting. Unlocked nodes and finished tasks are safe."
     }
   ],
   "priority": true

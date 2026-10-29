@@ -17,7 +17,7 @@ import uk.foreverserver.pathways.net.DifficultyPayload;
 
 /**
  * The difficulty preset: how many shards a player starts with, whether dying costs task progress,
- * how long the death freeze lasts, and what every node costs.
+ * and what every node costs.
  *
  * Each world keeps its own preset in its save, picked from the world's difficulty the first time it
  * starts: Peaceful and Easy pick Easy, Normal picks Normal, Hard and Hardcore pick Hard. An operator
@@ -27,21 +27,19 @@ import uk.foreverserver.pathways.net.DifficultyPayload;
  */
 public final class Difficulty {
     public enum Preset {
-        AUTO(2, true, 12000, 1.0),
-        EASY(5, false, 3600, 0.75),
-        NORMAL(3, true, 6000, 0.95),
-        HARD(2, true, 12000, 1.0);
+        AUTO(2, true, 1.0),
+        EASY(5, false, 0.75),
+        NORMAL(3, true, 0.95),
+        HARD(2, true, 1.0);
 
         public final int startingShards;
         /** Whether a death takes a share (the tree's deathTaskLoss, a quarter) of running progress. */
         public final boolean loseProgress;
-        public final int freezeTicks;
         public final double costFactor;
 
-        Preset(int startingShards, boolean loseProgress, int freezeTicks, double costFactor) {
+        Preset(int startingShards, boolean loseProgress, double costFactor) {
             this.startingShards = startingShards;
             this.loseProgress = loseProgress;
-            this.freezeTicks = freezeTicks;
             this.costFactor = costFactor;
         }
 
@@ -66,9 +64,9 @@ public final class Difficulty {
                         "        pick HARD). Change a world's preset in game with /pathways difficulty.",
                         "EASY, NORMAL or HARD: force that preset on every world, whatever it picked.",
                         "",
-                        "EASY:   5 starting shards, no task progress lost on death, 3 minute freeze, nodes cost 25% less.",
-                        "NORMAL: 3 starting shards, a quarter of task progress lost on death, 5 minute freeze, nodes cost 5% less.",
-                        "HARD:   2 starting shards, a quarter of task progress lost on death, 10 minute freeze, nodes at full cost.",
+                        "EASY:   5 starting shards, no task progress lost on death, nodes cost 25% less.",
+                        "NORMAL: 3 starting shards, a quarter of task progress lost on death, nodes cost 5% less.",
+                        "HARD:   2 starting shards, a quarter of task progress lost on death, nodes at full cost.",
                         "Starting shards are given when a player first joins, so a change later does not alter theirs.")
                 .translation("config.foreverpathways.difficulty.preset")
                 .defineEnum("force_preset", Preset.AUTO);

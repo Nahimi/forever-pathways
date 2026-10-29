@@ -868,7 +868,7 @@ public class PathwaysScreen extends Screen {
         long[] t = task(node);
         if (t != null && t[0] == 1 && s >= 12 && gate != Gate.HELD) {
             double frac = t[2] <= 0 ? 0 : Math.min(1, t[1] / (double) t[2]);
-            Pix.bar(g, x, y + s + 2, s, 3, (float) frac, state.freeze() > 0 ? RED : GOLD);
+            Pix.bar(g, x, y + s + 2, s, 3, (float) frac, GOLD);
         }
     }
 
@@ -986,8 +986,8 @@ public class PathwaysScreen extends Screen {
         }
         y += 12;
         g.drawString(this.font, "Level " + state.level(), x, y, GOLD, false);
-        String day = state.freeze() > 0 ? "Frozen " + clock(state.freeze()) : "Day " + (state.days() + 1);
-        g.drawString(this.font, day, right - this.font.width(day), y, state.freeze() > 0 ? RED : MUTED, false);
+        String day = "Day " + (state.days() + 1);
+        g.drawString(this.font, day, right - this.font.width(day), y, MUTED, false);
         y += 11;
         drawStats(g, x, y, right, mouseX, mouseY);
 
@@ -1231,11 +1231,10 @@ public class PathwaysScreen extends Screen {
             int stateCode = t == null ? 0 : (int) t[0];
             y += 2;
             bar(g, x, y, width, 4, goal <= 0 ? 0 : cur / (float) goal,
-                    stateCode == 4 ? GREEN : state.freeze() > 0 ? RED : GOLD);
+                    stateCode == 4 ? GREEN : GOLD);
             y += 7;
-            String frozen = state.freeze() > 0 ? "  |  frozen " + clock(state.freeze()) : "";
             String line = switch (stateCode) {
-                case 1 -> String.format(Locale.ROOT, "%,d / %,d", cur, goal) + frozen;
+                case 1 -> String.format(Locale.ROOT, "%,d / %,d", cur, goal);
                 case 4 -> "Done";
                 default -> "Not open yet";
             };
@@ -1319,11 +1318,6 @@ public class PathwaysScreen extends Screen {
     private int drawTasks(GuiGraphics g, int x, int y, int right, int mouseX, int mouseY, int top, int bottom) {
         int width = right - x;
         Map<String, long[]> map = tasks();
-        if (state.freeze() > 0) {
-            y = text(g, "Frozen for " + clock(state.freeze()),
-                    x, y, width, RED);
-            y += 4;
-        }
 
         // Bounties: one row per slot.
         List<Job> bounties = new ArrayList<>();
@@ -1519,7 +1513,7 @@ public class PathwaysScreen extends Screen {
                 x + 18, y + 10, job.done ? GREEN : DIM, false);
         g.drawString(this.font, job.count, right - this.font.width(job.count), y + 10, MUTED, false);
         bar(g, x + 18, y + 20, width - 18, 2, job.frac,
-                job.dim ? (job.frac >= 1 ? GREEN : TRACK) : state.freeze() > 0 ? RED : GOLD);
+                job.dim ? (job.frac >= 1 ? GREEN : TRACK) : GOLD);
         if (job.node != null) {
             String id = job.node.id;
             rows.add(new Row(x, Math.max(top, rowTop), right, Math.min(bottom, rowTop + 26), () -> {

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.34.0
+
+- Dying no longer freezes tasks and bounties, on any difficulty. It still costs 1 Focal Shard, and on Normal and Hard a
+  quarter of running progress.
+- Players now hold 3 bounties. The third is always a delivery and the other two never are. A delivered or expired
+  delivery is replaced at dawn; one given up is replaced at once. The new slot is dealt as soon as a player logs in.
+- Deliveries no longer ask for grass blocks, which need Silk Touch; Tier I can ask for dirt instead.
+- tree.json: "bountySlots" is 3, "delivery.chance" is replaced by "delivery.slot" (false turns deliveries off),
+  "delivery.raw" lists items no recipe makes that may still be asked for, and "rules.freezeTicks" is gone.
+
 ## 0.33.1
 
 - A tree.json from a datapack or KubeJS now applies in single player as soon as the world opens. Opening a world

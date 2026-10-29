@@ -135,8 +135,7 @@ CHAPTERS = [
         {"type": "patchouli:text", "title": "Death",
          "text": "$(#8A3B2F)1 Focal Shard, and on Normal and Hard a quarter of all progress on running "
                  "tasks and bounties.$()$(br2)"
-                 "Nothing counts for a while: 3 minutes on Easy, 5 on Normal, 10 on Hard. Unlocked "
-                 "nodes and finished tasks are safe."},
+                 "Everything keeps counting. Unlocked nodes and finished tasks are safe."},
     ]),
     ("c3", "III. Gaining Shards", "minecraft:amethyst_shard", 2, [
         "Four sources, and no others. Shards cannot be mined, crafted or traded for.",
@@ -145,7 +144,7 @@ CHAPTERS = [
                  "A task counts only once its node is reachable: the node before it owned, its ring "
                  "unsealed. Earlier work does not count."},
         {"type": "patchouli:text", "title": "Bounties",
-         "text": "Two at a time, lasting a few days.$(br2)"
+         "text": "Three at a time, lasting a few days. The third is always a delivery.$(br2)"
                  "$(li)Finish one and the next comes 3 minutes later, or at dawn if that is sooner.$(br)"
                  "$(li)Hold right-click on one in the Tasks tab to give it up, once a day; a new one comes at once.$(br)"
                  "$(li)They grow harder as you unlock nodes, and pay up to 4 shards; rare ones pay 5."},
@@ -153,7 +152,7 @@ CHAPTERS = [
          "text": "Some bounties ask you to hand in crafted items: 32 Iron Ingots, 2 Bookshelves.$(br2)"
                  "$(li)Carry them all, then press Deliver.$(br)"
                  "$(li)Plain items only: not damaged, named or enchanted.$(br)"
-                 "$(li)One a day; once delivered, its slot waits for dawn."},
+                 "$(li)The third bounty is always one. Delivered or expired, it waits for dawn; given up, a new one comes at once."},
         {"type": "patchouli:text", "title": "Staying Alive",
          "text": "Every full day you live without dying pays 1 Focal Shard.$(br2)"
                  "Dying starts the count again."},

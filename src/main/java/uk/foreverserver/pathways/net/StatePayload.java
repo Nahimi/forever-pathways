@@ -19,13 +19,12 @@ import uk.foreverserver.pathways.ForeverPathways;
  * @param owned     comma-separated stage ids
  * @param dayTicks  ticks alive into the current day (progress to the next shard)
  * @param days      whole days survived in this life
- * @param freeze    ticks left on the task freeze, 0 when tasks are running
  * @param tasks     one line per node task (node id, state 0 waiting / 1 running / 4 done, progress, goal, 0, 0)
  *                  and one per bounty slot ("slot:N", state 0 empty / 1 running / 5 done today / 6 expired,
  *                  progress, goal, bounty index or -1, ticks to the deadline or to the next dawn)
  * @param found     comma-separated indices of claimed discoveries
  */
-public record StatePayload(int points, int level, String owned, int dayTicks, int days, int freeze, String tasks,
+public record StatePayload(int points, int level, String owned, int dayTicks, int days, String tasks,
                            String found) implements CustomPacketPayload {
     private static final int MAX = 262144;
 
@@ -37,7 +36,6 @@ public record StatePayload(int points, int level, String owned, int dayTicks, in
                 buf.writeUtf(payload.owned == null ? "" : payload.owned, MAX);
                 buf.writeVarInt(payload.dayTicks);
                 buf.writeVarInt(payload.days);
-                buf.writeVarInt(payload.freeze);
                 buf.writeUtf(payload.tasks == null ? "" : payload.tasks, MAX);
                 buf.writeUtf(payload.found == null ? "" : payload.found, MAX);
             },
@@ -47,13 +45,12 @@ public record StatePayload(int points, int level, String owned, int dayTicks, in
                     buf.readUtf(MAX),
                     buf.readVarInt(),
                     buf.readVarInt(),
-                    buf.readVarInt(),
                     buf.readUtf(MAX),
                     buf.readUtf(MAX)
             )
     );
 
-    public static final StatePayload EMPTY = new StatePayload(0, 0, "", 0, 0, 0, "", "");
+    public static final StatePayload EMPTY = new StatePayload(0, 0, "", 0, 0, "", "");
 
     public Set<String> ownedSet() {
         Set<String> set = new HashSet<>();

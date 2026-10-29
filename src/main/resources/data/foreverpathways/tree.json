@@ -65,8 +65,7 @@
     "shardsPerDay": 1,
     "deathShardLoss": 1,
     "deathTaskLoss": 0.25,
-    "freezeTicks": 12000,
-    "bountySlots": 2
+    "bountySlots": 3
   },
   "stats": {
     "movement": {
@@ -157,7 +156,7 @@
     "VI"
   ],
   "delivery": {
-    "chance": 0.25,
+    "slot": true,
     "days": 2,
     "rings": [
       2,
@@ -239,7 +238,11 @@
       "re:.*_spawn_egg",
       "minecraft:knowledge_book",
       "minecraft:written_book",
-      "re:patchouli:.*"
+      "re:patchouli:.*",
+      "re:.*:.*grass_block"
+    ],
+    "raw": [
+      "minecraft:dirt"
     ]
   },
   "bounties": [

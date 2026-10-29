@@ -128,7 +128,6 @@ public final class PathwayService {
                 text.toString(),
                 alive,
                 (int) Math.min(Integer.MAX_VALUE, TaskBook.daysAlive(player, tree)),
-                (int) Math.min(Integer.MAX_VALUE, TaskBook.frozenTicks(player)),
                 TaskBook.snapshot(player),
                 TaskBook.foundSnapshot(player)
         );

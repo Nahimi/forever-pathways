@@ -39,8 +39,7 @@ public final class Debug {
 
         Difficulty.Preset preset = Difficulty.current();
         line(out, "Difficulty", preset + ": " + preset.startingShards + " starting shards, "
-                + (preset.loseProgress ? "progress lost on death" : "no progress lost on death") + ", "
-                + preset.freezeTicks / 1200 + " minute freeze, costs x" + preset.costFactor, true);
+                + (preset.loseProgress ? "progress lost on death" : "no progress lost on death") + ", costs x" + preset.costFactor, true);
 
         // ProgressiveStages' view of the stages.
         Set<StageId> all = ProgressiveStagesAPI.getAllStageIds();
@@ -70,8 +69,7 @@ public final class Debug {
         Set<String> owned = TaskBook.owned(player, tree);
         long shards = ProgressiveStagesAPI.getCounter(player, PathwayService.POINTS);
         line(out, "You", owned.size() + " nodes owned, level " + Gates.level(tree, owned::contains) + ", "
-                + shards + " shards, set up " + (ProgressiveStagesAPI.getCounter(player, "fp2_init") != 0 ? "yes" : "no")
-                + ", frozen " + TaskBook.frozenTicks(player) / 20 + "s", true);
+                + shards + " shards, set up " + (ProgressiveStagesAPI.getCounter(player, "fp2_init") != 0 ? "yes" : "no"), true);
 
         // One node, if asked.
         if (nodeArg != null) {

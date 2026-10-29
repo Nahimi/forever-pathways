@@ -204,7 +204,14 @@ public final class Deliveries {
             ignore.add(LockResolver.matcher(spec));
         }
         Map<Integer, List<Item>> byTier = new HashMap<>();
-        for (Map.Entry<Item, List<Ingredient>> entry : cheapest.entrySet()) {
+        Map<Item, List<Ingredient>> asked = new HashMap<>(cheapest);
+        for (String id : rules.raw) {
+            Item raw = item(id);
+            if (raw != null) {
+                asked.putIfAbsent(raw, List.of());
+            }
+        }
+        for (Map.Entry<Item, List<Ingredient>> entry : asked.entrySet()) {
             Item item = entry.getKey();
             double each = costs.getOrDefault(item, NEVER);
             if (each == NEVER || item == Items.AIR) {

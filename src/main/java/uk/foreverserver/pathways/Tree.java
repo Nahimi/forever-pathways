@@ -255,13 +255,12 @@ public final class Tree {
         public int startingShards = 0;
         public int dayTicks = 24000;
         public int shardsPerDay = 0;
-        /** How many bounties a player holds at once. */
-        public int bountySlots = 2;
+        /** How many bounties a player holds at once, the delivery slot included. */
+        public int bountySlots = 3;
         /** Ticks before a finished bounty is replaced; dawn replaces it sooner if it comes first. */
         public int bountyRefillTicks = 3600;
         public int deathShardLoss = 1;
         public double deathTaskLoss = 0.25;
-        public int freezeTicks = 12000;
     }
 
     /**
@@ -270,8 +269,10 @@ public final class Tree {
      * out from every recipe in the pack.
      */
     public static final class Delivery {
-        /** Chance that a bounty dealt is a delivery, while the player has not had one today. */
-        public double chance = 0.25;
+        /** The last bounty slot always holds a delivery, and the others never do; false turns deliveries off. */
+        public boolean slot = true;
+        /** Items no recipe makes that may still be asked for, as raw materials (dirt). */
+        public List<String> raw = new ArrayList<>();
         /** Dawns until it expires, as for other bounties. */
         public int days = 2;
         /** The last ring of tiers I to V; anything past the last is tier VI. */
