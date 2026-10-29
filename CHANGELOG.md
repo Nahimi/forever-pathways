@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.35.0
+
+- Supports Quark, No Man's Land, The Beyond, Design n Decor, Create: Dreams n Desires, Create Stuff Additions, Create
+  Ratatouille, Veggies Delight, Redomesticate, Nirvana and Create Auto-Navigation, all on existing nodes:
+  - Quark and No Man's Land: woods at Woodcutter, stonework at Builder (and Polished Stone, Brickwork, Deepslate Work,
+    Copperwork, Seastone, Fortress Stone, Crimson and Warped and The End by material), glass at Glassworks, lamps at
+    Lighting, crates at Gardener, bookshelves at Enchanting, boats at Boatwright, dishes at Larder and gadgets at
+    Mechanisms, Redstone, Ironworks and Cartographer. Their natural stones, plants and soils are free, like Biomes
+    O' Plenty's.
+  - The Beyond: all of it at The End.
+  - Design n Decor: Stone Palettes, with its working cogwheels, millstones, crushing wheels, fans, flywheels and
+    belts at the Create node for each.
+  - Dreams n Desires and Create Stuff Additions: each machine, tool and armour set at its Create or metal node.
+  - Ratatouille: its machines at Pressing and Mixing, the rest at Bakery. Veggies Delight: crops at Gardener, dishes
+    at Larder. Redomesticate at Husbandry. Nirvana: hemp at Gardener, burlap at Canvas Works, the rest at Herbalist.
+- Quark's furnaces and Redomesticate's pet beds lock only their recipe, like other everyday things.
+- Biolith and Create Central Kitchen add no items and need nothing.
+
 ## 0.34.0
 
 - Dying no longer freezes tasks and bounties, on any difficulty. It still costs 1 Focal Shard, and on Normal and Hard a

@@ -145,7 +145,9 @@
     "minecraft:painting",
     "minecraft:armor_stand",
     "minecraft:composter",
-    "minecraft:cauldron"
+    "minecraft:cauldron",
+    "re:quark:.*_furnace",
+    "re:redomesticate:pet_bed_.*"
   ],
   "bountyTiers": [
     "I",
@@ -2061,7 +2063,9 @@
         "minecraft:spider_eye_de",
         "minecraft:suspicious_stew_de",
         "minecraft:sweet_berries_de",
-        "minecraft:tropical_fish_de"
+        "minecraft:tropical_fish_de",
+        "re:quark:(jasper|limestone|shale|myalite|dusky_myalite|myalite_crystal|permafrost|.*corundum|.*corundum_cluster|glow_shroom.*|glow_lichen_growth|chorus_twist|chorus_weeds|root|root_item|.*_leaves|.*_leaf_carpet|.*_hedge|cut_vine|gravisand|crab_leg|crab_shell|ravager_hide)",
+        "rest:nomansland"
       ],
       "uses": []
     },
@@ -2389,7 +2393,12 @@
         "spawn:cracked_rotten_planks",
         "spawn:rotten_log_anthill",
         "spawn:date_seed",
-        "minecraft:bowl_de"
+        "minecraft:bowl_de",
+        "re:quark:(stripped_)?(oak|spruce|birch|jungle|acacia|dark_oak|mangrove|cherry|bamboo|azalea|blossom|ancient)_(log|wood|planks|stairs|slab|vertical_slab|planks_slab|planks_stairs|planks_vertical_slab|mosaic_vertical_slab|fence|fence_gate|door|trapdoor|sign|hanging_sign|button|pressure_plate|post|ladder|chest)",
+        "re:quark:(vertical_(oak|spruce|birch|jungle|acacia|dark_oak|mangrove|cherry|bamboo|azalea|blossom|ancient)_planks|hollow_.*_log|.*_sapling|stick_block|trapped_(lootr_)?.*_chest|lootr_.*_chest)",
+        "re:nomansland:(stripped_)?(maple|pine|walnut|willow)_(log|wood|planks|stairs|slab|fence|fence_gate|door|trapdoor|sign|hanging_sign|button|pressure_plate|sapling)",
+        "re:nomansland:(.*_sapling|petrified_(log|wood)|trimmed_.*_planks|crude_(door|trapdoor))",
+        "re:quark:(bamboo_mat|bamboo_mat_carpet|crate)"
       ],
       "uses": []
     },
@@ -2451,7 +2460,8 @@
         "create:veridium",
         "spawn:reefstone",
         "spawn:algal_reefstone",
-        "spawn:blasted_sandstone"
+        "spawn:blasted_sandstone",
+        "quark:charcoal_block"
       ],
       "uses": []
     },
@@ -2486,7 +2496,8 @@
         "minecraft:lightning_rod",
         "re:legendarysurvivaloverhaul:(canteen|water_purifier)",
         "minecraft:glass_bottle",
-        "minecraft:glass_bottle_de"
+        "minecraft:glass_bottle_de",
+        "re:create_sa:copper_(axe|boots|chestplate|helmet|hoe|leggings|pickaxe|shovel|sword)"
       ],
       "uses": []
     },
@@ -2656,7 +2667,8 @@
         "minecraft:lantern",
         "minecraft:heavy_weighted_pressure_plate",
         "minecraft:cauldron",
-        "minecraft:smithing_table"
+        "minecraft:smithing_table",
+        "re:quark:((rusty_)?iron_plate.*|iron_pillar|iron_ladder|iron_button|iron_chain)"
       ],
       "uses": []
     },
@@ -2751,7 +2763,8 @@
         "minecraft:gold_ingot",
         "minecraft:gold_nugget",
         "minecraft:gold_block",
-        "minecraft:light_weighted_pressure_plate"
+        "minecraft:light_weighted_pressure_plate",
+        "re:quark:(gold_bars|gold_button)"
       ],
       "uses": []
     },
@@ -2862,7 +2875,8 @@
         "minecraft:redstone_lamp",
         "minecraft:powered_rail",
         "minecraft:detector_rail",
-        "minecraft:activator_rail"
+        "minecraft:activator_rail",
+        "re:quark:(redstone_randomizer|ender_watcher|weather_sensor|obsidian_pressure_plate)"
       ],
       "uses": []
     },
@@ -2903,7 +2917,9 @@
         "minecraft:grindstone",
         "minecraft:lectern",
         "minecraft:experience_bottle",
-        "minecraft:enchanted_book"
+        "minecraft:enchanted_book",
+        "re:quark:(matrix_enchanter|ancient_tome|smithing_template_rune|.*_bookshelf)",
+        "re:nomansland:.*_bookshelf"
       ],
       "uses": []
     },
@@ -3020,7 +3036,9 @@
         "minecraft:calibrated_sculk_sensor",
         "minecraft:trapped_chest",
         "minecraft:slime_block",
-        "minecraft:target"
+        "minecraft:target",
+        "re:quark:(chute|grate|pipe|encased_pipe|magnet|magnetized_block|crafter|iron_rod)",
+        "nomansland:spike_trap"
       ],
       "uses": []
     },
@@ -3044,7 +3062,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:minecraft:diamond_(sword|pickaxe|axe|shovel|hoe)"
+        "re:minecraft:diamond_(sword|pickaxe|axe|shovel|hoe)",
+        "quark:pickarang"
       ],
       "uses": []
     },
@@ -3075,7 +3094,8 @@
         "minecraft:tnt",
         "minecraft:tnt_minecart",
         "minecraft:firework_rocket",
-        "minecraft:firework_star"
+        "minecraft:firework_star",
+        "re:nomansland:(explosive|explosive_barrel|firebomb|flammable_barrel|toxic_barrel|ink_bomb)"
       ],
       "uses": []
     },
@@ -3175,7 +3195,8 @@
         "minecraft:nether_wart",
         "minecraft:nether_brick",
         "re:terrain_slabs:(basalt|crimson_nylium|warped_nylium|netherrack|soul_sand|soul_soil|terrain_blackstone)_slab",
-        "re:projectvibrantjourneys:(cindercane|crimson_nettle|warped_nettle|charred_bones)"
+        "re:projectvibrantjourneys:(cindercane|crimson_nettle|warped_nettle|charred_bones)",
+        "re:quark:netherrack_bricks.*"
       ],
       "uses": []
     },
@@ -3211,7 +3232,8 @@
         "minecraft:respawn_anchor",
         "minecraft:ancient_debris",
         "create:empty_blaze_burner",
-        "create:blaze_burner"
+        "create:blaze_burner",
+        "re:create_sa:blazing_.*"
       ],
       "uses": []
     },
@@ -3266,7 +3288,8 @@
         "minecraft:nether_sprouts",
         "minecraft:nether_wart_block",
         "minecraft:warped_wart_block",
-        "minecraft:warped_fungus_on_a_stick"
+        "minecraft:warped_fungus_on_a_stick",
+        "re:quark:.*(blackstone|soul_sandstone|crimson|warped).*"
       ],
       "uses": []
     },
@@ -3386,7 +3409,9 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:minecraft:netherite_(sword|pickaxe|axe|shovel|hoe|helmet|chestplate|leggings|boots)"
+        "re:minecraft:netherite_(sword|pickaxe|axe|shovel|hoe|helmet|chestplate|leggings|boots)",
+        "quark:flamerang",
+        "re:create_sa:netherite_.*"
       ],
       "uses": []
     },
@@ -3469,7 +3494,9 @@
         "re:minecraft:(white|orange|magenta|light_blue|yellow|lime|pink|gray|light_gray|cyan|purple|blue|brown|green|red|black)_shulker_box",
         "legendarysurvivaloverhaul:chorus_fruit_juice",
         "terrain_slabs:endstone_slab",
-        "minecraft:chorus_fruit_de"
+        "minecraft:chorus_fruit_de",
+        "re:quark:.*(purpur|end_stone|chorus_fruit_block).*",
+        "rest:the_beyond"
       ],
       "uses": []
     },
@@ -3688,7 +3715,8 @@
       "locks": [
         "re:(biomesoplenty|biomeswevegone):.*_(boat|chest_boat)",
         "re:(minecraft|spawn):.*_(boat|raft)",
-        "re:supplementaries:jar_boat"
+        "re:supplementaries:jar_boat",
+        "re:(quark|nomansland):.*_boat"
       ],
       "uses": []
     },
@@ -3779,7 +3807,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "mod:backpacked"
+        "mod:backpacked",
+        "re:quark:backpack.*"
       ],
       "uses": []
     },
@@ -3824,7 +3853,9 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:supplementaries:(quiver|slingshot|rope_arrow)"
+        "re:supplementaries:(quiver|slingshot|rope_arrow)",
+        "quark:torch_arrow",
+        "nomansland:incendiary_arrow"
       ],
       "uses": []
     },
@@ -3848,7 +3879,9 @@
       "locks": [
         "re:map_atlases:.*",
         "minecraft:recovery_compass",
-        "re:supplementaries:(globe|globe_sepia|altimeter|cartographers_quill|slice_map|antique_ink)"
+        "re:supplementaries:(globe|globe_sepia|altimeter|cartographers_quill|slice_map|antique_ink)",
+        "re:quark:(pathfinders_quill.*|biome_map)",
+        "nomansland:no_mans_globe"
       ],
       "uses": []
     },
@@ -5410,7 +5443,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:create:(andesite_alloy|shaft|cogwheel|large_cogwheel|hand_crank|wrench|goggles|wooden_bracket)"
+        "re:create:(andesite_alloy|shaft|cogwheel|large_cogwheel|hand_crank|wrench|goggles|wooden_bracket)",
+        "re:dndecor:(.*_)?(large_)?(industrial_)?cogwheel"
       ],
       "uses": []
     },
@@ -5433,7 +5467,8 @@
       "craftOnly": false,
       "locks": [
         "re:supplementaries:wrench",
-        "re:create:(gearbox|vertical_gearbox|clutch|gearshift|encased_chain_drive|adjustable_chain_gearshift|andesite_alloy_block|metal_bracket)"
+        "re:create:(gearbox|vertical_gearbox|clutch|gearshift|encased_chain_drive|adjustable_chain_gearshift|andesite_alloy_block|metal_bracket)",
+        "re:dndesires:(cog_crank|large_cog_crank|inverse_gearshift|omni_gearbox|omni_speed_controller)"
       ],
       "uses": []
     },
@@ -5455,7 +5490,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:create:(water_wheel|large_water_wheel|speedometer|stressometer|turntable)"
+        "re:create:(water_wheel|large_water_wheel|speedometer|stressometer|turntable)",
+        "dndesires:multimeter"
       ],
       "uses": []
     },
@@ -5505,7 +5541,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:create:(millstone|sand_paper|.*_sand_paper)"
+        "re:create:(millstone|sand_paper|.*_sand_paper)",
+        "re:dndecor:.*millstone"
       ],
       "uses": []
     },
@@ -5531,7 +5568,10 @@
         "create:zinc_ore",
         "create:deepslate_zinc_ore",
         "create:raw_zinc",
-        "create:raw_zinc_block"
+        "create:raw_zinc_block",
+        "re:create_sa:zinc_.*",
+        "re:dndesires:(hydraulic_press|gold_mixer|gold_whisk)",
+        "re:ratatouille:(oven|oven_fan|thresher|squeeze_basin|spreader|mechanical_demolder|compost_tower|irrigation_tower)"
       ],
       "uses": []
     },
@@ -5553,7 +5593,9 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:create:(encased_fan|depot)"
+        "re:create:(encased_fan|depot)",
+        "re:dndesires:(.*_sail|industrial_fan)",
+        "re:dndecor:(.*_)?large_fan"
       ],
       "uses": []
     },
@@ -5575,7 +5617,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:create:(belt_connector|andesite_funnel|andesite_tunnel|chute)"
+        "re:create:(belt_connector|andesite_funnel|andesite_tunnel|chute)",
+        "re:dndecor:(belt|belt_connector)"
       ],
       "uses": []
     },
@@ -5597,7 +5640,9 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:create:(crushing_wheel|crushed_raw_.*|powdered_obsidian|experience_nugget|experience_block|tree_fertilizer)"
+        "re:create:(crushing_wheel|crushed_raw_.*|powdered_obsidian|experience_nugget|experience_block|tree_fertilizer)",
+        "re:dndesires:(diamond_shard|lapis_lazuli_shard|coal_piece)",
+        "re:dndecor:.*crushing_wheel"
       ],
       "uses": []
     },
@@ -5619,7 +5664,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:create:(fluid_pipe|mechanical_pump|fluid_tank|fluid_valve|.*valve_handle|spout|item_drain|hose_pulley)"
+        "re:create:(fluid_pipe|mechanical_pump|fluid_tank|fluid_valve|.*valve_handle|spout|item_drain|hose_pulley)",
+        "re:dndesires:(fluid_gauge|fluid_hatch)"
       ],
       "uses": []
     },
@@ -5641,7 +5687,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:create:(mechanical_saw|mechanical_drill|mechanical_harvester|mechanical_plough|mechanical_roller|deployer)"
+        "re:create:(mechanical_saw|mechanical_drill|mechanical_harvester|mechanical_plough|mechanical_roller|deployer)",
+        "re:dndesires:(handheld_drill|handheld_saw|roll_table)"
       ],
       "uses": []
     },
@@ -5671,7 +5718,9 @@
       "locks": [
         "re:create:(sturdy_sheet|unprocessed_obsidian_sheet|pulp)",
         "re:create:(brass_.*|rose_quartz.*|polished_rose_quartz|small_rose_quartz.*|precision_mechanism|incomplete_precision_mechanism|electron_tube|smart_fluid_pipe|zinc_ingot|zinc_nugget|zinc_block|blaze_cake.*)",
-        "rest:create"
+        "rest:create",
+        "rest:create_sa",
+        "rest:dndesires"
       ],
       "uses": []
     },
@@ -5693,7 +5742,10 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:create:(smart_chute|item_vault|weighted_ejector|content_observer|stockpile_switch|filter|attribute_filter|redstone_link|display_link|display_board|nixie_tube|clipboard.*|.*_toolbox|placard|analog_lever|pulse_.*|powered_latch|powered_toggle_latch|item_hatch|crafting_blueprint|desk_bell)"
+        "re:create:(smart_chute|item_vault|weighted_ejector|content_observer|stockpile_switch|filter|attribute_filter|redstone_link|display_link|display_board|nixie_tube|clipboard.*|.*_toolbox|placard|analog_lever|pulse_.*|powered_latch|powered_toggle_latch|item_hatch|crafting_blueprint|desk_bell)",
+        "dndesires:smart_hopper",
+        "re:dndecor:(.*_)?container",
+        "re:dndecor:.*display_board"
       ],
       "uses": []
     },
@@ -5715,7 +5767,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:create:(mechanical_bearing|clockwork_bearing|windmill_bearing|mechanical_piston|sticky_mechanical_piston|piston_extension_pole|rope_pulley|linear_chassis|secondary_linear_chassis|radial_chassis|sticker|super_glue|sail_frame|.*_sail)"
+        "re:create:(mechanical_bearing|clockwork_bearing|windmill_bearing|mechanical_piston|sticky_mechanical_piston|piston_extension_pole|rope_pulley|linear_chassis|secondary_linear_chassis|radial_chassis|sticker|super_glue|sail_frame|.*_sail)",
+        "re:dndesires:(gatling_breaker|spud_sentry)"
       ],
       "uses": []
     },
@@ -5898,7 +5951,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:create:(packager|repackager|stock_link|stock_ticker|redstone_requester|factory_gauge|package_.*|.*_postbox|cardboard.*|bound_cardboard_block|chain_conveyor|shopping_list|.*_table_cloth|rare_.*_package)"
+        "re:create:(packager|repackager|stock_link|stock_ticker|redstone_requester|factory_gauge|package_.*|.*_postbox|cardboard.*|bound_cardboard_block|chain_conveyor|shopping_list|.*_table_cloth|rare_.*_package)",
+        "re:dndesires:(cardboard_package.*|rare_.*_package)"
       ],
       "uses": []
     },
@@ -5921,7 +5975,10 @@
       "craftOnly": false,
       "locks": [
         "re:create:(flywheel|propeller|nozzle)",
-        "re:create:(steam_engine|steam_whistle|copper_backtank.*|copper_diving_.*|potato_cannon)"
+        "re:create:(steam_engine|steam_whistle|copper_backtank.*|copper_diving_.*|potato_cannon)",
+        "re:create_sa:(.*jetpack.*|.*exoskeleton.*|.*_filling_tank|.*_fueling_tank|heat_engine|hydraulic_engine|steam_engine|incomplete_.*engine|flamethrower.*|drone_controller|brass_drone_item|portable_drill|grapplin_whisk|fan_component|vault_component|propeller_render_prop)",
+        "re:dndesires:(burner|stirling_engine|powered_flywheel)",
+        "re:dndecor:.*flywheel"
       ],
       "uses": []
     },
@@ -5949,7 +6006,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:create:(track|incomplete_track|track_station|track_signal|track_observer|schedule|controls|railway_casing|train_door|train_trapdoor)"
+        "re:create:(track|incomplete_track|track_station|track_signal|track_observer|schedule|controls|railway_casing|train_door|train_trapdoor)",
+        "create_autonavigation:navigation_workbench"
       ],
       "uses": []
     },
@@ -6160,7 +6218,12 @@
         "minecraft:item_frame",
         "minecraft:glow_item_frame",
         "minecraft:painting",
-        "teallib:mannequin"
+        "teallib:mannequin",
+        "re:quark:(?!.*(oak|spruce|birch|jungle|acacia|dark_oak|mangrove|cherry|bamboo|azalea|blossom|ancient|crimson|warped)_).*(_bricks?|_brick_.*|_bricks_.*|_pillar|_slab|_stairs|_wall|_lattice|shingles.*)",
+        "re:quark:((polished|chiseled|cut|smooth|carved)_.*|duskbound_block.*|midori_block.*|sturdy_stone|trowel|abacus.*|raw_(iron|gold)_bricks.*)",
+        "re:quark:(.*item_frame|.*frame_(empty|map))",
+        "re:nomansland:(?!.*(maple|pine|walnut|willow)_).*(_bricks?|_brick_.*|_tiles?|_tile_.*|mosaic|_slab|_stairs|_wall)",
+        "re:nomansland:(polished_.*|chiseled_siltstone|thatch.*)"
       ],
       "uses": []
     },
@@ -6186,7 +6249,9 @@
         "re:minecraft:polished_(andesite|diorite|granite)",
         "minecraft:stonecutter",
         "minecraft:stone_button",
-        "minecraft:stone_pressure_plate"
+        "minecraft:stone_pressure_plate",
+        "re:quark:polished_(andesite|diorite|granite)_.*",
+        "re:quark:(andesite|diorite|granite)_(bricks.*|pillar|slab|vertical_slab)"
       ],
       "uses": []
     },
@@ -6233,7 +6298,9 @@
       "craftOnly": true,
       "locks": [
         "re:handcrafted:.*_(chair|table|side_table|bench|dining_bench)",
-        "re:handcrafted:(bench|frozen_bench)"
+        "re:handcrafted:(bench|frozen_bench)",
+        "re:quark:.*_stool",
+        "re:nomansland:.*_seat"
       ],
       "uses": []
     },
@@ -6255,7 +6322,9 @@
       "enchantPower": 0,
       "craftOnly": true,
       "locks": [
-        "re:supplementaries:(rope|sack|timber_.*|daub.*|soap|soap_block|ash|flint_block|feather_block|crank|statue|hat_stand)"
+        "re:supplementaries:(rope|sack|timber_.*|daub.*|soap|soap_block|ash|flint_block|feather_block|crank|statue|hat_stand)",
+        "re:nomansland:(.*palisade|wooden_platform.*|wooden_scaffolding|rope)",
+        "quark:rope"
       ],
       "uses": []
     },
@@ -6281,7 +6350,9 @@
         "re:supplementaries:bellows",
         "re:minecraft:(bricks|brick_stairs|brick_slab|brick_wall|brick|flower_pot)",
         "re:minecraft:(smooth_|cut_|chiseled_)?(red_)?sandstone(_stairs|_slab|_wall)?",
-        "re:spawn:(smooth_|cut_|chiseled_)?blasted_sandstone(_stairs|_slab|_wall)?"
+        "re:spawn:(smooth_|cut_|chiseled_)?blasted_sandstone(_stairs|_slab|_wall)?",
+        "re:quark:.*sandstone.*",
+        "re:quark:brick_(slab|vertical_slab)"
       ],
       "uses": []
     },
@@ -6304,7 +6375,8 @@
       "craftOnly": true,
       "locks": [
         "re:handcrafted:.*_(couch|desk|shelf|nightstand|counter|cupboard|drawer|cushion)",
-        "re:sleep_tight:hammock.*"
+        "re:sleep_tight:hammock.*",
+        "re:nomansland:.*_cabinet"
       ],
       "uses": []
     },
@@ -6327,7 +6399,10 @@
       "craftOnly": true,
       "locks": [
         "re:supplementaries:(awning.*|flag_.*|bunting_.*|item_shelf|doormat|flower_box|planter.*|way_sign_.*|fine_wood.*|wicker_fence|hanging_sign_.*|notice_board|jar|pedestal|hourglass.*)",
-        "re:supplementaries:((trapped_)?present(_[a-z_]+)?|flute|confetti_popper|lunch_basket|urn|music_disc_.*|spawn/way_sign_.*)"
+        "re:supplementaries:((trapped_)?present(_[a-z_]+)?|flute|confetti_popper|lunch_basket|urn|music_disc_.*|spawn/way_sign_.*)",
+        "re:quark:(paper_wall.*|potted_.*)",
+        "re:nomansland:potted_.*",
+        "re:(quark|nomansland):music_disc_.*"
       ],
       "uses": []
     },
@@ -6352,7 +6427,8 @@
         "re:minecraft:(polished_|chiseled_|cracked_)?deepslate_(bricks|tiles|brick_.*|tile_.*)",
         "re:minecraft:(polished_|chiseled_)deepslate(_stairs|_slab|_wall)?",
         "re:minecraft:cobbled_deepslate_(stairs|slab|wall)",
-        "re:minecraft:(polished_|chiseled_)?tuff(_bricks|_brick_stairs|_brick_slab|_brick_wall|_stairs|_slab|_wall)?"
+        "re:minecraft:(polished_|chiseled_)?tuff(_bricks|_brick_stairs|_brick_slab|_brick_wall|_stairs|_slab|_wall)?",
+        "re:quark:.*deepslate.*"
       ],
       "uses": []
     },
@@ -6442,7 +6518,8 @@
       "craftOnly": false,
       "locks": [
         "re:minecraft:(white|orange|magenta|light_blue|yellow|lime|pink|gray|light_gray|cyan|purple|blue|brown|green|red|black)_stained_glass(_pane)?",
-        "minecraft:tinted_glass"
+        "minecraft:tinted_glass",
+        "re:quark:(.*framed_glass.*|dirty_glass.*|.*_shard|.*corundum_pane)"
       ],
       "uses": []
     },
@@ -6466,7 +6543,9 @@
       "locks": [
         "re:supplementaries:(fire_pit|lumisene_bottle|lumisene_bucket)",
         "re:minecraft:((white|orange|magenta|light_blue|yellow|lime|pink|gray|light_gray|cyan|purple|blue|brown|green|red|black)_)?candle",
-        "re:supplementaries:(sconce.*|candle_holder.*|stone_lamp|deepslate_lamp|blackstone_lamp|end_stone_lamp)"
+        "re:supplementaries:(sconce.*|candle_holder.*|stone_lamp|deepslate_lamp|blackstone_lamp|end_stone_lamp)",
+        "re:quark:(paper_lantern.*|stone_lamp|stone_brick_lamp|blaze_lantern|duskbound_lantern|.*corundum_lamp|.*crystal_lamp)",
+        "re:nomansland:(sconce_torch|sconce_soul_torch|moonlight_candle)"
       ],
       "uses": []
     },
@@ -6544,7 +6623,9 @@
         "re:create:(asurine|crimsite|limestone|ochrum|scorchia|scoria|veridium)(_pillar)?",
         "re:create:(andesite|calcite|deepslate|diorite|dripstone|granite|tuff)_pillar",
         "re:spawn:(heliostone.*|unstable_heliostone|snail_shell_tile.*)",
-        "re:supplementaries:(stone_tile.*|ash_brick.*|gravel_bricks|suspicious_gravel_bricks|raked_gravel|lapis_bricks.*|checker.*|blackstone_tile.*)"
+        "re:supplementaries:(stone_tile.*|ash_brick.*|gravel_bricks|suspicious_gravel_bricks|raked_gravel|lapis_bricks.*|checker.*|blackstone_tile.*)",
+        "re:dndesires:(.*asphalt|.*bore_block|.*breccia.*)",
+        "rest:dndecor"
       ],
       "uses": []
     },
@@ -6664,7 +6745,9 @@
         "re:minecraft:(waxed_)?(exposed_|weathered_|oxidized_)?(cut_copper.*|chiseled_copper|copper_grate|copper_bulb|copper_door|copper_trapdoor)",
         "re:minecraft:(waxed_)?(exposed_|weathered_|oxidized_)copper",
         "minecraft:waxed_copper_block",
-        "re:create:(waxed_)?(exposed_|weathered_|oxidized_)?copper_(shingle|tile)(s|_slab|_stairs)"
+        "re:create:(waxed_)?(exposed_|weathered_|oxidized_)?copper_(shingle|tile)(s|_slab|_stairs)",
+        "re:quark:.*cut_copper.*",
+        "re:quark:raw_copper_bricks.*"
       ],
       "uses": []
     },
@@ -6717,7 +6800,8 @@
         "re:minecraft:(dark_)?prismarine.*",
         "minecraft:sea_lantern",
         "terrain_slabs:terrain_prismarine_slab",
-        "re:spawn:((algal_)?reefstone_(slab|stairs|wall)|reefstone_tile.*)"
+        "re:spawn:((algal_)?reefstone_(slab|stairs|wall)|reefstone_tile.*)",
+        "re:quark:.*prismarine.*"
       ],
       "uses": []
     },
@@ -6794,7 +6878,11 @@
         "minecraft:pitcher_plant",
         "minecraft:pitcher_pod",
         "re:supplementaries:flax(_seeds|_block)?",
-        "re:farmersdelight:(cabbage|cabbage_seeds|cabbage_leaf|tomato|tomato_seeds|onion|rice|rice_panicle|.*_crate|rice_bag|rice_bale|sandy_shrub|.*_mushroom_colony|tree_bark)"
+        "re:farmersdelight:(cabbage|cabbage_seeds|cabbage_leaf|tomato|tomato_seeds|onion|rice|rice_panicle|.*_crate|rice_bag|rice_bale|sandy_shrub|.*_mushroom_colony|tree_bark)",
+        "re:quark:(.*_crate|.*_sack|seed_pouch.*|cactus_block|sugar_cane_block|thatch.*)",
+        "re:nomansland:.*_crate",
+        "re:veggiesdelight:(.*_seeds|.*_crate|wild_.*|bellpepper|broccoli|cauliflower|garlic|garlic_clove|sweet_potato|turnip|zucchini|dandelion_leaf|mature_dandelion)",
+        "re:nirvana:(hemp|hemp_seeds|hemp_crate|wild_hemp|potted_wild_hemp|weed_crate)"
       ],
       "uses": []
     },
@@ -6816,7 +6904,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:(dynamictrees|dynamictreescompat|dt[a-z0-9_]+|dynamictreesplus):(?!mega_).*_seed"
+        "re:(dynamictrees|dynamictreescompat|dt[a-z0-9_]+|dynamictreesplus):(?!mega_).*_seed",
+        "re:nomansland:(tap|resin|resin_oil_bottle|.*_cauldron)"
       ],
       "uses": []
     },
@@ -6840,7 +6929,9 @@
       "locks": [
         "re:hardcore_torches:animal_fat",
         "re:butchery:(bone|copper)_(cleaver|hacksaw|hammer|skinning_knife)",
-        "re:butchery:(hook|.*_butchers_table)"
+        "re:butchery:(hook|.*_butchers_table)",
+        "rest:redomesticate",
+        "quark:feeding_trough"
       ],
       "uses": []
     },
@@ -6888,7 +6979,8 @@
       "locks": [
         "rest:farmersdelight",
         "minecraft:smoker",
-        "re:farmersdelight:(cutting_board|cooking_pot|skillet|stove|(flint|iron|golden)_knife|.*_cabinet|.*basket)"
+        "re:farmersdelight:(cutting_board|cooking_pot|skillet|stove|(flint|iron|golden)_knife|.*_cabinet|.*basket)",
+        "re:ratatouille:chef_hat.*"
       ],
       "uses": []
     },
@@ -6910,7 +7002,9 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:legendarysurvivaloverhaul:(bandage|tonic|large_canteen.*|water_plant_.*)"
+        "re:legendarysurvivaloverhaul:(bandage|tonic|large_canteen.*|water_plant_.*)",
+        "re:nomansland:.*bandage.*",
+        "rest:nirvana"
       ],
       "uses": []
     },
@@ -7000,7 +7094,8 @@
       "craftOnly": false,
       "locks": [
         "re:farmersdelight:(canvas|canvas_rug|.*canvas_sign|tatami|(full|half)_tatami_mat)",
-        "sleep_tight:moon_banner_pattern"
+        "sleep_tight:moon_banner_pattern",
+        "re:nirvana:(.*burlap|hemp_cloth|peace_banner_pattern|deerstalker.*)"
       ],
       "uses": []
     },
@@ -7090,7 +7185,10 @@
         "spawn:escargot",
         "spawn:canned_herring",
         "spawn:steamed_clams",
-        "spawn:date_cookie"
+        "spawn:date_cookie",
+        "rest:veggiesdelight",
+        "re:nomansland:(.*fruit_cake.*|cooked_.*|grilled_mushrooms|hardtack|honeyed_apple|mashed_potatoes_with_mushrooms|maple_tart|pancake|pasta_with_pesto|pear_cobbler.*|pear_juice|pesto_bottle|pot_of_witch_stew|witch_stew|salmon_and_pesto_gnocchi|seared_venison|stallion_strips?|sweet_tart|syruped_pear|trail_mix|maple_syrup_bottle)",
+        "re:quark:(cooked_crab_leg|ancient_fruit)"
       ],
       "uses": []
     },
@@ -7114,7 +7212,9 @@
       "locks": [
         "re:supplementaries:(pancake|candy|sugar_cube)",
         "mod:baking_process",
-        "re:create:(bar_of_chocolate|chocolate_bucket|chocolate_glazed_berries|honeyed_apple|builders_tea|sweet_roll|dough|wheat_flour|cinder_flour|honey_bucket)"
+        "re:create:(bar_of_chocolate|chocolate_bucket|chocolate_glazed_berries|honeyed_apple|builders_tea|sweet_roll|dough|wheat_flour|cinder_flour|honey_bucket)",
+        "rest:ratatouille",
+        "re:dndesires:.*milkshake.*"
       ],
       "uses": []
     },
@@ -7235,7 +7335,9 @@
         "minecraft:turtle_egg",
         "minecraft:turtle_scute",
         "minecraft:turtle_helmet",
-        "minecraft:nautilus_shell"
+        "minecraft:nautilus_shell",
+        "re:quark:(crab_bucket.*|axolotl_bucket_.*|tropical_fish_bucket_.*|.*slime_in_a_bucket.*)",
+        "re:nomansland:(.*_bucket|(cod|salmon|pufferfish|tropical_fish|billhook_bass)_barrel)"
       ],
       "uses": []
     },
@@ -7550,7 +7652,8 @@
       "craftOnly": false,
       "locks": [
         "re:minecraft:(chiseled_|cracked_|red_)?nether_brick(s|_stairs|_slab|_wall|_fence)",
-        "re:minecraft:((chiseled_)?quartz(_block|_bricks|_pillar|_stairs|_slab)|smooth_quartz(_stairs|_slab)?)"
+        "re:minecraft:((chiseled_)?quartz(_block|_bricks|_pillar|_stairs|_slab)|smooth_quartz(_stairs|_slab)?)",
+        "re:quark:.*nether_brick.*"
       ],
       "uses": []
     },
@@ -9170,7 +9273,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:remains:(?!corpse$|grave$|blood$|blood_trail$).*"
+        "re:remains:(?!corpse$|grave$|blood$|blood_trail$).*",
+        "re:nomansland:(ancestral_.*|ancient_bronze_.*|ritual_pick|warding_effigy|monster_anchor|moonlight_basin|living_urn|trinket)"
       ],
       "uses": []
     },

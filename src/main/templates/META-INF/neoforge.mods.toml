@@ -608,3 +608,107 @@ config="${mod_id}.mixins.json"
     versionRange="[0,)"
     ordering="AFTER"
     side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="quark"
+    type="optional"
+    reason="Quark: its woods, stones, glass, lamps and gadgets on the matching nodes"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="nomansland"
+    type="optional"
+    reason="No Man's Land: its woods and stonework on the matching nodes; its plants and soils are free"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="the_beyond"
+    type="optional"
+    reason="The Beyond: everything of it at The End"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="dndecor"
+    type="optional"
+    reason="Design n Decor: Stone Palettes, its machines at their Create nodes"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="dndesires"
+    type="optional"
+    reason="Create: Dreams n Desires: at the Create nodes"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="create_sa"
+    type="optional"
+    reason="Create Stuff Additions: tools and armour at their metals, jetpacks at Steam"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="ratatouille"
+    type="optional"
+    reason="Create Ratatouille: machines at Pressing and Mixing, the rest at Bakery"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="veggiesdelight"
+    type="optional"
+    reason="Veggies Delight: crops at Gardener, dishes at Larder"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="redomesticate"
+    type="optional"
+    reason="Redomesticate: at Husbandry"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="nirvana"
+    type="optional"
+    reason="Nirvana: hemp at Gardener, burlap at Canvas Works, the rest at Herbalist"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="create_autonavigation"
+    type="optional"
+    reason="Create Auto-Navigation: the navigation workbench at Trains"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="create_central_kitchen"
+    type="optional"
+    reason="Create Central Kitchen: no items"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="biolith"
+    type="optional"
+    reason="Biolith: no items"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"
