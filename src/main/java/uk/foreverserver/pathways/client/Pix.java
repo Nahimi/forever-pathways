@@ -1,5 +1,6 @@
 package uk.foreverserver.pathways.client;
 
+import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.GuiGraphics;
 
 /**
@@ -329,5 +330,32 @@ final class Pix {
             rect(g, cx + i, cy + j - step + 1, cx + i + step, cy + j + 1, argb);
             rect(g, cx - i - step + 1, cy + j - step + 1, cx - i + 1, cy + j + 1, argb);
         }
+    }
+
+    /** Text too long for its room slides to its end and back, resting at each, so all of it can be read. */
+    static void marquee(GuiGraphics g, Font font, String text, int x, int y, int width, int colour, boolean shadow) {
+        int full = font.width(text);
+        if (full <= width || width <= 0) {
+            g.drawString(font, text, x, y, colour, shadow);
+            return;
+        }
+        int over = full - width;
+        double speed = 25;
+        double rest = 1.2;
+        double travel = over / speed;
+        double t = (System.nanoTime() / 1.0e9) % (2 * (rest + travel));
+        double shift;
+        if (t < rest) {
+            shift = 0;
+        } else if (t < rest + travel) {
+            shift = (t - rest) * speed;
+        } else if (t < 2 * rest + travel) {
+            shift = over;
+        } else {
+            shift = over - (t - 2 * rest - travel) * speed;
+        }
+        g.enableScissor(x, y - 1, x + width, y + 9);
+        g.drawString(font, text, x - (int) Math.round(shift), y, colour, shadow);
+        g.disableScissor();
     }
 }

@@ -11,9 +11,12 @@ import java.util.function.Predicate;
 
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
@@ -199,6 +202,8 @@ public final class Deliveries {
             ignore.add(LockResolver.matcher(spec));
         }
         Map<Integer, List<Item>> byTier = new HashMap<>();
+        // One door stands for every wooden door, so a family is not drawn once for each of its woods.
+        Set<Family> drawn = new HashSet<>();
         Map<Item, List<Ingredient>> asked = new HashMap<>(cheapest);
         for (String id : rules.raw) {
             Item raw = item(id);
@@ -224,6 +229,10 @@ public final class Deliveries {
             int budget = Tree.Delivery.pick(rules.budgets, tier, 16);
             // Something far dearer than the tier's budget would be one item for a fortune; leave it out.
             if (each > budget * 2.0) {
+                continue;
+            }
+            Family family = family(item);
+            if (family != null && !drawn.add(family)) {
                 continue;
             }
             byTier.computeIfAbsent(tier, t -> new ArrayList<>()).add(item);
@@ -290,11 +299,60 @@ public final class Deliveries {
         return false;
     }
 
+    // ------------------------------------------------------------------ families
+
+    /** A group of items that count for one another, such as every wooden trapdoor, and what a delivery calls it. */
+    public record Family(TagKey<Item> tag, String name) {}
+
+    private static Tree familiesFor;
+    private static List<Family> families = List.of();
+
+    /** The family this item belongs to (the first in the tree's "delivery.anyOf" that holds it), or null. */
+    public static synchronized Family family(Item item) {
+        Tree tree = Tree.get();
+        if (familiesFor != tree) {
+            List<Family> list = new ArrayList<>();
+            for (Map.Entry<String, String> entry : tree.delivery.anyOf.entrySet()) {
+                ResourceLocation key = ResourceLocation.tryParse(entry.getKey());
+                if (key != null) {
+                    list.add(new Family(TagKey.create(Registries.ITEM, key), entry.getValue()));
+                }
+            }
+            families = list;
+            familiesFor = tree;
+        }
+        if (item == null) {
+            return null;
+        }
+        for (Family family : families) {
+            if (BuiltInRegistries.ITEM.wrapAsHolder(item).is(family.tag())) {
+                return family;
+            }
+        }
+        return null;
+    }
+
+    /** What a delivery of this item asks for: the family's name, or the item's own. */
+    public static Component name(Item item) {
+        Family family = family(item);
+        return family != null ? Component.literal(family.name()) : new ItemStack(item).getHoverName();
+    }
+
     // ------------------------------------------------------------------ handing in
 
-    /** Only a plain item counts: no damage, no name, no enchantment, nothing changed about it at all. */
+    /**
+     * Only a plain item counts: no damage, no name, no enchantment, nothing changed about it at all. Any member of
+     * the item's family counts too, in any mixture.
+     */
     public static boolean plain(ItemStack stack, Item item) {
-        return !stack.isEmpty() && stack.is(item) && stack.getComponentsPatch().isEmpty();
+        if (stack.isEmpty() || !stack.getComponentsPatch().isEmpty()) {
+            return false;
+        }
+        if (stack.is(item)) {
+            return true;
+        }
+        Family family = family(item);
+        return family != null && stack.is(family.tag());
     }
 
     /** How many plain ones the player carries, in the main inventory and the off hand. */

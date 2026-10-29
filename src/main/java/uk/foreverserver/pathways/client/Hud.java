@@ -149,7 +149,7 @@ final class Hud {
             g.renderItem(icon(p.item()), x + 7, y + 9);
         }
         String count = String.format(Locale.ROOT, "%,d/%,d", Math.min(p.progress(), p.goal()), p.goal());
-        g.drawString(font, font.plainSubstrByWidth(text(p.title()), width - 36), x + 29, y + 5, argb(alpha, CREAM), false);
+        Pix.marquee(g, font, text(p.title()), x + 29, y + 5, width - 36, argb(alpha, CREAM), false);
         g.drawString(font, font.plainSubstrByWidth(p.subtitle(), width - 40 - font.width(count)), x + 29, y + 15,
                 argb(alpha, MUTED), false);
         g.drawString(font, count, x + width - 7 - font.width(count), y + 15, argb(alpha, CREAM), false);
@@ -201,7 +201,7 @@ final class Hud {
         // a rule under the label, drawn out from its left edge as the banner arrives
         int rule = Math.round((inner) * ease(Math.min(1F, age / 500F)));
         Pix.rect(g, tx, y + 19, tx + rule, y + 20, argb(alpha * 0.8F, accent));
-        g.drawString(font, font.plainSubstrByWidth(text(p.title()), inner), tx, y + 23, argb(alpha, CREAM), true);
+        Pix.marquee(g, font, text(p.title()), tx, y + 23, inner, argb(alpha, CREAM), true);
         g.drawString(font, font.plainSubstrByWidth(sub, inner - font.width(reward) - 22), tx, y + 34, argb(alpha, MUTED), false);
         if (!reward.isEmpty()) {
             int rx = x + width - 12 - font.width(reward) - 10;

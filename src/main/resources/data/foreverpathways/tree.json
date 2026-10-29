@@ -241,11 +241,28 @@
       "minecraft:knowledge_book",
       "minecraft:written_book",
       "re:patchouli:.*",
-      "re:.*:.*grass_block"
+      "re:.*:.*grass_block",
+      "re:.*:(stripped_)?.*_(wood|hyphae)"
     ],
     "raw": [
       "minecraft:dirt"
-    ]
+    ],
+    "anyOf": {
+      "minecraft:planks": "Planks (any wood)",
+      "minecraft:logs": "Logs (any wood)",
+      "minecraft:wooden_doors": "Wooden Doors",
+      "minecraft:wooden_trapdoors": "Wooden Trapdoors",
+      "minecraft:wooden_slabs": "Wooden Slabs",
+      "minecraft:wooden_stairs": "Wooden Stairs",
+      "minecraft:wooden_fences": "Wooden Fences",
+      "minecraft:fence_gates": "Fence Gates",
+      "minecraft:wooden_buttons": "Wooden Buttons",
+      "minecraft:wooden_pressure_plates": "Wooden Pressure Plates",
+      "minecraft:hanging_signs": "Hanging Signs",
+      "minecraft:signs": "Signs",
+      "minecraft:chest_boats": "Chest Boats",
+      "minecraft:boats": "Boats"
+    }
   },
   "bounties": [
     {

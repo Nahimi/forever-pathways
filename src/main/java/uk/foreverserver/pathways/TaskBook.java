@@ -560,7 +560,7 @@ public final class TaskBook {
         }
 
         Component title() {
-            return Component.literal("Deliver " + amount + " ").append(new ItemStack(item).getHoverName());
+            return Component.literal("Deliver " + amount + " ").append(Deliveries.name(item));
         }
     }
 
@@ -580,7 +580,7 @@ public final class TaskBook {
         }
         if (!Deliveries.take(player, delivery.item, delivery.amount)) {
             player.sendSystemMessage(Component.literal("You need " + delivery.amount + " ")
-                    .append(new ItemStack(delivery.item).getHoverName())
+                    .append(Deliveries.name(delivery.item))
                     .append(", and carry " + Deliveries.carried(player, delivery.item) + ".")
                     .withStyle(ChatFormatting.GRAY));
             return;
@@ -588,7 +588,8 @@ public final class TaskBook {
         clearSlot(player, slot, SLOT_DONE);
         ProgressiveStagesAPI.addCounter(player, POINTS, delivery.reward);
         finished(player, NotifyPayload.BOUNTY_DONE, "dlv_" + delivery.id(),
-                "Deliver " + delivery.amount + " {item:" + delivery.id() + "}",
+                "Deliver " + delivery.amount + " " + (Deliveries.family(delivery.item) != null
+                        ? Deliveries.family(delivery.item).name() : "{item:" + delivery.id() + "}"),
                 "Tier " + tree.bountyTierName(delivery.tier) + " delivery", delivery.id(), delivery.amount,
                 delivery.reward);
     }

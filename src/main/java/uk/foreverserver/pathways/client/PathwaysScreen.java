@@ -743,17 +743,21 @@ public class PathwaysScreen extends Screen {
     private void drawHoldFx(GuiGraphics g, Tree.Node node, int x, int y, int s, double k) {
         int colour = node.isSeal() ? SEAL : Paint.opaque(node.rgb());
         int pad = 4;
-        int x0 = x - s / 2 - pad;
-        int y0 = y - s / 2 - pad;
-        int side = s + pad * 2;
-        Pix.chamferOutline(g, x0, y0, side, side, 2, Paint.alpha(colour, 0.5f));
-        // the filled part of the frame, traced clockwise from twelve o'clock
-        int per = side * 4;
+        holdFrame(g, x - s / 2 - pad, y - s / 2 - pad, s + pad * 2, s + pad * 2, k, colour, CREAM);
+    }
+
+    /**
+     * A hold round any box: its outline in `edge`, filled with `fill` clockwise from twelve o'clock as `k` runs from
+     * 0 to 1, and four motes circling in on it.
+     */
+    private void holdFrame(GuiGraphics g, int x0, int y0, int w, int h, double k, int edge, int fill) {
+        Pix.chamferOutline(g, x0, y0, w, h, 2, Paint.alpha(edge, 0.5f));
+        int per = (w + h) * 2;
         int run = (int) Math.round(per * k);
-        int half = side / 2;
+        int half = w / 2;
         int[][] legs = {
-                {x0 + half, y0, 1, 0, side - half}, {x0 + side - 1, y0, 0, 1, side},
-                {x0 + side - 1, y0 + side - 1, -1, 0, side}, {x0, y0 + side - 1, 0, -1, side},
+                {x0 + half, y0, 1, 0, w - half}, {x0 + w - 1, y0, 0, 1, h},
+                {x0 + w - 1, y0 + h - 1, -1, 0, w}, {x0, y0 + h - 1, 0, -1, h},
                 {x0, y0, 1, 0, half}};
         for (int[] leg : legs) {
             if (run <= 0) {
@@ -764,17 +768,24 @@ public class PathwaysScreen extends Screen {
             int ay = leg[1];
             int bx = ax + leg[2] * (n - 1);
             int by = ay + leg[3] * (n - 1);
-            Pix.rect(g, Math.min(ax, bx), Math.min(ay, by), Math.max(ax, bx) + 1, Math.max(ay, by) + 1, CREAM);
+            Pix.rect(g, Math.min(ax, bx), Math.min(ay, by), Math.max(ax, bx) + 1, Math.max(ay, by) + 1, fill);
             run -= n;
         }
         double t = System.nanoTime() / 1.0e9;
+        double cx = x0 + w / 2.0;
+        double cy = y0 + h / 2.0;
         for (int j = 0; j < 4; j++) {
             double spin = t * 2.6 + j * Math.PI / 2;
-            double rad = s / 2.0 + 8 + (1 - k) * 12;
-            int px = (int) Math.round(x + Math.cos(spin) * rad);
-            int py = (int) Math.round(y + Math.sin(spin) * rad);
-            Pix.rect(g, px, py, px + 2, py + 2, Paint.alpha(CREAM, (float) (0.4 + 0.6 * k)));
+            double rx = w / 2.0 + 4 + (1 - k) * 12;
+            double ry = h / 2.0 + 4 + (1 - k) * 12;
+            int px = (int) Math.round(cx + Math.cos(spin) * rx);
+            int py = (int) Math.round(cy + Math.sin(spin) * ry);
+            Pix.rect(g, px, py, px + 2, py + 2, Paint.alpha(fill, (float) (0.4 + 0.6 * k)));
         }
+    }
+
+    private void marquee(GuiGraphics g, String text, int x, int y, int width, int colour) {
+        Pix.marquee(g, this.font, text, x, y, width, colour, false);
     }
 
     private void drawNode(GuiGraphics g, Tree.Node node, int cx, int cy, int size, float pulse, boolean match) {
@@ -1332,7 +1343,8 @@ public class PathwaysScreen extends Screen {
             Tree.Bounty bounty = index >= 0 && index < tree.bounties.size() ? tree.bounties.get(index) : null;
             Drop drop = index == -2 ? drop(map, slot) : null;
             if (drop != null) {
-                String title = "Deliver " + drop.amount + " " + ClientIndex.stack(drop.item).getHoverName().getString();
+                String title = "Deliver " + drop.amount + " "
+                        + uk.foreverserver.pathways.Deliveries.name(ClientIndex.stack(drop.item).getItem()).getString();
                 if (t[0] == 1) {
                     int have = carried(drop.item);
                     String sub = "Tier " + tree.bountyTierName(drop.tier) + "  |  " + clock(t[4]) + " left";
@@ -1384,17 +1396,20 @@ public class PathwaysScreen extends Screen {
         y += 12;
         for (int i = 0; i < bounties.size(); i++) {
             int rowTop = y;
-            y = taskRow(g, bounties.get(i), x, y, right, mouseX, mouseY, top, bottom);
             int slot = running.get(i);
+            // Held to give up: the row trembles harder as the hold fills, as a node does when held to unlock.
+            double held = slot >= 0 && giveUpSlot == slot
+                    ? Math.min(1, (System.nanoTime() - giveUpStart) / (double) GIVE_UP_NANOS) : -1;
+            int shake = held >= 0 ? (int) Math.round(Motion.tremble(held)) : 0;
+            y = taskRow(g, bounties.get(i), x + shake, y, right + shake, mouseX, mouseY, top, bottom);
             if (slot < 0) {
                 continue;
             }
             int y0 = Math.max(top, rowTop);
             int y1 = Math.min(bottom, rowTop + 26);
-            if (giveUpSlot == slot) {
-                // Held: a red wash fills the row from the left until it is given up.
-                float t = Math.min(1f, (System.nanoTime() - giveUpStart) / (float) GIVE_UP_NANOS);
-                Pix.rect(g, x - 2, rowTop - 1, x - 2 + Math.round((right - x + 4) * t), rowTop + 25, 0x50B04A3A);
+            if (held >= 0) {
+                Pix.rect(g, x - 2, rowTop - 1, right + 2, rowTop + 25, Paint.alpha(RED, (float) (0.08 + 0.18 * held)));
+                holdFrame(g, x - 3, rowTop - 2, right - x + 6, 28, held, RED, Paint.blend(RED, CREAM, 0.35f));
             }
             boolean overButton = false;
             Drop drop = drops.get(slot);
@@ -1411,10 +1426,14 @@ public class PathwaysScreen extends Screen {
                         enough ? (overButton ? 0xFF8A6E42 : 0xFF6B5638) : 0xFF2A231C);
                 g.drawString(this.font, label, bx0 + 4, by0 + 2, enough ? CREAM : DIM, false);
                 if (overButton) {
-                    tooltipLines = List.of(enough
+                    boolean anyWood = uk.foreverserver.pathways.Deliveries.family(ClientIndex.stack(drop.item).getItem()) != null;
+                    Component first = enough
                             ? Component.literal("Hand in " + drop.amount + " now").withStyle(ChatFormatting.GRAY)
                             : Component.literal("You carry " + carried(drop.item) + " of " + drop.amount
-                                    + ". Plain items only: not damaged, named or enchanted.").withStyle(ChatFormatting.GRAY));
+                                    + ". Plain items only: not damaged, named or enchanted.").withStyle(ChatFormatting.GRAY);
+                    tooltipLines = anyWood
+                            ? List.of(first, Component.literal("Any kind counts, mixed as you like.").withStyle(ChatFormatting.DARK_GRAY))
+                            : List.of(first);
                 }
                 if (enough && by0 >= top && by0 + 11 <= bottom) {
                     rows.add(new Row(bx0, by0, right, by0 + 11,
@@ -1505,12 +1524,11 @@ public class PathwaysScreen extends Screen {
             Pix.rect(g, x - 2, rowTop - 1, x - 1, rowTop + 25, GREEN);
         }
         drawIcon(g, ClientIndex.get().icon(job.icon), x, y + 1, 14);
-        g.drawString(this.font, this.font.plainSubstrByWidth(job.title, width - 30), x + 18, y,
-                job.done ? CREAM : job.dim ? MUTED : CREAM, false);
+        marquee(g, job.title, x + 18, y, width - 22 - this.font.width(job.reward),
+                job.done ? CREAM : job.dim ? MUTED : CREAM);
         g.drawString(this.font, job.reward, right - this.font.width(job.reward), y,
                 job.done ? GREEN : job.dim ? DIM : GOLD, false);
-        g.drawString(this.font, this.font.plainSubstrByWidth(job.subtitle, width - 26 - this.font.width(job.count)),
-                x + 18, y + 10, job.done ? GREEN : DIM, false);
+        marquee(g, job.subtitle, x + 18, y + 10, width - 22 - this.font.width(job.count), job.done ? GREEN : DIM);
         g.drawString(this.font, job.count, right - this.font.width(job.count), y + 10, MUTED, false);
         bar(g, x + 18, y + 20, width - 18, 2, job.frac,
                 job.dim ? (job.frac >= 1 ? GREEN : TRACK) : GOLD);

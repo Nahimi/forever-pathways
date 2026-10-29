@@ -151,7 +151,7 @@ CHAPTERS = [
         {"type": "patchouli:text", "title": "Deliveries",
          "text": "Some bounties ask you to hand in crafted items: 32 Iron Ingots, 2 Bookshelves.$(br2)"
                  "$(li)Carry them all, then press Deliver.$(br)"
-                 "$(li)Plain items only: not damaged, named or enchanted.$(br)"
+                 "$(li)Plain items only: not damaged, named or enchanted.$(br)$(li)Wooden things take any wood, mixed as you like.$(br)"
                  "$(li)The third bounty is always one. Delivered or expired, it waits for dawn; given up, a new one comes at once."},
         {"type": "patchouli:text", "title": "Staying Alive",
          "text": "Every full day you live without dying pays 1 Focal Shard.$(br2)"

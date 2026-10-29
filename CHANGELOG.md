@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.36.2
+
+- Deliveries of wooden things take any wood, in any mixture: 64 Wooden Trapdoors counts oak, jungle, dark oak and every
+  other wood alike. The same goes for planks, logs, doors, slabs, stairs, fences, fence gates, buttons, pressure plates,
+  signs, hanging signs and boats. The groups are "delivery.anyOf" in tree.json, by item tag.
+- Wood blocks (the six-sided bark blocks, stripped or not, and nether hyphae) are never asked for.
+- Bounty and task text too long for a small screen now slides along so all of it can be read, on the Tasks tab and in
+  the popups.
+- Holding right-click to give up a bounty now traces a frame round the row with motes closing in, and the row trembles
+  as it fills, like holding a node to unlock it.
+
 ## 0.36.1
 
 - Supports Companions!: Saints and Shades (ring 9, after Champion; kill the Sacred Pontiff or a Shade) for crystallised

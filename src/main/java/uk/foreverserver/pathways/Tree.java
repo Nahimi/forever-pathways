@@ -272,6 +272,8 @@ public final class Tree {
         public boolean slot = true;
         /** Items no recipe makes that may still be asked for, as raw materials (dirt). */
         public List<String> raw = new ArrayList<>();
+        /** Item tags whose members all count for one another, with what a delivery calls them: any wood for a door. */
+        public Map<String, String> anyOf = new LinkedHashMap<>();
         /** Dawns until it expires, as for other bounties. */
         public int days = 2;
         /** The last ring of tiers I to V; anything past the last is tier VI. */
