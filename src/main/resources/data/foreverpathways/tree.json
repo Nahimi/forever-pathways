@@ -2398,7 +2398,8 @@
         "re:quark:(vertical_(oak|spruce|birch|jungle|acacia|dark_oak|mangrove|cherry|bamboo|azalea|blossom|ancient)_planks|hollow_.*_log|.*_sapling|stick_block|trapped_(lootr_)?.*_chest|lootr_.*_chest)",
         "re:nomansland:(stripped_)?(maple|pine|walnut|willow)_(log|wood|planks|stairs|slab|fence|fence_gate|door|trapdoor|sign|hanging_sign|button|pressure_plate|sapling)",
         "re:nomansland:(.*_sapling|petrified_(log|wood)|trimmed_.*_planks|crude_(door|trapdoor))",
-        "re:quark:(bamboo_mat|bamboo_mat_carpet|crate)"
+        "re:quark:(bamboo_mat|bamboo_mat_carpet|crate)",
+        "shieldexp:wooden_shield"
       ],
       "uses": []
     },
@@ -2609,7 +2610,8 @@
         "re:minecraft:iron_(sword|pickaxe|axe|shovel|hoe)",
         "minecraft:shears",
         "minecraft:shield",
-        "minecraft:flint_and_steel"
+        "minecraft:flint_and_steel",
+        "shieldexp:iron_shield"
       ],
       "uses": []
     },
@@ -2833,7 +2835,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:minecraft:golden_(sword|pickaxe|axe|shovel|hoe|helmet|chestplate|leggings|boots)"
+        "re:minecraft:golden_(sword|pickaxe|axe|shovel|hoe|helmet|chestplate|leggings|boots)",
+        "shieldexp:golden_shield"
       ],
       "uses": []
     },
@@ -3147,7 +3150,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:minecraft:diamond_(helmet|chestplate|leggings|boots)"
+        "re:minecraft:diamond_(helmet|chestplate|leggings|boots)",
+        "shieldexp:diamond_shield"
       ],
       "uses": []
     },
@@ -3411,7 +3415,8 @@
       "locks": [
         "re:minecraft:netherite_(sword|pickaxe|axe|shovel|hoe|helmet|chestplate|leggings|boots)",
         "quark:flamerang",
-        "re:create_sa:netherite_.*"
+        "re:create_sa:netherite_.*",
+        "shieldexp:netherite_shield"
       ],
       "uses": []
     },

@@ -712,3 +712,11 @@ config="${mod_id}.mixins.json"
     versionRange="[0,)"
     ordering="AFTER"
     side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="shieldexp"
+    type="optional"
+    reason="Shield Expansion: each shield at its metal's node"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"

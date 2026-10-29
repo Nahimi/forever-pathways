@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.35.1
+
+- Supports Shield Expansion: the wooden shield at Woodcutter, iron at Iron Tools, golden at Golden Gear, diamond at
+  Diamond Armour and netherite at Netherite Gear.
+
 ## 0.35.0
 
 - Supports Quark, No Man's Land, The Beyond, Design n Decor, Create: Dreams n Desires, Create Stuff Additions, Create
