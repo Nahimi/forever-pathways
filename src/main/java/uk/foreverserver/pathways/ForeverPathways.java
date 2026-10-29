@@ -87,7 +87,7 @@ public class ForeverPathways {
                 TaskBook.onBrewed(player, event.getStack());
             }
         });
-        NeoForge.EVENT_BUS.addListener(BossEyes::onDrops);
+        NeoForge.EVENT_BUS.addListener(BossEyes::onKill);
         NeoForge.EVENT_BUS.addListener(EventPriority.HIGHEST, false,
                 net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent.class,
                 BossGuard::onIncomingDamage);

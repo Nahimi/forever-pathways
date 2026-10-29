@@ -1,6 +1,8 @@
 package uk.foreverserver.pathways;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.enviouse.progressivestages.common.api.ProgressiveStagesAPI;
@@ -27,7 +29,7 @@ import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
  */
 public final class BossGuard {
     /** Entity id to the node whose task asks for it, worked out once from the tree. */
-    private static Map<String, Tree.Node> asked;
+    private static Map<String, List<Tree.Node>> asked;
     private static final Map<java.util.UUID, Long> TOLD = new HashMap<>();
 
     private BossGuard() {}
@@ -36,23 +38,26 @@ public final class BossGuard {
         asked = null;
     }
 
-    private static Map<String, Tree.Node> asked() {
+    private static Map<String, List<Tree.Node>> asked() {
         if (asked == null) {
-            Map<String, Tree.Node> map = new HashMap<>();
+            Map<String, List<Tree.Node>> map = new HashMap<>();
             Tree tree = Tree.get();
-            for (Tree.BossDrop drop : tree.bossDrops) {
-                for (Tree.Node node : tree.nodes) {
-                    if (node.task == null || node.task.target == null) {
+            for (Tree.Node eye : tree.nodes) {
+                if (!eye.bossTask || !eye.hasTask() || !eye.task.guard || eye.task.target == null) {
+                    continue;
+                }
+                for (String raw : eye.task.target.split(",")) {
+                    String boss = raw.trim();
+                    if (boss.isEmpty() || map.containsKey(boss)) {
                         continue;
                     }
-                    if (!"kill".equals(node.task.kind)) {
-                        continue;
-                    }
-                    for (String raw : node.task.target.split(",")) {
-                        if (raw.trim().equals(drop.entity)) {
-                            map.put(drop.entity, node);
+                    List<Tree.Node> nodes = new ArrayList<>();
+                    for (Tree.Node node : tree.nodes) {
+                        if (node.hasTask() && "kill".equals(node.task.kind) && BossEyes.names(node.task.target, boss)) {
+                            nodes.add(node);
                         }
                     }
+                    map.put(boss, nodes);
                 }
             }
             asked = map;
@@ -73,12 +78,17 @@ public final class BossGuard {
         if (type == null) {
             return;
         }
-        Tree.Node node = asked().get(type.toString());
-        if (node == null || ready(player, node)) {
+        List<Tree.Node> nodes = asked().get(type.toString());
+        if (nodes == null || nodes.isEmpty()) {
             return;
         }
+        for (Tree.Node node : nodes) {
+            if (ready(player, node)) {
+                return;
+            }
+        }
         event.setCanceled(true);
-        tell(player, node);
+        tell(player, nodes.get(0));
     }
 
     /** True once this player's node is reachable, which is when its kills begin to count. */

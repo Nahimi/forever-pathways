@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "endrem:corrupted_eye",
       "title": "Corrupted Eye",
-      "text": "$(bold)Found through End Remastered's own loot, mobs and crafting. This node lets you use it in the ancient portal.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill 250 endermen."
+      "text": "$(bold)Unlocking this node gives you the Corrupted Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill the Ender Guardian.$(br)Without that boss: Kill 250 endermen."
     }
   ],
   "flag": "mod:endrem"

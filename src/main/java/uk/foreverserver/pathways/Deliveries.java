@@ -175,12 +175,7 @@ public final class Deliveries {
                 out.add(item);
             }
         }
-        for (Tree.BossDrop drop : tree.bossDrops) {
-            Item item = item(drop.item);
-            if (item != null) {
-                out.add(item);
-            }
-        }
+        out.addAll(BossEyes.stripped());
         return out;
     }
 

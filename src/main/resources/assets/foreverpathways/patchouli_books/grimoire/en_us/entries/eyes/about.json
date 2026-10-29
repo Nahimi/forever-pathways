@@ -3,22 +3,22 @@
   "category": "foreverpathways:eyes",
   "icon": "minecraft:ender_eye",
   "sortnum": 0,
+  "priority": true,
   "pages": [
     {
       "type": "patchouli:text",
       "title": "The Sixteen Eyes",
-      "text": "$(bold)The End portal needs sixteen different eyes. None can be mined or crafted: each drops from something that has to be killed.$(br2)Every eye is a node on the last ring, $(thing)28 Focal Shards$(n) each, all behind the final seal."
+      "text": "$(bold)The End portal needs sixteen different eyes. None can be mined, crafted or found: each node on the last ring gives you its eye the moment you unlock it.$(br2)Every eye is a node on the last ring, $(thing)28 Focal Shards$(n) each, all behind the final seal."
     },
     {
       "type": "patchouli:text",
-      "title": "You Cannot Waste One",
-      "text": "$(bold)A boss takes no damage from you until the node that asks for it is reachable, so you cannot kill one early and lose the drop.$(br2)Once it is reachable, the kill counts and the eye drops. An eye you have not yet unlocked still goes in your pack; it just will not go in the portal frame."
+      "title": "Boss by Boss",
+      "text": "$(bold)Each eye's task is a boss kill: Bosses' Rise, Cataclysm, Cult of Azazel or the Wither. Without that boss's mod, the node asks for other work instead.$(br2)A boss takes no damage from you until a node that asks for it is reachable, so you cannot waste a kill."
     },
     {
       "type": "patchouli:text",
-      "title": "What Carries Them",
-      "text": "$(bold)$(thing)A pirate captain$(n): rogue eye, 34% of the time$(br)$(thing)Helvar$(n): cursed eye$(br)$(thing)Skor$(n): cold eye$(br)$(thing)Sirok$(n): old eye$(br)$(thing)Nerakyss$(n): guardian eye$(br)$(thing)The Ashlord$(n): nether eye"
+      "title": "Lost Eyes",
+      "text": "$(bold)Lost an eye? Kill its boss again while you own its node and carry none of that eye, and you are given another."
     }
-  ],
-  "priority": true
+  ]
 }

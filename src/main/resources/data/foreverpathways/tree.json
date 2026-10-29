@@ -1762,44 +1762,6 @@
     "re:create:(mechanical_press|mechanical_mixer|millstone|crushing_wheel.*|encased_fan|whisk|spout|basin|deployer|mechanical_arm|mechanical_crafter|.*_gearbox|cogwheel|large_cogwheel|water_wheel|large_water_wheel|windmill_bearing|mechanical_bearing|clockwork_bearing|rope_pulley|mechanical_piston|gantry_carriage|cart_assembler)",
     "re:powergrid:(.*_switch|lv_button|.*_light_bulb|light_fixture|factory_light|.*_gauge)"
   ],
-  "bossDrops": [
-    {
-      "entity": "block_factorys_bosses:pirate_captain",
-      "boss": "A pirate captain",
-      "item": "endrem:rogue_eye",
-      "chance": 0.34
-    },
-    {
-      "entity": "block_factorys_bosses:underworld_knight",
-      "boss": "Helvar",
-      "item": "endrem:cursed_eye",
-      "chance": 1.0
-    },
-    {
-      "entity": "block_factorys_bosses:yeti",
-      "boss": "Skor",
-      "item": "endrem:cold_eye",
-      "chance": 1.0
-    },
-    {
-      "entity": "block_factorys_bosses:sandworm",
-      "boss": "Sirok",
-      "item": "endrem:old_eye",
-      "chance": 1.0
-    },
-    {
-      "entity": "block_factorys_bosses:kraken",
-      "boss": "Nerakyss",
-      "item": "endrem:guardian_eye",
-      "chance": 1.0
-    },
-    {
-      "entity": "block_factorys_bosses:infernal_dragon",
-      "boss": "The Ashlord",
-      "item": "endrem:nether_eye",
-      "chance": 1.0
-    }
-  ],
   "nodes": [
     {
       "id": "forever:core",
@@ -3179,6 +3141,7 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
+        "rest:netherman",
         "minecraft:netherrack",
         "minecraft:crimson_nylium",
         "minecraft:warped_nylium",
@@ -3858,6 +3821,7 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
+        "netherman:crimson_arrow",
         "re:supplementaries:(quiver|slingshot|rope_arrow)",
         "quark:torch_arrow",
         "nomansland:incendiary_arrow"
@@ -4422,6 +4386,34 @@
       "craftOnly": false,
       "locks": [
         "re:block_factorys_bosses:(dragon_.*|infernal_.*|flaming_skeleton.*|large_sword|tp_stick)"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:azazel",
+      "title": "The Divine Chariot",
+      "path": "ranger",
+      "ring": 10,
+      "requires": "forever:champion",
+      "also": null,
+      "cost": 48,
+      "item": "netherman:azazel_scythe",
+      "colour": "#8B4513",
+      "opens": "Cult of Azazel's god: the Divine Chariot Azazel's scythe, spear and shield, its armour and its trophies.",
+      "task": {
+        "kind": "kill",
+        "target": "netherman:azazel,netherman:azazel_human",
+        "amount": 1,
+        "title": "Kill Azazel",
+        "reward": 9
+      },
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "re:netherman:(azazel_(boots|chestplate|helmet|leggings|scythe|shield|spear|trophy.*)|music_disc_(azazel|boss|god))"
       ],
       "uses": []
     },
@@ -6403,6 +6395,7 @@
       "enchantPower": 0,
       "craftOnly": true,
       "locks": [
+        "re:netherman:music_disc_(maze|quar|sacred)",
         "re:supplementaries:(awning.*|flag_.*|bunting_.*|item_shelf|doormat|flower_box|planter.*|way_sign_.*|fine_wood.*|wicker_fence|hanging_sign_.*|notice_board|jar|pedestal|hourglass.*)",
         "re:supplementaries:((trapped_)?present(_[a-z_]+)?|flute|confetti_popper|lunch_basket|urn|music_disc_.*|spawn/way_sign_.*)",
         "re:quark:(paper_wall.*|potted_.*)",
@@ -6958,6 +6951,7 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
+        "re:netherman:crimson_honey_(block|bottle)",
         "minecraft:beehive",
         "minecraft:honey_block",
         "minecraft:honeycomb_block"
@@ -8756,7 +8750,7 @@
       "cost": 28,
       "item": "endrem:rogue_eye",
       "colour": "#5FB3A1",
-      "opens": "Only the pirate captains drop this eye. This node lets you use it in the ancient portal.",
+      "opens": "Unlocking this node gives you the Rogue Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.",
       "task": {
         "kind": "kill",
         "target": "minecraft:pillager,minecraft:vindicator",
@@ -8764,6 +8758,16 @@
         "title": "Kill 120 pillagers or vindicators",
         "reward": 3
       },
+      "bosses": [
+        {
+          "kind": "kill",
+          "target": "block_factorys_bosses:pirate_captain",
+          "amount": 1,
+          "title": "Kill a pirate captain",
+          "reward": 5
+        }
+      ],
+      "gives": "endrem:rogue_eye",
       "slot": null,
       "slotBonus": null,
       "perks": null,
@@ -8784,7 +8788,7 @@
       "cost": 28,
       "item": "endrem:cursed_eye",
       "colour": "#5FB3A1",
-      "opens": "Only Helvar drops this eye. This node lets you use it in the ancient portal.",
+      "opens": "Unlocking this node gives you the Cursed Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.",
       "task": {
         "kind": "kill",
         "target": "minecraft:piglin_brute,minecraft:wither_skeleton",
@@ -8792,6 +8796,16 @@
         "title": "Kill 100 piglin brutes or wither skeletons",
         "reward": 3
       },
+      "bosses": [
+        {
+          "kind": "kill",
+          "target": "block_factorys_bosses:underworld_knight",
+          "amount": 1,
+          "title": "Kill Helvar",
+          "reward": 5
+        }
+      ],
+      "gives": "endrem:cursed_eye",
       "slot": null,
       "slotBonus": null,
       "perks": null,
@@ -8812,7 +8826,7 @@
       "cost": 28,
       "item": "endrem:cold_eye",
       "colour": "#5FB3A1",
-      "opens": "Only Skor drops this eye. This node lets you use it in the ancient portal.",
+      "opens": "Unlocking this node gives you the Cold Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.",
       "task": {
         "kind": "climb",
         "target": "",
@@ -8820,6 +8834,16 @@
         "title": "Climb 5,000 blocks",
         "reward": 3
       },
+      "bosses": [
+        {
+          "kind": "kill",
+          "target": "block_factorys_bosses:yeti",
+          "amount": 1,
+          "title": "Kill Skor",
+          "reward": 5
+        }
+      ],
+      "gives": "endrem:cold_eye",
       "slot": null,
       "slotBonus": null,
       "perks": null,
@@ -8840,7 +8864,7 @@
       "cost": 28,
       "item": "endrem:old_eye",
       "colour": "#5FB3A1",
-      "opens": "Only Sirok drops this eye. This node lets you use it in the ancient portal.",
+      "opens": "Unlocking this node gives you the Old Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.",
       "task": {
         "kind": "kill",
         "target": "minecraft:husk",
@@ -8848,6 +8872,16 @@
         "title": "Kill 200 husks",
         "reward": 3
       },
+      "bosses": [
+        {
+          "kind": "kill",
+          "target": "block_factorys_bosses:sandworm",
+          "amount": 1,
+          "title": "Kill Sirok",
+          "reward": 5
+        }
+      ],
+      "gives": "endrem:old_eye",
       "slot": null,
       "slotBonus": null,
       "perks": null,
@@ -8868,7 +8902,7 @@
       "cost": 28,
       "item": "endrem:guardian_eye",
       "colour": "#5FB3A1",
-      "opens": "Only Nerakyss drops this eye. This node lets you use it in the ancient portal.",
+      "opens": "Unlocking this node gives you the Guardian Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.",
       "task": {
         "kind": "fish",
         "target": "",
@@ -8876,6 +8910,24 @@
         "title": "Catch 500 fish",
         "reward": 3
       },
+      "bosses": [
+        {
+          "kind": "kill",
+          "target": "block_factorys_bosses:kraken",
+          "amount": 1,
+          "title": "Kill Nerakyss",
+          "reward": 5
+        },
+        {
+          "kind": "kill",
+          "target": "minecraft:elder_guardian",
+          "amount": 1,
+          "title": "Kill an elder guardian",
+          "reward": 5,
+          "guard": false
+        }
+      ],
+      "gives": "endrem:guardian_eye",
       "slot": null,
       "slotBonus": null,
       "perks": null,
@@ -8896,7 +8948,7 @@
       "cost": 28,
       "item": "endrem:nether_eye",
       "colour": "#5FB3A1",
-      "opens": "Only the Ashlord drop this eye. This node lets you use it in the ancient portal.",
+      "opens": "Unlocking this node gives you the Nether Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.",
       "task": {
         "kind": "kill",
         "target": "minecraft:ghast,minecraft:blaze",
@@ -8904,6 +8956,16 @@
         "title": "Kill 120 ghasts or blazes",
         "reward": 3
       },
+      "bosses": [
+        {
+          "kind": "kill",
+          "target": "block_factorys_bosses:infernal_dragon",
+          "amount": 1,
+          "title": "Kill the Ashlord",
+          "reward": 5
+        }
+      ],
+      "gives": "endrem:nether_eye",
       "slot": null,
       "slotBonus": null,
       "perks": null,
@@ -8924,7 +8986,7 @@
       "cost": 28,
       "item": "endrem:wither_eye",
       "colour": "#5FB3A1",
-      "opens": "Found through End Remastered's own loot, mobs and crafting. This node lets you use it in the ancient portal.",
+      "opens": "Unlocking this node gives you the Wither Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.",
       "task": {
         "kind": "kill",
         "target": "minecraft:wither_skeleton",
@@ -8932,6 +8994,17 @@
         "title": "Kill 80 wither skeletons",
         "reward": 3
       },
+      "bosses": [
+        {
+          "kind": "kill",
+          "target": "minecraft:wither",
+          "amount": 1,
+          "title": "Kill the Wither",
+          "reward": 5,
+          "guard": false
+        }
+      ],
+      "gives": "endrem:wither_eye",
       "slot": null,
       "slotBonus": null,
       "perks": null,
@@ -8952,7 +9025,7 @@
       "cost": 28,
       "item": "endrem:corrupted_eye",
       "colour": "#5FB3A1",
-      "opens": "Found through End Remastered's own loot, mobs and crafting. This node lets you use it in the ancient portal.",
+      "opens": "Unlocking this node gives you the Corrupted Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.",
       "task": {
         "kind": "kill",
         "target": "minecraft:enderman",
@@ -8960,6 +9033,16 @@
         "title": "Kill 250 endermen",
         "reward": 3
       },
+      "bosses": [
+        {
+          "kind": "kill",
+          "target": "cataclysm:ender_guardian",
+          "amount": 1,
+          "title": "Kill the Ender Guardian",
+          "reward": 5
+        }
+      ],
+      "gives": "endrem:corrupted_eye",
       "slot": null,
       "slotBonus": null,
       "perks": null,
@@ -8980,7 +9063,7 @@
       "cost": 28,
       "item": "endrem:evil_eye",
       "colour": "#5FB3A1",
-      "opens": "Found through End Remastered's own loot, mobs and crafting. This node lets you use it in the ancient portal.",
+      "opens": "Unlocking this node gives you the Evil Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.",
       "task": {
         "kind": "mobs",
         "target": "",
@@ -8988,6 +9071,16 @@
         "title": "Kill 1,500 mobs",
         "reward": 3
       },
+      "bosses": [
+        {
+          "kind": "kill",
+          "target": "netherman:azazel,netherman:azazel_human",
+          "amount": 1,
+          "title": "Kill Azazel",
+          "reward": 5
+        }
+      ],
+      "gives": "endrem:evil_eye",
       "slot": null,
       "slotBonus": null,
       "perks": null,
@@ -9008,7 +9101,7 @@
       "cost": 28,
       "item": "endrem:undead_eye",
       "colour": "#5FB3A1",
-      "opens": "Found through End Remastered's own loot, mobs and crafting. This node lets you use it in the ancient portal.",
+      "opens": "Unlocking this node gives you the Undead Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.",
       "task": {
         "kind": "kill",
         "target": "minecraft:zombie,minecraft:husk,minecraft:drowned,minecraft:skeleton,minecraft:stray,minecraft:zombie_villager",
@@ -9016,6 +9109,16 @@
         "title": "Kill 300 undead",
         "reward": 3
       },
+      "bosses": [
+        {
+          "kind": "kill",
+          "target": "cataclysm:maledictus",
+          "amount": 1,
+          "title": "Kill Maledictus",
+          "reward": 5
+        }
+      ],
+      "gives": "endrem:undead_eye",
       "slot": null,
       "slotBonus": null,
       "perks": null,
@@ -9036,7 +9139,7 @@
       "cost": 28,
       "item": "endrem:witch_eye",
       "colour": "#5FB3A1",
-      "opens": "Found through End Remastered's own loot, mobs and crafting. This node lets you use it in the ancient portal.",
+      "opens": "Unlocking this node gives you the Witch Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.",
       "task": {
         "kind": "kill",
         "target": "minecraft:witch",
@@ -9044,6 +9147,16 @@
         "title": "Kill 100 witches",
         "reward": 3
       },
+      "bosses": [
+        {
+          "kind": "kill",
+          "target": "cataclysm:the_harbinger",
+          "amount": 1,
+          "title": "Kill the Harbinger",
+          "reward": 5
+        }
+      ],
+      "gives": "endrem:witch_eye",
       "slot": null,
       "slotBonus": null,
       "perks": null,
@@ -9064,7 +9177,7 @@
       "cost": 28,
       "item": "endrem:magical_eye",
       "colour": "#5FB3A1",
-      "opens": "Found through End Remastered's own loot, mobs and crafting. This node lets you use it in the ancient portal.",
+      "opens": "Unlocking this node gives you the Magical Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.",
       "task": {
         "kind": "enchant",
         "target": "",
@@ -9072,6 +9185,16 @@
         "title": "Enchant 100 items",
         "reward": 3
       },
+      "bosses": [
+        {
+          "kind": "kill",
+          "target": "cataclysm:scylla",
+          "amount": 1,
+          "title": "Kill Scylla",
+          "reward": 5
+        }
+      ],
+      "gives": "endrem:magical_eye",
       "slot": null,
       "slotBonus": null,
       "perks": null,
@@ -9092,7 +9215,7 @@
       "cost": 28,
       "item": "endrem:lost_eye",
       "colour": "#5FB3A1",
-      "opens": "Found through End Remastered's own loot, mobs and crafting. This node lets you use it in the ancient portal.",
+      "opens": "Unlocking this node gives you the Lost Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.",
       "task": {
         "kind": "travel",
         "target": "",
@@ -9100,6 +9223,16 @@
         "title": "Travel 100,000 blocks",
         "reward": 3
       },
+      "bosses": [
+        {
+          "kind": "kill",
+          "target": "cataclysm:ancient_remnant",
+          "amount": 1,
+          "title": "Kill the Ancient Remnant",
+          "reward": 5
+        }
+      ],
+      "gives": "endrem:lost_eye",
       "slot": null,
       "slotBonus": null,
       "perks": null,
@@ -9120,7 +9253,7 @@
       "cost": 28,
       "item": "endrem:exotic_eye",
       "colour": "#5FB3A1",
-      "opens": "Found through End Remastered's own loot, mobs and crafting. This node lets you use it in the ancient portal.",
+      "opens": "Unlocking this node gives you the Exotic Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.",
       "task": {
         "kind": "swim",
         "target": "",
@@ -9128,6 +9261,16 @@
         "title": "Swim 8,000 blocks",
         "reward": 3
       },
+      "bosses": [
+        {
+          "kind": "kill",
+          "target": "cataclysm:the_leviathan",
+          "amount": 1,
+          "title": "Kill the Leviathan",
+          "reward": 5
+        }
+      ],
+      "gives": "endrem:exotic_eye",
       "slot": null,
       "slotBonus": null,
       "perks": null,
@@ -9148,7 +9291,7 @@
       "cost": 28,
       "item": "endrem:black_eye",
       "colour": "#5FB3A1",
-      "opens": "Found through End Remastered's own loot, mobs and crafting. This node lets you use it in the ancient portal.",
+      "opens": "Unlocking this node gives you the Black Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.",
       "task": {
         "kind": "use",
         "target": "minecraft:cobblestone,minecraft:stone_bricks,minecraft:cobbled_deepslate",
@@ -9156,6 +9299,16 @@
         "title": "Place 3,000 cobblestone or stone bricks",
         "reward": 3
       },
+      "bosses": [
+        {
+          "kind": "kill",
+          "target": "cataclysm:netherite_monstrosity",
+          "amount": 1,
+          "title": "Kill the Netherite Monstrosity",
+          "reward": 5
+        }
+      ],
+      "gives": "endrem:black_eye",
       "slot": null,
       "slotBonus": null,
       "perks": null,
@@ -9176,7 +9329,7 @@
       "cost": 28,
       "item": "endrem:cryptic_eye",
       "colour": "#5FB3A1",
-      "opens": "Found through End Remastered's own loot, mobs and crafting. This node lets you use it in the ancient portal.",
+      "opens": "Unlocking this node gives you the Cryptic Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.",
       "task": {
         "kind": "sleep",
         "target": "",
@@ -9184,6 +9337,16 @@
         "title": "Sleep 60 nights",
         "reward": 3
       },
+      "bosses": [
+        {
+          "kind": "kill",
+          "target": "cataclysm:ignis",
+          "amount": 1,
+          "title": "Kill Ignis",
+          "reward": 5
+        }
+      ],
+      "gives": "endrem:cryptic_eye",
       "slot": null,
       "slotBonus": null,
       "perks": null,

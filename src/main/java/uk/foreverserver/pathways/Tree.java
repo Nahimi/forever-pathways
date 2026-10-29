@@ -25,7 +25,6 @@ public final class Tree {
     public List<String> ignore = new ArrayList<>();
     public List<Node> nodes = new ArrayList<>();
     public List<Discovery> discoveries = new ArrayList<>();
-    public List<BossDrop> bossDrops = new ArrayList<>();
     /** Player stats that start low and that perks on nodes raise: movement, breaking, attack, boat. */
     public Map<String, StatDef> stats = new LinkedHashMap<>();
     /** Blocks anyone may right-click even while they are locked: doors, gates, buttons. Same spec syntax as locks. */
@@ -317,14 +316,11 @@ public final class Tree {
         public int amount = 1;
         public String title = "";
         public int reward;
-    }
-
-    /** A boss that drops an item (an eye) when a player kills it. That item is stripped from all other loot. */
-    public static final class BossDrop {
-        public String entity;
-        public String boss;
-        public String item;
-        public double chance = 1.0;
+        /**
+         * For a node's boss task: the boss cannot be hurt until a node asking for it is reachable, so a kill is
+         * never wasted. False for a boss anyone may summon again at will, such as the Wither.
+         */
+        public boolean guard = true;
     }
 
     public static final class StatDef {
@@ -383,6 +379,15 @@ public final class Tree {
         public String colour;
         public String opens = "";
         public Task task;
+        /**
+         * Boss kills this node would rather ask for, best first. The first whose boss is installed becomes its task;
+         * with none installed, {@link #task} stays.
+         */
+        public List<Task> bosses = new ArrayList<>();
+        /** True once a boss from {@link #bosses} is this node's task. */
+        public transient boolean bossTask;
+        /** An item handed to the player when they unlock this node: an eye. Nothing else in the game gives it. */
+        public String gives;
         public String slot;
         public Map<String, Integer> slotBonus;
         public List<String> locks = new ArrayList<>();

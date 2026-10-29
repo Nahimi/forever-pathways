@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "endrem:old_eye",
       "title": "Old Eye",
-      "text": "$(bold)Only Sirok drops this eye. This node lets you use it in the ancient portal.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill 200 husks."
+      "text": "$(bold)Unlocking this node gives you the Old Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill Sirok.$(br)Without that boss: Kill 200 husks."
     }
   ],
   "flag": "mod:endrem"

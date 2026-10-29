@@ -166,17 +166,11 @@ CHAPTERS = [
                  "Turn any of these off at the bottom of the Tasks tab on the ring."},
     ]),
     ("c4", "IV. The Sixteen Eyes", "minecraft:ender_eye", 3, [
-        "The End portal needs sixteen $(thing)different$() eyes. None can be crafted or mined.$(br2)"
-        "Each is a node on the last ring, behind the final seal.",
+        "The End portal needs sixteen $(thing)different$() eyes. None can be crafted, mined or found.$(br2)Each is a node on the last ring, behind the final seal. Unlocking one gives you its eye.",
         {"type": "patchouli:text", "title": "Where They Come From",
-         "text": "$(li)Six from the bosses of Bosses' Rise.$(br)"
-                 "$(li)The rest from the Wither, the End, brewing, trading, the trial chambers and "
-                 "other work you are doing anyway.$(br2)"
-                 "Every eye and its source is listed under $(l:eyes/about)The Sixteen Eyes$()."},
+         "text": "$(li)Each eye's task is a boss kill: the six bosses of Bosses' Rise, the eight of Cataclysm, Azazel and the Wither.$(br)$(li)Without a boss's mod, its node asks for other work.$(br2)Every eye and its boss is listed under $(l:eyes/about)The Sixteen Eyes$()."},
         {"type": "patchouli:text", "title": "You Cannot Waste a Boss",
-         "text": "A boss takes no damage from you until the node that asks for it is reachable.$(br2)"
-                 "An eye you have not unlocked still goes in your pack; it just will not go in the "
-                 "portal frame."},
+         "text": "A boss takes no damage from you until a node that asks for it is reachable.$(br2)Kill it again after unlocking its eye node, carrying none of that eye, and you get another."},
     ]),
     ("c5", "V. Your Past", "minecraft:ender_pearl", 4, [
         "You woke with no memory and a book whose letters glow. I knew you once.$(br2)"
@@ -322,7 +316,7 @@ BEYOND = [
                  "Trading is a task at $(l:paths/trader)Trader$(), so stay welcome."},
     ]),
     ("a13", "A13. Foes and Feasts", "minecraft:skeleton_skull", 13,
-     "|mod:hearthandharvest,mod:remains,mod:bestiary,mod:legionary,mod:cataclysm,mod:hazennstuff,mod:born_in_chaos_v1", [
+     "|mod:hearthandharvest,mod:remains,mod:bestiary,mod:legionary,mod:cataclysm,mod:hazennstuff,mod:born_in_chaos_v1,mod:netherman", [
         {"type": "patchouli:text", "title": "Hearth and Harvest", "flag": "mod:hearthandharvest",
          "text": "Three nodes on the Homesteader road:$(br2)"
                  "$(li)$(l:paths/hh_orchard)Orchard and Trellis$(), ring 3: crops, trellises and farm tools.$(br)"
@@ -346,6 +340,8 @@ BEYOND = [
          "text": "The second road:$(br2)$(li)$(l:paths/cata_desert)Ancient Remnant$(), ring 9.$(br)$(li)$(l:paths/cata_deep)The Leviathan$(), ring 10.$(br)$(li)$(l:paths/cata_cursed)Maledictus$(), ring 11.$(br)$(li)$(l:paths/cata_storm)Scylla$(), ring 12.$(br2)Each boss's lesser kin, such as the Kobolediator or the draugr, share their master's node."},
         {"type": "patchouli:text", "title": "Born in Chaos", "flag": "mod:born_in_chaos_v1",
          "text": "Two nodes on the Ranger road:$(br2)$(li)$(l:paths/chaos)Born in Chaos$(), ring 5: dark metal, charms, elixirs and the blocks of its haunts. Kill 20 of its creatures first.$(br)$(li)$(l:paths/chaos_lords)Lords of Chaos$(), ring 8: the bosses' trophies. Kill any one of them."},
+        {"type": "patchouli:text", "title": "Cult of Azazel", "flag": "mod:netherman",
+         "text": "Kill the Divine Chariot Azazel to open $(l:paths/azazel)The Divine Chariot$(), ring 10 on the Ranger road, for its scythe, spear, shield and armour. Its samsonit halls and keys are at $(l:paths/nether)Nether$(). Azazel's kill is also the Evil Eye's task."},
         {"type": "patchouli:text", "title": "Hazen N Stuff", "flag": "mod:hazennstuff",
          "text": "Three nodes on the Magician road:$(br2)"
                  "$(li)$(l:paths/hazen_metals)Hazen's Metals$(), ring 9: ores, ingots and its woods.$(br)"
@@ -645,44 +641,30 @@ def main():
         entry(f"rings/{slug(seal['id'])}", seal["title"], "rings", icon, pages, 10 + i)
 
     # ------------------------------------------------------------------ The eyes
-    drops = tree.get("bossDrops", [])
+    # Each eye node gives its eye on unlock; its task is the first of its bosses this pack has, else its own task.
     eye_nodes = [n for n in nodes if n["ring"] == outer and not n.get("seal")]
-    pages = [
+    cost = eye_nodes[0]["cost"] if eye_nodes else 0
+    entry("eyes/about", "The Sixteen Eyes", "eyes", "minecraft:ender_eye", [
         {"type": "patchouli:text", "title": "The Sixteen Eyes",
-         "text": "The End portal needs sixteen different eyes. None can be mined or crafted: each "
-                 "drops from something that has to be killed.$(br2)"
-                 f"Every eye is a node on the last ring, "
-                 f"$(thing){eye_nodes[0]['cost'] if eye_nodes else 0} Focal Shards$() each, all "
-                 "behind the final seal."},
-        {"type": "patchouli:text", "title": "You Cannot Waste One",
-         "text": "A boss takes no damage from you until the node that asks for it is reachable, so "
-                 "you cannot kill one early and lose the drop.$(br2)"
-                 "Once it is reachable, the kill counts and the eye drops. An eye you have not yet "
-                 "unlocked still goes in your pack; it just will not go in the portal frame."},
-    ]
-    if drops:
-        pages.append({"type": "patchouli:text", "title": "What Carries Them",
-                      "text": "$(br)".join(
-                          f"$(thing){d['boss']}$(): {d['item'].split(':')[-1].replace('_', ' ')}"
-                          + ("" if d["chance"] >= 1 else f", {int(d['chance'] * 100)}% of the time")
-                          for d in drops)})
-    entry("eyes/about", "The Sixteen Eyes", "eyes", "minecraft:ender_eye", pages, 0, priority=True)
-    for drop in drops:
-        eid = "eyes/boss_" + drop["entity"].split(":")[-1]
-        entry(eid, drop["boss"], "eyes", drop["item"], flag=mod_flag(drop["item"]), pages=[
-            {"type": "patchouli:entity", "entity": drop["entity"], "name": drop["boss"],
-             "text": f"Carries the {drop['item'].split(':')[-1].replace('_', ' ')}"
-                     + ("." if drop["chance"] >= 1 else
-                        f", though not always: about {int(drop['chance'] * 100)} times in a "
-                        "hundred.")},
-            {"type": "patchouli:spotlight", "item": drop["item"],
-             "text": "Carry it until its piece of the ring is yours. An eye cannot spoil."},
-        ], sortnum=10)
+         "text": "The End portal needs sixteen different eyes. None can be mined, crafted or found: each node on the last ring gives you its eye the moment you unlock it.$(br2)Every eye is a node on the last ring, $(thing){cost} Focal Shards$() each, all behind the final seal.".replace("{cost}", str(cost))},
+        {"type": "patchouli:text", "title": "Boss by Boss",
+         "text": "Each eye's task is a boss kill: Bosses' Rise, Cataclysm, Cult of Azazel or the Wither. Without that boss's mod, the node asks for other work instead.$(br2)A boss takes no damage from you until a node that asks for it is reachable, so you cannot waste a kill."},
+        {"type": "patchouli:text", "title": "Lost Eyes",
+         "text": "Lost an eye? Kill its boss again while you own its node and carry none of that eye, and you are given another."},
+    ], 0, priority=True)
+
+    def eye_task(node):
+        bosses = node.get("bosses") or []
+        lines = [b["title"] + "." for b in bosses]
+        if node.get("task") and not any(b["target"].startswith("minecraft:") for b in bosses):
+            lines.append(("Without those bosses: " if len(bosses) > 1 else "Without that boss: ")
+                         + node["task"]["title"] + ".")
+        return "$(br)".join(lines)
+
     for i, node in enumerate(sorted(eye_nodes, key=lambda n: n["title"])):
         entry(f"eyes/{slug(node['id'])}", node["title"], "eyes", node["item"],
               [{"type": "patchouli:spotlight", "item": node["item"], "title": node["title"],
-                "text": f"{node['opens']}$(br2)$(thing){node['cost']} Focal Shards$()."
-                        + (f"$(br2){kind_text(node['task'])}." if node.get("task") else "")}],
+                "text": f"{node['opens']}$(br2)$(thing){node['cost']} Focal Shards$().$(br2){eye_task(node)}"}],
               sortnum=20 + i, flag=mod_flag(node["item"]))
 
     # ------------------------------------------------------------------ every other node

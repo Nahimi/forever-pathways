@@ -46,6 +46,18 @@ public final class Availability {
                 // pruning against an empty registry would drop all of them.
                 return;
             }
+            for (Tree.Node node : tree.nodes) {
+                if (node.bosses == null) {
+                    continue;
+                }
+                for (Tree.Task boss : node.bosses) {
+                    if (boss != null && possible(boss)) {
+                        node.task = boss;
+                        node.bossTask = true;
+                        break;
+                    }
+                }
+            }
             int labours = 0;
             for (Tree.Node node : tree.nodes) {
                 if (node.task != null && !possible(node.task)) {

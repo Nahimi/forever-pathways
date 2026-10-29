@@ -107,6 +107,7 @@ public final class TaskBook {
         updateTasks(player, tree, owned);
         updateBounties(player, tree, owned);
         checkDiscoveries(player, tree);
+        BossEyes.hand(player, tree, owned);
     }
 
     private static boolean ensureInit(ServerPlayer player, Tree tree) {
@@ -262,6 +263,7 @@ public final class TaskBook {
             ProgressiveStagesAPI.setCounter(player, "fpa_" + key, 0L);
             ProgressiveStagesAPI.setCounter(player, "fpb_" + key, 0L);
             ProgressiveStagesAPI.setCounter(player, "fpc_" + key, 0L);
+            ProgressiveStagesAPI.setCounter(player, BossEyes.GIVEN + key, 0L);
             if (node == tree.core()) {
                 continue;
             }

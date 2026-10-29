@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "endrem:guardian_eye",
       "title": "Guardian Eye",
-      "text": "$(bold)Only Nerakyss drops this eye. This node lets you use it in the ancient portal.$(br2)$(thing)28 Focal Shards$(n).$(br2)Catch 500 fish."
+      "text": "$(bold)Unlocking this node gives you the Guardian Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill Nerakyss.$(br)Kill an elder guardian."
     }
   ],
   "flag": "mod:endrem"

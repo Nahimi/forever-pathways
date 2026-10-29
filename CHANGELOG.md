@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.36.0
+
+- The sixteen eyes come only from their nodes: unlocking an eye node gives you its eye. They are no longer in any
+  loot table, mob drop or trade, and their recipes are refused. Bosses drop what they always did.
+- Each eye node's task is now a boss kill, the first of its bosses this pack has; without any, it keeps its old task.
+  Rogue, Cursed, Cold, Old, Guardian and Nether: the Bosses' Rise bosses (Guardian falls back to an elder guardian).
+  Wither: the Wither. Corrupted: the Ender Guardian. Undead: Maledictus. Lost: the Ancient Remnant. Exotic: the
+  Leviathan. Black: the Netherite Monstrosity. Cryptic: Ignis. Magical: Scylla. Witch: the Harbinger. Evil: Azazel.
+- Lost an eye? Kill its boss again while you own its node and carry none of that eye, and you get another.
+- Anyone who already owns an eye node is given its eye once.
+- A boss that an eye node asks for takes no damage from you until a node asking for it is reachable (not the Wither
+  or the elder guardian, which anyone can find or summon again).
+- Supports Cult of Azazel: The Divine Chariot (ring 10, after Champion) for Azazel's arms, armour and trophies, its
+  samsonit stone and dungeon blocks at Nether, crimson honey at Apiary.
+- tree.json: "bossDrops" is gone; nodes take "bosses" (kill tasks, best first) and "gives" (an item handed over
+  on unlock).
+
 ## 0.35.1
 
 - Supports Shield Expansion: the wooden shield at Woodcutter, iron at Iron Tools, golden at Golden Gear, diamond at

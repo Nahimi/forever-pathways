@@ -6,18 +6,18 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(bold)The End portal needs sixteen $(thing)different$(n) eyes. None can be crafted or mined.$(br2)Each is a node on the last ring, behind the final seal.",
+      "text": "$(bold)The End portal needs sixteen $(thing)different$(n) eyes. None can be crafted, mined or found.$(br2)Each is a node on the last ring, behind the final seal. Unlocking one gives you its eye.",
       "title": "IV. The Sixteen Eyes"
     },
     {
       "type": "patchouli:text",
       "title": "Where They Come From",
-      "text": "$(bold)$(li)Six from the bosses of Bosses' Rise.$(br)$(li)The rest from the Wither, the End, brewing, trading, the trial chambers and other work you are doing anyway.$(br2)Every eye and its source is listed under $(l:eyes/about)The Sixteen Eyes$(n)."
+      "text": "$(bold)$(li)Each eye's task is a boss kill: the six bosses of Bosses' Rise, the eight of Cataclysm, Azazel and the Wither.$(br)$(li)Without a boss's mod, its node asks for other work.$(br2)Every eye and its boss is listed under $(l:eyes/about)The Sixteen Eyes$(n)."
     },
     {
       "type": "patchouli:text",
       "title": "You Cannot Waste a Boss",
-      "text": "$(bold)A boss takes no damage from you until the node that asks for it is reachable.$(br2)An eye you have not unlocked still goes in your pack; it just will not go in the portal frame."
+      "text": "$(bold)A boss takes no damage from you until a node that asks for it is reachable.$(br2)Kill it again after unlocking its eye node, carrying none of that eye, and you get another."
     }
   ]
 }

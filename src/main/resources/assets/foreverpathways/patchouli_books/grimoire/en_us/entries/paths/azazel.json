@@ -1,0 +1,20 @@
+{
+  "name": "The Divine Chariot",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "netherman:azazel_scythe",
+  "sortnum": 1000,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "netherman:azazel_scythe",
+      "title": "The Divine Chariot",
+      "text": "$(bold)Cult of Azazel's god: the Divine Chariot Azazel's scythe, spear and shield, its armour and its trophies.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)48 Focal Shards$(n).$(br)After Champion."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill Azazel$(n)$(br2)Pays 9 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:netherman"
+}

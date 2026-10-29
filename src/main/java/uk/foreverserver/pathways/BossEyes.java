@@ -7,6 +7,7 @@ import java.util.Set;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
+import com.enviouse.progressivestages.common.api.ProgressiveStagesAPI;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -15,7 +16,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.npc.VillagerTrades;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -26,16 +26,19 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.common.loot.IGlobalLootModifier;
 import net.neoforged.neoforge.common.loot.LootModifier;
-import net.neoforged.neoforge.event.entity.living.LivingDropsEvent;
+import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.village.VillagerTradesEvent;
 import net.neoforged.neoforge.event.village.WandererTradesEvent;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 /**
- * The Bosses'Rise bosses drop their eye when a player kills them, and those eyes
- * are taken out of every other loot table and villager trade, so the boss is the
- * only way to get one. The list lives in tree.json under "bossDrops".
+ * The eyes come from the tree and nowhere else. Each eye node names its item in "gives" and hands it to the player
+ * the moment they unlock it; its task is a kill of whichever of its bosses is installed. The eyes are taken out of
+ * every loot table and trade, and CraftGuard refuses their recipes. Boss drops are left alone.
+ *
+ * <p>An eye is easily lost (a thrown one can break), so killing the node's boss again while owning the node and
+ * carrying none of its eye hands over another.
  */
 public final class BossEyes {
     private static final DeferredRegister<MapCodec<? extends IGlobalLootModifier>> MODIFIERS =
@@ -57,12 +60,15 @@ public final class BossEyes {
         MODIFIERS.register(modBus);
     }
 
-    /** Items that only bosses may hand out. */
+    /** Counter prefix marking that a node's item has been handed over. */
+    public static final String GIVEN = "fpg_";
+
+    /** Items only the tree hands out. */
     public static Set<Item> stripped() {
         if (stripped == null) {
             Set<Item> set = new HashSet<>();
-            for (Tree.BossDrop drop : Tree.get().bossDrops) {
-                Item item = item(drop.item);
+            for (Tree.Node node : Tree.get().nodes) {
+                Item item = item(node.gives);
                 if (item != Items.AIR) {
                     set.add(item);
                 }
@@ -72,27 +78,71 @@ public final class BossEyes {
         return stripped;
     }
 
-    public static void onDrops(LivingDropsEvent event) {
+    /** Hands each owned node's item over once: on unlocking it, and to anyone who owned it before eyes came this way. */
+    public static void hand(ServerPlayer player, Tree tree, Set<String> owned) {
+        for (Tree.Node node : tree.nodes) {
+            if (node.gives == null || !owned.contains(node.id)
+                    || ProgressiveStagesAPI.getCounter(player, GIVEN + node.key()) != 0) {
+                continue;
+            }
+            Item item = item(node.gives);
+            ProgressiveStagesAPI.setCounter(player, GIVEN + node.key(), 1L);
+            if (item == Items.AIR) {
+                continue;
+            }
+            ItemStack stack = give(player, item);
+            player.sendSystemMessage(Component.literal(node.title + " gives you the ").append(stack.getHoverName())
+                    .append(Component.literal(".")).withStyle(ChatFormatting.LIGHT_PURPLE));
+        }
+    }
+
+    private static ItemStack give(ServerPlayer player, Item item) {
+        ItemStack stack = new ItemStack(item);
+        ItemStack shown = stack.copy();
+        if (!player.getInventory().add(stack)) {
+            player.drop(stack, false);
+        }
+        return shown;
+    }
+
+    /** A boss killed again by someone who owns its eye node and has lost the eye: another one. */
+    public static void onKill(LivingDeathEvent event) {
         LivingEntity dead = event.getEntity();
         Entity killer = event.getSource().getEntity();
         if (!(killer instanceof ServerPlayer player) || dead.level().isClientSide()) {
             return;
         }
         ResourceLocation type = BuiltInRegistries.ENTITY_TYPE.getKey(dead.getType());
-        for (Tree.BossDrop drop : Tree.get().bossDrops) {
-            if (!type.toString().equals(drop.entity)) {
-                continue;
-            }
-            Item item = item(drop.item);
-            if (item == Items.AIR || dead.getRandom().nextDouble() >= drop.chance) {
-                continue;
-            }
-            ItemStack stack = new ItemStack(item);
-            event.getDrops().add(new ItemEntity(dead.level(), dead.getX(), dead.getY() + 0.5, dead.getZ(), stack));
-            player.sendSystemMessage(Component.literal(drop.boss + " dropped the ")
-                    .append(stack.getHoverName()).append(Component.literal("."))
-                    .withStyle(ChatFormatting.LIGHT_PURPLE));
+        if (type == null) {
+            return;
         }
+        for (Tree.Node node : Tree.get().nodes) {
+            if (node.gives == null || !node.bossTask || !node.hasTask() || !"kill".equals(node.task.kind)
+                    || !names(node.task.target, type.toString())) {
+                continue;
+            }
+            Item item = item(node.gives);
+            if (item == Items.AIR || !ProgressiveStagesAPI.hasStage(player, node.id)
+                    || ProgressiveStagesAPI.getCounter(player, GIVEN + node.key()) == 0
+                    || player.getInventory().countItem(item) > 0) {
+                continue;
+            }
+            ItemStack stack = give(player, item);
+            player.sendSystemMessage(Component.literal("Another ").append(stack.getHoverName())
+                    .append(Component.literal(", for the one you lost.")).withStyle(ChatFormatting.LIGHT_PURPLE));
+        }
+    }
+
+    static boolean names(String target, String id) {
+        if (target == null) {
+            return false;
+        }
+        for (String raw : target.split(",")) {
+            if (raw.trim().equals(id)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static void onVillagerTrades(VillagerTradesEvent event) {

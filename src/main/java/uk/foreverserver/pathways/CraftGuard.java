@@ -22,6 +22,10 @@ public final class CraftGuard {
         if (player == null || stack == null || stack.isEmpty() || player.isCreative() || player.isSpectator()) {
             return false;
         }
+        if (BossEyes.stripped().contains(stack.getItem())) {
+            // The eyes come from their nodes and nowhere else.
+            return true;
+        }
         if (!Locks.craftOnly(stack.getItem())) {
             // Everything else is locked outright, and ProgressiveStages already refuses to craft it.
             return false;

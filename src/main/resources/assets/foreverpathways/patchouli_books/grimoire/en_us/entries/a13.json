@@ -51,7 +51,13 @@
       "title": "Hazen N Stuff",
       "flag": "mod:hazennstuff",
       "text": "$(bold)Three nodes on the Magician road:$(br2)$(li)$(l:paths/hazen_metals)Hazen's Metals$(n), ring 9: ores, ingots and its woods.$(br)$(li)$(l:paths/hazen_runes)Runes and Orbs$(n), ring 10.$(br)$(li)$(l:paths/hazen_arsenal)Flamebearer's Arsenal$(n), ring 11: every weapon and armour set. Kill one of the Flamebearer's officers first."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Cult of Azazel",
+      "flag": "mod:netherman",
+      "text": "$(bold)Kill the Divine Chariot Azazel to open $(l:paths/azazel)The Divine Chariot$(n), ring 10 on the Ranger road, for its scythe, spear, shield and armour. Its samsonit halls and keys are at $(l:paths/nether)Nether$(n). Azazel's kill is also the Evil Eye's task."
     }
   ],
-  "flag": "|mod:hearthandharvest,mod:remains,mod:bestiary,mod:legionary,mod:cataclysm,mod:hazennstuff,mod:born_in_chaos_v1"
+  "flag": "|mod:hearthandharvest,mod:remains,mod:bestiary,mod:legionary,mod:cataclysm,mod:hazennstuff,mod:born_in_chaos_v1,mod:netherman"
 }
