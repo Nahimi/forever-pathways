@@ -57,7 +57,13 @@
       "title": "Cult of Azazel",
       "flag": "mod:netherman",
       "text": "$(bold)Kill the Divine Chariot Azazel to open $(l:paths/azazel)The Divine Chariot$(n), ring 10 on the Ranger road, for its scythe, spear, shield and armour. Its samsonit halls and keys are at $(l:paths/nether)Nether$(n). Azazel's kill is also the Evil Eye's task."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Companions!",
+      "flag": "mod:companions",
+      "text": "$(bold)Kill the Sacred Pontiff or a Shade to open $(l:paths/saints_shades)Saints and Shades$(n), ring 9 on the Ranger road, for crystallised blood arms and armour and the holy robes. The companions themselves, their puppets and the Shade altars are at $(l:paths/husbandry)Husbandry$(n); the tesla machines at Redstone, the mage gear and spell books at Magician."
     }
   ],
-  "flag": "|mod:hearthandharvest,mod:remains,mod:bestiary,mod:legionary,mod:cataclysm,mod:hazennstuff,mod:born_in_chaos_v1,mod:netherman"
+  "flag": "|mod:hearthandharvest,mod:remains,mod:bestiary,mod:legionary,mod:cataclysm,mod:hazennstuff,mod:born_in_chaos_v1,mod:netherman,mod:companions"
 }

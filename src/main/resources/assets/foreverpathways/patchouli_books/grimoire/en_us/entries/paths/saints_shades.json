@@ -1,0 +1,20 @@
+{
+  "name": "Saints and Shades",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "companions:crystallized_blood_sword",
+  "sortnum": 900,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "companions:crystallized_blood_sword",
+      "title": "Saints and Shades",
+      "text": "$(bold)Companions' bosses: crystallised blood and its netherite arms and armour, the Sacred Pontiff's relic gold, old cloth and holy robes, and the demon flesh of the Shades.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)40 Focal Shards$(n).$(br)After Champion."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill the Sacred Pontiff or a Shade$(n)$(br2)Pays 6 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:companions"
+}

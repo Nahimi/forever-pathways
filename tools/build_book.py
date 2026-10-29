@@ -316,7 +316,7 @@ BEYOND = [
                  "Trading is a task at $(l:paths/trader)Trader$(), so stay welcome."},
     ]),
     ("a13", "A13. Foes and Feasts", "minecraft:skeleton_skull", 13,
-     "|mod:hearthandharvest,mod:remains,mod:bestiary,mod:legionary,mod:cataclysm,mod:hazennstuff,mod:born_in_chaos_v1,mod:netherman", [
+     "|mod:hearthandharvest,mod:remains,mod:bestiary,mod:legionary,mod:cataclysm,mod:hazennstuff,mod:born_in_chaos_v1,mod:netherman,mod:companions", [
         {"type": "patchouli:text", "title": "Hearth and Harvest", "flag": "mod:hearthandharvest",
          "text": "Three nodes on the Homesteader road:$(br2)"
                  "$(li)$(l:paths/hh_orchard)Orchard and Trellis$(), ring 3: crops, trellises and farm tools.$(br)"
@@ -342,6 +342,8 @@ BEYOND = [
          "text": "Two nodes on the Ranger road:$(br2)$(li)$(l:paths/chaos)Born in Chaos$(), ring 5: dark metal, charms, elixirs and the blocks of its haunts. Kill 20 of its creatures first.$(br)$(li)$(l:paths/chaos_lords)Lords of Chaos$(), ring 8: the bosses' trophies. Kill any one of them."},
         {"type": "patchouli:text", "title": "Cult of Azazel", "flag": "mod:netherman",
          "text": "Kill the Divine Chariot Azazel to open $(l:paths/azazel)The Divine Chariot$(), ring 10 on the Ranger road, for its scythe, spear, shield and armour. Its samsonit halls and keys are at $(l:paths/nether)Nether$(). Azazel's kill is also the Evil Eye's task."},
+        {"type": "patchouli:text", "title": "Companions!", "flag": "mod:companions",
+         "text": "Kill the Sacred Pontiff or a Shade to open $(l:paths/saints_shades)Saints and Shades$(), ring 9 on the Ranger road, for crystallised blood arms and armour and the holy robes. The companions themselves, their puppets and the Shade altars are at $(l:paths/husbandry)Husbandry$(); the tesla machines at Redstone, the mage gear and spell books at Magician."},
         {"type": "patchouli:text", "title": "Hazen N Stuff", "flag": "mod:hazennstuff",
          "text": "Three nodes on the Magician road:$(br2)"
                  "$(li)$(l:paths/hazen_metals)Hazen's Metals$(), ring 9: ores, ingots and its woods.$(br)"

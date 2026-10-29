@@ -728,3 +728,11 @@ config="${mod_id}.mixins.json"
     versionRange="[0,)"
     ordering="AFTER"
     side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="companions"
+    type="optional"
+    reason="Companions!: Saints and Shades for its bosses, the companions at Husbandry"
+    versionRange="[0,)"
+    ordering="AFTER"
+    side="BOTH"

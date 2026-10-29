@@ -2826,6 +2826,7 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
+        "re:companions:(tesla_coil_block|voltaic_pillar_block|voltaic_relay_block|plasma_lamp_block|recall_platform_block)",
         "minecraft:clock",
         "minecraft:compass",
         "minecraft:redstone",
@@ -3320,6 +3321,7 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
+        "re:companions:(netherite_dagger|netherite_chains|eternal_lighter|eternal_fire)",
         "re:farmersdelight:netherite_knife",
         "re:butchery:netherite_(cleaver|hacksaw|hammer|skinning_knife)",
         "simpleradio:netherite_module",
@@ -4435,6 +4437,7 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
+        "re:companions:(mage_.*|book_.*|soul_gem|soul_furnace_block)",
         "re:irons_spellbooks:(wimpy_spell_book|spell_book|scroll|common_ink|book_stack|chained_book|unchained_book|wisewood_.*|ruined_book|ancient_knowledge_fragment)"
       ],
       "uses": []
@@ -6395,6 +6398,7 @@
       "enchantPower": 0,
       "craftOnly": true,
       "locks": [
+        "companions:saint_klimt_music_disc",
         "re:netherman:music_disc_(maze|quar|sacred)",
         "re:supplementaries:(awning.*|flag_.*|bunting_.*|item_shelf|doormat|flower_box|planter.*|way_sign_.*|fine_wood.*|wicker_fence|hanging_sign_.*|notice_board|jar|pedestal|hourglass.*)",
         "re:supplementaries:((trapped_)?present(_[a-z_]+)?|flute|confetti_popper|lunch_basket|urn|music_disc_.*|spawn/way_sign_.*)",
@@ -6925,6 +6929,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
+        "rest:companions",
+        "rest:knightlib",
         "re:hardcore_torches:animal_fat",
         "re:butchery:(bone|copper)_(cleaver|hacksaw|hammer|skinning_knife)",
         "re:butchery:(hook|.*_butchers_table)",
@@ -7209,6 +7215,7 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
+        "re:companions:(big_bread|croissant_.*)",
         "re:supplementaries:(pancake|candy|sugar_cube)",
         "mod:baking_process",
         "re:create:(bar_of_chocolate|chocolate_bucket|chocolate_glazed_berries|honeyed_apple|builders_tea|sweet_roll|dough|wheat_flour|cinder_flour|honey_bucket)",
@@ -8071,6 +8078,34 @@
       "uses": []
     },
     {
+      "id": "forever:saints_shades",
+      "title": "Saints and Shades",
+      "path": "ranger",
+      "ring": 9,
+      "requires": "forever:champion",
+      "also": null,
+      "cost": 40,
+      "item": "companions:crystallized_blood_sword",
+      "colour": "#8B4513",
+      "opens": "Companions' bosses: crystallised blood and its netherite arms and armour, the Sacred Pontiff's relic gold, old cloth and holy robes, and the demon flesh of the Shades.",
+      "task": {
+        "kind": "kill",
+        "target": "companions:sacred_pontiff,companions:his_holiness,companions:shade_maw,companions:shade_sword,companions:shade_bat",
+        "amount": 1,
+        "title": "Kill the Sacred Pontiff or a Shade",
+        "reward": 6
+      },
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "re:companions:(crystallized_blood_.*|holy_.*|relic_gold|old_cloth|demon_flesh)"
+      ],
+      "uses": []
+    },
+    {
       "id": "forever:cata_end",
       "title": "The Ender Guardian",
       "path": "ranger",
@@ -8151,6 +8186,7 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
+        "companions:respawn_totem_block",
         "minecraft:totem_of_undying",
         "minecraft:enchanted_golden_apple",
         "minecraft:enchanted_golden_apple_de",

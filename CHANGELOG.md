@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.36.1
+
+- Supports Companions!: Saints and Shades (ring 9, after Champion; kill the Sacred Pontiff or a Shade) for crystallised
+  blood arms and armour, relic gold, old cloth and the holy robes. The companions, puppets and Shade altars are at
+  Husbandry, the tesla machines at Redstone, the mage gear and spell books at Magician, the croissant dragon's
+  things at Bakery, the netherite dagger and eternal fire at Netherite, and the respawn totem at Undying.
+- Knight Lib, which Companions! needs, is placed at Husbandry.
+
 ## 0.36.0
 
 - The sixteen eyes come only from their nodes: unlocking an eye node gives you its eye. They are no longer in any
