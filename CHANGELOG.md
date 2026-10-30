@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.37.1
+
+- Mining and gathering bounties ask for half as much too: Mine 64 stone, Mine 24 iron ore, Clear 32 leaves. Their
+  rewards are unchanged. A bounty already running takes its new, smaller goal at once.
+
 ## 0.37.0
 
 - Every seventh day survived in one life pays 2 Focal Shards on top of that day's shard ("rules.weekDays" and
