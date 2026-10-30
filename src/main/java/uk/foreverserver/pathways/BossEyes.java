@@ -7,7 +7,6 @@ import java.util.Set;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 
-import com.enviouse.progressivestages.common.api.ProgressiveStagesAPI;
 import it.unimi.dsi.fastutil.objects.ObjectArrayList;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -82,11 +81,11 @@ public final class BossEyes {
     public static void hand(ServerPlayer player, Tree tree, Set<String> owned) {
         for (Tree.Node node : tree.nodes) {
             if (node.gives == null || !owned.contains(node.id)
-                    || ProgressiveStagesAPI.getCounter(player, GIVEN + node.key()) != 0) {
+                    || PlayerData.get(player, GIVEN + node.key()) != 0) {
                 continue;
             }
             Item item = item(node.gives);
-            ProgressiveStagesAPI.setCounter(player, GIVEN + node.key(), 1L);
+            PlayerData.set(player, GIVEN + node.key(), 1L);
             if (item == Items.AIR) {
                 continue;
             }
@@ -122,8 +121,8 @@ public final class BossEyes {
                 continue;
             }
             Item item = item(node.gives);
-            if (item == Items.AIR || !ProgressiveStagesAPI.hasStage(player, node.id)
-                    || ProgressiveStagesAPI.getCounter(player, GIVEN + node.key()) == 0
+            if (item == Items.AIR || !Stages.has(player, node.id)
+                    || PlayerData.get(player, GIVEN + node.key()) == 0
                     || player.getInventory().countItem(item) > 0) {
                 continue;
             }

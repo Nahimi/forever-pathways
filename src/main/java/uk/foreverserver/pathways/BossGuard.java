@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import com.enviouse.progressivestages.common.api.ProgressiveStagesAPI;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -94,10 +93,10 @@ public final class BossGuard {
     /** True once this player's node is reachable, which is when its kills begin to count. */
     private static boolean ready(ServerPlayer player, Tree.Node node) {
         try {
-            if (ProgressiveStagesAPI.hasStage(player, node.id)) {
+            if (Stages.has(player, node.id)) {
                 return true;
             }
-            return ProgressiveStagesAPI.getCounter(player, "fpa_" + node.key()) != 0;
+            return PlayerData.get(player, "fpa_" + node.key()) != 0;
         } catch (RuntimeException exception) {
             return true;
         }

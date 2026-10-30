@@ -2,9 +2,6 @@ package uk.foreverserver.pathways;
 
 import java.util.function.Predicate;
 
-import com.enviouse.progressivestages.common.api.ItemUseDecision;
-import com.enviouse.progressivestages.common.api.ProgressiveStagesAPI;
-import com.enviouse.progressivestages.server.enforcement.ItemEnforcer;
 
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.InteractionResult;
@@ -193,8 +190,7 @@ public final class BlockGuard {
             return false;
         }
         if (player instanceof ServerPlayer server) {
-            ItemUseDecision decision = ProgressiveStagesAPI.evaluateItemUse(server, new ItemStack(item));
-            ItemEnforcer.notifyLockedWithCooldown(server, decision, item);
+            Stages.tellLocked(server, item);
         } else if (player.level().isClientSide()) {
             clientTell.accept(item);
         }
@@ -211,10 +207,10 @@ public final class BlockGuard {
         }
         if (player instanceof ServerPlayer server) {
             String owner = Locks.ownerOf(item);
-            if (owner != null && !ProgressiveStagesAPI.hasStage(server, owner)) {
+            if (owner != null && !Stages.has(server, owner)) {
                 return true;
             }
-            return !ProgressiveStagesAPI.evaluateItemUse(server, new ItemStack(item)).allowed();
+            return !Stages.mayUse(server, item);
         }
         if (player.level().isClientSide()) {
             String owner = Locks.ownerOf(item);
@@ -236,7 +232,7 @@ public final class BlockGuard {
         }
         for (String node : Locks.usersOf(block)) {
             if (player instanceof ServerPlayer server) {
-                if (ProgressiveStagesAPI.hasStage(server, node)) {
+                if (Stages.has(server, node)) {
                     return true;
                 }
             } else if (player.level().isClientSide() && Boolean.TRUE.equals(clientOwns.apply(node))) {

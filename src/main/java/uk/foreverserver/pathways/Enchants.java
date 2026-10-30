@@ -1,6 +1,5 @@
 package uk.foreverserver.pathways;
 
-import com.enviouse.progressivestages.common.api.ProgressiveStagesAPI;
 
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
@@ -28,7 +27,7 @@ public final class Enchants {
                 continue;
             }
             try {
-                if (ProgressiveStagesAPI.hasStage(serverPlayer, node.id)) {
+                if (Stages.has(serverPlayer, node.id)) {
                     best = node.enchantPower;
                 }
             } catch (RuntimeException exception) {

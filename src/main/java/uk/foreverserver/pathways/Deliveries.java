@@ -56,6 +56,11 @@ public final class Deliveries {
 
     // ------------------------------------------------------------------ costs
 
+    /** Prices everything now, as the server starts, so the first delivery dealt is not a pause on someone's login. */
+    public static void prepare(MinecraftServer server) {
+        price(server, Tree.get());
+    }
+
     private static synchronized void price(MinecraftServer server, Tree tree) {
         RecipeManager manager = server.getRecipeManager();
         if (manager == pricedFor) {

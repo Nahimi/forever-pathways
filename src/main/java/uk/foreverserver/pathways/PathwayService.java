@@ -5,9 +5,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-import com.enviouse.progressivestages.common.api.ProgressiveStagesAPI;
-import com.enviouse.progressivestages.common.api.StageCause;
-import com.enviouse.progressivestages.common.api.StageId;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
@@ -55,8 +52,8 @@ public final class PathwayService {
 
     public static void ensureCore(ServerPlayer player) {
         Tree.Node core = Tree.get().core();
-        if (ProgressiveStagesAPI.stageExists(core.id) && !ProgressiveStagesAPI.hasStage(player, core.id)) {
-            ProgressiveStagesAPI.grantStageBypass(player, StageId.parse(core.id), StageCause.COMMAND);
+        if (Stages.exists(core.id) && !Stages.has(player, core.id)) {
+            Stages.grantAnyway(player, core.id);
         }
     }
 
@@ -68,12 +65,12 @@ public final class PathwayService {
         }
         TaskBook.update(player);
         Set<String> owned = TaskBook.owned(player, tree);
-        long points = ProgressiveStagesAPI.getCounter(player, POINTS);
+        long points = PlayerData.get(player, POINTS);
         Gates.Gate gate = Gates.gate(tree, node, owned::contains, points, !node.hasTask() || TaskBook.claimed(player, node));
         if (gate != Gates.Gate.READY) {
             return;
         }
-        boolean granted = ProgressiveStagesAPI.grantStage(player, StageId.parse(node.id), StageCause.PURCHASE);
+        boolean granted = Stages.grant(player, node.id);
         if (!granted) {
             player.displayClientMessage(Component.literal("ProgressiveStages refused " + node.title
                     + ". Has the server been restarted since /pathways rebuild?").withStyle(ChatFormatting.RED), false);
@@ -81,7 +78,7 @@ public final class PathwayService {
         }
         int cost = Difficulty.cost(node);
         if (cost > 0) {
-            ProgressiveStagesAPI.addCounter(player, POINTS, -cost);
+            PlayerData.add(player, POINTS, -cost);
         }
         TaskBook.update(player);
         Perks.apply(player, tree, TaskBook.owned(player, tree));
@@ -101,11 +98,10 @@ public final class PathwayService {
         if (node == null) {
             return;
         }
-        StageId id = StageId.parse(node.id);
-        if (ProgressiveStagesAPI.hasStage(player, node.id)) {
-            ProgressiveStagesAPI.revokeStage(player, id, StageCause.COMMAND);
+        if (Stages.has(player, node.id)) {
+            Stages.revoke(player, node.id);
         } else {
-            ProgressiveStagesAPI.grantStageBypass(player, id, StageCause.COMMAND);
+            Stages.grantAnyway(player, node.id);
         }
     }
 
@@ -123,7 +119,7 @@ public final class PathwayService {
         }
         int alive = TaskBook.aliveTicks(player) % Math.max(1, tree.rules.dayTicks);
         return new StatePayload(
-                (int) ProgressiveStagesAPI.getCounter(player, POINTS),
+                (int) PlayerData.get(player, POINTS),
                 Gates.level(tree, owned::contains),
                 text.toString(),
                 alive,

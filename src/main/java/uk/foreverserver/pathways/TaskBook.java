@@ -3,15 +3,11 @@ package uk.foreverserver.pathways;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.function.Predicate;
 
-import com.enviouse.progressivestages.common.api.ProgressiveStagesAPI;
-import com.enviouse.progressivestages.common.api.StageCause;
-import com.enviouse.progressivestages.common.api.StageId;
 
 import net.neoforged.neoforge.network.PacketDistributor;
 import uk.foreverserver.pathways.net.NotifyPayload;
@@ -85,7 +81,7 @@ public final class TaskBook {
 
     public static void onTick(ServerPlayer player) {
         if (player.tickCount % 20 == 0 && player.isUnderWater() && player.isAlive()) {
-            ProgressiveStagesAPI.addCounter(player, eventKey("underwater", ""), 1);
+            PlayerData.add(player, eventKey("underwater", ""), 1);
         }
         if (player.tickCount % 20 != 0) {
             return;
@@ -111,15 +107,15 @@ public final class TaskBook {
     }
 
     private static boolean ensureInit(ServerPlayer player, Tree tree) {
-        if (ProgressiveStagesAPI.getCounter(player, INIT) != 0) {
+        if (PlayerData.get(player, INIT) != 0) {
             return true;
         }
-        ProgressiveStagesAPI.setCounter(player, PAID, daysAlive(player, tree));
+        PlayerData.set(player, PAID, daysAlive(player, tree));
         int starting = Difficulty.current().startingShards;
         if (starting > 0) {
-            ProgressiveStagesAPI.addCounter(player, POINTS, starting);
+            PlayerData.add(player, POINTS, starting);
         }
-        ProgressiveStagesAPI.setCounter(player, INIT, 1L);
+        PlayerData.set(player, INIT, 1L);
         PathwayService.ensureCore(player);
         return false;
     }
@@ -135,13 +131,13 @@ public final class TaskBook {
             String key = node.key();
             if (owned.contains(node.id)) {
                 // Owned without its task (granted by command, say): count it as done.
-                ProgressiveStagesAPI.setCounter(player, "fpc_" + key, 1L);
+                PlayerData.set(player, "fpc_" + key, 1L);
                 continue;
             }
-            if (ProgressiveStagesAPI.getCounter(player, "fpa_" + key) == 0) {
+            if (PlayerData.get(player, "fpa_" + key) == 0) {
                 if (Gates.open(tree, node, owned::contains)) {
-                    ProgressiveStagesAPI.setCounter(player, "fpb_" + key, stat(player, task, tree));
-                    ProgressiveStagesAPI.setCounter(player, "fpa_" + key, 1L);
+                    PlayerData.set(player, "fpb_" + key, stat(player, task, tree));
+                    PlayerData.set(player, "fpa_" + key, 1L);
                 }
                 continue;
             }
@@ -151,9 +147,9 @@ public final class TaskBook {
                         task.amount, task.reward);
                 continue;
             }
-            ProgressiveStagesAPI.setCounter(player, "fpc_" + key, 1L);
+            PlayerData.set(player, "fpc_" + key, 1L);
             if (task.reward > 0) {
-                ProgressiveStagesAPI.addCounter(player, POINTS, task.reward);
+                PlayerData.add(player, POINTS, task.reward);
             }
             finished(player, NotifyPayload.TASK_DONE, node.id, task.title, node.title, node.item, task.amount, task.reward);
         }
@@ -161,19 +157,19 @@ public final class TaskBook {
 
     private static long taskProgress(ServerPlayer player, Tree.Node node, Tree tree) {
         String key = node.key();
-        if (ProgressiveStagesAPI.getCounter(player, "fpa_" + key) == 0) {
+        if (PlayerData.get(player, "fpa_" + key) == 0) {
             return 0;
         }
         long stat = stat(player, node.task, tree);
         if (!baselined(node.task)) {
             return stat;
         }
-        return Math.max(0, stat - ProgressiveStagesAPI.getCounter(player, "fpb_" + key));
+        return Math.max(0, stat - PlayerData.get(player, "fpb_" + key));
     }
 
     /** True once a node's task has been finished, which is what buying the node needs. */
     public static boolean claimed(ServerPlayer player, Tree.Node node) {
-        return node.hasTask() && ProgressiveStagesAPI.getCounter(player, "fpc_" + node.key()) != 0;
+        return node.hasTask() && PlayerData.get(player, "fpc_" + node.key()) != 0;
     }
 
     // ------------------------------------------------------------------ notices
@@ -228,13 +224,13 @@ public final class TaskBook {
     }
 
     private static Tree.Bounty slotBounty(ServerPlayer player, Tree tree, int slot) {
-        int index = (int) ProgressiveStagesAPI.getCounter(player, slotKey(slot, "id")) - 1;
+        int index = (int) PlayerData.get(player, slotKey(slot, "id")) - 1;
         Tree.Bounty byIndex = index >= 0 && index < tree.bounties.size() ? tree.bounties.get(index) : null;
-        long stamp = ProgressiveStagesAPI.getCounter(player, slotKey(slot, "bid"));
+        long stamp = PlayerData.get(player, slotKey(slot, "bid"));
         if (stamp == 0) {
             // Dealt before slots remembered what they held, or nothing in the slot at all.
             if (byIndex != null) {
-                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "bid"), stamp(byIndex));
+                PlayerData.set(player, slotKey(slot, "bid"), stamp(byIndex));
             }
             return byIndex;
         }
@@ -244,7 +240,7 @@ public final class TaskBook {
         // The list moved under us: find what this slot really holds, and put the position right.
         for (int i = 0; i < tree.bounties.size(); i++) {
             if (stamp(tree.bounties.get(i)) == stamp) {
-                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "id"), i + 1L);
+                PlayerData.set(player, slotKey(slot, "id"), i + 1L);
                 return tree.bounties.get(i);
             }
         }
@@ -260,33 +256,33 @@ public final class TaskBook {
         Tree tree = Tree.get();
         for (Tree.Node node : tree.nodes) {
             String key = node.key();
-            ProgressiveStagesAPI.setCounter(player, "fpa_" + key, 0L);
-            ProgressiveStagesAPI.setCounter(player, "fpb_" + key, 0L);
-            ProgressiveStagesAPI.setCounter(player, "fpc_" + key, 0L);
-            ProgressiveStagesAPI.setCounter(player, BossEyes.GIVEN + key, 0L);
+            PlayerData.set(player, "fpa_" + key, 0L);
+            PlayerData.set(player, "fpb_" + key, 0L);
+            PlayerData.set(player, "fpc_" + key, 0L);
+            PlayerData.set(player, BossEyes.GIVEN + key, 0L);
             if (node == tree.core()) {
                 continue;
             }
             try {
-                if (ProgressiveStagesAPI.hasStage(player, node.id)) {
-                    ProgressiveStagesAPI.revokeStage(player, StageId.parse(node.id), StageCause.COMMAND);
+                if (Stages.has(player, node.id)) {
+                    Stages.revoke(player, node.id);
                 }
             } catch (RuntimeException exception) {
                 // a stage the pack no longer has; nothing to revoke
             }
         }
         for (Tree.Bounty bounty : tree.bounties) {
-            ProgressiveStagesAPI.setCounter(player, "fpn_q_" + bounty.id, 0L);
+            PlayerData.set(player, "fpn_q_" + bounty.id, 0L);
         }
         for (int slot = 0; slot < slots(tree); slot++) {
             clearSlot(player, slot, SLOT_EMPTY);
-            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "prev"), 0L);
+            PlayerData.set(player, slotKey(slot, "prev"), 0L);
         }
-        ProgressiveStagesAPI.setCounter(player, POINTS, 0L);
-        ProgressiveStagesAPI.setCounter(player, INIT, 0L);
-        ProgressiveStagesAPI.setCounter(player, BOUNTY_DAY, 0L);
-        ProgressiveStagesAPI.setCounter(player, GAVE_UP, 0L);
-        ProgressiveStagesAPI.setCounter(player, PAID, 0L);
+        PlayerData.set(player, POINTS, 0L);
+        PlayerData.set(player, INIT, 0L);
+        PlayerData.set(player, BOUNTY_DAY, 0L);
+        PlayerData.set(player, GAVE_UP, 0L);
+        PlayerData.set(player, PAID, 0L);
         forgetSeen(player);
         update(player);
     }
@@ -301,7 +297,7 @@ public final class TaskBook {
         for (int slot = 0; slot < slots(tree); slot++) {
             Delivery delivery = slotDelivery(player, slot);
             if (delivery != null) {
-                if (day >= ProgressiveStagesAPI.getCounter(player, slotKey(slot, "end"))) {
+                if (day >= PlayerData.get(player, slotKey(slot, "end"))) {
                     clearSlot(player, slot, SLOT_EXPIRED);
                     player.sendSystemMessage(Component.literal("Bounty expired: ").append(delivery.title())
                             .withStyle(ChatFormatting.GRAY));
@@ -313,7 +309,7 @@ public final class TaskBook {
                 continue;
             }
             Tree.Task task = bounty.task();
-            if (day >= ProgressiveStagesAPI.getCounter(player, slotKey(slot, "end"))) {
+            if (day >= PlayerData.get(player, slotKey(slot, "end"))) {
                 clearSlot(player, slot, SLOT_EXPIRED);
                 player.sendSystemMessage(Component.literal("Bounty expired: " + bounty.title).withStyle(ChatFormatting.GRAY));
                 continue;
@@ -327,16 +323,16 @@ public final class TaskBook {
             }
             clearSlot(player, slot, SLOT_DONE);
             scheduleRefill(player, slot, tree.rules.bountyRefillTicks);
-            ProgressiveStagesAPI.addCounter(player, POINTS, bounty.reward);
-            ProgressiveStagesAPI.addCounter(player, "fpn_q_" + bounty.id, 1);
+            PlayerData.add(player, POINTS, bounty.reward);
+            PlayerData.add(player, "fpn_q_" + bounty.id, 1);
             finished(player, NotifyPayload.BOUNTY_DONE, bounty.id, bounty.title, tier, bounty.item, task.amount,
                     bounty.reward);
         }
 
-        long dealt = ProgressiveStagesAPI.getCounter(player, BOUNTY_DAY) - 1;
+        long dealt = PlayerData.get(player, BOUNTY_DAY) - 1;
         if (dealt > day) {
             // The clock went backwards (/time set): treat today as already dealt.
-            ProgressiveStagesAPI.setCounter(player, BOUNTY_DAY, day + 1);
+            PlayerData.set(player, BOUNTY_DAY, day + 1);
             dealt = day;
         }
         boolean dawn = dealt != day;
@@ -346,9 +342,9 @@ public final class TaskBook {
             if (occupied(player, tree, slot)) {
                 continue;
             }
-            long refill = ProgressiveStagesAPI.getCounter(player, slotKey(slot, "next"));
+            long refill = PlayerData.get(player, slotKey(slot, "next"));
             // A slot that has never held anything (one just added to the pack) is dealt at once.
-            boolean fresh = refill == 0 && ProgressiveStagesAPI.getCounter(player, slotKey(slot, "out")) == SLOT_EMPTY;
+            boolean fresh = refill == 0 && PlayerData.get(player, slotKey(slot, "out")) == SLOT_EMPTY;
             if (!dawn && !fresh && (refill == 0 || now < refill)) {
                 continue;
             }
@@ -357,7 +353,7 @@ public final class TaskBook {
                 // One dealt in another slot before the delivery slot existed: wait for it to finish.
                 continue;
             }
-            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "next"), 0L);
+            PlayerData.set(player, slotKey(slot, "next"), 0L);
             // Dealt in the second half of the day: an extra day, so it is not gone at the next dawn.
             boolean late = !dawn && Math.max(0, player.server.overworld().getDayTime())
                     % Math.max(1, tree.rules.dayTicks) > tree.rules.dayTicks / 2;
@@ -367,17 +363,17 @@ public final class TaskBook {
                     scheduleRefill(player, slot, tree.rules.bountyRefillTicks);
                     continue;
                 }
-                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "id"), 0L);
-                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "bid"), 0L);
-                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "dlv"), Deliveries.stamp(offer.item()));
-                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "amt"), offer.amount());
-                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "dtier"), offer.tier());
-                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "rew"), offer.reward());
-                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "pdlv"), 1L);
-                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "dlvon"), 1L);
-                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "end"),
+                PlayerData.set(player, slotKey(slot, "id"), 0L);
+                PlayerData.set(player, slotKey(slot, "bid"), 0L);
+                PlayerData.set(player, slotKey(slot, "dlv"), Deliveries.stamp(offer.item()));
+                PlayerData.set(player, slotKey(slot, "amt"), offer.amount());
+                PlayerData.set(player, slotKey(slot, "dtier"), offer.tier());
+                PlayerData.set(player, slotKey(slot, "rew"), offer.reward());
+                PlayerData.set(player, slotKey(slot, "pdlv"), 1L);
+                PlayerData.set(player, slotKey(slot, "dlvon"), 1L);
+                PlayerData.set(player, slotKey(slot, "end"),
                         day + Math.max(1, Math.min(3, tree.delivery.days)) + (late ? 1 : 0));
-                ProgressiveStagesAPI.setCounter(player, slotKey(slot, "out"), 0L);
+                PlayerData.set(player, slotKey(slot, "out"), 0L);
                 offered.add(new Delivery(offer.item(), offer.amount(), offer.tier(), offer.reward()).title());
                 continue;
             }
@@ -386,18 +382,18 @@ public final class TaskBook {
                 scheduleRefill(player, slot, tree.rules.bountyRefillTicks);
                 continue;
             }
-            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "id"), tree.bounties.indexOf(pick) + 1L);
-            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "bid"), stamp(pick));
-            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "prev"), tree.bounties.indexOf(pick) + 1L);
-            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "pdlv"), 0L);
-            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "end"),
+            PlayerData.set(player, slotKey(slot, "id"), tree.bounties.indexOf(pick) + 1L);
+            PlayerData.set(player, slotKey(slot, "bid"), stamp(pick));
+            PlayerData.set(player, slotKey(slot, "prev"), tree.bounties.indexOf(pick) + 1L);
+            PlayerData.set(player, slotKey(slot, "pdlv"), 0L);
+            PlayerData.set(player, slotKey(slot, "end"),
                     day + Math.max(1, Math.min(3, pick.days)) + (late ? 1 : 0));
-            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "base"), stat(player, pick.task(), tree));
-            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "out"), 0L);
+            PlayerData.set(player, slotKey(slot, "base"), stat(player, pick.task(), tree));
+            PlayerData.set(player, slotKey(slot, "out"), 0L);
             offered.add(Component.literal(pick.title));
         }
         if (dawn) {
-            ProgressiveStagesAPI.setCounter(player, BOUNTY_DAY, day + 1);
+            PlayerData.set(player, BOUNTY_DAY, day + 1);
         }
         for (Component title : offered) {
             player.sendSystemMessage(Component.literal("New Bounty Available: ").append(title).withStyle(ChatFormatting.GOLD));
@@ -421,12 +417,12 @@ public final class TaskBook {
     /** The slot is dealt again this many ticks from now (0 for the next tick), or at dawn if that comes first. */
     private static void scheduleRefill(ServerPlayer player, int slot, int ticks) {
         long at = player.server.overworld().getGameTime() + Math.max(0, ticks);
-        ProgressiveStagesAPI.setCounter(player, slotKey(slot, "next"), Math.max(1, at));
+        PlayerData.set(player, slotKey(slot, "next"), Math.max(1, at));
     }
 
     /** True if the player has not given up a bounty yet today. */
     public static boolean canGiveUp(ServerPlayer player, Tree tree) {
-        return ProgressiveStagesAPI.getCounter(player, GAVE_UP) != today(player, tree) + 1;
+        return PlayerData.get(player, GAVE_UP) != today(player, tree) + 1;
     }
 
     /** Drops a running bounty at the player's wish, once a day; a new one is dealt straight away. */
@@ -447,7 +443,7 @@ public final class TaskBook {
         }
         clearSlot(player, slot, SLOT_GAVE_UP);
         scheduleRefill(player, slot, 0);
-        ProgressiveStagesAPI.setCounter(player, GAVE_UP, today(player, tree) + 1);
+        PlayerData.set(player, GAVE_UP, today(player, tree) + 1);
         forgetSeen(player);
         player.sendSystemMessage(Component.literal("Bounty given up: ")
                 .append(delivery != null ? delivery.title() : Component.literal(bounty.title))
@@ -462,9 +458,9 @@ public final class TaskBook {
     private static Tree.Bounty draw(ServerPlayer player, Tree tree, Set<String> owned, int slot) {
         Set<Integer> busy = new HashSet<>();
         for (int other = 0; other < slots(tree); other++) {
-            busy.add((int) ProgressiveStagesAPI.getCounter(player, slotKey(other, "id")) - 1);
+            busy.add((int) PlayerData.get(player, slotKey(other, "id")) - 1);
         }
-        int previous = (int) ProgressiveStagesAPI.getCounter(player, slotKey(slot, "prev")) - 1;
+        int previous = (int) PlayerData.get(player, slotKey(slot, "prev")) - 1;
         List<Tree.Bounty> pool = new ArrayList<>();
         int top = 1;
         for (int i = 0; i < tree.bounties.size(); i++) {
@@ -502,8 +498,8 @@ public final class TaskBook {
         for (int slot = 0; slot < slots(tree); slot++) {
             clearSlot(player, slot, SLOT_EMPTY);
         }
-        ProgressiveStagesAPI.setCounter(player, BOUNTY_DAY, 0L);
-        ProgressiveStagesAPI.setCounter(player, GAVE_UP, 0L);
+        PlayerData.set(player, BOUNTY_DAY, 0L);
+        PlayerData.set(player, GAVE_UP, 0L);
         update(player);
     }
 
@@ -520,38 +516,38 @@ public final class TaskBook {
     }
 
     private static void clearSlot(ServerPlayer player, int slot, int outcome) {
-        ProgressiveStagesAPI.setCounter(player, slotKey(slot, "id"), 0L);
-        ProgressiveStagesAPI.setCounter(player, slotKey(slot, "bid"), 0L);
-        ProgressiveStagesAPI.setCounter(player, slotKey(slot, "out"), outcome);
-        ProgressiveStagesAPI.setCounter(player, slotKey(slot, "next"), 0L);
+        PlayerData.set(player, slotKey(slot, "id"), 0L);
+        PlayerData.set(player, slotKey(slot, "bid"), 0L);
+        PlayerData.set(player, slotKey(slot, "out"), outcome);
+        PlayerData.set(player, slotKey(slot, "next"), 0L);
         // What the delivery asked for stays, so the slot can still say what it was.
-        ProgressiveStagesAPI.setCounter(player, slotKey(slot, "dlvon"), 0L);
+        PlayerData.set(player, slotKey(slot, "dlvon"), 0L);
     }
 
     /** The delivery running in this slot, or null. */
     private static Delivery slotDelivery(ServerPlayer player, int slot) {
-        if (ProgressiveStagesAPI.getCounter(player, slotKey(slot, "dlvon")) == 0) {
+        if (PlayerData.get(player, slotKey(slot, "dlvon")) == 0) {
             return null;
         }
         Delivery delivery = lastDelivery(player, slot);
         if (delivery == null) {
-            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "dlvon"), 0L);
+            PlayerData.set(player, slotKey(slot, "dlvon"), 0L);
         }
         return delivery;
     }
 
     /** What the last delivery in this slot asked for, running or not; null if its last deal was not one. */
     private static Delivery lastDelivery(ServerPlayer player, int slot) {
-        if (ProgressiveStagesAPI.getCounter(player, slotKey(slot, "pdlv")) == 0) {
+        if (PlayerData.get(player, slotKey(slot, "pdlv")) == 0) {
             return null;
         }
-        Item item = Deliveries.byStamp(ProgressiveStagesAPI.getCounter(player, slotKey(slot, "dlv")));
+        Item item = Deliveries.byStamp(PlayerData.get(player, slotKey(slot, "dlv")));
         if (item == null) {
             return null;
         }
-        return new Delivery(item, (int) ProgressiveStagesAPI.getCounter(player, slotKey(slot, "amt")),
-                (int) ProgressiveStagesAPI.getCounter(player, slotKey(slot, "dtier")),
-                (int) ProgressiveStagesAPI.getCounter(player, slotKey(slot, "rew")));
+        return new Delivery(item, (int) PlayerData.get(player, slotKey(slot, "amt")),
+                (int) PlayerData.get(player, slotKey(slot, "dtier")),
+                (int) PlayerData.get(player, slotKey(slot, "rew")));
     }
 
     private record Delivery(Item item, int amount, int tier, int reward) {
@@ -586,7 +582,7 @@ public final class TaskBook {
             return;
         }
         clearSlot(player, slot, SLOT_DONE);
-        ProgressiveStagesAPI.addCounter(player, POINTS, delivery.reward);
+        PlayerData.add(player, POINTS, delivery.reward);
         finished(player, NotifyPayload.BOUNTY_DONE, "dlv_" + delivery.id(),
                 "Deliver " + delivery.amount + " " + (Deliveries.family(delivery.item) != null
                         ? Deliveries.family(delivery.item).name() : "{item:" + delivery.id() + "}"),
@@ -603,7 +599,7 @@ public final class TaskBook {
         if (!baselined(task)) {
             return stat;
         }
-        return Math.max(0, stat - ProgressiveStagesAPI.getCounter(player, slotKey(slot, "base")));
+        return Math.max(0, stat - PlayerData.get(player, slotKey(slot, "base")));
     }
 
     /** How many of the target items are in the player's main hand right now. */
@@ -626,7 +622,7 @@ public final class TaskBook {
     public static void onTame(ServerPlayer player, EntityType<?> type) {
         for (Tree.Task task : eventTasks("tame")) {
             if (resolve(ENTITIES, BuiltInRegistries.ENTITY_TYPE, task.target).contains(type)) {
-                ProgressiveStagesAPI.addCounter(player, eventKey(task.kind, task.target), 1);
+                PlayerData.add(player, eventKey(task.kind, task.target), 1);
             }
         }
     }
@@ -643,7 +639,7 @@ public final class TaskBook {
         }
         for (Tree.Task task : eventTasks("brew")) {
             if (matchesId(task.target, id)) {
-                ProgressiveStagesAPI.addCounter(player, eventKey(task.kind, task.target), Math.max(1, stack.getCount()));
+                PlayerData.add(player, eventKey(task.kind, task.target), Math.max(1, stack.getCount()));
             }
         }
     }
@@ -695,22 +691,22 @@ public final class TaskBook {
 
     private static void payStreak(ServerPlayer player, Tree tree) {
         long days = daysAlive(player, tree);
-        long paid = ProgressiveStagesAPI.getCounter(player, PAID);
+        long paid = PlayerData.get(player, PAID);
         if (days > paid) {
             long gained = (days - paid) * Math.max(0, tree.rules.shardsPerDay);
             int week = Math.max(1, tree.rules.weekDays);
             long weeks = days / week - paid / week;
             long bonus = weeks * Math.max(0, tree.rules.weekShards);
-            ProgressiveStagesAPI.setCounter(player, PAID, days);
+            PlayerData.set(player, PAID, days);
             if (gained + bonus > 0) {
-                ProgressiveStagesAPI.addCounter(player, POINTS, (int) (gained + bonus));
+                PlayerData.add(player, POINTS, (int) (gained + bonus));
                 String text = bonus > 0
                         ? days + " days survived in a row  +" + (gained + bonus) + " " + shards(gained + bonus)
                         : "Another day survived  +" + gained + " " + shards(gained);
                 player.displayClientMessage(Component.literal(text).withStyle(ChatFormatting.GOLD), true);
             }
         } else if (days < paid) {
-            ProgressiveStagesAPI.setCounter(player, PAID, days);
+            PlayerData.set(player, PAID, days);
         }
     }
 
@@ -729,25 +725,25 @@ public final class TaskBook {
         if (!ensureInit(player, tree)) {
             return;
         }
-        long points = ProgressiveStagesAPI.getCounter(player, POINTS);
+        long points = PlayerData.get(player, POINTS);
         int lost = (int) Math.min(points, Math.max(0, tree.rules.deathShardLoss));
         if (lost > 0) {
-            ProgressiveStagesAPI.addCounter(player, POINTS, -lost);
+            PlayerData.add(player, POINTS, -lost);
         }
-        ProgressiveStagesAPI.setCounter(player, PAID, 0L);
+        PlayerData.set(player, PAID, 0L);
         Difficulty.Preset preset = Difficulty.current();
         double loss = preset.loseProgress ? Math.max(0, Math.min(1, tree.rules.deathTaskLoss)) : 0;
         double keep = 1.0 - loss;
         for (Tree.Node node : tree.nodes) {
             String key = node.key();
             if (!node.hasTask() || claimed(player, node) || !baselined(node.task)
-                    || ProgressiveStagesAPI.getCounter(player, "fpa_" + key) == 0) {
+                    || PlayerData.get(player, "fpa_" + key) == 0) {
                 continue;
             }
             long now = stat(player, node.task, tree);
-            long progress = Math.max(0, now - ProgressiveStagesAPI.getCounter(player, "fpb_" + key));
+            long progress = Math.max(0, now - PlayerData.get(player, "fpb_" + key));
             long kept = (long) Math.floor(progress * keep);
-            ProgressiveStagesAPI.setCounter(player, "fpb_" + key, now - kept);
+            PlayerData.set(player, "fpb_" + key, now - kept);
         }
         for (int slot = 0; slot < slots(tree); slot++) {
             Tree.Bounty bounty = slotBounty(player, tree, slot);
@@ -755,9 +751,9 @@ public final class TaskBook {
                 continue;
             }
             long now = stat(player, bounty.task(), tree);
-            long progress = Math.max(0, now - ProgressiveStagesAPI.getCounter(player, slotKey(slot, "base")));
+            long progress = Math.max(0, now - PlayerData.get(player, slotKey(slot, "base")));
             long kept = (long) Math.floor(progress * keep);
-            ProgressiveStagesAPI.setCounter(player, slotKey(slot, "base"), now - kept);
+            PlayerData.set(player, slotKey(slot, "base"), now - kept);
         }
         int percent = (int) Math.round(loss * 100);
         player.sendSystemMessage(Component.literal("You died. -" + lost + " " + shards(lost)
@@ -770,15 +766,15 @@ public final class TaskBook {
     private static void checkDiscoveries(ServerPlayer player, Tree tree) {
         for (int i = 0; i < tree.discoveries.size(); i++) {
             Tree.Discovery discovery = tree.discoveries.get(i);
-            if (ProgressiveStagesAPI.getCounter(player, discoveryKey(discovery)) != 0) {
+            if (PlayerData.get(player, discoveryKey(discovery)) != 0) {
                 continue;
             }
             if (!advancementDone(player, discovery.advancement)) {
                 continue;
             }
-            ProgressiveStagesAPI.setCounter(player, discoveryKey(discovery), 1L);
+            PlayerData.set(player, discoveryKey(discovery), 1L);
             if (discovery.reward > 0) {
-                ProgressiveStagesAPI.addCounter(player, POINTS, discovery.reward);
+                PlayerData.add(player, POINTS, discovery.reward);
             }
             player.sendSystemMessage(Component.literal("Discovery: " + discovery.title + "  +" + discovery.reward + " "
                     + shards(discovery.reward)).withStyle(ChatFormatting.GOLD));
@@ -786,7 +782,7 @@ public final class TaskBook {
     }
 
     public static boolean discovered(ServerPlayer player, Tree.Discovery discovery) {
-        return ProgressiveStagesAPI.getCounter(player, discoveryKey(discovery)) != 0;
+        return PlayerData.get(player, discoveryKey(discovery)) != 0;
     }
 
     private static boolean advancementDone(ServerPlayer player, String id) {
@@ -827,7 +823,7 @@ public final class TaskBook {
             if (claimed(player, node)) {
                 state = DONE;
                 cur = node.task.amount;
-            } else if (ProgressiveStagesAPI.getCounter(player, "fpa_" + node.key()) != 0) {
+            } else if (PlayerData.get(player, "fpa_" + node.key()) != 0) {
                 state = RUNNING;
                 cur = taskProgress(player, node, tree);
             } else {
@@ -846,7 +842,7 @@ public final class TaskBook {
                 line(text, "dlv:" + slot + ":" + last.id(), last.amount, last.tier, last.reward, 0, 0);
             }
             if (slotDelivery(player, slot) != null) {
-                long end = ProgressiveStagesAPI.getCounter(player, slotKey(slot, "end"));
+                long end = PlayerData.get(player, slotKey(slot, "end"));
                 long left = Math.max(0, end * dayTicks - dayTime);
                 long cur = Math.min(last.amount, Deliveries.carried(player, last.item));
                 line(text, "slot:" + slot, SLOT_RUNNING, cur, last.amount, -2, left);
@@ -854,15 +850,15 @@ public final class TaskBook {
             }
             Tree.Bounty bounty = slotBounty(player, tree, slot);
             if (bounty != null) {
-                long end = ProgressiveStagesAPI.getCounter(player, slotKey(slot, "end"));
+                long end = PlayerData.get(player, slotKey(slot, "end"));
                 long left = Math.max(0, end * dayTicks - dayTime);
                 long cur = Math.min(bounty.amount, bountyProgress(player, tree, slot, bounty));
                 line(text, "slot:" + slot, SLOT_RUNNING, cur, bounty.amount, tree.bounties.indexOf(bounty), left);
             } else {
-                int out = (int) ProgressiveStagesAPI.getCounter(player, slotKey(slot, "out"));
-                int prev = (int) ProgressiveStagesAPI.getCounter(player, slotKey(slot, "prev")) - 1;
+                int out = (int) PlayerData.get(player, slotKey(slot, "out"));
+                int prev = (int) PlayerData.get(player, slotKey(slot, "prev")) - 1;
                 int state = out == SLOT_DONE || out == SLOT_EXPIRED || out == SLOT_GAVE_UP ? out : SLOT_EMPTY;
-                long refill = ProgressiveStagesAPI.getCounter(player, slotKey(slot, "next"));
+                long refill = PlayerData.get(player, slotKey(slot, "next"));
                 long wait = refill > 0 ? Math.min(toDawn, Math.max(0, refill - now)) : toDawn;
                 line(text, "slot:" + slot, state, 0, 0, state == SLOT_EMPTY ? -1 : last != null ? -2 : prev, wait);
             }
@@ -897,13 +893,7 @@ public final class TaskBook {
     }
 
     public static Set<String> owned(ServerPlayer player, Tree tree) {
-        Set<String> owned = new LinkedHashSet<>();
-        for (Tree.Node node : tree.nodes) {
-            if (ProgressiveStagesAPI.hasStage(player, node.id)) {
-                owned.add(node.id);
-            }
-        }
-        return owned;
+        return java.util.Collections.unmodifiableSet(Stages.owned(player));
     }
 
     // ------------------------------------------------------------------ stats
@@ -983,9 +973,9 @@ public final class TaskBook {
             }
             // Old "brew" tasks without a target count uses of a brewing stand; with a target, brewed potions.
             case "brew" -> target.isEmpty() ? custom(stats, Stats.INTERACT_WITH_BREWINGSTAND)
-                    : ProgressiveStagesAPI.getCounter(player, eventKey("brew", target));
-            case "tame" -> ProgressiveStagesAPI.getCounter(player, eventKey("tame", target));
-            case "underwater" -> ProgressiveStagesAPI.getCounter(player, eventKey("underwater", ""));
+                    : PlayerData.get(player, eventKey("brew", target));
+            case "tame" -> PlayerData.get(player, eventKey("tame", target));
+            case "underwater" -> PlayerData.get(player, eventKey("underwater", ""));
             case "hold" -> held(player, target);
             case "advancement" -> advancementDone(player, target) ? 1 : 0;
             case "streak" -> daysAlive(player, tree);

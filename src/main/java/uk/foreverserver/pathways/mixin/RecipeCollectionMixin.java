@@ -10,7 +10,6 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import com.enviouse.progressivestages.client.ClientLockCache;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.recipebook.RecipeCollection;
@@ -78,15 +77,11 @@ public class RecipeCollectionMixin {
 
     private static boolean unlocked(ItemStack stack) {
         ResourceLocation id = BuiltInRegistries.ITEM.getKey(stack.getItem());
-        if (ClientLockCache.isModLocked(id.getNamespace())) {
-            return false;
-        }
         // Craft-only items are not in ProgressiveStages' lists at all, since anyone may place and use
         // them, so their recipes have to be hidden here instead.
         if (uk.foreverserver.pathways.CraftGuard.refuses(Minecraft.getInstance().player, stack)) {
             return false;
         }
-        return ClientLockCache.playerOwnsAllStagesFor(id)
-                && ClientLockCache.playerOwnsAllStagesForRecipeOutput(id);
+        return uk.foreverserver.pathways.client.ClientStages.recipeShown(id);
     }
 }

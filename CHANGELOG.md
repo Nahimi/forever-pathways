@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.38.0
+
+- Faster deaths, respawns and logins. Pathways keeps its own numbers for each player (shards, task progress, bounty
+  slots, streaks) on the player itself instead of in ProgressiveStages' counters, which re-checked every stage
+  trigger on each of the hundreds of writes a death or login makes. Each player's old counters are copied across once,
+  the first time they are seen; nothing is lost.
+- Which nodes a player owns is worked out once and kept until a stage changes, instead of asked of ProgressiveStages
+  for every node twice a second and on every block touched.
+- Pricing every recipe for deliveries and working out which node owns each item now happen as the server starts,
+  not on the first login.
+- Every call to ProgressiveStages now goes through one class (Stages, and ClientStages on the client), so moving to
+  another stage mod later touches only that and the stage file writer.
+
 ## 0.37.1
 
 - Mining and gathering bounties ask for half as much too: Mine 64 stone, Mine 24 iron ore, Clear 32 leaves. Their

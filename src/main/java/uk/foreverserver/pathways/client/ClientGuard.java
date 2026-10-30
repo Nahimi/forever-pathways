@@ -1,6 +1,5 @@
 package uk.foreverserver.pathways.client;
 
-import com.enviouse.progressivestages.client.ClientLockCache;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
@@ -27,11 +26,7 @@ final class ClientGuard {
         if (id == null) {
             return false;
         }
-        try {
-            return ClientLockCache.isModLocked(id.getNamespace()) || !ClientLockCache.playerOwnsAllStagesFor(id);
-        } catch (RuntimeException exception) {
-            return false;
-        }
+        return ClientStages.locked(id);
     }
 
     static void tell(Item item) {

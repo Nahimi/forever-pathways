@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Stream;
 
-import com.enviouse.progressivestages.common.api.ProgressiveStagesAPI;
-import com.enviouse.progressivestages.common.api.StageId;
 
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
@@ -42,10 +40,10 @@ public final class Debug {
                 + (preset.loseProgress ? "progress lost on death" : "no progress lost on death") + ", costs x" + preset.costFactor, true);
 
         // ProgressiveStages' view of the stages.
-        Set<StageId> all = ProgressiveStagesAPI.getAllStageIds();
+        Set<String> all = Stages.loaded();
         List<String> missing = new ArrayList<>();
         for (Tree.Node node : tree.nodes) {
-            if (!ProgressiveStagesAPI.stageExists(node.id)) {
+            if (!Stages.exists(node.id)) {
                 missing.add(node.id);
             }
         }
@@ -63,13 +61,13 @@ public final class Debug {
 
         // This player.
         Tree.Node core = tree.core();
-        boolean hasCore = ProgressiveStagesAPI.hasStage(player, core.id);
+        boolean hasCore = Stages.has(player, core.id);
         line(out, "Core", core.id + (hasCore ? " owned" : " NOT owned")
-                + (ProgressiveStagesAPI.stageExists(core.id) ? "" : " (stage does not exist)"), hasCore);
+                + (Stages.exists(core.id) ? "" : " (stage does not exist)"), hasCore);
         Set<String> owned = TaskBook.owned(player, tree);
-        long shards = ProgressiveStagesAPI.getCounter(player, PathwayService.POINTS);
+        long shards = PlayerData.get(player, PathwayService.POINTS);
         line(out, "You", owned.size() + " nodes owned, level " + Gates.level(tree, owned::contains) + ", "
-                + shards + " shards, set up " + (ProgressiveStagesAPI.getCounter(player, "fp2_init") != 0 ? "yes" : "no"), true);
+                + shards + " shards, set up " + (PlayerData.get(player, "fp2_init") != 0 ? "yes" : "no"), true);
 
         // One node, if asked.
         if (nodeArg != null) {
@@ -83,11 +81,11 @@ public final class Debug {
                 line(out, node.title, node.id + ": " + gate + ", ring " + node.ring + ", cost " + Difficulty.cost(node) + " (" + Difficulty.current() + ")"
                         + (node.hasTask() ? ", task " + (taskDone ? "done" : "not done") + " (" + node.task.title + ")" : ""),
                         gate == Gates.Gate.READY || gate == Gates.Gate.HELD);
-                if (ProgressiveStagesAPI.stageExists(node.id)) {
-                    List<StageId> deps = ProgressiveStagesAPI.getMissingDependencies(player, StageId.parse(node.id));
+                if (Stages.exists(node.id)) {
+                    List<String> deps = Stages.missingBefore(player, node.id);
                     if (!deps.isEmpty()) {
-                        out.add(Component.literal("  ProgressiveStages wants first: " + preview(deps.stream()
-                                .map(StageId::toString).toList())).withStyle(ChatFormatting.YELLOW));
+                        out.add(Component.literal("  ProgressiveStages wants first: " + preview(deps))
+                                .withStyle(ChatFormatting.YELLOW));
                     }
                 } else {
                     out.add(Component.literal("  ProgressiveStages has no stage for it, so it cannot be bought.")

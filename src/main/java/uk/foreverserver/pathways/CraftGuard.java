@@ -1,6 +1,5 @@
 package uk.foreverserver.pathways;
 
-import com.enviouse.progressivestages.common.api.ProgressiveStagesAPI;
 
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
@@ -36,7 +35,7 @@ public final class CraftGuard {
         }
         if (player instanceof ServerPlayer server) {
             try {
-                return !ProgressiveStagesAPI.hasStage(server, owner);
+                return !Stages.has(server, owner);
             } catch (RuntimeException exception) {
                 return false;
             }

@@ -2,7 +2,6 @@ package uk.foreverserver.pathways;
 
 import org.slf4j.Logger;
 
-import com.enviouse.progressivestages.common.api.ProgressiveStagesAPI;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
 import com.mojang.brigadier.arguments.StringArgumentType;
 import com.mojang.brigadier.context.CommandContext;
@@ -66,6 +65,14 @@ public class ForeverPathways {
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, false, LivingDeathEvent.class, ForeverPathways::onDeath);
         NeoForge.EVENT_BUS.addListener(ForeverPathways::registerCommands);
         BossEyes.register(modBus);
+        PlayerData.register(modBus);
+        Stages.register();
+        // The heavy, once-only work (which node owns each item, what each item costs to make) is done as the
+        // server starts, not on the first login or the first delivery.
+        NeoForge.EVENT_BUS.addListener(net.neoforged.neoforge.event.server.ServerStartedEvent.class, event -> {
+            Locks.ownerOf(net.minecraft.world.item.Items.STONE);
+            Deliveries.prepare(event.getServer());
+        });
         Perks.register(modBus);
         NeoForge.EVENT_BUS.addListener(PlayerEvent.PlayerLoggedInEvent.class, event -> {
             if (event.getEntity() instanceof ServerPlayer player) {
@@ -205,8 +212,8 @@ public class ForeverPathways {
         int amount = IntegerArgumentType.getInteger(context, "amount");
         int count = 0;
         for (ServerPlayer player : EntityArgument.getPlayers(context, "targets")) {
-            long have = ProgressiveStagesAPI.getCounter(player, PathwayService.POINTS);
-            ProgressiveStagesAPI.addCounter(player, PathwayService.POINTS, -Math.min(have, amount));
+            long have = PlayerData.get(player, PathwayService.POINTS);
+            PlayerData.add(player, PathwayService.POINTS, -Math.min(have, amount));
             PathwayService.push(player);
             count++;
         }
@@ -220,8 +227,8 @@ public class ForeverPathways {
         int amount = IntegerArgumentType.getInteger(context, "amount");
         int count = 0;
         for (ServerPlayer player : EntityArgument.getPlayers(context, "targets")) {
-            long have = ProgressiveStagesAPI.getCounter(player, PathwayService.POINTS);
-            ProgressiveStagesAPI.addCounter(player, PathwayService.POINTS, amount - have);
+            long have = PlayerData.get(player, PathwayService.POINTS);
+            PlayerData.add(player, PathwayService.POINTS, amount - have);
             PathwayService.push(player);
             count++;
         }
@@ -250,9 +257,9 @@ public class ForeverPathways {
         int amount = IntegerArgumentType.getInteger(context, "amount");
         int count = 0;
         for (ServerPlayer player : EntityArgument.getPlayers(context, "targets")) {
-            long have = ProgressiveStagesAPI.getCounter(player, PathwayService.POINTS);
+            long have = PlayerData.get(player, PathwayService.POINTS);
             int change = (int) Math.max(-have, amount);
-            ProgressiveStagesAPI.addCounter(player, PathwayService.POINTS, change);
+            PlayerData.add(player, PathwayService.POINTS, change);
             count++;
         }
         int players = count;
