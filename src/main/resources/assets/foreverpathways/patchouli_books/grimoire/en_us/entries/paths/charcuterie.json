@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "butchery:cooked_sausage",
       "title": "Charcuterie",
-      "text": "$(bold)Sausages, casings and ham: meat that keeps.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)11 Focal Shards$(n).$(br)After Abattoir."
+      "text": "$(bold)Sausages, casings, mince and ham: meat that keeps.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)11 Focal Shards$(n).$(br)After Abattoir."
     }
   ],
   "flag": "mod:butchery"

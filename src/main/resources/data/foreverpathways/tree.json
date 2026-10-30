@@ -5584,7 +5584,7 @@
       "cost": 22,
       "item": "create:mechanical_press",
       "colour": "#B87333",
-      "opens": "The press, the mixer, the basin, the whisk and the metal sheets, plus zinc ore to mine for brass.",
+      "opens": "The press, the mixer, the basin, the whisk and the metal sheets, plus zinc ore to mine for brass, and Ratatouille's compost, fertilisers and biogas.",
       "task": null,
       "slot": null,
       "slotBonus": null,
@@ -5599,7 +5599,8 @@
         "create:raw_zinc_block",
         "re:create_sa:zinc_.*",
         "re:dndesires:(hydraulic_press|gold_mixer|gold_whisk)",
-        "re:ratatouille:(oven|oven_fan|thresher|squeeze_basin|spreader|mechanical_demolder|compost_tower|irrigation_tower)"
+        "re:ratatouille:(oven|oven_fan|thresher|squeeze_basin|spreader|mechanical_demolder|compost_tower|irrigation_tower)",
+        "re:ratatouille:(compost_.*|bio_gas_bucket|(unprocessed_)?(mature|ripen)_matter.*)"
       ],
       "uses": []
     },
@@ -7002,7 +7003,7 @@
       "cost": 5,
       "item": "farmersdelight:cooking_pot",
       "colour": "#7C9A3A",
-      "opens": "The cutting board, cooking pot, skillet, stove, knives, cabinets, baskets and the smoker.",
+      "opens": "The cutting board, cooking pot, skillet, stove, knives, cabinets, baskets and the smoker, plus salt and the boil stone.",
       "task": null,
       "slot": null,
       "slotBonus": null,
@@ -7013,7 +7014,8 @@
         "rest:farmersdelight",
         "minecraft:smoker",
         "re:farmersdelight:(cutting_board|cooking_pot|skillet|stove|(flint|iron|golden)_knife|.*_cabinet|.*basket)",
-        "re:ratatouille:chef_hat.*"
+        "re:ratatouille:chef_hat.*",
+        "re:ratatouille:(salt|boil_stone)"
       ],
       "uses": []
     },
@@ -7235,7 +7237,7 @@
       "cost": 6,
       "item": "baking_process:baguette",
       "colour": "#7C9A3A",
-      "opens": "The baking process: flour, dough, moulds and breads, plus Create's sweets and flour and the Supplementaries pancake, candy and sugar cube.",
+      "opens": "The baking process: flour, dough, moulds and breads, plus Create's sweets and flour, Ratatouille's cakes, chocolate and popsicles, and the Supplementaries pancake, candy and sugar cube.",
       "task": null,
       "slot": null,
       "slotBonus": null,
@@ -7414,7 +7416,7 @@
       "cost": 11,
       "item": "butchery:cooked_sausage",
       "colour": "#7C9A3A",
-      "opens": "Sausages, casings and ham: meat that keeps.",
+      "opens": "Sausages, casings, mince and ham: meat that keeps.",
       "task": null,
       "slot": null,
       "slotBonus": null,
@@ -7422,7 +7424,8 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:butchery:(.*sausages?|.*intestines|.*_ham|ham)"
+        "re:butchery:(.*sausages?|.*intestines|.*_ham|ham)",
+        "re:ratatouille:(raw_sausage|sausage|sausage_casing|mince_meat_bucket)"
       ],
       "uses": []
     },

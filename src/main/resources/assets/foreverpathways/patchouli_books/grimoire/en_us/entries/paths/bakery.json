@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "baking_process:baguette",
       "title": "Bakery",
-      "text": "$(bold)The baking process: flour, dough, moulds and breads, plus Create's sweets and flour and the Supplementaries pancake, candy and sugar cube.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)6 Focal Shards$(n).$(br)After Kitchen."
+      "text": "$(bold)The baking process: flour, dough, moulds and breads, plus Create's sweets and flour, Ratatouille's cakes, chocolate and popsicles, and the Supplementaries pancake, candy and sugar cube.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)6 Focal Shards$(n).$(br)After Kitchen."
     },
     {
       "type": "patchouli:crafting",

@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "farmersdelight:cooking_pot",
       "title": "Kitchen",
-      "text": "$(bold)The cutting board, cooking pot, skillet, stove, knives, cabinets, baskets and the smoker.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)5 Focal Shards$(n).$(br)After Gardener."
+      "text": "$(bold)The cutting board, cooking pot, skillet, stove, knives, cabinets, baskets and the smoker, plus salt and the boil stone.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)5 Focal Shards$(n).$(br)After Gardener."
     },
     {
       "type": "patchouli:crafting",

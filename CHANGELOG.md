@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.38.1
+
+- Bakery no longer catches all of Create Ratatouille. Sausages, casings and mince move to Charcuterie; compost,
+  compost tea, the spreader's fertilisers and biogas to Pressing and Mixing, beside the compost tower; salt and the
+  boil stone to Kitchen. Cakes, chocolate, cocoa, popsicles and dough stay in Bakery.
+- A node whose icon comes from a mod that isn't installed shows one of its own items instead of a barrier.
+
 ## 0.38.0
 
 - Faster deaths, respawns and logins. Pathways keeps its own numbers for each player (shards, task progress, bounty

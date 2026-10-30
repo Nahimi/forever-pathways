@@ -101,6 +101,13 @@ public final class Availability {
     private static void dropEmptyNodes(Tree tree) {
         List<String> items = StageWriter.allItems();
         LockResolver.Result held = LockResolver.resolve(tree, items);
+        // A node whose icon comes from a missing mod shows one of its own items instead of a barrier.
+        Set<String> present = new java.util.HashSet<>(items);
+        for (Tree.Node node : tree.nodes) {
+            if (node.item != null && !present.contains(node.item) && !held.items(node.id).isEmpty()) {
+                node.item = held.items(node.id).get(0);
+            }
+        }
         Map<String, String> gone = new LinkedHashMap<>();
         for (Tree.Node node : tree.nodes) {
             if (emptyNode(node, held, items)) {

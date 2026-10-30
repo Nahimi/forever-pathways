@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "create:mechanical_press",
       "title": "Pressing and Mixing",
-      "text": "$(bold)The press, the mixer, the basin, the whisk and the metal sheets, plus zinc ore to mine for brass.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)22 Focal Shards$(n).$(br)After Andesite Casing."
+      "text": "$(bold)The press, the mixer, the basin, the whisk and the metal sheets, plus zinc ore to mine for brass, and Ratatouille's compost, fertilisers and biogas.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)22 Focal Shards$(n).$(br)After Andesite Casing."
     },
     {
       "type": "patchouli:crafting",
