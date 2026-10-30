@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(bold)$(li)$(thing)Horses$(n) take shoes, a cart and an upgraded saddle: $(l:paths/rider)Rider$(n), $(l:paths/cartwright)Cartwright$(n), $(l:paths/tack)Tack$(n).$(br)$(li)$(thing)Trains$(n): ring 10. $(thing)Airships$(n): $(l:paths/aeronautics)Aeronautics$(n), ring 12.$(br2)Your legs start at 85% and reach 110% only at ring 14. A horse is worth having early.",
+      "text": "$(bold)$(li)$(thing)Horses$(n) take shoes, a cart and an upgraded saddle: $(l:paths/rider)Rider$(n), $(l:paths/cartwright)Cartwright$(n), $(l:paths/tack)Tack$(n).$(br)$(li)$(thing)Trains$(n): ring 9. $(thing)Airships$(n): $(l:paths/aeronautics)Aeronautics$(n), ring 10.$(br2)Your legs start at 85% and reach 110% only at ring 14. A horse is worth having early.",
       "title": "A7. Getting About"
     },
     {

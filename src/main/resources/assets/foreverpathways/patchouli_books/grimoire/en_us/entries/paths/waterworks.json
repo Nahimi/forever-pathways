@@ -2,13 +2,13 @@
   "name": "Waterworks",
   "category": "foreverpathways:paths/technician",
   "icon": "create:water_wheel",
-  "sortnum": 400,
+  "sortnum": 300,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "create:water_wheel",
       "title": "Waterworks",
-      "text": "$(bold)Water wheels, the turntable and the speed and stress gauges.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)16 Focal Shards$(n).$(br)After Gearing."
+      "text": "$(bold)Water wheels, the turntable and the speed and stress gauges.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)16 Focal Shards$(n).$(br)After Technician."
     },
     {
       "type": "patchouli:crafting",

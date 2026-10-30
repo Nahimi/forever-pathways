@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.37.0
+
+- Every seventh day survived in one life pays 2 Focal Shards on top of that day's shard ("rules.weekDays" and
+  "rules.weekShards").
+- The Create nodes sit closer in: Waterworks ring 3 (straight after Technician), Andesite Casing 4, Milling, Pressing
+  and Fans 5, Belts, Crushing, Fluids and Kinetic Tools 6, Logistics and Contraptions 7, Moving Machines 8, Trains and
+  Simulated 9, Chromatics, Offroad and Aeronautics 10 (from 12). Brass stays at 8, since it needs Infernal. Costs follow
+  their new rings.
+- Every mining, smelting, harvesting and tree-felling task on a node or seal asks for half as much: Mine 100 stone,
+  Smelt 24 copper ingots, Mine 48 copper ore.
+- Deliveries ask for 32 at most. Common things ask for 16 (1 shard) or 32 (2 shards).
+
 ## 0.36.2
 
 - Deliveries of wooden things take any wood, in any mixture: 64 Wooden Trapdoors counts oak, jungle, dark oak and every

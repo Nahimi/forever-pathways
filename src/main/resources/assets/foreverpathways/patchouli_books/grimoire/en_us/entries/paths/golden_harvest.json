@@ -13,7 +13,7 @@
     {
       "type": "patchouli:text",
       "title": "Task",
-      "text": "$(bold)$(thing)Harvest 1,500 crops$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+      "text": "$(bold)$(thing)Harvest 750 crops$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
     },
     {
       "type": "patchouli:crafting",

@@ -2,13 +2,13 @@
   "name": "Aeronautics",
   "category": "foreverpathways:paths/technician",
   "icon": "aeronautics:propeller_bearing",
-  "sortnum": 1200,
+  "sortnum": 1000,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "aeronautics:propeller_bearing",
       "title": "Aeronautics",
-      "text": "$(bold)Propellers, envelopes, levitite and airships. Needs Steam as well.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)109 Focal Shards$(n).$(br)After Simulated and Steam."
+      "text": "$(bold)Propellers, envelopes, levitite and airships. Needs Steam as well.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)80 Focal Shards$(n).$(br)After Simulated and Steam."
     },
     {
       "type": "patchouli:text",

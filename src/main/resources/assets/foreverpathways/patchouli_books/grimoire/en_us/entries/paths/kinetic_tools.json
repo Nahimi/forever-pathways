@@ -2,13 +2,13 @@
   "name": "Kinetic Tools",
   "category": "foreverpathways:paths/technician",
   "icon": "create:mechanical_drill",
-  "sortnum": 700,
+  "sortnum": 600,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "create:mechanical_drill",
       "title": "Kinetic Tools",
-      "text": "$(bold)Saws, drills, harvesters, ploughs, rollers and the deployer.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)34 Focal Shards$(n).$(br)After Pressing and Mixing."
+      "text": "$(bold)Saws, drills, harvesters, ploughs, rollers and the deployer.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)24 Focal Shards$(n).$(br)After Pressing and Mixing."
     },
     {
       "type": "patchouli:crafting",

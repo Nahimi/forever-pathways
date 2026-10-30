@@ -256,7 +256,14 @@ public final class Deliveries {
         }
         List<Item> items = byTier.get(tier);
         Item item = items.get(random.nextInt(items.size()));
-        return new Offer(item, amount(item, tier, tree), tier, Tree.Delivery.pick(rules.rewards, tier, 1));
+        int amount = amount(item, tier, tree);
+        if (common(item, tier, tree) && !rules.commonAmounts.isEmpty()) {
+            // Plenty of it for the budget: a small or a large lot, paying one or two shards.
+            int pick = random.nextInt(rules.commonAmounts.size());
+            return new Offer(item, Math.max(1, rules.commonAmounts.get(pick)), tier,
+                    Tree.Delivery.pick(rules.commonRewards, pick + 1, pick + 1));
+        }
+        return new Offer(item, amount, tier, Tree.Delivery.pick(rules.rewards, tier, 1));
     }
 
     /** As for other bounties: the two highest tiers most, the one below now and then, tier VI seldom. */
@@ -268,12 +275,19 @@ public final class Deliveries {
         return behind <= 1 ? 6 : behind == 2 ? 3 : 1;
     }
 
+    /** True when the tier's budget buys at least the most a delivery asks for: a common thing. */
+    private static boolean common(Item item, int tier, Tree tree) {
+        double each = Math.max(0.01, costs.getOrDefault(item, 1.0));
+        return item.getDefaultMaxStackSize() > 1
+                && Tree.Delivery.pick(tree.delivery.budgets, tier, 16) / each >= Math.max(1, tree.delivery.most);
+    }
+
     private static int amount(Item item, int tier, Tree tree) {
         Tree.Delivery rules = tree.delivery;
         double each = Math.max(0.01, costs.getOrDefault(item, 1.0));
         double n = Tree.Delivery.pick(rules.budgets, tier, 16) / each;
         int stack = Math.max(1, item.getDefaultMaxStackSize());
-        int cap = stack == 1 ? Tree.Delivery.pick(rules.unstackable, tier, 1) : stack;
+        int cap = stack == 1 ? Tree.Delivery.pick(rules.unstackable, tier, 1) : Math.min(stack, Math.max(1, rules.most));
         n = Math.min(n, cap);
         int amount = n >= 16 ? (int) Math.round(n / 4.0) * 4 : (int) Math.round(n);
         return Math.max(1, Math.min(cap, amount));

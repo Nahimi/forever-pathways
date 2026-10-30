@@ -13,7 +13,7 @@
     {
       "type": "patchouli:text",
       "title": "Task",
-      "text": "$(bold)$(thing)Mine 160 iron ore$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+      "text": "$(bold)$(thing)Mine 80 iron ore$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
     },
     {
       "type": "patchouli:crafting",

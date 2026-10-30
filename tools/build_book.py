@@ -154,7 +154,7 @@ CHAPTERS = [
                  "$(li)Plain items only: not damaged, named or enchanted.$(br)$(li)Wooden things take any wood, mixed as you like.$(br)"
                  "$(li)The third bounty is always one. Delivered or expired, it waits for dawn; given up, a new one comes at once."},
         {"type": "patchouli:text", "title": "Staying Alive",
-         "text": "Every full day you live without dying pays 1 Focal Shard.$(br2)"
+         "text": "Every full day you live without dying pays 1 Focal Shard, and every seventh day in a row 2 more.$(br2)"
                  "Dying starts the count again."},
         {"type": "patchouli:text", "title": "Achievements",
          "text": "A few vanilla advancements pay once: first iron smelted, first iron pick, and "
@@ -248,8 +248,8 @@ BEYOND = [
     ("a7", "A7. Getting About", "waystones:waystone", 7, "mod:waystones", [
         "$(li)$(thing)Horses$() take shoes, a cart and an upgraded saddle: "
         "$(l:paths/rider)Rider$(), $(l:paths/cartwright)Cartwright$(), $(l:paths/tack)Tack$().$(br)"
-        "$(li)$(thing)Trains$(): ring 10. $(thing)Airships$(): "
-        "$(l:paths/aeronautics)Aeronautics$(), ring 12.$(br2)"
+        "$(li)$(thing)Trains$(): ring 9. $(thing)Airships$(): "
+        "$(l:paths/aeronautics)Aeronautics$(), ring 10.$(br2)"
         "Your legs start at 85% and reach 110% only at ring 14. A horse is worth having early.",
         {"type": "patchouli:text", "title": "The Monoliths",
          "text": "Great stones stand across the world, each holding a $(thing)waystone$().$(br2)"

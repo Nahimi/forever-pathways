@@ -13,7 +13,7 @@
     {
       "type": "patchouli:text",
       "title": "Task",
-      "text": "$(bold)$(thing)Mine 16 ancient debris$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
+      "text": "$(bold)$(thing)Mine 8 ancient debris$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
     },
     {
       "type": "patchouli:crafting",

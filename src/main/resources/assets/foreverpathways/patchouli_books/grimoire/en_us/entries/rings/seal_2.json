@@ -12,7 +12,7 @@
     {
       "type": "patchouli:text",
       "title": "Task",
-      "text": "$(bold)$(thing)Mine 200 stone$(n)$(br2)Counts only once everything else about the seal is ready."
+      "text": "$(bold)$(thing)Mine 100 stone$(n)$(br2)Counts only once everything else about the seal is ready."
     }
   ]
 }

@@ -2,13 +2,13 @@
   "name": "Trains",
   "category": "foreverpathways:paths/technician",
   "icon": "create:track_station",
-  "sortnum": 1000,
+  "sortnum": 900,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "create:track_station",
       "title": "Trains",
-      "text": "$(bold)Tracks, stations, signals, schedules and train parts.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)79 Focal Shards$(n).$(br)After Brass."
+      "text": "$(bold)Tracks, stations, signals, schedules and train parts.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)59 Focal Shards$(n).$(br)After Brass."
     },
     {
       "type": "patchouli:text",

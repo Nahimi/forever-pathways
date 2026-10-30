@@ -13,7 +13,7 @@
     {
       "type": "patchouli:text",
       "title": "Task",
-      "text": "$(bold)$(thing)Mine 4,000 deepslate$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
+      "text": "$(bold)$(thing)Mine 2,000 deepslate$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
     },
     {
       "type": "patchouli:text",

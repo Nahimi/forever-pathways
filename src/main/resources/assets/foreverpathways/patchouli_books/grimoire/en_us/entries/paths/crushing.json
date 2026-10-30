@@ -2,13 +2,13 @@
   "name": "Crushing",
   "category": "foreverpathways:paths/technician",
   "icon": "create:crushing_wheel",
-  "sortnum": 700,
+  "sortnum": 600,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "create:crushing_wheel",
       "title": "Crushing",
-      "text": "$(bold)Crushing wheels, crushed ores, powdered obsidian, experience nuggets and tree fertiliser.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)34 Focal Shards$(n).$(br)After Milling."
+      "text": "$(bold)Crushing wheels, crushed ores, powdered obsidian, experience nuggets and tree fertiliser.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)24 Focal Shards$(n).$(br)After Milling."
     },
     {
       "type": "patchouli:crafting",

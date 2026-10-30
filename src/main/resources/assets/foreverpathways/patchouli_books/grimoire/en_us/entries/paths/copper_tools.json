@@ -13,7 +13,7 @@
     {
       "type": "patchouli:text",
       "title": "Task",
-      "text": "$(bold)$(thing)Smelt 48 copper ingots$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
+      "text": "$(bold)$(thing)Smelt 24 copper ingots$(n)$(br2)Pays 1 Focal Shard once. Counts only once this node is reachable."
     },
     {
       "type": "patchouli:text",

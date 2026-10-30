@@ -698,11 +698,16 @@ public final class TaskBook {
         long paid = ProgressiveStagesAPI.getCounter(player, PAID);
         if (days > paid) {
             long gained = (days - paid) * Math.max(0, tree.rules.shardsPerDay);
+            int week = Math.max(1, tree.rules.weekDays);
+            long weeks = days / week - paid / week;
+            long bonus = weeks * Math.max(0, tree.rules.weekShards);
             ProgressiveStagesAPI.setCounter(player, PAID, days);
-            if (gained > 0) {
-                ProgressiveStagesAPI.addCounter(player, POINTS, (int) gained);
-                player.displayClientMessage(Component.literal("Another day survived  +" + gained + " " + shards(gained))
-                        .withStyle(ChatFormatting.GOLD), true);
+            if (gained + bonus > 0) {
+                ProgressiveStagesAPI.addCounter(player, POINTS, (int) (gained + bonus));
+                String text = bonus > 0
+                        ? days + " days survived in a row  +" + (gained + bonus) + " " + shards(gained + bonus)
+                        : "Another day survived  +" + gained + " " + shards(gained);
+                player.displayClientMessage(Component.literal(text).withStyle(ChatFormatting.GOLD), true);
             }
         } else if (days < paid) {
             ProgressiveStagesAPI.setCounter(player, PAID, days);

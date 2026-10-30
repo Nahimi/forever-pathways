@@ -2,13 +2,13 @@
   "name": "Moving Machines",
   "category": "foreverpathways:paths/technician",
   "icon": "create:cart_assembler",
-  "sortnum": 900,
+  "sortnum": 800,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "create:cart_assembler",
       "title": "Moving Machines",
-      "text": "$(bold)Gantries, the cart assembler, minecart contraptions, elevators and contraption controls.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)48 Focal Shards$(n).$(br)After Contraptions."
+      "text": "$(bold)Gantries, the cart assembler, minecart contraptions, elevators and contraption controls.$(br2)$(thing)The Nether$(n), ring 8.$(br)$(thing)41 Focal Shards$(n).$(br)After Contraptions."
     },
     {
       "type": "patchouli:crafting",

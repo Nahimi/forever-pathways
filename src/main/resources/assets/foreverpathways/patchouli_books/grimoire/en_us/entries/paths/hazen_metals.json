@@ -13,7 +13,7 @@
     {
       "type": "patchouli:text",
       "title": "Task",
-      "text": "$(bold)$(thing)Mine 24 zenalite ore$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+      "text": "$(bold)$(thing)Mine 12 zenalite ore$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
     }
   ],
   "flag": "mod:hazennstuff"

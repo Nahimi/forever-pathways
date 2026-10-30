@@ -27,7 +27,7 @@
     {
       "type": "patchouli:text",
       "title": "Staying Alive",
-      "text": "$(bold)Every full day you live without dying pays 1 Focal Shard.$(br2)Dying starts the count again."
+      "text": "$(bold)Every full day you live without dying pays 1 Focal Shard, and every seventh day in a row 2 more.$(br2)Dying starts the count again."
     },
     {
       "type": "patchouli:text",

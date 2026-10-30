@@ -254,6 +254,9 @@ public final class Tree {
         public int startingShards = 0;
         public int dayTicks = 24000;
         public int shardsPerDay = 0;
+        /** Every this many days in one life pays {@link #weekShards} more on top of the daily shard. */
+        public int weekDays = 7;
+        public int weekShards = 0;
         /** How many bounties a player holds at once, the delivery slot included. */
         public int bountySlots = 3;
         /** Ticks before a finished bounty is replaced; dawn replaces it sooner if it comes first. */
@@ -272,6 +275,11 @@ public final class Tree {
         public boolean slot = true;
         /** Items no recipe makes that may still be asked for, as raw materials (dirt). */
         public List<String> raw = new ArrayList<>();
+        /** The most any delivery asks for. */
+        public int most = 32;
+        /** A common item (one the tier's budget buys at least {@link #most} of) asks for one of these, paying the matching reward. */
+        public List<Integer> commonAmounts = new ArrayList<>(List.of(16, 32));
+        public List<Integer> commonRewards = new ArrayList<>(List.of(1, 2));
         /** Item tags whose members all count for one another, with what a delivery calls them: any wood for a door. */
         public Map<String, String> anyOf = new LinkedHashMap<>();
         /** Dawns until it expires, as for other bounties. */

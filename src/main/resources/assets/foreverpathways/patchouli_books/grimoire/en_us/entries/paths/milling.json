@@ -2,13 +2,13 @@
   "name": "Milling",
   "category": "foreverpathways:paths/technician",
   "icon": "create:millstone",
-  "sortnum": 600,
+  "sortnum": 500,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "create:millstone",
       "title": "Milling",
-      "text": "$(bold)The millstone and sand paper.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)28 Focal Shards$(n).$(br)After Andesite Casing."
+      "text": "$(bold)The millstone and sand paper.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)22 Focal Shards$(n).$(br)After Andesite Casing."
     },
     {
       "type": "patchouli:crafting",
