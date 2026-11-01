@@ -2,12 +2,12 @@
   "name": "Seal of Ash",
   "category": "foreverpathways:rings",
   "icon": "minecraft:blackstone",
-  "sortnum": 15,
+  "sortnum": 16,
   "pages": [
     {
       "type": "patchouli:text",
       "title": "Seal of Ash",
-      "text": "$(bold)Bars ring 9: Industry.$(br2)$(li)$(thing)77 nodes$(n) owned$(br)$(li)$(thing)83 Focal Shards$(n)$(br)$(li)its task, below$(br2)27 nodes wait behind it."
+      "text": "$(bold)Bars ring 10: Ashen Age.$(br2)$(li)$(thing)69 nodes$(n) owned$(br)$(li)$(thing)80 Focal Shards$(n)$(br)$(li)its task, below$(br2)24 nodes wait behind it."
     },
     {
       "type": "patchouli:text",

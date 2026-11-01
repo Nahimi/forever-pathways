@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "supplementaries:quiver",
       "title": "Trick Shots",
-      "text": "$(bold)The quiver, the slingshot and rope arrows.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)10 Focal Shards$(n).$(br)After Fletcher."
+      "text": "$(bold)The quiver, the slingshot and rope arrows.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)10 Focal Shards$(n).$(br)After Fletcher."
     },
     {
       "type": "patchouli:crafting",

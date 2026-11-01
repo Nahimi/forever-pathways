@@ -2,12 +2,12 @@
   "name": "Seal of the Deep",
   "category": "foreverpathways:rings",
   "icon": "minecraft:deepslate_bricks",
-  "sortnum": 13,
+  "sortnum": 14,
   "pages": [
     {
       "type": "patchouli:text",
       "title": "Seal of the Deep",
-      "text": "$(bold)Bars rings 6 to 7: The Deep and The Nether.$(br2)$(li)$(thing)53 nodes$(n) owned$(br)$(li)$(thing)50 Focal Shards$(n)$(br)$(li)its task, below$(br2)26 nodes wait behind it."
+      "text": "$(bold)Bars ring 8: The Deep.$(br2)$(li)$(thing)57 nodes$(n) owned$(br)$(li)$(thing)52 Focal Shards$(n)$(br)$(li)its task, below$(br2)12 nodes wait behind it."
     },
     {
       "type": "patchouli:text",

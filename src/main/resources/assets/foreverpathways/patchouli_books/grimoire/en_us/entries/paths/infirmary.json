@@ -2,13 +2,13 @@
   "name": "Infirmary",
   "category": "foreverpathways:paths/homesteader",
   "icon": "legendarysurvivaloverhaul:medkit",
-  "sortnum": 500,
+  "sortnum": 700,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "legendarysurvivaloverhaul:medkit",
       "title": "Infirmary",
-      "text": "$(bold)Medkits and morphine, with the night bag, dreamer's essence and the bedbug eggs. An infested bed is cleaned with a splash potion of Harming.$(br2)$(thing)Diamond Age$(n), ring 5.$(br)$(thing)15 Focal Shards$(n).$(br)After Apothecary."
+      "text": "$(bold)Medkits and morphine, with the night bag, dreamer's essence and the bedbug eggs. An infested bed is cleaned with a splash potion of Harming.$(br2)$(thing)Diamond Age$(n), ring 7.$(br)$(thing)15 Focal Shards$(n).$(br)After Apothecary."
     },
     {
       "type": "patchouli:text",

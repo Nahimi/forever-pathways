@@ -7,7 +7,7 @@
     {
       "type": "patchouli:text",
       "title": "Seal of Copper",
-      "text": "$(bold)Bars ring 2: Copper Age.$(br2)$(li)$(thing)4 nodes$(n) owned$(br)$(li)$(thing)10 Focal Shards$(n)$(br)$(li)its task, below$(br2)15 nodes wait behind it."
+      "text": "$(bold)Bars ring 2: Copper Age.$(br2)$(li)$(thing)5 nodes$(n) owned$(br)$(li)$(thing)10 Focal Shards$(n)$(br)$(li)its task, below$(br2)17 nodes wait behind it."
     },
     {
       "type": "patchouli:text",

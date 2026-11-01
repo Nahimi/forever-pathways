@@ -2,13 +2,13 @@
   "name": "Lighting Rig",
   "category": "foreverpathways:paths/technician",
   "icon": "powergrid:light_bulb",
-  "sortnum": 300,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "powergrid:light_bulb",
       "title": "Lighting Rig",
-      "text": "$(bold)Bulbs, fixtures, factory lights, buttons and the meters that read a circuit. Switches wait for Power Grid. Needs Wiring as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)16 Focal Shards$(n).$(br)After Builder and Wiring."
+      "text": "$(bold)Bulbs, fixtures, factory lights, buttons and the meters that read a circuit. Switches wait for Power Grid.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)16 Focal Shards$(n).$(br)After Wiring."
     },
     {
       "type": "patchouli:crafting",

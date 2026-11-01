@@ -2,13 +2,13 @@
   "name": "Parcels",
   "category": "foreverpathways:paths/technician",
   "icon": "envelope:sealed_package",
-  "sortnum": 300,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "envelope:sealed_package",
       "title": "Parcels",
-      "text": "$(bold)Packages, seal stamps in every colour, payback boxes and tags, and lost mail. The soulbound stamp wants an echo shard. Needs Iron as well, for the stamp. Needs Post as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)16 Focal Shards$(n).$(br)After Builder and Post."
+      "text": "$(bold)Packages, seal stamps in every colour, payback boxes and tags, and lost mail. The soulbound stamp wants an echo shard. Needs Iron as well, for the stamp. Needs Iron as well.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)16 Focal Shards$(n).$(br)After Post and Iron."
     },
     {
       "type": "patchouli:crafting",

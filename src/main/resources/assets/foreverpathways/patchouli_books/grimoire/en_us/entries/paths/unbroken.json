@@ -2,13 +2,13 @@
   "name": "Unbroken",
   "category": "foreverpathways:paths/constitution",
   "icon": "minecraft:shield",
-  "sortnum": 500,
+  "sortnum": 700,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:shield",
       "title": "Unbroken",
-      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)Diamond Age$(n), ring 5.$(br)$(thing)36 Focal Shards$(n).$(br)After Ironblood."
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)Diamond Age$(n), ring 7.$(br)$(thing)36 Focal Shards$(n).$(br)After Ironblood."
     },
     {
       "type": "patchouli:text",

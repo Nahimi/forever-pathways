@@ -2,13 +2,13 @@
   "name": "Second Path",
   "category": "foreverpathways:paths/ranger",
   "icon": "minecraft:filled_map",
-  "sortnum": 600,
+  "sortnum": 800,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:filled_map",
       "title": "Second Path",
-      "text": "$(bold)Reopens the fork, so you can take the side you gave up.$(br2)$(thing)The Deep$(n), ring 6.$(br)$(thing)60 Focal Shards$(n).$(br)After Ranger."
+      "text": "$(bold)Reopens the fork, so you can take the side you gave up.$(br2)$(thing)The Deep$(n), ring 8.$(br)$(thing)60 Focal Shards$(n).$(br)After Ranger."
     },
     {
       "type": "patchouli:text",

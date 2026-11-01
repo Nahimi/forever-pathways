@@ -2,13 +2,13 @@
   "name": "Canvas Works",
   "category": "foreverpathways:paths/homesteader",
   "icon": "farmersdelight:canvas",
-  "sortnum": 300,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "farmersdelight:canvas",
       "title": "Canvas Works",
-      "text": "$(bold)Canvas, canvas signs and rugs, tatami mats and the moon banner. Needs Kitchen as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)6 Focal Shards$(n).$(br)After Gardener and Kitchen."
+      "text": "$(bold)Canvas, canvas signs and rugs, tatami mats and the moon banner.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)6 Focal Shards$(n).$(br)After Kitchen."
     },
     {
       "type": "patchouli:crafting",

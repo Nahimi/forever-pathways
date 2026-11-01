@@ -2,13 +2,13 @@
   "name": "Holy Relics",
   "category": "foreverpathways:paths/magician",
   "icon": "irons_spellbooks:divine_pearl",
-  "sortnum": 1000,
+  "sortnum": 1300,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:divine_pearl",
       "title": "Holy Relics",
-      "text": "$(bold)Divine pearls and soulshards, the villager spellbook, greater healing and the paladin chestplate. Needs Holy Robes as well.$(br2)$(thing)Relics$(n), ring 10.$(br)$(thing)74 Focal Shards$(n).$(br)After Holy and Holy Robes."
+      "text": "$(bold)Divine pearls and soulshards, the villager spellbook, greater healing and the paladin chestplate.$(br2)$(thing)Relics$(n), ring 13.$(br)$(thing)74 Focal Shards$(n).$(br)After Holy Robes."
     },
     {
       "type": "patchouli:crafting",

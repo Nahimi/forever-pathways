@@ -2,13 +2,13 @@
   "name": "Brass",
   "category": "foreverpathways:paths/technician",
   "icon": "create:brass_ingot",
-  "sortnum": 700,
+  "sortnum": 900,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "create:brass_ingot",
       "title": "Brass",
-      "text": "$(bold)Zinc, brass, rose quartz, precision mechanisms and the rest of Create. Needs Infernal as well, for the blaze burner that heats the mixer.$(br2)$(thing)The Nether$(n), ring 7.$(br)$(thing)56 Focal Shards$(n).$(br)After Pressing and Mixing and Infernal."
+      "text": "$(bold)Zinc, brass, rose quartz, precision mechanisms and the rest of Create. Needs Infernal as well, for the blaze burner that heats the mixer. Needs Infernal as well.$(br2)$(thing)The Nether$(n), ring 9.$(br)$(thing)56 Focal Shards$(n).$(br)After Pressing and Mixing and Infernal."
     },
     {
       "type": "patchouli:text",

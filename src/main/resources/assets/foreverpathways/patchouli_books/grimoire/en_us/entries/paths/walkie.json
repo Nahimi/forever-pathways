@@ -2,13 +2,13 @@
   "name": "Walkie-Talkie",
   "category": "foreverpathways:paths/technician",
   "icon": "simpleradio:walkie_talkie",
-  "sortnum": 300,
+  "sortnum": 200,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "simpleradio:walkie_talkie",
       "title": "Walkie-Talkie",
-      "text": "$(bold)The walkie-talkie, clearer and longer in range than the spuddie.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)12 Focal Shards$(n).$(br)After Spuddie Talkie."
+      "text": "$(bold)The walkie-talkie, clearer and longer in range than the spuddie.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)8 Focal Shards$(n).$(br)After Spuddie Talkie."
     },
     {
       "type": "patchouli:crafting",

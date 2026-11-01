@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "create:crushing_wheel",
       "title": "Crushing",
-      "text": "$(bold)Crushing wheels, crushed ores, powdered obsidian, experience nuggets and tree fertiliser.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)18 Focal Shards$(n).$(br)After Technician."
+      "text": "$(bold)Crushing wheels, crushed ores, powdered obsidian, experience nuggets and tree fertiliser.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)16 Focal Shards$(n).$(br)After Technician."
     },
     {
       "type": "patchouli:crafting",

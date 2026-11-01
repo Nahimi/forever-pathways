@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "legendarysurvivaloverhaul:plaster",
       "title": "Apothecary",
-      "text": "$(bold)Plasters and first aid supplies, for wounds the herbs will not close.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)8 Focal Shards$(n).$(br)After Herbalist."
+      "text": "$(bold)Plasters and first aid supplies, for wounds the herbs will not close.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)8 Focal Shards$(n).$(br)After Herbalist."
     }
   ],
   "flag": "mod:legendarysurvivaloverhaul"

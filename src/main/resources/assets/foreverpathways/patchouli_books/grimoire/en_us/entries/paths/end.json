@@ -2,13 +2,13 @@
   "name": "The End",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:ender_pearl",
-  "sortnum": 1000,
+  "sortnum": 1200,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:ender_pearl",
       "title": "The End",
-      "text": "$(bold)End stone, purpur, chorus, ender pearls and eyes, shulker boxes and the elytra.$(br2)$(thing)Relics$(n), ring 10.$(br)$(thing)56 Focal Shards$(n).$(br)After Infernal."
+      "text": "$(bold)End stone, purpur, chorus, ender pearls and eyes, shulker boxes and the elytra.$(br2)$(thing)Relics$(n), ring 12.$(br)$(thing)56 Focal Shards$(n).$(br)After Infernal."
     },
     {
       "type": "patchouli:text",

@@ -2,13 +2,13 @@
   "name": "Bakery",
   "category": "foreverpathways:paths/homesteader",
   "icon": "baking_process:baguette",
-  "sortnum": 300,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "baking_process:baguette",
       "title": "Bakery",
-      "text": "$(bold)The baking process: flour, dough, moulds and breads, plus Create's sweets and flour, Ratatouille's cakes, chocolate and popsicles, and the Supplementaries pancake, candy and sugar cube. Needs Kitchen as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)6 Focal Shards$(n).$(br)After Gardener and Kitchen."
+      "text": "$(bold)The baking process: flour, dough, moulds and breads, plus Create's sweets and flour, Ratatouille's cakes, chocolate and popsicles, and the Supplementaries pancake, candy and sugar cube.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)6 Focal Shards$(n).$(br)After Kitchen."
     },
     {
       "type": "patchouli:crafting",

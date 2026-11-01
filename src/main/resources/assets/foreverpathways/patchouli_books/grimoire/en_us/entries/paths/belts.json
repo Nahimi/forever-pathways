@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "create:belt_connector",
       "title": "Belts",
-      "text": "$(bold)Belts, andesite funnels and tunnels, and the chute.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)18 Focal Shards$(n).$(br)After Andesite Casing."
+      "text": "$(bold)Belts, andesite funnels and tunnels, and the chute.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)16 Focal Shards$(n).$(br)After Andesite Casing."
     },
     {
       "type": "patchouli:crafting",

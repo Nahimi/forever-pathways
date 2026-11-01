@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "create:fluid_pipe",
       "title": "Fluids",
-      "text": "$(bold)Pipes, pumps, tanks, valves, the spout, the item drain and the hose pulley.$(br2)$(thing)Diamond Age$(n), ring 5.$(br)$(thing)22 Focal Shards$(n).$(br)After Pressing and Mixing."
+      "text": "$(bold)Pipes, pumps, tanks, valves, the spout, the item drain and the hose pulley.$(br2)$(thing)Iron Age$(n), ring 5.$(br)$(thing)20 Focal Shards$(n).$(br)After Pressing and Mixing."
     },
     {
       "type": "patchouli:crafting",

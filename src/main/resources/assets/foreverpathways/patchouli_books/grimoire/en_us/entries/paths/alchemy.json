@@ -2,13 +2,13 @@
   "name": "Alchemy",
   "category": "foreverpathways:paths/magician",
   "icon": "irons_spellbooks:alchemist_cauldron",
-  "sortnum": 600,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:alchemist_cauldron",
       "title": "Alchemy",
-      "text": "$(bold)The alchemist cauldron, oakskin elixir, fire ale and caster's tea.$(br2)$(thing)The Deep$(n), ring 6.$(br)$(thing)33 Focal Shards$(n).$(br)After Magician."
+      "text": "$(bold)The alchemist cauldron, oakskin elixir, fire ale and caster's tea.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)16 Focal Shards$(n).$(br)After Herbalist."
     },
     {
       "type": "patchouli:text",

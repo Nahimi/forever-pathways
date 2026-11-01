@@ -2,13 +2,13 @@
   "name": "Golden Harvest",
   "category": "foreverpathways:paths/homesteader",
   "icon": "minecraft:golden_carrot",
-  "sortnum": 600,
+  "sortnum": 800,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:golden_carrot",
       "title": "Golden Harvest",
-      "text": "$(bold)Golden apples, golden carrots and glistering melon. Needs Gold as well.$(br2)$(thing)The Deep$(n), ring 6.$(br)$(thing)19 Focal Shards$(n).$(br)After Larder and Gold."
+      "text": "$(bold)Golden apples, golden carrots and glistering melon. Needs Gold as well.$(br2)$(thing)The Deep$(n), ring 8.$(br)$(thing)19 Focal Shards$(n).$(br)After Larder and Gold."
     },
     {
       "type": "patchouli:text",

@@ -2,13 +2,13 @@
   "name": "Evocation",
   "category": "foreverpathways:paths/magician",
   "icon": "irons_spellbooks:evocation_rune",
-  "sortnum": 900,
+  "sortnum": 1100,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:evocation_rune",
       "title": "Evocation",
-      "text": "$(bold)The evocation rune, upgrade orb, affinity ring and scroll. You may master three schools until Archmage.$(br2)$(thing)Industry$(n), ring 9.$(br)$(thing)54 Focal Shards$(n).$(br)After Arcane Essence."
+      "text": "$(bold)The evocation rune, upgrade orb, affinity ring and scroll. You may master three schools until Archmage.$(br2)$(thing)Industry$(n), ring 11.$(br)$(thing)54 Focal Shards$(n).$(br)After Arcane Essence."
     },
     {
       "type": "patchouli:text",

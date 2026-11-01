@@ -2,13 +2,13 @@
   "name": "Grove",
   "category": "foreverpathways:paths/homesteader",
   "icon": "dynamictrees:staff",
-  "sortnum": 300,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "dynamictrees:staff",
       "title": "Grove",
-      "text": "$(bold)The dendro staff and potions, the dirt bucket and the giant tree seeds.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)9 Focal Shards$(n).$(br)After Forager."
+      "text": "$(bold)The dendro staff and potions, the dirt bucket and the giant tree seeds.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)9 Focal Shards$(n).$(br)After Forager."
     },
     {
       "type": "patchouli:text",

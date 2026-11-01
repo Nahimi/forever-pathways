@@ -16,7 +16,7 @@ import uk.foreverserver.pathways.Tree;
  * eyes) is spread evenly round the circle.
  */
 public final class RingLayout {
-    public static final double[] RADII = {0, 80, 155, 250, 315, 375, 435, 495, 555, 615, 675, 735, 825};
+    public static final double[] RADII = {0, 75, 135, 195, 255, 310, 365, 420, 475, 530, 585, 640, 695, 750, 805, 860, 945};
     public static final double SPACING = 22;
     public static final double SPINE = 30;
 

@@ -1,0 +1,18 @@
+{
+  "name": "Seal of Relics",
+  "category": "foreverpathways:rings",
+  "icon": "minecraft:end_stone",
+  "sortnum": 18,
+  "pages": [
+    {
+      "type": "patchouli:text",
+      "title": "Seal of Relics",
+      "text": "$(bold)Bars rings 12 to 13: Relics.$(br2)$(li)$(thing)88 nodes$(n) owned$(br)$(li)$(thing)100 Focal Shards$(n)$(br)$(li)its task, below$(br2)37 nodes wait behind it."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Kill 60 endermen$(n)$(br2)Counts only once everything else about the seal is ready."
+    }
+  ]
+}

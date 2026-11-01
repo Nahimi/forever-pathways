@@ -2,13 +2,13 @@
   "name": "Second Wind",
   "category": "foreverpathways:paths/constitution",
   "icon": "minecraft:golden_apple",
-  "sortnum": 300,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:golden_apple",
       "title": "Second Wind",
-      "text": "$(bold)Half a heart more. +5% maximum health. Needs Thick Skinned as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)23 Focal Shards$(n).$(br)After Hardy and Thick Skinned."
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)23 Focal Shards$(n).$(br)After Thick Skinned."
     },
     {
       "type": "patchouli:text",

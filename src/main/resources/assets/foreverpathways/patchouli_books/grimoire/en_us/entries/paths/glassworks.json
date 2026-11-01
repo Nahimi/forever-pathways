@@ -2,13 +2,13 @@
   "name": "Glassworks",
   "category": "foreverpathways:paths/builder",
   "icon": "minecraft:tinted_glass",
-  "sortnum": 300,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:tinted_glass",
       "title": "Glassworks",
-      "text": "$(bold)Stained and tinted glass and panes. Needs Brickwork as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)14 Focal Shards$(n).$(br)After Polished Stone and Brickwork."
+      "text": "$(bold)Stained and tinted glass and panes.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)14 Focal Shards$(n).$(br)After Brickwork."
     },
     {
       "type": "patchouli:text",

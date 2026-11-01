@@ -2,13 +2,13 @@
   "name": "Stonebreaker",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:netherite_pickaxe",
-  "sortnum": 1100,
+  "sortnum": 1400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:netherite_pickaxe",
       "title": "Stonebreaker",
-      "text": "$(bold)Stone parts for you now. +5% breaking speed.$(br2)$(thing)The Arcane$(n), ring 11.$(br)$(thing)75 Focal Shards$(n).$(br)After Tireless."
+      "text": "$(bold)Stone parts for you now. +5% breaking speed.$(br2)$(thing)The Arcane$(n), ring 14.$(br)$(thing)75 Focal Shards$(n).$(br)After Tireless."
     },
     {
       "type": "patchouli:text",

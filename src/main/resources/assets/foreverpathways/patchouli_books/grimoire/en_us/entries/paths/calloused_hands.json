@@ -2,13 +2,13 @@
   "name": "Calloused Hands",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:stripped_oak_log",
-  "sortnum": 300,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:stripped_oak_log",
       "title": "Calloused Hands",
-      "text": "$(bold)Hard work makes hard hands. +5% breaking speed.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)9 Focal Shards$(n).$(br)After Woodcutter."
+      "text": "$(bold)Hard work makes hard hands. +5% breaking speed.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)9 Focal Shards$(n).$(br)After Woodcutter."
     },
     {
       "type": "patchouli:text",

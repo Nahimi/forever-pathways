@@ -2,13 +2,13 @@
   "name": "Grand Magus",
   "category": "foreverpathways:paths/magician",
   "icon": "irons_spellbooks:netherite_mage_chestplate",
-  "sortnum": 1100,
+  "sortnum": 1500,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:netherite_mage_chestplate",
       "title": "Grand Magus",
-      "text": "$(bold)The eldritch school, its manuscripts, scrolls and forbidden ring, with netherite mage armour and the dragonskin spellbook.$(br2)$(thing)The Arcane$(n), ring 11.$(br)$(thing)98 Focal Shards$(n).$(br)After Archmage."
+      "text": "$(bold)The eldritch school, its manuscripts, scrolls and forbidden ring, with netherite mage armour and the dragonskin spellbook.$(br2)$(thing)The Arcane$(n), ring 15.$(br)$(thing)98 Focal Shards$(n).$(br)After Archmage."
     },
     {
       "type": "patchouli:crafting",

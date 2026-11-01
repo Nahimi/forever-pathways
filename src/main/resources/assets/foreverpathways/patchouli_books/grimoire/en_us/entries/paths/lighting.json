@@ -2,13 +2,13 @@
   "name": "Lighting",
   "category": "foreverpathways:paths/builder",
   "icon": "supplementaries:sconce",
-  "sortnum": 300,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "supplementaries:sconce",
       "title": "Lighting",
-      "text": "$(bold)Candles of every colour, sconces, candle holders, the stone lamps, the fire pit and lumisene. Needs Trimmings as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)14 Focal Shards$(n).$(br)After Fittings and Trimmings."
+      "text": "$(bold)Candles of every colour, sconces, candle holders, the stone lamps, the fire pit and lumisene.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)14 Focal Shards$(n).$(br)After Trimmings."
     },
     {
       "type": "patchouli:text",

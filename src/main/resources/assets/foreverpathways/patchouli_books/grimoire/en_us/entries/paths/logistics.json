@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "create:item_vault",
       "title": "Logistics",
-      "text": "$(bold)Smart chutes, vaults, ejectors, filters, links, displays, latches and toolboxes.$(br2)$(thing)The Deep$(n), ring 6.$(br)$(thing)39 Focal Shards$(n).$(br)After Belts."
+      "text": "$(bold)Smart chutes, vaults, ejectors, filters, links, displays, latches and toolboxes.$(br2)$(thing)Gilded Age$(n), ring 6.$(br)$(thing)30 Focal Shards$(n).$(br)After Belts."
     },
     {
       "type": "patchouli:crafting",

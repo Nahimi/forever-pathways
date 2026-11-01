@@ -2,13 +2,13 @@
   "name": "Offroad",
   "category": "foreverpathways:paths/technician",
   "icon": "offroad:tire",
-  "sortnum": 900,
+  "sortnum": 1100,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "offroad:tire",
       "title": "Offroad",
-      "text": "$(bold)Wheels, tyres and boreheads.$(br2)$(thing)Industry$(n), ring 9.$(br)$(thing)57 Focal Shards$(n).$(br)After Simulated."
+      "text": "$(bold)Wheels, tyres and boreheads.$(br2)$(thing)Industry$(n), ring 11.$(br)$(thing)57 Focal Shards$(n).$(br)After Simulated."
     },
     {
       "type": "patchouli:text",

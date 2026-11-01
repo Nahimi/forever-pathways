@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.40.0
+
+- Twelve ages over sixteen rings: an age can span several rings. Stone Age 1, Copper Age 2, Iron Age 3 to 5, Gilded
+  Age 6, Diamond Age 7, The Deep 8, The Nether 9, Ashen Age 10, Industry 11, Relics 12 and 13, The Arcane 14 and 15,
+  and the eyes on ring 16. Every age after the Stone Age has its own seal; the Seal of Diamond and the Seal of Relics
+  are new.
+- Basics come first:
+  - Spuddie Talkie on ring 1, Walkie-Talkie on ring 2, Radio on ring 3.
+  - Explorer is on ring 2 and holds the compass recipe, with the Monoliths' waystones; its task is 5,000 blocks.
+  - Technician starts Create in the Copper Age; Create runs from ring 2 to ring 12.
+  - Redstone, levers, pistons and the rest of Mechanisms are on ring 4.
+  - Alchemy grows from the Herbalist on ring 4, Elixirs on ring 6; the Magician road runs from ring 7 to 15.
+- The ring screen, its spacing and the Grimoire's ring map are redrawn for sixteen rings, and a seal names each age it
+  bars once.
+
 ## 0.39.1
 
 - Tier chains merged in 0.39.0 are separate nodes again, each a step up from the last:

@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "envelope:mailbox",
       "title": "Post",
-      "text": "$(bold)Letters and the quill, address tags, the mailbox, pigeonholes and paper boxes. Pigeons carry the mail by day for seeds; bats by night for a spider eye. Needs Technician as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)16 Focal Shards$(n).$(br)After Builder and Technician."
+      "text": "$(bold)Letters and the quill, address tags, the mailbox, pigeonholes and paper boxes. Pigeons carry the mail by day for seeds; bats by night for a spider eye.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)16 Focal Shards$(n).$(br)After Technician."
     },
     {
       "type": "patchouli:text",

@@ -2,13 +2,13 @@
   "name": "Skor",
   "category": "foreverpathways:paths/ranger",
   "icon": "block_factorys_bosses:ice_gauntlet",
-  "sortnum": 600,
+  "sortnum": 800,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "block_factorys_bosses:ice_gauntlet",
       "title": "Skor",
-      "text": "$(bold)Skor's ice gauntlet.$(br2)$(thing)The Deep$(n), ring 6.$(br)$(thing)28 Focal Shards$(n).$(br)After Helvar."
+      "text": "$(bold)Skor's ice gauntlet.$(br2)$(thing)The Deep$(n), ring 8.$(br)$(thing)28 Focal Shards$(n).$(br)After Helvar."
     },
     {
       "type": "patchouli:text",

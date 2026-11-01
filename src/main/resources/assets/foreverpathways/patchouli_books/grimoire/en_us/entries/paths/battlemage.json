@@ -2,13 +2,13 @@
   "name": "Spellblades",
   "category": "foreverpathways:paths/magician",
   "icon": "irons_spellbooks:claymore",
-  "sortnum": 900,
+  "sortnum": 1100,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:claymore",
       "title": "Spellblades",
-      "text": "$(bold)The first spellblades: claymore, magehunter, spellbreaker, truthseeker, the amethyst rapier, the stone scythe and the obsidian katana. +5% attack damage.$(br2)$(thing)Industry$(n), ring 9.$(br)$(thing)54 Focal Shards$(n).$(br)After Arcane Essence."
+      "text": "$(bold)The first spellblades: claymore, magehunter, spellbreaker, truthseeker, the amethyst rapier, the stone scythe and the obsidian katana. +5% attack damage.$(br2)$(thing)Industry$(n), ring 11.$(br)$(thing)54 Focal Shards$(n).$(br)After Arcane Essence."
     },
     {
       "type": "patchouli:text",

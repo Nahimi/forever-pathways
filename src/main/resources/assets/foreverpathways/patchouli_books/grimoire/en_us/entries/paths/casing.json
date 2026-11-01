@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "create:andesite_casing",
       "title": "Andesite Casing",
-      "text": "$(bold)Andesite casing and the encased shafts and cogs, with the encased fan and the depot for washing, smoking and blasting. Needs Technician as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)16 Focal Shards$(n).$(br)After Builder and Technician."
+      "text": "$(bold)Andesite casing and the encased shafts and cogs, with the encased fan and the depot for washing, smoking and blasting.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)12 Focal Shards$(n).$(br)After Technician."
     },
     {
       "type": "patchouli:text",

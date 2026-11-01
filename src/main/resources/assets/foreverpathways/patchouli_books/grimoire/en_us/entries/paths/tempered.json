@@ -2,13 +2,13 @@
   "name": "Tempered",
   "category": "foreverpathways:paths/constitution",
   "icon": "minecraft:anvil",
-  "sortnum": 700,
+  "sortnum": 900,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:anvil",
       "title": "Tempered",
-      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)The Nether$(n), ring 7.$(br)$(thing)53 Focal Shards$(n).$(br)After Weathered."
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)The Nether$(n), ring 9.$(br)$(thing)53 Focal Shards$(n).$(br)After Weathered."
     },
     {
       "type": "patchouli:text",

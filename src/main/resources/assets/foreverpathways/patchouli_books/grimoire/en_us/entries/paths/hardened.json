@@ -2,13 +2,13 @@
   "name": "Hardened",
   "category": "foreverpathways:paths/constitution",
   "icon": "minecraft:chainmail_chestplate",
-  "sortnum": 500,
+  "sortnum": 700,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:chainmail_chestplate",
       "title": "Hardened",
-      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)Diamond Age$(n), ring 5.$(br)$(thing)36 Focal Shards$(n).$(br)After Thickset."
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)Diamond Age$(n), ring 7.$(br)$(thing)36 Focal Shards$(n).$(br)After Thickset."
     },
     {
       "type": "patchouli:text",

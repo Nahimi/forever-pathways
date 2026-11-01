@@ -2,13 +2,13 @@
   "name": "Fleet Foot",
   "category": "foreverpathways:paths/ranger",
   "icon": "minecraft:iron_boots",
-  "sortnum": 700,
+  "sortnum": 900,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:iron_boots",
       "title": "Fleet Foot",
-      "text": "$(bold)Light on your feet. +2% movement speed.$(br2)$(thing)The Nether$(n), ring 7.$(br)$(thing)34 Focal Shards$(n).$(br)After Pathfinder."
+      "text": "$(bold)Light on your feet. +2% movement speed.$(br2)$(thing)The Nether$(n), ring 9.$(br)$(thing)34 Focal Shards$(n).$(br)After Pathfinder."
     },
     {
       "type": "patchouli:text",

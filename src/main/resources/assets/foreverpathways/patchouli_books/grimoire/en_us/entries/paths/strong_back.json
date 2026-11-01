@@ -2,13 +2,13 @@
   "name": "Strong Back",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:iron_pickaxe",
-  "sortnum": 600,
+  "sortnum": 800,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:iron_pickaxe",
       "title": "Strong Back",
-      "text": "$(bold)Years at the rock face. +5% breaking speed.$(br2)$(thing)The Deep$(n), ring 6.$(br)$(thing)28 Focal Shards$(n).$(br)After Iron."
+      "text": "$(bold)Years at the rock face. +5% breaking speed.$(br2)$(thing)The Deep$(n), ring 8.$(br)$(thing)28 Focal Shards$(n).$(br)After Iron."
     },
     {
       "type": "patchouli:text",

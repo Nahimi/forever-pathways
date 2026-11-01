@@ -2,13 +2,13 @@
   "name": "Ironworks",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:iron_bars",
-  "sortnum": 300,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:iron_bars",
       "title": "Ironworks",
-      "text": "$(bold)Iron bars, doors and trapdoors, chains, lanterns (which now burn fuel), the oil can, the bandolier, the cauldron and the smithing table, with the cage, goblet, faucet, pulley and bubble blower. With the monobank, a personal vault with a combination lock. Needs Iron as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)12 Focal Shards$(n).$(br)After Copper Tools and Iron."
+      "text": "$(bold)Iron bars, doors and trapdoors, chains, lanterns (which now burn fuel), the oil can, the bandolier, the cauldron and the smithing table, with the cage, goblet, faucet, pulley and bubble blower. With the monobank, a personal vault with a combination lock.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)12 Focal Shards$(n).$(br)After Iron."
     },
     {
       "type": "patchouli:crafting",

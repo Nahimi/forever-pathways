@@ -2,13 +2,13 @@
   "name": "Explosives",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:tnt",
-  "sortnum": 500,
+  "sortnum": 600,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:tnt",
       "title": "Explosives",
-      "text": "$(bold)TNT, the TNT minecart and fireworks.$(br2)$(thing)Diamond Age$(n), ring 5.$(br)$(thing)24 Focal Shards$(n).$(br)After Mechanisms."
+      "text": "$(bold)TNT, the TNT minecart and fireworks.$(br2)$(thing)Gilded Age$(n), ring 6.$(br)$(thing)24 Focal Shards$(n).$(br)After Mechanisms."
     },
     {
       "type": "patchouli:text",

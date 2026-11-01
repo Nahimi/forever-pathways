@@ -2,13 +2,13 @@
   "name": "Infernal",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:blaze_rod",
-  "sortnum": 700,
+  "sortnum": 900,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:blaze_rod",
       "title": "Infernal",
-      "text": "$(bold)The Nether's fire: blaze rods and powder, the blaze burner, fire charges, wither skeleton skulls, gilded blackstone, the respawn anchor and ancient debris.$(br2)$(thing)The Nether$(n), ring 7.$(br)$(thing)34 Focal Shards$(n).$(br)After Nether."
+      "text": "$(bold)The Nether's fire: blaze rods and powder, the blaze burner, fire charges, wither skeleton skulls, gilded blackstone, the respawn anchor and ancient debris.$(br2)$(thing)The Nether$(n), ring 9.$(br)$(thing)34 Focal Shards$(n).$(br)After Nether."
     },
     {
       "type": "patchouli:text",

@@ -2,13 +2,13 @@
   "name": "Ironclad",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:iron_chestplate",
-  "sortnum": 400,
+  "sortnum": 500,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:iron_chestplate",
       "title": "Ironclad",
-      "text": "$(bold)Iron and chainmail armour.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)13 Focal Shards$(n).$(br)After Iron."
+      "text": "$(bold)Iron and chainmail armour.$(br2)$(thing)Iron Age$(n), ring 5.$(br)$(thing)13 Focal Shards$(n).$(br)After Iron."
     },
     {
       "type": "patchouli:crafting",

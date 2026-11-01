@@ -2,13 +2,13 @@
   "name": "Diamond",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:diamond",
-  "sortnum": 500,
+  "sortnum": 700,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:diamond",
       "title": "Diamond",
-      "text": "$(bold)Diamonds, diamond blocks and diamond tools. The bottleneck of the deep. +15% breaking speed.$(br2)$(thing)Diamond Age$(n), ring 5.$(br)$(thing)26 Focal Shards$(n).$(br)After Deep Prospector."
+      "text": "$(bold)Diamonds, diamond blocks and diamond tools. The bottleneck of the deep. +15% breaking speed.$(br2)$(thing)Diamond Age$(n), ring 7.$(br)$(thing)26 Focal Shards$(n).$(br)After Deep Prospector."
     },
     {
       "type": "patchouli:text",

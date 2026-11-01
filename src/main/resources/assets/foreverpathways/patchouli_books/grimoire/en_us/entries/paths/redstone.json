@@ -2,13 +2,13 @@
   "name": "Redstone",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:redstone",
-  "sortnum": 300,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:redstone",
       "title": "Redstone",
-      "text": "$(bold)Dust, torches, repeaters, comparators, levers, lamps, targets and powered rails. Needs Deep Prospector as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)14 Focal Shards$(n).$(br)After Copper Tools and Deep Prospector."
+      "text": "$(bold)Dust, torches, levers, repeaters, comparators, lamps, targets and powered rails, and the clock. Needs Deep Prospector as well.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)14 Focal Shards$(n).$(br)After Iron and Deep Prospector."
     },
     {
       "type": "patchouli:text",
@@ -23,7 +23,7 @@
     {
       "type": "patchouli:text",
       "title": "Unlocks",
-      "text": "$(bold)clock, compass, redstone, redstone block, redstone torch, repeater, comparator, lever, daylight detector, note block, jukebox, redstone lamp, powered rail, detector rail, activator rail."
+      "text": "$(bold)clock, redstone, redstone block, redstone torch, repeater, comparator, lever, daylight detector, note block, jukebox, redstone lamp, powered rail, detector rail, activator rail."
     }
   ]
 }

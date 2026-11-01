@@ -102,7 +102,7 @@
       "type": "patchouli:text",
       "title": "Lanterns and Oil",
       "flag": "mod:hardcore_torches",
-      "text": "$(bold)Lanterns burn fuel too, and are refilled with an $(thing)oil can$(n): coal or animal fat. A fire starter will not light them; use a torch, campfire or flint and steel.$(br2)$(li)Lanterns and the oil can: $(l:paths/ironworks)Ironworks$(n), ring 3.$(br)$(li)Animal fat: $(l:paths/husbandry)Husbandry$(n), ring 2.$(br)$(li)The bandolier carries torches: Ironworks, ring 4."
+      "text": "$(bold)Lanterns burn fuel too, and are refilled with an $(thing)oil can$(n): coal or animal fat. A fire starter will not light them; use a torch, campfire or flint and steel.$(br2)$(li)Lanterns and the oil can: $(l:paths/ironworks)Ironworks$(n), ring 4.$(br)$(li)Animal fat: $(l:paths/husbandry)Husbandry$(n), ring 2.$(br)$(li)The bandolier carries torches: Ironworks, ring 4."
     },
     {
       "type": "patchouli:text",

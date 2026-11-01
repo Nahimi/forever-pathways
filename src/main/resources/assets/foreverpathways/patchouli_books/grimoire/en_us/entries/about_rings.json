@@ -16,11 +16,11 @@
     {
       "type": "patchouli:text",
       "title": "Rings",
-      "text": "$(bold)$(thing)12 rings$(n) out from the Core, each with a name: Stone Age, Copper Age, Iron Age, out to Eye Ring.$(br2)A node needs the node before it, whatever else it needs, and its ring unsealed."
+      "text": "$(bold)$(thing)16 rings$(n) out from the Core, in 12 ages: Stone Age, Copper Age, Iron Age, out to Eye Ring. An age can span several rings.$(br2)A node needs the node before it, whatever else it needs, and its ring unsealed."
     },
     {
       "type": "patchouli:text",
-      "text": "$(bold)Cost climbs with the ring: a few shards on ring 2, about a hundred on ring 11.$(br2)Seals count how many nodes you own, not which. Breadth gets you out, not one long road.$(br2)Costs in this book are Hard costs. On Normal nodes cost 5% less, on Easy a quarter less."
+      "text": "$(bold)Cost climbs with the ring: a few shards on ring 2, about a hundred on ring 15.$(br2)Seals count how many nodes you own, not which. Breadth gets you out, not one long road.$(br2)Costs in this book are Hard costs. On Normal nodes cost 5% less, on Easy a quarter less."
     }
   ],
   "priority": true

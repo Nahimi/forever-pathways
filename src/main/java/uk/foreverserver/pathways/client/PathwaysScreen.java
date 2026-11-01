@@ -913,9 +913,16 @@ public class PathwaysScreen extends Screen {
     private String bandName(Tree.Node seal) {
         int a = seal.seal.opensRing;
         int b = Math.max(a, seal.seal.throughRing);
-        StringBuilder names = new StringBuilder();
+        // An age can span several rings; name each age once.
+        List<String> ages = new ArrayList<>();
         for (int ring = a; ring <= b; ring++) {
-            names.append(ring == a ? "" : ring == b ? " and " : ", ").append(tree.tierName(ring));
+            if (!ages.contains(tree.tierName(ring))) {
+                ages.add(tree.tierName(ring));
+            }
+        }
+        StringBuilder names = new StringBuilder();
+        for (int i = 0; i < ages.size(); i++) {
+            names.append(i == 0 ? "" : i == ages.size() - 1 ? " and " : ", ").append(ages.get(i));
         }
         return (a == b ? "ring " + a : "rings " + a + " to " + b) + ": " + names;
     }

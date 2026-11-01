@@ -1,7 +1,7 @@
 // Ring layout for Forever Pathways. Mirrors client/RingLayout.java line for line,
 // so the preview and the game place every node in the same spot.
 (function (root) {
-  const RADII = [0, 80, 155, 250, 315, 375, 435, 495, 555, 615, 675, 735, 825];
+  const RADII = [0, 75, 135, 195, 255, 310, 365, 420, 475, 530, 585, 640, 695, 750, 805, 860, 945];
   const SPACING = 22;
   const SPINE = 30;
 

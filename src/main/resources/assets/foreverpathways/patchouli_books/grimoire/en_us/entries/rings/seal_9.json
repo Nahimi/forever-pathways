@@ -2,12 +2,12 @@
   "name": "Seal of Fire",
   "category": "foreverpathways:rings",
   "icon": "minecraft:obsidian",
-  "sortnum": 14,
+  "sortnum": 15,
   "pages": [
     {
       "type": "patchouli:text",
       "title": "Seal of Fire",
-      "text": "$(bold)Bars ring 8: Ashen Age.$(br2)$(li)$(thing)67 nodes$(n) owned$(br)$(li)$(thing)65 Focal Shards$(n)$(br)$(li)its task, below$(br2)26 nodes wait behind it."
+      "text": "$(bold)Bars ring 9: The Nether.$(br2)$(li)$(thing)64 nodes$(n) owned$(br)$(li)$(thing)65 Focal Shards$(n)$(br)$(li)its task, below$(br2)11 nodes wait behind it."
     },
     {
       "type": "patchouli:text",

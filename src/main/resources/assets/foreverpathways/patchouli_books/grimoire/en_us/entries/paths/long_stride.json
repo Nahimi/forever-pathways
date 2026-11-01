@@ -2,13 +2,13 @@
   "name": "Long Stride",
   "category": "foreverpathways:paths/ranger",
   "icon": "minecraft:leather_boots",
-  "sortnum": 300,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:leather_boots",
       "title": "Long Stride",
-      "text": "$(bold)The legs remember the road. +2% movement speed.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)14 Focal Shards$(n).$(br)After Ranger."
+      "text": "$(bold)The legs remember the road. +2% movement speed.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)14 Focal Shards$(n).$(br)After Ranger."
     },
     {
       "type": "patchouli:text",

@@ -2,13 +2,13 @@
   "name": "Cartwright",
   "category": "foreverpathways:paths/ranger",
   "icon": "icys-better-horses:horse_cart_gear",
-  "sortnum": 400,
+  "sortnum": 500,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "icys-better-horses:horse_cart_gear",
       "title": "Cartwright",
-      "text": "$(bold)Wheels and the horse cart, for carrying more than a horse can wear. +10% horse speed.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)18 Focal Shards$(n).$(br)After Rider."
+      "text": "$(bold)Wheels and the horse cart, for carrying more than a horse can wear. +10% horse speed.$(br2)$(thing)Iron Age$(n), ring 5.$(br)$(thing)18 Focal Shards$(n).$(br)After Rider."
     },
     {
       "type": "patchouli:text",

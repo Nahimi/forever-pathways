@@ -2,13 +2,13 @@
   "name": "Gold",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:gold_ingot",
-  "sortnum": 400,
+  "sortnum": 600,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:gold_ingot",
       "title": "Gold",
-      "text": "$(bold)Gold ingots, nuggets and blocks, with golden tools and armour.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)20 Focal Shards$(n).$(br)After Deep Prospector."
+      "text": "$(bold)Gold ingots, nuggets and blocks, with golden tools and armour.$(br2)$(thing)Gilded Age$(n), ring 6.$(br)$(thing)20 Focal Shards$(n).$(br)After Deep Prospector."
     },
     {
       "type": "patchouli:text",

@@ -2,13 +2,13 @@
   "name": "Power Grid",
   "category": "foreverpathways:paths/technician",
   "icon": "powergrid:electric_motor",
-  "sortnum": 900,
+  "sortnum": 1100,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "powergrid:electric_motor",
       "title": "Power Grid",
-      "text": "$(bold)Generators, motors, pumps, fans, heaters and the rest of low-voltage electricity. Needs Lighting Rig as well.$(br2)$(thing)Industry$(n), ring 9.$(br)$(thing)79 Focal Shards$(n).$(br)After Brass and Lighting Rig."
+      "text": "$(bold)Generators, motors, pumps, fans, heaters and the rest of low-voltage electricity. Needs Lighting Rig as well.$(br2)$(thing)Industry$(n), ring 11.$(br)$(thing)79 Focal Shards$(n).$(br)After Brass and Lighting Rig."
     },
     {
       "type": "patchouli:text",
