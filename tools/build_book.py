@@ -255,9 +255,9 @@ BEYOND = [
          "text": "Great stones stand across the world, each holding a $(thing)waystone$().$(br2)"
                  "$(li)Right-click one to wake it.$(br)"
                  "$(li)From any woken waystone, travel to the others you have woken.$(br2)"
-                 "They answer you from $(l:paths/explorer)Explorer$(), ring 2."},
+                 "They answer you from $(l:paths/scout)Scout$(), ring 2, or $(l:paths/magician)Magician$(), ring 7."},
         {"type": "patchouli:text", "title": "Your Own Waystones",
-         "text": "$(li)$(l:paths/explorer)Explorer$(), ring 2: use the Monoliths' waystones. You cannot "
+         "text": "$(li)$(l:paths/scout)Scout$(), ring 2, or $(l:paths/magician)Magician$(), ring 7: use the Monoliths' waystones. You cannot "
                  "move or break them.$(br)"
                  "$(li)$(l:paths/attunement)Attunement$(), ring 12: craft and place your own, with warp "
                  "stones and scrolls.$(br)"

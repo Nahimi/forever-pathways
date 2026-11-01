@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:compass",
       "title": "Scout",
-      "text": "$(bold)Maps and the cartography table. Taking Scout closes Hunter. +2% movement speed.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)8 Focal Shards$(n).$(br)After Ranger."
+      "text": "$(bold)Maps, the compass and the cartography table, and the waystones on the Monoliths: wake them and travel between those you have woken. Making, placing and breaking waystones wait for Attunement. Taking Scout closes Hunter. +2% movement speed.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)8 Focal Shards$(n).$(br)After Ranger."
     },
     {
       "type": "patchouli:text",
@@ -22,13 +22,13 @@
     },
     {
       "type": "patchouli:crafting",
-      "recipe": "minecraft:cartography_table",
-      "text": "$(bold)Cartography table"
+      "recipe": "minecraft:compass",
+      "text": "$(bold)Compass"
     },
     {
       "type": "patchouli:text",
       "title": "Unlocks",
-      "text": "$(bold)map, cartography table."
+      "text": "$(bold)map, compass, cartography table."
     }
   ]
 }

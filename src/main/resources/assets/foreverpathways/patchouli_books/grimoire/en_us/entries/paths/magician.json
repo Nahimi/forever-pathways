@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:wimpy_spell_book",
       "title": "Magician",
-      "text": "$(bold)A wimpy spellbook, common ink, scrolls and the wisewood shelves. No real spells yet.$(br2)$(thing)Diamond Age$(n), ring 7.$(br)$(thing)26 Focal Shards$(n).$(br)After Apothecary."
+      "text": "$(bold)A wimpy spellbook, common ink, scrolls and the wisewood shelves, and the waystones on the Monoliths, which answer a magician as they answer a scout. No real spells yet.$(br2)$(thing)Diamond Age$(n), ring 7.$(br)$(thing)26 Focal Shards$(n).$(br)After Apothecary."
     },
     {
       "type": "patchouli:crafting",

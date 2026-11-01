@@ -3545,7 +3545,7 @@
       "cost": 8,
       "item": "minecraft:compass",
       "colour": "#4A7C59",
-      "opens": "Maps and the cartography table. Taking Scout closes Hunter. +2% movement speed.",
+      "opens": "Maps, the compass and the cartography table, and the waystones on the Monoliths: wake them and travel between those you have woken. Making, placing and breaking waystones wait for Attunement. Taking Scout closes Hunter. +2% movement speed.",
       "task": {
         "kind": "walk",
         "target": "",
@@ -3562,9 +3562,12 @@
       "craftOnly": false,
       "locks": [
         "minecraft:map",
+        "minecraft:compass",
         "minecraft:cartography_table"
       ],
-      "uses": []
+      "uses": [
+        "re:waystones:.*waystone"
+      ]
     },
     {
       "id": "forever:skirmisher",
@@ -3794,36 +3797,6 @@
         "re:nomansland:(ancestral_.*|ancient_bronze_.*|ritual_pick|warding_effigy|monster_anchor|moonlight_basin|living_urn|trinket)"
       ],
       "uses": []
-    },
-    {
-      "id": "forever:explorer",
-      "title": "Explorer",
-      "path": "ranger",
-      "ring": 2,
-      "requires": "forever:ranger",
-      "also": null,
-      "cost": 8,
-      "item": "waystones:waystone",
-      "colour": "#4A7C59",
-      "opens": "The compass, and the waystones on the Monoliths: wake them and travel between those you have woken. Making, placing and breaking waystones wait for Attunement.",
-      "task": {
-        "kind": "travel",
-        "target": "",
-        "amount": 5000,
-        "title": "Travel 5,000 blocks",
-        "reward": 2
-      },
-      "slot": null,
-      "slotBonus": null,
-      "perks": null,
-      "enchantPower": 0,
-      "craftOnly": false,
-      "locks": [
-        "minecraft:compass"
-      ],
-      "uses": [
-        "re:waystones:.*waystone"
-      ]
     },
     {
       "id": "forever:rider",
@@ -4327,7 +4300,7 @@
       "cost": 26,
       "item": "irons_spellbooks:wimpy_spell_book",
       "colour": "#7B5EA7",
-      "opens": "A wimpy spellbook, common ink, scrolls and the wisewood shelves. No real spells yet.",
+      "opens": "A wimpy spellbook, common ink, scrolls and the wisewood shelves, and the waystones on the Monoliths, which answer a magician as they answer a scout. No real spells yet.",
       "task": null,
       "slot": null,
       "slotBonus": null,
@@ -4338,7 +4311,9 @@
         "re:companions:(mage_.*|book_.*|soul_gem|soul_furnace_block)",
         "re:irons_spellbooks:(wimpy_spell_book|spell_book|scroll|common_ink|book_stack|chained_book|unchained_book|wisewood_.*|ruined_book|ancient_knowledge_fragment)"
       ],
-      "uses": []
+      "uses": [
+        "re:waystones:.*waystone"
+      ]
     },
     {
       "id": "forever:study",
@@ -5573,11 +5548,11 @@
       "path": "technician",
       "ring": 2,
       "requires": "forever:spuddie",
-      "also": null,
+      "also": "forever:technician",
       "cost": 8,
       "item": "simpleradio:walkie_talkie",
       "colour": "#B87333",
-      "opens": "The walkie-talkie, clearer and longer in range than the spuddie.",
+      "opens": "The walkie-talkie, clearer and longer in range than the spuddie. Needs Technician as well.",
       "task": null,
       "slot": null,
       "slotBonus": null,
@@ -9871,6 +9846,11 @@
       "into": "forever:infirmary",
       "title": "Dreaming",
       "cost": 26
+    },
+    "forever:explorer": {
+      "into": "forever:scout",
+      "title": "Explorer",
+      "cost": 8
     }
   }
 }

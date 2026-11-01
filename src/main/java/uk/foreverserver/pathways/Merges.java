@@ -31,7 +31,7 @@ public final class Merges {
             Stages.revoke(player, old);
             Tree.Node into = tree.find(merge.into);
             String name = merge.title == null ? old : merge.title;
-            if (into != null && !Stages.has(player, into.id)) {
+            if (into != null && !Stages.has(player, into.id) && !slotFull(player, tree, into)) {
                 Stages.grantAnyway(player, into.id);
                 player.sendSystemMessage(Component.literal(name + " is now part of " + into.title + ", which you now own.")
                         .withStyle(ChatFormatting.GOLD));
@@ -42,5 +42,20 @@ public final class Merges {
                         + " shards are returned.").withStyle(ChatFormatting.GOLD));
             }
         }
+    }
+
+    /** True when the node is one of a limited choice and the player has already made all of theirs. */
+    private static boolean slotFull(ServerPlayer player, Tree tree, Tree.Node into) {
+        Integer limit = into.slot == null ? null : tree.slots.get(into.slot);
+        if (limit == null) {
+            return false;
+        }
+        int taken = 0;
+        for (Tree.Node node : tree.nodes) {
+            if (into.slot.equals(node.slot) && Stages.has(player, node.id)) {
+                taken++;
+            }
+        }
+        return taken >= limit;
     }
 }

@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.40.1
+
+- The Explorer node is gone. Scout holds the compass recipe, and Scout or Magician lets you use the Monoliths'
+  waystones. Explorer's owners are given Scout, or its shards back if they took Hunter.
+- The Walkie-Talkie needs Technician as well as the Spuddie Talkie.
+
 ## 0.40.0
 
 - Twelve ages over sixteen rings: an age can span several rings. Stone Age 1, Copper Age 2, Iron Age 3 to 5, Gilded

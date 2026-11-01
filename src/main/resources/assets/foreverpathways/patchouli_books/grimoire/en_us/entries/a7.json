@@ -12,12 +12,12 @@
     {
       "type": "patchouli:text",
       "title": "The Monoliths",
-      "text": "$(bold)Great stones stand across the world, each holding a $(thing)waystone$(n).$(br2)$(li)Right-click one to wake it.$(br)$(li)From any woken waystone, travel to the others you have woken.$(br2)They answer you from $(l:paths/explorer)Explorer$(n), ring 2."
+      "text": "$(bold)Great stones stand across the world, each holding a $(thing)waystone$(n).$(br2)$(li)Right-click one to wake it.$(br)$(li)From any woken waystone, travel to the others you have woken.$(br2)They answer you from $(l:paths/scout)Scout$(n), ring 2, or $(l:paths/magician)Magician$(n), ring 7."
     },
     {
       "type": "patchouli:text",
       "title": "Your Own Waystones",
-      "text": "$(bold)$(li)$(l:paths/explorer)Explorer$(n), ring 2: use the Monoliths' waystones. You cannot move or break them.$(br)$(li)$(l:paths/attunement)Attunement$(n), ring 12: craft and place your own, with warp stones and scrolls.$(br)$(li)$(l:paths/warp_network)Warp Network$(n), ring 14: sharestones, portstones and warp plates."
+      "text": "$(bold)$(li)$(l:paths/scout)Scout$(n), ring 2, or $(l:paths/magician)Magician$(n), ring 7: use the Monoliths' waystones. You cannot move or break them.$(br)$(li)$(l:paths/attunement)Attunement$(n), ring 12: craft and place your own, with warp stones and scrolls.$(br)$(li)$(l:paths/warp_network)Warp Network$(n), ring 14: sharestones, portstones and warp plates."
     },
     {
       "type": "patchouli:crafting",
