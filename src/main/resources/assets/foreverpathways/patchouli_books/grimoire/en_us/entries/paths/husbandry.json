@@ -8,7 +8,18 @@
       "type": "patchouli:spotlight",
       "item": "butchery:bone_cleaver",
       "title": "Husbandry",
-      "text": "$(bold)Bone and copper cleavers, hacksaws, hammers and skinning knives, the hook, the butcher's table and animal fat for the oil can.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)4 Focal Shards$(n).$(br)After Homesteader."
+      "text": "$(bold)Bone and copper cleavers, hacksaws, hammers and skinning knives, the hook, the butcher's table and animal fat for the oil can. With dog food, horse feed and fodder.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)5 Focal Shards$(n).$(br)After Homesteader."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "farmersdelight:horse_feed",
+      "text": "$(bold)Horse feed",
+      "flag": "mod:farmersdelight"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind, feeding trough."
     }
   ],
   "flag": "mod:butchery"

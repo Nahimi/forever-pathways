@@ -2,19 +2,24 @@
   "name": "Trick Shots",
   "category": "foreverpathways:paths/ranger",
   "icon": "supplementaries:quiver",
-  "sortnum": 400,
+  "sortnum": 300,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "supplementaries:quiver",
       "title": "Trick Shots",
-      "text": "$(bold)The quiver, the slingshot and rope arrows.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)10 Focal Shards$(n).$(br)After Fletcher."
+      "text": "$(bold)The quiver, the slingshot and rope arrows.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)10 Focal Shards$(n).$(br)After Hunter."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "supplementaries:slingshot",
       "text": "$(bold)Slingshot",
       "flag": "mod:supplementaries"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)crimson arrow, torch arrow, incendiary arrow."
     }
   ],
   "flag": "mod:supplementaries"

@@ -2,13 +2,13 @@
   "name": "Larder",
   "category": "foreverpathways:paths/homesteader",
   "icon": "farmersdelight:stove",
-  "sortnum": 400,
+  "sortnum": 300,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "farmersdelight:stove",
       "title": "Larder",
-      "text": "$(bold)Every Farmer's Delight meal, Spawn's rolls, chowders and boils, rich soil, organic compost and the stove. The bottleneck of the kitchen.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)9 Focal Shards$(n).$(br)After Kitchen."
+      "text": "$(bold)Every Farmer's Delight meal, Spawn's rolls, chowders and boils, rich soil, organic compost and the stove. The bottleneck of the kitchen. Needs Kitchen as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)9 Focal Shards$(n).$(br)After Gardener and Kitchen."
     },
     {
       "type": "patchouli:text",

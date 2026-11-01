@@ -7,7 +7,7 @@
     {
       "type": "patchouli:text",
       "title": "Seal of Ash",
-      "text": "$(bold)Bars ring 10: Industry.$(br2)$(li)$(thing)87 nodes$(n) owned$(br)$(li)$(thing)83 Focal Shards$(n)$(br)$(li)its task, below$(br2)23 nodes wait behind it."
+      "text": "$(bold)Bars ring 9: Industry.$(br2)$(li)$(thing)77 nodes$(n) owned$(br)$(li)$(thing)83 Focal Shards$(n)$(br)$(li)its task, below$(br2)27 nodes wait behind it."
     },
     {
       "type": "patchouli:text",

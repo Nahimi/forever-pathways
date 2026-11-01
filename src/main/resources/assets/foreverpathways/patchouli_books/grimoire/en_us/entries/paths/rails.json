@@ -2,13 +2,13 @@
   "name": "Rails",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:rail",
-  "sortnum": 500,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:rail",
       "title": "Rails",
-      "text": "$(bold)Rails and minecarts.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)13 Focal Shards$(n).$(br)After Ironworks."
+      "text": "$(bold)Rails and minecarts.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)13 Focal Shards$(n).$(br)After Ironworks."
     },
     {
       "type": "patchouli:crafting",

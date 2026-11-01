@@ -2,13 +2,13 @@
   "name": "Explorer",
   "category": "foreverpathways:paths/ranger",
   "icon": "waystones:waystone",
-  "sortnum": 500,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "waystones:waystone",
       "title": "Explorer",
-      "text": "$(bold)The waystones on the Monoliths answer you: wake them and travel between those you have woken. Making, placing and breaking waystones wait for Attunement. Needs Apothecary as well.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)18 Focal Shards$(n).$(br)After Cartographer and Apothecary."
+      "text": "$(bold)The waystones on the Monoliths answer you: wake them and travel between those you have woken. Making, placing and breaking waystones wait for Attunement. Needs Herbalist as well.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)18 Focal Shards$(n).$(br)After Cartographer and Herbalist."
     },
     {
       "type": "patchouli:text",

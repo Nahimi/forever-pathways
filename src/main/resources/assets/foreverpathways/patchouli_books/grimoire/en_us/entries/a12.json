@@ -34,7 +34,7 @@
     {
       "type": "patchouli:text",
       "title": "On the Ring",
-      "text": "$(bold)The shards, crystal, bottles and the seal are unlocked at $(l:paths/obsidian)Obsidian$(n), ring 6.$(br2)$(l:paths/nether)Nether$(n), ring 6, cannot be bought until you have used a seal."
+      "text": "$(bold)The shards, crystal, bottles and the seal are unlocked at $(l:paths/obsidian)Obsidian$(n), ring 5.$(br2)$(l:paths/nether)Nether$(n), ring 5, cannot be bought until you have used a seal."
     }
   ],
   "flag": "mod:nether_remastered"

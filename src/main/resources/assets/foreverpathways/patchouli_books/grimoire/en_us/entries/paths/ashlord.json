@@ -2,13 +2,13 @@
   "name": "Ashlord",
   "category": "foreverpathways:paths/ranger",
   "icon": "block_factorys_bosses:dragon_shank",
-  "sortnum": 1000,
+  "sortnum": 900,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "block_factorys_bosses:dragon_shank",
       "title": "Ashlord",
-      "text": "$(bold)Dragon bone armour, the guard shield and the largest blades.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)48 Focal Shards$(n).$(br)After Nerakyss."
+      "text": "$(bold)Dragon bone armour, the guard shield and the largest blades.$(br2)$(thing)Industry$(n), ring 9.$(br)$(thing)48 Focal Shards$(n).$(br)After Nerakyss."
     },
     {
       "type": "patchouli:text",

@@ -2,13 +2,13 @@
   "name": "Cartographer",
   "category": "foreverpathways:paths/ranger",
   "icon": "supplementaries:globe",
-  "sortnum": 400,
+  "sortnum": 300,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "supplementaries:globe",
       "title": "Cartographer",
-      "text": "$(bold)Globes, the altimeter, the cartographer's quill, slice maps and the recovery compass.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)10 Focal Shards$(n).$(br)After Scout."
+      "text": "$(bold)Globes, the altimeter, the cartographer's quill, slice maps and the recovery compass, with the arms and keepsakes Vaskar's Remains leaves on the dead you find. The bodies and graves themselves can always be searched.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)12 Focal Shards$(n).$(br)After Scout."
     },
     {
       "type": "patchouli:crafting",

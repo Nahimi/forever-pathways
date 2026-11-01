@@ -2,13 +2,13 @@
   "name": "Roadwise",
   "category": "foreverpathways:paths/ranger",
   "icon": "minecraft:map",
-  "sortnum": 900,
+  "sortnum": 800,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:map",
       "title": "Roadwise",
-      "text": "$(bold)You know the ground before you reach it. +2% movement speed.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)40 Focal Shards$(n).$(br)After Fleet Foot."
+      "text": "$(bold)You know the ground before you reach it. +2% movement speed.$(br2)$(thing)Ashen Age$(n), ring 8.$(br)$(thing)40 Focal Shards$(n).$(br)After Fleet Foot."
     },
     {
       "type": "patchouli:text",

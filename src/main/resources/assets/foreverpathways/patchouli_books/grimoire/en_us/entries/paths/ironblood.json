@@ -2,13 +2,13 @@
   "name": "Ironblood",
   "category": "foreverpathways:paths/constitution",
   "icon": "minecraft:iron_chestplate",
-  "sortnum": 500,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:iron_chestplate",
       "title": "Ironblood",
-      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)28 Focal Shards$(n).$(br)After Second Wind."
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)28 Focal Shards$(n).$(br)After Second Wind."
     },
     {
       "type": "patchouli:text",

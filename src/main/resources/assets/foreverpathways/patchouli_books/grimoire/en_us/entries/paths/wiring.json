@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "powergrid:copper_cord",
       "title": "Wiring",
-      "text": "$(bold)The first electricity: cord, wire of every metal, junctions, connectors, pins, the wire cutter and the potato battery. Needs Copper Tools as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)16 Focal Shards$(n).$(br)After Technician and Copper Tools."
+      "text": "$(bold)The first electricity: cord, wire of every metal, junctions, connectors, pins, the wire cutter and the potato battery. Needs Technician as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)16 Focal Shards$(n).$(br)After Builder and Technician."
     },
     {
       "type": "patchouli:text",

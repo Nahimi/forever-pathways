@@ -2,13 +2,13 @@
   "name": "Champion",
   "category": "foreverpathways:paths/ranger",
   "icon": "minecraft:netherite_sword",
-  "sortnum": 900,
+  "sortnum": 800,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:netherite_sword",
       "title": "Champion",
-      "text": "$(bold)The Nether's fighters fall to you. +15% attack damage.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)40 Focal Shards$(n).$(br)After Warrior."
+      "text": "$(bold)The Nether's fighters fall to you. +15% attack damage.$(br2)$(thing)Ashen Age$(n), ring 8.$(br)$(thing)40 Focal Shards$(n).$(br)After Warrior."
     },
     {
       "type": "patchouli:text",

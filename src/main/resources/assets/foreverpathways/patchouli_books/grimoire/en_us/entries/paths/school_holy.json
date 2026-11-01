@@ -2,13 +2,13 @@
   "name": "Holy",
   "category": "foreverpathways:paths/magician",
   "icon": "irons_spellbooks:holy_rune",
-  "sortnum": 1000,
+  "sortnum": 900,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:holy_rune",
       "title": "Holy",
-      "text": "$(bold)The holy rune, upgrade orb, affinity ring and scroll, and the healing spellbooks of Creatures and Beasts. You may master three schools until Archmage.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)54 Focal Shards$(n).$(br)After Arcane Essence."
+      "text": "$(bold)The holy rune, upgrade orb, affinity ring and scroll, and the healing spellbooks of Creatures and Beasts. You may master three schools until Archmage.$(br2)$(thing)Industry$(n), ring 9.$(br)$(thing)54 Focal Shards$(n).$(br)After Arcane Essence."
     },
     {
       "type": "patchouli:text",

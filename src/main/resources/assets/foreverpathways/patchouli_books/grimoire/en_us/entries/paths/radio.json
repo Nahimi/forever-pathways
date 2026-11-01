@@ -2,13 +2,13 @@
   "name": "Radio",
   "category": "foreverpathways:paths/technician",
   "icon": "simpleradio:radio",
-  "sortnum": 600,
+  "sortnum": 500,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "simpleradio:radio",
       "title": "Radio",
-      "text": "$(bold)Radios, antennas, microphones, speakers, transmitters and receivers, and the modules. Needs Redstone as well.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)28 Focal Shards$(n).$(br)After Gearing and Redstone."
+      "text": "$(bold)Radios, antennas, microphones, speakers, transmitters and receivers, and the modules. Needs Redstone as well.$(br2)$(thing)Diamond Age$(n), ring 5.$(br)$(thing)28 Focal Shards$(n).$(br)After Technician and Redstone."
     },
     {
       "type": "patchouli:crafting",

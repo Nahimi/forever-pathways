@@ -8,7 +8,12 @@
       "type": "patchouli:spotlight",
       "item": "legendarysurvivaloverhaul:tonic",
       "title": "Herbalist",
-      "text": "$(bold)Bandages, tonics, the large canteen and the water plants that refill it.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)5 Focal Shards$(n).$(br)After Forager."
+      "text": "$(bold)Bandages, plasters, first aid supplies and tonics, the large canteen and the water plants that refill it.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)6 Focal Shards$(n).$(br)After Forager."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind."
     }
   ],
   "flag": "mod:legendarysurvivaloverhaul"

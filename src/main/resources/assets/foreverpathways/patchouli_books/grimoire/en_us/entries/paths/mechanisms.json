@@ -2,13 +2,13 @@
   "name": "Mechanisms",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:piston",
-  "sortnum": 700,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:piston",
       "title": "Mechanisms",
-      "text": "$(bold)Pistons, observers, hoppers, droppers, dispensers, the crafter, sculk sensors and slime blocks.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)20 Focal Shards$(n).$(br)After Redstone."
+      "text": "$(bold)Pistons, observers, hoppers, droppers, dispensers, the crafter, sculk sensors and slime blocks.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)18 Focal Shards$(n).$(br)After Redstone."
     },
     {
       "type": "patchouli:crafting",

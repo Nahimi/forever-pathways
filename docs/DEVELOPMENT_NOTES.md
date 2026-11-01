@@ -8,10 +8,11 @@ back to your inventory or any other tab.
 ## How it plays
 
 - **Rings.** The Core sits in the middle. Four paths start on ring 1: Survivor, Ranger, Builder and
-  Homesteader. The Technician grows out of the Builder on ring 2 and the Magician out of the
-  Apothecary on ring 6. Rings 1 to 14 are tiers (Stone Age, Copper Age, Iron Age, Hearth, Gilded Age, Diamond Age, The Deep, The
-  Nether, Ashen Age, Industry, Relics, Flight, The Arcane, High Voltage). Ring 15 holds the sixteen
-  End Remastered eyes.
+  Homesteader. The Technician grows out of the Builder on ring 3 and the Magician out of the
+  Herbalist on ring 5. Rings 1 to 11 are tiers (Stone Age, Copper Age, Iron Age, Gilded Age, Diamond Age, The Deep, The
+  Nether, Ashen Age, Industry, Relics, The Arcane). Ring 12 holds the sixteen End Remastered eyes.
+  Nodes folded into others are listed under `merged` in tree.json; their stages stay defined, hidden,
+  so Merges can hand owners the node they became.
 - **Seals.** Seven seals lock everything from ring 2 outwards. Each one is drawn as a shaded band
   over exactly the rings it covers, with a padlock at twelve o'clock. Some cover one ring, some
   cover two. A seal needs a **Pathway Level** (the number of nodes you own) and one large task.

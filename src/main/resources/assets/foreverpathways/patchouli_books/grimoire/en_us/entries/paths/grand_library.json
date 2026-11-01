@@ -2,13 +2,13 @@
   "name": "Grand Library",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:chiseled_bookshelf",
-  "sortnum": 1000,
+  "sortnum": 900,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:chiseled_bookshelf",
       "title": "Grand Library",
-      "text": "$(bold)The full table: offers up to level 30, and every enchantment the game can roll.$(br2)$(thing)Industry$(n), ring 10.$(br)$(thing)48 Focal Shards$(n).$(br)After Library."
+      "text": "$(bold)The full table: offers up to level 30, and every enchantment the game can roll.$(br2)$(thing)Industry$(n), ring 9.$(br)$(thing)48 Focal Shards$(n).$(br)After Library."
     },
     {
       "type": "patchouli:text",

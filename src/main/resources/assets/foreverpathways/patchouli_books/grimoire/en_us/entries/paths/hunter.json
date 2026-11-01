@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:bow",
       "title": "Hunter",
-      "text": "$(bold)Bows and arrows. Taking Hunter closes Scout.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)8 Focal Shards$(n).$(br)After Ranger."
+      "text": "$(bold)Bows, arrows, the crossbow and the fletching table. Taking Hunter closes Scout.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)10 Focal Shards$(n).$(br)After Ranger."
     },
     {
       "type": "patchouli:text",
@@ -28,7 +28,7 @@
     {
       "type": "patchouli:text",
       "title": "Unlocks",
-      "text": "$(bold)bow, arrow."
+      "text": "$(bold)bow, arrow, crossbow, fletching table."
     }
   ]
 }

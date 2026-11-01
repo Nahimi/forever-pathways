@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.39.0
+
+- Twelve ages instead of fifteen. Hearth folds into the Iron Age, Flight into Relics and High Voltage into The Arcane;
+  the eyes are now ring 12. Seals ask the same share of nodes as before.
+- 25 nodes that unlocked too little are merged into their neighbours (287 to 262), so every node opens something:
+  - Iron holds iron ore, ingots and iron tools; Gold, Diamond and Netherite hold their own tools and armour.
+  - Technician, now ring 3, holds gearboxes, water wheels and the millstone, so the first Create node turns
+    something; Andesite Casing holds the fan and depot.
+  - Hunter holds the crossbow; Cartographer holds the Relics of the Fallen; Tack holds horse armour and the medkit;
+    Brewing holds tipped arrows; Alchemy holds the elixirs; Arcane Essence holds runes; Grand Magus holds the
+    Eldritch school; Talkies holds both radios; Chimneys holds flues and pumps; Gardener holds the apiary;
+    Husbandry holds animal feed; Herbalist holds plasters and first aid; Infirmary holds Dreaming.
+- Redstone (with the compass and clock) moves to the Iron Age, Mechanisms to the Gilded Age and Explosives to the
+  Diamond Age; Create's press, mixer, belts and crushing come one age earlier.
+- Players who owned a merged node are given the node it became the first time they log in, or their shards back if
+  they own it already.
+- A node never hangs from another on its own ring; it hangs from an inner node and needs the other as well, so no
+  two nodes are drawn on top of each other. The inner rings are spaced wider to fit the fuller Iron Age.
+- The Grimoire's ring map is redrawn for twelve rings.
+
 ## 0.38.1
 
 - Bakery no longer catches all of Create Ratatouille. Sausages, casings and mince move to Charcuterie; compost,

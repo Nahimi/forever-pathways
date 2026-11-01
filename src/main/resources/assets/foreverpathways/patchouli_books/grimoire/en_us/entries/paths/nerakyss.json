@@ -2,13 +2,13 @@
   "name": "Nerakyss",
   "category": "foreverpathways:paths/ranger",
   "icon": "block_factorys_bosses:kraken_trident",
-  "sortnum": 800,
+  "sortnum": 700,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "block_factorys_bosses:kraken_trident",
       "title": "Nerakyss",
-      "text": "$(bold)The kraken trident, its cannon, the undying tentacle and the trident. Needs Sirok as well.$(br2)$(thing)The Nether$(n), ring 8.$(br)$(thing)34 Focal Shards$(n).$(br)After Skor and Sirok."
+      "text": "$(bold)The kraken trident, its cannon, the undying tentacle and the trident. Needs Sirok as well.$(br2)$(thing)The Nether$(n), ring 7.$(br)$(thing)34 Focal Shards$(n).$(br)After Skor and Sirok."
     },
     {
       "type": "patchouli:text",

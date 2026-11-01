@@ -2,13 +2,13 @@
   "name": "Schematics",
   "category": "foreverpathways:paths/builder",
   "icon": "create:schematicannon",
-  "sortnum": 900,
+  "sortnum": 800,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "create:schematicannon",
       "title": "Schematics",
-      "text": "$(bold)The schematic table, the schematicannon and schematics. Needs Brass as well.$(br2)$(thing)Ashen Age$(n), ring 9.$(br)$(thing)39 Focal Shards$(n).$(br)After Atelier and Brass."
+      "text": "$(bold)The schematic table, the schematicannon and schematics. Needs Brass as well.$(br2)$(thing)Ashen Age$(n), ring 8.$(br)$(thing)39 Focal Shards$(n).$(br)After Atelier and Brass."
     },
     {
       "type": "patchouli:crafting",

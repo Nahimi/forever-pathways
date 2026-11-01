@@ -2,18 +2,24 @@
   "name": "Andesite Casing",
   "category": "foreverpathways:paths/technician",
   "icon": "create:andesite_casing",
-  "sortnum": 400,
+  "sortnum": 300,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "create:andesite_casing",
       "title": "Andesite Casing",
-      "text": "$(bold)Andesite casing and the encased shafts and cogs. The workshop starts here.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)16 Focal Shards$(n).$(br)After Waterworks."
+      "text": "$(bold)Andesite casing and the encased shafts and cogs, with the encased fan and the depot for washing, smoking and blasting. Needs Technician as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)16 Focal Shards$(n).$(br)After Builder and Technician."
     },
     {
       "type": "patchouli:text",
       "title": "Task",
       "text": "$(bold)$(thing)Mine 192 andesite$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "create:crafting/kinetics/depot",
+      "text": "$(bold)Depot",
+      "flag": "mod:create"
     }
   ],
   "flag": "mod:create"

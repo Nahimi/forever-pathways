@@ -2,13 +2,13 @@
   "name": "Angler",
   "category": "foreverpathways:paths/homesteader",
   "icon": "minecraft:cod_bucket",
-  "sortnum": 500,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:cod_bucket",
       "title": "Angler",
-      "text": "$(bold)Fish buckets of every kind, and turtle and nautilus finds. +5% boat speed.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)11 Focal Shards$(n).$(br)After Larder."
+      "text": "$(bold)Fish buckets of every kind, and turtle and nautilus finds. +5% boat speed.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)11 Focal Shards$(n).$(br)After Larder."
     },
     {
       "type": "patchouli:text",

@@ -7,7 +7,7 @@
     {
       "type": "patchouli:text",
       "title": "Seal of the Arcane",
-      "text": "$(bold)Bars rings 13 to 14: The Arcane and High Voltage.$(br2)$(li)$(thing)111 nodes$(n) owned$(br)$(li)$(thing)108 Focal Shards$(n)$(br)$(li)its task, below$(br2)9 nodes wait behind it."
+      "text": "$(bold)Bars ring 11: The Arcane.$(br2)$(li)$(thing)101 nodes$(n) owned$(br)$(li)$(thing)108 Focal Shards$(n)$(br)$(li)its task, below$(br2)7 nodes wait behind it."
     },
     {
       "type": "patchouli:text",

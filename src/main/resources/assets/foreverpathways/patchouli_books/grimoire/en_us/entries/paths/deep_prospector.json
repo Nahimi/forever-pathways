@@ -2,13 +2,13 @@
   "name": "Deep Prospector",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:deepslate_gold_ore",
-  "sortnum": 400,
+  "sortnum": 300,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:deepslate_gold_ore",
       "title": "Deep Prospector",
-      "text": "$(bold)Gold, redstone, lapis and diamond ore, and the sculk of the deep dark. You can mine them now; what they give opens further out.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)14 Focal Shards$(n).$(br)After Iron."
+      "text": "$(bold)Gold, redstone, lapis and diamond ore, and the sculk of the deep dark. You can mine them now; what they give opens further out. Needs Iron as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)14 Focal Shards$(n).$(br)After Copper Tools and Iron."
     },
     {
       "type": "patchouli:text",

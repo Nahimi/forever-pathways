@@ -2,13 +2,18 @@
   "name": "Hearth",
   "category": "foreverpathways:paths/homesteader",
   "icon": "hearthandharvest:cherry_pie",
-  "sortnum": 400,
+  "sortnum": 300,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "hearthandharvest:cherry_pie",
       "title": "Hearth",
-      "text": "$(bold)The rest of Hearth and Harvest: pies, cakes and pizzas, sweets and snacks, cheese and butter, and its counters, drawers, cabinets and sink.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)7 Focal Shards$(n).$(br)After Kitchen."
+      "text": "$(bold)The rest of Hearth and Harvest: pies, cakes and pizzas, sweets and snacks, cheese and butter, and its counters, drawers, cabinets and sink. Needs Kitchen as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)7 Focal Shards$(n).$(br)After Gardener and Kitchen."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind."
     }
   ],
   "flag": "mod:hearthandharvest"

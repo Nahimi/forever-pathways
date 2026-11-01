@@ -29,7 +29,7 @@
     {
       "type": "patchouli:text",
       "title": "Where They Unlock",
-      "text": "$(bold)$(li)$(l:paths/post)Post$(n), ring 3: letters, mailbox, pigeonholes, paper boxes.$(br)$(li)$(l:paths/parcels)Parcels$(n), ring 4: packages, seal stamps, payback tags.$(br)$(li)Create's $(l:paths/packaging)Packaging$(n), ring 9, builds on Parcels."
+      "text": "$(bold)$(li)$(l:paths/post)Post$(n), ring 3: letters, mailbox, pigeonholes, paper boxes.$(br)$(li)$(l:paths/parcels)Parcels$(n), ring 3: packages, seal stamps, payback tags.$(br)$(li)Create's $(l:paths/packaging)Packaging$(n), ring 8, builds on Parcels."
     }
   ],
   "flag": "mod:envelope"

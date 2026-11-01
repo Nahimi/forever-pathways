@@ -2,19 +2,24 @@
   "name": "Chimneys",
   "category": "foreverpathways:paths/builder",
   "icon": "adchimneys:small_brick_chimney",
-  "sortnum": 400,
+  "sortnum": 300,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "adchimneys:small_brick_chimney",
       "title": "Chimneys",
-      "text": "$(bold)Stone, cobblestone and brick chimneys: smoke leaves the roof instead of the room.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)14 Focal Shards$(n).$(br)After Brickwork."
+      "text": "$(bold)Stone, cobblestone, brick, glass and metal chimneys, with pipes, ducts, vents and pumps: smoke leaves the roof instead of the room. Needs Brickwork as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)14 Focal Shards$(n).$(br)After Polished Stone and Brickwork."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "adchimneys:small_brick_chimney",
       "text": "$(bold)Small brick chimney",
       "flag": "mod:adchimneys"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind."
     }
   ],
   "flag": "mod:adchimneys"

@@ -73,6 +73,14 @@ public final class StageWriter {
                 files.put(folder.resolve("rules.toml"), rulesToml(node, owned));
             }
         }
+        // A merged node's stage stays, hidden and locking nothing, so its owners can be handed what it became.
+        for (Map.Entry<String, Tree.Merge> merge : tree.merged.entrySet()) {
+            String old = merge.getKey();
+            if (tree.find(old) == null) {
+                files.put(stagesRoot.resolve(FOLDER_PREFIX + old.substring(old.indexOf(':') + 1)).resolve("stage.toml"),
+                        mergedToml(old, merge.getValue()));
+            }
+        }
         String hash = hash(files);
         Path hashFile = ownRoot.resolve("stages.sha1");
         try {
@@ -93,6 +101,9 @@ public final class StageWriter {
                 if (!files.containsKey(rules)) {
                     Files.deleteIfExists(rules);
                 }
+            }
+            for (String old : tree.merged.keySet()) {
+                Files.deleteIfExists(stagesRoot.resolve(FOLDER_PREFIX + old.substring(old.indexOf(':') + 1)).resolve("rules.toml"));
             }
             int removed = removeStale(stagesRoot, folders);
             Files.writeString(hashFile, hash);
@@ -326,6 +337,34 @@ public final class StageWriter {
                 + "slot_policy = \"deny\"\n"
                 + "duration = \"\"\n"
                 + "hidden = false\n"
+                + "scope = \"team\"\n"
+                + "tags = [\"" + TAG + "\"]\n\n"
+                + "[display]\n"
+                + "x = 0.0\n"
+                + "y = 0.0\n"
+                + "frame = \"task\"\n"
+                + "reveal = \"dependencies\"\n"
+                + "background = \"minecraft:textures/gui/advancements/backgrounds/stone.png\"\n";
+    }
+
+    private static String mergedToml(String id, Tree.Merge merge) {
+        return "[schema]\n"
+                + "version = 4\n\n"
+                + "[stage]\n"
+                + "id = " + quote(id) + "\n"
+                + "display_name = " + quote(merge.title == null ? id : merge.title) + "\n"
+                + "description = " + quote("Now part of " + merge.into + ".") + "\n"
+                + "icon = \"minecraft:barrier\"\n"
+                + "dependencies = []\n"
+                + "dependency_mode = \"all\"\n"
+                + "dependency_count = 1\n"
+                + "category = \"Merged\"\n"
+                + "color = \"#C4A574\"\n"
+                + "slot_group = \"\"\n"
+                + "slot_limit = 0\n"
+                + "slot_policy = \"deny\"\n"
+                + "duration = \"\"\n"
+                + "hidden = true\n"
                 + "scope = \"team\"\n"
                 + "tags = [\"" + TAG + "\"]\n\n"
                 + "[display]\n"

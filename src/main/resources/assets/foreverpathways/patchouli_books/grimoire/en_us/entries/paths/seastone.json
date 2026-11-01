@@ -2,13 +2,13 @@
   "name": "Seastone",
   "category": "foreverpathways:paths/builder",
   "icon": "minecraft:prismarine_bricks",
-  "sortnum": 700,
+  "sortnum": 600,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:prismarine_bricks",
       "title": "Seastone",
-      "text": "$(bold)Prismarine, dark prismarine, sea lanterns and Spawn's worked reefstone.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)36 Focal Shards$(n).$(br)After Glazed Terracotta and Concrete."
+      "text": "$(bold)Prismarine, dark prismarine, sea lanterns and Spawn's worked reefstone.$(br2)$(thing)The Deep$(n), ring 6.$(br)$(thing)36 Focal Shards$(n).$(br)After Glazed Terracotta and Concrete."
     },
     {
       "type": "patchouli:text",

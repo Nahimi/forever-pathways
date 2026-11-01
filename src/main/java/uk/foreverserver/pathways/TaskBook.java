@@ -98,6 +98,7 @@ public final class TaskBook {
         // Every time, not only on the first: if ProgressiveStages had no stages loaded then, the grant
         // failed and would otherwise never be tried again.
         PathwayService.ensureCore(player);
+        Merges.apply(player, tree);
         payStreak(player, tree);
         Set<String> owned = owned(player, tree);
         updateTasks(player, tree, owned);

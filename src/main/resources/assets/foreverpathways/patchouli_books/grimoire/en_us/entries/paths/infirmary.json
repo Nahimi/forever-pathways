@@ -2,18 +2,29 @@
   "name": "Infirmary",
   "category": "foreverpathways:paths/homesteader",
   "icon": "legendarysurvivaloverhaul:medkit",
-  "sortnum": 600,
+  "sortnum": 500,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "legendarysurvivaloverhaul:medkit",
       "title": "Infirmary",
-      "text": "$(bold)Medkits and morphine, the last word in field medicine.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)15 Focal Shards$(n).$(br)After Apothecary."
+      "text": "$(bold)Medkits and morphine, with the night bag, dreamer's essence and the bedbug eggs. An infested bed is cleaned with a splash potion of Harming.$(br2)$(thing)Diamond Age$(n), ring 5.$(br)$(thing)15 Focal Shards$(n).$(br)After Herbalist."
     },
     {
       "type": "patchouli:text",
       "title": "Task",
       "text": "$(bold)$(thing)Breed 120 animals$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "sleep_tight:dreamer_essence",
+      "text": "$(bold)Dreamer essence",
+      "flag": "mod:sleep_tight"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)everything else of its kind."
     }
   ],
   "flag": "mod:legendarysurvivaloverhaul"

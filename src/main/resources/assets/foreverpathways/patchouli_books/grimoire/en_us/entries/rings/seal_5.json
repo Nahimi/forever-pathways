@@ -7,7 +7,7 @@
     {
       "type": "patchouli:text",
       "title": "Seal of Gold",
-      "text": "$(bold)Bars rings 5 to 6: Gilded Age and Diamond Age.$(br2)$(li)$(thing)35 nodes$(n) owned$(br)$(li)$(thing)35 Focal Shards$(n)$(br)$(li)its task, below$(br2)47 nodes wait behind it."
+      "text": "$(bold)Bars rings 4 to 5: Gilded Age and Diamond Age.$(br2)$(li)$(thing)30 nodes$(n) owned$(br)$(li)$(thing)35 Focal Shards$(n)$(br)$(li)its task, below$(br2)52 nodes wait behind it."
     },
     {
       "type": "patchouli:text",

@@ -2,13 +2,13 @@
   "name": "Sure Foot",
   "category": "foreverpathways:paths/ranger",
   "icon": "minecraft:golden_boots",
-  "sortnum": 500,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:golden_boots",
       "title": "Sure Foot",
-      "text": "$(bold)You stumble less than you did. +2% movement speed.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)18 Focal Shards$(n).$(br)After Long Stride."
+      "text": "$(bold)You stumble less than you did. +2% movement speed.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)18 Focal Shards$(n).$(br)After Long Stride."
     },
     {
       "type": "patchouli:text",

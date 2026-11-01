@@ -2,13 +2,13 @@
   "name": "Veteran",
   "category": "foreverpathways:paths/ranger",
   "icon": "minecraft:iron_sword",
-  "sortnum": 500,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:iron_sword",
       "title": "Veteran",
-      "text": "$(bold)Scarred, and better for it. +10% attack damage.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)18 Focal Shards$(n).$(br)After Brawler."
+      "text": "$(bold)Scarred, and better for it. +10% attack damage.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)18 Focal Shards$(n).$(br)After Brawler."
     },
     {
       "type": "patchouli:text",

@@ -2,13 +2,13 @@
   "name": "Darkroom",
   "category": "foreverpathways:paths/builder",
   "icon": "exposure:camera",
-  "sortnum": 500,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "exposure:camera",
       "title": "Darkroom",
-      "text": "$(bold)Cameras, film, the lightroom, photographs, frames, albums and the projector.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)16 Focal Shards$(n).$(br)After Glassworks."
+      "text": "$(bold)Cameras, film, the lightroom, photographs, frames, albums and the projector.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)16 Focal Shards$(n).$(br)After Glassworks."
     },
     {
       "type": "patchouli:crafting",

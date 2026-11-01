@@ -101,7 +101,7 @@ CHAPTERS = [
         {"type": "patchouli:text",
          "title": "Lanterns and Oil",
          "flag": "mod:hardcore_torches",
-         "text": "Lanterns burn fuel too, and are refilled with an $(thing)oil can$(): coal or animal fat. A fire starter will not light them; use a torch, campfire or flint and steel.$(br2)$(li)Lanterns and the oil can: $(l:paths/ironworks)Ironworks$(), ring 4.$(br)$(li)Animal fat: $(l:paths/husbandry)Husbandry$(), ring 2.$(br)$(li)The bandolier carries torches: Ironworks, ring 4."},
+         "text": "Lanterns burn fuel too, and are refilled with an $(thing)oil can$(): coal or animal fat. A fire starter will not light them; use a torch, campfire or flint and steel.$(br2)$(li)Lanterns and the oil can: $(l:paths/ironworks)Ironworks$(), ring 3.$(br)$(li)Animal fat: $(l:paths/husbandry)Husbandry$(), ring 2.$(br)$(li)The bandolier carries torches: Ironworks, ring 4."},
         {"type": "patchouli:text",
          "title": "Campfires and Stoves",
          "flag": "mod:hardcore_torches",
@@ -122,7 +122,7 @@ CHAPTERS = [
          "images": ["foreverpathways:textures/gui/book/rings.png"], "border": False,
          "text": "Each dot is a node, coloured by road. Red rings are sealed."},
         {"type": "patchouli:text", "title": "Rings and Seals",
-         "text": "$(li)15 rings out from the Core; cost climbs with the ring.$(br)"
+         "text": "$(li)12 rings out from the Core; cost climbs with the ring.$(br)"
                  "$(li)A node needs the node before it, and its ring unsealed.$(br)"
                  "$(li)A seal needs a count of nodes owned, shards, and its own task.$(br)"
                  "$(li)Any node counts towards a seal, whatever road it is on."},
@@ -183,13 +183,13 @@ BEYOND = [
         "$(li)Sleeping in the same bed makes it a $(thing)home bed$(), which gives more back each "
         "night.$(br)"
         "$(li)Hammocks for a camp: $(l:paths/furnishings)Furnishings$(), ring 3.$(br)"
-        "$(li)Night bag for the road: $(l:paths/dreaming)Dreaming$(), ring 9.",
+        "$(li)Night bag for the road: $(l:paths/infirmary)Infirmary$(), ring 5.",
         {"type": "patchouli:text", "title": "Infested Beds",
          "text": "$(#8A3B2F)Mansion beds are often infested.$() Sleep in one and bedbugs wake "
                  "you.$(br2)"
                  "$(li)Break it and make another; you lose what that bed had become.$(br)"
                  "$(li)Or throw a $(thing)splash potion of Harming$() at it. Needs "
-                 "$(l:paths/brewing)Brewing$(), ring 9."},
+                 "$(l:paths/brewing)Brewing$(), ring 8."},
     ]),
     ("a2", "A2. Thirst & Cold", "legendarysurvivaloverhaul:canteen", 2,
      "mod:legendarysurvivaloverhaul", [
@@ -198,8 +198,8 @@ BEYOND = [
         "$(li)Wounds want $(thing)bandages$(), then $(thing)plasters$().$(br)"
         "$(li)Heat and cold both kill. Seasons turn.",
         {"type": "patchouli:text", "title": "Climate Gear",
-         "text": "$(li)$(l:paths/climate_1)Climate Gear I$(), ring 4: coats, heater, cooler.$(br)"
-                 "$(li)$(l:paths/climate_2)Climate Gear II$(), ring 6: better coats, resistance "
+         "text": "$(li)$(l:paths/climate_1)Climate Gear I$(), ring 3: coats, heater, cooler.$(br)"
+                 "$(li)$(l:paths/climate_2)Climate Gear II$(), ring 5: better coats, resistance "
                  "rings.$(br)"
                  "$(li)$(l:paths/climate_3)Climate Gear III$(): the last grade."},
     ]),
@@ -212,61 +212,61 @@ BEYOND = [
                  "$(li)$(thing)Skinning knife$(): hide and fur.$(br)"
                  "$(li)$(thing)Hammer$(): the rest.$(br2)"
                  "Bone and copper: $(l:paths/husbandry)Husbandry$(), ring 2. Iron and gold: "
-                 "$(l:paths/butcher_tools)Butcher's Steel$(), ring 5."},
+                 "$(l:paths/butcher_tools)Butcher's Steel$(), ring 4."},
         {"type": "patchouli:text", "title": "Further Out",
-         "text": "$(li)$(l:paths/abattoir)Abattoir$(), ring 5: cuts, blood work, the grinder.$(br)"
-                 "$(li)$(l:paths/charcuterie)Charcuterie$(), ring 6: sausage, ham, salami.$(br)"
-                 "$(li)$(l:paths/taxidermy)Taxidermy$(), ring 6: heads, skeletons, furs.$(br)"
-                 "$(li)$(l:paths/butchers_shop)Butcher's Shop$(), ring 6: displays and counters."},
+         "text": "$(li)$(l:paths/abattoir)Abattoir$(), ring 4: cuts, blood work, the grinder.$(br)"
+                 "$(li)$(l:paths/charcuterie)Charcuterie$(), ring 5: sausage, ham, salami.$(br)"
+                 "$(li)$(l:paths/taxidermy)Taxidermy$(), ring 5: heads, skeletons, furs.$(br)"
+                 "$(li)$(l:paths/butchers_shop)Butcher's Shop$(), ring 5: displays and counters."},
     ]),
     ("a4", "A4. Machines", "create:cogwheel", 4, "mod:create", [
         "Create turns rotation into work; shafts and cogs carry it.$(br2)"
-        "$(li)$(l:paths/gearing)Gearing$(), ring 3: cogs, gearboxes.$(br)"
-        "$(li)$(l:paths/waterworks)Waterworks$(), ring 4: water wheels.$(br)"
-        "$(li)$(l:paths/mechanisms)Mechanisms$(), ring 7, then belts, crushing, fluids.$(br)"
-        "$(li)$(l:paths/brass)Brass$(), ring 8: the second half of the mod.",
+        "$(li)$(l:paths/technician)Technician$(), ring 3: cogs, gearboxes, water wheels, the millstone.$(br)"
+        "$(li)$(l:paths/casing)Andesite Casing$(), ring 3: casing, fans and depots.$(br)"
+        "$(li)$(l:paths/mechanisms)Mechanisms$(), ring 4, then belts, crushing, fluids.$(br)"
+        "$(li)$(l:paths/brass)Brass$(), ring 7: the second half of the mod.",
     ]),
     ("a5", "A5. Electricity", "powergrid:copper_cord", 5, "mod:powergrid", [
         "Separate from Create, and it starts earlier.$(br2)"
         "$(li)$(l:paths/wiring)Wiring$(), ring 3: cord, wire, potato battery.$(br)"
-        "$(li)$(l:paths/lighting_rig)Lighting Rig$(), ring 4: bulbs, meters.$(br)"
-        "$(li)$(l:paths/power_grid)Power Grid$(), ring 10: generators, motors.$(br)"
-        "$(li)$(l:paths/high_voltage)High Voltage$(), ring 14: the end of it.",
+        "$(li)$(l:paths/lighting_rig)Lighting Rig$(), ring 3: bulbs, meters.$(br)"
+        "$(li)$(l:paths/power_grid)Power Grid$(), ring 9: generators, motors.$(br)"
+        "$(li)$(l:paths/high_voltage)High Voltage$(), ring 11: the end of it.",
     ]),
     ("a6", "A6. Magic", "irons_spellbooks:wimpy_spell_book", 6, "mod:irons_spellbooks", [
         "Late, and dearer: every magic node costs half again a machine on the same ring.$(br2)"
-        "$(li)$(l:paths/magician)Magician$(), ring 6: books, scrolls, ink.$(br)"
-        "$(li)$(l:paths/study)Study$(), $(l:paths/alchemy)Alchemy$(), ring 7.$(br)"
-        "$(li)Eight schools, ring 10. $(thing)You may learn three.$(br)"
-        "$(li)Robes 11, relics 12, Eldritch 13, Grand Magus 14.",
+        "$(li)$(l:paths/magician)Magician$(), ring 5: books, scrolls, ink.$(br)"
+        "$(li)$(l:paths/study)Study$(), $(l:paths/alchemy)Alchemy$(), ring 6.$(br)"
+        "$(li)Eight schools, ring 9. $(thing)You may learn three.$(br)"
+        "$(li)Robes and relics 10, Eldritch and Grand Magus 11.",
         {"type": "patchouli:text", "title": "Enchanting",
          "text": "Capped by your nodes.$(br2)"
-                 "$(li)$(l:paths/enchant)Enchanting$(), ring 7: level 5.$(br)"
-                 "$(li)$(l:paths/library)Library$(), ring 9: level 15.$(br)"
-                 "$(li)$(l:paths/grand_library)Grand Library$(), ring 10: level 30."},
+                 "$(li)$(l:paths/enchant)Enchanting$(), ring 6: level 5.$(br)"
+                 "$(li)$(l:paths/library)Library$(), ring 8: level 15.$(br)"
+                 "$(li)$(l:paths/grand_library)Grand Library$(), ring 9: level 30."},
     ]),
     ("a7", "A7. Getting About", "waystones:waystone", 7, "mod:waystones", [
         "$(li)$(thing)Horses$() take shoes, a cart and an upgraded saddle: "
         "$(l:paths/rider)Rider$(), $(l:paths/cartwright)Cartwright$(), $(l:paths/tack)Tack$().$(br)"
-        "$(li)$(thing)Trains$(): ring 9. $(thing)Airships$(): "
-        "$(l:paths/aeronautics)Aeronautics$(), ring 10.$(br2)"
-        "Your legs start at 85% and reach 110% only at ring 14. A horse is worth having early.",
+        "$(li)$(thing)Trains$(): ring 8. $(thing)Airships$(): "
+        "$(l:paths/aeronautics)Aeronautics$(), ring 9.$(br2)"
+        "Your legs start at 85% and reach 110% only at ring 11. A horse is worth having early.",
         {"type": "patchouli:text", "title": "The Monoliths",
          "text": "Great stones stand across the world, each holding a $(thing)waystone$().$(br2)"
                  "$(li)Right-click one to wake it.$(br)"
                  "$(li)From any woken waystone, travel to the others you have woken.$(br2)"
-                 "They answer you from $(l:paths/explorer)Explorer$(), ring 5."},
+                 "They answer you from $(l:paths/explorer)Explorer$(), ring 4."},
         {"type": "patchouli:text", "title": "Your Own Waystones",
-         "text": "$(li)$(l:paths/explorer)Explorer$(), ring 5: use the Monoliths' waystones. You cannot "
+         "text": "$(li)$(l:paths/explorer)Explorer$(), ring 4: use the Monoliths' waystones. You cannot "
                  "move or break them.$(br)"
-                 "$(li)$(l:paths/attunement)Attunement$(), ring 11: craft and place your own, with warp "
+                 "$(li)$(l:paths/attunement)Attunement$(), ring 10: craft and place your own, with warp "
                  "stones and scrolls.$(br)"
-                 "$(li)$(l:paths/warp_network)Warp Network$(), ring 13: sharestones, portstones and "
+                 "$(li)$(l:paths/warp_network)Warp Network$(), ring 11: sharestones, portstones and "
                  "warp plates."},
         {"type": "patchouli:crafting", "recipe": "waystones:waystone", "recipe2": "waystones:warp_stone",
          "title": "Waystone and Warp Stone"},
         {"type": "patchouli:text", "title": "Immersive Aircraft", "flag": "mod:immersive_aircraft",
-         "text": "Two nodes on the Ranger road, after Boatwright:$(br2)$(li)$(l:paths/aviator)Aviator$(), ring 6: the airship, gyrodyne, biplane and quadrocopter, and their parts.$(br)$(li)$(l:paths/air_fleet)Air Fleet$(), ring 9: the cargo airship, the warship, better engines and the weapons."},
+         "text": "Two nodes on the Ranger road, after Boatwright:$(br2)$(li)$(l:paths/aviator)Aviator$(), ring 5: the airship, gyrodyne, biplane and quadrocopter, and their parts.$(br)$(li)$(l:paths/air_fleet)Air Fleet$(), ring 8: the cargo airship, the warship, better engines and the weapons."},
     ]),
     ("a8", "A8. Smoke", "adchimneys:small_brick_chimney", 8, "mod:adchimneys", [
         "$(li)A $(thing)chimney$() vents smoke off the roof.$(br)"
@@ -274,9 +274,7 @@ BEYOND = [
         "$(li)$(thing)Vents$() release it where you want.$(br)"
         "$(li)$(thing)Pumps$() push it, and take a redstone signal.",
         {"type": "patchouli:text", "title": "Where They Unlock",
-         "text": "$(li)$(l:paths/chimneys)Chimneys$(), ring 4: stone, cobble, brick.$(br)"
-                 "$(li)$(l:paths/flues)Flues$(), ring 5: glass and metal, pipes, ducts, vents.$(br)"
-                 "$(li)$(l:paths/draught)Draught$(), ring 7: the pumps."},
+         "text": "$(li)$(l:paths/chimneys)Chimneys$(), ring 3: every chimney, pipe, duct, vent and pump."},
     ]),
     ("a9", "A9. Post & Pigeons", "envelope:mailbox", 9, "mod:envelope", [
         "$(li)Write with a $(thing)letter and quill$(). Pack items in a $(thing)paper box$().$(br)"
@@ -294,8 +292,8 @@ BEYOND = [
                  "Anything it sends back still obeys the ring: a locked item stays locked."},
         {"type": "patchouli:text", "title": "Where They Unlock",
          "text": "$(li)$(l:paths/post)Post$(), ring 3: letters, mailbox, pigeonholes, paper boxes.$(br)"
-                 "$(li)$(l:paths/parcels)Parcels$(), ring 4: packages, seal stamps, payback tags.$(br)"
-                 "$(li)Create's $(l:paths/packaging)Packaging$(), ring 9, builds on Parcels."},
+                 "$(li)$(l:paths/parcels)Parcels$(), ring 3: packages, seal stamps, payback tags.$(br)"
+                 "$(li)Create's $(l:paths/packaging)Packaging$(), ring 8, builds on Parcels."},
     ]),
     ("a10", "A10. Chalk", "chalk:chalk", 10, "mod:chalk", [
         "$(li)Use $(thing)chalk$() on a block to draw a mark. Mark the way out of a cave.$(br)"
@@ -320,35 +318,35 @@ BEYOND = [
         {"type": "patchouli:text", "title": "Hearth and Harvest", "flag": "mod:hearthandharvest",
          "text": "Three nodes on the Homesteader road:$(br2)"
                  "$(li)$(l:paths/hh_orchard)Orchard and Trellis$(), ring 3: crops, trellises and farm tools.$(br)"
-                 "$(li)$(l:paths/hh_hearth)Hearth$(), ring 4: pies, cakes, sweets, cheese and its kitchen furniture.$(br)"
-                 "$(li)$(l:paths/hh_cellar)Cellar$(), ring 5: casks, kegs, jams, pickles, juices and wine."},
+                 "$(li)$(l:paths/hh_hearth)Hearth$(), ring 3: pies, cakes, sweets, cheese and its kitchen furniture.$(br)"
+                 "$(li)$(l:paths/hh_cellar)Cellar$(), ring 4: casks, kegs, jams, pickles, juices and wine."},
         {"type": "patchouli:text", "title": "Vaskar's Remains", "flag": "mod:remains",
          "text": "The dead you find in the world can always be searched.$(br2)"
                  "What they carry, their old weapons, staves, crowns and keepsakes, is yours to use once you "
-                 "own $(l:paths/relics)Relics of the Fallen$(), ring 4 on the Ranger road."},
+                 "own $(l:paths/cartographer)Cartographer$(), ring 3 on the Ranger road."},
         {"type": "patchouli:text", "title": "Vaskar's Bestiary", "flag": "mod:bestiary",
-         "text": "$(li)$(l:paths/beast_lore)Beast Lore$(), ring 4: the hides, glands, scales and lair blocks "
+         "text": "$(li)$(l:paths/beast_lore)Beast Lore$(), ring 3: the hides, glands, scales and lair blocks "
                  "of its creatures. Kill three trolls first.$(br)"
-                 "$(li)$(l:paths/titans)Titans$(), ring 8: the trophies of the Deep Mother, Ember Heart, Ice "
+                 "$(li)$(l:paths/titans)Titans$(), ring 7: the trophies of the Deep Mother, Ember Heart, Ice "
                  "Colossus, Sand Maw and Trap Crown. Kill any one of them."},
         {"type": "patchouli:text", "title": "Legionary", "flag": "mod:legionary",
-         "text": "Kill the Unbreakable to open $(l:paths/unbreakable)The Unbreakable$(), ring 6 on the Ranger "
+         "text": "Kill the Unbreakable to open $(l:paths/unbreakable)The Unbreakable$(), ring 5 on the Ranger "
                  "road, for its cudgel, gold shards and the golden chains and lanterns."},
         {"type": "patchouli:text", "title": "L_Ender's Cataclysm", "flag": "mod:cataclysm",
-         "text": "Eight boss nodes on the Ranger road, one for each boss, each asking for its kill. The first road:$(br2)$(li)$(l:paths/cata_end)The Ender Guardian$(), ring 9.$(br)$(li)$(l:paths/cata_forge)The Netherite Monstrosity$(), ring 10.$(br)$(li)$(l:paths/cata_fire)Ignis$(), ring 11.$(br)$(li)$(l:paths/cata_void)The Harbinger$(), ring 12."},
+         "text": "Eight boss nodes on the Ranger road, one for each boss, each asking for its kill. The first road:$(br2)$(li)$(l:paths/cata_end)The Ender Guardian$(), ring 8.$(br)$(li)$(l:paths/cata_forge)The Netherite Monstrosity$(), ring 9.$(br)$(li)$(l:paths/cata_fire)Ignis$(), ring 10.$(br)$(li)$(l:paths/cata_void)The Harbinger$(), ring 10."},
         {"type": "patchouli:text", "title": "Cataclysm, Continued", "flag": "mod:cataclysm",
-         "text": "The second road:$(br2)$(li)$(l:paths/cata_desert)Ancient Remnant$(), ring 9.$(br)$(li)$(l:paths/cata_deep)The Leviathan$(), ring 10.$(br)$(li)$(l:paths/cata_cursed)Maledictus$(), ring 11.$(br)$(li)$(l:paths/cata_storm)Scylla$(), ring 12.$(br2)Each boss's lesser kin, such as the Kobolediator or the draugr, share their master's node."},
+         "text": "The second road:$(br2)$(li)$(l:paths/cata_desert)Ancient Remnant$(), ring 8.$(br)$(li)$(l:paths/cata_deep)The Leviathan$(), ring 9.$(br)$(li)$(l:paths/cata_cursed)Maledictus$(), ring 10.$(br)$(li)$(l:paths/cata_storm)Scylla$(), ring 10.$(br2)Each boss's lesser kin, such as the Kobolediator or the draugr, share their master's node."},
         {"type": "patchouli:text", "title": "Born in Chaos", "flag": "mod:born_in_chaos_v1",
-         "text": "Two nodes on the Ranger road:$(br2)$(li)$(l:paths/chaos)Born in Chaos$(), ring 5: dark metal, charms, elixirs and the blocks of its haunts. Kill 20 of its creatures first.$(br)$(li)$(l:paths/chaos_lords)Lords of Chaos$(), ring 8: the bosses' trophies. Kill any one of them."},
+         "text": "Two nodes on the Ranger road:$(br2)$(li)$(l:paths/chaos)Born in Chaos$(), ring 4: dark metal, charms, elixirs and the blocks of its haunts. Kill 20 of its creatures first.$(br)$(li)$(l:paths/chaos_lords)Lords of Chaos$(), ring 7: the bosses' trophies. Kill any one of them."},
         {"type": "patchouli:text", "title": "Cult of Azazel", "flag": "mod:netherman",
-         "text": "Kill the Divine Chariot Azazel to open $(l:paths/azazel)The Divine Chariot$(), ring 10 on the Ranger road, for its scythe, spear, shield and armour. Its samsonit halls and keys are at $(l:paths/nether)Nether$(). Azazel's kill is also the Evil Eye's task."},
+         "text": "Kill the Divine Chariot Azazel to open $(l:paths/azazel)The Divine Chariot$(), ring 9 on the Ranger road, for its scythe, spear, shield and armour. Its samsonit halls and keys are at $(l:paths/nether)Nether$(). Azazel's kill is also the Evil Eye's task."},
         {"type": "patchouli:text", "title": "Companions!", "flag": "mod:companions",
-         "text": "Kill the Sacred Pontiff or a Shade to open $(l:paths/saints_shades)Saints and Shades$(), ring 9 on the Ranger road, for crystallised blood arms and armour and the holy robes. The companions themselves, their puppets and the Shade altars are at $(l:paths/husbandry)Husbandry$(); the tesla machines at Redstone, the mage gear and spell books at Magician."},
+         "text": "Kill the Sacred Pontiff or a Shade to open $(l:paths/saints_shades)Saints and Shades$(), ring 8 on the Ranger road, for crystallised blood arms and armour and the holy robes. The companions themselves, their puppets and the Shade altars are at $(l:paths/husbandry)Husbandry$(); the tesla machines at Redstone, the mage gear and spell books at Magician."},
         {"type": "patchouli:text", "title": "Hazen N Stuff", "flag": "mod:hazennstuff",
          "text": "Three nodes on the Magician road:$(br2)"
-                 "$(li)$(l:paths/hazen_metals)Hazen's Metals$(), ring 9: ores, ingots and its woods.$(br)"
-                 "$(li)$(l:paths/hazen_runes)Runes and Orbs$(), ring 10.$(br)"
-                 "$(li)$(l:paths/hazen_arsenal)Flamebearer's Arsenal$(), ring 11: every weapon and armour set. "
+                 "$(li)$(l:paths/hazen_metals)Hazen's Metals$(), ring 8: ores, ingots and its woods.$(br)"
+                 "$(li)$(l:paths/hazen_runes)Runes and Orbs$(), ring 9.$(br)"
+                 "$(li)$(l:paths/hazen_arsenal)Flamebearer's Arsenal$(), ring 10: every weapon and armour set. "
                  "Kill one of the Flamebearer's officers first."},
     ]),
     ("a12", "A12. The Underworld Seal", "nether_remastered:seal_of_the_underworld_item", 12,
@@ -375,8 +373,8 @@ BEYOND = [
          "title": "Obsidian-Infused Bottle", "text": "Crying obsidian and glass. Makes three."},
         {"type": "patchouli:text", "title": "On the Ring",
          "text": "The shards, crystal, bottles and the seal are unlocked at "
-                 "$(l:paths/obsidian)Obsidian$(), ring 6.$(br2)"
-                 "$(l:paths/nether)Nether$(), ring 6, cannot be bought until you have used a seal."},
+                 "$(l:paths/obsidian)Obsidian$(), ring 5.$(br2)"
+                 "$(l:paths/nether)Nether$(), ring 5, cannot be bought until you have used a seal."},
     ]),
 ]
 MODIDS = {"icys-better-horses": "icys_better_horses"}
@@ -612,8 +610,7 @@ def main():
                  f"{tiers[1]}, {tiers[2]}, {tiers[3]}, out to {tiers[outer]}.$(br2)"
                  "A node needs the node before it, whatever else it needs, and its ring unsealed."},
         {"type": "patchouli:text",
-         "text": "Cost climbs with the ring: a few shards on ring 2, about a hundred on ring "
-                 "14.$(br2)"
+         "text": f"Cost climbs with the ring: a few shards on ring 2, about a hundred on ring {outer - 1}.$(br2)"
                  "Seals count how many nodes you own, not which. Breadth gets you out, not one long "
                  "road.$(br2)Costs in this book are Hard costs. On Normal nodes cost 5% less, on Easy a "
                  "quarter less."},

@@ -2,13 +2,13 @@
   "name": "Nether",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:netherrack",
-  "sortnum": 600,
+  "sortnum": 500,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:netherrack",
       "title": "Nether",
-      "text": "$(bold)The Nether's ground: netherrack, nylium, basalt, blackstone, soul sand and soil, magma, quartz, glowstone, nether gold, nether wart and nether bricks. Needs Obsidian as well. With Nether Remastered, you must also have used a Seal of the Underworld.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)16 Focal Shards$(n).$(br)After Gold and Obsidian."
+      "text": "$(bold)The Nether's ground: netherrack, nylium, basalt, blackstone, soul sand and soil, magma, quartz, glowstone, nether gold, nether wart and nether bricks. Needs Obsidian as well. With Nether Remastered, you must also have used a Seal of the Underworld.$(br2)$(thing)Diamond Age$(n), ring 5.$(br)$(thing)16 Focal Shards$(n).$(br)After Gold and Obsidian."
     },
     {
       "type": "patchouli:text",

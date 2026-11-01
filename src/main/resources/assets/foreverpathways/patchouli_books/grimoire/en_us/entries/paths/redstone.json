@@ -2,13 +2,13 @@
   "name": "Redstone",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:redstone",
-  "sortnum": 500,
+  "sortnum": 300,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:redstone",
       "title": "Redstone",
-      "text": "$(bold)Dust, torches, repeaters, comparators, levers, lamps, targets and powered rails.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)18 Focal Shards$(n).$(br)After Deep Prospector."
+      "text": "$(bold)Dust, torches, repeaters, comparators, levers, lamps, targets and powered rails. Needs Deep Prospector as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)14 Focal Shards$(n).$(br)After Copper Tools and Deep Prospector."
     },
     {
       "type": "patchouli:text",

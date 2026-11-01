@@ -2,13 +2,13 @@
   "name": "Stalwart",
   "category": "foreverpathways:paths/constitution",
   "icon": "minecraft:diamond_chestplate",
-  "sortnum": 700,
+  "sortnum": 600,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:diamond_chestplate",
       "title": "Stalwart",
-      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)The Deep$(n), ring 7.$(br)$(thing)44 Focal Shards$(n).$(br)After Unbroken."
+      "text": "$(bold)Half a heart more. +5% maximum health.$(br2)$(thing)The Deep$(n), ring 6.$(br)$(thing)44 Focal Shards$(n).$(br)After Unbroken."
     },
     {
       "type": "patchouli:text",

@@ -46,6 +46,14 @@ public final class Tree {
     public List<String> bountyTiers = new ArrayList<>();
     /** Delivery bounties: hand in crafted items for shards. */
     public Delivery delivery = new Delivery();
+    /** Nodes folded into others: old id to the node that now holds what it held, and what it cost. */
+    public Map<String, Merge> merged = new LinkedHashMap<>();
+
+    public static final class Merge {
+        public String into;
+        public String title;
+        public int cost;
+    }
 
     public String bountyTierName(int tier) {
         if (bountyTiers != null && tier >= 1 && tier <= bountyTiers.size()) {

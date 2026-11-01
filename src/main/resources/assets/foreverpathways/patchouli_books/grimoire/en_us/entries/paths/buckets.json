@@ -2,13 +2,13 @@
   "name": "Buckets",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:bucket",
-  "sortnum": 400,
+  "sortnum": 300,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:bucket",
       "title": "Buckets",
-      "text": "$(bold)Buckets of every kind except fish.$(br2)$(thing)Hearth$(n), ring 4.$(br)$(thing)10 Focal Shards$(n).$(br)After Iron."
+      "text": "$(bold)Buckets of every kind except fish. Needs Iron as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)10 Focal Shards$(n).$(br)After Copper Tools and Iron."
     },
     {
       "type": "patchouli:crafting",

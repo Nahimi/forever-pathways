@@ -12,7 +12,7 @@
     {
       "type": "patchouli:text",
       "title": "Climate Gear",
-      "text": "$(bold)$(li)$(l:paths/climate_1)Climate Gear I$(n), ring 4: coats, heater, cooler.$(br)$(li)$(l:paths/climate_2)Climate Gear II$(n), ring 6: better coats, resistance rings.$(br)$(li)$(l:paths/climate_3)Climate Gear III$(n): the last grade."
+      "text": "$(bold)$(li)$(l:paths/climate_1)Climate Gear I$(n), ring 3: coats, heater, cooler.$(br)$(li)$(l:paths/climate_2)Climate Gear II$(n), ring 5: better coats, resistance rings.$(br)$(li)$(l:paths/climate_3)Climate Gear III$(n): the last grade."
     }
   ],
   "flag": "mod:legendarysurvivaloverhaul"

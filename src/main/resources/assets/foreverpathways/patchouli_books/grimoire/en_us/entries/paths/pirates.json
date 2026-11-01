@@ -2,13 +2,13 @@
   "name": "Pirates",
   "category": "foreverpathways:paths/ranger",
   "icon": "block_factorys_bosses:pirate_saber",
-  "sortnum": 500,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "block_factorys_bosses:pirate_saber",
       "title": "Pirates",
-      "text": "$(bold)The pirate saber, the dagger, nets and the wreckage from boss arenas.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)18 Focal Shards$(n).$(br)After Ranger."
+      "text": "$(bold)The pirate saber, the dagger, nets and the wreckage from boss arenas.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)18 Focal Shards$(n).$(br)After Ranger."
     },
     {
       "type": "patchouli:text",

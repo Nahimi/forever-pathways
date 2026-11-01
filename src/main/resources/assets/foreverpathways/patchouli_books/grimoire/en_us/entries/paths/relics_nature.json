@@ -2,13 +2,13 @@
   "name": "Nature Relics",
   "category": "foreverpathways:paths/magician",
   "icon": "irons_spellbooks:druidic_spell_book",
-  "sortnum": 1200,
+  "sortnum": 1000,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:druidic_spell_book",
       "title": "Nature Relics",
-      "text": "$(bold)The druidic spellbook, the poison ward and the greater oakskin elixir.$(br2)$(thing)Flight$(n), ring 12.$(br)$(thing)74 Focal Shards$(n).$(br)After Nature Robes."
+      "text": "$(bold)The druidic spellbook, the poison ward and the greater oakskin elixir. Needs Nature Robes as well.$(br2)$(thing)Relics$(n), ring 10.$(br)$(thing)74 Focal Shards$(n).$(br)After Nature and Nature Robes."
     },
     {
       "type": "patchouli:crafting",

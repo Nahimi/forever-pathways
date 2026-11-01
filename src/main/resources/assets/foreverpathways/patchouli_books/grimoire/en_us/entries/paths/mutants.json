@@ -2,13 +2,13 @@
   "name": "Mutants",
   "category": "foreverpathways:paths/ranger",
   "icon": "mutantmonsters:hulk_hammer",
-  "sortnum": 500,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "mutantmonsters:hulk_hammer",
       "title": "Mutants",
-      "text": "$(bold)The hulk hammer, the endersoul hand and the mutant skeleton armour.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)18 Focal Shards$(n).$(br)After Hunter."
+      "text": "$(bold)The hulk hammer, the endersoul hand and the mutant skeleton armour.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)18 Focal Shards$(n).$(br)After Hunter."
     },
     {
       "type": "patchouli:text",

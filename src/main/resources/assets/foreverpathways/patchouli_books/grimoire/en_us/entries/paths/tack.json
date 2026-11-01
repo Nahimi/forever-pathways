@@ -2,19 +2,29 @@
   "name": "Tack",
   "category": "foreverpathways:paths/ranger",
   "icon": "icys-better-horses:upgraded_saddle",
-  "sortnum": 600,
+  "sortnum": 500,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "icys-better-horses:upgraded_saddle",
       "title": "Tack",
-      "text": "$(bold)The upgraded saddle, the canister and the stabiliser: a horse that keeps its footing. Needs Gold as well.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)16 Focal Shards$(n).$(br)After Cartwright and Gold."
+      "text": "$(bold)Iron, golden and diamond horse armour, the upgraded saddle, the canister, the stabiliser and the horse medkit. Needs Gold as well.$(br2)$(thing)Diamond Age$(n), ring 5.$(br)$(thing)18 Focal Shards$(n).$(br)After Cartwright and Gold."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Ride 40,000 blocks on horseback$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "icys-better-horses:upgraded_saddle",
       "text": "$(bold)Upgraded saddle",
       "flag": "mod:icys_better_horses"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)iron horse armor, golden horse armor, diamond horse armor, everything else of its kind."
     }
   ],
   "flag": "mod:icys_better_horses"

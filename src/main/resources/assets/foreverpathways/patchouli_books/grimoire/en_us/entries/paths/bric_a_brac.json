@@ -2,13 +2,13 @@
   "name": "Bric-a-brac",
   "category": "foreverpathways:paths/builder",
   "icon": "supplementaries:blackboard",
-  "sortnum": 500,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "supplementaries:blackboard",
       "title": "Bric-a-brac",
-      "text": "$(bold)Whatever Supplementaries has left: blackboards, barnacles, music discs, banner patterns and anything a later update adds.$(br2)$(thing)Gilded Age$(n), ring 5.$(br)$(thing)16 Focal Shards$(n).$(br)After Trimmings."
+      "text": "$(bold)Whatever Supplementaries has left: blackboards, barnacles, music discs, banner patterns and anything a later update adds.$(br2)$(thing)Gilded Age$(n), ring 4.$(br)$(thing)16 Focal Shards$(n).$(br)After Trimmings."
     },
     {
       "type": "patchouli:text",
