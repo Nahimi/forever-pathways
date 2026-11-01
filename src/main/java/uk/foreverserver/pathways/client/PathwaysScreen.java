@@ -18,10 +18,10 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.FormattedCharSequence;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.network.PacketDistributor;
-import uk.foreverserver.pathways.Difficulty;
 import uk.foreverserver.pathways.ForeverPathways;
 import uk.foreverserver.pathways.Gates;
 import uk.foreverserver.pathways.Gates.Gate;
+import uk.foreverserver.pathways.Sharing;
 import uk.foreverserver.pathways.Tree;
 import uk.foreverserver.pathways.net.ActionPayload;
 import uk.foreverserver.pathways.net.StatePayload;
@@ -49,6 +49,7 @@ public class PathwaysScreen extends Screen {
     static final int USE_BLUE = 0xFF6F9DB8;
     static final int SEAL = 0xFFE8D3A0;
     static final int EYE = 0xFF5FB3A1;
+    static final int SHARED = 0xFF8FD18A;
     private static final long HOLD_NANOS = 1_900_000_000L;
 
     private static ResourceLocation sprite(String name) {
@@ -181,12 +182,14 @@ public class PathwaysScreen extends Screen {
     private static StatePayload parsedFor;
     private static Set<String> ownedCache = Set.of();
     private static Map<String, long[]> taskCache = Map.of();
+    private static Set<String> boostedCache = Set.of();
 
     /** The owned set and task map, parsed once per state update rather than once per node per frame. */
     private static void parse() {
         if (parsedFor != state) {
             ownedCache = state.ownedSet();
             taskCache = state.taskMap();
+            boostedCache = state.boostedSet();
             parsedFor = state;
         }
     }
@@ -209,6 +212,16 @@ public class PathwaysScreen extends Screen {
         return id != null && owned().contains(id);
     }
 
+    /** True when a player within range owns this node and we do not: it is cheaper, and its task shorter. */
+    private static boolean boosted(Tree.Node node) {
+        parse();
+        return boostedCache.contains(node.id);
+    }
+
+    private static int cost(Tree.Node node) {
+        return Sharing.cost(node, boosted(node));
+    }
+
     private long[] task(Tree.Node node) {
         return tasks().get(node.id);
     }
@@ -223,7 +236,7 @@ public class PathwaysScreen extends Screen {
 
     private Gate gate(Tree.Node node) {
         Set<String> owned = owned();
-        return Gates.gate(tree, node, owned::contains, state.points(), taskDone(node));
+        return Gates.gate(tree, node, owned::contains, state.points(), taskDone(node), cost(node));
     }
 
     // ------------------------------------------------------------------ setup
@@ -595,6 +608,9 @@ public class PathwaysScreen extends Screen {
         Pix.ring(g, cx, cy, r0, 3, edge);
         Pix.ring(g, cx, cy, r1, 3, edge);
         int by = cy - r0;
+        if (boosted(seal)) {
+            drawShared(g, cx, by, 18);
+        }
         Pix.plate(g, cx - 9, by - 9, 18, hot || ready ? CREAM : SEAL, 0xFF6B5638, 0xFF2A2218);
         double charge = holdProgress(seal.id);
         if (charge >= 0) {
@@ -838,6 +854,9 @@ public class PathwaysScreen extends Screen {
         if (chosen) {
             Pix.brackets(g, x - 3, y - 3, s + 6, s + 6, 4, CREAM);
         }
+        if (gate != Gate.HELD && boosted(node)) {
+            drawShared(g, cx, cy, s);
+        }
         Pix.plate(g, x, y, s, lit, shade, fill);
         if (gate == Gate.READY && s >= 12) {
             // a glint on the top-left corner that blinks with the pulse
@@ -883,6 +902,24 @@ public class PathwaysScreen extends Screen {
         }
     }
 
+    /**
+     * A node someone nearby already owns: a slow green halo that breathes, with motes circling it, so it reads as
+     * help from a friend rather than as ready to buy.
+     */
+    private void drawShared(GuiGraphics g, int cx, int cy, int s) {
+        double t = (System.currentTimeMillis() % 100000L) / 1000.0;
+        float breath = (float) (0.5 + 0.5 * Math.sin(t * 2.2));
+        int r = s / 2 + 3 + Math.round(breath * 2);
+        Pix.ring(g, cx, cy, r, 2, Paint.alpha(SHARED, 0.35f + 0.45f * breath));
+        Pix.ring(g, cx, cy, r + 2, 1, Paint.alpha(SHARED, 0.15f + 0.2f * breath));
+        for (int i = 0; i < 3; i++) {
+            double a = t * 1.6 + i * Math.PI * 2 / 3;
+            int mx = cx + (int) Math.round(Math.cos(a) * (r + 1));
+            int my = cy + (int) Math.round(Math.sin(a) * (r + 1));
+            Pix.rect(g, mx - 1, my - 1, mx + 1, my + 1, Paint.alpha(SHARED, 0.9f));
+        }
+    }
+
     private List<Component> hoverLines(Tree.Node node) {
         List<Component> lines = new ArrayList<>();
         if (node == null) {
@@ -894,8 +931,11 @@ public class PathwaysScreen extends Screen {
         }
         Gate gate = gate(node);
         lines.add(Component.literal(status(node, gate)).withColor(statusColour(gate) & 0xFFFFFF));
-        if (gate != Gate.HELD && Difficulty.cost(node) > 0) {
-            lines.add(Component.literal("Cost " + Difficulty.cost(node) + " Focal Shards").withColor(MUTED & 0xFFFFFF));
+        if (gate != Gate.HELD && cost(node) > 0) {
+            lines.add(Component.literal("Cost " + cost(node) + " Focal Shards").withColor(MUTED & 0xFFFFFF));
+        }
+        if (gate != Gate.HELD && boosted(node)) {
+            lines.add(Component.literal("Shared nearby: task a quarter shorter, a fifth cheaper").withColor(SHARED & 0xFFFFFF));
         }
         if (node.hasTask() && gate != Gate.HELD) {
             long[] t = task(node);
@@ -932,7 +972,7 @@ public class PathwaysScreen extends Screen {
         return switch (gate) {
             case HELD -> node.isSeal() ? "Broken" : "Unlocked";
             case READY -> creative() ? "Hold to toggle" : node.isSeal() ? "Hold to break" : "Hold to unlock";
-            case SHORT -> "Needs " + (Difficulty.cost(node) - state.points()) + " more Focal Shards";
+            case SHORT -> "Needs " + (cost(node) - state.points()) + " more Focal Shards";
             case TASK -> "Task first";
             case LEVEL -> "Level " + node.seal.level + " needed (you are " + state.level() + ")";
             case SEALED -> {
@@ -992,6 +1032,14 @@ public class PathwaysScreen extends Screen {
         if (mouseX >= shardX && mouseX < right && mouseY >= y - 4 && mouseY < y + 12) {
             tooltipLines = List.of(Component.literal("Focal Shards"));
         }
+        int giveX = shardX - (Grimoire.available() ? 32 : 16);
+        boolean overGive = mouseX >= giveX && mouseX < giveX + 13 && mouseY >= y - 3 && mouseY < y + 10;
+        g.blitSprite(overGive ? SPRITE_BUTTON_HOVER : SPRITE_BUTTON, giveX, y - 3, 13, 13);
+        drawIcon(g, ClientIndex.get().icon("minecraft:amethyst_shard"), giveX + 2, y - 1, 8);
+        if (overGive) {
+            tooltipLines = List.of(Component.literal("Give Focal Shards to a player nearby"));
+        }
+        rows.add(new Row(giveX, y - 3, giveX + 13, y + 10, () -> Minecraft.getInstance().setScreen(new GiveScreen(this))));
         if (Grimoire.available()) {
             int bx = shardX - 16;
             boolean over = mouseX >= bx && mouseX < bx + 13 && mouseY >= y - 3 && mouseY < y + 10;
@@ -1110,7 +1158,7 @@ public class PathwaysScreen extends Screen {
                         0x66F0E6D6);
             }
             String label = creative() ? (owns(chosen.id) ? "Hold to lock" : "Hold to unlock (creative)")
-                    : (chosen.isSeal() ? "Hold to break  " : "Hold to unlock  ") + Difficulty.cost(chosen);
+                    : (chosen.isSeal() ? "Hold to break  " : "Hold to unlock  ") + cost(chosen);
             int lw = this.font.width(label) + (creative() ? 0 : 10);
             int lx = (buttonX0 + buttonX1 - lw) / 2;
             g.drawString(this.font, label, lx, buttonY0 + 4, CREAM, true);
@@ -1183,10 +1231,10 @@ public class PathwaysScreen extends Screen {
         y += 3;
         y += 4;
 
-        if (gate != Gate.HELD && Difficulty.cost(node) > 0) {
+        if (gate != Gate.HELD && cost(node) > 0) {
             g.drawString(this.font, "Cost", x, y, DIM, false);
             drawShard(g, x + 26, y, 8);
-            g.drawString(this.font, Difficulty.cost(node) + " Focal Shards", x + 37, y, state.points() >= Difficulty.cost(node) ? CREAM : RED, false);
+            g.drawString(this.font, cost(node) + " Focal Shards", x + 37, y, state.points() >= cost(node) ? CREAM : RED, false);
             y += 13;
         }
 

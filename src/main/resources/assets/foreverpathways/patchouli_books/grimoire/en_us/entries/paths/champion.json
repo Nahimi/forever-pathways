@@ -13,7 +13,7 @@
     {
       "type": "patchouli:text",
       "title": "Task",
-      "text": "$(bold)$(thing)Kill 60 blazes, wither skeletons, brutes or hoglins$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+      "text": "$(bold)$(thing)Kill 42 blazes, wither skeletons, brutes or hoglins$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
     },
     {
       "type": "patchouli:text",

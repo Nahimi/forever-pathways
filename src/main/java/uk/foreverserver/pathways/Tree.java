@@ -267,6 +267,8 @@ public final class Tree {
         public int weekShards = 0;
         /** How many bounties a player holds at once, the delivery slot included. */
         public int bountySlots = 3;
+        /** Paid once a day for finishing as many bounties that day as there are slots. */
+        public int allBountiesShards = 3;
         /** Ticks before a finished bounty is replaced; dawn replaces it sooner if it comes first. */
         public int bountyRefillTicks = 3600;
         public int deathShardLoss = 1;
@@ -339,6 +341,8 @@ public final class Tree {
          * never wasted. False for a boss anyone may summon again at will, such as the Wither.
          */
         public boolean guard = true;
+        /** With Dynamic Trees installed, a log-cutting task asks for this many trees felled instead. */
+        public int trees;
     }
 
     public static final class StatDef {
@@ -362,6 +366,8 @@ public final class Tree {
         public String target = "";
         public int amount = 1;
         public int reward = 1;
+        /** As {@link Task#trees}. */
+        public int trees;
         public String requires;
         public String item;
         private transient Task task;
@@ -374,8 +380,22 @@ public final class Tree {
                 task.amount = amount;
                 task.title = title;
                 task.reward = reward;
+                task.trees = trees;
             }
             return task;
+        }
+
+        /** With Dynamic Trees installed: fell this many trees instead of cutting logs. */
+        public void fellTrees() {
+            if (trees <= 0) {
+                return;
+            }
+            kind = "trees";
+            target = "";
+            amount = trees;
+            title = "Cut down " + String.format(java.util.Locale.ROOT, "%,d", trees) + (trees == 1 ? " tree" : " trees");
+            trees = 0;
+            task = null;
         }
     }
 

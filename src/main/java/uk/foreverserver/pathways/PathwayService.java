@@ -31,7 +31,7 @@ public final class PathwayService {
             Tree tree = Tree.get();
             Set<String> owned = TaskBook.owned(player, tree);
             Perks.apply(player, tree, owned);
-            String key = String.join(",", new java.util.TreeSet<>(owned));
+            String key = sentKey(owned, Sharing.boosted(player));
             if (!key.equals(SENT.get(player.getUUID()))) {
                 push(player);
             }
@@ -41,12 +41,18 @@ public final class PathwayService {
     /** Sends the player their full state: owned nodes (which the client uses to refuse locked actions), shards and tasks. */
     public static void push(ServerPlayer player) {
         StatePayload state = snapshot(player);
-        SENT.put(player.getUUID(), String.join(",", new java.util.TreeSet<>(state.ownedSet())));
+        SENT.put(player.getUUID(), sentKey(state.ownedSet(), state.boostedSet()));
         PacketDistributor.sendToPlayer(player, state);
+    }
+
+    /** What the player was told: what they own, and what someone near them shares. */
+    private static String sentKey(Set<String> owned, Set<String> boosted) {
+        return String.join(",", new java.util.TreeSet<>(owned)) + "|" + String.join(",", new java.util.TreeSet<>(boosted));
     }
 
     public static void forget(net.minecraft.world.entity.player.Player player) {
         SENT.remove(player.getUUID());
+        Sharing.forget(player.getUUID());
         TaskBook.forgetSeen(player);
     }
 
@@ -66,7 +72,8 @@ public final class PathwayService {
         TaskBook.update(player);
         Set<String> owned = TaskBook.owned(player, tree);
         long points = PlayerData.get(player, POINTS);
-        Gates.Gate gate = Gates.gate(tree, node, owned::contains, points, !node.hasTask() || TaskBook.claimed(player, node));
+        int cost = Sharing.cost(node, Sharing.boosted(player).contains(node.id));
+        Gates.Gate gate = Gates.gate(tree, node, owned::contains, points, !node.hasTask() || TaskBook.claimed(player, node), cost);
         if (gate != Gates.Gate.READY) {
             return;
         }
@@ -76,7 +83,6 @@ public final class PathwayService {
                     + ". Has the server been restarted since /pathways rebuild?").withStyle(ChatFormatting.RED), false);
             return;
         }
-        int cost = Difficulty.cost(node);
         if (cost > 0) {
             PlayerData.add(player, POINTS, -cost);
         }
@@ -125,7 +131,8 @@ public final class PathwayService {
                 alive,
                 (int) Math.min(Integer.MAX_VALUE, TaskBook.daysAlive(player, tree)),
                 TaskBook.snapshot(player),
-                TaskBook.foundSnapshot(player)
+                TaskBook.foundSnapshot(player),
+                String.join(",", Sharing.boosted(player))
         );
     }
 }

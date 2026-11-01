@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "endrem:cursed_eye",
       "title": "Cursed Eye",
-      "text": "$(bold)Unlocking this node gives you the Cursed Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill Helvar.$(br)Without that boss: Kill 100 piglin brutes or wither skeletons."
+      "text": "$(bold)Unlocking this node gives you the Cursed Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill Helvar.$(br)Without that boss: Kill 70 piglin brutes or wither skeletons."
     }
   ],
   "flag": "mod:endrem"

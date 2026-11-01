@@ -95,6 +95,11 @@ public final class Gates {
     }
 
     public static Gate gate(Tree tree, Tree.Node node, Predicate<String> owns, long shards, boolean taskDone) {
+        return gate(tree, node, owns, shards, taskDone, Difficulty.cost(node));
+    }
+
+    /** As above, at a given cost (a node shared by someone nearby costs less). */
+    public static Gate gate(Tree tree, Tree.Node node, Predicate<String> owns, long shards, boolean taskDone, int cost) {
         Gate gate = structural(tree, node, owns);
         if (gate != null) {
             return gate;
@@ -102,7 +107,7 @@ public final class Gates {
         if (node.hasTask() && !taskDone) {
             return Gate.TASK;
         }
-        if (shards < Difficulty.cost(node)) {
+        if (shards < cost) {
             return Gate.SHORT;
         }
         return Gate.READY;

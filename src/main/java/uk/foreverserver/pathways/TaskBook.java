@@ -57,6 +57,8 @@ public final class TaskBook {
     private static final String BOUNTY_DAY = "fpq_day";
     /** The day (plus one) the player last gave up a bounty. */
     private static final String GAVE_UP = "fpq_gaveup";
+    private static final String DONE_DAY = "fpq_doneday";
+    private static final String DONE_COUNT = "fpq_done";
     /** The day (plus one) the player was last dealt a delivery: one a day. */
 
     /** Task states in the snapshot. */
@@ -124,6 +126,7 @@ public final class TaskBook {
     // ------------------------------------------------------------------ tasks
 
     private static void updateTasks(ServerPlayer player, Tree tree, Set<String> owned) {
+        Set<String> boosted = Sharing.boosted(player);
         for (Tree.Node node : tree.nodes) {
             if (!node.hasTask() || claimed(player, node)) {
                 continue;
@@ -143,16 +146,17 @@ public final class TaskBook {
                 continue;
             }
             long progress = taskProgress(player, node, tree);
-            if (progress < task.amount) {
+            long goal = Sharing.goal(task.amount, boosted.contains(node.id));
+            if (progress < goal) {
                 seen(player, NotifyPayload.TASK_PROGRESS, node.id, task.title, node.title, node.item, progress,
-                        task.amount, task.reward);
+                        goal, task.reward);
                 continue;
             }
             PlayerData.set(player, "fpc_" + key, 1L);
             if (task.reward > 0) {
                 PlayerData.add(player, POINTS, task.reward);
             }
-            finished(player, NotifyPayload.TASK_DONE, node.id, task.title, node.title, node.item, task.amount, task.reward);
+            finished(player, NotifyPayload.TASK_DONE, node.id, task.title, node.title, node.item, goal, task.reward);
         }
     }
 
@@ -328,6 +332,7 @@ public final class TaskBook {
             PlayerData.add(player, "fpn_q_" + bounty.id, 1);
             finished(player, NotifyPayload.BOUNTY_DONE, bounty.id, bounty.title, tier, bounty.item, task.amount,
                     bounty.reward);
+            bountyDone(player, tree);
         }
 
         long dealt = PlayerData.get(player, BOUNTY_DAY) - 1;
@@ -589,6 +594,23 @@ public final class TaskBook {
                         ? Deliveries.family(delivery.item).name() : "{item:" + delivery.id() + "}"),
                 "Tier " + tree.bountyTierName(delivery.tier) + " delivery", delivery.id(), delivery.amount,
                 delivery.reward);
+        bountyDone(player, tree);
+    }
+
+    /** Finishing as many bounties in one day as there are slots pays a bonus, once that day. */
+    private static void bountyDone(ServerPlayer player, Tree tree) {
+        long day = today(player, tree) + 1;
+        if (PlayerData.get(player, DONE_DAY) != day) {
+            PlayerData.set(player, DONE_DAY, day);
+            PlayerData.set(player, DONE_COUNT, 0L);
+        }
+        long done = PlayerData.add(player, DONE_COUNT, 1);
+        int bonus = tree.rules.allBountiesShards;
+        if (done == slots(tree) && bonus > 0) {
+            PlayerData.add(player, POINTS, bonus);
+            player.sendSystemMessage(Component.literal("Every bounty done today  +" + bonus + " " + shards(bonus))
+                    .withStyle(ChatFormatting.GOLD));
+        }
     }
 
     private static long bountyProgress(ServerPlayer player, Tree tree, int slot, Tree.Bounty bounty) {
@@ -620,6 +642,22 @@ public final class TaskBook {
     // ------------------------------------------------------------------ counted events
 
     /** A tamed animal counts toward every tame task or bounty whose target names its type. */
+    /**
+     * A Dynamic Trees branch broken by hand: the tree above it falls, so it counts as one tree felled. Plain logs are
+     * mined, and counted by the mine statistic as usual.
+     */
+    public static void onBlockBroken(net.neoforged.neoforge.event.level.BlockEvent.BreakEvent event) {
+        if (!(event.getPlayer() instanceof ServerPlayer player)) {
+            return;
+        }
+        ResourceLocation id = BuiltInRegistries.BLOCK.getKey(event.getState().getBlock());
+        if (id != null && id.getPath().endsWith("branch") && DYNAMIC_TREES.matcher(id.getNamespace()).matches()) {
+            PlayerData.add(player, eventKey("trees", ""), 1);
+        }
+    }
+
+    private static final java.util.regex.Pattern DYNAMIC_TREES = java.util.regex.Pattern.compile("dynamictrees.*|dt[a-z0-9_]+");
+
     public static void onTame(ServerPlayer player, EntityType<?> type) {
         for (Tree.Task task : eventTasks("tame")) {
             if (resolve(ENTITIES, BuiltInRegistries.ENTITY_TYPE, task.target).contains(type)) {
@@ -814,6 +852,7 @@ public final class TaskBook {
      */
     public static String snapshot(ServerPlayer player) {
         Tree tree = Tree.get();
+        Set<String> boosted = Sharing.boosted(player);
         StringBuilder text = new StringBuilder();
         for (Tree.Node node : tree.nodes) {
             if (!node.hasTask()) {
@@ -821,9 +860,10 @@ public final class TaskBook {
             }
             int state;
             long cur;
+            long goal = Sharing.goal(node.task.amount, boosted.contains(node.id));
             if (claimed(player, node)) {
                 state = DONE;
-                cur = node.task.amount;
+                cur = goal;
             } else if (PlayerData.get(player, "fpa_" + node.key()) != 0) {
                 state = RUNNING;
                 cur = taskProgress(player, node, tree);
@@ -831,7 +871,7 @@ public final class TaskBook {
                 state = WAITING;
                 cur = 0;
             }
-            line(text, node.id, state, Math.min(node.task.amount, cur), node.task.amount, 0, 0);
+            line(text, node.id, state, Math.min(goal, cur), goal, 0, 0);
         }
         long dayTime = Math.max(0, player.server.overworld().getDayTime());
         long dayTicks = Math.max(1, tree.rules.dayTicks);
@@ -976,6 +1016,7 @@ public final class TaskBook {
             case "brew" -> target.isEmpty() ? custom(stats, Stats.INTERACT_WITH_BREWINGSTAND)
                     : PlayerData.get(player, eventKey("brew", target));
             case "tame" -> PlayerData.get(player, eventKey("tame", target));
+            case "trees" -> PlayerData.get(player, eventKey("trees", ""));
             case "underwater" -> PlayerData.get(player, eventKey("underwater", ""));
             case "hold" -> held(player, target);
             case "advancement" -> advancementDone(player, target) ? 1 : 0;

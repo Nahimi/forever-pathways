@@ -39,6 +39,11 @@ public record ActionPayload(String action, String stageId) implements CustomPack
         return new ActionPayload("deliver", Integer.toString(slot));
     }
 
+    /** Hands shards to a nearby player: "uuid:amount". */
+    public static ActionPayload give(java.util.UUID player, long amount) {
+        return new ActionPayload("give", player + ":" + amount);
+    }
+
     public static void handle(ActionPayload payload, IPayloadContext context) {
         context.enqueueWork(() -> {
             if (!(context.player() instanceof ServerPlayer player)) {
@@ -48,6 +53,7 @@ public record ActionPayload(String action, String stageId) implements CustomPack
                 case "commit" -> PathwayService.commit(player, payload.stageId);
                 case "debug" -> PathwayService.debugToggle(player, payload.stageId);
                 case "sync" -> TaskBook.update(player);
+                case "give" -> uk.foreverserver.pathways.Sharing.give(player, payload.stageId);
                 case "giveup", "deliver" -> {
                     try {
                         int slot = Integer.parseInt(payload.stageId);

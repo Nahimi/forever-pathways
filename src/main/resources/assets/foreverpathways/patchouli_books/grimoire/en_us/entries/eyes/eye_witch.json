@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "endrem:witch_eye",
       "title": "Witch Eye",
-      "text": "$(bold)Unlocking this node gives you the Witch Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill the Harbinger.$(br)Without that boss: Kill 100 witches."
+      "text": "$(bold)Unlocking this node gives you the Witch Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill the Harbinger.$(br)Without that boss: Kill 70 witches."
     }
   ],
   "flag": "mod:endrem"

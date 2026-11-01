@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.41.0
+
+- Sharing: within 30 blocks of a player who owns a node you do not, that node's task asks a quarter less and it costs
+  a fifth less, rounded down. Seals too. A shared node glows green on the ring, with motes circling it.
+- Give shards: a button beside your shard count opens a screen to choose a player within 30 blocks and an amount,
+  then confirm. The server checks the range and your shards again.
+- Finishing three bounties in one day, deliveries included, pays 3 more shards, once a day.
+- With Dynamic Trees, log tasks count trees felled: Calloused Hands asks for 50 trees, and the log bounty for 6.
+- Kill tasks and bounties ask for about 30% fewer kills, and skeleton ones (skeletons, strays, bogged, wither
+  skeletons) for half.
+- Hunter and Scout are no longer a choice: you may own both. Second Path, which only widened that choice, is gone,
+  and its owners get its 60 shards back.
+- The anvil comes with Ironworks, early in the Iron Age, instead of Enchanting.
+
 ## 0.40.1
 
 - The Explorer node is gone. Scout holds the compass recipe, and Scout or Magician lets you use the Monoliths'

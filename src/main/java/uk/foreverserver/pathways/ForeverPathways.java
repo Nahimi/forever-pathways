@@ -95,6 +95,9 @@ public class ForeverPathways {
             }
         });
         NeoForge.EVENT_BUS.addListener(BossEyes::onKill);
+        // Lowest, and not when cancelled: a branch a lock kept whole is no tree felled.
+        NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, false,
+                net.neoforged.neoforge.event.level.BlockEvent.BreakEvent.class, TaskBook::onBlockBroken);
         NeoForge.EVENT_BUS.addListener(EventPriority.HIGHEST, false,
                 net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent.class,
                 BossGuard::onIncomingDamage);

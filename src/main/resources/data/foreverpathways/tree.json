@@ -57,7 +57,6 @@
     }
   ],
   "slots": {
-    "ranger_fork": 1,
     "school": 3
   },
   "rules": {
@@ -280,9 +279,9 @@
     {
       "id": "spiders_8",
       "tier": 1,
-      "title": "Kill 4 spiders",
+      "title": "Kill 3 spiders",
       "kind": "kill",
-      "amount": 4,
+      "amount": 3,
       "reward": 1,
       "days": 1,
       "requires": "forever:core",
@@ -292,9 +291,9 @@
     {
       "id": "spiders_16",
       "tier": 1,
-      "title": "Kill 8 spiders",
+      "title": "Kill 6 spiders",
       "kind": "kill",
-      "amount": 8,
+      "amount": 6,
       "reward": 2,
       "days": 2,
       "requires": "forever:core",
@@ -304,9 +303,9 @@
     {
       "id": "skeletons_6",
       "tier": 1,
-      "title": "Kill 3 skeletons",
+      "title": "Kill 2 skeletons",
       "kind": "kill",
-      "amount": 3,
+      "amount": 2,
       "reward": 1,
       "days": 1,
       "requires": "forever:core",
@@ -316,9 +315,9 @@
     {
       "id": "skeletons_12",
       "tier": 1,
-      "title": "Kill 6 skeletons",
+      "title": "Kill 3 skeletons",
       "kind": "kill",
-      "amount": 6,
+      "amount": 3,
       "reward": 2,
       "days": 2,
       "requires": "forever:core",
@@ -328,9 +327,9 @@
     {
       "id": "zombies_8",
       "tier": 1,
-      "title": "Kill 4 zombies",
+      "title": "Kill 3 zombies",
       "kind": "kill",
-      "amount": 4,
+      "amount": 3,
       "reward": 1,
       "days": 1,
       "requires": "forever:core",
@@ -340,9 +339,9 @@
     {
       "id": "zombies_16",
       "tier": 1,
-      "title": "Kill 8 zombies",
+      "title": "Kill 6 zombies",
       "kind": "kill",
-      "amount": 8,
+      "amount": 6,
       "reward": 2,
       "days": 2,
       "requires": "forever:core",
@@ -352,9 +351,9 @@
     {
       "id": "creepers_4",
       "tier": 1,
-      "title": "Kill 2 creepers",
+      "title": "Kill 1 creeper",
       "kind": "kill",
-      "amount": 2,
+      "amount": 1,
       "reward": 1,
       "days": 1,
       "requires": "forever:core",
@@ -364,9 +363,9 @@
     {
       "id": "creepers_8",
       "tier": 1,
-      "title": "Kill 4 creepers",
+      "title": "Kill 3 creepers",
       "kind": "kill",
-      "amount": 4,
+      "amount": 3,
       "reward": 2,
       "days": 2,
       "requires": "forever:core",
@@ -376,9 +375,9 @@
     {
       "id": "drowned_5",
       "tier": 1,
-      "title": "Kill 3 drowned",
+      "title": "Kill 2 drowned",
       "kind": "kill",
-      "amount": 3,
+      "amount": 2,
       "reward": 2,
       "days": 2,
       "requires": "forever:core",
@@ -400,9 +399,9 @@
     {
       "id": "hunt_cows",
       "tier": 1,
-      "title": "Hunt 4 cows",
+      "title": "Hunt 3 cows",
       "kind": "kill",
-      "amount": 4,
+      "amount": 3,
       "reward": 1,
       "days": 1,
       "requires": "forever:core",
@@ -412,9 +411,9 @@
     {
       "id": "hunt_pigs",
       "tier": 1,
-      "title": "Hunt 4 pigs",
+      "title": "Hunt 3 pigs",
       "kind": "kill",
-      "amount": 4,
+      "amount": 3,
       "reward": 1,
       "days": 1,
       "requires": "forever:core",
@@ -424,9 +423,9 @@
     {
       "id": "hunt_chickens",
       "tier": 1,
-      "title": "Hunt 6 chickens",
+      "title": "Hunt 4 chickens",
       "kind": "kill",
-      "amount": 6,
+      "amount": 4,
       "reward": 1,
       "days": 1,
       "requires": "forever:core",
@@ -436,9 +435,9 @@
     {
       "id": "hunt_sheep",
       "tier": 1,
-      "title": "Hunt 4 sheep",
+      "title": "Hunt 3 sheep",
       "kind": "kill",
-      "amount": 4,
+      "amount": 3,
       "reward": 1,
       "days": 1,
       "requires": "forever:core",
@@ -683,7 +682,8 @@
       "days": 1,
       "requires": "forever:woodcutter",
       "item": "minecraft:oak_log",
-      "target": "re:(dynamictrees|dynamictreescompat|dt[a-z0-9_]+):.*_branch,re:minecraft:.*_log"
+      "target": "re:(dynamictrees|dynamictreescompat|dt[a-z0-9_]+):.*_branch,re:minecraft:.*_log",
+      "trees": 6
     },
     {
       "id": "saplings",
@@ -832,9 +832,9 @@
     {
       "id": "mutants_5",
       "tier": 2,
-      "title": "Kill 5 mutants (zombies or creepers)",
+      "title": "Kill 4 mutants (zombies or creepers)",
       "kind": "kill",
-      "amount": 5,
+      "amount": 4,
       "reward": 2,
       "days": 3,
       "requires": "forever:seal_3",
@@ -844,9 +844,9 @@
     {
       "id": "witches_5",
       "tier": 2,
-      "title": "Kill 5 witches",
+      "title": "Kill 4 witches",
       "kind": "kill",
-      "amount": 5,
+      "amount": 4,
       "reward": 2,
       "days": 2,
       "requires": "forever:seal_3",
@@ -856,9 +856,9 @@
     {
       "id": "pillagers_10",
       "tier": 2,
-      "title": "Kill 10 pillagers",
+      "title": "Kill 7 pillagers",
       "kind": "kill",
-      "amount": 10,
+      "amount": 7,
       "reward": 2,
       "days": 2,
       "requires": "forever:seal_3",
@@ -868,9 +868,9 @@
     {
       "id": "endermen_5",
       "tier": 2,
-      "title": "Kill 5 endermen",
+      "title": "Kill 4 endermen",
       "kind": "kill",
-      "amount": 5,
+      "amount": 4,
       "reward": 2,
       "days": 2,
       "requires": "forever:seal_3",
@@ -1084,9 +1084,9 @@
     {
       "id": "mutants_10",
       "tier": 3,
-      "title": "Kill 10 mutants (zombies or creepers)",
+      "title": "Kill 7 mutants (zombies or creepers)",
       "kind": "kill",
-      "amount": 10,
+      "amount": 7,
       "reward": 3,
       "days": 3,
       "requires": "forever:mutants",
@@ -1096,9 +1096,9 @@
     {
       "id": "mutant_skeletons",
       "tier": 3,
-      "title": "Kill 3 mutant skeletons",
+      "title": "Kill 2 mutant skeletons",
       "kind": "kill",
-      "amount": 3,
+      "amount": 2,
       "reward": 3,
       "days": 3,
       "requires": "forever:mutants",
@@ -1108,9 +1108,9 @@
     {
       "id": "pirates_15",
       "tier": 3,
-      "title": "Kill 15 pirates",
+      "title": "Kill 11 pirates",
       "kind": "kill",
-      "amount": 15,
+      "amount": 11,
       "reward": 3,
       "days": 3,
       "requires": "forever:pirates",
@@ -1120,9 +1120,9 @@
     {
       "id": "ravagers_2",
       "tier": 3,
-      "title": "Kill 2 ravagers",
+      "title": "Kill 1 ravager",
       "kind": "kill",
-      "amount": 2,
+      "amount": 1,
       "reward": 3,
       "days": 3,
       "requires": "forever:seal_5",
@@ -1132,9 +1132,9 @@
     {
       "id": "evokers_3",
       "tier": 3,
-      "title": "Kill 3 evokers",
+      "title": "Kill 2 evokers",
       "kind": "kill",
-      "amount": 3,
+      "amount": 2,
       "reward": 3,
       "days": 3,
       "requires": "forever:seal_5",
@@ -1144,9 +1144,9 @@
     {
       "id": "monsters_60",
       "tier": 3,
-      "title": "Kill 60 monsters",
+      "title": "Kill 42 monsters",
       "kind": "mobs",
-      "amount": 60,
+      "amount": 42,
       "reward": 3,
       "days": 2,
       "requires": "forever:veteran",
@@ -1348,9 +1348,9 @@
     {
       "id": "strays_20",
       "tier": 4,
-      "title": "Kill 20 strays",
+      "title": "Kill 10 strays",
       "kind": "kill",
-      "amount": 20,
+      "amount": 10,
       "reward": 3,
       "days": 3,
       "requires": "forever:skor",
@@ -1360,9 +1360,9 @@
     {
       "id": "husks_30",
       "tier": 4,
-      "title": "Kill 30 husks",
+      "title": "Kill 21 husks",
       "kind": "kill",
-      "amount": 30,
+      "amount": 21,
       "reward": 3,
       "days": 3,
       "requires": "forever:sirok",
@@ -1372,9 +1372,9 @@
     {
       "id": "guardians_15",
       "tier": 4,
-      "title": "Kill 15 guardians",
+      "title": "Kill 11 guardians",
       "kind": "kill",
-      "amount": 15,
+      "amount": 11,
       "reward": 4,
       "days": 3,
       "requires": "forever:nerakyss",
@@ -1408,9 +1408,9 @@
     {
       "id": "monsters_150",
       "tier": 4,
-      "title": "Kill 150 monsters",
+      "title": "Kill 105 monsters",
       "kind": "mobs",
-      "amount": 150,
+      "amount": 105,
       "reward": 4,
       "days": 3,
       "requires": "forever:warrior",
@@ -1456,9 +1456,9 @@
     {
       "id": "blazes_20",
       "tier": 5,
-      "title": "Kill 20 blazes",
+      "title": "Kill 14 blazes",
       "kind": "kill",
-      "amount": 20,
+      "amount": 14,
       "reward": 4,
       "days": 3,
       "requires": "forever:nether",
@@ -1468,9 +1468,9 @@
     {
       "id": "ghasts_8",
       "tier": 5,
-      "title": "Kill 8 ghasts",
+      "title": "Kill 6 ghasts",
       "kind": "kill",
-      "amount": 8,
+      "amount": 6,
       "reward": 4,
       "days": 3,
       "requires": "forever:nether_wilds",
@@ -1480,9 +1480,9 @@
     {
       "id": "magma_25",
       "tier": 5,
-      "title": "Kill 25 magma cubes",
+      "title": "Kill 18 magma cubes",
       "kind": "kill",
-      "amount": 25,
+      "amount": 18,
       "reward": 4,
       "days": 3,
       "requires": "forever:nether",
@@ -1492,9 +1492,9 @@
     {
       "id": "wither_skeletons_10",
       "tier": 5,
-      "title": "Kill 10 wither skeletons",
+      "title": "Kill 5 wither skeletons",
       "kind": "kill",
-      "amount": 10,
+      "amount": 5,
       "reward": 4,
       "days": 3,
       "requires": "forever:fortress",
@@ -1624,9 +1624,9 @@
     {
       "id": "evokers_6",
       "tier": 5,
-      "title": "Kill 6 evokers",
+      "title": "Kill 4 evokers",
       "kind": "kill",
-      "amount": 6,
+      "amount": 4,
       "reward": 4,
       "days": 3,
       "requires": "forever:archmage",
@@ -1636,9 +1636,9 @@
     {
       "id": "endermen_40",
       "tier": 6,
-      "title": "Kill 40 endermen",
+      "title": "Kill 28 endermen",
       "kind": "kill",
-      "amount": 40,
+      "amount": 28,
       "reward": 5,
       "days": 3,
       "requires": "forever:end",
@@ -1648,9 +1648,9 @@
     {
       "id": "shulkers_10",
       "tier": 6,
-      "title": "Kill 10 shulkers",
+      "title": "Kill 7 shulkers",
       "kind": "kill",
-      "amount": 10,
+      "amount": 7,
       "reward": 5,
       "days": 3,
       "requires": "forever:end",
@@ -2105,8 +2105,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:zombie,minecraft:husk,minecraft:drowned,minecraft:zombie_villager,minecraft:skeleton,minecraft:stray,minecraft:bogged,minecraft:creeper,minecraft:spider,minecraft:cave_spider,minecraft:witch,minecraft:slime,minecraft:enderman,minecraft:pillager,minecraft:vindicator,minecraft:phantom,minecraft:silverfish",
-        "amount": 200,
-        "title": "Kill 200 monsters",
+        "amount": 140,
+        "title": "Kill 140 monsters",
         "reward": 3
       },
       "slot": null,
@@ -2198,8 +2198,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:enderman",
-        "amount": 60,
-        "title": "Kill 60 endermen",
+        "amount": 42,
+        "title": "Kill 42 endermen",
         "reward": 6
       },
       "slot": null,
@@ -2260,8 +2260,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:blaze,minecraft:wither_skeleton",
-        "amount": 150,
-        "title": "Kill 150 blazes or wither skeletons",
+        "amount": 105,
+        "title": "Kill 105 blazes or wither skeletons",
         "reward": 6
       },
       "slot": null,
@@ -2657,7 +2657,7 @@
       "cost": 12,
       "item": "minecraft:iron_bars",
       "colour": "#C4A574",
-      "opens": "Iron bars, doors and trapdoors, chains, lanterns (which now burn fuel), the oil can, the bandolier, the cauldron and the smithing table, with the cage, goblet, faucet, pulley and bubble blower. With the monobank, a personal vault with a combination lock.",
+      "opens": "Iron bars, doors and trapdoors, chains, lanterns (which now burn fuel), the oil can, the bandolier, the cauldron and the smithing table, with the cage, goblet, faucet, pulley and bubble blower, and the anvil. With the monobank, a personal vault with a combination lock.",
       "task": null,
       "slot": null,
       "slotBonus": null,
@@ -2676,7 +2676,10 @@
         "minecraft:cauldron",
         "minecraft:smithing_table",
         "re:quark:((rusty_)?iron_plate.*|iron_pillar|iron_ladder|iron_button|iron_chain)",
-        "mod:monobank"
+        "mod:monobank",
+        "minecraft:anvil",
+        "minecraft:chipped_anvil",
+        "minecraft:damaged_anvil"
       ],
       "uses": []
     },
@@ -2856,7 +2859,7 @@
       "cost": 28,
       "item": "minecraft:enchanting_table",
       "colour": "#C4A574",
-      "opens": "The enchanting table, bookshelves, lapis, anvils, the grindstone and the lectern. The table will only offer up to level 5, so the enchantments it gives are the weak ones. Needs Study as well.",
+      "opens": "The enchanting table, bookshelves, lapis, the grindstone and the lectern. The table will only offer up to level 5, so the enchantments it gives are the weak ones. Needs Study as well.",
       "task": {
         "kind": "mine",
         "target": "minecraft:lapis_ore,minecraft:deepslate_lapis_ore",
@@ -2877,9 +2880,6 @@
         "minecraft:chiseled_bookshelf",
         "minecraft:lapis_lazuli",
         "minecraft:lapis_block",
-        "minecraft:anvil",
-        "minecraft:chipped_anvil",
-        "minecraft:damaged_anvil",
         "minecraft:grindstone",
         "minecraft:lectern",
         "minecraft:experience_bottle",
@@ -3026,8 +3026,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:creeper",
-        "amount": 80,
-        "title": "Kill 80 creepers",
+        "amount": 56,
+        "title": "Kill 56 creepers",
         "reward": 3
       },
       "slot": null,
@@ -3161,8 +3161,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:blaze",
-        "amount": 40,
-        "title": "Kill 40 blazes",
+        "amount": 28,
+        "title": "Kill 28 blazes",
         "reward": 3
       },
       "slot": null,
@@ -3390,8 +3390,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:enderman",
-        "amount": 120,
-        "title": "Kill 120 endermen",
+        "amount": 84,
+        "title": "Kill 84 endermen",
         "reward": 4
       },
       "slot": null,
@@ -3493,15 +3493,15 @@
       "cost": 10,
       "item": "minecraft:bow",
       "colour": "#8B4513",
-      "opens": "Bows and arrows. Taking Hunter closes Scout.",
+      "opens": "Bows and arrows.",
       "task": {
         "kind": "kill",
         "target": "minecraft:skeleton,minecraft:stray",
-        "amount": 40,
-        "title": "Kill 40 skeletons",
+        "amount": 20,
+        "title": "Kill 20 skeletons",
         "reward": 1
       },
-      "slot": "ranger_fork",
+      "slot": null,
       "slotBonus": null,
       "perks": null,
       "enchantPower": 0,
@@ -3545,7 +3545,7 @@
       "cost": 8,
       "item": "minecraft:compass",
       "colour": "#4A7C59",
-      "opens": "Maps, the compass and the cartography table, and the waystones on the Monoliths: wake them and travel between those you have woken. Making, placing and breaking waystones wait for Attunement. Taking Scout closes Hunter. +2% movement speed.",
+      "opens": "Maps, the compass and the cartography table, and the waystones on the Monoliths: wake them and travel between those you have woken. Making, placing and breaking waystones wait for Attunement. +2% movement speed.",
       "task": {
         "kind": "walk",
         "target": "",
@@ -3553,7 +3553,7 @@
         "title": "Walk 6,000 blocks",
         "reward": 1
       },
-      "slot": "ranger_fork",
+      "slot": null,
       "slotBonus": null,
       "perks": {
         "movement": 0.025
@@ -3583,8 +3583,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:zombie,minecraft:husk,minecraft:drowned",
-        "amount": 30,
-        "title": "Kill 30 zombies",
+        "amount": 21,
+        "title": "Kill 21 zombies",
         "reward": 1
       },
       "slot": null,
@@ -3898,8 +3898,8 @@
       "task": {
         "kind": "kill",
         "target": "block_factorys_bosses:pirate_captain",
-        "amount": 3,
-        "title": "Kill 3 pirate captains",
+        "amount": 2,
+        "title": "Kill 2 pirate captains",
         "reward": 3
       },
       "slot": null,
@@ -3927,8 +3927,8 @@
       "task": {
         "kind": "mobs",
         "target": "",
-        "amount": 500,
-        "title": "Kill 500 mobs",
+        "amount": 350,
+        "title": "Kill 350 mobs",
         "reward": 2
       },
       "slot": null,
@@ -3955,8 +3955,8 @@
       "task": {
         "kind": "kill",
         "target": "born_in_chaos_v1:dread_hound,born_in_chaos_v1:decrepit_skeleton,born_in_chaos_v1:zombie_bruiser,born_in_chaos_v1:bonescaller,born_in_chaos_v1:barrel_zombie",
-        "amount": 20,
-        "title": "Kill 20 dread hounds, decrepit skeletons, bruisers or bonescallers",
+        "amount": 14,
+        "title": "Kill 14 dread hounds, decrepit skeletons, bruisers or bonescallers",
         "reward": 2
       },
       "slot": null,
@@ -4155,34 +4155,6 @@
       "uses": []
     },
     {
-      "id": "forever:second_path",
-      "title": "Second Path",
-      "path": "ranger",
-      "ring": 8,
-      "requires": "forever:ranger",
-      "also": null,
-      "cost": 60,
-      "item": "minecraft:filled_map",
-      "colour": "#6B8F71",
-      "opens": "Reopens the fork, so you can take the side you gave up.",
-      "task": {
-        "kind": "travel",
-        "target": "",
-        "amount": 60000,
-        "title": "Travel 60,000 blocks",
-        "reward": 4
-      },
-      "slot": null,
-      "slotBonus": {
-        "ranger_fork": 1
-      },
-      "perks": null,
-      "enchantPower": 0,
-      "craftOnly": false,
-      "locks": [],
-      "uses": []
-    },
-    {
       "id": "forever:climate_3",
       "title": "Climate Gear III",
       "path": "ranger",
@@ -4352,8 +4324,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:witch",
-        "amount": 12,
-        "title": "Kill 12 witches",
+        "amount": 8,
+        "title": "Kill 8 witches",
         "reward": 2
       },
       "slot": null,
@@ -4449,8 +4421,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:witch",
-        "amount": 40,
-        "title": "Kill 40 witches",
+        "amount": 28,
+        "title": "Kill 28 witches",
         "reward": 3
       },
       "slot": null,
@@ -5213,8 +5185,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:evoker",
-        "amount": 15,
-        "title": "Kill 15 evokers",
+        "amount": 11,
+        "title": "Kill 11 evokers",
         "reward": 4
       },
       "slot": null,
@@ -6515,8 +6487,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:guardian,minecraft:elder_guardian",
-        "amount": 25,
-        "title": "Kill 25 guardians",
+        "amount": 18,
+        "title": "Kill 18 guardians",
         "reward": 2
       },
       "slot": null,
@@ -6955,8 +6927,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:cow,minecraft:pig,minecraft:sheep,minecraft:chicken,minecraft:rabbit,minecraft:goat",
-        "amount": 120,
-        "title": "Kill 120 farm animals",
+        "amount": 84,
+        "title": "Kill 84 farm animals",
         "reward": 2
       },
       "slot": null,
@@ -7173,7 +7145,8 @@
         "target": "re:(dynamictrees|dynamictreescompat|dt[a-z0-9_]+):.*_branch,re:minecraft:.*_log",
         "amount": 50,
         "title": "Fell 50 trees",
-        "reward": 1
+        "reward": 1,
+        "trees": 50
       },
       "slot": null,
       "slotBonus": null,
@@ -7419,8 +7392,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:zombie,minecraft:husk,minecraft:drowned,minecraft:zombie_villager,minecraft:skeleton,minecraft:stray,minecraft:bogged,minecraft:creeper,minecraft:spider,minecraft:cave_spider,minecraft:witch,minecraft:slime,minecraft:enderman,minecraft:pillager,minecraft:vindicator,minecraft:phantom,minecraft:silverfish",
-        "amount": 60,
-        "title": "Kill 60 monsters",
+        "amount": 42,
+        "title": "Kill 42 monsters",
         "reward": 1
       },
       "slot": null,
@@ -7475,8 +7448,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:zombie,minecraft:husk,minecraft:drowned,minecraft:zombie_villager,minecraft:skeleton,minecraft:stray,minecraft:bogged,minecraft:creeper,minecraft:spider,minecraft:cave_spider,minecraft:witch,minecraft:slime,minecraft:enderman,minecraft:pillager,minecraft:vindicator,minecraft:phantom,minecraft:silverfish",
-        "amount": 150,
-        "title": "Kill 150 monsters",
+        "amount": 105,
+        "title": "Kill 105 monsters",
         "reward": 2
       },
       "slot": null,
@@ -7609,8 +7582,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:zombie,minecraft:husk,minecraft:drowned,minecraft:zombie_villager,minecraft:skeleton,minecraft:stray,minecraft:bogged,minecraft:creeper,minecraft:spider,minecraft:cave_spider,minecraft:witch,minecraft:slime,minecraft:enderman,minecraft:pillager,minecraft:vindicator,minecraft:phantom,minecraft:silverfish",
-        "amount": 300,
-        "title": "Kill 300 monsters",
+        "amount": 210,
+        "title": "Kill 210 monsters",
         "reward": 2
       },
       "slot": null,
@@ -7721,8 +7694,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:blaze,minecraft:wither_skeleton,minecraft:piglin_brute,minecraft:hoglin",
-        "amount": 60,
-        "title": "Kill 60 blazes, wither skeletons, brutes or hoglins",
+        "amount": 42,
+        "title": "Kill 42 blazes, wither skeletons, brutes or hoglins",
         "reward": 3
       },
       "slot": null,
@@ -7805,8 +7778,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:breeze,minecraft:bogged",
-        "amount": 40,
-        "title": "Kill 40 breezes or bogged",
+        "amount": 28,
+        "title": "Kill 28 breezes or bogged",
         "reward": 3
       },
       "slot": null,
@@ -7916,8 +7889,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:zombie,minecraft:husk,minecraft:drowned,minecraft:zombie_villager,minecraft:skeleton,minecraft:stray,minecraft:bogged,minecraft:creeper,minecraft:spider,minecraft:cave_spider,minecraft:witch,minecraft:slime,minecraft:enderman,minecraft:pillager,minecraft:vindicator,minecraft:phantom,minecraft:silverfish",
-        "amount": 120,
-        "title": "Kill 120 monsters",
+        "amount": 84,
+        "title": "Kill 84 monsters",
         "reward": 1
       },
       "slot": null,
@@ -8028,8 +8001,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:zombie,minecraft:husk,minecraft:drowned,minecraft:zombie_villager,minecraft:skeleton,minecraft:stray,minecraft:bogged,minecraft:creeper,minecraft:spider,minecraft:cave_spider,minecraft:witch,minecraft:slime,minecraft:enderman,minecraft:pillager,minecraft:vindicator,minecraft:phantom,minecraft:silverfish",
-        "amount": 400,
-        "title": "Kill 400 monsters",
+        "amount": 280,
+        "title": "Kill 280 monsters",
         "reward": 2
       },
       "slot": null,
@@ -8112,8 +8085,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:zombie,minecraft:husk,minecraft:drowned,minecraft:zombie_villager,minecraft:skeleton,minecraft:stray,minecraft:bogged,minecraft:creeper,minecraft:spider,minecraft:cave_spider,minecraft:witch,minecraft:slime,minecraft:enderman,minecraft:pillager,minecraft:vindicator,minecraft:phantom,minecraft:silverfish",
-        "amount": 800,
-        "title": "Kill 800 monsters",
+        "amount": 560,
+        "title": "Kill 560 monsters",
         "reward": 3
       },
       "slot": null,
@@ -8364,8 +8337,8 @@
       "task": {
         "kind": "mobs",
         "target": "",
-        "amount": 1200,
-        "title": "Kill 1,200 mobs of any kind",
+        "amount": 840,
+        "title": "Kill 840 mobs of any kind",
         "reward": 3
       },
       "slot": null,
@@ -8448,8 +8421,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:pillager,minecraft:vindicator",
-        "amount": 120,
-        "title": "Kill 120 pillagers or vindicators",
+        "amount": 84,
+        "title": "Kill 84 pillagers or vindicators",
         "reward": 3
       },
       "bosses": [
@@ -8486,8 +8459,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:piglin_brute,minecraft:wither_skeleton",
-        "amount": 100,
-        "title": "Kill 100 piglin brutes or wither skeletons",
+        "amount": 70,
+        "title": "Kill 70 piglin brutes or wither skeletons",
         "reward": 3
       },
       "bosses": [
@@ -8562,8 +8535,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:husk",
-        "amount": 200,
-        "title": "Kill 200 husks",
+        "amount": 140,
+        "title": "Kill 140 husks",
         "reward": 3
       },
       "bosses": [
@@ -8646,8 +8619,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:ghast,minecraft:blaze",
-        "amount": 120,
-        "title": "Kill 120 ghasts or blazes",
+        "amount": 84,
+        "title": "Kill 84 ghasts or blazes",
         "reward": 3
       },
       "bosses": [
@@ -8684,8 +8657,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:wither_skeleton",
-        "amount": 80,
-        "title": "Kill 80 wither skeletons",
+        "amount": 40,
+        "title": "Kill 40 wither skeletons",
         "reward": 3
       },
       "bosses": [
@@ -8723,8 +8696,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:enderman",
-        "amount": 250,
-        "title": "Kill 250 endermen",
+        "amount": 175,
+        "title": "Kill 175 endermen",
         "reward": 3
       },
       "bosses": [
@@ -8761,8 +8734,8 @@
       "task": {
         "kind": "mobs",
         "target": "",
-        "amount": 1500,
-        "title": "Kill 1,500 mobs",
+        "amount": 1050,
+        "title": "Kill 1,050 mobs",
         "reward": 3
       },
       "bosses": [
@@ -8799,8 +8772,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:zombie,minecraft:husk,minecraft:drowned,minecraft:skeleton,minecraft:stray,minecraft:zombie_villager",
-        "amount": 300,
-        "title": "Kill 300 undead",
+        "amount": 210,
+        "title": "Kill 210 undead",
         "reward": 3
       },
       "bosses": [
@@ -8837,8 +8810,8 @@
       "task": {
         "kind": "kill",
         "target": "minecraft:witch",
-        "amount": 100,
-        "title": "Kill 100 witches",
+        "amount": 70,
+        "title": "Kill 70 witches",
         "reward": 3
       },
       "bosses": [
@@ -9131,8 +9104,8 @@
       "task": {
         "kind": "kill",
         "target": "bestiary:mountain_troll,bestiary:bridge_troll,bestiary:forest_troll",
-        "amount": 3,
-        "title": "Kill 3 trolls",
+        "amount": 2,
+        "title": "Kill 2 trolls",
         "reward": 2
       },
       "slot": null,
@@ -9851,6 +9824,11 @@
       "into": "forever:scout",
       "title": "Explorer",
       "cost": 8
+    },
+    "forever:second_path": {
+      "into": null,
+      "title": "Second Path",
+      "cost": 60
     }
   }
 }

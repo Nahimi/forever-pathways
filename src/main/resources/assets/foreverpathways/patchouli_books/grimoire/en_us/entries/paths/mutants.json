@@ -13,7 +13,7 @@
     {
       "type": "patchouli:text",
       "title": "Task",
-      "text": "$(bold)$(thing)Kill 500 mobs$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+      "text": "$(bold)$(thing)Kill 350 mobs$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
     },
     {
       "type": "patchouli:crafting",

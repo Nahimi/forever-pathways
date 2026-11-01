@@ -138,7 +138,7 @@ CHAPTERS = [
                  "Everything keeps counting. Unlocked nodes and finished tasks are safe."},
     ]),
     ("c3", "III. Gaining Shards", "minecraft:amethyst_shard", 2, [
-        "Four sources, and no others. Shards cannot be mined, crafted or traded for.",
+        "Four sources, and no others. Shards cannot be mined or crafted; another player may give you theirs.",
         {"type": "patchouli:text", "title": "Tasks",
          "text": "One per node. Pays once, for good.$(br2)"
                  "A task counts only once its node is reachable: the node before it owned, its ring "
@@ -147,7 +147,7 @@ CHAPTERS = [
          "text": "Three at a time, lasting a few days. The third is always a delivery.$(br2)"
                  "$(li)Finish one and the next comes 3 minutes later, or at dawn if that is sooner.$(br)"
                  "$(li)Hold right-click on one in the Tasks tab to give it up, once a day; a new one comes at once.$(br)"
-                 "$(li)They grow harder as you unlock nodes, and pay up to 4 shards; rare ones pay 5."},
+                 "$(li)They grow harder as you unlock nodes, and pay up to 4 shards; rare ones pay 5.$(br)$(li)Finish three in one day and 3 more shards are yours."},
         {"type": "patchouli:text", "title": "Deliveries",
          "text": "Some bounties ask you to hand in crafted items: 32 Iron Ingots, 2 Bookshelves.$(br2)"
                  "$(li)Carry them all, then press Deliver.$(br)"
@@ -156,6 +156,8 @@ CHAPTERS = [
         {"type": "patchouli:text", "title": "Staying Alive",
          "text": "Every full day you live without dying pays 1 Focal Shard, and every seventh day in a row 2 more.$(br2)"
                  "Dying starts the count again."},
+        {"type": "patchouli:text", "title": "Sharing",
+         "text": "Within 30 blocks of a player who owns a node you do not, that node asks less: its task a quarter shorter, its cost a fifth lower, rounded down. Seals too.$(br2)Such a node glows green on the ring.$(br2)To hand shards to a player within 30 blocks, press the shard button beside your count and confirm."},
         {"type": "patchouli:text", "title": "Achievements",
          "text": "A few vanilla advancements pay once: first iron smelted, first iron pick, and "
                  "others.$(br2)"

@@ -13,7 +13,7 @@
     {
       "type": "patchouli:text",
       "title": "Task",
-      "text": "$(bold)$(thing)Kill 40 breezes or bogged$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+      "text": "$(bold)$(thing)Kill 28 breezes or bogged$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
     },
     {
       "type": "patchouli:text",

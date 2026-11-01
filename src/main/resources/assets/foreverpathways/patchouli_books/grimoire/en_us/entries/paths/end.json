@@ -13,7 +13,7 @@
     {
       "type": "patchouli:text",
       "title": "Task",
-      "text": "$(bold)$(thing)Kill 120 endermen$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
+      "text": "$(bold)$(thing)Kill 84 endermen$(n)$(br2)Pays 4 Focal Shards once. Counts only once this node is reachable."
     },
     {
       "type": "patchouli:text",

@@ -23,9 +23,10 @@ import uk.foreverserver.pathways.ForeverPathways;
  *                  and one per bounty slot ("slot:N", state 0 empty / 1 running / 5 done today / 6 expired,
  *                  progress, goal, bounty index or -1, ticks to the deadline or to the next dawn)
  * @param found     comma-separated indices of claimed discoveries
+ * @param boosted   comma-separated node ids a player within range owns and this one does not
  */
 public record StatePayload(int points, int level, String owned, int dayTicks, int days, String tasks,
-                           String found) implements CustomPacketPayload {
+                           String found, String boosted) implements CustomPacketPayload {
     private static final int MAX = 262144;
 
     public static final Type<StatePayload> TYPE = new Type<>(ResourceLocation.fromNamespaceAndPath(ForeverPathways.MOD_ID, "state"));
@@ -38,6 +39,7 @@ public record StatePayload(int points, int level, String owned, int dayTicks, in
                 buf.writeVarInt(payload.days);
                 buf.writeUtf(payload.tasks == null ? "" : payload.tasks, MAX);
                 buf.writeUtf(payload.found == null ? "" : payload.found, MAX);
+                buf.writeUtf(payload.boosted == null ? "" : payload.boosted, MAX);
             },
             buf -> new StatePayload(
                     buf.readVarInt(),
@@ -46,11 +48,12 @@ public record StatePayload(int points, int level, String owned, int dayTicks, in
                     buf.readVarInt(),
                     buf.readVarInt(),
                     buf.readUtf(MAX),
+                    buf.readUtf(MAX),
                     buf.readUtf(MAX)
             )
     );
 
-    public static final StatePayload EMPTY = new StatePayload(0, 0, "", 0, 0, "", "");
+    public static final StatePayload EMPTY = new StatePayload(0, 0, "", 0, 0, "", "", "");
 
     public Set<String> ownedSet() {
         Set<String> set = new HashSet<>();
@@ -58,6 +61,17 @@ public record StatePayload(int points, int level, String owned, int dayTicks, in
             return set;
         }
         for (String id : owned.split(",")) {
+            set.add(id);
+        }
+        return set;
+    }
+
+    public Set<String> boostedSet() {
+        Set<String> set = new HashSet<>();
+        if (boosted == null || boosted.isEmpty()) {
+            return set;
+        }
+        for (String id : boosted.split(",")) {
             set.add(id);
         }
         return set;

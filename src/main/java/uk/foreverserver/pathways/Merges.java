@@ -21,7 +21,7 @@ public final class Merges {
             String old = entry.getKey();
             Tree.Merge merge = entry.getValue();
             String key = DONE + old.substring(old.indexOf(':') + 1);
-            if (PlayerData.get(player, key) != 0 || tree.find(old) != null || merge.into == null) {
+            if (PlayerData.get(player, key) != 0 || tree.find(old) != null) {
                 continue;
             }
             PlayerData.set(player, key, 1L);
@@ -29,7 +29,7 @@ public final class Merges {
                 continue;
             }
             Stages.revoke(player, old);
-            Tree.Node into = tree.find(merge.into);
+            Tree.Node into = merge.into == null ? null : tree.find(merge.into);
             String name = merge.title == null ? old : merge.title;
             if (into != null && !Stages.has(player, into.id) && !slotFull(player, tree, into)) {
                 Stages.grantAnyway(player, into.id);
@@ -37,9 +37,9 @@ public final class Merges {
                         .withStyle(ChatFormatting.GOLD));
             } else if (merge.cost > 0) {
                 PlayerData.add(player, TaskBook.POINTS, merge.cost);
-                player.sendSystemMessage(Component.literal(name + " is now part of "
-                        + (into == null ? "another node" : into.title) + "; its " + merge.cost
-                        + " shards are returned.").withStyle(ChatFormatting.GOLD));
+                String now = merge.into == null ? " is gone from the tree" : " is now part of " + (into == null ? "another node" : into.title);
+                player.sendSystemMessage(Component.literal(name + now + "; its " + merge.cost + " shards are returned.")
+                        .withStyle(ChatFormatting.GOLD));
             }
         }
     }

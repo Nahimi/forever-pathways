@@ -46,6 +46,15 @@ public final class Availability {
                 // pruning against an empty registry would drop all of them.
                 return;
             }
+            // Dynamic Trees fells a whole tree and drops no log blocks to mine, so log tasks count trees instead.
+            if (ModList.get() != null && ModList.get().isLoaded("dynamictrees")) {
+                for (Tree.Node node : tree.nodes) {
+                    fellTrees(node.task);
+                }
+                for (Tree.Bounty bounty : tree.bounties) {
+                    bounty.fellTrees();
+                }
+            }
             for (Tree.Node node : tree.nodes) {
                 if (node.bosses == null) {
                     continue;
@@ -260,6 +269,17 @@ public final class Availability {
     }
 
     /** True when at least one thing this task names exists in this game. */
+    private static void fellTrees(Tree.Task task) {
+        if (task == null || task.trees <= 0) {
+            return;
+        }
+        task.kind = "trees";
+        task.target = "";
+        task.amount = task.trees;
+        task.title = "Cut down " + String.format(java.util.Locale.ROOT, "%,d", task.trees) + (task.trees == 1 ? " tree" : " trees");
+        task.trees = 0;
+    }
+
     private static boolean possible(Tree.Task task) {
         if (task == null || task.target == null || task.target.isBlank()) {
             return true;
