@@ -965,7 +965,7 @@
       "amount": 3,
       "reward": 2,
       "days": 2,
-      "requires": "forever:hunter",
+      "requires": "forever:fletcher",
       "item": "minecraft:crossbow",
       "target": "minecraft:crossbow"
     },
@@ -3428,7 +3428,7 @@
       "cost": 10,
       "item": "minecraft:bow",
       "colour": "#8B4513",
-      "opens": "Bows, arrows, the crossbow and the fletching table. Taking Hunter closes Scout.",
+      "opens": "Bows and arrows. Taking Hunter closes Scout.",
       "task": {
         "kind": "kill",
         "target": "minecraft:skeleton,minecraft:stray",
@@ -3443,7 +3443,28 @@
       "craftOnly": false,
       "locks": [
         "minecraft:bow",
-        "minecraft:arrow",
+        "minecraft:arrow"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:fletcher",
+      "title": "Fletcher",
+      "path": "ranger",
+      "ring": 3,
+      "requires": "forever:hunter",
+      "also": null,
+      "cost": 8,
+      "item": "minecraft:crossbow",
+      "colour": "#8B4513",
+      "opens": "The crossbow and the fletching table.",
+      "task": null,
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
         "minecraft:crossbow",
         "minecraft:fletching_table"
       ],
@@ -3660,8 +3681,8 @@
       "id": "forever:trick_shots",
       "title": "Trick Shots",
       "path": "ranger",
-      "ring": 3,
-      "requires": "forever:hunter",
+      "ring": 4,
+      "requires": "forever:fletcher",
       "also": null,
       "cost": 10,
       "item": "supplementaries:quiver",
@@ -3715,11 +3736,11 @@
       "path": "ranger",
       "ring": 4,
       "requires": "forever:cartographer",
-      "also": "forever:herbalist",
+      "also": "forever:apothecary",
       "cost": 18,
       "item": "waystones:waystone",
       "colour": "#4A7C59",
-      "opens": "The waystones on the Monoliths answer you: wake them and travel between those you have woken. Making, placing and breaking waystones wait for Attunement. Needs Herbalist as well.",
+      "opens": "The waystones on the Monoliths answer you: wake them and travel between those you have woken. Making, placing and breaking waystones wait for Attunement. Needs Apothecary as well.",
       "task": {
         "kind": "travel",
         "target": "",
@@ -4234,7 +4255,7 @@
       "title": "Magician",
       "path": "magician",
       "ring": 5,
-      "requires": "forever:herbalist",
+      "requires": "forever:apothecary",
       "also": null,
       "cost": 26,
       "item": "irons_spellbooks:wimpy_spell_book",
@@ -4285,7 +4306,7 @@
       "cost": 33,
       "item": "irons_spellbooks:alchemist_cauldron",
       "colour": "#7B5EA7",
-      "opens": "The alchemist cauldron, oakskin elixir, fire ale and caster's tea, with invisibility and evasion elixirs, the tinctures and timeless slurry.",
+      "opens": "The alchemist cauldron, oakskin elixir, fire ale and caster's tea.",
       "task": {
         "kind": "kill",
         "target": "minecraft:witch",
@@ -4299,7 +4320,28 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:irons_spellbooks:(alchemist_cauldron|oakskin_elixir|casters_tea|fire_ale)",
+        "re:irons_spellbooks:(alchemist_cauldron|oakskin_elixir|casters_tea|fire_ale)"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:elixirs",
+      "title": "Elixirs",
+      "path": "magician",
+      "ring": 8,
+      "requires": "forever:alchemy",
+      "also": null,
+      "cost": 46,
+      "item": "irons_spellbooks:invisibility_elixir",
+      "colour": "#7B5EA7",
+      "opens": "Invisibility and evasion elixirs, the tinctures and timeless slurry.",
+      "task": null,
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
         "re:irons_spellbooks:(invisibility_elixir|evasion_elixir|tincture_of_forgetfulness|netherward_tincture|timeless_slurry)"
       ],
       "uses": []
@@ -5438,15 +5480,15 @@
     },
     {
       "id": "forever:spuddie",
-      "title": "Talkies",
+      "title": "Spuddie Talkie",
       "path": "technician",
-      "ring": 3,
+      "ring": 2,
       "requires": "forever:builder",
-      "also": "forever:technician",
-      "cost": 14,
+      "also": "forever:copper_tools",
+      "cost": 8,
       "item": "simpleradio:spuddie_talkie",
       "colour": "#B87333",
-      "opens": "The spuddie talkie, a potato wired for short-range chatter, and the clearer, longer-range walkie-talkie. Needs Technician as well.",
+      "opens": "The spuddie talkie: a potato wired for short-range chatter. Needs Copper Tools as well.",
       "task": null,
       "slot": null,
       "slotBonus": null,
@@ -5454,7 +5496,28 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "simpleradio:spuddie_talkie",
+        "simpleradio:spuddie_talkie"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:walkie",
+      "title": "Walkie-Talkie",
+      "path": "technician",
+      "ring": 3,
+      "requires": "forever:spuddie",
+      "also": null,
+      "cost": 12,
+      "item": "simpleradio:walkie_talkie",
+      "colour": "#B87333",
+      "opens": "The walkie-talkie, clearer and longer in range than the spuddie.",
+      "task": null,
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
         "simpleradio:walkie_talkie"
       ],
       "uses": []
@@ -5515,7 +5578,7 @@
       "title": "Radio",
       "path": "technician",
       "ring": 5,
-      "requires": "forever:technician",
+      "requires": "forever:walkie",
       "also": "forever:redstone",
       "cost": 28,
       "item": "simpleradio:radio",
@@ -6087,7 +6150,7 @@
       "cost": 14,
       "item": "adchimneys:small_brick_chimney",
       "colour": "#8D6E63",
-      "opens": "Stone, cobblestone, brick, glass and metal chimneys, with pipes, ducts, vents and pumps: smoke leaves the roof instead of the room. Needs Brickwork as well.",
+      "opens": "Stone, cobblestone and brick chimneys: smoke leaves the roof instead of the room. Needs Brickwork as well.",
       "task": null,
       "slot": null,
       "slotBonus": null,
@@ -6095,7 +6158,28 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:adchimneys:(stone_chimney|cobblestone_chimney|small_brick_chimney|large_brick_chimney)",
+        "re:adchimneys:(stone_chimney|cobblestone_chimney|small_brick_chimney|large_brick_chimney)"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:flues",
+      "title": "Flues",
+      "path": "builder",
+      "ring": 4,
+      "requires": "forever:chimneys",
+      "also": "forever:ironworks",
+      "cost": 16,
+      "item": "adchimneys:metal_chimney",
+      "colour": "#8D6E63",
+      "opens": "Glass and metal chimneys, pipes, ducts, vents and pumps, for carrying smoke where you want it. Needs Ironworks as well.",
+      "task": null,
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
         "re:adchimneys:(glass_chimney|metal_chimney|pipe|duct|stone_vent|metal_vent)",
         "rest:adchimneys"
       ],
@@ -6581,7 +6665,7 @@
       "cost": 6,
       "item": "legendarysurvivaloverhaul:tonic",
       "colour": "#7C9A3A",
-      "opens": "Bandages, plasters, first aid supplies and tonics, the large canteen and the water plants that refill it.",
+      "opens": "Bandages, tonics, the large canteen and the water plants that refill it.",
       "task": null,
       "slot": null,
       "slotBonus": null,
@@ -6591,7 +6675,28 @@
       "locks": [
         "re:legendarysurvivaloverhaul:(bandage|tonic|large_canteen.*|water_plant_.*)",
         "re:nomansland:.*bandage.*",
-        "rest:nirvana",
+        "rest:nirvana"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:apothecary",
+      "title": "Apothecary",
+      "path": "homesteader",
+      "ring": 4,
+      "requires": "forever:herbalist",
+      "also": null,
+      "cost": 8,
+      "item": "legendarysurvivaloverhaul:plaster",
+      "colour": "#7C9A3A",
+      "opens": "Plasters and first aid supplies, for wounds the herbs will not close.",
+      "task": null,
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
         "re:legendarysurvivaloverhaul:(plaster|first_aid_supplies)"
       ],
       "uses": []
@@ -6669,7 +6774,7 @@
       "title": "Infirmary",
       "path": "homesteader",
       "ring": 5,
-      "requires": "forever:herbalist",
+      "requires": "forever:apothecary",
       "also": null,
       "cost": 15,
       "item": "legendarysurvivaloverhaul:medkit",
@@ -9630,11 +9735,6 @@
       "title": "Monobank",
       "cost": 10
     },
-    "forever:fletcher": {
-      "into": "forever:hunter",
-      "title": "Fletcher",
-      "cost": 8
-    },
     "forever:relics": {
       "into": "forever:cartographer",
       "title": "Relics of the Fallen",
@@ -9654,11 +9754,6 @@
       "into": "forever:brewing",
       "title": "Alchemical Arrows",
       "cost": 34
-    },
-    "forever:elixirs": {
-      "into": "forever:alchemy",
-      "title": "Elixirs",
-      "cost": 46
     },
     "forever:runecraft": {
       "into": "forever:essence",
@@ -9690,18 +9785,8 @@
       "title": "Fans and Depots",
       "cost": 22
     },
-    "forever:walkie": {
-      "into": "forever:spuddie",
-      "title": "Walkie-Talkie",
-      "cost": 16
-    },
-    "forever:flues": {
-      "into": "forever:chimneys",
-      "title": "Flues",
-      "cost": 16
-    },
     "forever:draught": {
-      "into": "forever:chimneys",
+      "into": "forever:flues",
       "title": "Draught",
       "cost": 26
     },
@@ -9714,11 +9799,6 @@
       "into": "forever:husbandry",
       "title": "Animal Feed",
       "cost": 5
-    },
-    "forever:apothecary": {
-      "into": "forever:herbalist",
-      "title": "Apothecary",
-      "cost": 6
     },
     "forever:dreaming": {
       "into": "forever:infirmary",

@@ -1,0 +1,24 @@
+{
+  "name": "Fletcher",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "minecraft:crossbow",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "minecraft:crossbow",
+      "title": "Fletcher",
+      "text": "$(bold)The crossbow and the fletching table.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)8 Focal Shards$(n).$(br)After Hunter."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "minecraft:crossbow",
+      "text": "$(bold)Crossbow"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)crossbow, fletching table."
+    }
+  ]
+}

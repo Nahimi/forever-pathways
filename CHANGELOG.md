@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.39.1
+
+- Tier chains merged in 0.39.0 are separate nodes again, each a step up from the last:
+  - Spuddie Talkie in the Copper Age, Walkie-Talkie in the Iron Age, and Radio after the Walkie-Talkie.
+  - Chimneys, then Flues (glass and metal chimneys, pipes, ducts, vents and pumps) in the Gilded Age.
+  - Herbalist, then Apothecary in the Gilded Age, which Magician, Infirmary and Explorer need again.
+  - Alchemy, then Elixirs in the Ashen Age.
+  - Hunter, then Fletcher in the Iron Age, before Trick Shots.
+
 ## 0.39.0
 
 - Twelve ages instead of fifteen. Hearth folds into the Iron Age, Flight into Relics and High Voltage into The Arcane;

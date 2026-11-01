@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:alchemist_cauldron",
       "title": "Alchemy",
-      "text": "$(bold)The alchemist cauldron, oakskin elixir, fire ale and caster's tea, with invisibility and evasion elixirs, the tinctures and timeless slurry.$(br2)$(thing)The Deep$(n), ring 6.$(br)$(thing)33 Focal Shards$(n).$(br)After Magician."
+      "text": "$(bold)The alchemist cauldron, oakskin elixir, fire ale and caster's tea.$(br2)$(thing)The Deep$(n), ring 6.$(br)$(thing)33 Focal Shards$(n).$(br)After Magician."
     },
     {
       "type": "patchouli:text",

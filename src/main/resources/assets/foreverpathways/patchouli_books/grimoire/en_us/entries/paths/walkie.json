@@ -1,0 +1,26 @@
+{
+  "name": "Walkie-Talkie",
+  "category": "foreverpathways:paths/technician",
+  "icon": "simpleradio:walkie_talkie",
+  "sortnum": 300,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "simpleradio:walkie_talkie",
+      "title": "Walkie-Talkie",
+      "text": "$(bold)The walkie-talkie, clearer and longer in range than the spuddie.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)12 Focal Shards$(n).$(br)After Spuddie Talkie."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "simpleradio:walkie_talkie",
+      "text": "$(bold)Walkie talkie",
+      "flag": "mod:simpleradio"
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Unlocks",
+      "text": "$(bold)walkie talkie."
+    }
+  ],
+  "flag": "mod:simpleradio"
+}

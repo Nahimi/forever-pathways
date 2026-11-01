@@ -12,7 +12,7 @@
     {
       "type": "patchouli:text",
       "title": "Where They Unlock",
-      "text": "$(bold)$(li)$(l:paths/chimneys)Chimneys$(n), ring 3: every chimney, pipe, duct, vent and pump."
+      "text": "$(bold)$(li)$(l:paths/chimneys)Chimneys$(n), ring 3: stone, cobble, brick.$(br)$(li)$(l:paths/flues)Flues$(n), ring 4: glass and metal, pipes, ducts, vents and pumps."
     }
   ],
   "flag": "mod:adchimneys"

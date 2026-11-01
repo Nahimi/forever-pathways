@@ -1,14 +1,14 @@
 {
-  "name": "Talkies",
+  "name": "Spuddie Talkie",
   "category": "foreverpathways:paths/technician",
   "icon": "simpleradio:spuddie_talkie",
-  "sortnum": 300,
+  "sortnum": 200,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "simpleradio:spuddie_talkie",
-      "title": "Talkies",
-      "text": "$(bold)The spuddie talkie, a potato wired for short-range chatter, and the clearer, longer-range walkie-talkie. Needs Technician as well.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)14 Focal Shards$(n).$(br)After Builder and Technician."
+      "title": "Spuddie Talkie",
+      "text": "$(bold)The spuddie talkie: a potato wired for short-range chatter. Needs Copper Tools as well.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)8 Focal Shards$(n).$(br)After Builder and Copper Tools."
     },
     {
       "type": "patchouli:crafting",
@@ -19,7 +19,7 @@
     {
       "type": "patchouli:text",
       "title": "Unlocks",
-      "text": "$(bold)spuddie talkie, walkie talkie."
+      "text": "$(bold)spuddie talkie."
     }
   ],
   "flag": "mod:simpleradio"

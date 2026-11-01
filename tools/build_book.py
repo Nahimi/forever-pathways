@@ -274,7 +274,8 @@ BEYOND = [
         "$(li)$(thing)Vents$() release it where you want.$(br)"
         "$(li)$(thing)Pumps$() push it, and take a redstone signal.",
         {"type": "patchouli:text", "title": "Where They Unlock",
-         "text": "$(li)$(l:paths/chimneys)Chimneys$(), ring 3: every chimney, pipe, duct, vent and pump."},
+         "text": "$(li)$(l:paths/chimneys)Chimneys$(), ring 3: stone, cobble, brick.$(br)"
+                 "$(li)$(l:paths/flues)Flues$(), ring 4: glass and metal, pipes, ducts, vents and pumps."},
     ]),
     ("a9", "A9. Post & Pigeons", "envelope:mailbox", 9, "mod:envelope", [
         "$(li)Write with a $(thing)letter and quill$(). Pack items in a $(thing)paper box$().$(br)"
