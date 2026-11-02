@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:oak_boat",
       "title": "Boatwright",
-      "text": "$(bold)Boats, chest boats, rafts and the jar boat. +5% boat speed.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)8 Focal Shards$(n).$(br)After Scout."
+      "text": "$(bold)The recipes for boats, chest boats, rafts and the jar boat. Anyone may place, ride and break a boat; only crafting one waits for this node. +5% boat speed.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)8 Focal Shards$(n).$(br)After Scout."
     },
     {
       "type": "patchouli:text",

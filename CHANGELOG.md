@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.42.1
+
+- Boats are craft-locked only: anyone may carry, place, ride and break a boat, chest boat, raft or jar boat, and only
+  crafting one waits for Boatwright. Cannon boats stay fully locked behind Ordnance.
+
 ## 0.42.0
 
 - No node costs more than 30 shards. The Stone, Copper and Iron Ages keep their costs; from ring 6 each ring is

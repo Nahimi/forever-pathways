@@ -149,7 +149,11 @@
     "minecraft:composter",
     "minecraft:cauldron",
     "re:quark:.*_furnace",
-    "re:redomesticate:pet_bed_.*"
+    "re:redomesticate:pet_bed_.*",
+    "re:(biomesoplenty|biomeswevegone):.*_(boat|chest_boat)",
+    "re:(minecraft|spawn):.*_(boat|raft)",
+    "re:supplementaries:jar_boat",
+    "re:(quark|nomansland):.*_boat"
   ],
   "bountyTiers": [
     "I",
@@ -3662,7 +3666,7 @@
       "cost": 8,
       "item": "minecraft:oak_boat",
       "colour": "#4A7C59",
-      "opens": "Boats, chest boats, rafts and the jar boat. +5% boat speed.",
+      "opens": "The recipes for boats, chest boats, rafts and the jar boat. Anyone may place, ride and break a boat; only crafting one waits for this node. +5% boat speed.",
       "task": null,
       "slot": null,
       "slotBonus": null,
