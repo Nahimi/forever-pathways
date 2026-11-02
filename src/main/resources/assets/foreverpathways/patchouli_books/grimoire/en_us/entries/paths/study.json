@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:inscription_table",
       "title": "Study",
-      "text": "$(bold)The inscription table, copper and iron spellbooks, uncommon ink and the pedestal.$(br2)$(thing)Diamond Age$(n), ring 7.$(br)$(thing)33 Focal Shards$(n).$(br)After Magician."
+      "text": "$(bold)The inscription table, copper and iron spellbooks, uncommon ink and the pedestal.$(br2)$(thing)Diamond Age$(n), ring 7.$(br)$(thing)30 Focal Shards$(n).$(br)After Magician."
     },
     {
       "type": "patchouli:crafting",

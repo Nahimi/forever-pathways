@@ -7,12 +7,12 @@
     {
       "type": "patchouli:text",
       "title": "Seal of the Deep",
-      "text": "$(bold)Bars ring 8: The Deep.$(br2)$(li)$(thing)57 nodes$(n) owned$(br)$(li)$(thing)52 Focal Shards$(n)$(br)$(li)its task, below$(br2)10 nodes wait behind it."
+      "text": "$(bold)Bars ring 8: The Deep.$(br2)$(li)$(thing)57 nodes$(n) owned$(br)$(li)$(thing)25 Focal Shards$(n)$(br)$(li)its task, below$(br2)10 nodes wait behind it."
     },
     {
       "type": "patchouli:text",
       "title": "Task",
-      "text": "$(bold)$(thing)Mine 1,500 deepslate$(n)$(br2)Counts only once everything else about the seal is ready."
+      "text": "$(bold)$(thing)Mine 250 deepslate$(n)$(br2)Counts only once everything else about the seal is ready."
     }
   ]
 }

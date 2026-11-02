@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.42.0
+
+- No node costs more than 30 shards. The Stone, Copper and Iron Ages keep their costs; from ring 6 each ring is
+  scaled so its middle climbs from 20 to 29, and no node got dearer. Seals cost 22 to 30 from the Seal of Gold out.
+  The whole tree now costs about 4,700 shards on Hard instead of 7,900.
+- Water bottles come with Copper Tools, beside the glass bottle: filling a bottle no longer needs Brewing.
+- A finished bounty's slot waits for the next dawn instead of refilling after three minutes, so a day holds three
+  bounties and finishing them all pays the daily bonus.
+- Mining tasks ask for 250 blocks at most, placing tasks for 500 at most, and trading tasks for a quarter as many
+  trades (Trader now asks for 10).
+- Progress popups show three times: when a task or bounty starts, at half way, and near the end (80% for a task,
+  75% for a bounty).
+
 ## 0.41.3
 
 - Magic comes sooner: Magician and Explorer on ring 5 (Explorer now 14 shards), Study on 7, Arcane Essence and

@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:upgrade_orb",
       "title": "Upgrade Orbs",
-      "text": "$(bold)Upgrade orbs, and the mana, cooldown and protection orbs and runes.$(br2)$(thing)Relics$(n), ring 12.$(br)$(thing)64 Focal Shards$(n).$(br)After Arcane Essence."
+      "text": "$(bold)Upgrade orbs, and the mana, cooldown and protection orbs and runes.$(br2)$(thing)Relics$(n), ring 12.$(br)$(thing)26 Focal Shards$(n).$(br)After Arcane Essence."
     },
     {
       "type": "patchouli:crafting",

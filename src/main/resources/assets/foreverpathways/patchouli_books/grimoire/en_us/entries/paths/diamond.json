@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:diamond",
       "title": "Diamond",
-      "text": "$(bold)Diamonds, diamond blocks and diamond tools. The bottleneck of the deep. +15% breaking speed.$(br2)$(thing)Diamond Age$(n), ring 7.$(br)$(thing)26 Focal Shards$(n).$(br)After Deep Prospector."
+      "text": "$(bold)Diamonds, diamond blocks and diamond tools. The bottleneck of the deep. +15% breaking speed.$(br2)$(thing)Diamond Age$(n), ring 7.$(br)$(thing)24 Focal Shards$(n).$(br)After Deep Prospector."
     },
     {
       "type": "patchouli:text",

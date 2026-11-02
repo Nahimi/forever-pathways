@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "bestiary:deep_trident",
       "title": "Titans",
-      "text": "$(bold)The trophies of the Bestiary's titans: the Deep Mother's trident and pearl, the Ember Heart's hammer, the Ice Colossus's fist and heart, the Sand Maw's ripper and cloak, the Trap Crown's whip, the stormreaper and the storm crown.$(br2)$(thing)The Nether$(n), ring 9.$(br)$(thing)34 Focal Shards$(n).$(br)After Beast Lore."
+      "text": "$(bold)The trophies of the Bestiary's titans: the Deep Mother's trident and pearl, the Ember Heart's hammer, the Ice Colossus's fist and heart, the Sand Maw's ripper and cloak, the Trap Crown's whip, the stormreaper and the storm crown.$(br2)$(thing)The Nether$(n), ring 9.$(br)$(thing)23 Focal Shards$(n).$(br)After Beast Lore."
     },
     {
       "type": "patchouli:text",

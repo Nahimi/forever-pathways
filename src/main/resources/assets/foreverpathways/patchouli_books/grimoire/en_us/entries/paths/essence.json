@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:arcane_essence",
       "title": "Arcane Essence",
-      "text": "$(bold)Arcane essence, debris, salvage and ingots, silver rings, the shriving stone, and blank and arcane runes. The bottleneck before the schools.$(br2)$(thing)The Nether$(n), ring 9.$(br)$(thing)46 Focal Shards$(n).$(br)After Study."
+      "text": "$(bold)Arcane essence, debris, salvage and ingots, silver rings, the shriving stone, and blank and arcane runes. The bottleneck before the schools.$(br2)$(thing)The Nether$(n), ring 9.$(br)$(thing)30 Focal Shards$(n).$(br)After Study."
     },
     {
       "type": "patchouli:text",

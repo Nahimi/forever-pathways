@@ -38,8 +38,8 @@ import net.minecraft.world.level.block.Block;
  * <p><b>Bounties</b> are timed jobs outside the tree. Each player has {@code rules.bountySlots} slots (two). At
  * every dawn each empty slot is filled with a bounty drawn at random from the player's pool: every bounty whose
  * node they own, so the pool grows with the tree. A bounty must be finished within its {@code days}; one that runs
- * out simply leaves. A slot emptied by a finished bounty is filled again after {@code rules.bountyRefillTicks}
- * (three minutes), or at dawn if that comes first; one the player gave up (once a day) is filled at once.
+ * out simply leaves. A slot emptied by a finished bounty waits for the next dawn, so a day holds as many bounties as
+ * there are slots and finishing them all pays the daily bonus; one the player gave up (once a day) is filled at once.
  *
  * <p>A <b>delivery</b> is a bounty that asks for crafted items instead of a deed (Deliveries). The last slot always
  * holds one and the others never do; once delivered or expired, it waits for dawn. Given up, it is dealt again at once.
@@ -187,33 +187,21 @@ public final class TaskBook {
     }
 
     /**
-     * Sends a progress notice when a task or bounty has moved forward. The first look after login or a new deal
-     * only records where things stand. Small goals report every step; long ones (blocks walked, stone mined)
-     * report each 5% so a long walk does not keep a popup up for its whole length.
+     * Sends a progress notice three times at most: when a task or bounty first moves, at half way, and near the end
+     * (four fifths for a task, three quarters for a bounty). The first look after login or a new deal only records
+     * where things stand, so nothing already passed is shown again.
      */
     private static void seen(ServerPlayer player, int kind, String id, String title, String subtitle, String item,
                              long progress, long goal, int reward) {
         Map<String, Long> mine = SEEN.computeIfAbsent(player.getUUID(), uuid -> new HashMap<>());
-        String key = (kind == NotifyPayload.BOUNTY_PROGRESS ? "b:" : "t:") + id;
-        if (kind == NotifyPayload.BOUNTY_PROGRESS) {
-            // A bounty speaks up three times only: when it starts moving, at half way and at three quarters.
-            long stage = progress <= 0 || goal <= 0 ? 0 : progress * 4 >= goal * 3 ? 3 : progress * 2 >= goal ? 2 : 1;
-            Long was = mine.put(key, stage);
-            if (was != null && stage > was) {
-                PacketDistributor.sendToPlayer(player, new NotifyPayload(kind, key, title, subtitle, item, progress, goal, reward));
-            }
-            return;
+        boolean bounty = kind == NotifyPayload.BOUNTY_PROGRESS;
+        String key = (bounty ? "b:" : "t:") + id;
+        long late = bounty ? 75 : 80;
+        long stage = progress <= 0 || goal <= 0 ? 0 : progress * 100 >= goal * late ? 3 : progress * 2 >= goal ? 2 : 1;
+        Long was = mine.put(key, stage);
+        if (was != null && stage > was) {
+            PacketDistributor.sendToPlayer(player, new NotifyPayload(kind, key, title, subtitle, item, progress, goal, reward));
         }
-        Long before = mine.put(key, progress);
-        if (before == null || progress <= before || goal <= 0) {
-            return;
-        }
-        boolean step = goal <= 64 || progress * 20 / goal > before * 20 / goal;
-        if (!step) {
-            mine.put(key, before);
-            return;
-        }
-        PacketDistributor.sendToPlayer(player, new NotifyPayload(kind, key, title, subtitle, item, progress, goal, reward));
     }
 
     private static void finished(ServerPlayer player, int kind, String id, String title, String subtitle, String item,
@@ -336,7 +324,6 @@ public final class TaskBook {
                 continue;
             }
             clearSlot(player, slot, SLOT_DONE);
-            scheduleRefill(player, slot, tree.rules.bountyRefillTicks);
             PlayerData.add(player, POINTS, bounty.reward);
             PlayerData.add(player, "fpn_q_" + bounty.id, 1);
             finished(player, NotifyPayload.BOUNTY_DONE, bounty.id, bounty.title, tier, bounty.item, task.amount,

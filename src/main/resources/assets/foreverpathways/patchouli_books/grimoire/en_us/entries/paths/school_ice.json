@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:ice_rune",
       "title": "Ice",
-      "text": "$(bold)The ice rune, upgrade orb, affinity ring and scroll. You may master three schools until Archmage.$(br2)$(thing)Industry$(n), ring 11.$(br)$(thing)54 Focal Shards$(n).$(br)After Arcane Essence."
+      "text": "$(bold)The ice rune, upgrade orb, affinity ring and scroll. You may master three schools until Archmage.$(br2)$(thing)Industry$(n), ring 11.$(br)$(thing)25 Focal Shards$(n).$(br)After Arcane Essence."
     },
     {
       "type": "patchouli:text",

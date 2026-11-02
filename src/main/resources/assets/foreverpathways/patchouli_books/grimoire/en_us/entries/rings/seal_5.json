@@ -7,7 +7,7 @@
     {
       "type": "patchouli:text",
       "title": "Seal of Gold",
-      "text": "$(bold)Bars ring 6: Gilded Age.$(br2)$(li)$(thing)45 nodes$(n) owned$(br)$(li)$(thing)30 Focal Shards$(n)$(br)$(li)its task, below$(br2)12 nodes wait behind it."
+      "text": "$(bold)Bars ring 6: Gilded Age.$(br2)$(li)$(thing)45 nodes$(n) owned$(br)$(li)$(thing)22 Focal Shards$(n)$(br)$(li)its task, below$(br2)12 nodes wait behind it."
     },
     {
       "type": "patchouli:text",

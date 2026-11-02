@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:map",
       "title": "Roadwise",
-      "text": "$(bold)You know the ground before you reach it. +2% movement speed.$(br2)$(thing)Ashen Age$(n), ring 10.$(br)$(thing)40 Focal Shards$(n).$(br)After Fleet Foot."
+      "text": "$(bold)You know the ground before you reach it. +2% movement speed.$(br2)$(thing)Ashen Age$(n), ring 10.$(br)$(thing)24 Focal Shards$(n).$(br)After Fleet Foot."
     },
     {
       "type": "patchouli:text",

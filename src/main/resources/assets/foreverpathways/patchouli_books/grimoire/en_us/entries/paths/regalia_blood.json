@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:cultist_helmet",
       "title": "Blood Robes",
-      "text": "$(bold)The cultist robes: helmet, chestplate, leggings and boots.$(br2)$(thing)Relics$(n), ring 12.$(br)$(thing)64 Focal Shards$(n).$(br)After Blood."
+      "text": "$(bold)The cultist robes: helmet, chestplate, leggings and boots.$(br2)$(thing)Relics$(n), ring 12.$(br)$(thing)26 Focal Shards$(n).$(br)After Blood."
     },
     {
       "type": "patchouli:crafting",

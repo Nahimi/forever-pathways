@@ -8,12 +8,12 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:iron_pickaxe",
       "title": "Strong Back",
-      "text": "$(bold)Years at the rock face. +5% breaking speed.$(br2)$(thing)The Deep$(n), ring 8.$(br)$(thing)28 Focal Shards$(n).$(br)After Iron."
+      "text": "$(bold)Years at the rock face. +5% breaking speed.$(br2)$(thing)The Deep$(n), ring 8.$(br)$(thing)22 Focal Shards$(n).$(br)After Iron."
     },
     {
       "type": "patchouli:text",
       "title": "Task",
-      "text": "$(bold)$(thing)Mine 750 stone$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+      "text": "$(bold)$(thing)Mine 250 stone$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
     },
     {
       "type": "patchouli:text",

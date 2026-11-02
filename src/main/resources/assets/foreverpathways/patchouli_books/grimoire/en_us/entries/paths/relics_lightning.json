@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:lightning_bottle",
       "title": "Lightning Relics",
-      "text": "$(bold)The lightning rod staff, bottled lightning and the energised core.$(br2)$(thing)Relics$(n), ring 13.$(br)$(thing)74 Focal Shards$(n).$(br)After Lightning Robes."
+      "text": "$(bold)The lightning rod staff, bottled lightning and the energised core.$(br2)$(thing)Relics$(n), ring 13.$(br)$(thing)27 Focal Shards$(n).$(br)After Lightning Robes."
     },
     {
       "type": "patchouli:crafting",

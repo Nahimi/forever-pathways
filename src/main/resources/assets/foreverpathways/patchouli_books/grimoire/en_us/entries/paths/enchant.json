@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:enchanting_table",
       "title": "Enchanting",
-      "text": "$(bold)The enchanting table, bookshelves, lapis, the grindstone and the lectern. The table will only offer up to level 5, so the enchantments it gives are the weak ones. Needs Study as well.$(br2)$(thing)The Deep$(n), ring 8.$(br)$(thing)28 Focal Shards$(n).$(br)After Redstone and Study."
+      "text": "$(bold)The enchanting table, bookshelves, lapis, the grindstone and the lectern. The table will only offer up to level 5, so the enchantments it gives are the weak ones. Needs Study as well.$(br2)$(thing)The Deep$(n), ring 8.$(br)$(thing)22 Focal Shards$(n).$(br)After Redstone and Study."
     },
     {
       "type": "patchouli:text",

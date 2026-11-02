@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:diamond_chestplate",
       "title": "Diamond Armour",
-      "text": "$(bold)Diamond armour.$(br2)$(thing)The Nether$(n), ring 9.$(br)$(thing)24 Focal Shards$(n).$(br)After Diamond."
+      "text": "$(bold)Diamond armour.$(br2)$(thing)The Nether$(n), ring 9.$(br)$(thing)16 Focal Shards$(n).$(br)After Diamond."
     },
     {
       "type": "patchouli:crafting",

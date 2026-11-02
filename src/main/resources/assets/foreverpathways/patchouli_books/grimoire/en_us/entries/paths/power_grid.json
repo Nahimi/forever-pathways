@@ -8,12 +8,12 @@
       "type": "patchouli:spotlight",
       "item": "powergrid:electric_motor",
       "title": "Power Grid",
-      "text": "$(bold)Generators, motors, pumps, fans, heaters and the rest of low-voltage electricity. Needs Lighting Rig as well.$(br2)$(thing)Ashen Age$(n), ring 10.$(br)$(thing)79 Focal Shards$(n).$(br)After Brass and Lighting Rig."
+      "text": "$(bold)Generators, motors, pumps, fans, heaters and the rest of low-voltage electricity. Needs Lighting Rig as well.$(br2)$(thing)Ashen Age$(n), ring 10.$(br)$(thing)30 Focal Shards$(n).$(br)After Brass and Lighting Rig."
     },
     {
       "type": "patchouli:text",
       "title": "Task",
-      "text": "$(bold)$(thing)Place 512 redstone dust$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+      "text": "$(bold)$(thing)Place 500 redstone dust$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
     },
     {
       "type": "patchouli:crafting",

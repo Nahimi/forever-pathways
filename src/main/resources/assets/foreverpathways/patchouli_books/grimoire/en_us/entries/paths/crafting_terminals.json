@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "toms_storage:crafting_terminal",
       "title": "Crafting Terminals",
-      "text": "$(bold)The crafting terminal, which crafts straight from the network, the level emitter, and the wireless and advanced wireless terminals.$(br2)$(thing)The Nether$(n), ring 9.$(br)$(thing)34 Focal Shards$(n).$(br)After Storage Network."
+      "text": "$(bold)The crafting terminal, which crafts straight from the network, the level emitter, and the wireless and advanced wireless terminals.$(br2)$(thing)The Nether$(n), ring 9.$(br)$(thing)23 Focal Shards$(n).$(br)After Storage Network."
     }
   ],
   "flag": "mod:toms_storage"

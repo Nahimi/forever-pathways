@@ -145,7 +145,7 @@ CHAPTERS = [
                  "unsealed. Earlier work does not count."},
         {"type": "patchouli:text", "title": "Bounties",
          "text": "Three at a time, lasting a few days. The third is always a delivery.$(br2)"
-                 "$(li)Finish one and the next comes 3 minutes later, or at dawn if that is sooner.$(br)"
+                 "$(li)Finish one and its slot waits for the next dawn.$(br)"
                  "$(li)Hold right-click on one in the Tasks tab to give it up, once a day; a new one comes at once.$(br)"
                  "$(li)They grow harder as you unlock nodes, and pay up to 4 shards; rare ones pay 5.$(br)$(li)Finish three in one day and 3 more shards are yours."},
         {"type": "patchouli:text", "title": "Deliveries",
@@ -163,7 +163,7 @@ CHAPTERS = [
                  "others.$(br2)"
                  "First come, first paid."},
         {"type": "patchouli:text", "title": "Keeping Track",
-         "text": "$(li)A small popup at the right edge as a task moves on, and for a bounty when it starts, at half way and at three quarters.$(br)"
+         "text": "$(li)A small popup at the right edge when a task or bounty starts moving, at half way, and near the end.$(br)"
                  "$(li)A banner and a chime when one is complete.$(br2)"
                  "Turn any of these off at the bottom of the Tasks tab on the ring."},
     ]),
@@ -614,7 +614,7 @@ def main():
                  f"{ages[0]}, {ages[1]}, {ages[2]}, out to {ages[-1]}. An age can span several rings.$(br2)"
                  "A node needs the node before it, whatever else it needs, and its ring unsealed."},
         {"type": "patchouli:text",
-         "text": f"Cost climbs with the ring: a few shards on ring 2, about a hundred on ring {outer - 1}.$(br2)"
+         "text": "Cost climbs with the ring: a few shards on ring 2, and no node costs more than 30.$(br2)"
                  "Seals count how many nodes you own, not which. Breadth gets you out, not one long "
                  "road.$(br2)Costs in this book are Hard costs. On Normal nodes cost 5% less, on Easy a "
                  "quarter less."},

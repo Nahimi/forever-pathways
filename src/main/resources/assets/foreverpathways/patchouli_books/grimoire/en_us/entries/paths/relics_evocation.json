@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:artificer_cane",
       "title": "Evocation Relics",
-      "text": "$(bold)The evoker spellbook, the artificer cane and the graybeard staff.$(br2)$(thing)Relics$(n), ring 13.$(br)$(thing)74 Focal Shards$(n).$(br)After Evocation Robes."
+      "text": "$(bold)The evoker spellbook, the artificer cane and the graybeard staff.$(br2)$(thing)Relics$(n), ring 13.$(br)$(thing)27 Focal Shards$(n).$(br)After Evocation Robes."
     },
     {
       "type": "patchouli:crafting",

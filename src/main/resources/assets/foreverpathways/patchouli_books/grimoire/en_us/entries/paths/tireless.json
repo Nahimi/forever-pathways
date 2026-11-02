@@ -8,12 +8,12 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:diamond_pickaxe",
       "title": "Tireless",
-      "text": "$(bold)You no longer feel the pick. +5% breaking speed.$(br2)$(thing)Ashen Age$(n), ring 10.$(br)$(thing)40 Focal Shards$(n).$(br)After Diamond."
+      "text": "$(bold)You no longer feel the pick. +5% breaking speed.$(br2)$(thing)Ashen Age$(n), ring 10.$(br)$(thing)24 Focal Shards$(n).$(br)After Diamond."
     },
     {
       "type": "patchouli:text",
       "title": "Task",
-      "text": "$(bold)$(thing)Mine 1,250 deepslate$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
+      "text": "$(bold)$(thing)Mine 250 deepslate$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
     },
     {
       "type": "patchouli:text",

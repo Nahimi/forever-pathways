@@ -7,7 +7,7 @@
     {
       "type": "patchouli:text",
       "title": "Seal of Fire",
-      "text": "$(bold)Bars ring 9: The Nether.$(br2)$(li)$(thing)64 nodes$(n) owned$(br)$(li)$(thing)65 Focal Shards$(n)$(br)$(li)its task, below$(br2)14 nodes wait behind it."
+      "text": "$(bold)Bars ring 9: The Nether.$(br2)$(li)$(thing)64 nodes$(n) owned$(br)$(li)$(thing)26 Focal Shards$(n)$(br)$(li)its task, below$(br2)14 nodes wait behind it."
     },
     {
       "type": "patchouli:text",

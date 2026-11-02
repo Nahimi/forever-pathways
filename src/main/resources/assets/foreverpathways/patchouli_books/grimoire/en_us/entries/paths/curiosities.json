@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:name_tag",
       "title": "Curiosities",
-      "text": "$(bold)Every vanilla item not claimed elsewhere, plus anything from a mod the tree does not know about yet.$(br2)$(thing)Ashen Age$(n), ring 10.$(br)$(thing)29 Focal Shards$(n).$(br)After Nether."
+      "text": "$(bold)Every vanilla item not claimed elsewhere, plus anything from a mod the tree does not know about yet.$(br2)$(thing)Ashen Age$(n), ring 10.$(br)$(thing)17 Focal Shards$(n).$(br)After Nether."
     },
     {
       "type": "patchouli:crafting",

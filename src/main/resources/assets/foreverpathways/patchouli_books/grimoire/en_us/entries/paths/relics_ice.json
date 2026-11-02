@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:ice_staff",
       "title": "Ice Relics",
-      "text": "$(bold)The ice spellbook and staff, permafrost, frozen bones and the frost blades.$(br2)$(thing)Relics$(n), ring 13.$(br)$(thing)74 Focal Shards$(n).$(br)After Ice Robes."
+      "text": "$(bold)The ice spellbook and staff, permafrost, frozen bones and the frost blades.$(br2)$(thing)Relics$(n), ring 13.$(br)$(thing)27 Focal Shards$(n).$(br)After Ice Robes."
     },
     {
       "type": "patchouli:crafting",

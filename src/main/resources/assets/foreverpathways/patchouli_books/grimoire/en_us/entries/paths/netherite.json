@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:netherite_ingot",
       "title": "Netherite",
-      "text": "$(bold)Netherite scrap, ingots and blocks, the upgrade template and the lodestone, with netherite tools and armour. +10% breaking speed.$(br2)$(thing)Relics$(n), ring 13.$(br)$(thing)70 Focal Shards$(n).$(br)After Infernal."
+      "text": "$(bold)Netherite scrap, ingots and blocks, the upgrade template and the lodestone, with netherite tools and armour. +10% breaking speed.$(br2)$(thing)Relics$(n), ring 13.$(br)$(thing)26 Focal Shards$(n).$(br)After Infernal."
     },
     {
       "type": "patchouli:text",

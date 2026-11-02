@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "supplementaries:cannon",
       "title": "Ordnance",
-      "text": "$(bold)Cannons, cannonballs, cannon boats and every kind of bomb.$(br2)$(thing)Ashen Age$(n), ring 10.$(br)$(thing)29 Focal Shards$(n).$(br)After Explosives."
+      "text": "$(bold)Cannons, cannonballs, cannon boats and every kind of bomb.$(br2)$(thing)Ashen Age$(n), ring 10.$(br)$(thing)17 Focal Shards$(n).$(br)After Explosives."
     },
     {
       "type": "patchouli:crafting",

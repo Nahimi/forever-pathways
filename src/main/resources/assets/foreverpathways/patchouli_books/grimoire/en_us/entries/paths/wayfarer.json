@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:netherite_boots",
       "title": "Wayfarer",
-      "text": "$(bold)The road is shorter than it was. +2% movement speed.$(br2)$(thing)Relics$(n), ring 13.$(br)$(thing)65 Focal Shards$(n).$(br)After Windrunner."
+      "text": "$(bold)The road is shorter than it was. +2% movement speed.$(br2)$(thing)Relics$(n), ring 13.$(br)$(thing)24 Focal Shards$(n).$(br)After Windrunner."
     },
     {
       "type": "patchouli:text",

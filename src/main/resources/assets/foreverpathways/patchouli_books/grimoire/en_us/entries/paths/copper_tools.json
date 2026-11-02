@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:copper_block",
       "title": "Copper Tools",
-      "text": "$(bold)The stone axe, copper blocks and the lightning rod, and the beaten metal that makes a canteen and a water purifier. Glass bottles too. The Copper Age proper. +10% breaking speed.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)8 Focal Shards$(n).$(br)After Quarry."
+      "text": "$(bold)The stone axe, copper blocks and the lightning rod, and the beaten metal that makes a canteen and a water purifier. Glass bottles and water bottles too. The Copper Age proper. +10% breaking speed.$(br2)$(thing)Copper Age$(n), ring 2.$(br)$(thing)8 Focal Shards$(n).$(br)After Quarry."
     },
     {
       "type": "patchouli:text",
@@ -28,7 +28,7 @@
     {
       "type": "patchouli:text",
       "title": "Unlocks",
-      "text": "$(bold)stone axe, copper block, lightning rod, glass bottle, glass bottle de."
+      "text": "$(bold)stone axe, copper block, lightning rod, glass bottle, glass bottle de, potion, potion de."
     }
   ]
 }

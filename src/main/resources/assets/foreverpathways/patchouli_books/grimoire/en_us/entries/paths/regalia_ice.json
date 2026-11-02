@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:cryomancer_helmet",
       "title": "Ice Robes",
-      "text": "$(bold)The cryomancer robes: helmet, chestplate, leggings and boots.$(br2)$(thing)Relics$(n), ring 12.$(br)$(thing)64 Focal Shards$(n).$(br)After Ice."
+      "text": "$(bold)The cryomancer robes: helmet, chestplate, leggings and boots.$(br2)$(thing)Relics$(n), ring 12.$(br)$(thing)26 Focal Shards$(n).$(br)After Ice."
     },
     {
       "type": "patchouli:crafting",

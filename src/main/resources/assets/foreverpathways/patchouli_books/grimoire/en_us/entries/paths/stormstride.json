@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:elytra",
       "title": "Stormstride",
-      "text": "$(bold)As quick on your feet as anyone ever was. +2% movement speed.$(br2)$(thing)The Arcane$(n), ring 15.$(br)$(thing)86 Focal Shards$(n).$(br)After Wayfarer."
+      "text": "$(bold)As quick on your feet as anyone ever was. +2% movement speed.$(br2)$(thing)The Arcane$(n), ring 15.$(br)$(thing)25 Focal Shards$(n).$(br)After Wayfarer."
     },
     {
       "type": "patchouli:text",
