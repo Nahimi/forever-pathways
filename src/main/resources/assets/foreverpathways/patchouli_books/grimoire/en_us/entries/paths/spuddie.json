@@ -2,13 +2,13 @@
   "name": "Spuddie Talkie",
   "category": "foreverpathways:paths/technician",
   "icon": "simpleradio:spuddie_talkie",
-  "sortnum": 100,
+  "sortnum": 300,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "simpleradio:spuddie_talkie",
       "title": "Spuddie Talkie",
-      "text": "$(bold)The spuddie talkie: a potato wired for short-range chatter.$(br2)$(thing)Stone Age$(n), ring 1.$(br)$(thing)6 Focal Shards$(n).$(br)After Core."
+      "text": "$(bold)The spuddie talkie: a potato wired for short-range chatter.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)4 Focal Shards$(n).$(br)After Technician."
     },
     {
       "type": "patchouli:crafting",

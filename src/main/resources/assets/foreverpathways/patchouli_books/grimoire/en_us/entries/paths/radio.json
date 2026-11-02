@@ -2,13 +2,13 @@
   "name": "Radio",
   "category": "foreverpathways:paths/technician",
   "icon": "simpleradio:radio",
-  "sortnum": 300,
+  "sortnum": 500,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "simpleradio:radio",
       "title": "Radio",
-      "text": "$(bold)Radios, antennas, microphones, speakers, transmitters and receivers, and the modules.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)12 Focal Shards$(n).$(br)After Walkie-Talkie."
+      "text": "$(bold)Radios, antennas, microphones, speakers, transmitters and receivers, and the modules.$(br2)$(thing)Iron Age$(n), ring 5.$(br)$(thing)12 Focal Shards$(n).$(br)After Walkie-Talkie."
     },
     {
       "type": "patchouli:crafting",

@@ -1,0 +1,20 @@
+{
+  "name": "Explorer",
+  "category": "foreverpathways:paths/ranger",
+  "icon": "waystones:waystone",
+  "sortnum": 700,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "waystones:waystone",
+      "title": "Explorer",
+      "text": "$(bold)The waystones on the Monoliths answer you: wake them and travel between those you have woken. Making, placing and breaking waystones wait for Attunement. Needs Magician as well.$(br2)$(thing)Diamond Age$(n), ring 7.$(br)$(thing)18 Focal Shards$(n).$(br)After Scout and Magician."
+    },
+    {
+      "type": "patchouli:text",
+      "title": "Task",
+      "text": "$(bold)$(thing)Travel 10,000 blocks$(n)$(br2)Pays 2 Focal Shards once. Counts only once this node is reachable."
+    }
+  ],
+  "flag": "mod:waystones"
+}

@@ -232,8 +232,8 @@ BEYOND = [
         "Separate from Create, and it starts earlier.$(br2)"
         "$(li)$(l:paths/wiring)Wiring$(), ring 3: cord, wire, potato battery.$(br)"
         "$(li)$(l:paths/lighting_rig)Lighting Rig$(), ring 4: bulbs, meters.$(br)"
-        "$(li)$(l:paths/power_grid)Power Grid$(), ring 11: generators, motors.$(br)"
-        "$(li)$(l:paths/high_voltage)High Voltage$(), ring 15: the end of it.",
+        "$(li)$(l:paths/power_grid)Power Grid$(), ring 10: generators, motors.$(br)"
+        "$(li)$(l:paths/high_voltage)High Voltage$(), ring 11: the end of it.",
     ]),
     ("a6", "A6. Magic", "irons_spellbooks:wimpy_spell_book", 6, "mod:irons_spellbooks", [
         "Late, and dearer: every magic node costs half again a machine on the same ring.$(br2)"
@@ -257,9 +257,9 @@ BEYOND = [
          "text": "Great stones stand across the world, each holding a $(thing)waystone$().$(br2)"
                  "$(li)Right-click one to wake it.$(br)"
                  "$(li)From any woken waystone, travel to the others you have woken.$(br2)"
-                 "They answer you from $(l:paths/scout)Scout$(), ring 2, or $(l:paths/magician)Magician$(), ring 7."},
+                 "They answer you from $(l:paths/explorer)Explorer$(), ring 7, which needs Scout and Magician."},
         {"type": "patchouli:text", "title": "Your Own Waystones",
-         "text": "$(li)$(l:paths/scout)Scout$(), ring 2, or $(l:paths/magician)Magician$(), ring 7: use the Monoliths' waystones. You cannot "
+         "text": "$(li)$(l:paths/explorer)Explorer$(), ring 7, after Scout and Magician: use the Monoliths' waystones. You cannot "
                  "move or break them.$(br)"
                  "$(li)$(l:paths/attunement)Attunement$(), ring 12: craft and place your own, with warp "
                  "stones and scrolls.$(br)"

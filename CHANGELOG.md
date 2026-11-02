@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.41.1
+
+- Explorer is back as the node that lets you use the Monoliths' waystones, on ring 7: it needs Scout and Magician.
+  Scout keeps the compass; neither Scout nor Magician opens waystones on its own any more.
+- The Spuddie Talkie, Walkie-Talkie and Radio come after Technician, on rings 3 to 5.
+- Power Grid, High Voltage, Schematics, Chromatics and Undying come a ring or more earlier; Chalk, the talkies, Wiring
+  and Hardy cost less.
+
 ## 0.41.0
 
 - Sharing: within 30 blocks of a player who owns a node you do not, that node's task asks a quarter less and it costs

@@ -7,7 +7,7 @@
     {
       "type": "patchouli:text",
       "title": "Seal of Diamond",
-      "text": "$(bold)Bars ring 7: Diamond Age.$(br2)$(li)$(thing)49 nodes$(n) owned$(br)$(li)$(thing)42 Focal Shards$(n)$(br)$(li)its task, below$(br2)18 nodes wait behind it."
+      "text": "$(bold)Bars ring 7: Diamond Age.$(br2)$(li)$(thing)49 nodes$(n) owned$(br)$(li)$(thing)42 Focal Shards$(n)$(br)$(li)its task, below$(br2)19 nodes wait behind it."
     },
     {
       "type": "patchouli:text",

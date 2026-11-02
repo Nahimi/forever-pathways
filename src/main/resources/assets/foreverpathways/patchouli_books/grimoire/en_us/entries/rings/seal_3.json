@@ -7,7 +7,7 @@
     {
       "type": "patchouli:text",
       "title": "Seal of Iron",
-      "text": "$(bold)Bars rings 3 to 5: Iron Age.$(br2)$(li)$(thing)13 nodes$(n) owned$(br)$(li)$(thing)18 Focal Shards$(n)$(br)$(li)its task, below$(br2)71 nodes wait behind it."
+      "text": "$(bold)Bars rings 3 to 5: Iron Age.$(br2)$(li)$(thing)13 nodes$(n) owned$(br)$(li)$(thing)18 Focal Shards$(n)$(br)$(li)its task, below$(br2)73 nodes wait behind it."
     },
     {
       "type": "patchouli:text",
