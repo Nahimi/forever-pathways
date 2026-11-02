@@ -2,13 +2,13 @@
   "name": "Oarsman",
   "category": "foreverpathways:paths/ranger",
   "icon": "minecraft:oak_boat",
-  "sortnum": 300,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:oak_boat",
       "title": "Oarsman",
-      "text": "$(bold)A steadier stroke. +5% boat speed.$(br2)$(thing)Iron Age$(n), ring 3.$(br)$(thing)10 Focal Shards$(n).$(br)After Ranger."
+      "text": "$(bold)A steadier stroke. +5% boat speed.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)10 Focal Shards$(n).$(br)After Boatwright."
     },
     {
       "type": "patchouli:text",

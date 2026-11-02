@@ -2,13 +2,13 @@
   "name": "Explorer",
   "category": "foreverpathways:paths/ranger",
   "icon": "waystones:waystone",
-  "sortnum": 700,
+  "sortnum": 500,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "waystones:waystone",
       "title": "Explorer",
-      "text": "$(bold)The waystones on the Monoliths answer you: wake them and travel between those you have woken. Making, placing and breaking waystones wait for Attunement. Needs Magician as well.$(br2)$(thing)Diamond Age$(n), ring 7.$(br)$(thing)18 Focal Shards$(n).$(br)After Scout and Magician."
+      "text": "$(bold)The waystones on the Monoliths answer you: wake them and travel between those you have woken. Making, placing and breaking waystones wait for Attunement. Needs Magician as well.$(br2)$(thing)Iron Age$(n), ring 5.$(br)$(thing)14 Focal Shards$(n).$(br)After Scout and Magician."
     },
     {
       "type": "patchouli:text",

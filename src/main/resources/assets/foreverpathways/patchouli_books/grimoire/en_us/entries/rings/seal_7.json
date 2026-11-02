@@ -7,7 +7,7 @@
     {
       "type": "patchouli:text",
       "title": "Seal of the Deep",
-      "text": "$(bold)Bars ring 8: The Deep.$(br2)$(li)$(thing)57 nodes$(n) owned$(br)$(li)$(thing)52 Focal Shards$(n)$(br)$(li)its task, below$(br2)11 nodes wait behind it."
+      "text": "$(bold)Bars ring 8: The Deep.$(br2)$(li)$(thing)57 nodes$(n) owned$(br)$(li)$(thing)52 Focal Shards$(n)$(br)$(li)its task, below$(br2)10 nodes wait behind it."
     },
     {
       "type": "patchouli:text",

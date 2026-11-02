@@ -2,13 +2,13 @@
   "name": "Sea Legs",
   "category": "foreverpathways:paths/ranger",
   "icon": "minecraft:spruce_boat",
-  "sortnum": 700,
+  "sortnum": 600,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:spruce_boat",
       "title": "Sea Legs",
-      "text": "$(bold)The water carries you. +5% boat speed.$(br2)$(thing)Diamond Age$(n), ring 7.$(br)$(thing)23 Focal Shards$(n).$(br)After Oarsman."
+      "text": "$(bold)The water carries you. +5% boat speed.$(br2)$(thing)Gilded Age$(n), ring 6.$(br)$(thing)23 Focal Shards$(n).$(br)After Oarsman."
     },
     {
       "type": "patchouli:text",

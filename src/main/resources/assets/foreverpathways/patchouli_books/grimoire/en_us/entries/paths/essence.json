@@ -2,13 +2,13 @@
   "name": "Arcane Essence",
   "category": "foreverpathways:paths/magician",
   "icon": "irons_spellbooks:arcane_essence",
-  "sortnum": 1000,
+  "sortnum": 900,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:arcane_essence",
       "title": "Arcane Essence",
-      "text": "$(bold)Arcane essence, debris, salvage and ingots, silver rings, the shriving stone, and blank and arcane runes. The bottleneck before the schools.$(br2)$(thing)Ashen Age$(n), ring 10.$(br)$(thing)46 Focal Shards$(n).$(br)After Study."
+      "text": "$(bold)Arcane essence, debris, salvage and ingots, silver rings, the shriving stone, and blank and arcane runes. The bottleneck before the schools.$(br2)$(thing)The Nether$(n), ring 9.$(br)$(thing)46 Focal Shards$(n).$(br)After Study."
     },
     {
       "type": "patchouli:text",

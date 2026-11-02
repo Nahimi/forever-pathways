@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(bold)$(li)Sleeping in the same bed makes it a $(thing)home bed$(n), which gives more back each night.$(br)$(li)Hammocks for a camp: $(l:paths/furnishings)Furnishings$(n), ring 3.$(br)$(li)Night bag for the road: $(l:paths/infirmary)Infirmary$(n), ring 7.",
+      "text": "$(bold)$(li)Sleeping in the same bed makes it a $(thing)home bed$(n), which gives more back each night.$(br)$(li)Hammocks for a camp: $(l:paths/furnishings)Furnishings$(n), ring 3.$(br)$(li)Night bag for the road: $(l:paths/infirmary)Infirmary$(n), ring 6.",
       "title": "A1. Beds & Sleep"
     },
     {

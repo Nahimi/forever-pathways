@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.41.3
+
+- Magic comes sooner: Magician and Explorer on ring 5 (Explorer now 14 shards), Study on 7, Arcane Essence and
+  Apprentice Robes on 9, Wizard Robes on 10, Warp Network on 13; Elixirs on 5.
+- Oarsman follows Boatwright on ring 4, and Sea Legs is on ring 6.
+- Homesteader: Husbandry moves out to ring 3; Grove and Butcher's Steel come in to rings 3 and 4, Fernery to 4 and
+  Infirmary to 6.
+
 ## 0.41.2
 
 - A bounty's progress popup shows only when it starts, at half way and at three quarters, not on every step. Its

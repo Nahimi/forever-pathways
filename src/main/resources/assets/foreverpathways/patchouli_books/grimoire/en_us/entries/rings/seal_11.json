@@ -7,7 +7,7 @@
     {
       "type": "patchouli:text",
       "title": "Seal of Current",
-      "text": "$(bold)Bars ring 11: Industry.$(br2)$(li)$(thing)78 nodes$(n) owned$(br)$(li)$(thing)93 Focal Shards$(n)$(br)$(li)its task, below$(br2)28 nodes wait behind it."
+      "text": "$(bold)Bars ring 11: Industry.$(br2)$(li)$(thing)78 nodes$(n) owned$(br)$(li)$(thing)93 Focal Shards$(n)$(br)$(li)its task, below$(br2)27 nodes wait behind it."
     },
     {
       "type": "patchouli:text",

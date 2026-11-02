@@ -101,7 +101,7 @@ CHAPTERS = [
         {"type": "patchouli:text",
          "title": "Lanterns and Oil",
          "flag": "mod:hardcore_torches",
-         "text": "Lanterns burn fuel too, and are refilled with an $(thing)oil can$(): coal or animal fat. A fire starter will not light them; use a torch, campfire or flint and steel.$(br2)$(li)Lanterns and the oil can: $(l:paths/ironworks)Ironworks$(), ring 4.$(br)$(li)Animal fat: $(l:paths/husbandry)Husbandry$(), ring 2.$(br)$(li)The bandolier carries torches: Ironworks, ring 4."},
+         "text": "Lanterns burn fuel too, and are refilled with an $(thing)oil can$(): coal or animal fat. A fire starter will not light them; use a torch, campfire or flint and steel.$(br2)$(li)Lanterns and the oil can: $(l:paths/ironworks)Ironworks$(), ring 4.$(br)$(li)Animal fat: $(l:paths/husbandry)Husbandry$(), ring 3.$(br)$(li)The bandolier carries torches: Ironworks, ring 4."},
         {"type": "patchouli:text",
          "title": "Campfires and Stoves",
          "flag": "mod:hardcore_torches",
@@ -185,7 +185,7 @@ BEYOND = [
         "$(li)Sleeping in the same bed makes it a $(thing)home bed$(), which gives more back each "
         "night.$(br)"
         "$(li)Hammocks for a camp: $(l:paths/furnishings)Furnishings$(), ring 3.$(br)"
-        "$(li)Night bag for the road: $(l:paths/infirmary)Infirmary$(), ring 7.",
+        "$(li)Night bag for the road: $(l:paths/infirmary)Infirmary$(), ring 6.",
         {"type": "patchouli:text", "title": "Infested Beds",
          "text": "$(#8A3B2F)Mansion beds are often infested.$() Sleep in one and bedbugs wake "
                  "you.$(br2)"
@@ -213,8 +213,8 @@ BEYOND = [
                  "$(li)$(thing)Hacksaw$(): bone.$(br)"
                  "$(li)$(thing)Skinning knife$(): hide and fur.$(br)"
                  "$(li)$(thing)Hammer$(): the rest.$(br2)"
-                 "Bone and copper: $(l:paths/husbandry)Husbandry$(), ring 2. Iron and gold: "
-                 "$(l:paths/butcher_tools)Butcher's Steel$(), ring 5."},
+                 "Bone and copper: $(l:paths/husbandry)Husbandry$(), ring 3. Iron and gold: "
+                 "$(l:paths/butcher_tools)Butcher's Steel$(), ring 4."},
         {"type": "patchouli:text", "title": "Further Out",
          "text": "$(li)$(l:paths/abattoir)Abattoir$(), ring 5: cuts, blood work, the grinder.$(br)"
                  "$(li)$(l:paths/charcuterie)Charcuterie$(), ring 7: sausage, ham, salami.$(br)"
@@ -238,7 +238,7 @@ BEYOND = [
     ("a6", "A6. Magic", "irons_spellbooks:wimpy_spell_book", 6, "mod:irons_spellbooks", [
         "Late, and dearer: every magic node costs half again a machine on the same ring.$(br2)"
         "$(li)$(l:paths/alchemy)Alchemy$(), ring 4, from the Herbalist: cauldron, elixirs.$(br)"
-        "$(li)$(l:paths/magician)Magician$(), ring 7: books, scrolls, ink. $(l:paths/study)Study$(), ring 8.$(br)"
+        "$(li)$(l:paths/magician)Magician$(), ring 5: books, scrolls, ink. $(l:paths/study)Study$(), ring 7.$(br)"
         "$(li)Eight schools, ring 11. $(thing)You may learn three.$(br)"
         "$(li)Robes 12, relics 13, Eldritch and Grand Magus 15.",
         {"type": "patchouli:text", "title": "Enchanting",
@@ -257,13 +257,13 @@ BEYOND = [
          "text": "Great stones stand across the world, each holding a $(thing)waystone$().$(br2)"
                  "$(li)Right-click one to wake it.$(br)"
                  "$(li)From any woken waystone, travel to the others you have woken.$(br2)"
-                 "They answer you from $(l:paths/explorer)Explorer$(), ring 7, which needs Scout and Magician."},
+                 "They answer you from $(l:paths/explorer)Explorer$(), ring 5, which needs Scout and Magician."},
         {"type": "patchouli:text", "title": "Your Own Waystones",
-         "text": "$(li)$(l:paths/explorer)Explorer$(), ring 7, after Scout and Magician: use the Monoliths' waystones. You cannot "
+         "text": "$(li)$(l:paths/explorer)Explorer$(), ring 5, after Scout and Magician: use the Monoliths' waystones. You cannot "
                  "move or break them.$(br)"
                  "$(li)$(l:paths/attunement)Attunement$(), ring 12: craft and place your own, with warp "
                  "stones and scrolls.$(br)"
-                 "$(li)$(l:paths/warp_network)Warp Network$(), ring 14: sharestones, portstones and "
+                 "$(li)$(l:paths/warp_network)Warp Network$(), ring 13: sharestones, portstones and "
                  "warp plates."},
         {"type": "patchouli:crafting", "recipe": "waystones:waystone", "recipe2": "waystones:warp_stone",
          "title": "Waystone and Warp Stone"},

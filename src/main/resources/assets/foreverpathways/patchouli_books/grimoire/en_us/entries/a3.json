@@ -12,7 +12,7 @@
     {
       "type": "patchouli:text",
       "title": "Tools",
-      "text": "$(bold)$(li)$(thing)Cleaver$(n): carcasses and cuts.$(br)$(li)$(thing)Hacksaw$(n): bone.$(br)$(li)$(thing)Skinning knife$(n): hide and fur.$(br)$(li)$(thing)Hammer$(n): the rest.$(br2)Bone and copper: $(l:paths/husbandry)Husbandry$(n), ring 2. Iron and gold: $(l:paths/butcher_tools)Butcher's Steel$(n), ring 5."
+      "text": "$(bold)$(li)$(thing)Cleaver$(n): carcasses and cuts.$(br)$(li)$(thing)Hacksaw$(n): bone.$(br)$(li)$(thing)Skinning knife$(n): hide and fur.$(br)$(li)$(thing)Hammer$(n): the rest.$(br2)Bone and copper: $(l:paths/husbandry)Husbandry$(n), ring 3. Iron and gold: $(l:paths/butcher_tools)Butcher's Steel$(n), ring 4."
     },
     {
       "type": "patchouli:text",

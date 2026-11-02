@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(bold)Late, and dearer: every magic node costs half again a machine on the same ring.$(br2)$(li)$(l:paths/alchemy)Alchemy$(n), ring 4, from the Herbalist: cauldron, elixirs.$(br)$(li)$(l:paths/magician)Magician$(n), ring 7: books, scrolls, ink. $(l:paths/study)Study$(n), ring 8.$(br)$(li)Eight schools, ring 11. $(thing)You may learn three.$(br)$(li)Robes 12, relics 13, Eldritch and Grand Magus 15.",
+      "text": "$(bold)Late, and dearer: every magic node costs half again a machine on the same ring.$(br2)$(li)$(l:paths/alchemy)Alchemy$(n), ring 4, from the Herbalist: cauldron, elixirs.$(br)$(li)$(l:paths/magician)Magician$(n), ring 5: books, scrolls, ink. $(l:paths/study)Study$(n), ring 7.$(br)$(li)Eight schools, ring 11. $(thing)You may learn three.$(br)$(li)Robes 12, relics 13, Eldritch and Grand Magus 15.",
       "title": "A6. Magic"
     },
     {

@@ -2,13 +2,13 @@
   "name": "Fernery",
   "category": "foreverpathways:paths/homesteader",
   "icon": "legendarysurvivaloverhaul:sun_fern_seeds",
-  "sortnum": 500,
+  "sortnum": 400,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "legendarysurvivaloverhaul:sun_fern_seeds",
       "title": "Fernery",
-      "text": "$(bold)Sun and ice ferns: the seeds, the leaves and the gold that grows on them.$(br2)$(thing)Iron Age$(n), ring 5.$(br)$(thing)9 Focal Shards$(n).$(br)After Herbalist."
+      "text": "$(bold)Sun and ice ferns: the seeds, the leaves and the gold that grows on them.$(br2)$(thing)Iron Age$(n), ring 4.$(br)$(thing)9 Focal Shards$(n).$(br)After Herbalist."
     }
   ],
   "flag": "mod:legendarysurvivaloverhaul"
