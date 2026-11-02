@@ -163,7 +163,7 @@ CHAPTERS = [
                  "others.$(br2)"
                  "First come, first paid."},
         {"type": "patchouli:text", "title": "Keeping Track",
-         "text": "$(li)A small popup at the right edge as a task or bounty moves on.$(br)"
+         "text": "$(li)A small popup at the right edge as a task moves on, and for a bounty when it starts, at half way and at three quarters.$(br)"
                  "$(li)A banner and a chime when one is complete.$(br2)"
                  "Turn any of these off at the bottom of the Tasks tab on the ring."},
     ]),

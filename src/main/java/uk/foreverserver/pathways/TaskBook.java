@@ -195,6 +195,15 @@ public final class TaskBook {
                              long progress, long goal, int reward) {
         Map<String, Long> mine = SEEN.computeIfAbsent(player.getUUID(), uuid -> new HashMap<>());
         String key = (kind == NotifyPayload.BOUNTY_PROGRESS ? "b:" : "t:") + id;
+        if (kind == NotifyPayload.BOUNTY_PROGRESS) {
+            // A bounty speaks up three times only: when it starts moving, at half way and at three quarters.
+            long stage = progress <= 0 || goal <= 0 ? 0 : progress * 4 >= goal * 3 ? 3 : progress * 2 >= goal ? 2 : 1;
+            Long was = mine.put(key, stage);
+            if (was != null && stage > was) {
+                PacketDistributor.sendToPlayer(player, new NotifyPayload(kind, key, title, subtitle, item, progress, goal, reward));
+            }
+            return;
+        }
         Long before = mine.put(key, progress);
         if (before == null || progress <= before || goal <= 0) {
             return;

@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.41.2
+
+- A bounty's progress popup shows only when it starts, at half way and at three quarters, not on every step. Its
+  completion banner is unchanged, and task popups are as before.
+
 ## 0.41.1
 
 - Explorer is back as the node that lets you use the Monoliths' waystones, on ring 7: it needs Scout and Magician.
