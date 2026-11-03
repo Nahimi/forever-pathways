@@ -122,6 +122,7 @@ configurations {
 dependencies {
     compileOnly "maven.modrinth:progressivestages:3.0.6"
     compileOnly "vazkii.patchouli:Patchouli:1.21.1-93-NEOFORGE"
+    compileOnly "maven.modrinth:hardcore-torches:1.21.0-2.7"
 
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime

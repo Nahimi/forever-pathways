@@ -1,0 +1,14 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "uk.foreverserver.pathways.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "LanternFuelMixin",
+    "TorchFuelMixin",
+    "CampfireFuelMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

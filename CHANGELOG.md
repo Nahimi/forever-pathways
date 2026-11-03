@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.42.3
+
+- Hardcore Torches: using a lantern, torch or campfire no longer crashes on its fuel-message setting when that
+  config has not loaded (on a server, say); no message is shown instead.
+- Bounties can now award up to 5 shards depending on difficulty. The mutant bounties take any hostile mutant: kill 1
+  for 2 shards, 3 for 3 shards, or 5 for 5 shards.
+
 ## 0.42.1
 
 - Boats are craft-locked only: anyone may carry, place, ride and break a boat, chest boat, raft or jar boat, and only

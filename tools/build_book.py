@@ -147,7 +147,7 @@ CHAPTERS = [
          "text": "Three at a time, lasting a few days. The third is always a delivery.$(br2)"
                  "$(li)Finish one and its slot waits for the next dawn.$(br)"
                  "$(li)Hold right-click on one in the Tasks tab to give it up, once a day; a new one comes at once.$(br)"
-                 "$(li)They grow harder as you unlock nodes, and pay up to 4 shards; rare ones pay 5.$(br)$(li)Finish three in one day and 3 more shards are yours."},
+                 "$(li)They grow harder as you unlock nodes, and pay up to 5 shards: the harder the bounty, the more it pays.$(br)$(li)Finish three in one day and 3 more shards are yours."},
         {"type": "patchouli:text", "title": "Deliveries",
          "text": "Some bounties ask you to hand in crafted items: 32 Iron Ingots, 2 Bookshelves.$(br2)"
                  "$(li)Carry them all, then press Deliver.$(br)"

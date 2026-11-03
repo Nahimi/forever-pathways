@@ -836,14 +836,14 @@
     {
       "id": "mutants_5",
       "tier": 2,
-      "title": "Kill 4 mutants (zombies or creepers)",
+      "title": "Kill 1 mutant",
       "kind": "kill",
-      "amount": 4,
+      "amount": 1,
       "reward": 2,
       "days": 3,
       "requires": "forever:seal_3",
       "item": "mutantmonsters:creeper_shard",
-      "target": "mutantmonsters:mutant_zombie,mutantmonsters:mutant_creeper"
+      "target": "mutantmonsters:mutant_zombie,mutantmonsters:mutant_creeper,mutantmonsters:mutant_skeleton,mutantmonsters:mutant_enderman"
     },
     {
       "id": "witches_5",
@@ -1087,27 +1087,27 @@
     },
     {
       "id": "mutants_10",
-      "tier": 3,
-      "title": "Kill 7 mutants (zombies or creepers)",
+      "tier": 4,
+      "title": "Kill 5 mutants",
       "kind": "kill",
-      "amount": 7,
-      "reward": 3,
+      "amount": 5,
+      "reward": 5,
       "days": 3,
       "requires": "forever:mutants",
       "item": "mutantmonsters:hulk_hammer",
-      "target": "mutantmonsters:mutant_zombie,mutantmonsters:mutant_creeper"
+      "target": "mutantmonsters:mutant_zombie,mutantmonsters:mutant_creeper,mutantmonsters:mutant_skeleton,mutantmonsters:mutant_enderman"
     },
     {
       "id": "mutant_skeletons",
       "tier": 3,
-      "title": "Kill 2 mutant skeletons",
+      "title": "Kill 3 mutants",
       "kind": "kill",
-      "amount": 2,
+      "amount": 3,
       "reward": 3,
       "days": 3,
       "requires": "forever:mutants",
       "item": "mutantmonsters:mutant_skeleton_skull",
-      "target": "mutantmonsters:mutant_skeleton"
+      "target": "mutantmonsters:mutant_zombie,mutantmonsters:mutant_creeper,mutantmonsters:mutant_skeleton,mutantmonsters:mutant_enderman"
     },
     {
       "id": "pirates_15",
