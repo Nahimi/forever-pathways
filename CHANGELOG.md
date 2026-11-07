@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.43.0
+
+- Six seals instead of eleven, over the same rings. Copper and Iron are as they were; the Seal of Diamond opens the
+  Gilded and Diamond rings (6 and 7), the Seal of the Nether the Deep and the Nether (8 and 9), the Seal of Ash the
+  Ashen Age and Industry (10 and 11), and the Seal of the Arcane Relics and the Arcane (12 to 15). Seven ages in all.
+  Players who broke a seal that is gone get its shards back.
+- The eyes no longer wait on a ring of their own. Each sits just outside its boss's node, from the Nether Age to the
+  Arcane Age, and the Seal of Eyes is gone. The Divine Chariot (Azazel) moves into the Nether Age, with its eye.
+- Fewer stage syncs: ProgressiveStages' definitions, snapshot and lock table go to a player once per login, not on
+  every respawn and change of dimension.
+- Hardcore Torches: the fuel-message fix no longer leans on a helper class inside the mixin package.
+
 ## 0.42.3
 
 - Hardcore Torches: using a lantern, torch or campfire no longer crashes on its fuel-message setting when that

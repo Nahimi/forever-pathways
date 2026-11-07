@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:holy_rune",
       "title": "Holy",
-      "text": "$(bold)The holy rune, upgrade orb, affinity ring and scroll, and the healing spellbooks of Creatures and Beasts. You may master three schools until Archmage.$(br2)$(thing)Industry$(n), ring 11.$(br)$(thing)25 Focal Shards$(n).$(br)After Arcane Essence."
+      "text": "$(bold)The holy rune, upgrade orb, affinity ring and scroll, and the healing spellbooks of Creatures and Beasts. You may master three schools until Archmage.$(br2)$(thing)Ashen Age$(n), ring 11.$(br)$(thing)25 Focal Shards$(n).$(br)After Arcane Essence."
     },
     {
       "type": "patchouli:text",

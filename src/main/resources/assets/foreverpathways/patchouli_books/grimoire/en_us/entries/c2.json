@@ -26,7 +26,7 @@
     {
       "type": "patchouli:text",
       "title": "Rings and Seals",
-      "text": "$(bold)$(li)16 rings out from the Core in twelve ages; cost climbs with the ring.$(br)$(li)A node needs the node before it, and its ring unsealed.$(br)$(li)A seal needs a count of nodes owned, shards, and its own task.$(br)$(li)Any node counts towards a seal, whatever road it is on."
+      "text": "$(bold)$(li)15 rings out from the Core in seven ages; cost climbs with the ring.$(br)$(li)A node needs the node before it, and its ring unsealed.$(br)$(li)A seal needs a count of nodes owned, shards, and its own task.$(br)$(li)Any node counts towards a seal, whatever road it is on."
     },
     {
       "type": "patchouli:text",

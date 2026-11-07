@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "hazennstuff:radiance_upgrade_orb",
       "title": "Runes and Orbs",
-      "text": "$(bold)Hazen N Stuff's upgrade orbs, concentrated orbs and runes, the catalyst, and the essences, fragments, cores and monster parts its forging asks for.$(br2)$(thing)Industry$(n), ring 11.$(br)$(thing)25 Focal Shards$(n).$(br)After Arcane Essence."
+      "text": "$(bold)Hazen N Stuff's upgrade orbs, concentrated orbs and runes, the catalyst, and the essences, fragments, cores and monster parts its forging asks for.$(br2)$(thing)Ashen Age$(n), ring 11.$(br)$(thing)25 Focal Shards$(n).$(br)After Arcane Essence."
     }
   ],
   "flag": "mod:hazennstuff"

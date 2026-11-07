@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "endrem:nether_eye",
       "title": "Nether Eye",
-      "text": "$(bold)Unlocking this node gives you the Nether Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill the Ashlord.$(br)Without that boss: Kill 84 ghasts or blazes."
+      "text": "$(bold)Unlocking this node gives you the Nether Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed. Needs Ashlord as well.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill the Ashlord.$(br)Without that boss: Kill 84 ghasts or blazes."
     }
   ],
   "flag": "mod:endrem"

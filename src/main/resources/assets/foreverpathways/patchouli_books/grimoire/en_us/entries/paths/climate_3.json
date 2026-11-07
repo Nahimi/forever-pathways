@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "legendarysurvivaloverhaul:heating_coat_3",
       "title": "Climate Gear III",
-      "text": "$(bold)Third-grade thermal coats and the thermal resistance ring.$(br2)$(thing)The Nether$(n), ring 9.$(br)$(thing)16 Focal Shards$(n).$(br)After Climate Gear II."
+      "text": "$(bold)Third-grade thermal coats and the thermal resistance ring.$(br2)$(thing)Nether Age$(n), ring 9.$(br)$(thing)16 Focal Shards$(n).$(br)After Climate Gear II."
     }
   ],
   "flag": "mod:legendarysurvivaloverhaul"

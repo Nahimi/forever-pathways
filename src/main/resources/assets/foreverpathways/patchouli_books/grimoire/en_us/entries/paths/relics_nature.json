@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:druidic_spell_book",
       "title": "Nature Relics",
-      "text": "$(bold)The druidic spellbook, the poison ward and the greater oakskin elixir.$(br2)$(thing)Relics$(n), ring 13.$(br)$(thing)27 Focal Shards$(n).$(br)After Nature Robes."
+      "text": "$(bold)The druidic spellbook, the poison ward and the greater oakskin elixir.$(br2)$(thing)Arcane Age$(n), ring 13.$(br)$(thing)27 Focal Shards$(n).$(br)After Nature Robes."
     },
     {
       "type": "patchouli:crafting",

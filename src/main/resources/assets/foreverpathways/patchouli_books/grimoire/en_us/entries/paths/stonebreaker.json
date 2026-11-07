@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:netherite_pickaxe",
       "title": "Stonebreaker",
-      "text": "$(bold)Stone parts for you now. +5% breaking speed.$(br2)$(thing)The Arcane$(n), ring 14.$(br)$(thing)20 Focal Shards$(n).$(br)After Tireless."
+      "text": "$(bold)Stone parts for you now. +5% breaking speed.$(br2)$(thing)Arcane Age$(n), ring 14.$(br)$(thing)20 Focal Shards$(n).$(br)After Tireless."
     },
     {
       "type": "patchouli:text",

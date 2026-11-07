@@ -122,7 +122,7 @@ CHAPTERS = [
          "images": ["foreverpathways:textures/gui/book/rings.png"], "border": False,
          "text": "Each dot is a node, coloured by road. Red rings are sealed."},
         {"type": "patchouli:text", "title": "Rings and Seals",
-         "text": "$(li)16 rings out from the Core in twelve ages; cost climbs with the ring.$(br)"
+         "text": "$(li)15 rings out from the Core in seven ages; cost climbs with the ring.$(br)"
                  "$(li)A node needs the node before it, and its ring unsealed.$(br)"
                  "$(li)A seal needs a count of nodes owned, shards, and its own task.$(br)"
                  "$(li)Any node counts towards a seal, whatever road it is on."},
@@ -168,7 +168,7 @@ CHAPTERS = [
                  "Turn any of these off at the bottom of the Tasks tab on the ring."},
     ]),
     ("c4", "IV. The Sixteen Eyes", "minecraft:ender_eye", 3, [
-        "The End portal needs sixteen $(thing)different$() eyes. None can be crafted, mined or found.$(br2)Each is a node on the last ring, behind the final seal. Unlocking one gives you its eye.",
+        "The End portal needs sixteen $(thing)different$() eyes. None can be crafted, mined or found.$(br2)Each is a node of its own, out by the boss that guards it, from the Nether Age to the Arcane Age. Unlocking one gives you its eye.",
         {"type": "patchouli:text", "title": "Where They Come From",
          "text": "$(li)Each eye's task is a boss kill: the six bosses of Bosses' Rise, the eight of Cataclysm, Azazel and the Wither.$(br)$(li)Without a boss's mod, its node asks for other work.$(br2)Every eye and its boss is listed under $(l:eyes/about)The Sixteen Eyes$()."},
         {"type": "patchouli:text", "title": "You Cannot Waste a Boss",
@@ -342,7 +342,7 @@ BEYOND = [
         {"type": "patchouli:text", "title": "Born in Chaos", "flag": "mod:born_in_chaos_v1",
          "text": "Two nodes on the Ranger road:$(br2)$(li)$(l:paths/chaos)Born in Chaos$(), ring 5: dark metal, charms, elixirs and the blocks of its haunts. Kill 20 of its creatures first.$(br)$(li)$(l:paths/chaos_lords)Lords of Chaos$(), ring 9: the bosses' trophies. Kill any one of them."},
         {"type": "patchouli:text", "title": "Cult of Azazel", "flag": "mod:netherman",
-         "text": "Kill the Divine Chariot Azazel to open $(l:paths/azazel)The Divine Chariot$(), ring 11 on the Ranger road, for its scythe, spear, shield and armour. Its samsonit halls and keys are at $(l:paths/nether)Nether$(). Azazel's kill is also the Evil Eye's task."},
+         "text": "Kill the Divine Chariot Azazel to open $(l:paths/azazel)The Divine Chariot$(), ring 8 on the Ranger road, for its scythe, spear, shield and armour. Its samsonit halls and keys are at $(l:paths/nether)Nether$(). Azazel's kill is also the Evil Eye's task."},
         {"type": "patchouli:text", "title": "Companions!", "flag": "mod:companions",
          "text": "Kill the Sacred Pontiff or a Shade to open $(l:paths/saints_shades)Saints and Shades$(), ring 11 on the Ranger road, for crystallised blood arms and armour and the holy robes. The companions themselves, their puppets and the Shade altars are at $(l:paths/husbandry)Husbandry$(); the tesla machines at Redstone, the mage gear and spell books at Magician."},
         {"type": "patchouli:text", "title": "Hazen N Stuff", "flag": "mod:hazennstuff",
@@ -559,7 +559,7 @@ def main():
              "Every node: cost, task, what must come first, and what it unlocks.",
              "minecraft:crafting_table", 3)
     for i, (pid, path) in enumerate(paths.items()):
-        first = min((n["ring"] for n in nodes if n["path"] == pid and n["ring"] < outer), default=1)
+        first = min((n["ring"] for n in nodes if n["path"] == pid and not n.get("gives")), default=1)
         category(f"paths/{pid}", path["title"],
                  f"The {path['title']} road, from ring {first} outwards.",
                  PATH_ICONS.get(pid, "minecraft:stone"),
@@ -645,11 +645,11 @@ def main():
 
     # ------------------------------------------------------------------ The eyes
     # Each eye node gives its eye on unlock; its task is the first of its bosses this pack has, else its own task.
-    eye_nodes = [n for n in nodes if n["ring"] == outer and not n.get("seal")]
+    eye_nodes = [n for n in nodes if n.get("gives") and not n.get("seal")]
     cost = eye_nodes[0]["cost"] if eye_nodes else 0
     entry("eyes/about", "The Sixteen Eyes", "eyes", "minecraft:ender_eye", [
         {"type": "patchouli:text", "title": "The Sixteen Eyes",
-         "text": "The End portal needs sixteen different eyes. None can be mined, crafted or found: each node on the last ring gives you its eye the moment you unlock it.$(br2)Every eye is a node on the last ring, $(thing){cost} Focal Shards$() each, all behind the final seal.".replace("{cost}", str(cost))},
+         "text": "The End portal needs sixteen different eyes. None can be mined, crafted or found: each is a node of its own that gives you its eye the moment you unlock it.$(br2)They sit out by the bosses that guard them, from the Nether Age to the Arcane Age, $(thing){cost} Focal Shards$() each.".replace("{cost}", str(cost))},
         {"type": "patchouli:text", "title": "Boss by Boss",
          "text": "Each eye's task is a boss kill: Bosses' Rise, Cataclysm, Cult of Azazel or the Wither. Without that boss's mod, the node asks for other work instead.$(br2)A boss takes no damage from you until a node that asks for it is reachable, so you cannot waste a kill."},
         {"type": "patchouli:text", "title": "Lost Eyes",
@@ -672,7 +672,7 @@ def main():
 
     # ------------------------------------------------------------------ every other node
     for node in nodes:
-        if node.get("seal") or node["ring"] == outer or node["requires"] is None:
+        if node.get("seal") or node.get("gives") or node["requires"] is None:
             continue
         lines = [f"$(thing){tiers[node['ring']]}$(), ring {node['ring']}.",
                  f"$(thing){node['cost']} Focal Shards$()."]

@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "cataclysm:ignitium_ingot",
       "title": "Ignis",
-      "text": "$(bold)Cataclysm's Burning Arena: Ignis's ignitium and its armour, the bulwark of the flame and its gauntlet, the incinerator and the immolator, and the embers and ashes of its berserkers and revenants.$(br2)$(thing)Relics$(n), ring 12.$(br)$(thing)23 Focal Shards$(n).$(br)After The Netherite Monstrosity."
+      "text": "$(bold)Cataclysm's Burning Arena: Ignis's ignitium and its armour, the bulwark of the flame and its gauntlet, the incinerator and the immolator, and the embers and ashes of its berserkers and revenants.$(br2)$(thing)Arcane Age$(n), ring 12.$(br)$(thing)23 Focal Shards$(n).$(br)After The Netherite Monstrosity."
     },
     {
       "type": "patchouli:text",

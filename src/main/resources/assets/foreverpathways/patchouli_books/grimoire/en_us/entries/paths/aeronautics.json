@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "aeronautics:propeller_bearing",
       "title": "Aeronautics",
-      "text": "$(bold)Propellers, envelopes, levitite and airships. Needs Steam as well.$(br2)$(thing)Industry$(n), ring 11.$(br)$(thing)30 Focal Shards$(n).$(br)After Simulated and Steam."
+      "text": "$(bold)Propellers, envelopes, levitite and airships. Needs Steam as well.$(br2)$(thing)Ashen Age$(n), ring 11.$(br)$(thing)30 Focal Shards$(n).$(br)After Simulated and Steam."
     },
     {
       "type": "patchouli:text",

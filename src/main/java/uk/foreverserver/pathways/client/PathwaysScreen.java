@@ -410,9 +410,10 @@ public class PathwaysScreen extends Screen {
         String needle = query.toLowerCase(Locale.ROOT).trim();
 
         int outer = RingLayout.RADII.length - 1;
+        int eyes = eyeRing();
         for (int ring = 1; ring <= outer; ring++) {
             int r = (int) Math.round(RingLayout.radius(ring) * zoom);
-            Pix.ring(g, cx, cy, r, ring == outer ? 4 : 2, ring == outer ? Paint.alpha(EYE, 0.45f) : 0x40685A46);
+            Pix.ring(g, cx, cy, r, ring == eyes ? 4 : 2, ring == eyes ? Paint.alpha(EYE, 0.45f) : 0x40685A46);
         }
 
         hovered = null;
@@ -526,7 +527,7 @@ public class PathwaysScreen extends Screen {
         // ring numerals on small plaques at twelve o'clock
         if (zoom >= 0.4) {
             for (int ring = 2; ring <= outer; ring++) {
-                String label = ring == outer ? "EYES" : NUMERALS[Math.min(ring, NUMERALS.length - 1)];
+                String label = ring == eyes ? "EYES" : NUMERALS[Math.min(ring, NUMERALS.length - 1)];
                 int y = cy - (int) Math.round(RingLayout.radius(ring) * zoom);
                 int w = this.font.width(label);
                 Tree.Node seal = tree.sealFor(ring);
@@ -541,7 +542,7 @@ public class PathwaysScreen extends Screen {
         }
         if (zoom >= 0.4) {
             for (int ring = 2; ring <= outer; ring++) {
-                String label = ring == outer ? "EYES" : NUMERALS[Math.min(ring, NUMERALS.length - 1)];
+                String label = ring == eyes ? "EYES" : NUMERALS[Math.min(ring, NUMERALS.length - 1)];
                 int y = cy - (int) Math.round(RingLayout.radius(ring) * zoom);
                 int w = this.font.width(label);
                 Tree.Node seal = tree.sealFor(ring);
@@ -654,8 +655,8 @@ public class PathwaysScreen extends Screen {
         double pr = RingLayout.radius(parent.ring);
         double cr = RingLayout.radius(child.ring);
         double mid = parent.ring == 0 ? RingLayout.radius(1) * 0.55 : pr + (RingLayout.radius(parent.ring + 1) - pr) * 0.5;
-        int outer = RingLayout.RADII.length - 1;
-        if (child.ring >= outer && !child.isSeal()) {
+        int outer = eyeRing();
+        if (outer > 0 && child.ring >= outer && !child.isSeal()) {
             // eyes: run the long way round in the empty band just inside the eye ring
             mid = (RingLayout.radius(outer - 1) + RingLayout.radius(outer)) / 2;
         }
@@ -950,6 +951,17 @@ public class PathwaysScreen extends Screen {
     }
 
     /** "ring 5 and ring 6 (Iron Age, Industry)" style description of what a seal covers. */
+    /** The outermost ring when it holds the eyes (each a node that gives one), else -1: eyes may sit among the rings. */
+    private int eyeRing() {
+        int outer = RingLayout.RADII.length - 1;
+        for (Tree.Node node : tree.nodes) {
+            if (node.ring == outer && node.gives != null) {
+                return outer;
+            }
+        }
+        return -1;
+    }
+
     private String bandName(Tree.Node seal) {
         int a = seal.seal.opensRing;
         int b = Math.max(a, seal.seal.throughRing);

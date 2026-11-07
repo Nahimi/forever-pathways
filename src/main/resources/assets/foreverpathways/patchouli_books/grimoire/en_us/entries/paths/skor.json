@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "block_factorys_bosses:ice_gauntlet",
       "title": "Skor",
-      "text": "$(bold)Skor's ice gauntlet.$(br2)$(thing)The Deep$(n), ring 8.$(br)$(thing)22 Focal Shards$(n).$(br)After Helvar."
+      "text": "$(bold)Skor's ice gauntlet.$(br2)$(thing)Nether Age$(n), ring 8.$(br)$(thing)22 Focal Shards$(n).$(br)After Helvar."
     },
     {
       "type": "patchouli:text",

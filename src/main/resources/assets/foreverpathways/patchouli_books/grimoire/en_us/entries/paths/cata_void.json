@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "cataclysm:witherite_ingot",
       "title": "The Harbinger",
-      "text": "$(bold)Cataclysm's Ancient Factory: the Harbinger's witherite, the wither and void cannons, the laser gatling, the meat shredder, the EMP and the mechanical fusion anvil.$(br2)$(thing)Relics$(n), ring 13.$(br)$(thing)26 Focal Shards$(n).$(br)After Ignis."
+      "text": "$(bold)Cataclysm's Ancient Factory: the Harbinger's witherite, the wither and void cannons, the laser gatling, the meat shredder, the EMP and the mechanical fusion anvil.$(br2)$(thing)Arcane Age$(n), ring 13.$(br)$(thing)26 Focal Shards$(n).$(br)After Ignis."
     },
     {
       "type": "patchouli:text",

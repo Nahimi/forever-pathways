@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(bold)The End portal needs sixteen $(thing)different$(n) eyes. None can be crafted, mined or found.$(br2)Each is a node on the last ring, behind the final seal. Unlocking one gives you its eye.",
+      "text": "$(bold)The End portal needs sixteen $(thing)different$(n) eyes. None can be crafted, mined or found.$(br2)Each is a node of its own, out by the boss that guards it, from the Nether Age to the Arcane Age. Unlocking one gives you its eye.",
       "title": "IV. The Sixteen Eyes"
     },
     {

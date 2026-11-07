@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "irons_spellbooks:ender_rune",
       "title": "Ender",
-      "text": "$(bold)The ender rune, upgrade orb, affinity ring and scroll. You may master three schools until Archmage.$(br2)$(thing)Industry$(n), ring 11.$(br)$(thing)25 Focal Shards$(n).$(br)After Arcane Essence."
+      "text": "$(bold)The ender rune, upgrade orb, affinity ring and scroll. You may master three schools until Archmage.$(br2)$(thing)Ashen Age$(n), ring 11.$(br)$(thing)25 Focal Shards$(n).$(br)After Arcane Essence."
     },
     {
       "type": "patchouli:text",

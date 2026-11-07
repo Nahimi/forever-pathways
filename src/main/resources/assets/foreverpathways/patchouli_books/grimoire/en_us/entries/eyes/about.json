@@ -8,7 +8,7 @@
     {
       "type": "patchouli:text",
       "title": "The Sixteen Eyes",
-      "text": "$(bold)The End portal needs sixteen different eyes. None can be mined, crafted or found: each node on the last ring gives you its eye the moment you unlock it.$(br2)Every eye is a node on the last ring, $(thing)28 Focal Shards$(n) each, all behind the final seal."
+      "text": "$(bold)The End portal needs sixteen different eyes. None can be mined, crafted or found: each is a node of its own that gives you its eye the moment you unlock it.$(br2)They sit out by the bosses that guard them, from the Nether Age to the Arcane Age, $(thing)28 Focal Shards$(n) each."
     },
     {
       "type": "patchouli:text",

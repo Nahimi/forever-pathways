@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "icys-better-horses:upgraded_saddle",
       "title": "Tack",
-      "text": "$(bold)Iron, golden and diamond horse armour, the upgraded saddle, the canister, the stabiliser and the horse medkit. Needs Gold as well.$(br2)$(thing)Gilded Age$(n), ring 6.$(br)$(thing)18 Focal Shards$(n).$(br)After Cartwright and Gold."
+      "text": "$(bold)Iron, golden and diamond horse armour, the upgraded saddle, the canister, the stabiliser and the horse medkit. Needs Gold as well.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)18 Focal Shards$(n).$(br)After Cartwright and Gold."
     },
     {
       "type": "patchouli:text",

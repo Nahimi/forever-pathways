@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:diamond_sword",
       "title": "Warrior",
-      "text": "$(bold)Every blow lands where you mean it. +15% attack damage.$(br2)$(thing)The Deep$(n), ring 8.$(br)$(thing)22 Focal Shards$(n).$(br)After Veteran."
+      "text": "$(bold)Every blow lands where you mean it. +15% attack damage.$(br2)$(thing)Nether Age$(n), ring 8.$(br)$(thing)22 Focal Shards$(n).$(br)After Veteran."
     },
     {
       "type": "patchouli:text",

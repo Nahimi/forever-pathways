@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:gold_ingot",
       "title": "Gold",
-      "text": "$(bold)Gold ingots, nuggets and blocks, with golden tools and armour.$(br2)$(thing)Gilded Age$(n), ring 6.$(br)$(thing)20 Focal Shards$(n).$(br)After Deep Prospector."
+      "text": "$(bold)Gold ingots, nuggets and blocks, with golden tools and armour.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)20 Focal Shards$(n).$(br)After Deep Prospector."
     },
     {
       "type": "patchouli:text",

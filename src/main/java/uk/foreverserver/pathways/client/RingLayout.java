@@ -16,7 +16,7 @@ import uk.foreverserver.pathways.Tree;
  * eyes) is spread evenly round the circle.
  */
 public final class RingLayout {
-    public static final double[] RADII = {0, 75, 135, 195, 255, 310, 365, 420, 475, 530, 585, 640, 695, 750, 805, 860, 945};
+    public static final double[] RADII = {0, 75, 135, 195, 255, 310, 365, 420, 475, 530, 585, 640, 695, 750, 805, 860};
     public static final double SPACING = 22;
     public static final double SPINE = 30;
 
@@ -66,7 +66,8 @@ public final class RingLayout {
         int outer = RADII.length - 1;
         List<Tree.Node> eyes = new ArrayList<>();
         for (Tree.Node node : tree.nodes) {
-            if (node.ring == outer && !node.isSeal() && angle.containsKey(node.id)) {
+            // Eyes gathered on the outermost ring are spread evenly round it; eyes elsewhere sit by their bosses.
+            if (node.ring == outer && node.gives != null && !node.isSeal() && angle.containsKey(node.id)) {
                 eyes.add(node);
             }
         }

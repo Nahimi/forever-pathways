@@ -16,7 +16,7 @@
     {
       "type": "patchouli:text",
       "title": "Rings",
-      "text": "$(bold)$(thing)16 rings$(n) out from the Core, in 12 ages: Stone Age, Copper Age, Iron Age, out to Eye Ring. An age can span several rings.$(br2)A node needs the node before it, whatever else it needs, and its ring unsealed."
+      "text": "$(bold)$(thing)15 rings$(n) out from the Core, in 7 ages: Stone Age, Copper Age, Iron Age, out to Arcane Age. An age can span several rings.$(br2)A node needs the node before it, whatever else it needs, and its ring unsealed."
     },
     {
       "type": "patchouli:text",

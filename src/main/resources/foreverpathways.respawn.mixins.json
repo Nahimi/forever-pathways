@@ -1,0 +1,12 @@
+{
+  "required": false,
+  "minVersion": "0.8",
+  "package": "uk.foreverserver.pathways.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "RespawnSyncMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

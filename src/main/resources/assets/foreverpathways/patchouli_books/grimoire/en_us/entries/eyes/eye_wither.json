@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "endrem:wither_eye",
       "title": "Wither Eye",
-      "text": "$(bold)Unlocking this node gives you the Wither Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill the Wither."
+      "text": "$(bold)Unlocking this node gives you the Wither Eye and lets you set it in the ancient portal. Its task is a boss kill when that boss is installed. Needs Beacon as well.$(br2)$(thing)28 Focal Shards$(n).$(br2)Kill the Wither."
     }
   ],
   "flag": "mod:endrem"

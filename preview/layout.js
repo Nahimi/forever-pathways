@@ -1,7 +1,7 @@
 // Ring layout for Forever Pathways. Mirrors client/RingLayout.java line for line,
 // so the preview and the game place every node in the same spot.
 (function (root) {
-  const RADII = [0, 75, 135, 195, 255, 310, 365, 420, 475, 530, 585, 640, 695, 750, 805, 860, 945];
+  const RADII = [0, 75, 135, 195, 255, 310, 365, 420, 475, 530, 585, 640, 695, 750, 805, 860];
   const SPACING = 22;
   const SPINE = 30;
 
@@ -64,7 +64,7 @@
     });
     // The eye ring: spread the outermost nodes evenly, keeping their order.
     const outer = RADII.length - 1;
-    const eyes = nodes.filter((n) => n.ring === outer && !isSeal(n));
+    const eyes = nodes.filter((n) => n.ring === outer && n.gives && !isSeal(n));
     if (eyes.length > 1) {
       const norm = (a) => {
         let v = a + Math.PI / 2;

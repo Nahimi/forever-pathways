@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "block_factorys_bosses:kraken_trident",
       "title": "Nerakyss",
-      "text": "$(bold)The kraken trident, its cannon, the undying tentacle and the trident. Needs Sirok as well.$(br2)$(thing)The Nether$(n), ring 9.$(br)$(thing)23 Focal Shards$(n).$(br)After Skor and Sirok."
+      "text": "$(bold)The kraken trident, its cannon, the undying tentacle and the trident. Needs Sirok as well.$(br2)$(thing)Nether Age$(n), ring 9.$(br)$(thing)23 Focal Shards$(n).$(br)After Skor and Sirok."
     },
     {
       "type": "patchouli:text",

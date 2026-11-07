@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "legendarysurvivaloverhaul:heating_coat_2",
       "title": "Climate Gear II",
-      "text": "$(bold)Second-grade thermal coats and the heat and cold resistance rings.$(br2)$(thing)Gilded Age$(n), ring 6.$(br)$(thing)16 Focal Shards$(n).$(br)After Climate Gear I."
+      "text": "$(bold)Second-grade thermal coats and the heat and cold resistance rings.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)16 Focal Shards$(n).$(br)After Climate Gear I."
     }
   ],
   "flag": "mod:legendarysurvivaloverhaul"

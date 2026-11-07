@@ -9,9 +9,10 @@ back to your inventory or any other tab.
 
 - **Rings.** The Core sits in the middle. Four paths start on ring 1: Survivor, Ranger, Builder and
   Homesteader. The Technician grows out of the Builder on ring 2 and the Magician out of the
-  Apothecary on ring 7. Sixteen rings make twelve ages, one tier name per ring in tree.json (Stone Age 1,
-  Copper Age 2, Iron Age 3-5, Gilded Age 6, Diamond Age 7, The Deep 8, The Nether 9, Ashen Age 10, Industry 11,
-  Relics 12-13, The Arcane 14-15). Ring 16 holds the sixteen End Remastered eyes. Each age after the first has one seal.
+  Apothecary on ring 5. Fifteen rings make seven ages, one tier name per ring in tree.json (Stone Age 1,
+  Copper Age 2, Iron Age 3-5, Diamond Age 6-7, Nether Age 8-9, Ashen Age 10-11, Arcane Age 12-15), each age after
+  the first behind one seal. The sixteen eye nodes (those with gives) sit by their bosses between rings 8 and 14;
+  the screen and the Grimoire find them by gives, not by ring.
   Nodes folded into others are listed under `merged` in tree.json; their stages stay defined, hidden,
   so Merges can hand owners the node they became.
 - **Seals.** Seven seals lock everything from ring 2 outwards. Each one is drawn as a shaded band

@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:beacon",
       "title": "Beacon",
-      "text": "$(bold)The beacon, the conduit and the nether star.$(br2)$(thing)Industry$(n), ring 11.$(br)$(thing)22 Focal Shards$(n).$(br)After Infernal."
+      "text": "$(bold)The beacon, the conduit and the nether star.$(br2)$(thing)Ashen Age$(n), ring 11.$(br)$(thing)22 Focal Shards$(n).$(br)After Infernal."
     },
     {
       "type": "patchouli:text",
