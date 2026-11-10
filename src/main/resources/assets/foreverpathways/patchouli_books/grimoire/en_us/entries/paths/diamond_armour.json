@@ -2,13 +2,13 @@
   "name": "Diamond Armour",
   "category": "foreverpathways:paths/survivor",
   "icon": "minecraft:diamond_chestplate",
-  "sortnum": 900,
+  "sortnum": 700,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "minecraft:diamond_chestplate",
       "title": "Diamond Armour",
-      "text": "$(bold)Diamond armour.$(br2)$(thing)Nether Age$(n), ring 9.$(br)$(thing)16 Focal Shards$(n).$(br)After Diamond."
+      "text": "$(bold)Diamond armour. Needs Diamond as well.$(br2)$(thing)Diamond Age$(n), ring 7.$(br)$(thing)16 Focal Shards$(n).$(br)After Deep Prospector and Diamond."
     },
     {
       "type": "patchouli:crafting",

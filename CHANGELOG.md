@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.43.1
+
+- Diamond Armour comes with the Diamond Age on ring 7, beside Diamond, instead of in the Nether Age.
+
 ## 0.43.0
 
 - Six seals instead of eleven, over the same rings. Copper and Iron are as they were; the Seal of Diamond opens the
