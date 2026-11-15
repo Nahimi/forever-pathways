@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(bold)$(li)$(thing)Horses$(n) take shoes, a cart and an upgraded saddle: $(l:paths/rider)Rider$(n), $(l:paths/cartwright)Cartwright$(n), $(l:paths/tack)Tack$(n).$(br)$(li)$(thing)Trains$(n): ring 10. $(thing)Airships$(n): $(l:paths/aeronautics)Aeronautics$(n), ring 11.$(br2)Your legs start at 85% and reach 110% only at ring 15. A horse is worth having early.",
+      "text": "$(bold)$(li)$(thing)Horses$(n) take shoes, a cart and an upgraded saddle: $(l:paths/rider)Rider$(n), $(l:paths/cartwright)Cartwright$(n), $(l:paths/tack)Tack$(n).$(br)$(li)$(thing)Trains$(n): ring 7. $(thing)Airships$(n): $(l:paths/aeronautics)Aeronautics$(n), ring 7.$(br2)Your legs start at 85% and reach 110% only at ring 15. A horse is worth having early.",
       "title": "A7. Getting About"
     },
     {
@@ -29,7 +29,7 @@
       "type": "patchouli:text",
       "title": "Immersive Aircraft",
       "flag": "mod:immersive_aircraft",
-      "text": "$(bold)Two nodes on the Ranger road, after Boatwright:$(br2)$(li)$(l:paths/aviator)Aviator$(n), ring 7: the airship, gyrodyne, biplane and quadrocopter, and their parts.$(br)$(li)$(l:paths/air_fleet)Air Fleet$(n), ring 10: the cargo airship, the warship, better engines and the weapons."
+      "text": "$(bold)Two nodes on the Ranger road, after Boatwright:$(br2)$(li)$(l:paths/aviator)Aviator$(n), ring 7: the airship, gyrodyne, biplane and quadrocopter, and their parts.$(br)$(li)$(l:paths/air_fleet)Air Fleet$(n), ring 8: the cargo airship, the warship, better engines and the weapons."
     }
   ],
   "flag": "mod:waystones"

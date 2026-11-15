@@ -2,13 +2,13 @@
   "name": "Simulated",
   "category": "foreverpathways:paths/technician",
   "icon": "simulated:physics_assembler",
-  "sortnum": 1000,
+  "sortnum": 600,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "simulated:physics_assembler",
       "title": "Simulated",
-      "text": "$(bold)The physics machines packed with Aeronautics: assemblers, sensors, ropes, steering and engines.$(br2)$(thing)Ashen Age$(n), ring 10.$(br)$(thing)25 Focal Shards$(n).$(br)After Moving Machines."
+      "text": "$(bold)The physics machines packed with Aeronautics: assemblers, sensors, ropes, steering and engines.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)25 Focal Shards$(n).$(br)After Contraptions."
     },
     {
       "type": "patchouli:text",

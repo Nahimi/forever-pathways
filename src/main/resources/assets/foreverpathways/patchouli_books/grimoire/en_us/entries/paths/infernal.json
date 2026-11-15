@@ -8,7 +8,7 @@
       "type": "patchouli:spotlight",
       "item": "minecraft:blaze_rod",
       "title": "Infernal",
-      "text": "$(bold)The Nether's fire: blaze rods and powder, the blaze burner, fire charges, wither skeleton skulls, gilded blackstone, the respawn anchor and ancient debris.$(br2)$(thing)Nether Age$(n), ring 9.$(br)$(thing)23 Focal Shards$(n).$(br)After Nether."
+      "text": "$(bold)The Nether's fire: blaze rods and powder, fire charges, wither skeleton skulls, gilded blackstone, the respawn anchor and ancient debris.$(br2)$(thing)Nether Age$(n), ring 9.$(br)$(thing)23 Focal Shards$(n).$(br)After Nether."
     },
     {
       "type": "patchouli:text",
@@ -16,15 +16,9 @@
       "text": "$(bold)$(thing)Kill 28 blazes$(n)$(br2)Pays 3 Focal Shards once. Counts only once this node is reachable."
     },
     {
-      "type": "patchouli:crafting",
-      "recipe": "create:crafting/kinetics/empty_blaze_burner",
-      "text": "$(bold)Empty blaze burner",
-      "flag": "mod:create"
-    },
-    {
       "type": "patchouli:text",
       "title": "Unlocks",
-      "text": "$(bold)blaze rod, blaze powder, fire charge, wither skeleton skull, gilded blackstone, respawn anchor, ancient debris, empty blaze burner, blaze burner."
+      "text": "$(bold)blaze rod, blaze powder, fire charge, wither skeleton skull, gilded blackstone, respawn anchor, ancient debris."
     }
   ]
 }

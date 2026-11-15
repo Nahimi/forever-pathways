@@ -1,5 +1,17 @@
 # Changelog
 
+## 0.43.2
+
+- Diamond opens the Diamond Age on ring 6, and Diamond Armour follows it on ring 7.
+- Create's late game moves to the Seal of Diamond (rings 6 and 7): Brass on ring 6; Steam, Mechanical Crafting,
+  Trains, Chromatics and Packaging on ring 7.
+- The aeronautic road: Contraptions, then Simulated on ring 6, then Aeronautics and Offroad on ring 7.
+- The blaze burner moves from Infernal to Brass, so Brass no longer waits for Infernal. Catching a blaze still means a
+  trip to the Nether, which opens on ring 7.
+- Power Grid moves to the Seal of the Nether on ring 8, High Voltage to ring 9.
+- Immersive Aircraft's Air Fleet moves from ring 10 to ring 8, out of the Seal of Ash.
+- The Grimoire's Machines, Electricity, Getting About and Post appendices give the new rings.
+
 ## 0.43.1
 
 - Diamond Armour comes with the Diamond Age on ring 7, beside Diamond, instead of in the Nether Age.
