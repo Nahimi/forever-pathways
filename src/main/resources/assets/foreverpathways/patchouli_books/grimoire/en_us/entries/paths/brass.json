@@ -2,13 +2,13 @@
   "name": "Brass",
   "category": "foreverpathways:paths/technician",
   "icon": "create:brass_ingot",
-  "sortnum": 900,
+  "sortnum": 600,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "create:brass_ingot",
       "title": "Brass",
-      "text": "$(bold)Zinc, brass, rose quartz, precision mechanisms and the rest of Create. Needs Infernal as well, for the blaze burner that heats the mixer. Needs Infernal as well.$(br2)$(thing)Nether Age$(n), ring 9.$(br)$(thing)30 Focal Shards$(n).$(br)After Pressing and Mixing and Infernal."
+      "text": "$(bold)Zinc, brass, rose quartz, precision mechanisms, the blaze burner and the rest of Create. Catch a blaze in an empty burner on a trip to the Nether to heat the mixer.$(br2)$(thing)Diamond Age$(n), ring 6.$(br)$(thing)30 Focal Shards$(n).$(br)After Pressing and Mixing."
     },
     {
       "type": "patchouli:text",
@@ -24,7 +24,7 @@
     {
       "type": "patchouli:text",
       "title": "Unlocks",
-      "text": "$(bold)everything else of its kind."
+      "text": "$(bold)everything else of its kind, empty blaze burner, blaze burner."
     }
   ],
   "flag": "mod:create"

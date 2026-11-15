@@ -323,14 +323,14 @@
     const found = (k) => TREE.discoveries.slice(0, k).forEach((_, i) => S.found.add(i));
     if (name === "week") {
       ["forever:woodcutter", "forever:quarry", "forever:ranger", "forever:homesteader", "forever:builder",
-        "forever:technician", "forever:magician", "forever:seal_2", "forever:copper_tools", "forever:prospector",
+        "forever:technician", "forever:magician", "forever:seal_2", "forever:copper_tools", "forever:chalk",
         "forever:hunter", "forever:skirmisher", "forever:gardener", "forever:earthworks", "forever:study"]
         .forEach((id) => S.owned.add(id));
       Object.assign(S, { shards: 5, days: 3, dayFrac: 0.6 });
       found(2);
     } else if (name === "nether") {
-      grow(8, ["forever:school_lightning", "forever:school_holy", "forever:school_ender", "forever:school_evocation", "forever:school_blood"]);
-      S.owned.add("forever:seal_9");
+      grow(7, ["forever:school_lightning", "forever:school_holy", "forever:school_ender", "forever:school_evocation", "forever:school_blood"]);
+      S.owned.add("forever:seal_7");
       Object.assign(S, { shards: 23, days: 6, dayFrac: 0.3 });
       found(12);
     } else if (name === "late") {
@@ -349,7 +349,7 @@
       S.slots.forEach((slot, i) => { if (slot.b >= 0) slot.cur = Math.floor(BOUNTIES[slot.b].amount * (0.1 + 0.6 * hash(name + i))); });
       if (name === "nether") completeSlot(1), S.shards -= BOUNTIES[S.slots[1].prev].reward;
     }
-    selected = name === "fresh" ? "forever:woodcutter" : name === "week" ? "forever:seal_3" : name === "nether" ? "forever:nether" : "forever:seal_12";
+    selected = name === "fresh" ? "forever:woodcutter" : name === "week" ? "forever:seal_3" : name === "nether" ? "forever:nether" : "forever:seal_relics";
   }
 
   // ---------------------------------------------------------------- actions

@@ -226,14 +226,14 @@ BEYOND = [
         "$(li)$(l:paths/technician)Technician$(), ring 2: cogs, gearboxes, water wheels, the millstone.$(br)"
         "$(li)$(l:paths/casing)Andesite Casing$(), ring 3: casing, fans and depots.$(br)"
         "$(li)$(l:paths/mechanisms)Mechanisms$(), ring 4, then belts, crushing, fluids.$(br)"
-        "$(li)$(l:paths/brass)Brass$(), ring 9: the second half of the mod.",
+        "$(li)$(l:paths/brass)Brass$(), ring 6: the second half of the mod.",
     ]),
     ("a5", "A5. Electricity", "powergrid:copper_cord", 5, "mod:powergrid", [
         "Separate from Create, and it starts earlier.$(br2)"
         "$(li)$(l:paths/wiring)Wiring$(), ring 3: cord, wire, potato battery.$(br)"
         "$(li)$(l:paths/lighting_rig)Lighting Rig$(), ring 4: bulbs, meters.$(br)"
-        "$(li)$(l:paths/power_grid)Power Grid$(), ring 10: generators, motors.$(br)"
-        "$(li)$(l:paths/high_voltage)High Voltage$(), ring 11: the end of it.",
+        "$(li)$(l:paths/power_grid)Power Grid$(), ring 8: generators, motors.$(br)"
+        "$(li)$(l:paths/high_voltage)High Voltage$(), ring 9: the end of it.",
     ]),
     ("a6", "A6. Magic", "irons_spellbooks:wimpy_spell_book", 6, "mod:irons_spellbooks", [
         "Late, and dearer: every magic node costs half again a machine on the same ring.$(br2)"
@@ -250,8 +250,8 @@ BEYOND = [
     ("a7", "A7. Getting About", "waystones:waystone", 7, "mod:waystones", [
         "$(li)$(thing)Horses$() take shoes, a cart and an upgraded saddle: "
         "$(l:paths/rider)Rider$(), $(l:paths/cartwright)Cartwright$(), $(l:paths/tack)Tack$().$(br)"
-        "$(li)$(thing)Trains$(): ring 10. $(thing)Airships$(): "
-        "$(l:paths/aeronautics)Aeronautics$(), ring 11.$(br2)"
+        "$(li)$(thing)Trains$(): ring 7. $(thing)Airships$(): "
+        "$(l:paths/aeronautics)Aeronautics$(), ring 7.$(br2)"
         "Your legs start at 85% and reach 110% only at ring 15. A horse is worth having early.",
         {"type": "patchouli:text", "title": "The Monoliths",
          "text": "Great stones stand across the world, each holding a $(thing)waystone$().$(br2)"
@@ -268,7 +268,7 @@ BEYOND = [
         {"type": "patchouli:crafting", "recipe": "waystones:waystone", "recipe2": "waystones:warp_stone",
          "title": "Waystone and Warp Stone"},
         {"type": "patchouli:text", "title": "Immersive Aircraft", "flag": "mod:immersive_aircraft",
-         "text": "Two nodes on the Ranger road, after Boatwright:$(br2)$(li)$(l:paths/aviator)Aviator$(), ring 7: the airship, gyrodyne, biplane and quadrocopter, and their parts.$(br)$(li)$(l:paths/air_fleet)Air Fleet$(), ring 10: the cargo airship, the warship, better engines and the weapons."},
+         "text": "Two nodes on the Ranger road, after Boatwright:$(br2)$(li)$(l:paths/aviator)Aviator$(), ring 7: the airship, gyrodyne, biplane and quadrocopter, and their parts.$(br)$(li)$(l:paths/air_fleet)Air Fleet$(), ring 8: the cargo airship, the warship, better engines and the weapons."},
     ]),
     ("a8", "A8. Smoke", "adchimneys:small_brick_chimney", 8, "mod:adchimneys", [
         "$(li)A $(thing)chimney$() vents smoke off the roof.$(br)"
@@ -296,7 +296,7 @@ BEYOND = [
         {"type": "patchouli:text", "title": "Where They Unlock",
          "text": "$(li)$(l:paths/post)Post$(), ring 3: letters, mailbox, pigeonholes, paper boxes.$(br)"
                  "$(li)$(l:paths/parcels)Parcels$(), ring 4: packages, seal stamps, payback tags.$(br)"
-                 "$(li)Create's $(l:paths/packaging)Packaging$(), ring 10, builds on Parcels."},
+                 "$(li)Create's $(l:paths/packaging)Packaging$(), ring 7, builds on Parcels."},
     ]),
     ("a10", "A10. Chalk", "chalk:chalk", 10, "mod:chalk", [
         "$(li)Use $(thing)chalk$() on a block to draw a mark. Mark the way out of a cave.$(br)"

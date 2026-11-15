@@ -2,13 +2,13 @@
   "name": "Chromatics",
   "category": "foreverpathways:paths/technician",
   "icon": "create:refined_radiance",
-  "sortnum": 1100,
+  "sortnum": 700,
   "pages": [
     {
       "type": "patchouli:spotlight",
       "item": "create:refined_radiance",
       "title": "Chromatics",
-      "text": "$(bold)Chromatic compound, refined radiance, shadow steel and their casings.$(br2)$(thing)Ashen Age$(n), ring 11.$(br)$(thing)26 Focal Shards$(n).$(br)After Steam."
+      "text": "$(bold)Chromatic compound, refined radiance, shadow steel and their casings. Needs Steam as well.$(br2)$(thing)Diamond Age$(n), ring 7.$(br)$(thing)26 Focal Shards$(n).$(br)After Brass and Steam."
     }
   ],
   "flag": "mod:create"
