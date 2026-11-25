@@ -152,7 +152,11 @@
     "re:(biomesoplenty|biomeswevegone):.*_(boat|chest_boat)",
     "re:(minecraft|spawn):.*_(boat|raft)",
     "re:supplementaries:jar_boat",
-    "re:(quark|nomansland):.*_boat"
+    "re:(quark|nomansland):.*_boat",
+    "minecraft:potion",
+    "minecraft:potion_de",
+    "minecraft:splash_potion",
+    "minecraft:lingering_potion"
   ],
   "bountyTiers": [
     "I",
@@ -2377,7 +2381,7 @@
       "cost": 8,
       "item": "minecraft:copper_block",
       "colour": "#C4A574",
-      "opens": "The stone axe, copper blocks and the lightning rod, and the beaten metal that makes a canteen and a water purifier. Glass bottles and water bottles too. The Copper Age proper. +10% breaking speed.",
+      "opens": "The stone axe, copper blocks and the lightning rod, and the beaten metal that makes a canteen and a water purifier. Glass bottles too; crafting water bottles stays here, but drinking any potion waits only on Herbalist. The Copper Age proper. +10% breaking speed.",
       "task": {
         "kind": "craft",
         "target": "minecraft:copper_ingot",
@@ -3098,7 +3102,7 @@
       "cost": 24,
       "item": "minecraft:brewing_stand",
       "colour": "#C4A574",
-      "opens": "The brewing stand and its ingredients, with tipped and spectral arrows. Needs Alchemy as well.",
+      "opens": "The brewing stand and its ingredients, with tipped and spectral arrows. Splash and lingering potions can already be used after Herbalist; brewing and crafting them wait here. Needs Alchemy as well.",
       "task": {
         "kind": "mine",
         "target": "minecraft:nether_wart",
@@ -3845,19 +3849,19 @@
       "id": "forever:helvar",
       "title": "Helvar",
       "path": "ranger",
-      "ring": 7,
-      "requires": "forever:pirates",
+      "ring": 8,
+      "requires": "forever:ashlord",
       "also": null,
-      "cost": 21,
-      "item": "block_factorys_bosses:knight_sword",
+      "cost": 24,
+      "item": "block_factorys_bosses:ancient_trial_key",
       "colour": "#8B4513",
-      "opens": "Helvar's sword, the enhanced shield and the knight armour. +5% attack damage.",
+      "opens": "The last overworld trial: Helvar's underworld spoils and the ancient trial key. Knight arms wait at Knighthood under the Seal of Diamond. +5% attack damage.",
       "task": {
         "kind": "kill",
         "target": "block_factorys_bosses:underworld_knight",
         "amount": 1,
         "title": "Kill Helvar",
-        "reward": 5
+        "reward": 8
       },
       "slot": null,
       "slotBonus": null,
@@ -3867,7 +3871,29 @@
       "enchantPower": 0,
       "craftOnly": false,
       "locks": [
-        "re:block_factorys_bosses:(knight_.*|warrior_sword|enhanced_shield.*|ancient_trial_key|underworld_.*)"
+        "re:block_factorys_bosses:(ancient_trial_key|underworld_.*)"
+      ],
+      "uses": []
+    },
+    {
+      "id": "forever:knighthood",
+      "title": "Knighthood",
+      "path": "ranger",
+      "ring": 6,
+      "requires": "forever:pirates",
+      "also": null,
+      "cost": 18,
+      "item": "block_factorys_bosses:knight_sword",
+      "colour": "#8B4513",
+      "opens": "The enhanced shield, warrior sword and knight armour. Under the Seal of Diamond; Helvar himself waits later.",
+      "task": null,
+      "slot": null,
+      "slotBonus": null,
+      "perks": null,
+      "enchantPower": 0,
+      "craftOnly": false,
+      "locks": [
+        "re:block_factorys_bosses:(knight_.*|warrior_sword|enhanced_shield.*)"
       ],
       "uses": []
     },
@@ -3952,19 +3978,19 @@
       "id": "forever:skor",
       "title": "Skor",
       "path": "ranger",
-      "ring": 8,
-      "requires": "forever:helvar",
+      "ring": 5,
+      "requires": "forever:pirates",
       "also": null,
-      "cost": 22,
+      "cost": 16,
       "item": "block_factorys_bosses:ice_gauntlet",
       "colour": "#8B4513",
-      "opens": "Skor's ice gauntlet.",
+      "opens": "Skor's ice gauntlet. An early overworld trial, before the Dragon and Helvar.",
       "task": {
         "kind": "kill",
         "target": "block_factorys_bosses:yeti",
         "amount": 1,
         "title": "Kill Skor",
-        "reward": 6
+        "reward": 4
       },
       "slot": null,
       "slotBonus": null,
@@ -3980,19 +4006,19 @@
       "id": "forever:sirok",
       "title": "Sirok",
       "path": "ranger",
-      "ring": 8,
-      "requires": "forever:helvar",
+      "ring": 5,
+      "requires": "forever:pirates",
       "also": null,
-      "cost": 22,
+      "cost": 16,
       "item": "block_factorys_bosses:sandworm_gauntlet",
       "colour": "#8B4513",
-      "opens": "Sirok's sandworm gauntlet.",
+      "opens": "Sirok's sandworm gauntlet. An early overworld trial, before the Dragon and Helvar.",
       "task": {
         "kind": "kill",
         "target": "block_factorys_bosses:sandworm",
         "amount": 1,
         "title": "Kill Sirok",
-        "reward": 6
+        "reward": 4
       },
       "slot": null,
       "slotBonus": null,
@@ -4059,7 +4085,7 @@
       "cost": 23,
       "item": "block_factorys_bosses:kraken_trident",
       "colour": "#8B4513",
-      "opens": "The kraken trident, its cannon, the undying tentacle and the trident. Needs Sirok as well.",
+      "opens": "The kraken trident, its cannon, the undying tentacle and the trident. Needs Sirok as well. After the early trials of Skor and Sirok.",
       "task": {
         "kind": "kill",
         "target": "block_factorys_bosses:kraken",
@@ -4082,19 +4108,19 @@
       "id": "forever:ashlord",
       "title": "Ashlord",
       "path": "ranger",
-      "ring": 11,
-      "requires": "forever:nerakyss",
-      "also": null,
-      "cost": 22,
+      "ring": 7,
+      "requires": "forever:skor",
+      "also": "forever:sirok",
+      "cost": 20,
       "item": "block_factorys_bosses:dragon_shank",
       "colour": "#8B4513",
-      "opens": "Dragon bone armour, the guard shield and the largest blades.",
+      "opens": "Dragon bone armour, the guard shield and the largest blades. After Skor and Sirok, before Helvar.",
       "task": {
         "kind": "kill",
         "target": "block_factorys_bosses:infernal_dragon",
         "amount": 1,
         "title": "Kill the Ashlord",
-        "reward": 10
+        "reward": 8
       },
       "slot": null,
       "slotBonus": null,
@@ -6551,7 +6577,7 @@
       "cost": 6,
       "item": "legendarysurvivaloverhaul:tonic",
       "colour": "#7C9A3A",
-      "opens": "Bandages, tonics, the large canteen and the water plants that refill it.",
+      "opens": "Bandages, tonics, the large canteen and the water plants that refill it. Drink, splash and lingering potions can be used here; brewing and crafting them still wait for Copper Tools and Brewing.",
       "task": null,
       "slot": null,
       "slotBonus": null,
@@ -6563,7 +6589,12 @@
         "re:nomansland:.*bandage.*",
         "rest:nirvana"
       ],
-      "uses": []
+      "uses": [
+        "minecraft:potion",
+        "minecraft:potion_de",
+        "minecraft:splash_potion",
+        "minecraft:lingering_potion"
+      ]
     },
     {
       "id": "forever:apothecary",

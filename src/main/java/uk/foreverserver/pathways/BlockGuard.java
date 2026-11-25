@@ -201,8 +201,27 @@ public final class BlockGuard {
         if (player == null || item == null || item == Items.AIR || player.isSpectator() || player.isCreative()) {
             return false;
         }
-        // Decoration and furniture are craft-locked only: carrying, placing, using and breaking are free.
+        // Decoration and furniture are craft-locked only: carrying, placing, using and breaking are free,
+        // unless a node lists them under "uses" (e.g. potions at Herbalist). Then use needs that node
+        // or the craft owner; crafting still waits for the owner via CraftGuard.
         if (Locks.craftOnly(item)) {
+            if (Locks.usersOf(item).isEmpty()) {
+                return false;
+            }
+            if (mayUse(player, item)) {
+                return false;
+            }
+            if (player instanceof ServerPlayer server) {
+                String owner = Locks.ownerOf(item);
+                return owner == null || !Stages.has(server, owner);
+            }
+            if (player.level().isClientSide()) {
+                String owner = Locks.ownerOf(item);
+                if (owner != null && Boolean.TRUE.equals(clientOwns.apply(owner))) {
+                    return false;
+                }
+                return true;
+            }
             return false;
         }
         if (player instanceof ServerPlayer server) {

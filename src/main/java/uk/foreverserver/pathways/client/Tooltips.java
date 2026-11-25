@@ -37,9 +37,25 @@ final class Tooltips {
         }
         // Decoration says what it really costs you: the recipe, not the block.
         boolean craftOnly = node.craftOnly || uk.foreverserver.pathways.Locks.everyday(id.toString());
+        boolean useGated = craftOnly && !uk.foreverserver.pathways.Locks.usersOf(event.getItemStack().getItem()).isEmpty();
         String label = craftOnly ? "Cannot craft yet: " : "Locked: ";
         event.getToolTip().add(Component.literal(label + where)
                 .withStyle(Boolean.FALSE.equals(owns) ? ChatFormatting.RED : ChatFormatting.GRAY));
+        if (useGated) {
+            String useWhere = null;
+            for (String userId : uk.foreverserver.pathways.Locks.usersOf(event.getItemStack().getItem())) {
+                Tree.Node user = tree.find(userId);
+                if (user != null) {
+                    useWhere = user.title + "  (" + tierName(tree, user.ring) + ")";
+                    break;
+                }
+            }
+            if (useWhere != null) {
+                event.getToolTip().add(Component.literal("Use unlocked at " + useWhere)
+                        .withStyle(ChatFormatting.DARK_GRAY));
+            }
+            return;
+        }
         if (craftOnly) {
             event.getToolTip().add(Component.literal("Free to place, use and break")
                     .withStyle(ChatFormatting.DARK_GRAY));

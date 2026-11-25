@@ -1,4 +1,14 @@
-# Changelog
+﻿# Changelog
+
+## 0.43.4
+
+- Potions: drink, splash and lingering can be used after Herbalist; brewing and crafting still wait for Copper Tools / Brewing.
+- Overworld bosses: Skor and Sirok early on ring 5, Ashlord after both on ring 7, Helvar last on ring 8 (Seal of the Nether).
+- Knighthood on ring 6 (Seal of Diamond) holds the enhanced shield, warrior sword and knight armour.
+
+## 0.43.3
+
+- (server hotfix) Potion use gating via Herbalist `uses` and craft-only potion items.
 
 ## 0.43.2
 
